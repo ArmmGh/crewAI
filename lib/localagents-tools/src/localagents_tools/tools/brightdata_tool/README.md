@@ -2,7 +2,7 @@
 
 ## Description
 
-A comprehensive suite of CrewAI tools that leverage Bright Data's powerful infrastructure for web scraping, data extraction, and search operations. These tools provide three distinct capabilities:
+A comprehensive suite of LocalAI tools that leverage Bright Data's powerful infrastructure for web scraping, data extraction, and search operations. These tools provide three distinct capabilities:
 
 - **BrightDataDatasetTool**: Extract structured data from popular data feeds (Amazon, LinkedIn, Instagram, etc.) using pre-built datasets
 - **BrightDataSearchTool**: Perform web searches across multiple search engines with geo-targeting and device simulation
@@ -76,4 +76,4 @@ To effectively use the BrightData Tools, follow these steps:
 
 ## Conclusion
 
-By integrating BrightData Tools into your CrewAI agents, you gain access to enterprise-grade web scraping and data extraction capabilities. These tools handle complex challenges like bot protection, geo-restrictions, and data parsing, allowing you to focus on building your applications rather than managing scraping infrastructure.
+By integrating BrightData Tools into your LocalAI agents, you gain access to enterprise-grade web scraping and data extraction capabilities. These tools handle complex challenges like bot protection, geo-restrictions, and data parsing, allowing you to focus on building your applications rather than managing scraping infrastructure.

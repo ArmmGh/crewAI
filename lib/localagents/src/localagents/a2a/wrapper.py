@@ -1091,13 +1091,13 @@ def _handle_task_completion(
 
     Args:
         a2a_result: Result from A2A delegation containing task status.
-        task: CrewAI Task object to update with reference IDs.
+        task: LocalAI Task object to update with reference IDs.
         task_id_config: Current task ID (will be added to references if task completed).
         reference_task_ids: Mutable list of completed task IDs (updated in place).
         agent_config: A2A configuration with trust settings.
         turn_num: Current turn number.
-        from_task: Optional CrewAI Task for event metadata.
-        from_agent: Optional CrewAI Agent for event metadata.
+        from_task: Optional LocalAI Task for event metadata.
+        from_agent: Optional LocalAI Agent for event metadata.
         endpoint: A2A endpoint URL.
         a2a_agent_name: Name of remote A2A agent.
         agent_card: Agent card dict for event metadata.
@@ -1165,7 +1165,7 @@ def _handle_agent_response_and_continue(
     a2a_agent_name: str | None = None,
     agent_card: dict[str, Any] | None = None,
 ) -> tuple[str | None, str | None]:
-    """Handle A2A result and get CrewAI agent's response.
+    """Handle A2A result and get LocalAI agent's response.
 
     Args:
         self: The agent instance

@@ -1,13 +1,13 @@
 ---
 title: أداة معالج وكيل Merge
-description: تتيح لوكلاء CrewAI الوصول بأمان إلى تكاملات الأطراف الثالثة مثل Linear و GitHub و Slack والمزيد من خلال منصة معالج الوكيل من Merge
+description: تتيح لوكلاء LocalAI الوصول بأمان إلى تكاملات الأطراف الثالثة مثل Linear و GitHub و Slack والمزيد من خلال منصة معالج الوكيل من Merge
 icon: diagram-project
 mode: "wide"
 ---
 
 # `MergeAgentHandlerTool`
 
-تتيح `MergeAgentHandlerTool` لوكلاء CrewAI الوصول بأمان إلى تكاملات الأطراف الثالثة من خلال منصة [معالج الوكيل من Merge](https://www.merge.dev/products/merge-agent-handler). يوفر معالج الوكيل موصلات جاهزة وآمنة لأدوات شائعة مثل Linear و GitHub و Slack و Notion ومئات غيرها - جميعها مع مصادقة وصلاحيات ومراقبة مدمجة.
+تتيح `MergeAgentHandlerTool` لوكلاء LocalAI الوصول بأمان إلى تكاملات الأطراف الثالثة من خلال منصة [معالج الوكيل من Merge](https://www.merge.dev/products/merge-agent-handler). يوفر معالج الوكيل موصلات جاهزة وآمنة لأدوات شائعة مثل Linear و GitHub و Slack و Notion ومئات غيرها - جميعها مع مصادقة وصلاحيات ومراقبة مدمجة.
 
 ## التثبيت
 
@@ -29,7 +29,7 @@ uv pip install 'crewai[tools]'
 3. **تسجيل المستخدمين** الذين سيقومون بالمصادقة مع خدمات الأطراف الثالثة
 4. **الحصول على مفتاح API** من لوحة تحكم معالج الوكيل
 5. **تعيين متغير البيئة**: `export AGENT_HANDLER_API_KEY='your-key-here'`
-6. **البدء بالبناء** مع MergeAgentHandlerTool في CrewAI
+6. **البدء بالبناء** مع MergeAgentHandlerTool في LocalAI
 
 ## ملاحظات
 
@@ -56,7 +56,7 @@ linear_create_tool = MergeAgentHandlerTool.from_tool_name(
     registered_user_id="91b2b905-e866-40c8-8be2-efe53827a0aa"
 )
 
-# Create a CrewAI agent that uses the tool
+# Create a LocalAI agent that uses the tool
 project_manager = Agent(
     role='Project Manager',
     goal='Manage project tasks and issues efficiently',

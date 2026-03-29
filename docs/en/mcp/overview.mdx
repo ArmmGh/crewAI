@@ -1,6 +1,6 @@
 ---
-title: "MCP Servers as Tools in CrewAI"
-description: "Learn how to integrate MCP servers as tools in your CrewAI agents using the `crewai-tools` library."
+title: "MCP Servers as Tools in LocalAI"
+description: "Learn how to integrate MCP servers as tools in your LocalAI agents using the `crewai-tools` library."
 icon: plug
 mode: "wide"
 ---
@@ -9,7 +9,7 @@ mode: "wide"
 
 The [Model Context Protocol](https://modelcontextprotocol.io/introduction) (MCP) provides a standardized way for AI agents to provide context to LLMs by communicating with external services, known as MCP Servers.
 
-CrewAI offers **two approaches** for MCP integration:
+LocalAI offers **two approaches** for MCP integration:
 
 ### 🚀 **Simple DSL Integration** (Recommended)
 
@@ -17,7 +17,7 @@ Use the `mcps` field directly on agents for seamless MCP tool integration. The D
 
 #### String-Based References (Quick Setup)
 
-Perfect for remote HTTPS servers and connected MCP integrations from the CrewAI catalog:
+Perfect for remote HTTPS servers and connected MCP integrations from the LocalAI catalog:
 
 ```python
 from crewai import Agent
@@ -88,12 +88,12 @@ We currently support the following transport mechanisms:
 
 ## Video Tutorial
 
-Watch this video tutorial for a comprehensive guide on MCP integration with CrewAI:
+Watch this video tutorial for a comprehensive guide on MCP integration with LocalAI:
 
 <iframe
   className="w-full aspect-video rounded-xl"
   src="https://www.youtube.com/embed/TpQ45lAZh48"
-  title="CrewAI MCP Integration Guide"
+  title="LocalAI MCP Integration Guide"
   frameBorder="0"
   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
   allowFullScreen
@@ -101,7 +101,7 @@ Watch this video tutorial for a comprehensive guide on MCP integration with Crew
 
 ## Installation
 
-CrewAI MCP integration requires the `mcp` library:
+LocalAI MCP integration requires the `mcp` library:
 
 ```shell
 # For Simple DSL Integration (Recommended)
@@ -206,7 +206,7 @@ mcps=[
 
 #### Connected MCP Integrations
 
-Connect MCP servers from the CrewAI catalog or bring your own. Once connected in your account, reference them by slug:
+Connect MCP servers from the LocalAI catalog or bring your own. Once connected in your account, reference them by slug:
 
 ```python
 mcps=[
@@ -391,7 +391,7 @@ All transport types support:
 - ⚡ **Performance Optimized**: On-demand connections with schema caching
 - 🛡️ **Error Resilience**: Graceful handling of unavailable servers
 - ⏱️ **Timeout Protection**: Built-in timeouts prevent hanging connections
-- 📊 **Transparent Integration**: Works seamlessly with existing CrewAI features
+- 📊 **Transparent Integration**: Works seamlessly with existing LocalAI features
 - 🔧 **Full Transport Support**: Stdio, HTTP/Streamable HTTP, and SSE transports
 - 🎯 **Advanced Filtering**: Static and dynamic tool filtering capabilities
 - 🔐 **Flexible Authentication**: Support for headers, environment variables, and query parameters
@@ -689,7 +689,7 @@ class CrewWithCustomTimeout:
   </Card>
 </CardGroup>
 
-Checkout this repository for full demos and examples of MCP integration with CrewAI! 👇
+Checkout this repository for full demos and examples of MCP integration with LocalAI! 👇
 
 <Card
   title="GitHub Repository"
@@ -697,7 +697,7 @@ Checkout this repository for full demos and examples of MCP integration with Cre
   href="https://github.com/tonykipkemboi/crewai-mcp-demo"
   target="_blank"
 >
-  CrewAI MCP Demo
+  LocalAI MCP Demo
 </Card>
 
 ## Staying Safe with MCP
@@ -720,5 +720,5 @@ For more details, see the [Anthropic's MCP Transport Security docs](https://mode
 ### Limitations
 
 - **Supported Primitives**: Currently, `MCPServerAdapter` primarily supports adapting MCP `tools`.
-  Other MCP primitives like `prompts` or `resources` are not directly integrated as CrewAI components through this adapter at this time.
+  Other MCP primitives like `prompts` or `resources` are not directly integrated as LocalAI components through this adapter at this time.
 - **Output Handling**: The adapter typically processes the primary text output from an MCP tool (e.g., `.content[0].text`). Complex or multi-modal outputs might require custom handling if not fitting this pattern.

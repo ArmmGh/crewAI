@@ -515,7 +515,7 @@ class AnthropicCompletion(BaseLLM):
     def _convert_tools_for_interference(
         self, tools: list[dict[str, Any]]
     ) -> list[dict[str, Any]]:
-        """Convert CrewAI tool format to Anthropic tool use format."""
+        """Convert LocalAI tool format to Anthropic tool use format."""
         anthropic_tools = []
 
         for tool in tools:

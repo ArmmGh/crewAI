@@ -1,22 +1,22 @@
 ---
 title: 'نماذج اللغة الكبيرة (LLMs)'
-description: 'دليل شامل لإعداد واستخدام نماذج اللغة الكبيرة (LLMs) في مشاريع CrewAI'
+description: 'دليل شامل لإعداد واستخدام نماذج اللغة الكبيرة (LLMs) في مشاريع LocalAI'
 icon: 'microchip-ai'
 mode: "wide"
 ---
 
 ## نظرة عامة
 
-يتكامل CrewAI مع مزودي LLM متعددين من خلال حزم SDK الأصلية للمزودين، مما يمنحك المرونة لاختيار النموذج المناسب لحالة الاستخدام الخاصة بك. سيساعدك هذا الدليل على فهم كيفية إعداد واستخدام مزودي LLM المختلفين في مشاريع CrewAI.
+يتكامل LocalAI مع مزودي LLM متعددين من خلال حزم SDK الأصلية للمزودين، مما يمنحك المرونة لاختيار النموذج المناسب لحالة الاستخدام الخاصة بك. سيساعدك هذا الدليل على فهم كيفية إعداد واستخدام مزودي LLM المختلفين في مشاريع LocalAI.
 
 
 ## ما هي نماذج اللغة الكبيرة؟
 
-نماذج اللغة الكبيرة (LLMs) هي الذكاء الأساسي وراء وكلاء CrewAI. تمكّن الوكلاء من فهم السياق واتخاذ القرارات وتوليد استجابات شبيهة بالبشر. إليك ما تحتاج معرفته:
+نماذج اللغة الكبيرة (LLMs) هي الذكاء الأساسي وراء وكلاء LocalAI. تمكّن الوكلاء من فهم السياق واتخاذ القرارات وتوليد استجابات شبيهة بالبشر. إليك ما تحتاج معرفته:
 
 <CardGroup cols={2}>
   <Card title="أساسيات LLM" icon="brain">
-    نماذج اللغة الكبيرة هي أنظمة ذكاء اصطناعي مدربة على كميات هائلة من البيانات النصية. تدعم ذكاء وكلاء CrewAI، مما يمكّنهم من فهم وتوليد نصوص شبيهة بالبشر.
+    نماذج اللغة الكبيرة هي أنظمة ذكاء اصطناعي مدربة على كميات هائلة من البيانات النصية. تدعم ذكاء وكلاء LocalAI، مما يمكّنهم من فهم وتوليد نصوص شبيهة بالبشر.
   </Card>
   <Card title="نافذة السياق" icon="window">
     تحدد نافذة السياق مقدار النص الذي يمكن لـ LLM معالجته في وقت واحد. النوافذ الأكبر (مثل 128K رمز) تتيح سياقًا أكثر لكنها قد تكون أكثر تكلفة وأبطأ.
@@ -31,7 +31,7 @@ mode: "wide"
 
 ## إعداد LLM الخاص بك
 
-هناك أماكن مختلفة في كود CrewAI حيث يمكنك تحديد النموذج المُستخدم. بمجرد تحديد النموذج، ستحتاج إلى توفير الإعداد (مثل مفتاح API) لكل مزود نموذج تستخدمه. انظر قسم [أمثلة إعداد المزودين](#أمثلة-إعداد-المزودين) لمزودك.
+هناك أماكن مختلفة في كود LocalAI حيث يمكنك تحديد النموذج المُستخدم. بمجرد تحديد النموذج، ستحتاج إلى توفير الإعداد (مثل مفتاح API) لكل مزود نموذج تستخدمه. انظر قسم [أمثلة إعداد المزودين](#أمثلة-إعداد-المزودين) لمزودك.
 
 <Tabs>
   <Tab title="1. متغيرات البيئة">
@@ -107,7 +107,7 @@ mode: "wide"
 </Tabs>
 
 <Info>
-  يوفر CrewAI تكاملات SDK أصلية لـ OpenAI و Anthropic و Google (Gemini API) و Azure و AWS Bedrock -- لا حاجة لتثبيت إضافي بخلاف الملحقات الخاصة بالمزود (مثل `uv add "crewai[openai]"`).
+  يوفر LocalAI تكاملات SDK أصلية لـ OpenAI و Anthropic و Google (Gemini API) و Azure و AWS Bedrock -- لا حاجة لتثبيت إضافي بخلاف الملحقات الخاصة بالمزود (مثل `uv add "crewai[openai]"`).
 
   جميع المزودين الآخرين مدعومون بواسطة **LiteLLM**. إذا كنت تخطط لاستخدام أي منهم، أضفه كتبعية لمشروعك:
   ```bash
@@ -117,12 +117,12 @@ mode: "wide"
 
 ## أمثلة إعداد المزودين
 
-يدعم CrewAI العديد من مزودي LLM، كل منهم يقدم ميزات فريدة وطرق مصادقة وقدرات نماذج.
+يدعم LocalAI العديد من مزودي LLM، كل منهم يقدم ميزات فريدة وطرق مصادقة وقدرات نماذج.
 في هذا القسم، ستجد أمثلة مفصلة تساعدك في اختيار وإعداد وتحسين LLM الأنسب لاحتياجات مشروعك.
 
 <AccordionGroup>
   <Accordion title="OpenAI">
-    يوفر CrewAI تكاملًا أصليًا مع OpenAI من خلال OpenAI Python SDK.
+    يوفر LocalAI تكاملًا أصليًا مع OpenAI من خلال OpenAI Python SDK.
 
     ```toml Code
     # Required
@@ -263,7 +263,7 @@ mode: "wide"
     LLAMA_API_KEY=LLM|your_api_key_here
     ```
 
-    مثال الاستخدام في مشروع CrewAI:
+    مثال الاستخدام في مشروع LocalAI:
     ```python Code
     from crewai import LLM
 
@@ -292,7 +292,7 @@ mode: "wide"
   </Accordion>
 
   <Accordion title="Anthropic">
-    يوفر CrewAI تكاملًا أصليًا مع Anthropic من خلال Anthropic Python SDK.
+    يوفر LocalAI تكاملًا أصليًا مع Anthropic من خلال Anthropic Python SDK.
 
     ```toml Code
     # Required
@@ -330,7 +330,7 @@ mode: "wide"
 
     **التفكير الموسّع (Claude Sonnet 4 وما بعده):**
 
-    يدعم CrewAI ميزة التفكير الموسّع من Anthropic، التي تتيح لـ Claude التفكير في المشكلات بطريقة أكثر شبهًا بالبشر قبل الاستجابة. مفيد بشكل خاص لمهام الاستدلال والتحليل وحل المشكلات المعقدة.
+    يدعم LocalAI ميزة التفكير الموسّع من Anthropic، التي تتيح لـ Claude التفكير في المشكلات بطريقة أكثر شبهًا بالبشر قبل الاستجابة. مفيد بشكل خاص لمهام الاستدلال والتحليل وحل المشكلات المعقدة.
 
     ```python Code
     from crewai import LLM
@@ -411,7 +411,7 @@ mode: "wide"
   </Accordion>
 
   <Accordion title="Google (Gemini API)">
-    يوفر CrewAI تكاملًا أصليًا مع Google Gemini من خلال Google Gen AI Python SDK.
+    يوفر LocalAI تكاملًا أصليًا مع Google Gemini من خلال Google Gen AI Python SDK.
 
     عيّن مفتاح API في ملف `.env`. إذا كنت بحاجة إلى مفتاح، تحقق من [AI Studio](https://aistudio.google.com/apikey).
 
@@ -551,7 +551,7 @@ mode: "wide"
     vertex_credentials_json = json.dumps(vertex_credentials)
     ```
 
-    مثال الاستخدام في مشروع CrewAI:
+    مثال الاستخدام في مشروع LocalAI:
     ```python Code
     from crewai import LLM
 
@@ -569,7 +569,7 @@ mode: "wide"
   </Accordion>
 
   <Accordion title="Azure">
-    يوفر CrewAI تكاملًا أصليًا مع Azure AI Inference و Azure OpenAI من خلال Azure AI Inference Python SDK.
+    يوفر LocalAI تكاملًا أصليًا مع Azure AI Inference و Azure OpenAI من خلال Azure AI Inference Python SDK.
 
     ```toml Code
     # Required
@@ -597,7 +597,7 @@ mode: "wide"
   </Accordion>
 
   <Accordion title="AWS Bedrock">
-    يوفر CrewAI تكاملًا أصليًا مع AWS Bedrock من خلال boto3 SDK باستخدام Converse API.
+    يوفر LocalAI تكاملًا أصليًا مع AWS Bedrock من خلال boto3 SDK باستخدام Converse API.
 
     ```toml Code
     # Required
@@ -715,7 +715,7 @@ mode: "wide"
     AWS_DEFAULT_REGION=<your-region>
     ```
 
-    مثال الاستخدام في مشروع CrewAI:
+    مثال الاستخدام في مشروع LocalAI:
     ```python Code
     llm = LLM(
         model="sagemaker/<my-endpoint>"
@@ -734,7 +734,7 @@ mode: "wide"
     MISTRAL_API_KEY=<your-api-key>
     ```
 
-    مثال الاستخدام في مشروع CrewAI:
+    مثال الاستخدام في مشروع LocalAI:
     ```python Code
     llm = LLM(
         model="mistral/mistral-large-latest",
@@ -754,7 +754,7 @@ mode: "wide"
     NVIDIA_API_KEY=<your-api-key>
     ```
 
-    مثال الاستخدام في مشروع CrewAI:
+    مثال الاستخدام في مشروع LocalAI:
     ```python Code
     llm = LLM(
         model="nvidia_nim/meta/llama3-70b-instruct",
@@ -891,7 +891,7 @@ mode: "wide"
     GROQ_API_KEY=<your-api-key>
     ```
 
-    مثال الاستخدام في مشروع CrewAI:
+    مثال الاستخدام في مشروع LocalAI:
     ```python Code
     llm = LLM(
         model="groq/llama-3.2-90b-text-preview",
@@ -923,7 +923,7 @@ mode: "wide"
     WATSONX_DEPLOYMENT_SPACE_ID=<your-space-id>
     ```
 
-    مثال الاستخدام في مشروع CrewAI:
+    مثال الاستخدام في مشروع LocalAI:
     ```python Code
     llm = LLM(
         model="watsonx/meta-llama/llama-3-1-70b-instruct",
@@ -961,7 +961,7 @@ mode: "wide"
     FIREWORKS_API_KEY=<your-api-key>
     ```
 
-    مثال الاستخدام في مشروع CrewAI:
+    مثال الاستخدام في مشروع LocalAI:
     ```python Code
     llm = LLM(
         model="fireworks_ai/accounts/fireworks/models/llama-v3-70b-instruct",
@@ -981,7 +981,7 @@ mode: "wide"
     PERPLEXITY_API_KEY=<your-api-key>
     ```
 
-    مثال الاستخدام في مشروع CrewAI:
+    مثال الاستخدام في مشروع LocalAI:
     ```python Code
     llm = LLM(
         model="llama-3.1-sonar-large-128k-online",
@@ -1001,7 +1001,7 @@ mode: "wide"
     HF_TOKEN=<your-api-key>
     ```
 
-    مثال الاستخدام في مشروع CrewAI:
+    مثال الاستخدام في مشروع LocalAI:
     ```python Code
     llm = LLM(
         model="huggingface/meta-llama/Meta-Llama-3.1-8B-Instruct"
@@ -1021,7 +1021,7 @@ mode: "wide"
     SAMBANOVA_API_KEY=<your-api-key>
     ```
 
-    مثال الاستخدام في مشروع CrewAI:
+    مثال الاستخدام في مشروع LocalAI:
     ```python Code
     llm = LLM(
         model="sambanova/Meta-Llama-3.1-8B-Instruct",
@@ -1049,7 +1049,7 @@ mode: "wide"
     CEREBRAS_API_KEY=<your-api-key>
     ```
 
-    مثال الاستخدام في مشروع CrewAI:
+    مثال الاستخدام في مشروع LocalAI:
     ```python Code
     llm = LLM(
         model="cerebras/llama3.1-70b",
@@ -1078,7 +1078,7 @@ mode: "wide"
     OPENROUTER_API_KEY=<your-api-key>
     ```
 
-    مثال الاستخدام في مشروع CrewAI:
+    مثال الاستخدام في مشروع LocalAI:
     ```python Code
     llm = LLM(
         model="openrouter/deepseek/deepseek-r1",
@@ -1105,7 +1105,7 @@ mode: "wide"
     NEBIUS_API_KEY=<your-api-key>
     ```
 
-    مثال الاستخدام في مشروع CrewAI:
+    مثال الاستخدام في مشروع LocalAI:
     ```python Code
     llm = LLM(
         model="nebius/Qwen/Qwen3-30B-A3B"
@@ -1129,7 +1129,7 @@ mode: "wide"
 
 ## بث الاستجابات
 
-يدعم CrewAI بث الاستجابات من LLMs، مما يتيح لتطبيقك تلقي ومعالجة المخرجات في الوقت الفعلي فور توليدها.
+يدعم LocalAI بث الاستجابات من LLMs، مما يتيح لتطبيقك تلقي ومعالجة المخرجات في الوقت الفعلي فور توليدها.
 
 <Tabs>
   <Tab title="الإعداد الأساسي">
@@ -1149,7 +1149,7 @@ mode: "wide"
   </Tab>
 
   <Tab title="معالجة الأحداث">
-    يُصدر CrewAI أحداثًا لكل جزء يتم تلقيه أثناء البث:
+    يُصدر LocalAI أحداثًا لكل جزء يتم تلقيه أثناء البث:
 
     ```python
     from crewai.events import (
@@ -1173,7 +1173,7 @@ mode: "wide"
   </Tab>
 
   <Tab title="تتبع Agent والمهمة">
-    جميع أحداث LLM في CrewAI تتضمن معلومات Agent والمهمة، مما يتيح لك تتبع وتصفية تفاعلات LLM بواسطة وكلاء أو مهام محددة:
+    جميع أحداث LLM في LocalAI تتضمن معلومات Agent والمهمة، مما يتيح لك تتبع وتصفية تفاعلات LLM بواسطة وكلاء أو مهام محددة:
 
     ```python
     from crewai import LLM, Agent, Task, Crew
@@ -1224,7 +1224,7 @@ mode: "wide"
 
 ## استدعاءات LLM غير المتزامنة
 
-يدعم CrewAI استدعاءات LLM غير المتزامنة لأداء وتزامن محسّنين في سير عمل الذكاء الاصطناعي. تتيح لك الاستدعاءات غير المتزامنة تشغيل طلبات LLM متعددة بشكل متزامن دون حجب، مما يجعلها مثالية لتطبيقات الإنتاجية العالية وعمليات الوكلاء المتوازية.
+يدعم LocalAI استدعاءات LLM غير المتزامنة لأداء وتزامن محسّنين في سير عمل الذكاء الاصطناعي. تتيح لك الاستدعاءات غير المتزامنة تشغيل طلبات LLM متعددة بشكل متزامن دون حجب، مما يجعلها مثالية لتطبيقات الإنتاجية العالية وعمليات الوكلاء المتوازية.
 
 <Tabs>
   <Tab title="الاستخدام الأساسي">
@@ -1268,7 +1268,7 @@ mode: "wide"
 
 ## استدعاءات LLM المهيكلة
 
-يدعم CrewAI الاستجابات المهيكلة من استدعاءات LLM من خلال السماح لك بتحديد `response_format` باستخدام نموذج Pydantic. يمكّن هذا الإطار من تحليل المخرجات والتحقق منها تلقائيًا، مما يسهّل دمج الاستجابة في تطبيقك دون معالجة لاحقة يدوية.
+يدعم LocalAI الاستجابات المهيكلة من استدعاءات LLM من خلال السماح لك بتحديد `response_format` باستخدام نموذج Pydantic. يمكّن هذا الإطار من تحليل المخرجات والتحقق منها تلقائيًا، مما يسهّل دمج الاستجابة في تطبيقك دون معالجة لاحقة يدوية.
 
 ```python Code
 from crewai import LLM
@@ -1297,12 +1297,12 @@ print(response)
 
 <AccordionGroup>
   <Accordion title="إدارة نافذة السياق">
-    يتضمن CrewAI ميزات إدارة سياق ذكية:
+    يتضمن LocalAI ميزات إدارة سياق ذكية:
 
     ```python
     from crewai import LLM
 
-    # CrewAI automatically handles:
+    # LocalAI automatically handles:
     # 1. Token counting and tracking
     # 2. Content summarization when needed
     # 3. Task splitting for large contexts
@@ -1359,7 +1359,7 @@ print(response)
   </Accordion>
 
   <Accordion title="إسقاط المعاملات الإضافية">
-    يستخدم CrewAI داخليًا حزم SDK أصلية لاستدعاءات LLM، مما يتيح لك إسقاط معاملات إضافية غير مطلوبة لحالة الاستخدام الخاصة بك. يمكن أن يساعد هذا في تبسيط كودك وتقليل تعقيد إعداد LLM.
+    يستخدم LocalAI داخليًا حزم SDK أصلية لاستدعاءات LLM، مما يتيح لك إسقاط معاملات إضافية غير مطلوبة لحالة الاستخدام الخاصة بك. يمكن أن يساعد هذا في تبسيط كودك وتقليل تعقيد إعداد LLM.
 
     ```python
     from crewai import LLM
@@ -1376,7 +1376,7 @@ print(response)
   </Accordion>
 
   <Accordion title="معترضات النقل">
-    يوفر CrewAI معترضات رسائل لعدة مزودين، مما يتيح لك الربط بدورات الطلب/الاستجابة على مستوى طبقة النقل.
+    يوفر LocalAI معترضات رسائل لعدة مزودين، مما يتيح لك الربط بدورات الطلب/الاستجابة على مستوى طبقة النقل.
 
     **المزودون المدعومون:**
     - OpenAI

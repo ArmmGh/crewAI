@@ -7,12 +7,12 @@ mode: "wide"
 
 ## Overview
 
-The Tool Repository is a package manager for CrewAI tools. It allows users to publish, install, and manage tools that integrate with CrewAI crews and flows.
+The Tool Repository is a package manager for LocalAI tools. It allows users to publish, install, and manage tools that integrate with LocalAI crews and flows.
 
 Tools can be:
 
 - **Private**: accessible only within your organization (default)
-- **Public**: accessible to all CrewAI users if published with the `--public` flag
+- **Public**: accessible to all LocalAI users if published with the `--public` flag
 
 The repository is not a version control system. Use Git to track code changes and enable collaboration.
 
@@ -20,11 +20,11 @@ The repository is not a version control system. Use Git to track code changes an
 
 Before using the Tool Repository, ensure you have:
 
-- A [CrewAI AMP](https://app.crewai.com) account
-- [CrewAI CLI](/en/concepts/cli#cli) installed
+- A [LocalAI AMP](https://app.crewai.com) account
+- [LocalAI CLI](/en/concepts/cli#cli) installed
 - uv>=0.5.0 installed. Check out [how to upgrade](https://docs.astral.sh/uv/getting-started/installation/#upgrading-uv)
 - [Git](https://git-scm.com) installed and configured
-- Access permissions to publish or install tools in your CrewAI AMP organization
+- Access permissions to publish or install tools in your LocalAI AMP organization
 
 ## Installing Tools
 
@@ -54,11 +54,11 @@ researcher = Agent(
 
 ## Adding other packages after installing a tool
 
-After installing a tool from the CrewAI AMP Tool Repository, you need to use the `crewai uv` command to add other packages to your project.
+After installing a tool from the LocalAI AMP Tool Repository, you need to use the `crewai uv` command to add other packages to your project.
 Using pure `uv` commands will fail due to authentication to tool repository being handled by the CLI. By using the `crewai uv` command, you can add other packages to your project without having to worry about authentication.
 Any `uv` command can be used with the `crewai uv` command, making it a powerful tool for managing your project's dependencies without the hassle of managing authentication through environment variables or other methods.
 
-Say that you have installed a custom tool from the CrewAI AMP Tool Repository called "my-tool":
+Say that you have installed a custom tool from the LocalAI AMP Tool Repository called "my-tool":
 
 ```bash
 crewai tool install my-tool
@@ -131,7 +131,7 @@ crewai tool publish
 
 To delete a tool:
 
-1. Go to [CrewAI AMP](https://app.crewai.com)
+1. Go to [LocalAI AMP](https://app.crewai.com)
 2. Navigate to **Tools**
 3. Select the tool
 4. Click **Delete**
@@ -146,7 +146,7 @@ Every published version undergoes automated security checks, and are only availa
 
 You can check the security check status of a tool at:
 
-`CrewAI AMP > Tools > Your Tool > Versions`
+`LocalAI AMP > Tools > Your Tool > Versions`
 
 <Card title="Need Help?" icon="headset" href="mailto:support@crewai.com">
   Contact our support team for assistance with API integration or

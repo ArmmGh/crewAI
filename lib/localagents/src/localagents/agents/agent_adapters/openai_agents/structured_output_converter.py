@@ -1,4 +1,4 @@
-"""OpenAI structured output converter for CrewAI task integration.
+"""OpenAI structured output converter for LocalAI task integration.
 
 This module contains the OpenAIConverterAdapter class that handles structured
 output conversion for OpenAI agents, supporting JSON and Pydantic model formats.

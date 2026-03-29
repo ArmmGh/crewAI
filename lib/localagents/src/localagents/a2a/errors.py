@@ -1,7 +1,7 @@
 """A2A error codes and error response utilities.
 
 This module provides a centralized mapping of all A2A protocol error codes
-as defined in the A2A specification, plus custom CrewAI extensions.
+as defined in the A2A specification, plus custom LocalAI extensions.
 
 Error codes follow JSON-RPC 2.0 conventions:
 - -32700 to -32600: Standard JSON-RPC errors
@@ -66,7 +66,7 @@ class A2AErrorCode(IntEnum):
     AUTHENTICATED_EXTENDED_CARD_NOT_CONFIGURED = -32007
     """Authenticated extended card feature is not configured."""
 
-    # CrewAI Custom Extensions (-32768 to -32100)
+    # LocalAI Custom Extensions (-32768 to -32100)
     UNSUPPORTED_VERSION = -32009
     """The requested A2A protocol version is not supported."""
 

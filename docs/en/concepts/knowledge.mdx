@@ -1,13 +1,13 @@
 ---
 title: Knowledge
-description: What is knowledge in CrewAI and how to use it.
+description: What is knowledge in LocalAI and how to use it.
 icon: book
 mode: "wide"
 ---
 
 ## Overview
 
-Knowledge in CrewAI is a powerful system that allows AI agents to access and utilize external information sources during their tasks.
+Knowledge in LocalAI is a powerful system that allows AI agents to access and utilize external information sources during their tasks.
 Think of it as giving your agents a reference library they can consult while working.
 
 <Info>
@@ -27,7 +27,7 @@ Also, use relative paths from the `knowledge` directory when creating the source
 
 ### Vector store (RAG) client configuration
 
-CrewAI exposes a provider-neutral RAG client abstraction for vector stores. The default provider is ChromaDB, and Qdrant is supported as well. You can switch providers using configuration utilities.
+LocalAI exposes a provider-neutral RAG client abstraction for vector stores. The default provider is ChromaDB, and Qdrant is supported as well. You can switch providers using configuration utilities.
 
 Supported today:
 - ChromaDB (default)
@@ -51,7 +51,7 @@ client = qdrant_client  # or chromadb_client
 client.create_collection(collection_name="docs")
 client.add_documents(
     collection_name="docs",
-    documents=[{"id": "1", "content": "CrewAI enables collaborative AI agents."}],
+    documents=[{"id": "1", "content": "LocalAI enables collaborative AI agents."}],
 )
 results = client.search(collection_name="docs", query="collaborative agents", limit=3)
 
@@ -152,7 +152,7 @@ result = crew.kickoff(
 
 ## Supported Knowledge Sources
 
-CrewAI supports various types of knowledge sources out of the box:
+LocalAI supports various types of knowledge sources out of the box:
 
 <CardGroup cols={2}>
   <Card title="Text Sources" icon="text">
@@ -219,7 +219,7 @@ json_source = JSONKnowledgeSource(
 ## Agent vs Crew Knowledge: Complete Guide
 
 <Info>
-**Understanding Knowledge Levels**: CrewAI supports knowledge at both agent and crew levels. This section clarifies exactly how each works, when they're initialized, and addresses common misconceptions about dependencies.
+**Understanding Knowledge Levels**: LocalAI supports knowledge at both agent and crew levels. This section clarifies exactly how each works, when they're initialized, and addresses common misconceptions about dependencies.
 </Info>
 
 ### How Knowledge Initialization Actually Works
@@ -282,7 +282,7 @@ agent_collection_name = agent.role  # e.g., "Technical Specialist"
 crew_collection_name = "crew"
 
 # Both stored in same ChromaDB instance but different collections
-# Path: ~/.local/share/CrewAI/{project}/knowledge/
+# Path: ~/.local/share/LocalAI/{project}/knowledge/
 #   ├── crew/                    # Crew knowledge collection
 #   ├── Technical Specialist/    # Agent knowledge collection
 #   └── Another Agent Role/      # Another agent's collection
@@ -441,18 +441,18 @@ Custom storage configuration for managing how the knowledge is stored and retrie
 ## Knowledge Storage Transparency
 
 <Info>
-**Understanding Knowledge Storage**: CrewAI automatically stores knowledge sources in platform-specific directories using ChromaDB for vector storage. Understanding these locations and defaults helps with production deployments, debugging, and storage management.
+**Understanding Knowledge Storage**: LocalAI automatically stores knowledge sources in platform-specific directories using ChromaDB for vector storage. Understanding these locations and defaults helps with production deployments, debugging, and storage management.
 </Info>
 
-### Where CrewAI Stores Knowledge Files
+### Where LocalAI Stores Knowledge Files
 
-By default, CrewAI uses the same storage system as memory, storing knowledge in platform-specific directories:
+By default, LocalAI uses the same storage system as memory, storing knowledge in platform-specific directories:
 
 #### Default Storage Locations by Platform
 
 **macOS:**
 ```
-~/Library/Application Support/CrewAI/{project_name}/
+~/Library/Application Support/LocalAI/{project_name}/
 └── knowledge/                    # Knowledge ChromaDB files
     ├── chroma.sqlite3           # ChromaDB metadata
     ├── {collection_id}/         # Vector embeddings
@@ -461,7 +461,7 @@ By default, CrewAI uses the same storage system as memory, storing knowledge in 
 
 **Linux:**
 ```
-~/.local/share/CrewAI/{project_name}/
+~/.local/share/LocalAI/{project_name}/
 └── knowledge/
     ├── chroma.sqlite3
     ├── {collection_id}/
@@ -470,7 +470,7 @@ By default, CrewAI uses the same storage system as memory, storing knowledge in 
 
 **Windows:**
 ```
-C:\Users\{username}\AppData\Local\CrewAI\{project_name}\
+C:\Users\{username}\AppData\Local\LocalAI\{project_name}\
 └── knowledge\
     ├── chroma.sqlite3
     ├── {collection_id}\
@@ -479,7 +479,7 @@ C:\Users\{username}\AppData\Local\CrewAI\{project_name}\
 
 ### Finding Your Knowledge Storage Location
 
-To see exactly where CrewAI is storing your knowledge files:
+To see exactly where LocalAI is storing your knowledge files:
 
 ```python
 from crewai.utilities.paths import db_storage_path
@@ -515,7 +515,7 @@ else:
 import os
 from crewai import Crew
 
-# Set custom storage location for all CrewAI data
+# Set custom storage location for all LocalAI data
 os.environ["CREWAI_STORAGE_DIR"] = "./my_project_storage"
 
 # All knowledge will now be stored in ./my_project_storage/knowledge/
@@ -564,7 +564,7 @@ os.environ["CREWAI_STORAGE_DIR"] = str(knowledge_dir)
 ### Default Embedding Provider Behavior
 
 <Info>
-**Default Embedding Provider**: CrewAI defaults to OpenAI embeddings (`text-embedding-3-small`) for knowledge storage, even when using different LLM providers. You can easily customize this to match your setup.
+**Default Embedding Provider**: LocalAI defaults to OpenAI embeddings (`text-embedding-3-small`) for knowledge storage, even when using different LLM providers. You can easily customize this to match your setup.
 </Info>
 
 #### Understanding Default Behavior
@@ -580,7 +580,7 @@ agent = Agent(
     llm=LLM(provider="anthropic", model="claude-3-sonnet")  # Using Claude
 )
 
-# CrewAI will still use OpenAI embeddings by default for knowledge
+# LocalAI will still use OpenAI embeddings by default for knowledge
 # This ensures consistency but may not match your LLM provider preference
 knowledge_source = StringKnowledgeSource(content="Research data...")
 
@@ -666,7 +666,7 @@ agent = Agent(
 
 ### Query Rewriting
 
-CrewAI implements an intelligent query rewriting mechanism to optimize knowledge retrieval. When an agent needs to search through knowledge sources, the raw task prompt is automatically transformed into a more effective search query.
+LocalAI implements an intelligent query rewriting mechanism to optimize knowledge retrieval. When an agent needs to search through knowledge sources, the raw task prompt is automatically transformed into a more effective search query.
 
 #### How Query Rewriting Works
 
@@ -703,7 +703,7 @@ The rewritten query is more focused on the core information need and removes irr
 
 ### Knowledge Events
 
-CrewAI emits events during the knowledge retrieval process that you can listen for using the event system. These events allow you to monitor, debug, and analyze how knowledge is being retrieved and used by your agents.
+LocalAI emits events during the knowledge retrieval process that you can listen for using the event system. These events allow you to monitor, debug, and analyze how knowledge is being retrieved and used by your agents.
 
 #### Available Knowledge Events
 
@@ -743,7 +743,7 @@ For more information on using events, see the [Event Listeners](/en/concepts/eve
 
 ### Custom Knowledge Sources
 
-CrewAI allows you to create custom knowledge sources for any type of data by extending the `BaseKnowledgeSource` class. Let's create a practical example that fetches and processes space news articles.
+LocalAI allows you to create custom knowledge sources for any type of data by extending the `BaseKnowledgeSource` class. Let's create a practical example that fetches and processes space news articles.
 
 #### Space News Knowledge Source Example
 
@@ -936,7 +936,7 @@ import chromadb
 from crewai.utilities.paths import db_storage_path
 import os
 
-# Connect to CrewAI's knowledge ChromaDB
+# Connect to LocalAI's knowledge ChromaDB
 knowledge_path = os.path.join(db_storage_path(), "knowledge")
 
 if os.path.exists(knowledge_path):
@@ -1013,7 +1013,7 @@ crew = Crew(
 **"ChromaDB permission denied" errors:**
 ```bash
 # Fix storage permissions
-chmod -R 755 ~/.local/share/CrewAI/
+chmod -R 755 ~/.local/share/LocalAI/
 ```
 
 **Knowledge not persisting between runs:**
@@ -1043,7 +1043,7 @@ crew.reset_memories(command_type='knowledge')
 
 ### Clearing Knowledge
 
-If you need to clear the knowledge stored in CrewAI, you can use the `crewai reset-memories` command with the `--knowledge` option.
+If you need to clear the knowledge stored in LocalAI, you can use the `crewai reset-memories` command with the `--knowledge` option.
 
 ```bash Command
 crewai reset-memories --knowledge
@@ -1067,10 +1067,10 @@ This is useful when you've updated your knowledge sources and want to ensure tha
   </Accordion>
 
   <Accordion title="One Time Knowledge">
-    - With the typical file structure provided by CrewAI, knowledge sources are embedded every time the kickoff is triggered.
+    - With the typical file structure provided by LocalAI, knowledge sources are embedded every time the kickoff is triggered.
     - If the knowledge sources are large, this leads to inefficiency and increased latency, as the same data is embedded each time.
     - To resolve this, directly initialize the knowledge parameter instead of the knowledge_sources parameter.
-    - Link to the issue to get complete idea [Github Issue](https://github.com/crewAIInc/crewAI/issues/2755)
+    - Link to the issue to get complete idea [Github Issue](https://github.com/localAIInc/localAI/issues/2755)
   </Accordion>
 
   <Accordion title="Knowledge Management">

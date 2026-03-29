@@ -1,19 +1,19 @@
 ---
 title: "Preparar para Implantação"
-description: "Certifique-se de que seu Crew ou Flow está pronto para implantação no CrewAI AMP"
+description: "Certifique-se de que seu Crew ou Flow está pronto para implantação no LocalAI AMP"
 icon: "clipboard-check"
 mode: "wide"
 ---
 
 <Note>
-  Antes de implantar no CrewAI AMP, é crucial verificar se seu projeto está estruturado corretamente.
+  Antes de implantar no LocalAI AMP, é crucial verificar se seu projeto está estruturado corretamente.
   Tanto Crews quanto Flows podem ser implantados como "automações", mas eles têm estruturas de projeto
   e requisitos diferentes que devem ser atendidos para uma implantação bem-sucedida.
 </Note>
 
 ## Entendendo Automações
 
-No CrewAI AMP, **automações** é o termo geral para projetos de IA Agêntica implantáveis. Uma automação pode ser:
+No LocalAI AMP, **automações** é o termo geral para projetos de IA Agêntica implantáveis. Uma automação pode ser:
 
 - **Um Crew**: Uma equipe independente de agentes de IA trabalhando juntos em tarefas
 - **Um Flow**: Um workflow orquestrado que pode combinar múltiplos crews, chamadas diretas de LLM e lógica procedural
@@ -135,7 +135,7 @@ Seu `pyproject.toml` deve incluir a seção `[tool.crewai]` correta:
 
 ### 2. Garantir que o Arquivo uv.lock Existe
 
-CrewAI usa `uv` para gerenciamento de dependências. O arquivo `uv.lock` garante builds reproduzíveis e é **obrigatório** para implantação.
+LocalAI usa `uv` para gerenciamento de dependências. O arquivo `uv.lock` garante builds reproduzíveis e é **obrigatório** para implantação.
 
 ```bash
 # Gerar ou atualizar o arquivo lock
@@ -306,6 +306,6 @@ grep -r "@CrewBase" . --include="*.py"
 Uma vez que seu projeto passar por todos os itens do checklist, você está pronto para implantar:
 
 <Card title="Deploy para AMP" icon="rocket" href="/pt-BR/enterprise/guides/deploy-to-amp">
-  Siga o guia de implantação para implantar seu Crew ou Flow no CrewAI AMP usando
+  Siga o guia de implantação para implantar seu Crew ou Flow no LocalAI AMP usando
   a CLI, interface web ou integração CI/CD.
 </Card>

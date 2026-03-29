@@ -1,13 +1,13 @@
 ---
 title: تكامل Datadog
-description: تعلم كيفية دمج Datadog مع CrewAI لإرسال تتبعات مراقبة LLM إلى Datadog.
+description: تعلم كيفية دمج Datadog مع LocalAI لإرسال تتبعات مراقبة LLM إلى Datadog.
 icon: dog
 mode: "wide"
 ---
 
-# دمج Datadog مع CrewAI
+# دمج Datadog مع LocalAI
 
-سيوضح هذا الدليل كيفية دمج **[Datadog LLM Observability](https://docs.datadoghq.com/llm_observability/)** مع **CrewAI** باستخدام [أداة Datadog للتجهيز التلقائي](https://docs.datadoghq.com/llm_observability/instrumentation/auto_instrumentation?tab=python). بنهاية هذا الدليل، ستتمكن من إرسال تتبعات مراقبة LLM إلى Datadog وعرض تشغيلات وكلاء CrewAI في [عرض التنفيذ الوكيلي](https://docs.datadoghq.com/llm_observability/monitoring/agent_monitoring) من Datadog LLM Observability.
+سيوضح هذا الدليل كيفية دمج **[Datadog LLM Observability](https://docs.datadoghq.com/llm_observability/)** مع **LocalAI** باستخدام [أداة Datadog للتجهيز التلقائي](https://docs.datadoghq.com/llm_observability/instrumentation/auto_instrumentation?tab=python). بنهاية هذا الدليل، ستتمكن من إرسال تتبعات مراقبة LLM إلى Datadog وعرض تشغيلات وكلاء LocalAI في [عرض التنفيذ الوكيلي](https://docs.datadoghq.com/llm_observability/monitoring/agent_monitoring) من Datadog LLM Observability.
 
 ## ما هو Datadog LLM Observability؟
 
@@ -45,7 +45,7 @@ export GEMINI_API_KEY=<YOUR_GEMINI_API_KEY>
 ...
 ```
 
-### إنشاء تطبيق وكيل CrewAI
+### إنشاء تطبيق وكيل LocalAI
 
 ```python
 # crewai_agent.py
@@ -106,4 +106,4 @@ ddtrace-run python crewai_agent.py
 ## المراجع
 
 - [Datadog LLM Observability](https://www.datadoghq.com/product/llm-observability/)
-- [التجهيز التلقائي لـ CrewAI من Datadog LLM Observability](https://docs.datadoghq.com/llm_observability/instrumentation/auto_instrumentation?tab=python#crew-ai)
+- [التجهيز التلقائي لـ LocalAI من Datadog LLM Observability](https://docs.datadoghq.com/llm_observability/instrumentation/auto_instrumentation?tab=python#crew-ai)

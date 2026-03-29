@@ -1986,7 +1986,7 @@ class BedrockCompletion(BaseLLM):
     def _format_tools_for_converse(
         tools: list[dict[str, Any]],
     ) -> list[ConverseToolTypeDef]:
-        """Convert CrewAI tools to Converse API format following AWS specification."""
+        """Convert LocalAI tools to Converse API format following AWS specification."""
         from crewai.llms.providers.utils.common import safe_tool_conversion
 
         converse_tools: list[ConverseToolTypeDef] = []

@@ -1,6 +1,6 @@
-"""OpenAI agent tool adapter for CrewAI tool integration.
+"""OpenAI agent tool adapter for LocalAI tool integration.
 
-This module contains the OpenAIAgentToolAdapter class that converts CrewAI tools
+This module contains the OpenAIAgentToolAdapter class that converts LocalAI tools
 to OpenAI Assistant-compatible format using the agents library.
 """
 
@@ -34,7 +34,7 @@ Tool = agents_module.Tool
 class OpenAIAgentToolAdapter(BaseToolAdapter):
     """Adapter for OpenAI Assistant tools.
 
-    Converts CrewAI BaseTool instances to OpenAI Assistant FunctionTool format
+    Converts LocalAI BaseTool instances to OpenAI Assistant FunctionTool format
     that can be used by OpenAI agents.
     """
 
@@ -42,7 +42,7 @@ class OpenAIAgentToolAdapter(BaseToolAdapter):
         """Initialize the tool adapter.
 
         Args:
-            tools: Optional list of CrewAI tools to adapt.
+            tools: Optional list of LocalAI tools to adapt.
         """
         super().__init__()
         self.original_tools: list[BaseTool] = tools or []
@@ -55,7 +55,7 @@ class OpenAIAgentToolAdapter(BaseToolAdapter):
         OpenAI Assistant format.
 
         Args:
-            tools: List of CrewAI tools to configure.
+            tools: List of LocalAI tools to configure.
         """
         if self.original_tools:
             all_tools: list[BaseTool] = tools + self.original_tools
@@ -68,10 +68,10 @@ class OpenAIAgentToolAdapter(BaseToolAdapter):
     def _convert_tools_to_openai_format(
         tools: list[BaseTool] | None,
     ) -> list[OpenAITool]:
-        """Convert CrewAI tools to OpenAI Assistant tool format.
+        """Convert LocalAI tools to OpenAI Assistant tool format.
 
         Args:
-            tools: List of CrewAI tools to convert.
+            tools: List of LocalAI tools to convert.
 
         Returns:
             List of OpenAI Assistant FunctionTool instances.
@@ -83,14 +83,14 @@ class OpenAIAgentToolAdapter(BaseToolAdapter):
             """Create a wrapper function that handles the OpenAI function tool interface.
 
             Args:
-                tool: The CrewAI tool to wrap.
+                tool: The LocalAI tool to wrap.
 
             Returns:
                 Async wrapper function for OpenAI agent integration.
             """
 
             async def wrapper(context_wrapper: Any, arguments: Any) -> Any:
-                """Wrapper function to adapt CrewAI tool calls to OpenAI format.
+                """Wrapper function to adapt LocalAI tool calls to OpenAI format.
 
                 Args:
                     context_wrapper: OpenAI context wrapper.

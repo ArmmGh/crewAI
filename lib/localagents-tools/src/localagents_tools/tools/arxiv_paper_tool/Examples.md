@@ -1,6 +1,6 @@
-### Example 1: Fetching Research Papers from arXiv with CrewAI
+### Example 1: Fetching Research Papers from arXiv with LocalAI
 
-This example demonstrates how to build a simple CrewAI workflow that automatically searches for and downloads academic papers from [arXiv.org](https://arxiv.org). The setup uses:
+This example demonstrates how to build a simple LocalAI workflow that automatically searches for and downloads academic papers from [arXiv.org](https://arxiv.org). The setup uses:
 
 * A custom `ArxivPaperTool` to fetch metadata and download PDFs
 * A single `Agent` tasked with locating relevant papers based on a given research topic

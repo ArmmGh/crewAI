@@ -1,6 +1,6 @@
 from unittest.mock import MagicMock, Mock, patch
 
-from crewai_tools.adapters.crewai_rag_adapter import CrewAIRagAdapter
+from crewai_tools.adapters.crewai_rag_adapter import LocalAIRagAdapter
 from crewai_tools.tools.pdf_search_tool.pdf_search_tool import PDFSearchTool
 
 
@@ -47,7 +47,7 @@ def test_pdf_search_tool_with_azure_config_without_env_vars(
         tool = PDFSearchTool(config=config)
 
         assert tool.adapter is not None
-        assert isinstance(tool.adapter, CrewAIRagAdapter)
+        assert isinstance(tool.adapter, LocalAIRagAdapter)
         assert tool.name == "Search a PDF's content"
 
 
@@ -80,7 +80,7 @@ def test_pdf_search_tool_with_openai_config_without_env_vars(
         tool = PDFSearchTool(config=config)
 
         assert tool.adapter is not None
-        assert isinstance(tool.adapter, CrewAIRagAdapter)
+        assert isinstance(tool.adapter, LocalAIRagAdapter)
 
 
 @patch("crewai_tools.adapters.crewai_rag_adapter.create_client")
@@ -113,4 +113,4 @@ def test_pdf_search_tool_with_vectordb_and_embedding_config(
         tool = PDFSearchTool(config=config)
 
         assert tool.adapter is not None
-        assert isinstance(tool.adapter, CrewAIRagAdapter)
+        assert isinstance(tool.adapter, LocalAIRagAdapter)

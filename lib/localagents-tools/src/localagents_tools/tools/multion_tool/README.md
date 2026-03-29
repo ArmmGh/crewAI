@@ -1,7 +1,7 @@
 # MultiOnTool Documentation
 
 ## Description
-The MultiOnTool, integrated within the crewai_tools package, empowers CrewAI agents with the capability to navigate and interact with the web through natural language instructions. Leveraging the Multion API, this tool facilitates seamless web browsing, making it an essential asset for projects requiring dynamic web data interaction.
+The MultiOnTool, integrated within the crewai_tools package, empowers LocalAI agents with the capability to navigate and interact with the web through natural language instructions. Leveraging the Multion API, this tool facilitates seamless web browsing, making it an essential asset for projects requiring dynamic web data interaction.
 
 ## Installation
 Ensure the `crewai[tools]` package is installed in your environment to use the MultiOnTool. If it's not already installed, you can add it using the command below:
@@ -48,6 +48,6 @@ crew.kickoff()
 ## Steps to Get Started
 To effectively use the `MultiOnTool`, follow these steps:
 
-1. **Install CrewAI**: Confirm that the `crewai[tools]` package is installed in your Python environment.
+1. **Install LocalAI**: Confirm that the `crewai[tools]` package is installed in your Python environment.
 2. **Install and use MultiOn**: Follow MultiOn documentation for installing the MultiOn Browser Extension (https://docs.multion.ai/learn/browser-extension).
 3. **Enable API Usage**: Click on the MultiOn extension in the extensions folder of your browser (not the hovering MultiOn icon on the web page) to open the extension configurations. Click the API Enabled toggle to enable the API                             

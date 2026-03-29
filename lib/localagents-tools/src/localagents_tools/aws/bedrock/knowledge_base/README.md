@@ -1,6 +1,6 @@
 # BedrockKBRetrieverTool
 
-The `BedrockKBRetrieverTool` enables CrewAI agents to retrieve information from Amazon Bedrock Knowledge Bases using natural language queries.
+The `BedrockKBRetrieverTool` enables LocalAI agents to retrieve information from Amazon Bedrock Knowledge Bases using natural language queries.
 
 ## Installation
 
@@ -16,7 +16,7 @@ pip install 'crewai[tools]'
 
 ## Usage
 
-Here's how to use the tool with a CrewAI agent:
+Here's how to use the tool with a LocalAI agent:
 
 ```python
 from crewai import Agent, Task, Crew
@@ -28,7 +28,7 @@ kb_tool = BedrockKBRetrieverTool(
     number_of_results=5
 )
 
-# Create a CrewAI agent that uses the tool
+# Create a LocalAI agent that uses the tool
 researcher = Agent(
     role='Knowledge Base Researcher',
     goal='Find information about company policies',
@@ -134,17 +134,17 @@ policy_expert = Agent(
 ## Use Cases
 
 ### Enterprise Knowledge Integration
-- Enable CrewAI agents to access your organization's proprietary knowledge without exposing sensitive data
+- Enable LocalAI agents to access your organization's proprietary knowledge without exposing sensitive data
 - Allow agents to make decisions based on your company's specific policies, procedures, and documentation
 - Create agents that can answer questions based on your internal documentation while maintaining data security
 
 ### Specialized Domain Knowledge
-- Connect CrewAI agents to domain-specific knowledge bases (legal, medical, technical) without retraining models
+- Connect LocalAI agents to domain-specific knowledge bases (legal, medical, technical) without retraining models
 - Leverage existing knowledge repositories that are already maintained in your AWS environment
-- Combine CrewAI's reasoning with domain-specific information from your knowledge bases
+- Combine LocalAI's reasoning with domain-specific information from your knowledge bases
 
 ### Data-Driven Decision Making
-- Ground CrewAI agent responses in your actual company data rather than general knowledge
+- Ground LocalAI agent responses in your actual company data rather than general knowledge
 - Ensure agents provide recommendations based on your specific business context and documentation
 - Reduce hallucinations by retrieving factual information from your knowledge bases
 
@@ -154,6 +154,6 @@ policy_expert = Agent(
 - Leverage AWS's scalable infrastructure to handle large knowledge bases efficiently
 
 ### Compliance and Governance
-- Ensure CrewAI agents provide responses that align with your company's approved documentation
+- Ensure LocalAI agents provide responses that align with your company's approved documentation
 - Create auditable trails of information sources used by your agents
 - Maintain control over what information sources your agents can access

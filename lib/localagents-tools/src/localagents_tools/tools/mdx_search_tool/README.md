@@ -11,7 +11,7 @@ pip install 'crewai[tools]'
 ```
 
 ## Example
-Configuring and using the MDX Search Tool involves setting up environment variables and utilizing the tool within a crewAI project for market research. Here's a simple example:
+Configuring and using the MDX Search Tool involves setting up environment variables and utilizing the tool within a localAI project for market research. Here's a simple example:
 
 ```python
 from crewai_tools import MDXSearchTool

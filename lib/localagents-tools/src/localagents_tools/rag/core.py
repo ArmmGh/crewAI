@@ -62,7 +62,7 @@ class RAG(Adapter):
                     name=self.collection_name,
                     metadata={
                         "hnsw:space": "cosine",
-                        "description": "CrewAI Knowledge Base",
+                        "description": "LocalAI Knowledge Base",
                     },
                 )
 

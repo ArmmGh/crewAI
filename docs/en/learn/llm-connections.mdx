@@ -1,16 +1,16 @@
 ---
 title: Connect to any LLM
-description: Comprehensive guide on integrating CrewAI with various Large Language Models (LLMs) using LiteLLM, including supported providers and configuration options.
+description: Comprehensive guide on integrating LocalAI with various Large Language Models (LLMs) using LiteLLM, including supported providers and configuration options.
 icon: brain-circuit
 mode: "wide"
 ---
 
-## Connect CrewAI to LLMs
+## Connect LocalAI to LLMs
 
-CrewAI connects to LLMs through native SDK integrations for the most popular providers (OpenAI, Anthropic, Google Gemini, Azure, and AWS Bedrock), and uses LiteLLM as a flexible fallback for all other providers.
+LocalAI connects to LLMs through native SDK integrations for the most popular providers (OpenAI, Anthropic, Google Gemini, Azure, and AWS Bedrock), and uses LiteLLM as a flexible fallback for all other providers.
 
 <Note>
-    By default, CrewAI uses the `gpt-4o-mini` model. This is determined by the `OPENAI_MODEL_NAME` environment variable, which defaults to "gpt-4o-mini" if not set.
+    By default, LocalAI uses the `gpt-4o-mini` model. This is determined by the `OPENAI_MODEL_NAME` environment variable, which defaults to "gpt-4o-mini" if not set.
     You can easily configure your agents to use a different model or provider as described in this guide.
 </Note>
 
@@ -51,7 +51,7 @@ For a complete and up-to-date list of supported providers, please refer to the [
 
 ## Changing the LLM
 
-To use a different LLM with your CrewAI agents, you have several options:
+To use a different LLM with your LocalAI agents, you have several options:
 
 <Tabs>
     <Tab title="Using a String Identifier">
@@ -211,4 +211,4 @@ This is particularly useful when working with OpenAI-compatible APIs or when you
 
 ## Conclusion
 
-By leveraging LiteLLM, CrewAI offers seamless integration with a vast array of LLMs. This flexibility allows you to choose the most suitable model for your specific needs, whether you prioritize performance, cost-efficiency, or local deployment. Remember to consult the [LiteLLM documentation](https://docs.litellm.ai/docs/) for the most up-to-date information on supported models and configuration options.
+By leveraging LiteLLM, LocalAI offers seamless integration with a vast array of LLMs. This flexibility allows you to choose the most suitable model for your specific needs, whether you prioritize performance, cost-efficiency, or local deployment. Remember to consult the [LiteLLM documentation](https://docs.litellm.ai/docs/) for the most up-to-date information on supported models and configuration options.

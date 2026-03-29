@@ -8,7 +8,7 @@ mode: "wide"
 ## Overview
 
 Enterprise Event Streaming lets you receive real-time webhook updates about your crews and flows deployed to
-CrewAI AMP, such as model calls, tool usage, and flow steps.
+LocalAI AMP, such as model calls, tool usage, and flow steps.
 
 ## Usage
 
@@ -55,13 +55,13 @@ Each webhook sends a list of events:
 }
 ```
 
-The `data` object structure varies by event type. Refer to the [event list](https://github.com/crewAIInc/crewAI/tree/main/lib/crewai/src/crewai/events/types) on GitHub.
+The `data` object structure varies by event type. Refer to the [event list](https://github.com/localAIInc/localAI/tree/main/lib/crewai/src/crewai/events/types) on GitHub.
 
 As requests are sent over HTTP, the order of events can't be guaranteed. If you need ordering, use the `timestamp` field.
 
 ## Supported Events
 
-CrewAI supports both system events and custom events in Enterprise Event Streaming. These events are sent to your configured webhook endpoint during crew and flow execution.
+LocalAI supports both system events and custom events in Enterprise Event Streaming. These events are sent to your configured webhook endpoint during crew and flow execution.
 
 ### Flow Events:
 
@@ -162,7 +162,7 @@ You can emit your own custom events, and they will be delivered through the webh
   <Card
     title="GitHub"
     icon="github"
-    href="https://github.com/crewAIInc/crewAI/tree/main/src/crewai/utilities/events"
+    href="https://github.com/localAIInc/localAI/tree/main/src/crewai/utilities/events"
   >
     Full list of events
   </Card>

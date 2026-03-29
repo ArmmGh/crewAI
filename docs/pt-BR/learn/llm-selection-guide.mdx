@@ -1,11 +1,11 @@
 ---
 title: "Guia Estratégico de Seleção de LLMs"
-description: "Framework estratégico para escolher o LLM certo para seus agentes CrewAI e escrever definições eficazes de tarefas e agentes"
+description: "Framework estratégico para escolher o LLM certo para seus agentes LocalAI e escrever definições eficazes de tarefas e agentes"
 icon: "brain-circuit"
 mode: "wide"
 ---
 
-## A Abordagem CrewAI para Seleção de LLMs
+## A Abordagem LocalAI para Seleção de LLMs
 
 Em vez de recomendações prescritivas de modelos, defendemos um **framework de pensamento** que ajude você a tomar decisões informadas com base no seu caso de uso, restrições e requisitos específicos. O cenário de LLMs evolui rapidamente, com novos modelos surgindo regularmente e os existentes sendo atualizados frequentemente. O que mais importa é desenvolver uma abordagem sistemática de avaliação que permaneça relevante independentemente dos modelos disponíveis no momento.
 
@@ -138,7 +138,7 @@ Entender as capacidades dos modelos exige ir além do marketing e dos benchmarks
   otimizar desempenho e custos.
 </Tip>
 
-As implementações CrewAI mais sofisticadas empregam múltiplos modelos estrategicamente, designando-os conforme as funções e necessidades dos agentes. Assim, é possível otimizar desempenho e custos usando o modelo mais adequado para cada tipo de tarefa.
+As implementações LocalAI mais sofisticadas empregam múltiplos modelos estrategicamente, designando-os conforme as funções e necessidades dos agentes. Assim, é possível otimizar desempenho e custos usando o modelo mais adequado para cada tipo de tarefa.
 
 Agentes de planejamento se beneficiam de modelos de raciocínio para pensamento estratégico e análise multi-etapas. Esses agentes funcionam como o "cérebro" da operação. Agentes de conteúdo têm melhor desempenho com modelos criativos focados em qualidade de escrita e engajamento. Agentes de processamento, responsáveis por operações rotineiras, podem usar modelos eficientes priorizando velocidade.
 
@@ -194,7 +194,7 @@ O segredo do sucesso na implementação multi-modelo está em entender como os a
 
 <Tabs>
   <Tab title="Manager LLM">
-    O manager LLM desempenha papel central em fluxos hierárquicos CrewAI, coordenando agentes e tarefas. Este modelo precisa se destacar em delegação, priorização de tarefas e manutenção de contexto em várias operações simultâneas.
+    O manager LLM desempenha papel central em fluxos hierárquicos LocalAI, coordenando agentes e tarefas. Este modelo precisa se destacar em delegação, priorização de tarefas e manutenção de contexto em várias operações simultâneas.
 
     LLMs de manager eficazes exigem forte raciocínio para delegar bem, desempenho consistente para coordenar previsivelmente e excelente gestão de contexto para acompanhar o estado dos agentes. O modelo deve entender capacidades e limitações dos agentes enquanto otimiza a alocação de tarefas.
 
@@ -225,7 +225,7 @@ O segredo do sucesso na implementação multi-modelo está em entender como os a
 
 ### a. Foque em Clareza, Não em Complexidade
 
-Definir bem as tarefas é frequentemente mais importante do que a seleção do modelo no resultado gerado pelos agentes CrewAI. Tarefas bem formuladas orientam claramente mesmo modelos simples a terem bom desempenho. Já tarefas mal definidas prejudicam até os modelos mais avançados.
+Definir bem as tarefas é frequentemente mais importante do que a seleção do modelo no resultado gerado pelos agentes LocalAI. Tarefas bem formuladas orientam claramente mesmo modelos simples a terem bom desempenho. Já tarefas mal definidas prejudicam até os modelos mais avançados.
 
 <AccordionGroup>
   <Accordion title="Descrições de Tarefas Eficazes" icon="list-check">
@@ -376,7 +376,7 @@ O segredo é criar agentes onde cada configuração reforça sua estratégia de 
 
 ## Checklist Prático de Implementação
 
-Em vez de repetir o framework estratégico, segue um checklist tático para implementar as decisões de seleção de LLM em CrewAI:
+Em vez de repetir o framework estratégico, segue um checklist tático para implementar as decisões de seleção de LLM em LocalAI:
 
 <Steps>
   <Step title="Audite Sua Configuração Atual" icon="clipboard-check">
@@ -431,7 +431,7 @@ Em vez de repetir o framework estratégico, segue um checklist tático para impl
 
   <Step title="Valide com Testes Empresariais" icon="test-tube">
     **Após colocar os agentes em produção:**
-    - Use [CrewAI AMP platform](https://app.crewai.com) para testar seleções de modelo A/B
+    - Use [LocalAI AMP platform](https://app.crewai.com) para testar seleções de modelo A/B
     - Execute múltiplas iterações com inputs reais para medir consistência e performance
     - Compare custo vs performance na configuração otimizada
     - Compartilhe resultados com o time para tomada coletiva de decisão
@@ -481,7 +481,7 @@ Em vez de repetir o framework estratégico, segue um checklist tático para impl
   </Tab>
 </Tabs>
 
-## Armadilhas Comuns na Seleção de Modelos CrewAI
+## Armadilhas Comuns na Seleção de Modelos LocalAI
 
 <AccordionGroup>
   <Accordion title="A Armadilha do 'Um Modelo Serve para Tudo'" icon="triangle-exclamation">
@@ -489,7 +489,7 @@ Em vez de repetir o framework estratégico, segue um checklist tático para impl
 
     **Exemplo real**: Usar GPT-4o tanto para planejamento estratégico quanto para extração simples de dados. O manager precisa do raciocínio premium, mas o extrator poderia usar o GPT-4o-mini, muito mais barato.
 
-    **Solução CrewAI**: Configure modelos específicos por agente:
+    **Solução LocalAI**: Configure modelos específicos por agente:
     ```python
     # Agente estratégico recebe modelo premium
     manager = Agent(role="Strategy Manager", llm=LLM(model="gpt-4o"))
@@ -501,11 +501,11 @@ Em vez de repetir o framework estratégico, segue um checklist tático para impl
   </Accordion>
 
   <Accordion title="Ignorar Hierarquia de LLM entre Crew e Agente" icon="shuffle">
-    **O problema**: Não entender como funciona a hierarquia LLM da CrewAI — configurações conflitam entre crew, manager e agentes.
+    **O problema**: Não entender como funciona a hierarquia LLM da LocalAI — configurações conflitam entre crew, manager e agentes.
 
     **Exemplo real**: Configurar crew com Claude, mas agentes com GPT, gerando comportamento inconsistente e trocas desnecessárias.
 
-    **Solução CrewAI**: Planeje a hierarquia estrategicamente:
+    **Solução LocalAI**: Planeje a hierarquia estrategicamente:
     ```python
     crew = Crew(
         agents=[agent1, agent2],
@@ -525,7 +525,7 @@ Em vez de repetir o framework estratégico, segue um checklist tático para impl
 
     **Exemplo real**: Selecionar modelo criativo para agente que só precisa chamar APIs e processar dados estruturados, resultando em má extração de parâmetros.
 
-    **Solução CrewAI**: Priorize desempenho em function calling para agentes que usam ferramentas:
+    **Solução LocalAI**: Priorize desempenho em function calling para agentes que usam ferramentas:
     ```python
     # Para agentes com muitas ferramentas
     tool_agent = Agent(
@@ -540,11 +540,11 @@ Em vez de repetir o framework estratégico, segue um checklist tático para impl
   </Accordion>
 
   <Accordion title="Otimização Prematura sem Teste" icon="gear">
-    **O problema**: Decidir configurações complexas de modelo com base em hipóteses não validadas nos fluxos e tarefas reais CrewAI.
+    **O problema**: Decidir configurações complexas de modelo com base em hipóteses não validadas nos fluxos e tarefas reais LocalAI.
 
     **Exemplo real**: Implementar lógica elaborada de troca de modelo por tipo de tarefa sem testar se os ganhos compensam a complexidade.
 
-    **Solução CrewAI**: Comece simples e otimize baseado em dados reais:
+    **Solução LocalAI**: Comece simples e otimize baseado em dados reais:
     ```python
     # Comece assim
     crew = Crew(agents=[...], tasks=[...], llm=LLM(model="gpt-4o-mini"))
@@ -556,11 +556,11 @@ Em vez de repetir o framework estratégico, segue um checklist tático para impl
   </Accordion>
 
   <Accordion title="Ignorar Limites de Contexto e Memória" icon="brain">
-    **O problema**: Não considerar como janela de contexto dos modelos interage com memória e compartilhamento de contexto entre agentes CrewAI.
+    **O problema**: Não considerar como janela de contexto dos modelos interage com memória e compartilhamento de contexto entre agentes LocalAI.
 
     **Exemplo real**: Usar modelo de contexto curto para agentes que precisam manter histórico ao longo de múltiplas iterações ou equipes com comunicação extensiva agent-to-agent.
 
-    **Solução CrewAI**: Alinhe capacidades de contexto ao padrão de comunicação da crew.
+    **Solução LocalAI**: Alinhe capacidades de contexto ao padrão de comunicação da crew.
 
   </Accordion>
 </AccordionGroup>
@@ -598,7 +598,7 @@ Em vez de repetir o framework estratégico, segue um checklist tático para impl
 
 ### Validação de Modelos em Nível Enterprise
 
-Para equipes sérias sobre otimização, a **plataforma CrewAI AMP** oferece testes sofisticados que vão além do CLI. Ela permite avaliação completa para decisões orientadas por dados na estratégia de LLM.
+Para equipes sérias sobre otimização, a **plataforma LocalAI AMP** oferece testes sofisticados que vão além do CLI. Ela permite avaliação completa para decisões orientadas por dados na estratégia de LLM.
 
 <Frame>
   ![Enterprise Testing Interface](/images/enterprise/enterprise-testing.png)
@@ -676,7 +676,7 @@ Acesse [app.crewai.com](https://app.crewai.com) para começar!
 
 ### Principais Modelos por Categoria
 
-As tabelas abaixo mostram uma amostra dos modelos de maior destaque em cada categoria, junto de orientação sobre aplicação em agentes CrewAI:
+As tabelas abaixo mostram uma amostra dos modelos de maior destaque em cada categoria, junto de orientação sobre aplicação em agentes LocalAI:
 
 <Note>
   Estas tabelas exibem apenas alguns modelos líderes por categoria. Existem
@@ -688,7 +688,7 @@ As tabelas abaixo mostram uma amostra dos modelos de maior destaque em cada cate
   <Tab title="Raciocínio & Planejamento">
     **Melhores para LLMs Manager e Análises Complexas**
 
-    | Modelo | Score de Inteligência | Custo ($/M tokens) | Velocidade | Melhor Uso em CrewAI |
+    | Modelo | Score de Inteligência | Custo ($/M tokens) | Velocidade | Melhor Uso em LocalAI |
     |:------|:---------------------|:-------------------|:-----------|:--------------------|
     | **o3** | 70 | $17.50 | Rápido | Manager LLM para coordenação multi-agente |
     | **Gemini 2.5 Pro** | 69 | $3.44 | Rápido | Agentes de planejamento estratégico, coordenação de pesquisa |
@@ -703,7 +703,7 @@ As tabelas abaixo mostram uma amostra dos modelos de maior destaque em cada cate
   <Tab title="Codificação & Técnica">
     **Melhores para Desenvolvimento e Workflows com Ferramentas**
 
-    | Modelo | Performance em Coding | Tool Use Score | Custo ($/M tokens) | Melhor Uso em CrewAI |
+    | Modelo | Performance em Coding | Tool Use Score | Custo ($/M tokens) | Melhor Uso em LocalAI |
     |:--------|:---------------------|:--------------|:-------------------|:--------------------|
     | **Claude 4 Sonnet** | Excelente | 72.7% | $6.00 | Agente principal de código/documentação técnica |
     | **Claude 4 Opus** | Excelente | 72.5% | $30.00 | Arquitetura complexa, code review |
@@ -718,7 +718,7 @@ As tabelas abaixo mostram uma amostra dos modelos de maior destaque em cada cate
   <Tab title="Velocidade & Eficiência">
     **Melhores para Operações em Massa e Aplicações em Tempo Real**
 
-    | Modelo | Velocidade (tokens/s) | Latência (TTFT) | Custo ($/M tokens) | Melhor Uso em CrewAI |
+    | Modelo | Velocidade (tokens/s) | Latência (TTFT) | Custo ($/M tokens) | Melhor Uso em LocalAI |
     |:-------|:---------------------|:----------------|:-------------------|:---------------------|
     | **Llama 4 Scout** | 2.600 | 0.33s | $0.27 | Agentes de processamento de alto volume |
     | **Gemini 2.5 Flash** | 376 | 0.30s | $0.26 | Agentes de resposta em tempo real |
@@ -733,7 +733,7 @@ As tabelas abaixo mostram uma amostra dos modelos de maior destaque em cada cate
   <Tab title="Performance Equilibrada">
     **Melhores Modelos Coringa para Crews Diversos**
 
-    | Modelo | Score Global | Versatilidade | Custo ($/M tokens) | Melhor Uso em CrewAI |
+    | Modelo | Score Global | Versatilidade | Custo ($/M tokens) | Melhor Uso em LocalAI |
     |:------------|:--------------|:-------------|:-------------------|:--------------------|
     | **GPT-4.1** | 53 | Excelente | $3.50 | LLM generalista para equipes variadas |
     | **Claude 3.7 Sonnet** | 48 | Muito boa | $6.00 | Raciocínio e criatividade balanceados |

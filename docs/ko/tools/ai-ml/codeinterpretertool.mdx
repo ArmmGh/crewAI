@@ -9,7 +9,7 @@ mode: "wide"
 
 ## 설명
 
-`CodeInterpreterTool`은 CrewAI 에이전트가 자율적으로 생성한 Python 3 코드를 실행할 수 있도록 합니다. 이 기능은 에이전트가 코드를 생성하고, 실행하며, 결과를 얻고, 그 정보를 활용하여 이후의 결정과 행동에 반영할 수 있다는 점에서 특히 유용합니다.
+`CodeInterpreterTool`은 LocalAI 에이전트가 자율적으로 생성한 Python 3 코드를 실행할 수 있도록 합니다. 이 기능은 에이전트가 코드를 생성하고, 실행하며, 결과를 얻고, 그 정보를 활용하여 이후의 결정과 행동에 반영할 수 있다는 점에서 특히 유용합니다.
 
 이 도구를 사용하는 방법에는 여러 가지가 있습니다:
 
@@ -34,7 +34,7 @@ Docker를 사용할 수 없을 경우—설치되어 있지 않거나 어떤 이
 
 ## 설치
 
-이 도구를 사용하려면 CrewAI tools 패키지를 설치해야 합니다:
+이 도구를 사용하려면 LocalAI tools 패키지를 설치해야 합니다:
 
 ```shell
 pip install 'crewai[tools]'
@@ -42,7 +42,7 @@ pip install 'crewai[tools]'
 
 ## 예시
 
-다음 예시는 `CodeInterpreterTool`을 CrewAI agent와 함께 사용하는 방법을 보여줍니다:
+다음 예시는 `CodeInterpreterTool`을 LocalAI agent와 함께 사용하는 방법을 보여줍니다:
 
 ```python Code
 from crewai import Agent, Task, Crew, Process
@@ -121,7 +121,7 @@ CodeInterpreterTool(unsafe_mode=True).run(code=code)
 
 ## 에이전트 통합 예제
 
-여기 `CodeInterpreterTool`을 CrewAI 에이전트와 통합하는 방법에 대한 좀 더 자세한 예제가 있습니다:
+여기 `CodeInterpreterTool`을 LocalAI 에이전트와 통합하는 방법에 대한 좀 더 자세한 예제가 있습니다:
 
 ```python Code
 from crewai import Agent, Task, Crew
@@ -206,4 +206,4 @@ class CodeInterpreterTool(BaseTool):
 
 ## 결론
 
-`CodeInterpreterTool`은 CrewAI 에이전트가 비교적 안전한 환경에서 Python 코드를 실행할 수 있는 강력한 방법을 제공합니다. 에이전트가 코드를 작성하고 실행할 수 있도록 함으로써, 데이터 분석, 계산 또는 기타 계산 작업이 포함된 작업에서 특히 문제 해결 능력을 크게 확장합니다. 이 도구는 복잡한 연산을 자연어보다 코드로 표현하는 것이 더 효율적인 경우에 작업을 수행해야 하는 에이전트에게 특히 유용합니다.
+`CodeInterpreterTool`은 LocalAI 에이전트가 비교적 안전한 환경에서 Python 코드를 실행할 수 있는 강력한 방법을 제공합니다. 에이전트가 코드를 작성하고 실행할 수 있도록 함으로써, 데이터 분석, 계산 또는 기타 계산 작업이 포함된 작업에서 특히 문제 해결 능력을 크게 확장합니다. 이 도구는 복잡한 연산을 자연어보다 코드로 표현하는 것이 더 효율적인 경우에 작업을 수행해야 하는 에이전트에게 특히 유용합니다.

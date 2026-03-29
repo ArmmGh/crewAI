@@ -7,7 +7,7 @@ mode: "wide"
 
 # `BedrockKBRetrieverTool`
 
-A `BedrockKBRetrieverTool` permite que agentes CrewAI recuperem informações das Bases de Conhecimento do Amazon Bedrock usando consultas em linguagem natural.
+A `BedrockKBRetrieverTool` permite que agentes LocalAI recuperem informações das Bases de Conhecimento do Amazon Bedrock usando consultas em linguagem natural.
 
 ## Instalação
 
@@ -23,7 +23,7 @@ uv pip install 'crewai[tools]'
 
 ## Uso
 
-Veja como utilizar a ferramenta com um agente CrewAI:
+Veja como utilizar a ferramenta com um agente LocalAI:
 
 ```python {2, 4-17}
 from crewai import Agent, Task, Crew
@@ -35,7 +35,7 @@ kb_tool = BedrockKBRetrieverTool(
     number_of_results=5
 )
 
-# Create a CrewAI agent that uses the tool
+# Create a LocalAI agent that uses the tool
 researcher = Agent(
     role='Knowledge Base Researcher',
     goal='Find information about company policies',
@@ -141,17 +141,17 @@ policy_expert = Agent(
 ## Casos de Uso
 
 ### Integração de Conhecimento Corporativo
-- Permita que agentes CrewAI acessem o conhecimento proprietário da sua organização sem expor dados sensíveis
+- Permita que agentes LocalAI acessem o conhecimento proprietário da sua organização sem expor dados sensíveis
 - Permita que agentes tomem decisões baseadas nas políticas, procedimentos e documentações específicas da sua empresa
 - Crie agentes capazes de responder perguntas com base na sua documentação interna mantendo a segurança dos dados
 
 ### Conhecimento Especializado de Domínio
-- Conecte agentes CrewAI a bases de conhecimento específicas do domínio (jurídico, médico, técnico) sem re-treinamento de modelos
+- Conecte agentes LocalAI a bases de conhecimento específicas do domínio (jurídico, médico, técnico) sem re-treinamento de modelos
 - Aproveite repositórios de conhecimento existentes que já são mantidos no seu ambiente AWS
-- Combine o raciocínio do CrewAI com informações de domínio provenientes das suas bases de conhecimento
+- Combine o raciocínio do LocalAI com informações de domínio provenientes das suas bases de conhecimento
 
 ### Tomada de Decisão Orientada por Dados
-- Baseie as respostas dos agentes CrewAI nos dados reais da sua empresa, e não apenas em conhecimento geral
+- Baseie as respostas dos agentes LocalAI nos dados reais da sua empresa, e não apenas em conhecimento geral
 - Assegure que os agentes forneçam recomendações baseadas no contexto e documentação do seu negócio
 - Reduza alucinações ao recuperar informações factuais das suas bases de conhecimento
 
@@ -161,6 +161,6 @@ policy_expert = Agent(
 - Aproveite a infraestrutura escalável da AWS para lidar com grandes bases de conhecimento de forma eficiente
 
 ### Conformidade e Governança
-- Garanta que agentes CrewAI forneçam respostas alinhadas com a documentação aprovada da sua empresa
+- Garanta que agentes LocalAI forneçam respostas alinhadas com a documentação aprovada da sua empresa
 - Crie trilhas de auditoria das fontes de informação usadas pelos agentes
 - Mantenha controle sobre quais fontes de informação os seus agentes podem acessar

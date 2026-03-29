@@ -31,7 +31,7 @@ def run_crew() -> None:
         version.parse(crewai_version) < version.parse(min_required_version)
     ):
         click.secho(
-            f"You are running an older version of crewAI ({crewai_version}) that uses poetry pyproject.toml. "
+            f"You are running an older version of localAI ({crewai_version}) that uses poetry pyproject.toml. "
             f"Please run `crewai update` to update your pyproject.toml to use uv.",
             fg="red",
         )
@@ -97,7 +97,7 @@ def handle_error(error: subprocess.CalledProcessError, crew_type: CrewType) -> N
     pyproject_data = read_toml()
     if pyproject_data.get("tool", {}).get("poetry"):
         click.secho(
-            "It's possible that you are using an old version of crewAI that uses poetry, "
+            "It's possible that you are using an old version of localAI that uses poetry, "
             "please run `crewai update` to update your pyproject.toml to use uv.",
             fg="yellow",
         )

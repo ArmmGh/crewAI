@@ -65,9 +65,9 @@ tool = SingleStoreSearchTool(
 )
 ```
 
-## Complete CrewAI Integration Example
+## Complete LocalAI Integration Example
 
-Here's a complete example showing how to use the SingleStoreSearchTool with CrewAI agents and tasks:
+Here's a complete example showing how to use the SingleStoreSearchTool with LocalAI agents and tasks:
 
 ```python
 from crewai import Agent, Task, Crew
@@ -110,7 +110,7 @@ crew = Crew(tasks=[task], verbose=True)
 result = crew.kickoff()
 ```
 
-### Advanced CrewAI Example with Multiple Agents
+### Advanced LocalAI Example with Multiple Agents
 
 ```python
 from crewai import Agent, Task, Crew

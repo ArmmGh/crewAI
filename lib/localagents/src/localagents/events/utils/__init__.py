@@ -1,1 +1,1 @@
-"""Event utilities for crewAI."""
+"""Event utilities for localAI."""

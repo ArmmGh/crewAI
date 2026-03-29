@@ -1,16 +1,16 @@
 ---
 title: Training
-description: Learn how to train your CrewAI agents by giving them feedback early on and get consistent results.
+description: Learn how to train your LocalAI agents by giving them feedback early on and get consistent results.
 icon: dumbbell
 mode: "wide"
 ---
 
 ## Overview
 
-The training feature in CrewAI allows you to train your AI agents using the command-line interface (CLI).
+The training feature in LocalAI allows you to train your AI agents using the command-line interface (CLI).
 By running the command `crewai train -n <n_iterations>`, you can specify the number of iterations for the training process.
 
-During training, CrewAI utilizes techniques to optimize the performance of your agents along with human feedback.
+During training, LocalAI utilizes techniques to optimize the performance of your agents along with human feedback.
 This helps the agents improve their understanding, decision-making, and problem-solving abilities.
 
 ### Training Your Crew Using the CLI
@@ -18,7 +18,7 @@ This helps the agents improve their understanding, decision-making, and problem-
 To use the training feature, follow these steps:
 
 1. Open your terminal or command prompt.
-2. Navigate to the directory where your CrewAI project is located.
+2. Navigate to the directory where your LocalAI project is located.
 3. Run the following command:
 
 ```shell
@@ -42,7 +42,7 @@ To train your crew programmatically, use the following steps:
 
 ```python Code
 n_iterations = 2
-inputs = {"topic": "CrewAI Training"}
+inputs = {"topic": "LocalAI Training"}
 filename = "your_model.pkl"
 
 try:
@@ -58,7 +58,7 @@ except Exception as e:
 
 ## How trained data is used by agents
 
-CrewAI uses the training artifacts in two ways: during training to incorporate your human feedback, and after training to guide agents with consolidated suggestions.
+LocalAI uses the training artifacts in two ways: during training to incorporate your human feedback, and after training to guide agents with consolidated suggestions.
 
 ### Training data flow
 
@@ -98,7 +98,7 @@ flowchart TD
 
 ### After training completes
 
-- When `train(...)` finishes, CrewAI evaluates the collected training data per agent and produces a consolidated result containing:
+- When `train(...)` finishes, LocalAI evaluates the collected training data per agent and produces a consolidated result containing:
   - `suggestions`: clear, actionable instructions distilled from your feedback and the difference between initial/improved outputs
   - `quality`: a 0–10 score capturing improvement
   - `final_summary`: a step-by-step set of action items for future tasks
@@ -176,7 +176,7 @@ flowchart TD
     ```
 
     <Warning>
-      While CrewAI includes optimizations for small models, expect less reliable and less nuanced evaluation results that may require more human intervention during training.
+      While LocalAI includes optimizations for small models, expect less reliable and less nuanced evaluation results that may require more human intervention during training.
     </Warning>
   </Tab>
 </Tabs>

@@ -37,7 +37,7 @@ uv add crewai-tools requests aiohttp
 from crewai_tools import BrightDataSearchTool
 
 tool = BrightDataSearchTool(
-    query="CrewAI",
+    query="LocalAI",
     country="us",
 )
 
@@ -82,7 +82,7 @@ from crewai import Agent, Task, Crew
 from crewai_tools import BrightDataSearchTool
 
 tool = BrightDataSearchTool(
-    query="CrewAI",
+    query="LocalAI",
     country="us",
 )
 
@@ -95,7 +95,7 @@ agent = Agent(
 )
 
 task = Task(
-    description="Search for CrewAI and summarize top results",
+    description="Search for LocalAI and summarize top results",
     expected_output="Short summary with links",
     agent=agent,
 )

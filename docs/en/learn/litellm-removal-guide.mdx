@@ -1,21 +1,21 @@
 ---
-title: Using CrewAI Without LiteLLM
-description: How to use CrewAI with native provider integrations and remove the LiteLLM dependency from your project.
+title: Using LocalAI Without LiteLLM
+description: How to use LocalAI with native provider integrations and remove the LiteLLM dependency from your project.
 icon: shield-check
 mode: "wide"
 ---
 
 ## Overview
 
-CrewAI supports two paths for connecting to LLM providers:
+LocalAI supports two paths for connecting to LLM providers:
 
 1. **Native integrations** — direct SDK connections to OpenAI, Anthropic, Google Gemini, Azure OpenAI, and AWS Bedrock
 2. **LiteLLM fallback** — a translation layer that supports 100+ additional providers
 
-This guide explains how to use CrewAI exclusively with native provider integrations, removing any dependency on LiteLLM.
+This guide explains how to use LocalAI exclusively with native provider integrations, removing any dependency on LiteLLM.
 
 <Warning>
-  The `litellm` package was quarantined on PyPI due to a security/reliability incident. If you rely on LiteLLM-dependent providers, you should migrate to native integrations. CrewAI's native integrations give you full functionality without LiteLLM.
+  The `litellm` package was quarantined on PyPI due to a security/reliability incident. If you rely on LiteLLM-dependent providers, you should migrate to native integrations. LocalAI's native integrations give you full functionality without LiteLLM.
 </Warning>
 
 ## Why Remove LiteLLM?
@@ -331,7 +331,7 @@ llm = LLM(
 
 <AccordionGroup>
   <Accordion title="Do I lose any functionality by removing LiteLLM?">
-    No, if you use one of the five natively supported providers (OpenAI, Anthropic, Gemini, Azure, Bedrock). These native integrations support all CrewAI features including streaming, tool calling, structured output, and more. You only lose access to providers that are exclusively available through LiteLLM (like Groq, Together AI, Mistral as first-class providers).
+    No, if you use one of the five natively supported providers (OpenAI, Anthropic, Gemini, Azure, Bedrock). These native integrations support all LocalAI features including streaming, tool calling, structured output, and more. You only lose access to providers that are exclusively available through LiteLLM (like Groq, Together AI, Mistral as first-class providers).
   </Accordion>
   <Accordion title="Can I use multiple native providers at the same time?">
     Yes. Install multiple extras and use different providers for different agents:
@@ -344,7 +344,7 @@ llm = LLM(
     ```
   </Accordion>
   <Accordion title="Is LiteLLM safe to use now?">
-    Regardless of quarantine status, reducing your dependency surface is good security practice. If you only need providers that CrewAI supports natively, there's no reason to keep LiteLLM installed.
+    Regardless of quarantine status, reducing your dependency surface is good security practice. If you only need providers that LocalAI supports natively, there's no reason to keep LiteLLM installed.
   </Accordion>
   <Accordion title="What about environment variables like OPENAI_API_KEY?">
     Native providers use the same environment variables you're already familiar with. No changes needed for `OPENAI_API_KEY`, `ANTHROPIC_API_KEY`, `GEMINI_API_KEY`, etc.
@@ -353,6 +353,6 @@ llm = LLM(
 
 ## Related Resources
 
-- [LLM Connections](/en/learn/llm-connections) — Full guide to connecting CrewAI with any LLM
-- [LLM Concepts](/en/concepts/llms) — Understanding LLMs in CrewAI
+- [LLM Connections](/en/learn/llm-connections) — Full guide to connecting LocalAI with any LLM
+- [LLM Concepts](/en/concepts/llms) — Understanding LLMs in LocalAI
 - [LLM Selection Guide](/en/learn/llm-selection-guide) — Choosing the right model for your use case

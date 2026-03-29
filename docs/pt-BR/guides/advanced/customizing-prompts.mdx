@@ -1,13 +1,13 @@
 ---
 title: Personalizando Prompts
-description: Aprofunde-se na personalização de prompts de baixo nível no CrewAI, habilitando casos de uso super customizados e complexos para diferentes modelos e idiomas.
+description: Aprofunde-se na personalização de prompts de baixo nível no LocalAI, habilitando casos de uso super customizados e complexos para diferentes modelos e idiomas.
 icon: message-pen
 mode: "wide"
 ---
 
 ## Por Que Personalizar Prompts?
 
-Embora os prompts padrão do CrewAI funcionem bem para muitos cenários, a personalização de baixo nível permite comportamentos de agentes significativamente mais flexíveis e poderosos. Veja por que você pode querer aproveitar esse controle mais profundo:
+Embora os prompts padrão do LocalAI funcionem bem para muitos cenários, a personalização de baixo nível permite comportamentos de agentes significativamente mais flexíveis e poderosos. Veja por que você pode querer aproveitar esse controle mais profundo:
 
 1. **Otimizar para LLMs específicas** – Diferentes modelos (como GPT-4, Claude ou Llama) funcionam melhor com formatos de prompt adaptados às suas arquiteturas exclusivas.
 2. **Alterar o idioma** – Construa agentes que operam exclusivamente em idiomas além do inglês, lidando com nuances com precisão.
@@ -15,30 +15,30 @@ Embora os prompts padrão do CrewAI funcionem bem para muitos cenários, a perso
 4. **Ajustar tom e estilo** – Torne os agentes mais formais, casuais, criativos ou analíticos.
 5. **Suportar casos de uso super customizados** – Utilize estruturas e formatações avançadas de prompt para atender requisitos detalhados e específicos do projeto.
 
-Este guia explora como acessar os prompts do CrewAI em um nível mais baixo, oferecendo controle granular sobre como os agentes pensam e interagem.
+Este guia explora como acessar os prompts do LocalAI em um nível mais baixo, oferecendo controle granular sobre como os agentes pensam e interagem.
 
-## Entendendo o Sistema de Prompt do CrewAI
+## Entendendo o Sistema de Prompt do LocalAI
 
-Nos bastidores, o CrewAI adota um sistema de prompt modular que pode ser amplamente customizado:
+Nos bastidores, o LocalAI adota um sistema de prompt modular que pode ser amplamente customizado:
 
 - **Templates de agente** – Determinam o modo como cada agente aborda o papel que lhe foi atribuído.
 - **Prompt slices** – Controlam comportamentos especializados como tarefas, o uso de ferramentas e a estrutura de saída.
 - **Tratamento de erros** – Definem como os agentes respondem a falhas, exceções ou timeouts.
 - **Prompts específicos de ferramentas** – Definem instruções detalhadas para como as ferramentas são invocadas ou utilizadas.
 
-Confira os [templates de prompt originais no repositório do CrewAI](https://github.com/crewAIInc/crewAI/blob/main/src/crewai/translations/en.json) para ver como esses elementos são organizados. A partir daí, você pode sobrescrever ou adaptar conforme necessário para desbloquear comportamentos avançados.
+Confira os [templates de prompt originais no repositório do LocalAI](https://github.com/localAIInc/localAI/blob/main/src/crewai/translations/en.json) para ver como esses elementos são organizados. A partir daí, você pode sobrescrever ou adaptar conforme necessário para desbloquear comportamentos avançados.
 
 ## Entendendo as Instruções de Sistema Padrão
 
 <Warning>
-**Questão de Transparência em Produção**: O CrewAI injeta automaticamente instruções padrão nos seus prompts que talvez você não conheça. Esta seção explica o que acontece nos bastidores e como obter controle total.
+**Questão de Transparência em Produção**: O LocalAI injeta automaticamente instruções padrão nos seus prompts que talvez você não conheça. Esta seção explica o que acontece nos bastidores e como obter controle total.
 </Warning>
 
-Ao definir um agente com `role`, `goal` e `backstory`, o CrewAI automaticamente adiciona instruções de sistema adicionais que controlam a formatação e o comportamento. Entender essas injeções padrão é essencial para sistemas em produção onde você precisa de total transparência nos prompts.
+Ao definir um agente com `role`, `goal` e `backstory`, o LocalAI automaticamente adiciona instruções de sistema adicionais que controlam a formatação e o comportamento. Entender essas injeções padrão é essencial para sistemas em produção onde você precisa de total transparência nos prompts.
 
-### O Que CrewAI Injeta Automaticamente
+### O Que LocalAI Injeta Automaticamente
 
-Baseado na configuração do seu agente, o CrewAI adiciona diferentes instruções padrão:
+Baseado na configuração do seu agente, o LocalAI adiciona diferentes instruções padrão:
 
 #### Para Agentes Sem Ferramentas
 ```text
@@ -206,7 +206,7 @@ Uma abordagem direta é criar um arquivo JSON para os prompts que deseja sobresc
 1. Crie um arquivo JSON com os slices de prompt atualizados.
 2. Referencie este arquivo no parâmetro `prompt_file` do seu Crew.
 
-O CrewAI então mescla suas customizações com os padrões, assim você não precisa redefinir todos os prompts. Veja como:
+O LocalAI então mescla suas customizações com os padrões, assim você não precisa redefinir todos os prompts. Veja como:
 
 ### Exemplo: Customização Básica de Prompt
 
@@ -310,8 +310,8 @@ Com essa configuração, você exerce controle abrangente e de baixo nível sobr
 
 ## Conclusão
 
-A personalização de prompts em baixo nível no CrewAI abre portas para casos de uso super customizados e complexos. Mantendo arquivos de prompt organizados (ou templates inline diretos), é possível acomodar diferentes modelos, idiomas e domínios especializados. Esse nível de flexibilidade garante que você possa criar exatamente o comportamento de IA que precisa, sabendo que o CrewAI ainda fornece padrões confiáveis quando você não sobrescreve.
+A personalização de prompts em baixo nível no LocalAI abre portas para casos de uso super customizados e complexos. Mantendo arquivos de prompt organizados (ou templates inline diretos), é possível acomodar diferentes modelos, idiomas e domínios especializados. Esse nível de flexibilidade garante que você possa criar exatamente o comportamento de IA que precisa, sabendo que o LocalAI ainda fornece padrões confiáveis quando você não sobrescreve.
 
 <Check>
-Agora você tem a base para customizações avançadas de prompt no CrewAI. Seja adaptando para estruturas específicas de modelo ou restrições de domínio, esta abordagem de baixo nível permite moldar as interações dos agentes de forma altamente especializada.
+Agora você tem a base para customizações avançadas de prompt no LocalAI. Seja adaptando para estruturas específicas de modelo ou restrições de domínio, esta abordagem de baixo nível permite moldar as interações dos agentes de forma altamente especializada.
 </Check>

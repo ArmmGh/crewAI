@@ -1,17 +1,17 @@
 ---
 title: Integração com Portkey
-description: Como usar Portkey com CrewAI
+description: Como usar Portkey com LocalAI
 icon: key
 mode: "wide"
 ---
 
-<img src="https://raw.githubusercontent.com/siddharthsambharia-portkey/Portkey-Product-Images/main/Portkey-CrewAI.png" alt="Portkey CrewAI Header Image" width="70%" />
+<img src="https://raw.githubusercontent.com/siddharthsambharia-portkey/Portkey-Product-Images/main/Portkey-LocalAI.png" alt="Portkey LocalAI Header Image" width="70%" />
 
 
 
 ## Introdução
 
-Portkey aprimora o CrewAI com recursos prontos para produção, transformando seus crews de agentes experimentais em sistemas robustos ao fornecer:
+Portkey aprimora o LocalAI com recursos prontos para produção, transformando seus crews de agentes experimentais em sistemas robustos ao fornecer:
 
 - **Observabilidade completa** de cada etapa do agente, uso de ferramentas e interações
 - **Confiabilidade incorporada** com fallbacks, tentativas automáticas e balanceamento de carga
@@ -34,8 +34,8 @@ pip install -U crewai portkey-ai
 Crie uma chave de API Portkey com limites de orçamento/taxa opcionais no [painel da Portkey](https://app.portkey.ai/). Você também pode adicionar configurações para confiabilidade, cache e outros recursos a essa chave. Mais sobre isso em breve.
 </Step>
 
-<Step title="Configure o CrewAI com Portkey">
-A integração é simples – basta atualizar a configuração do LLM no seu setup do CrewAI:
+<Step title="Configure o LocalAI com Portkey">
+A integração é simples – basta atualizar a configuração do LLM no seu setup do LocalAI:
 
 ```python
 from crewai import LLM
@@ -76,12 +76,12 @@ gpt_llm = LLM(
 
 ### 1. Observabilidade Avançada
 
-Portkey oferece observabilidade abrangente para seus agentes CrewAI, ajudando você a entender exatamente o que está acontecendo durante cada execução.
+Portkey oferece observabilidade abrangente para seus agentes LocalAI, ajudando você a entender exatamente o que está acontecendo durante cada execução.
 
 <Tabs>
   <Tab title="Traces">
 <Frame>
-    <img src="https://raw.githubusercontent.com/siddharthsambharia-portkey/Portkey-Product-Images/refs/heads/main/CrewAI%20Product%2011.1.webp"/>
+    <img src="https://raw.githubusercontent.com/siddharthsambharia-portkey/Portkey-Product-Images/refs/heads/main/LocalAI%20Product%2011.1.webp"/>
 </Frame>
 
 Os traces fornecem uma visão hierárquica da execução do seu crew, mostrando a sequência de chamadas LLM, ativações de ferramentas e transições de estado.
@@ -103,7 +103,7 @@ portkey_llm = LLM(
 
   <Tab title="Logs">
 <Frame>
-    <img src="https://raw.githubusercontent.com/siddharthsambharia-portkey/Portkey-Product-Images/refs/heads/main/CrewAI%20Portkey%20Docs%20Metadata.png"/>
+    <img src="https://raw.githubusercontent.com/siddharthsambharia-portkey/Portkey-Product-Images/refs/heads/main/LocalAI%20Portkey%20Docs%20Metadata.png"/>
 </Frame>
 
 Portkey registra cada interação com LLMs, incluindo:
@@ -118,7 +118,7 @@ Todos os logs podem ser filtrados por metadados, trace IDs, modelos e mais, torn
 
   <Tab title="Métricas & Dashboards">
 <Frame>
-    <img src="https://raw.githubusercontent.com/siddharthsambharia-portkey/Portkey-Product-Images/refs/heads/main/CrewAI%20Dashboard.png"/>
+    <img src="https://raw.githubusercontent.com/siddharthsambharia-portkey/Portkey-Product-Images/refs/heads/main/LocalAI%20Dashboard.png"/>
 </Frame>
 
 Portkey oferece dashboards integrados que ajudam você a:
@@ -133,10 +133,10 @@ Você pode filtrar e segmentar todas as métricas por metadados personalizados p
 
   <Tab title="Filtragem por Metadados">
 <Frame>
-  <img src="https://raw.githubusercontent.com/siddharthsambharia-portkey/Portkey-Product-Images/refs/heads/main/Metadata%20Filters%20from%20CrewAI.png" alt="Analytics with metadata filters" />
+  <img src="https://raw.githubusercontent.com/siddharthsambharia-portkey/Portkey-Product-Images/refs/heads/main/Metadata%20Filters%20from%20LocalAI.png" alt="Analytics with metadata filters" />
 </Frame>
 
-Adicione metadados personalizados à configuração LLM do seu CrewAI para permitir filtragem e segmentação poderosas:
+Adicione metadados personalizados à configuração LLM do seu LocalAI para permitir filtragem e segmentação poderosas:
 
 ```python
 portkey_llm = LLM(
@@ -164,7 +164,7 @@ Esses metadados podem ser usados para filtrar logs, traces e métricas no painel
 
 Ao executar crews em produção, problemas podem ocorrer – limites de taxa da API, problemas de rede ou indisponibilidade do provedor. Os recursos de confiabilidade do Portkey garantem que seus agentes continuem funcionando mesmo quando problemas surgem.
 
-É simples habilitar fallback na sua configuração CrewAI usando um Config do Portkey:
+É simples habilitar fallback na sua configuração LocalAI usando um Config do Portkey:
 
 ```python
 from crewai import LLM
@@ -221,12 +221,12 @@ Essa configuração automaticamente tentará o Claude caso a requisição para o
   </Card>
 </CardGroup>
 
-### 3. Prompting no CrewAI
+### 3. Prompting no LocalAI
 
-O Prompt Engineering Studio do Portkey ajuda você a criar, gerenciar e otimizar os prompts usados em seus agentes CrewAI. Em vez de codificar prompts ou instruções manualmente, use a API de renderização de prompts do Portkey para buscar e aplicar dinâmicamente seus prompts versionados.
+O Prompt Engineering Studio do Portkey ajuda você a criar, gerenciar e otimizar os prompts usados em seus agentes LocalAI. Em vez de codificar prompts ou instruções manualmente, use a API de renderização de prompts do Portkey para buscar e aplicar dinâmicamente seus prompts versionados.
 
 <Frame caption="Gerencie prompts na Prompt Library do Portkey">
-![Prompt Playground Interface](https://raw.githubusercontent.com/siddharthsambharia-portkey/Portkey-Product-Images/refs/heads/main/CrewAI%20Portkey%20Docs.webp)
+![Prompt Playground Interface](https://raw.githubusercontent.com/siddharthsambharia-portkey/Portkey-Product-Images/refs/heads/main/LocalAI%20Portkey%20Docs.webp)
 </Frame>
 
 <Tabs>
@@ -238,7 +238,7 @@ Prompt Playground é um local para comparar, testar e implantar prompts perfeito
 3. Comparar saídas entre diferentes versões de prompts
 4. Colaborar com membros da equipe no desenvolvimento de prompts
 
-Esse ambiente visual facilita a criação de prompts eficazes para cada etapa do fluxo de trabalho dos seus agentes CrewAI.
+Esse ambiente visual facilita a criação de prompts eficazes para cada etapa do fluxo de trabalho dos seus agentes LocalAI.
   </Tab>
 
   <Tab title="Usando Templates de Prompt">
@@ -338,11 +338,11 @@ prompt_data = portkey_admin.prompts.render(
 
 ### 4. Guardrails para Crews Seguros
 
-Guardrails garantem que seus agentes CrewAI operem com segurança e respondam adequadamente em todas as situações.
+Guardrails garantem que seus agentes LocalAI operem com segurança e respondam adequadamente em todas as situações.
 
 **Por que usar Guardrails?**
 
-Os agentes CrewAI podem apresentar falhas de diversos tipos:
+Os agentes LocalAI podem apresentar falhas de diversos tipos:
 - Gerar conteúdo nocivo ou inapropriado
 - Vazamento de informações sensíveis como PII
 - Alucinar informações incorretas
@@ -394,7 +394,7 @@ Os guardrails do Portkey podem:
 
 ### 5. Rastreamento de Usuário com Metadados
 
-Rastreie usuários individuais através dos seus agentes CrewAI utilizando o sistema de metadados do Portkey.
+Rastreie usuários individuais através dos seus agentes LocalAI utilizando o sistema de metadados do Portkey.
 
 **O que é Metadata no Portkey?**
 
@@ -436,7 +436,7 @@ researcher = Agent(
 Com os metadados configurados, você pode filtrar analytics por usuário e analisar métricas de desempenho individualmente:
 
 <Frame caption="Filtre analytics por usuário">
-  <img src="https://raw.githubusercontent.com/siddharthsambharia-portkey/Portkey-Product-Images/refs/heads/main/Metadata%20Filters%20from%20CrewAI.png"/>
+  <img src="https://raw.githubusercontent.com/siddharthsambharia-portkey/Portkey-Product-Images/refs/heads/main/Metadata%20Filters%20from%20LocalAI.png"/>
 </Frame>
 
 Isso permite:
@@ -451,7 +451,7 @@ Isso permite:
 
 ### 6. Cache para Crews Eficientes
 
-Implemente caching para tornar seus agentes CrewAI mais eficientes e econômicos:
+Implemente caching para tornar seus agentes LocalAI mais eficientes e econômicos:
 
 <Tabs>
   <Tab title="Caching Simples">
@@ -525,7 +525,7 @@ O cache semântico considera a similaridade contextual entre solicitações de e
 
 ### 7. Interoperabilidade de Modelos
 
-O CrewAI oferece suporte a múltiplos provedores de LLM, e o Portkey amplia essa capacidade fornecendo acesso a mais de 200 LLMs por meio de uma interface unificada. Você pode facilmente alternar entre diferentes modelos sem alterar a lógica central do seu agente:
+O LocalAI oferece suporte a múltiplos provedores de LLM, e o Portkey amplia essa capacidade fornecendo acesso a mais de 200 LLMs por meio de uma interface unificada. Você pode facilmente alternar entre diferentes modelos sem alterar a lógica central do seu agente:
 
 ```python
 from crewai import Agent, LLM
@@ -577,10 +577,10 @@ Portkey oferece acesso a LLMs de provedores como:
   Veja a lista completa de provedores LLM suportados pelo Portkey
 </Card>
 
-## Configure Governança Corporativa para o CrewAI
+## Configure Governança Corporativa para o LocalAI
 
 **Por que Governança Corporativa?**
-Se você utiliza CrewAI dentro de sua organização, é importante considerar diversos aspectos de governança:
+Se você utiliza LocalAI dentro de sua organização, é importante considerar diversos aspectos de governança:
 - **Gestão de Custos**: Controlar e rastrear os gastos com IA entre equipes
 - **Controle de Acesso**: Gerenciar quais equipes podem usar modelos específicos
 - **Analytics de Uso**: Compreender como a IA está sendo utilizada na organização
@@ -625,7 +625,7 @@ Para criar seu config:
 3. Salve e anote o nome do Config para o próximo passo
 
 <Frame>
-<img src="https://raw.githubusercontent.com/siddharthsambharia-portkey/Portkey-Product-Images/refs/heads/main/CrewAI%20Portkey%20Docs%20Config.png" width="500"/>
+<img src="https://raw.githubusercontent.com/siddharthsambharia-portkey/Portkey-Product-Images/refs/heads/main/LocalAI%20Portkey%20Docs%20Config.png" width="500"/>
 
 </Frame>
 </Step>
@@ -638,13 +638,13 @@ Agora crie uma chave de API Portkey e anexe a config criada no Passo 2:
 3. Gere e salve sua chave de API
 
 <Frame>
-<img src="https://raw.githubusercontent.com/siddharthsambharia-portkey/Portkey-Product-Images/refs/heads/main/CrewAI%20API%20Key.png" width="500"/>
+<img src="https://raw.githubusercontent.com/siddharthsambharia-portkey/Portkey-Product-Images/refs/heads/main/LocalAI%20API%20Key.png" width="500"/>
 
 </Frame>
 </Step>
 
-<Step title="Conecte ao CrewAI">
-Após configurar sua chave de API Portkey com a config anexada, conecte-a aos seus agentes CrewAI:
+<Step title="Conecte ao LocalAI">
+Após configurar sua chave de API Portkey com a config anexada, conecte-a aos seus agentes LocalAI:
 
 ```python
 from crewai import Agent, LLM
@@ -761,7 +761,7 @@ Aqui está um exemplo básico para rotear requisições ao OpenAI, usando especi
 
   <Accordion title="Etapa 4: Implante & Monitore">
     ### Etapa 4: Implante & Monitore
-    Após distribuir as chaves de API para os membros da equipe, seu setup corporativo CrewAI está pronto. Cada membro pode agora usar suas chaves designadas com os níveis de acesso e controles de orçamento apropriados.
+    Após distribuir as chaves de API para os membros da equipe, seu setup corporativo LocalAI está pronto. Cada membro pode agora usar suas chaves designadas com os níveis de acesso e controles de orçamento apropriados.
 
     Monitore o uso no painel Portkey:
     - Rastreamento de custos por departamento
@@ -774,7 +774,7 @@ Aqui está um exemplo básico para rotear requisições ao OpenAI, usando especi
 
 <Note>
 ### Recursos Corporativos Agora Disponíveis
-**Sua integração CrewAI agora conta com:**
+**Sua integração LocalAI agora conta com:**
 - Controles de orçamento departamental
 - Governança de acesso a modelos
 - Rastreamento de uso & atribuição
@@ -785,16 +785,16 @@ Aqui está um exemplo básico para rotear requisições ao OpenAI, usando especi
 ## Perguntas Frequentes
 
 <AccordionGroup>
-  <Accordion title="Como o Portkey aprimora o CrewAI?">
-    Portkey adiciona prontidão para produção ao CrewAI através de observabilidade abrangente (traces, logs, métricas), recursos de confiabilidade (fallbacks, tentativas automáticas, cache) e acesso a mais de 200 LLMs por meio de uma interface unificada. Isso facilita depurar, otimizar e escalar suas aplicações de agentes.
+  <Accordion title="Como o Portkey aprimora o LocalAI?">
+    Portkey adiciona prontidão para produção ao LocalAI através de observabilidade abrangente (traces, logs, métricas), recursos de confiabilidade (fallbacks, tentativas automáticas, cache) e acesso a mais de 200 LLMs por meio de uma interface unificada. Isso facilita depurar, otimizar e escalar suas aplicações de agentes.
   </Accordion>
 
-  <Accordion title="Posso usar Portkey com aplicações CrewAI existentes?">
-    Sim! Portkey integra-se perfeitamente a aplicações CrewAI existentes. Basta atualizar o código de configuração do LLM com a versão habilitada do Portkey. O restante do seu código de agente e crew permanece inalterado.
+  <Accordion title="Posso usar Portkey com aplicações LocalAI existentes?">
+    Sim! Portkey integra-se perfeitamente a aplicações LocalAI existentes. Basta atualizar o código de configuração do LLM com a versão habilitada do Portkey. O restante do seu código de agente e crew permanece inalterado.
   </Accordion>
 
-  <Accordion title="Portkey funciona com todos os recursos do CrewAI?">
-    Portkey suporta todos os recursos do CrewAI, incluindo agentes, ferramentas, workflows human-in-the-loop e todos os tipos de processo de tarefas (sequencial, hierárquico, etc.). Ele adiciona observabilidade e confiabilidade sem limitar nenhuma funcionalidade do framework.
+  <Accordion title="Portkey funciona com todos os recursos do LocalAI?">
+    Portkey suporta todos os recursos do LocalAI, incluindo agentes, ferramentas, workflows human-in-the-loop e todos os tipos de processo de tarefas (sequencial, hierárquico, etc.). Ele adiciona observabilidade e confiabilidade sem limitar nenhuma funcionalidade do framework.
   </Accordion>
 
   <Accordion title="Posso rastrear o uso em múltiplos agentes de um crew?">
@@ -814,8 +814,8 @@ Aqui está um exemplo básico para rotear requisições ao OpenAI, usando especi
 ## Recursos
 
 <CardGroup cols="3">
-  <Card title="CrewAI Docs" icon="book" href="https://docs.crewai.com/">
-    <p>Documentação oficial do CrewAI</p>
+  <Card title="LocalAI Docs" icon="book" href="https://docs.crewai.com/">
+    <p>Documentação oficial do LocalAI</p>
   </Card>
   <Card title="Agende uma Demonstração" icon="calendar" href="https://calendly.com/portkey-ai">
     <p>Receba orientação personalizada sobre como implementar essa integração</p>

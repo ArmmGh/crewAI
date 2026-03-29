@@ -1,1 +1,1 @@
-"""Core crewAI components and interfaces."""
+"""Core localAI components and interfaces."""

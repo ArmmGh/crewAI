@@ -951,9 +951,9 @@ def test_interpolate_only():
     # Test normal string interpolation
     normal_string = "Hello {name}, welcome to {place}!"
     result = interpolate_only(
-        input_string=normal_string, inputs={"name": "John", "place": "CrewAI"}
+        input_string=normal_string, inputs={"name": "John", "place": "LocalAI"}
     )
-    assert result == "Hello John, welcome to CrewAI!"
+    assert result == "Hello John, welcome to LocalAI!"
 
     # Test empty string
     result = interpolate_only(input_string="", inputs={"unused": "value"})
@@ -984,9 +984,9 @@ def test_interpolate_only_with_dict_inside_expected_output():
 
     normal_string = "Hello {name}, welcome to {place}!"
     result = interpolate_only(
-        input_string=normal_string, inputs={"name": "John", "place": "CrewAI"}
+        input_string=normal_string, inputs={"name": "John", "place": "LocalAI"}
     )
-    assert result == "Hello John, welcome to CrewAI!"
+    assert result == "Hello John, welcome to LocalAI!"
 
     result = interpolate_only(input_string="", inputs={"unused": "value"})
     assert result == ""

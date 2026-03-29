@@ -1,11 +1,11 @@
 ---
 title: "Overview"
-description: "Connect CrewAI agents with external automations and managed AI services"
+description: "Connect LocalAI agents with external automations and managed AI services"
 icon: "face-smile"
 mode: "wide"
 ---
 
-Integration tools let your agents hand off work to other automation platforms and managed AI services. Use them when a workflow needs to invoke an existing CrewAI deployment or delegate specialised tasks to providers such as Amazon Bedrock.
+Integration tools let your agents hand off work to other automation platforms and managed AI services. Use them when a workflow needs to invoke an existing LocalAI deployment or delegate specialised tasks to providers such as Amazon Bedrock.
 
 ## **Available Tools**
 
@@ -14,8 +14,8 @@ Integration tools let your agents hand off work to other automation platforms an
     Securely access hundreds of third-party tools like Linear, GitHub, Slack, and more through Merge's unified API.
   </Card>
 
-  <Card title="CrewAI Run Automation Tool" icon="robot" href="/en/tools/integration/crewaiautomationtool">
-    Invoke live CrewAI Platform automations, pass custom inputs, and poll for results directly from your agent.
+  <Card title="LocalAI Run Automation Tool" icon="robot" href="/en/tools/integration/crewaiautomationtool">
+    Invoke live LocalAI Platform automations, pass custom inputs, and poll for results directly from your agent.
   </Card>
 
   <Card title="Bedrock Invoke Agent Tool" icon="aws" href="/en/tools/integration/bedrockinvokeagenttool">
@@ -25,9 +25,9 @@ Integration tools let your agents hand off work to other automation platforms an
 
 ## **Common Use Cases**
 
-- **Chain automations**: Kick off an existing CrewAI deployment from within another crew or flow
+- **Chain automations**: Kick off an existing LocalAI deployment from within another crew or flow
 - **Enterprise hand-off**: Route tasks to Bedrock Agents that already encapsulate company logic and guardrails
-- **Hybrid workflows**: Combine CrewAI reasoning with downstream systems that expose their own agent APIs
+- **Hybrid workflows**: Combine LocalAI reasoning with downstream systems that expose their own agent APIs
 - **Long-running jobs**: Poll external automations and merge the final results back into the current run
 
 ## **Quick Start Example**
@@ -73,4 +73,4 @@ Crew(agents=[automation_strategist], tasks=[execute_playbook]).kickoff()
 - **Plan for latency**: External automations may take longer—set appropriate polling intervals and timeouts
 - **Reuse sessions**: Bedrock Agents support session IDs so you can maintain context across multiple tool calls
 - **Validate responses**: Normalise remote output (JSON, text, status codes) before forwarding it to downstream tasks
-- **Monitor usage**: Track audit logs in CrewAI Platform or AWS CloudWatch to stay ahead of quota limits and failures
+- **Monitor usage**: Track audit logs in LocalAI Platform or AWS CloudWatch to stay ahead of quota limits and failures

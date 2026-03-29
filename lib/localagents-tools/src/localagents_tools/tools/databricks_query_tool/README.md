@@ -43,7 +43,7 @@ databricks_tool = DatabricksQueryTool(
     default_warehouse_id="warehouse_id"
 )
 
-# Example in a CrewAI agent
+# Example in a LocalAI agent
 @agent
 def data_analyst(self) -> Agent:
     return Agent(

@@ -1,13 +1,13 @@
 ---
 title: Integração Langfuse
-description: Saiba como integrar o Langfuse ao CrewAI via OpenTelemetry usando OpenLit
+description: Saiba como integrar o Langfuse ao LocalAI via OpenTelemetry usando OpenLit
 icon: vials
 mode: "wide"
 ---
 
-# Integre o Langfuse ao CrewAI
+# Integre o Langfuse ao LocalAI
 
-Este notebook demonstra como integrar o **Langfuse** ao **CrewAI** usando OpenTelemetry via o SDK **OpenLit**. Ao final deste notebook, você será capaz de rastrear suas aplicações CrewAI com o Langfuse para melhorar a observabilidade e a depuração.
+Este notebook demonstra como integrar o **Langfuse** ao **LocalAI** usando OpenTelemetry via o SDK **OpenLit**. Ao final deste notebook, você será capaz de rastrear suas aplicações LocalAI com o Langfuse para melhorar a observabilidade e a depuração.
 
 > **O que é Langfuse?** [Langfuse](https://langfuse.com) é uma plataforma open-source de engenharia LLM. Ela fornece recursos de rastreamento e monitoramento para aplicações LLM, ajudando desenvolvedores a depurar, analisar e otimizar seus sistemas de IA. O Langfuse se integra com várias ferramentas e frameworks através de integrações nativas, OpenTelemetry e APIs/SDKs.
 
@@ -15,7 +15,7 @@ Este notebook demonstra como integrar o **Langfuse** ao **CrewAI** usando OpenTe
 
 ## Primeiros Passos
 
-Vamos passar por um exemplo simples usando CrewAI e integrando ao Langfuse via OpenTelemetry utilizando o OpenLit.
+Vamos passar por um exemplo simples usando LocalAI e integrando ao Langfuse via OpenTelemetry utilizando o OpenLit.
 
 ### Passo 1: Instale as Dependências
 
@@ -64,9 +64,9 @@ import openlit
 openlit.init()
 ```
 
-### Passo 4: Crie uma Aplicação Simples CrewAI
+### Passo 4: Crie uma Aplicação Simples LocalAI
 
-Vamos criar uma aplicação simples CrewAI onde múltiplos agentes colaboram para responder à pergunta de um usuário.
+Vamos criar uma aplicação simples LocalAI onde múltiplos agentes colaboram para responder à pergunta de um usuário.
 
 ```python
 from crewai import Agent, Task, Crew
@@ -97,9 +97,9 @@ equipe = Crew(
 
 ### Passo 5: Veja os Traces no Langfuse
 
-Após rodar o agente, você pode visualizar os traces gerados pela sua aplicação CrewAI no [Langfuse](https://cloud.langfuse.com). Você verá etapas detalhadas das interações do LLM, o que pode ajudar na depuração e otimização do seu agente de IA.
+Após rodar o agente, você pode visualizar os traces gerados pela sua aplicação LocalAI no [Langfuse](https://cloud.langfuse.com). Você verá etapas detalhadas das interações do LLM, o que pode ajudar na depuração e otimização do seu agente de IA.
 
-![Exemplo de trace CrewAI no Langfuse](https://langfuse.com/images/cookbook/integration_crewai/crewai-example-trace.png)
+![Exemplo de trace LocalAI no Langfuse](https://langfuse.com/images/cookbook/integration_crewai/crewai-example-trace.png)
 
 _[Exemplo público de trace no Langfuse](https://cloud.langfuse.com/project/cloramnkj0002jz088vzn1ja4/traces/e2cf380ffc8d47d28da98f136140642b?timestamp=2025-02-05T15%3A12%3A02.717Z&observation=3b32338ee6a5d9af)_
 

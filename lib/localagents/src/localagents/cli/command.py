@@ -25,7 +25,7 @@ class PlusAPIMixin:
         except Exception:
             telemetry.deploy_signup_error_span()
             console.print(
-                "Please sign up/login to CrewAI+ before using the CLI.",
+                "Please sign up/login to LocalAI+ before using the CLI.",
                 style="bold red",
             )
             console.print("Run 'crewai login' to sign up/login.", style="bold green")

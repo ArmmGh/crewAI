@@ -1,19 +1,19 @@
 ---
 title: "OpenTelemetry Export"
-description: "Export traces and logs from your CrewAI AMP deployments to your own OpenTelemetry collector"
+description: "Export traces and logs from your LocalAI AMP deployments to your own OpenTelemetry collector"
 icon: "magnifying-glass-chart"
 mode: "wide"
 ---
 
-CrewAI AMP can export OpenTelemetry **traces** and **logs** from your deployments directly to your own collector. This lets you monitor agent performance, track LLM calls, and debug issues using your existing observability stack.
+LocalAI AMP can export OpenTelemetry **traces** and **logs** from your deployments directly to your own collector. This lets you monitor agent performance, track LLM calls, and debug issues using your existing observability stack.
 
-Telemetry data follows the [OpenTelemetry GenAI semantic conventions](https://opentelemetry.io/docs/specs/semconv/gen-ai/) plus additional CrewAI-specific attributes.
+Telemetry data follows the [OpenTelemetry GenAI semantic conventions](https://opentelemetry.io/docs/specs/semconv/gen-ai/) plus additional LocalAI-specific attributes.
 
 ## Prerequisites
 
 <CardGroup cols={2}>
-  <Card title="CrewAI AMP account" icon="users">
-    Your organization must have an active CrewAI AMP account.
+  <Card title="LocalAI AMP account" icon="users">
+    Your organization must have an active LocalAI AMP account.
   </Card>
   <Card title="OpenTelemetry collector" icon="server">
     You need an OpenTelemetry-compatible collector endpoint (e.g., your own OTel Collector, Datadog, Grafana, or any OTLP-compatible backend).
@@ -22,7 +22,7 @@ Telemetry data follows the [OpenTelemetry GenAI semantic conventions](https://op
 
 ## Setting up a collector
 
-1. In CrewAI AMP, go to **Settings** > **OpenTelemetry Collectors**.
+1. In LocalAI AMP, go to **Settings** > **OpenTelemetry Collectors**.
 2. Click **Add Collector**.
 3. Select an integration type — **OpenTelemetry Traces** or **OpenTelemetry Logs**.
 4. Configure the connection:

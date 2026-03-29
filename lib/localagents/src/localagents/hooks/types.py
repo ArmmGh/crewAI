@@ -17,7 +17,7 @@ ReturnT = TypeVar("ReturnT", covariant=True)
 class Hook(Protocol, Generic[ContextT, ReturnT]):
     """Generic protocol for hook functions.
 
-    This protocol defines the common interface for all hook types in CrewAI.
+    This protocol defines the common interface for all hook types in LocalAI.
     Hooks receive a context object and optionally return a modified result.
 
     Type Parameters:

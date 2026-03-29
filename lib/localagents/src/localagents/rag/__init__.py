@@ -1,4 +1,4 @@
-"""RAG (Retrieval-Augmented Generation) infrastructure for CrewAI."""
+"""RAG (Retrieval-Augmented Generation) infrastructure for LocalAI."""
 
 import importlib
 import sys

@@ -19,8 +19,8 @@ mode: "wide"
             </Frame>
     </Step>
 
-    <Step title="تهيئة اتصال CrewAI AMP">
-        4. في علامة تبويب أخرى، افتح `CrewAI AMP > LLM Connections`. سمِّ اتصال LLM، واختر Azure كمزود، واختر نفس النموذج الذي اخترته في Azure.
+    <Step title="تهيئة اتصال LocalAI AMP">
+        4. في علامة تبويب أخرى، افتح `LocalAI AMP > LLM Connections`. سمِّ اتصال LLM، واختر Azure كمزود، واختر نفس النموذج الذي اخترته في Azure.
         5. في نفس الصفحة، أضف متغيرات البيئة من الخطوة 3:
             - واحد بالاسم `AZURE_DEPLOYMENT_TARGET_URL` (باستخدام Target URI). يجب أن يبدو الرابط هكذا: https://your-deployment.openai.azure.com/openai/deployments/gpt-4o/chat/completions?api-version=2024-08-01-preview
             - آخر بالاسم `AZURE_API_KEY` (باستخدام Key).
@@ -28,14 +28,14 @@ mode: "wide"
     </Step>
 
     <Step title="ضبط التهيئة الافتراضية">
-        7. في `CrewAI AMP > Settings > Defaults > Crew Studio LLM Settings`، عيّن اتصال LLM والنموذج الجديدين كافتراضيين.
+        7. في `LocalAI AMP > Settings > Defaults > Crew Studio LLM Settings`، عيّن اتصال LLM والنموذج الجديدين كافتراضيين.
     </Step>
 
     <Step title="تهيئة الوصول إلى الشبكة">
         8. تأكد من إعدادات الوصول إلى الشبكة:
             - في Azure، انتقل إلى `Azure OpenAI > اختر النشر`.
             - انتقل إلى `Resource Management > Networking`.
-            - تأكد من تفعيل `Allow access from all networks`. إذا كان هذا الإعداد مقيداً، فقد يُحظر وصول CrewAI إلى نقطة نهاية Azure OpenAI.
+            - تأكد من تفعيل `Allow access from all networks`. إذا كان هذا الإعداد مقيداً، فقد يُحظر وصول LocalAI إلى نقطة نهاية Azure OpenAI.
     </Step>
 
 </Steps>
@@ -50,5 +50,5 @@ mode: "wide"
 
 - تحقق من أن تنسيق Target URI يتطابق مع النمط المتوقع
 - تحقق من صحة مفتاح API وأنه يملك الصلاحيات المناسبة
-- تأكد من تهيئة الوصول إلى الشبكة للسماح باتصالات CrewAI
-- تأكد من أن نموذج النشر يتطابق مع ما هيأته في CrewAI
+- تأكد من تهيئة الوصول إلى الشبكة للسماح باتصالات LocalAI
+- تأكد من أن نموذج النشر يتطابق مع ما هيأته في LocalAI

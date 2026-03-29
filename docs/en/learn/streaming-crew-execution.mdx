@@ -1,17 +1,17 @@
 ---
 title: Streaming Crew Execution
-description: Stream real-time output from your CrewAI crew execution
+description: Stream real-time output from your LocalAI crew execution
 icon: wave-pulse
 mode: "wide"
 ---
 
 ## Introduction
 
-CrewAI provides the ability to stream real-time output during crew execution, allowing you to display results as they're generated rather than waiting for the entire process to complete. This feature is particularly useful for building interactive applications, providing user feedback, and monitoring long-running processes.
+LocalAI provides the ability to stream real-time output during crew execution, allowing you to display results as they're generated rather than waiting for the entire process to complete. This feature is particularly useful for building interactive applications, providing user feedback, and monitoring long-running processes.
 
 ## How Streaming Works
 
-When streaming is enabled, CrewAI captures LLM responses and tool calls as they happen, packaging them into structured chunks that include context about which task and agent is executing. You can iterate over these chunks in real-time and access the final result once execution completes.
+When streaming is enabled, LocalAI captures LLM responses and tool calls as they happen, packaging them into structured chunks that include context about which task and agent is executing. You can iterate over these chunks in real-time and access the final result once execution completes.
 
 ## Enabling Streaming
 
@@ -353,4 +353,4 @@ except Exception as e:
         print("Streaming completed but an error occurred")
 ```
 
-By leveraging streaming, you can build more responsive and interactive applications with CrewAI, providing users with real-time visibility into agent execution and results.
+By leveraging streaming, you can build more responsive and interactive applications with LocalAI, providing users with real-time visibility into agent execution and results.

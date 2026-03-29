@@ -46,7 +46,7 @@ class ApifyActorsTool(BaseTool):
 
             tool = ApifyActorsTool(actor_name="apify/rag-web-browser")
 
-            results = tool.run(run_input={"query": "What is CrewAI?", "maxResults": 5})
+            results = tool.run(run_input={"query": "What is LocalAI?", "maxResults": 5})
             for result in results:
                 print(f"URL: {result['metadata']['url']}")
                 print(f"Content: {result.get('markdown', 'N/A')[:100]}...")

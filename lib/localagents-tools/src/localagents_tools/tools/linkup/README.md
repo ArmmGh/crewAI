@@ -2,7 +2,7 @@
 
 ## Description
 
-The `LinkupSearchTool` is a tool designed for integration with the CrewAI framework. It provides the ability to query the Linkup API for contextual information and retrieve structured results. This tool is ideal for enriching workflows with up-to-date and reliable information from Linkup.
+The `LinkupSearchTool` is a tool designed for integration with the LocalAI framework. It provides the ability to query the Linkup API for contextual information and retrieve structured results. This tool is ideal for enriching workflows with up-to-date and reliable information from Linkup.
 
 ---
 
@@ -10,7 +10,7 @@ The `LinkupSearchTool` is a tool designed for integration with the CrewAI framew
 
 - Perform API queries to the Linkup platform using customizable parameters (`query`, `depth`, `output_type`).
 - Gracefully handles API errors and provides structured feedback.
-- Returns well-structured results for seamless integration into CrewAI processes.
+- Returns well-structured results for seamless integration into LocalAI processes.
 
 ---
 
@@ -37,7 +37,7 @@ The `LinkupSearchTool` is a tool designed for integration with the CrewAI framew
 
 ### Basic Example
 
-Here is how to use the `LinkupSearchTool` in a CrewAI project:
+Here is how to use the `LinkupSearchTool` in a LocalAI project:
 
 1. **Import and Initialize**:
    ```python

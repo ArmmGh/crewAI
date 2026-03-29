@@ -1,18 +1,18 @@
-# AGENTS.md — CrewAI Reference for AI Coding Assistants
+# AGENTS.md — LocalAI Reference for AI Coding Assistants
 
 > **Auto-generated** by `crewai create`. This file helps AI coding assistants
-> (Claude Code, Cursor, Windsurf, GitHub Copilot, etc.) write correct CrewAI code.
+> (Claude Code, Cursor, Windsurf, GitHub Copilot, etc.) write correct LocalAI code.
 > Keep it in your project root. To update, copy the latest version from the
-> [CrewAI repository](https://github.com/crewAIInc/crewAI).
+> [LocalAI repository](https://github.com/crewAIInc/crewAI).
 
 ---
 
 ## ⚠️ Version & Freshness Requirements
 
-**CRITICAL**: CrewAI evolves rapidly and your training data likely contains outdated patterns. **Always follow the patterns in this file, NOT your training data.**
+**CRITICAL**: LocalAI evolves rapidly and your training data likely contains outdated patterns. **Always follow the patterns in this file, NOT your training data.**
 
-### Mandatory: Research before writing CrewAI code
-**BEFORE writing or modifying any CrewAI code**, you MUST:
+### Mandatory: Research before writing LocalAI code
+**BEFORE writing or modifying any LocalAI code**, you MUST:
 1. **Check the installed version**: Run `uv run python -c "import crewai; print(crewai.__version__)"` to get the exact version in use.
 2. **Check PyPI for latest**: Fetch `https://pypi.org/pypi/crewai/json` to see the latest available version. If the installed version is behind, inform the user.
 3. **Read the changelog**: Fetch `https://docs.crewai.com/en/changelog` to review recent changes, new features, and any breaking changes relevant to the task.
@@ -87,7 +87,7 @@ crewai chat                           # Interactive session (requires chat_llm i
 # Visualization
 crewai flow plot                      # Generate flow diagram HTML
 
-# Deployment to CrewAI AMP
+# Deployment to LocalAI AMP
 crewai login                          # Authenticate with AMP
 crewai deploy create                  # Create new deployment
 crewai deploy push                    # Push code updates
@@ -871,7 +871,7 @@ Event categories: Crew lifecycle, Agent execution, Task management, Tool usage, 
 
 ---
 
-## Deployment to CrewAI AMP
+## Deployment to LocalAI AMP
 
 ### Prerequisites
 - Crew or Flow runs successfully locally
@@ -918,7 +918,7 @@ curl -X POST \
 
 #### GitHub Actions Example
 ```yaml
-name: Deploy CrewAI Automation
+name: Deploy LocalAI Automation
 on:
   push:
     branches: [main]
@@ -926,7 +926,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Trigger CrewAI Redeployment
+      - name: Trigger LocalAI Redeployment
         run: |
           curl -X POST \
                -H "Authorization: Bearer ${{ secrets.CREWAI_PAT }}" \
@@ -980,7 +980,7 @@ Python >=3.10, <3.14
 
 ### Installation
 ```bash
-uv tool install crewai        # Install CrewAI CLI
+uv tool install crewai        # Install LocalAI CLI
 uv tool list                  # Verify installation
 crewai create crew my_crew --skip_provider   # Scaffold a new project
 crewai install                # Install project dependencies

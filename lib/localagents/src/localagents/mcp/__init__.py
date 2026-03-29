@@ -1,6 +1,6 @@
-"""MCP (Model Context Protocol) client support for CrewAI agents.
+"""MCP (Model Context Protocol) client support for LocalAI agents.
 
-This module provides native MCP client functionality, allowing CrewAI agents
+This module provides native MCP client functionality, allowing LocalAI agents
 to connect to any MCP-compliant server using various transport types.
 """
 

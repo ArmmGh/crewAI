@@ -1,4 +1,4 @@
-"""Agent Skills standard implementation for crewAI.
+"""Agent Skills standard implementation for localAI.
 
 Provides filesystem-based skill packaging with progressive disclosure.
 """

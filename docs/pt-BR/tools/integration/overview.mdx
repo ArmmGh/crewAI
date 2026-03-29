@@ -1,17 +1,17 @@
 ---
 title: "Visão Geral"
-description: "Conecte agentes CrewAI com automações externas e serviços de IA gerenciados"
+description: "Conecte agentes LocalAI com automações externas e serviços de IA gerenciados"
 icon: "plug"
 mode: "wide"
 ---
 
-As ferramentas de integração permitem que seus agentes deleguem trabalho para outras plataformas de automação e serviços de IA gerenciados. Use-as quando o fluxo precisar invocar uma automação já publicada no CrewAI Platform ou quando for necessário direcionar tarefas para provedores especializados, como Amazon Bedrock.
+As ferramentas de integração permitem que seus agentes deleguem trabalho para outras plataformas de automação e serviços de IA gerenciados. Use-as quando o fluxo precisar invocar uma automação já publicada no LocalAI Platform ou quando for necessário direcionar tarefas para provedores especializados, como Amazon Bedrock.
 
 ## **Ferramentas Disponíveis**
 
 <CardGroup cols={2}>
-  <Card title="Ferramenta de Execução de Automação CrewAI" icon="robot" href="/pt-BR/tools/integration/crewaiautomationtool">
-    Invoque automações ativas do CrewAI Platform, envie entradas personalizadas e acompanhe o resultado diretamente do seu agente.
+  <Card title="Ferramenta de Execução de Automação LocalAI" icon="robot" href="/pt-BR/tools/integration/crewaiautomationtool">
+    Invoque automações ativas do LocalAI Platform, envie entradas personalizadas e acompanhe o resultado diretamente do seu agente.
   </Card>
 
   <Card title="Ferramenta Bedrock Invoke Agent" icon="aws" href="/pt-BR/tools/integration/bedrockinvokeagenttool">
@@ -21,9 +21,9 @@ As ferramentas de integração permitem que seus agentes deleguem trabalho para 
 
 ## **Casos de Uso Comuns**
 
-- **Encadear automações**: Inicie uma automação do CrewAI a partir de outra crew ou flow
+- **Encadear automações**: Inicie uma automação do LocalAI a partir de outra crew ou flow
 - **Hand-off corporativo**: Direcione tarefas para agentes Bedrock que já incorporam políticas e guardrails internos
-- **Workflows híbridos**: Combine o raciocínio do CrewAI com sistemas externos que expõem APIs de agente
+- **Workflows híbridos**: Combine o raciocínio do LocalAI com sistemas externos que expõem APIs de agente
 - **Tarefas demoradas**: Faça polling de automações externas e mescle o resultado final na execução atual
 
 ## **Exemplo de Início Rápido**
@@ -69,4 +69,4 @@ Crew(agents=[automation_strategist], tasks=[execute_playbook]).kickoff()
 - **Planeje a latência**: Automações externas podem levar mais tempo — configure intervalos e timeouts adequados
 - **Reutilize sessões**: Agentes Bedrock aceitam IDs de sessão para manter contexto entre chamadas
 - **Valide respostas**: Normalize a saída remota (JSON, texto, códigos de status) antes de enviá-la a etapas seguintes
-- **Monitore o uso**: Acompanhe logs no CrewAI Platform ou no AWS CloudWatch para evitar estouros de quota e falhas
+- **Monitore o uso**: Acompanhe logs no LocalAI Platform ou no AWS CloudWatch para evitar estouros de quota e falhas

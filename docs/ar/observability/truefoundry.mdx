@@ -4,7 +4,7 @@ icon: chart-line
 mode: "wide"
 ---
 
-توفر TrueFoundry [بوابة ذكاء اصطناعي](https://www.truefoundry.com/ai-gateway) جاهزة للمؤسسات يمكنها التكامل مع أطر العمل الوكيلية مثل CrewAI وتوفير الحوكمة والمراقبة لتطبيقات الذكاء الاصطناعي. تعمل بوابة TrueFoundry AI كواجهة موحدة للوصول إلى LLM، وتوفر:
+توفر TrueFoundry [بوابة ذكاء اصطناعي](https://www.truefoundry.com/ai-gateway) جاهزة للمؤسسات يمكنها التكامل مع أطر العمل الوكيلية مثل LocalAI وتوفير الحوكمة والمراقبة لتطبيقات الذكاء الاصطناعي. تعمل بوابة TrueFoundry AI كواجهة موحدة للوصول إلى LLM، وتوفر:
 
 - **وصول موحد لـ API**: الاتصال بأكثر من 250 نموذج LLM (OpenAI وClaude وGemini وGroq وMistral) عبر API واحد
 - **زمن استجابة منخفض**: زمن استجابة داخلي أقل من 3 مللي ثانية مع توجيه ذكي وموازنة أحمال
@@ -12,13 +12,13 @@ mode: "wide"
 - **إدارة الحصص والتكاليف**: حصص قائمة على الرموز المميزة وتحديد المعدل وتتبع استخدام شامل
 - **المراقبة**: تسجيل كامل للطلبات/الاستجابات ومقاييس وتتبعات مع احتفاظ قابل للتخصيص
 
-## كيف يتكامل TrueFoundry مع CrewAI
+## كيف يتكامل TrueFoundry مع LocalAI
 
 
 ### التثبيت والإعداد
 
 <Steps>
-<Step title="تثبيت CrewAI">
+<Step title="تثبيت LocalAI">
 ```bash
 pip install crewai
 ```
@@ -29,7 +29,7 @@ pip install crewai
 2. اتبع الخطوات هنا في [البدء السريع](https://docs.truefoundry.com/gateway/quick-start)
 </Step>
 
-<Step title="إعداد CrewAI مع TrueFoundry">
+<Step title="إعداد LocalAI مع TrueFoundry">
 ![إعداد كود TrueFoundry](/images/new-code-snippet.png)
 
 ```python
@@ -42,7 +42,7 @@ truefoundry_llm = LLM(
     api_key="your_truefoundry_api_key"
 )
 
-# Use in your CrewAI agents
+# Use in your LocalAI agents
 from crewai import Agent
 
 @agent
@@ -56,7 +56,7 @@ def researcher(self) -> Agent:
 </Step>
 </Steps>
 
-### مثال كامل على CrewAI
+### مثال كامل على LocalAI
 
 ```python
 from crewai import Agent, Task, Crew, LLM
@@ -111,7 +111,7 @@ result = crew.kickoff()
 
 ### المراقبة والحوكمة
 
-راقب وكلاء CrewAI من خلال علامة تبويب المقاييس في TrueFoundry:
+راقب وكلاء LocalAI من خلال علامة تبويب المقاييس في TrueFoundry:
 ![مقاييس TrueFoundry](/images/gateway-metrics.png)
 
 مع بوابة الذكاء الاصطناعي من TrueFoundry، يمكنك مراقبة وتحليل:
@@ -142,5 +142,5 @@ Traceloop.init(
 )
 ```
 
-يوفر هذا ارتباط تتبع إضافي عبر سير عمل CrewAI بالكامل.
-![تتبع CrewAI مع TrueFoundry](/images/tracing_crewai.png)
+يوفر هذا ارتباط تتبع إضافي عبر سير عمل LocalAI بالكامل.
+![تتبع LocalAI مع TrueFoundry](/images/tracing_crewai.png)

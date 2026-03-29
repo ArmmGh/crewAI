@@ -1,16 +1,16 @@
 ---
 title: Conecte-se a qualquer LLM
-description: Guia abrangente sobre como integrar o CrewAI a diversos Large Language Models (LLMs) usando o LiteLLM, incluindo provedores compatíveis e opções de configuração.
+description: Guia abrangente sobre como integrar o LocalAI a diversos Large Language Models (LLMs) usando o LiteLLM, incluindo provedores compatíveis e opções de configuração.
 icon: brain-circuit
 mode: "wide"
 ---
 
-## Conecte o CrewAI a LLMs
+## Conecte o LocalAI a LLMs
 
-O CrewAI conecta-se a LLMs por meio de integrações nativas via SDK para os provedores mais populares (OpenAI, Anthropic, Google Gemini, Azure e AWS Bedrock), e usa o LiteLLM como alternativa flexível para todos os demais provedores.
+O LocalAI conecta-se a LLMs por meio de integrações nativas via SDK para os provedores mais populares (OpenAI, Anthropic, Google Gemini, Azure e AWS Bedrock), e usa o LiteLLM como alternativa flexível para todos os demais provedores.
 
 <Note>
-    Por padrão, o CrewAI usa o modelo `gpt-4o-mini`. Isso é determinado pela variável de ambiente `OPENAI_MODEL_NAME`, que tem como padrão "gpt-4o-mini" se não for definida.
+    Por padrão, o LocalAI usa o modelo `gpt-4o-mini`. Isso é determinado pela variável de ambiente `OPENAI_MODEL_NAME`, que tem como padrão "gpt-4o-mini" se não for definida.
     Você pode facilmente configurar seus agentes para usar um modelo ou provedor diferente, conforme descrito neste guia.
 </Note>
 
@@ -50,7 +50,7 @@ Para uma lista completa e sempre atualizada dos provedores suportados, consulte 
 
 ## Alterando a LLM
 
-Para utilizar uma LLM diferente com seus agentes CrewAI, você tem várias opções:
+Para utilizar uma LLM diferente com seus agentes LocalAI, você tem várias opções:
 
 <Tabs>
     <Tab title="Usando um Identificador de String">
@@ -210,4 +210,4 @@ Isso é particularmente útil ao trabalhar com APIs compatíveis com a OpenAI ou
 
 ## Conclusão
 
-Ao utilizar o LiteLLM, o CrewAI oferece integração transparente com uma vasta gama de LLMs. Essa flexibilidade permite que você escolha o modelo mais adequado para sua necessidade específica, seja priorizando desempenho, custo-benefício ou implantação local. Lembre-se de consultar a [documentação do LiteLLM](https://docs.litellm.ai/docs/) para obter as informações mais atualizadas sobre modelos suportados e opções de configuração.
+Ao utilizar o LiteLLM, o LocalAI oferece integração transparente com uma vasta gama de LLMs. Essa flexibilidade permite que você escolha o modelo mais adequado para sua necessidade específica, seja priorizando desempenho, custo-benefício ou implantação local. Lembre-se de consultar a [documentação do LiteLLM](https://docs.litellm.ai/docs/) para obter as informações mais atualizadas sobre modelos suportados e opções de configuração.

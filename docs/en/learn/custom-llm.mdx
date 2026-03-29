@@ -1,13 +1,13 @@
 ---
 title: Custom LLM Implementation
-description: Learn how to create custom LLM implementations in CrewAI.
+description: Learn how to create custom LLM implementations in LocalAI.
 icon: code
 mode: "wide"
 ---
 
 ## Overview
 
-CrewAI supports custom LLM implementations through the `BaseLLM` abstract base class. This allows you to integrate any LLM provider that doesn't have built-in support in LiteLLM, or implement custom authentication mechanisms.
+LocalAI supports custom LLM implementations through the `BaseLLM` abstract base class. This allows you to integrate any LLM provider that doesn't have built-in support in LiteLLM, or implement custom authentication mechanisms.
 
 ## Quick Start
 
@@ -194,7 +194,7 @@ class CustomAuthLLM(BaseLLM):
 
 ### Stop Words Support
 
-CrewAI automatically adds `"\nObservation:"` as a stop word to control agent behavior. If your LLM supports stop words:
+LocalAI automatically adds `"\nObservation:"` as a stop word to control agent behavior. If your LLM supports stop words:
 
 ```python
 def call(self, messages, tools=None, callbacks=None, available_functions=None):
@@ -226,7 +226,7 @@ def call(self, messages, tools=None, callbacks=None, available_functions=None):
     return content
 
 def supports_stop_words(self) -> bool:
-    return False  # Tell CrewAI we handle stop words manually
+    return False  # Tell LocalAI we handle stop words manually
 ```
 
 ## Function Calling
@@ -329,7 +329,7 @@ def test_custom_llm():
     assert isinstance(result, str)
     assert len(result) > 0
     
-    # Test with CrewAI agent
+    # Test with LocalAI agent
     agent = Agent(
         role="Test Agent",
         goal="Test custom LLM",
@@ -348,4 +348,4 @@ def test_custom_llm():
     assert "hello" in result.raw.lower()
 ```
 
-This guide covers the essentials of implementing custom LLMs in CrewAI.
+This guide covers the essentials of implementing custom LLMs in LocalAI.

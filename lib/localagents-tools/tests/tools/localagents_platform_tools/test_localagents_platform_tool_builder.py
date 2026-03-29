@@ -2,7 +2,7 @@ import unittest
 from unittest.mock import Mock, patch
 
 from crewai_tools.tools.crewai_platform_tools import (
-    CrewAIPlatformActionTool,
+    LocalAIPlatformActionTool,
     CrewaiPlatformToolBuilder,
 )
 import pytest
@@ -166,7 +166,7 @@ class TestCrewaiPlatformToolBuilder(unittest.TestCase):
         tools = builder.tools()
 
         assert len(tools) == 2
-        assert all(isinstance(tool, CrewAIPlatformActionTool) for tool in tools)
+        assert all(isinstance(tool, LocalAIPlatformActionTool) for tool in tools)
 
         tool_names = [tool.action_name for tool in tools]
         assert "create_issue" in tool_names

@@ -1,13 +1,13 @@
 ---
 title: 'Qdrant 벡터 검색 도구'
-description: 'Qdrant 벡터 데이터베이스를 활용한 CrewAI 에이전트의 시맨틱 검색 기능'
+description: 'Qdrant 벡터 데이터베이스를 활용한 LocalAI 에이전트의 시맨틱 검색 기능'
 icon: vector-square
 mode: "wide"
 ---
 
 ## 개요
 
-Qdrant Vector Search Tool은 [Qdrant](https://qdrant.tech/) 벡터 유사성 검색 엔진을 활용하여 CrewAI 에이전트에 시맨틱 검색 기능을 제공합니다. 이 도구를 사용하면 에이전트가 Qdrant 컬렉션에 저장된 문서를 시맨틱 유사성을 기반으로 검색할 수 있습니다.
+Qdrant Vector Search Tool은 [Qdrant](https://qdrant.tech/) 벡터 유사성 검색 엔진을 활용하여 LocalAI 에이전트에 시맨틱 검색 기능을 제공합니다. 이 도구를 사용하면 에이전트가 Qdrant 컬렉션에 저장된 문서를 시맨틱 유사성을 기반으로 검색할 수 있습니다.
 
 ## 설치
 
@@ -51,7 +51,7 @@ agent = Agent(
 1. PDF에서 텍스트 추출
 2. OpenAI를 사용하여 임베딩 생성
 3. Qdrant에 저장
-4. CrewAI agentic RAG 워크플로우로 시맨틱 검색 생성
+4. LocalAI agentic RAG 워크플로우로 시맨틱 검색 생성
 
 ```python
 import os
@@ -134,7 +134,7 @@ qdrant_tool = QdrantVectorSearchTool(
     )
 )
 
-# Create CrewAI agents
+# Create LocalAI agents
 search_agent = Agent(
     role="Senior Semantic Search Agent",
     goal="Find and analyze documents based on semantic search",
@@ -169,7 +169,7 @@ answer_task = Task(
     agent=answer_agent
 )
 
-# Run CrewAI workflow
+# Run LocalAI workflow
 crew = Crew(
     agents=[search_agent, answer_agent],
     tasks=[search_task, answer_task],

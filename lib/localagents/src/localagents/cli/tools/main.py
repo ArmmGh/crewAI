@@ -31,7 +31,7 @@ console = Console()
 
 class ToolCommand(BaseCommand, PlusAPIMixin):
     """
-    A class to handle tool repository related operations for CrewAI projects.
+    A class to handle tool repository related operations for LocalAI projects.
     """
 
     def __init__(self) -> None:

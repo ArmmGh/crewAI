@@ -1,13 +1,13 @@
 ---
 title: MultiOn Tool
-description: O `MultiOnTool` permite que agentes CrewAI naveguem e interajam com a web por meio de instruções em linguagem natural.
+description: O `MultiOnTool` permite que agentes LocalAI naveguem e interajam com a web por meio de instruções em linguagem natural.
 icon: globe
 mode: "wide"
 ---
 
 ## Visão Geral
 
-O `MultiOnTool` foi projetado para envolver as capacidades de navegação web do [MultiOn](https://docs.multion.ai/welcome), permitindo que agentes CrewAI controlem navegadores web usando instruções em linguagem natural. Esta ferramenta facilita a navegação fluida, tornando-se um recurso essencial para projetos que requerem interação dinâmica com dados web e automação de tarefas baseadas na web.
+O `MultiOnTool` foi projetado para envolver as capacidades de navegação web do [MultiOn](https://docs.multion.ai/welcome), permitindo que agentes LocalAI controlem navegadores web usando instruções em linguagem natural. Esta ferramenta facilita a navegação fluida, tornando-se um recurso essencial para projetos que requerem interação dinâmica com dados web e automação de tarefas baseadas na web.
 
 ## Instalação
 
@@ -23,7 +23,7 @@ Você também precisará instalar a extensão de navegador do MultiOn e habilita
 
 Para usar o `MultiOnTool` de forma eficaz, siga estes passos:
 
-1. **Instale o CrewAI**: Certifique-se de que o pacote `crewai[tools]` esteja instalado em seu ambiente Python.
+1. **Instale o LocalAI**: Certifique-se de que o pacote `crewai[tools]` esteja instalado em seu ambiente Python.
 2. **Instale e utilize o MultiOn**: Siga a [documentação do MultiOn](https://docs.multion.ai/learn/browser-extension) para instalar a extensão de navegador do MultiOn.
 3. **Habilite o Uso da API**: Clique na extensão do MultiOn na pasta de extensões do seu navegador (não no ícone flutuante do MultiOn na página web) para abrir as configurações da extensão. Clique na opção para habilitar a API (API Enabled).
 
@@ -97,7 +97,7 @@ Se o status retornado for `CONTINUE`, o agente deve ser instruído a reenviar a 
 
 ## Detalhes de Implementação
 
-O `MultiOnTool` é implementado como uma subclasse de `BaseTool` do CrewAI. Ele envolve o cliente MultiOn para fornecer capacidades de navegação web:
+O `MultiOnTool` é implementado como uma subclasse de `BaseTool` do LocalAI. Ele envolve o cliente MultiOn para fornecer capacidades de navegação web:
 
 ```python Code
 class MultiOnTool(BaseTool):
@@ -124,4 +124,4 @@ class MultiOnTool(BaseTool):
 
 ## Conclusão
 
-O `MultiOnTool` oferece uma maneira poderosa de integrar capacidades de navegação web em agentes CrewAI. Ao permitir que agentes interajam com sites por meio de instruções em linguagem natural, amplia significativamente as possibilidades para tarefas baseadas na web, desde coleta de dados e pesquisa até interações automatizadas com serviços online.
+O `MultiOnTool` oferece uma maneira poderosa de integrar capacidades de navegação web em agentes LocalAI. Ao permitir que agentes interajam com sites por meio de instruções em linguagem natural, amplia significativamente as possibilidades para tarefas baseadas na web, desde coleta de dados e pesquisa até interações automatizadas com serviços online.

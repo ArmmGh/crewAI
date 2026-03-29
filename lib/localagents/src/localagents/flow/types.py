@@ -1,4 +1,4 @@
-"""Type definitions for CrewAI Flow module.
+"""Type definitions for LocalAI Flow module.
 
 This module contains TypedDict definitions and type aliases used throughout
 the Flow system.

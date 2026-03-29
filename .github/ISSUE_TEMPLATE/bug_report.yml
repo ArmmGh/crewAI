@@ -1,5 +1,5 @@
 name: Bug report
-description: Create a report to help us improve CrewAI
+description: Create a report to help us improve LocalAI
 title: "[BUG]"
 labels: ["bug"]
 assignees: []
@@ -70,15 +70,15 @@ body:
   - type: input
     id: crewai-version
     attributes:
-      label: crewAI Version
-      description: What version of CrewAI are you using
+      label: localAI Version
+      description: What version of LocalAI are you using
     validations:
       required: true
   - type: input
     id: crewai-tools-version
     attributes:
-      label: crewAI Tools Version
-      description: What version of CrewAI Tools are you using 
+      label: localAI Tools Version
+      description: What version of LocalAI Tools are you using 
     validations:
       required: true
   - type: dropdown

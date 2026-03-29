@@ -1,7 +1,7 @@
 [project]
 name = "crewai-files"
 dynamic = ["version"]
-description = "File handling utilities for CrewAI multimodal inputs"
+description = "File handling utilities for LocalAI multimodal inputs"
 readme = "README.md"
 authors = [
     { name = "Greyson LaLonde", email = "greyson@crewai.com" }

@@ -1,6 +1,6 @@
 # AWS Bedrock Code Interpreter Tools
 
-This toolkit provides a set of tools for interacting with the AWS Bedrock Code Interpreter environment. It enables your CrewAI agents to execute code, run shell commands, manage files, and perform computational tasks in a secure, isolated environment.
+This toolkit provides a set of tools for interacting with the AWS Bedrock Code Interpreter environment. It enables your LocalAI agents to execute code, run shell commands, manage files, and perform computational tasks in a secure, isolated environment.
 
 ## Features
 
@@ -35,7 +35,7 @@ llm = LLM(
     region_name="us-west-2",
 )
 
-# Create a CrewAI agent that uses the code interpreter tools
+# Create a LocalAI agent that uses the code interpreter tools
 developer_agent = Agent(
     role="Python Developer",
     goal="Create and execute Python code to solve problems.",

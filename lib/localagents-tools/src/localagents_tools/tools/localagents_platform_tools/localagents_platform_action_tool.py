@@ -15,7 +15,7 @@ from crewai_tools.tools.crewai_platform_tools.misc import (
 )
 
 
-class CrewAIPlatformActionTool(BaseTool):
+class LocalAIPlatformActionTool(BaseTool):
     action_name: str = Field(default="", description="The name of the action")
     action_schema: dict[str, Any] = Field(
         default_factory=dict, description="The schema of the action"

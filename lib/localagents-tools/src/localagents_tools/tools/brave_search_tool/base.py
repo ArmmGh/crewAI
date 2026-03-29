@@ -286,7 +286,7 @@ class BraveSearchToolBase(BaseTool, ABC):
 
     def _common_payload_refinement(self, params: dict[str, Any]) -> dict[str, Any]:
         """Common payload refinement for all tools."""
-        # crewAI's schema pipeline (ensure_all_properties_required in
+        # localAI's schema pipeline (ensure_all_properties_required in
         # pydantic_schema_utils.py) marks every property as required so
         # that OpenAI strict-mode structured outputs work correctly.
         # The side-effect is that the LLM fills in *every* parameter —

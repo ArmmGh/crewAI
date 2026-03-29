@@ -28,7 +28,7 @@ This setup enables you to track hyperparameters and monitor for performance issu
 - **Prompt Injection Detection**: Identify potential code injection and secret leaks.
 - **API Keys and Secrets Management**: Securely handle your LLM API keys and secrets centrally, avoiding insecure practices.
 - **Prompt Management**: Manage and version Agent prompts using PromptHub for consistent and easy access across Agents.
-- **Model Playground** Test and compare different models for your CrewAI agents before deployment.
+- **Model Playground** Test and compare different models for your LocalAI agents before deployment.
 
 ## Setup Instructions
 
@@ -62,7 +62,7 @@ This setup enables you to track hyperparameters and monitor for performance issu
           openlit.init(otlp_endpoint="http://127.0.0.1:4318")
           ```
           
-          Example Usage for monitoring a CrewAI Agent:
+          Example Usage for monitoring a LocalAI Agent:
     
           ```python
           from crewai import Agent, Task, Crew, Process
@@ -122,7 +122,7 @@ This setup enables you to track hyperparameters and monitor for performance issu
           export OTEL_EXPORTER_OTLP_ENDPOINT = "http://127.0.0.1:4318"
           ```
 
-          Example Usage for monitoring a CrewAI Async Agent:
+          Example Usage for monitoring a LocalAI Async Agent:
 
           ```python
           import asyncio

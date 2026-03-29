@@ -30,7 +30,7 @@ def custom_url_tool():
 def test_default_initialization(tool):
     assert tool.crewai_enterprise_url == "https://app.crewai.com"
     assert tool.personal_access_token == "test_token"
-    assert tool.name == "Generate CrewAI Automation"
+    assert tool.name == "Generate LocalAI Automation"
 
 
 def test_custom_base_url_from_environment(custom_url_tool):
@@ -75,7 +75,7 @@ def test_successful_generation_without_org_id(mock_post, tool):
 
     assert (
         result
-        == "Generated CrewAI Studio project URL: https://app.crewai.com/studio/project-123"
+        == "Generated LocalAI Studio project URL: https://app.crewai.com/studio/project-123"
     )
     mock_post.assert_called_once_with(
         "https://app.crewai.com/crewai_plus/api/v1/studio",
@@ -100,7 +100,7 @@ def test_successful_generation_with_org_id(mock_post, tool):
 
     assert (
         result
-        == "Generated CrewAI Studio project URL: https://app.crewai.com/studio/project-456"
+        == "Generated LocalAI Studio project URL: https://app.crewai.com/studio/project-456"
     )
     mock_post.assert_called_once_with(
         "https://app.crewai.com/crewai_plus/api/v1/studio",
@@ -161,7 +161,7 @@ def test_api_response_missing_url(mock_post, tool):
 
     result = tool.run(prompt="Create automation")
 
-    assert result == "Generated CrewAI Studio project URL: None"
+    assert result == "Generated LocalAI Studio project URL: None"
 
 
 def test_authorization_header_construction(tool):

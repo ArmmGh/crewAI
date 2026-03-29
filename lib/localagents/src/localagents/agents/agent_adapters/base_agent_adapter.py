@@ -13,11 +13,11 @@ if TYPE_CHECKING:
 
 
 class BaseAgentAdapter(BaseAgent, ABC):
-    """Base class for all agent adapters in CrewAI.
+    """Base class for all agent adapters in LocalAI.
 
     This abstract class defines the common interface and functionality that all
     agent adapters must implement. It extends BaseAgent to maintain compatibility
-    with the CrewAI framework while adding adapter-specific requirements.
+    with the LocalAI framework while adding adapter-specific requirements.
     """
 
     adapted_structured_output: bool = False

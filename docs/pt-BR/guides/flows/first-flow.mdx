@@ -7,9 +7,9 @@ mode: "wide"
 
 ## Assumindo o Controle de Workflows de IA com Flows
 
-Os Flows do CrewAI representam o próximo nível em orquestração de IA – combinando o poder colaborativo de equipes de agentes de IA com a precisão e flexibilidade da programação procedural. Enquanto os crews se destacam em colaboração de agentes, os flows dão a você controle detalhado sobre exatamente como e quando diferentes componentes do seu sistema de IA interagem.
+Os Flows do LocalAI representam o próximo nível em orquestração de IA – combinando o poder colaborativo de equipes de agentes de IA com a precisão e flexibilidade da programação procedural. Enquanto os crews se destacam em colaboração de agentes, os flows dão a você controle detalhado sobre exatamente como e quando diferentes componentes do seu sistema de IA interagem.
 
-Neste guia, vamos percorrer a criação de um poderoso CrewAI Flow que gera um guia de aprendizado abrangente sobre qualquer tema. Este tutorial demonstrará como os Flows oferecem controle estruturado e orientado a eventos sobre seus workflows de IA ao combinar código regular, chamadas diretas a LLM e processamento baseado em crews.
+Neste guia, vamos percorrer a criação de um poderoso LocalAI Flow que gera um guia de aprendizado abrangente sobre qualquer tema. Este tutorial demonstrará como os Flows oferecem controle estruturado e orientado a eventos sobre seus workflows de IA ao combinar código regular, chamadas diretas a LLM e processamento baseado em crews.
 
 ### O Que Torna os Flows Poderosos
 
@@ -43,13 +43,13 @@ Vamos começar e construir seu primeiro flow!
 
 Antes de começar, certifique-se de ter:
 
-1. Instalado o CrewAI seguindo o [guia de instalação](/pt-BR/installation)
+1. Instalado o LocalAI seguindo o [guia de instalação](/pt-BR/installation)
 2. Configurado sua chave de API LLM no ambiente, conforme o [guia de configuração do LLM](/pt-BR/concepts/llms#setting-up-your-llm)
 3. Conhecimentos básicos de Python
 
-## Passo 1: Crie um Novo Projeto de CrewAI Flow
+## Passo 1: Crie um Novo Projeto de LocalAI Flow
 
-Primeiro, vamos criar um novo projeto de Flow do CrewAI usando a CLI. Este comando configura um projeto com todos os diretórios necessários e arquivos de template para seu flow.
+Primeiro, vamos criar um novo projeto de Flow do LocalAI usando a CLI. Este comando configura um projeto com todos os diretórios necessários e arquivos de template para seu flow.
 
 ```bash
 crewai create flow guide_creator_flow
@@ -58,8 +58,8 @@ cd guide_creator_flow
 
 Isso gerará um projeto com a estrutura básica necessária para seu flow.
 
-<Frame caption="Visão Geral do Framework CrewAI">
-  <img src="/images/flows.png" alt="CrewAI Framework Overview" />
+<Frame caption="Visão Geral do Framework LocalAI">
+  <img src="/images/flows.png" alt="LocalAI Framework Overview" />
 </Frame>
 
 ## Passo 2: Entendendo a Estrutura do Projeto
@@ -92,7 +92,7 @@ Vamos modificar esta estrutura para criar nosso flow de criação de guias, que 
 
 ## Passo 3: Adicione um Crew de Redator de Conteúdo
 
-Nosso flow precisará de um crew especializado para lidar com o processo de criação de conteúdo. Vamos usar a CLI do CrewAI para adicionar um crew de redatores de conteúdo:
+Nosso flow precisará de um crew especializado para lidar com o processo de criação de conteúdo. Vamos usar a CLI do LocalAI para adicionar um crew de redatores de conteúdo:
 
 ```bash
 crewai flow add-crew content-crew
@@ -303,7 +303,7 @@ crewai install
 
 ## Passo 8: Execute Seu Flow
 
-Agora é hora de ver seu flow em ação! Execute-o usando a CLI do CrewAI:
+Agora é hora de ver seu flow em ação! Execute-o usando a CLI do LocalAI:
 
 ```bash
 crewai flow kickoff
@@ -374,7 +374,7 @@ Os mesmos padrões podem ser usados para criar flows de:
 
 ## Principais Funcionalidades Demonstradas
 
-Este flow de criação de guia demonstra diversos recursos poderosos do CrewAI:
+Este flow de criação de guia demonstra diversos recursos poderosos do LocalAI:
 
 1. **Interação com o usuário**: O flow coleta input diretamente do usuário
 2. **Chamadas diretas à LLM**: Usa a classe LLM para interações eficientes e direcionadas com IA
@@ -458,5 +458,5 @@ Agora que você construiu seu primeiro flow, pode:
 5. Combinar múltiplos crews especializados em um único flow
 
 <Check>
-Parabéns! Você construiu seu primeiro CrewAI Flow que combina código regular, chamadas diretas a LLM e processamento baseado em crews para criar um guia abrangente. Essas habilidades fundamentais permitem criar aplicações de IA cada vez mais sofisticadas, capazes de resolver problemas complexos de múltiplas etapas por meio de controle procedural e inteligência colaborativa.
+Parabéns! Você construiu seu primeiro LocalAI Flow que combina código regular, chamadas diretas a LLM e processamento baseado em crews para criar um guia abrangente. Essas habilidades fundamentais permitem criar aplicações de IA cada vez mais sofisticadas, capazes de resolver problemas complexos de múltiplas etapas por meio de controle procedural e inteligência colaborativa.
 </Check>

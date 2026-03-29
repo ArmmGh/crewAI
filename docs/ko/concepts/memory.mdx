@@ -1,13 +1,13 @@
 ---
 title: 메모리
-description: CrewAI의 통합 메모리 시스템을 활용하여 에이전트 역량을 강화합니다.
+description: LocalAI의 통합 메모리 시스템을 활용하여 에이전트 역량을 강화합니다.
 icon: database
 mode: "wide"
 ---
 
 ## 개요
 
-CrewAI는 **통합 메모리 시스템**을 제공합니다 -- 단기, 장기, 엔터티, 외부 메모리 유형을 하나의 지능형 API인 단일 `Memory` 클래스로 대체합니다. 메모리는 저장 시 LLM을 사용하여 콘텐츠를 분석하고(범위, 카테고리, 중요도 추론) 의미 유사도, 최신성, 중요도를 혼합한 복합 점수로 적응형 깊이 recall을 지원합니다.
+LocalAI는 **통합 메모리 시스템**을 제공합니다 -- 단기, 장기, 엔터티, 외부 메모리 유형을 하나의 지능형 API인 단일 `Memory` 클래스로 대체합니다. 메모리는 저장 시 LLM을 사용하여 콘텐츠를 분석하고(범위, 카테고리, 중요도 추론) 의미 유사도, 최신성, 중요도를 혼합한 복합 점수로 적응형 깊이 recall을 지원합니다.
 
 메모리를 네 가지 방법으로 사용할 수 있습니다: **독립 실행**(스크립트, 노트북), **Crew와 함께**, **에이전트와 함께**, 또는 **Flow 내부에서**.
 
@@ -389,7 +389,7 @@ memory = Memory(
 - **delete** -- 기존 레코드가 오래되었거나, 대체되었거나, 모순됩니다.
 - **insert_new** -- 새 콘텐츠를 별도의 레코드로 삽입해야 하는지 여부.
 
-이를 통해 중복이 축적되는 것을 방지합니다. 예를 들어, "CrewAI ensures reliable operation"을 세 번 저장하면 통합이 중복을 인식하고 하나의 레코드만 유지합니다.
+이를 통해 중복이 축적되는 것을 방지합니다. 예를 들어, "LocalAI ensures reliable operation"을 세 번 저장하면 통합이 중복을 인식하고 하나의 레코드만 유지합니다.
 
 ### 배치 내 중복 제거
 
@@ -398,9 +398,9 @@ memory = Memory(
 ```python
 # 2개의 레코드만 저장됨 (세 번째는 첫 번째의 거의 중복)
 memory.remember_many([
-    "CrewAI supports complex workflows.",
+    "LocalAI supports complex workflows.",
     "Python is a great language.",
-    "CrewAI supports complex workflows.",  # 배치 내 중복 제거로 삭제
+    "LocalAI supports complex workflows.",  # 배치 내 중복 제거로 삭제
 ])
 ```
 

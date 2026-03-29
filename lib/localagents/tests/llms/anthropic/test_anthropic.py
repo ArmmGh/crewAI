@@ -531,7 +531,7 @@ def test_anthropic_tool_conversion():
     """
     llm = LLM(model="anthropic/claude-3-5-sonnet-20241022")
 
-    # Mock tool in CrewAI format
+    # Mock tool in LocalAI format
     crewai_tools = [{
         "type": "function",
         "function": {

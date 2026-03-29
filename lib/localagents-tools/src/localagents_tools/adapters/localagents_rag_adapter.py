@@ -1,4 +1,4 @@
-"""Adapter for CrewAI's native RAG system."""
+"""Adapter for LocalAI's native RAG system."""
 
 from __future__ import annotations
 
@@ -43,8 +43,8 @@ def _is_qdrant_config(config: Any) -> TypeIs[QdrantConfig]:
         return False
 
 
-class CrewAIRagAdapter(Adapter):
-    """Adapter that uses CrewAI's native RAG system.
+class LocalAIRagAdapter(Adapter):
+    """Adapter that uses LocalAI's native RAG system.
 
     Supports custom vector database configuration through the config parameter.
     """
@@ -57,7 +57,7 @@ class CrewAIRagAdapter(Adapter):
     _client: BaseClient | None = PrivateAttr(default=None)
 
     def model_post_init(self, __context: Any) -> None:
-        """Initialize the CrewAI RAG client after model initialization."""
+        """Initialize the LocalAI RAG client after model initialization."""
         if self.config is not None:
             self._client = create_client(self.config)
         else:

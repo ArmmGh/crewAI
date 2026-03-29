@@ -1,4 +1,4 @@
-"""Types for CrewAI utilities."""
+"""Types for LocalAI utilities."""
 
 from __future__ import annotations
 

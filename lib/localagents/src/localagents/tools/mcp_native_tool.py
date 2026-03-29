@@ -1,4 +1,4 @@
-"""Native MCP tool wrapper for CrewAI agents.
+"""Native MCP tool wrapper for LocalAI agents.
 
 This module provides a tool wrapper that creates a fresh MCP client for every
 invocation, ensuring safe parallel execution even when the same tool is called

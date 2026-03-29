@@ -1,13 +1,13 @@
 ---
 title: Create Custom Tools
-description: Comprehensive guide on crafting, using, and managing custom tools within the CrewAI framework, including new functionalities and error handling.
+description: Comprehensive guide on crafting, using, and managing custom tools within the LocalAI framework, including new functionalities and error handling.
 icon: hammer
 mode: "wide"
 ---
 
-## Creating and Utilizing Tools in CrewAI
+## Creating and Utilizing Tools in LocalAI
 
-This guide provides detailed instructions on creating custom tools for the CrewAI framework and how to efficiently manage and utilize these tools,
+This guide provides detailed instructions on creating custom tools for the LocalAI framework and how to efficiently manage and utilize these tools,
 incorporating the latest functionalities such as tool delegation, error handling, and dynamic tool calling. It also highlights the importance of collaboration tools,
 enabling agents to perform a wide range of actions.
 
@@ -72,7 +72,7 @@ cached_tool.cache_function = my_cache_strategy
 
 ### Creating Async Tools
 
-CrewAI supports async tools for non-blocking I/O operations. This is useful when your tool needs to make HTTP requests, database queries, or other I/O-bound operations.
+LocalAI supports async tools for non-blocking I/O operations. This is useful when your tool needs to make HTTP requests, database queries, or other I/O-bound operations.
 
 #### Using the `@tool` Decorator with Async Functions
 
@@ -121,4 +121,4 @@ class WebFetcherTool(BaseTool):
 ```
 
 By adhering to these guidelines and incorporating new functionalities and collaboration tools into your tool creation and management processes,
-you can leverage the full capabilities of the CrewAI framework, enhancing both the development experience and the efficiency of your AI agents.
+you can leverage the full capabilities of the LocalAI framework, enhancing both the development experience and the efficiency of your AI agents.

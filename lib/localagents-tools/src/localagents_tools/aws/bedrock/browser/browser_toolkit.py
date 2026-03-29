@@ -504,7 +504,7 @@ class BrowserToolkit:
         # Create the browser toolkit
         toolkit, browser_tools = create_browser_toolkit(region="us-west-2")
 
-        # Create a CrewAI agent that uses the browser tools
+        # Create a LocalAI agent that uses the browser tools
         research_agent = Agent(
             role="Web Researcher",
             goal="Research and summarize web content",
@@ -571,7 +571,7 @@ class BrowserToolkit:
         """Get the list of browser tools.
 
         Returns:
-            List of CrewAI tools
+            List of LocalAI tools
         """
         return self.tools
 

@@ -75,7 +75,7 @@ tool = MongoDBVectorSearchTool(
     connection_string="<your_mongodb_connection_string>",
 )
 
-# Add the text from a set of CrewAI knowledge documents.
+# Add the text from a set of LocalAI knowledge documents.
 texts = []
 for d in os.listdir("knowledge"):
     with open(os.path.join("knowledge", d), "r") as f:

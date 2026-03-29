@@ -12,7 +12,7 @@ console = Console()
 
 class DeployCommand(BaseCommand, PlusAPIMixin):
     """
-    A class to handle deployment-related operations for CrewAI projects.
+    A class to handle deployment-related operations for LocalAI projects.
     """
 
     def __init__(self) -> None:

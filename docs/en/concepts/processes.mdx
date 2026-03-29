@@ -1,6 +1,6 @@
 ---
 title: Processes
-description: Detailed guide on workflow management through processes in CrewAI, with updated implementation details.
+description: Detailed guide on workflow management through processes in LocalAI, with updated implementation details.
 icon: bars-staggered
 mode: "wide"
 ---
@@ -16,7 +16,7 @@ mode: "wide"
 
 - **Sequential**: Executes tasks sequentially, ensuring tasks are completed in an orderly progression.
 - **Hierarchical**: Organizes tasks in a managerial hierarchy, where tasks are delegated and executed based on a structured chain of command. A manager language model (`manager_llm`) or a custom manager agent (`manager_agent`) must be specified in the crew to enable the hierarchical process, facilitating the creation and management of tasks by the manager.
-- **Consensual Process (Planned)**: Aiming for collaborative decision-making among agents on task execution, this process type introduces a democratic approach to task management within CrewAI. It is planned for future development and is not currently implemented in the codebase.
+- **Consensual Process (Planned)**: Aiming for collaborative decision-making among agents on task execution, this process type introduces a democratic approach to task management within LocalAI. It is planned for future development and is not currently implemented in the codebase.
 
 ## The Role of Processes in Teamwork
 Processes enable individual agents to operate as a cohesive unit, streamlining their efforts to achieve common objectives with efficiency and coherence.
@@ -55,7 +55,7 @@ To customize task context, utilize the `context` parameter in the `Task` class t
 
 ## Hierarchical Process
 
-Emulates a corporate hierarchy, CrewAI allows specifying a custom manager agent or automatically creates one, requiring the specification of a manager language model (`manager_llm`). This agent oversees task execution, including planning, delegation, and validation. Tasks are not pre-assigned; the manager allocates tasks to agents based on their capabilities, reviews outputs, and assesses task completion.
+Emulates a corporate hierarchy, LocalAI allows specifying a custom manager agent or automatically creates one, requiring the specification of a manager language model (`manager_llm`). This agent oversees task execution, including planning, delegation, and validation. Tasks are not pre-assigned; the manager allocates tasks to agents based on their capabilities, reviews outputs, and assesses task completion.
 
 ## Process Class: Detailed Overview
 
@@ -63,5 +63,5 @@ The `Process` class is implemented as an enumeration (`Enum`), ensuring type saf
 
 ## Conclusion
 
-The structured collaboration facilitated by processes within CrewAI is crucial for enabling systematic teamwork among agents. 
+The structured collaboration facilitated by processes within LocalAI is crucial for enabling systematic teamwork among agents. 
 This documentation has been updated to reflect the latest features, enhancements, and the planned integration of the Consensual Process, ensuring users have access to the most current and comprehensive information.

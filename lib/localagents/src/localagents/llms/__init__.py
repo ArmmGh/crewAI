@@ -1,1 +1,1 @@
-"""LLM implementations for crewAI."""
+"""LLM implementations for localAI."""

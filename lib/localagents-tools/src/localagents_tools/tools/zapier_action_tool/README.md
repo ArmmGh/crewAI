@@ -2,7 +2,7 @@
 
 ## Description
 
-This tool enables CrewAI agents to interact with Zapier actions, allowing them to automate workflows and integrate with hundreds of applications through Zapier's platform. The tool dynamically creates BaseTool instances for each available Zapier action, making it easy to incorporate automation into your AI workflows.
+This tool enables LocalAI agents to interact with Zapier actions, allowing them to automate workflows and integrate with hundreds of applications through Zapier's platform. The tool dynamically creates BaseTool instances for each available Zapier action, making it easy to incorporate automation into your AI workflows.
 
 ## Installation
 

@@ -1,12 +1,12 @@
 ---
-title: CrewAI Run Automation Tool
-description: Enables CrewAI agents to invoke CrewAI Platform automations and leverage external crew services within your workflows.
+title: LocalAI Run Automation Tool
+description: Enables LocalAI agents to invoke LocalAI Platform automations and leverage external crew services within your workflows.
 icon: robot
 ---
 
 # `InvokeCrewAIAutomationTool`
 
-The `InvokeCrewAIAutomationTool` provides CrewAI Platform API integration with external crew services. This tool allows you to invoke and interact with CrewAI Platform automations from within your CrewAI agents, enabling seamless integration between different crew workflows.
+The `InvokeCrewAIAutomationTool` provides LocalAI Platform API integration with external crew services. This tool allows you to invoke and interact with LocalAI Platform automations from within your LocalAI agents, enabling seamless integration between different crew workflows.
 
 ## Installation
 
@@ -16,13 +16,13 @@ uv pip install 'crewai[tools]'
 
 ## Requirements
 
-- CrewAI Platform API access
+- LocalAI Platform API access
 - Valid bearer token for authentication
-- Network access to CrewAI Platform automation endpoints
+- Network access to LocalAI Platform automation endpoints
 
 ## Usage
 
-Here's how to use the tool with a CrewAI agent:
+Here's how to use the tool with a LocalAI agent:
 
 ```python {2, 4-9}
 from crewai import Agent, Task, Crew
@@ -36,7 +36,7 @@ automation_tool = InvokeCrewAIAutomationTool(
     crew_description="Analyzes data and generates insights"
 )
 
-# Create a CrewAI agent that uses the tool
+# Create a LocalAI agent that uses the tool
 automation_coordinator = Agent(
     role='Automation Coordinator',
     goal='Coordinate and execute automated crew tasks',
@@ -68,7 +68,7 @@ print(result)
 
 | Argument | Type | Required | Default | Description |
 |:---------|:-----|:---------|:--------|:------------|
-| **crew_api_url** | `str` | Yes | None | Base URL of the CrewAI Platform automation API |
+| **crew_api_url** | `str` | Yes | None | Base URL of the LocalAI Platform automation API |
 | **crew_bearer_token** | `str` | Yes | None | Bearer token for API authentication |
 | **crew_name** | `str` | Yes | None | Name of the crew automation |
 | **crew_description** | `str` | Yes | None | Description of what the crew automation does |
@@ -214,10 +214,10 @@ result = crew.kickoff()
 ### Distributed Crew Orchestration
 - Coordinate multiple specialized crew automations to handle complex, multi-stage workflows
 - Enable seamless handoffs between different automation services for comprehensive task execution
-- Scale processing by distributing workloads across multiple CrewAI Platform automations
+- Scale processing by distributing workloads across multiple LocalAI Platform automations
 
 ### Cross-Platform Integration
-- Bridge CrewAI agents with CrewAI Platform automations for hybrid local-cloud workflows
+- Bridge LocalAI agents with LocalAI Platform automations for hybrid local-cloud workflows
 - Leverage specialized automations while maintaining local control and orchestration
 - Enable secure collaboration between local agents and cloud-based automation services
 
@@ -254,7 +254,7 @@ crew_inputs = {
 
 The tool provides comprehensive error handling for common scenarios:
 
-- **API Connection Errors**: Network connectivity issues with CrewAI Platform
+- **API Connection Errors**: Network connectivity issues with LocalAI Platform
 - **Authentication Errors**: Invalid or expired bearer tokens
 - **Timeout Errors**: Tasks that exceed the maximum polling time
 - **Task Failures**: Crew automations that fail during execution

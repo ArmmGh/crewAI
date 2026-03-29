@@ -1,13 +1,13 @@
 ---
 title: "Deploy to AMP"
-description: "Deploy your Crew or Flow to CrewAI AMP"
+description: "Deploy your Crew or Flow to LocalAI AMP"
 icon: "rocket"
 mode: "wide"
 ---
 
 <Note>
   After creating a Crew or Flow locally (or through Crew Studio), the next step is
-  deploying it to the CrewAI AMP platform. This guide covers multiple deployment
+  deploying it to the LocalAI AMP platform. This guide covers multiple deployment
   methods to help you choose the best approach for your workflow.
 </Note>
 
@@ -25,35 +25,35 @@ mode: "wide"
 </CardGroup>
 
 <Info>
-  **Crews vs Flows**: Both project types can be deployed as "automations" on CrewAI AMP.
+  **Crews vs Flows**: Both project types can be deployed as "automations" on LocalAI AMP.
   The deployment process is the same, but they have different project structures.
   See [Prepare for Deployment](/en/enterprise/guides/prepare-for-deployment) for details.
 </Info>
 
-## Option 1: Deploy Using CrewAI CLI
+## Option 1: Deploy Using LocalAI CLI
 
 The CLI provides the fastest way to deploy locally developed Crews or Flows to the AMP platform.
 The CLI automatically detects your project type from `pyproject.toml` and builds accordingly.
 
 <Steps>
-  <Step title="Install CrewAI CLI">
-    If you haven't already, install the CrewAI CLI:
+  <Step title="Install LocalAI CLI">
+    If you haven't already, install the LocalAI CLI:
 
     ```bash
     pip install crewai[tools]
     ```
 
     <Tip>
-    The CLI comes with the main CrewAI package, but the `[tools]` extra ensures you have all deployment dependencies.
+    The CLI comes with the main LocalAI package, but the `[tools]` extra ensures you have all deployment dependencies.
     </Tip>
 
   </Step>
 
   <Step title="Authenticate with the Enterprise Platform">
-    First, you need to authenticate your CLI with the CrewAI AMP platform:
+    First, you need to authenticate your CLI with the LocalAI AMP platform:
 
     ```bash
-    # If you already have a CrewAI AMP account, or want to create one:
+    # If you already have a LocalAI AMP account, or want to create one:
     crewai login
     ```
 
@@ -114,7 +114,7 @@ The CLI automatically detects your project type from `pyproject.toml` and builds
 
 ## Additional CLI Commands
 
-The CrewAI CLI offers several commands to manage your deployments:
+The LocalAI CLI offers several commands to manage your deployments:
 
 ```bash
 # List all your deployments
@@ -135,7 +135,7 @@ crewai deploy remove <deployment_id>
 
 ## Option 2: Deploy Directly via Web Interface
 
-You can also deploy your Crews or Flows directly through the CrewAI AMP web interface by connecting your GitHub account. This approach doesn't require using the CLI on your local machine. The platform automatically detects your project type and handles the build appropriately.
+You can also deploy your Crews or Flows directly through the LocalAI AMP web interface by connecting your GitHub account. This approach doesn't require using the CLI on your local machine. The platform automatically detects your project type and handles the build appropriately.
 
 <Steps>
 
@@ -145,9 +145,9 @@ You need to push your crew to a GitHub repository. If you haven't created a crew
 
   </Step>
 
-  <Step title="Connecting GitHub to CrewAI AMP">
+  <Step title="Connecting GitHub to LocalAI AMP">
 
-    1. Log in to [CrewAI AMP](https://app.crewai.com)
+    1. Log in to [LocalAI AMP](https://app.crewai.com)
     2. Click on the button "Connect GitHub"
 
     <Frame>
@@ -205,12 +205,12 @@ You need to push your crew to a GitHub repository. If you haven't created a crew
 
 ## Option 3: Redeploy Using API (CI/CD Integration)
 
-For automated deployments in CI/CD pipelines, you can use the CrewAI API to trigger redeployments of existing crews. This is particularly useful for GitHub Actions, Jenkins, or other automation workflows.
+For automated deployments in CI/CD pipelines, you can use the LocalAI API to trigger redeployments of existing crews. This is particularly useful for GitHub Actions, Jenkins, or other automation workflows.
 
 <Steps>
   <Step title="Get Your Personal Access Token">
 
-    Navigate to your CrewAI AMP account settings to generate an API token:
+    Navigate to your LocalAI AMP account settings to generate an API token:
 
     1. Go to [app.crewai.com](https://app.crewai.com)
     2. Click on **Settings** → **Account** → **Personal Access Token**
@@ -223,7 +223,7 @@ For automated deployments in CI/CD pipelines, you can use the CrewAI API to trig
 
     Locate the unique identifier for your deployed crew:
 
-    1. Go to **Automations** in your CrewAI AMP dashboard
+    1. Go to **Automations** in your LocalAI AMP dashboard
     2. Select your existing automation/crew
     3. Click on **Additional Details**
     4. Copy the **UUID** - this identifies your specific crew deployment
@@ -261,7 +261,7 @@ For automated deployments in CI/CD pipelines, you can use the CrewAI API to trig
     Here's a GitHub Actions workflow with more complex deployment triggers:
 
     ```yaml
-    name: Deploy CrewAI Automation
+    name: Deploy LocalAI Automation
 
     on:
       push:
@@ -279,7 +279,7 @@ For automated deployments in CI/CD pipelines, you can use the CrewAI API to trig
           (github.event_name == 'pull_request' && contains(github.event.pull_request.labels.*.name, 'deploy')) ||
           (github.event_name == 'release')
         steps:
-          - name: Trigger CrewAI Redeployment
+          - name: Trigger LocalAI Redeployment
             run: |
               curl -X POST \
                    -H "Authorization: Bearer ${{ secrets.CREWAI_PAT }}" \

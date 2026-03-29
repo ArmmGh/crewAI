@@ -10,7 +10,7 @@ from textual.containers import Horizontal, Vertical
 from textual.widgets import Footer, Header, Input, OptionList, Static, Tree
 
 
-# -- CrewAI brand palette --
+# -- LocalAI brand palette --
 _PRIMARY = "#eb6658"  # coral
 _SECONDARY = "#1F7982"  # teal
 _TERTIARY = "#ffffff"  # white
@@ -31,7 +31,7 @@ def _format_scope_info(info: Any) -> str:
 class MemoryTUI(App[None]):
     """TUI to browse memory scopes and run recall queries."""
 
-    TITLE = "CrewAI Memory"
+    TITLE = "LocalAI Memory"
     SUB_TITLE = "Browse scopes and recall memories"
 
     CSS = f"""

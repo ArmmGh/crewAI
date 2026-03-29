@@ -1,4 +1,4 @@
-"""Version utilities for CrewAI CLI."""
+"""Version utilities for LocalAI CLI."""
 
 from collections.abc import Mapping
 from datetime import datetime, timedelta
@@ -26,7 +26,7 @@ def _get_cache_file() -> Path:
 
 
 def get_crewai_version() -> str:
-    """Get the version number of CrewAI running the CLI."""
+    """Get the version number of LocalAI running the CLI."""
     return importlib.metadata.version("crewai")
 
 
@@ -109,7 +109,7 @@ def _is_version_yanked(
 
 
 def get_latest_version_from_pypi(timeout: int = 2) -> str | None:
-    """Get the latest non-yanked version of CrewAI from PyPI.
+    """Get the latest non-yanked version of LocalAI from PyPI.
 
     Args:
         timeout: Request timeout in seconds.

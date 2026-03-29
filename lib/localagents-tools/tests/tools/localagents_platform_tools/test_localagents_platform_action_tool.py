@@ -2,11 +2,11 @@ from unittest.mock import patch, Mock
 import os
 
 from crewai_tools.tools.crewai_platform_tools.crewai_platform_action_tool import (
-    CrewAIPlatformActionTool,
+    LocalAIPlatformActionTool,
 )
 
 
-class TestCrewAIPlatformActionToolVerify:
+class TestLocalAIPlatformActionToolVerify:
     """Test suite for SSL verification behavior based on CREWAI_FACTORY environment variable"""
 
     def setup_method(self):
@@ -26,7 +26,7 @@ class TestCrewAIPlatformActionToolVerify:
         }
 
     def create_test_tool(self):
-        return CrewAIPlatformActionTool(
+        return LocalAIPlatformActionTool(
             description="Test action tool",
             action_name="test_action",
             action_schema=self.action_schema

@@ -1,6 +1,6 @@
 from unittest.mock import MagicMock, Mock, patch
 
-from crewai_tools.adapters.crewai_rag_adapter import CrewAIRagAdapter
+from crewai_tools.adapters.crewai_rag_adapter import LocalAIRagAdapter
 from crewai_tools.tools.txt_search_tool.txt_search_tool import TXTSearchTool
 
 
@@ -38,7 +38,7 @@ def test_txt_search_tool_with_azure_config_without_env_vars(
         tool = TXTSearchTool(config=config)
 
         assert tool.adapter is not None
-        assert isinstance(tool.adapter, CrewAIRagAdapter)
+        assert isinstance(tool.adapter, LocalAIRagAdapter)
         assert tool.name == "Search a txt's content"
 
 
@@ -71,7 +71,7 @@ def test_txt_search_tool_with_openai_config_without_env_vars(
         tool = TXTSearchTool(config=config)
 
         assert tool.adapter is not None
-        assert isinstance(tool.adapter, CrewAIRagAdapter)
+        assert isinstance(tool.adapter, LocalAIRagAdapter)
 
 
 @patch("crewai_tools.adapters.crewai_rag_adapter.create_client")
@@ -101,4 +101,4 @@ def test_txt_search_tool_with_cohere_config(mock_create_client: Mock) -> None:
         tool = TXTSearchTool(config=config)
 
         assert tool.adapter is not None
-        assert isinstance(tool.adapter, CrewAIRagAdapter)
+        assert isinstance(tool.adapter, LocalAIRagAdapter)

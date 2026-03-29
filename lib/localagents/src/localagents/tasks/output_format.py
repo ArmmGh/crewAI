@@ -1,4 +1,4 @@
-"""Task output format definitions for CrewAI."""
+"""Task output format definitions for LocalAI."""
 
 from enum import Enum
 

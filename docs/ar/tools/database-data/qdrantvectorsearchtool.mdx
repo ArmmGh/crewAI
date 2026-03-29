@@ -1,13 +1,13 @@
 ---
 title: 'أداة البحث المتجهي Qdrant'
-description: 'إمكانيات البحث الدلالي لوكلاء CrewAI باستخدام قاعدة بيانات Qdrant المتجهية'
+description: 'إمكانيات البحث الدلالي لوكلاء LocalAI باستخدام قاعدة بيانات Qdrant المتجهية'
 icon: vector-square
 mode: "wide"
 ---
 
 ## نظرة عامة
 
-تتيح أداة البحث المتجهي Qdrant إمكانيات البحث الدلالي في وكلاء CrewAI من خلال الاستفادة من [Qdrant](https://qdrant.tech/)، محرك بحث التشابه المتجهي. تسمح هذه الأداة لوكلائك بالبحث في المستندات المخزنة في مجموعة Qdrant باستخدام التشابه الدلالي.
+تتيح أداة البحث المتجهي Qdrant إمكانيات البحث الدلالي في وكلاء LocalAI من خلال الاستفادة من [Qdrant](https://qdrant.tech/)، محرك بحث التشابه المتجهي. تسمح هذه الأداة لوكلائك بالبحث في المستندات المخزنة في مجموعة Qdrant باستخدام التشابه الدلالي.
 
 ## التثبيت
 
@@ -51,7 +51,7 @@ agent = Agent(
 1. استخراج النص من ملف PDF
 2. توليد التضمينات باستخدام OpenAI
 3. التخزين في Qdrant
-4. إنشاء سير عمل RAG وكيلي باستخدام CrewAI للبحث الدلالي
+4. إنشاء سير عمل RAG وكيلي باستخدام LocalAI للبحث الدلالي
 
 ```python
 import os
@@ -134,7 +134,7 @@ qdrant_tool = QdrantVectorSearchTool(
     )
 )
 
-# Create CrewAI agents
+# Create LocalAI agents
 search_agent = Agent(
     role="Senior Semantic Search Agent",
     goal="Find and analyze documents based on semantic search",
@@ -169,7 +169,7 @@ answer_task = Task(
     agent=answer_agent
 )
 
-# Run CrewAI workflow
+# Run LocalAI workflow
 crew = Crew(
     agents=[search_agent, answer_agent],
     tasks=[search_task, answer_task],

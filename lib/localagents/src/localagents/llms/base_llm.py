@@ -1,7 +1,7 @@
-"""Base LLM abstract class for CrewAI.
+"""Base LLM abstract class for LocalAI.
 
 This module provides the abstract base class for all LLM implementations
-in CrewAI, including common functionality for native SDK implementations.
+in LocalAI, including common functionality for native SDK implementations.
 """
 
 from __future__ import annotations

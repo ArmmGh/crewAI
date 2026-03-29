@@ -1,4 +1,4 @@
-"""Path management utilities for CrewAI storage and configuration."""
+"""Path management utilities for LocalAI storage and configuration."""
 
 import os
 from pathlib import Path
@@ -13,7 +13,7 @@ def db_storage_path() -> str:
         str: Full path to the SQLite database file
     """
     app_name = get_project_directory_name()
-    app_author = "CrewAI"
+    app_author = "LocalAI"
 
     data_dir = Path(appdirs.user_data_dir(app_name, app_author))
     data_dir.mkdir(parents=True, exist_ok=True)

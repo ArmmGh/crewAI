@@ -1,19 +1,19 @@
 ---
 title: "배포 준비하기"
-description: "Crew 또는 Flow가 CrewAI AMP에 배포될 준비가 되었는지 확인하기"
+description: "Crew 또는 Flow가 LocalAI AMP에 배포될 준비가 되었는지 확인하기"
 icon: "clipboard-check"
 mode: "wide"
 ---
 
 <Note>
-  CrewAI AMP에 배포하기 전에, 프로젝트가 올바르게 구성되어 있는지 확인하는 것이 중요합니다.
+  LocalAI AMP에 배포하기 전에, 프로젝트가 올바르게 구성되어 있는지 확인하는 것이 중요합니다.
   Crews와 Flows 모두 "자동화"로 배포할 수 있지만, 성공적인 배포를 위해 충족해야 하는
   서로 다른 프로젝트 구조와 요구 사항이 있습니다.
 </Note>
 
 ## 자동화 이해하기
 
-CrewAI AMP에서 **자동화(automations)**는 배포 가능한 Agentic AI 프로젝트의 총칭입니다. 자동화는 다음 중 하나일 수 있습니다:
+LocalAI AMP에서 **자동화(automations)**는 배포 가능한 Agentic AI 프로젝트의 총칭입니다. 자동화는 다음 중 하나일 수 있습니다:
 
 - **Crew**: 작업을 함께 수행하는 AI 에이전트들의 독립 실행형 팀
 - **Flow**: 여러 crew, 직접 LLM 호출 및 절차적 로직을 결합할 수 있는 오케스트레이션된 워크플로우
@@ -135,7 +135,7 @@ my_flow/
 
 ### 2. uv.lock 파일 존재 확인
 
-CrewAI는 의존성 관리를 위해 `uv`를 사용합니다. `uv.lock` 파일은 재현 가능한 빌드를 보장하며 배포에 **필수**입니다.
+LocalAI는 의존성 관리를 위해 `uv`를 사용합니다. `uv.lock` 파일은 재현 가능한 빌드를 보장하며 배포에 **필수**입니다.
 
 ```bash
 # lock 파일 생성 또는 업데이트
@@ -306,6 +306,6 @@ grep -r "@CrewBase" . --include="*.py"
 프로젝트가 모든 체크리스트 항목을 통과하면 배포할 준비가 된 것입니다:
 
 <Card title="AMP에 배포하기" icon="rocket" href="/ko/enterprise/guides/deploy-to-amp">
-  CLI, 웹 인터페이스 또는 CI/CD 통합을 사용하여 Crew 또는 Flow를 CrewAI AMP에
+  CLI, 웹 인터페이스 또는 CI/CD 통합을 사용하여 Crew 또는 Flow를 LocalAI AMP에
   배포하려면 배포 가이드를 따르세요.
 </Card>

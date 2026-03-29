@@ -617,7 +617,7 @@ def test_bedrock_tool_conversion():
     """
     llm = LLM(model="bedrock/anthropic.claude-3-5-sonnet-20241022-v2:0")
 
-    # Mock tool in CrewAI format
+    # Mock tool in LocalAI format
     crewai_tools = [{
         "type": "function",
         "function": {

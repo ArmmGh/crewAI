@@ -1,6 +1,6 @@
 ---
 title: تكامل Weave
-description: تعرّف على كيفية استخدام Weights & Biases (W&B) Weave لتتبع وتجربة وتقييم وتحسين تطبيقات CrewAI.
+description: تعرّف على كيفية استخدام Weights & Biases (W&B) Weave لتتبع وتجربة وتقييم وتحسين تطبيقات LocalAI.
 icon: radar
 mode: "wide"
 ---
@@ -9,16 +9,16 @@ mode: "wide"
 
 [Weights & Biases (W&B) Weave](https://weave-docs.wandb.ai/) هو إطار عمل لتتبع وتجربة وتقييم ونشر وتحسين التطبيقات المبنية على نماذج اللغة الكبيرة.
 
-![نظرة عامة على استخدام تتبع W&B Weave مع CrewAI](/images/weave-tracing.gif)
+![نظرة عامة على استخدام تتبع W&B Weave مع LocalAI](/images/weave-tracing.gif)
 
-يوفر Weave دعماً شاملاً لكل مرحلة من مراحل تطوير تطبيق CrewAI:
+يوفر Weave دعماً شاملاً لكل مرحلة من مراحل تطوير تطبيق LocalAI:
 
 - **التتبع والمراقبة**: تتبع تلقائي لاستدعاءات LLM ومنطق التطبيق لتصحيح الأخطاء وتحليل أنظمة الإنتاج
 - **التكرار المنهجي**: تحسين والتكرار على الموجهات ومجموعات البيانات والنماذج
 - **التقييم**: استخدام مقيّمين مخصصين أو مُعدّين مسبقاً لتقييم أداء الوكلاء وتحسينه بشكل منهجي
 - **حواجز الحماية**: حماية وكلائك بحماية مسبقة ولاحقة للإشراف على المحتوى وسلامة الموجهات
 
-يلتقط Weave التتبعات تلقائياً لتطبيقات CrewAI، مما يمكّنك من مراقبة وتحليل أداء وكلائك وتفاعلاتهم وتدفق التنفيذ. يساعدك هذا في بناء مجموعات بيانات تقييم أفضل وتحسين سير عمل وكلائك.
+يلتقط Weave التتبعات تلقائياً لتطبيقات LocalAI، مما يمكّنك من مراقبة وتحليل أداء وكلائك وتفاعلاتهم وتدفق التنفيذ. يساعدك هذا في بناء مجموعات بيانات تقييم أفضل وتحسين سير عمل وكلائك.
 
 ## تعليمات الإعداد
 
@@ -96,30 +96,30 @@ mode: "wide"
       ```
     </Step>
     <Step title="عرض التتبعات في Weave">
-      بعد تشغيل تطبيق CrewAI، قم بزيارة عنوان URL الذي وفره Weave أثناء التهيئة لعرض:
+      بعد تشغيل تطبيق LocalAI، قم بزيارة عنوان URL الذي وفره Weave أثناء التهيئة لعرض:
       - استدعاءات LLM وبياناتها الوصفية
       - تفاعلات الوكلاء وتدفق تنفيذ المهام
       - مقاييس الأداء مثل زمن الاستجابة واستخدام الرموز المميزة
       - أي أخطاء أو مشكلات حدثت أثناء التنفيذ
 
       <Frame caption="لوحة معلومات تتبع Weave">
-        <img src="/images/weave-tracing.png" alt="Weave tracing example with CrewAI" />
+        <img src="/images/weave-tracing.png" alt="Weave tracing example with LocalAI" />
       </Frame>
     </Step>
 </Steps>
 
 ## الميزات
 
-- يلتقط Weave تلقائياً جميع عمليات CrewAI: تفاعلات الوكلاء وتنفيذ المهام؛ استدعاءات LLM مع البيانات الوصفية واستخدام الرموز المميزة؛ استخدام الأدوات ونتائجها.
-- يدعم التكامل جميع طرق تنفيذ CrewAI: `kickoff()` و`kickoff_for_each()` و`kickoff_async()` و`kickoff_for_each_async()`.
-- تتبع تلقائي لجميع [أدوات crewAI](https://github.com/crewAIInc/crewAI-tools).
+- يلتقط Weave تلقائياً جميع عمليات LocalAI: تفاعلات الوكلاء وتنفيذ المهام؛ استدعاءات LLM مع البيانات الوصفية واستخدام الرموز المميزة؛ استخدام الأدوات ونتائجها.
+- يدعم التكامل جميع طرق تنفيذ LocalAI: `kickoff()` و`kickoff_for_each()` و`kickoff_async()` و`kickoff_for_each_async()`.
+- تتبع تلقائي لجميع [أدوات localAI](https://github.com/localAIInc/localAI-tools).
 - دعم ميزة التدفق مع تصحيح المزخرفات (`@start` و`@listen` و`@router` و`@or_` و`@and_`).
-- تتبع حواجز الحماية المخصصة المُمررة لمهام CrewAI `Task` باستخدام `@weave.op()`.
+- تتبع حواجز الحماية المخصصة المُمررة لمهام LocalAI `Task` باستخدام `@weave.op()`.
 
-لمعلومات تفصيلية حول ما هو مدعوم، قم بزيارة [وثائق Weave CrewAI](https://weave-docs.wandb.ai/guides/integrations/crewai/#getting-started-with-flow).
+لمعلومات تفصيلية حول ما هو مدعوم، قم بزيارة [وثائق Weave LocalAI](https://weave-docs.wandb.ai/guides/integrations/crewai/#getting-started-with-flow).
 
 ## الموارد
 
 - [وثائق Weave](https://weave-docs.wandb.ai)
-- [مثال على لوحة معلومات Weave x CrewAI](https://wandb.ai/ayut/crewai_demo/weave/traces?cols=%7B%22wb_run_id%22%3Afalse%2C%22attributes.weave.client_version%22%3Afalse%2C%22attributes.weave.os_name%22%3Afalse%2C%22attributes.weave.os_release%22%3Afalse%2C%22attributes.weave.os_version%22%3Afalse%2C%22attributes.weave.source%22%3Afalse%2C%22attributes.weave.sys_version%22%3Afalse%7D&peekPath=%2Fayut%2Fcrewai_demo%2Fcalls%2F0195c838-38cb-71a2-8a15-651ecddf9d89)
+- [مثال على لوحة معلومات Weave x LocalAI](https://wandb.ai/ayut/crewai_demo/weave/traces?cols=%7B%22wb_run_id%22%3Afalse%2C%22attributes.weave.client_version%22%3Afalse%2C%22attributes.weave.os_name%22%3Afalse%2C%22attributes.weave.os_release%22%3Afalse%2C%22attributes.weave.os_version%22%3Afalse%2C%22attributes.weave.source%22%3Afalse%2C%22attributes.weave.sys_version%22%3Afalse%7D&peekPath=%2Fayut%2Fcrewai_demo%2Fcalls%2F0195c838-38cb-71a2-8a15-651ecddf9d89)
 - [X](https://x.com/weave_wb)

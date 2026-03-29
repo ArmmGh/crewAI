@@ -12,12 +12,12 @@ class TestInterpolateOnly:
         template = "Hello, {name}! Welcome to {company}."
         inputs: Dict[str, Union[str, int, float, Dict[str, Any], List[Any]]] = {
             "name": "Alice",
-            "company": "CrewAI",
+            "company": "LocalAI",
         }
 
         result = interpolate_only(template, inputs)
 
-        assert result == "Hello, Alice! Welcome to CrewAI."
+        assert result == "Hello, Alice! Welcome to LocalAI."
 
     def test_multiple_occurrences_of_same_variable(self):
         """Test that multiple occurrences of the same variable are replaced."""

@@ -1,20 +1,20 @@
 ---
 title: Apify Actors
-description: "تتيح لك `ApifyActorsTool` استدعاء Apify Actors لتوفير إمكانيات تجريف الويب والزحف واستخراج البيانات وأتمتة الويب لسير عمل CrewAI."
+description: "تتيح لك `ApifyActorsTool` استدعاء Apify Actors لتوفير إمكانيات تجريف الويب والزحف واستخراج البيانات وأتمتة الويب لسير عمل LocalAI."
 icon: "); -webkit-mask-image: url('https://upload.wikimedia.org/wikipedia/commons/a/ae/Apify.svg');/*"
 mode: "wide"
 ---
 
 # `ApifyActorsTool`
 
-دمج [Apify Actors](https://apify.com/actors) في سير عمل CrewAI الخاص بك.
+دمج [Apify Actors](https://apify.com/actors) في سير عمل LocalAI الخاص بك.
 
 ## الوصف
 
-تربط `ApifyActorsTool` بين [Apify Actors](https://apify.com/actors)، وهي برامج سحابية لتجريف الويب والأتمتة، وسير عمل CrewAI الخاص بك.
+تربط `ApifyActorsTool` بين [Apify Actors](https://apify.com/actors)، وهي برامج سحابية لتجريف الويب والأتمتة، وسير عمل LocalAI الخاص بك.
 استخدم أياً من أكثر من 4,000 Actor على [متجر Apify](https://apify.com/store) لحالات استخدام مثل استخراج البيانات من وسائل التواصل الاجتماعي ومحركات البحث والخرائط الإلكترونية ومواقع التجارة الإلكترونية وبوابات السفر أو المواقع العامة.
 
-للتفاصيل، راجع [تكامل Apify CrewAI](https://docs.apify.com/platform/integrations/crewai) في وثائق Apify.
+للتفاصيل، راجع [تكامل Apify LocalAI](https://docs.apify.com/platform/integrations/crewai) في وثائق Apify.
 
 ## خطوات البدء
 
@@ -41,7 +41,7 @@ from crewai_tools import ApifyActorsTool
 tool = ApifyActorsTool(actor_name="apify/rag-web-browser")
 
 # Run the tool with input parameters
-results = tool.run(run_input={"query": "What is CrewAI?", "maxResults": 5})
+results = tool.run(run_input={"query": "What is LocalAI?", "maxResults": 5})
 
 # Process the results
 for result in results:
@@ -55,9 +55,9 @@ for result in results:
 
 ```text
 URL: https://www.example.com/crewai-intro
-Content: CrewAI is a framework for building AI-powered workflows...
+Content: LocalAI is a framework for building AI-powered workflows...
 URL: https://docs.crewai.com/
-Content: Official documentation for CrewAI...
+Content: Official documentation for LocalAI...
 ```
 
 تقوم `ApifyActorsTool` تلقائياً بجلب تعريف Actor ومخطط الإدخال من Apify باستخدام `actor_name` المقدم ثم تبني وصف الأداة ومخطط المعاملات. هذا يعني أنك تحتاج فقط إلى تحديد `actor_name` صالح، والأداة تتعامل مع الباقي عند استخدامها مع الوكلاء - دون الحاجة لتحديد `run_input`. إليك كيفية عمل ذلك:
@@ -78,7 +78,7 @@ agent = Agent(
 
 يمكنك تشغيل Actors أخرى من [متجر Apify](https://apify.com/store) ببساطة عن طريق تغيير `actor_name` وعند الاستخدام اليدوي، ضبط `run_input` بناءً على مخطط إدخال Actor.
 
-لمثال على الاستخدام مع الوكلاء، راجع [قالب CrewAI Actor](https://apify.com/templates/python-crewai).
+لمثال على الاستخدام مع الوكلاء، راجع [قالب LocalAI Actor](https://apify.com/templates/python-crewai).
 
 ## الإعداد
 
@@ -96,4 +96,4 @@ agent = Agent(
 - **[Apify](https://apify.com/)**: استكشف منصة Apify.
 - **[كيفية بناء وكيل ذكاء اصطناعي على Apify](https://blog.apify.com/how-to-build-an-ai-agent/)** - دليل شامل خطوة بخطوة لإنشاء ونشر وتسويق وكلاء الذكاء الاصطناعي على منصة Apify.
 - **[RAG Web Browser Actor](https://apify.com/apify/rag-web-browser)**: Actor شائع لبحث الويب لنماذج LLM.
-- **[دليل تكامل CrewAI](https://docs.apify.com/platform/integrations/crewai)**: اتبع الدليل الرسمي لتكامل Apify وCrewAI.
+- **[دليل تكامل LocalAI](https://docs.apify.com/platform/integrations/crewai)**: اتبع الدليل الرسمي لتكامل Apify وLocalAI.

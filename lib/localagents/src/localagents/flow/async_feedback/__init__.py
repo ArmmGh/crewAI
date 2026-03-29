@@ -1,4 +1,4 @@
-"""Async human feedback support for CrewAI Flows.
+"""Async human feedback support for LocalAI Flows.
 
 This module provides abstractions for non-blocking human-in-the-loop workflows,
 allowing integration with external systems like Slack, Teams, webhooks, or APIs.

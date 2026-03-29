@@ -4,7 +4,7 @@ icon: chart-line
 mode: "wide"
 ---
 
-TrueFoundry provides an enterprise-ready [AI Gateway](https://www.truefoundry.com/ai-gateway) which can integrate with agentic frameworks like CrewAI and provides governance and observability for your AI Applications. TrueFoundry AI Gateway serves as a unified interface for LLM access, providing:
+TrueFoundry provides an enterprise-ready [AI Gateway](https://www.truefoundry.com/ai-gateway) which can integrate with agentic frameworks like LocalAI and provides governance and observability for your AI Applications. TrueFoundry AI Gateway serves as a unified interface for LLM access, providing:
 
 - **Unified API Access**: Connect to 250+ LLMs (OpenAI, Claude, Gemini, Groq, Mistral) through one API
 - **Low Latency**: Sub-3ms internal latency with intelligent routing and load balancing  
@@ -12,13 +12,13 @@ TrueFoundry provides an enterprise-ready [AI Gateway](https://www.truefoundry.co
 - **Quota and cost management**: Token-based quotas, rate limiting, and comprehensive usage tracking
 - **Observability**: Full request/response logging, metrics, and traces with customizable retention
 
-## How TrueFoundry Integrates with CrewAI
+## How TrueFoundry Integrates with LocalAI
 
 
 ### Installation & Setup
 
 <Steps>
-<Step title="Install CrewAI">
+<Step title="Install LocalAI">
 ```bash
 pip install crewai
 ```
@@ -29,7 +29,7 @@ pip install crewai
 2. Follow the steps here in [Quick start](https://docs.truefoundry.com/gateway/quick-start)
 </Step>
 
-<Step title="Configure CrewAI with TrueFoundry">
+<Step title="Configure LocalAI with TrueFoundry">
 ![TrueFoundry Code Configuration](/images/new-code-snippet.png)
 
 ```python
@@ -42,7 +42,7 @@ truefoundry_llm = LLM(
     api_key="your_truefoundry_api_key"
 )
 
-# Use in your CrewAI agents
+# Use in your LocalAI agents
 from crewai import Agent
 
 @agent
@@ -56,7 +56,7 @@ def researcher(self) -> Agent:
 </Step>
 </Steps>
 
-### Complete CrewAI Example
+### Complete LocalAI Example
 
 ```python
 from crewai import Agent, Task, Crew, LLM
@@ -111,7 +111,7 @@ result = crew.kickoff()
 
 ### Observability and Governance
 
-Monitor your CrewAI agents through TrueFoundry's metrics tab:
+Monitor your LocalAI agents through TrueFoundry's metrics tab:
 ![TrueFoundry metrics](/images/gateway-metrics.png)
 
 With Truefoundry's AI gateway, you can monitor and analyze:
@@ -143,5 +143,5 @@ Traceloop.init(
 )
 ```
 
-This provides additional trace correlation across your entire CrewAI workflow.
-![TrueFoundry CrewAI Tracing](/images/tracing_crewai.png)
+This provides additional trace correlation across your entire LocalAI workflow.
+![TrueFoundry LocalAI Tracing](/images/tracing_crewai.png)

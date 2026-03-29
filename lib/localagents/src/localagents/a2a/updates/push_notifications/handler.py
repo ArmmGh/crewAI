@@ -136,8 +136,8 @@ async def _wait_for_push_result(
         timeout: Max seconds to wait.
         poll_interval: Seconds between polling attempts.
         agent_branch: Agent tree branch for logging.
-        from_task: Optional CrewAI Task object for event metadata.
-        from_agent: Optional CrewAI Agent object for event metadata.
+        from_task: Optional LocalAI Task object for event metadata.
+        from_agent: Optional LocalAI Agent object for event metadata.
         context_id: A2A context ID for correlation.
         endpoint: A2A agent endpoint URL.
         a2a_agent_name: Name of the A2A agent.

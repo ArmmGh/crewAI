@@ -344,7 +344,7 @@ def test_refine_request_payload_passes_multiple_goggles_as_multiple_params(web_t
 
 # Null-like / empty value stripping
 #
-# crewAI's ensure_all_properties_required (pydantic_schema_utils.py) marks
+# localAI's ensure_all_properties_required (pydantic_schema_utils.py) marks
 # every schema property as required for OpenAI strict-mode compatibility.
 # Because optional Brave API parameters look required to the LLM, it fills
 # them with placeholder junk — None, "", "null", or [].  The test below
@@ -423,7 +423,7 @@ def test_raw_false_calls_refine_response(mock_get, web_tool):
         "web": {
             "results": [
                 {
-                    "title": "CrewAI",
+                    "title": "LocalAI",
                     "url": "https://crewai.com",
                     "description": "AI agent framework",
                 }

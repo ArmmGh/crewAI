@@ -1,6 +1,6 @@
 # BedrockInvokeAgentTool
 
-The `BedrockInvokeAgentTool` enables CrewAI agents to invoke Amazon Bedrock Agents and leverage their capabilities within your workflows.
+The `BedrockInvokeAgentTool` enables LocalAI agents to invoke Amazon Bedrock Agents and leverage their capabilities within your workflows.
 
 ## Installation
 
@@ -16,7 +16,7 @@ pip install 'crewai[tools]'
 
 ## Usage
 
-Here's how to use the tool with a CrewAI agent:
+Here's how to use the tool with a LocalAI agent:
 
 ```python
 from crewai import Agent, Task, Crew
@@ -28,7 +28,7 @@ agent_tool = BedrockInvokeAgentTool(
     agent_alias_id="your-agent-alias-id"
 )
 
-# Create a CrewAI agent that uses the tool
+# Create a LocalAI agent that uses the tool
 aws_expert = Agent(
     role='AWS Service Expert',
     goal='Help users understand AWS services and quotas',
@@ -157,25 +157,25 @@ result = crew.kickoff()
 ## Use Cases
 
 ### Hybrid Multi-Agent Collaborations
-- Create workflows where CrewAI agents collaborate with managed Bedrock agents running as services in AWS
+- Create workflows where LocalAI agents collaborate with managed Bedrock agents running as services in AWS
 - Enable scenarios where sensitive data processing happens within your AWS environment while other agents operate externally
-- Bridge on-premises CrewAI agents with cloud-based Bedrock agents for distributed intelligence workflows
+- Bridge on-premises LocalAI agents with cloud-based Bedrock agents for distributed intelligence workflows
 
 ### Data Sovereignty and Compliance
-- Keep data-sensitive agentic workflows within your AWS environment while allowing external CrewAI agents to orchestrate tasks
+- Keep data-sensitive agentic workflows within your AWS environment while allowing external LocalAI agents to orchestrate tasks
 - Maintain compliance with data residency requirements by processing sensitive information only within your AWS account
 - Enable secure multi-agent collaborations where some agents cannot access your organization's private data
 
 ### Seamless AWS Service Integration
 - Access any AWS service through Amazon Bedrock Actions without writing complex integration code
-- Enable CrewAI agents to interact with AWS services through natural language requests
+- Enable LocalAI agents to interact with AWS services through natural language requests
 - Leverage pre-built Bedrock agent capabilities to interact with AWS services like Bedrock Knowledge Bases, Lambda, and more
 
 ### Scalable Hybrid Agent Architectures
-- Offload computationally intensive tasks to managed Bedrock agents while lightweight tasks run in CrewAI
-- Scale agent processing by distributing workloads between local CrewAI agents and cloud-based Bedrock agents
+- Offload computationally intensive tasks to managed Bedrock agents while lightweight tasks run in LocalAI
+- Scale agent processing by distributing workloads between local LocalAI agents and cloud-based Bedrock agents
 
 ### Cross-Organizational Agent Collaboration
-- Enable secure collaboration between your organization's CrewAI agents and partner organizations' Bedrock agents
+- Enable secure collaboration between your organization's LocalAI agents and partner organizations' Bedrock agents
 - Create workflows where external expertise from Bedrock agents can be incorporated without exposing sensitive data
 - Build agent ecosystems that span organizational boundaries while maintaining security and data control

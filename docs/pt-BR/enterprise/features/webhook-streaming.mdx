@@ -7,7 +7,7 @@ mode: "wide"
 
 ## Visão Geral
 
-O Enterprise Event Streaming permite que você receba atualizações em tempo real via webhook sobre suas crews e flows implantados no CrewAI AMP, como chamadas de modelo, uso de ferramentas e etapas do flow.
+O Enterprise Event Streaming permite que você receba atualizações em tempo real via webhook sobre suas crews e flows implantados no LocalAI AMP, como chamadas de modelo, uso de ferramentas e etapas do flow.
 
 ## Uso
 
@@ -58,13 +58,13 @@ Cada webhook envia uma lista de eventos:
 }
 ```
 
-A estrutura do objeto `data` varia conforme o tipo de evento. Consulte a [lista de eventos](https://github.com/crewAIInc/crewAI/tree/main/src/crewai/utilities/events) no GitHub.
+A estrutura do objeto `data` varia conforme o tipo de evento. Consulte a [lista de eventos](https://github.com/localAIInc/localAI/tree/main/src/crewai/utilities/events) no GitHub.
 
 Como as requisições são enviadas via HTTP, a ordem dos eventos não pode ser garantida. Caso precise de ordenação, utilize o campo `timestamp`.
 
 ## Eventos Suportados
 
-O CrewAI oferece suporte a eventos do sistema e eventos personalizados no Enterprise Event Streaming. Esses eventos são enviados para o endpoint do seu webhook configurado durante a execução das crews e flows.
+O LocalAI oferece suporte a eventos do sistema e eventos personalizados no Enterprise Event Streaming. Esses eventos são enviados para o endpoint do seu webhook configurado durante a execução das crews e flows.
 
 - `crew_kickoff_started`
 - `crew_step_started`
@@ -77,7 +77,7 @@ O CrewAI oferece suporte a eventos do sistema e eventos personalizados no Enterp
 - `crew_test_failed`
 - _...e outros_
 
-Os nomes dos eventos correspondem ao event bus interno. Veja o [código fonte no GitHub](https://github.com/crewAIInc/crewAI/tree/main/src/crewai/utilities/events) para a lista completa.
+Os nomes dos eventos correspondem ao event bus interno. Veja o [código fonte no GitHub](https://github.com/localAIInc/localAI/tree/main/src/crewai/utilities/events) para a lista completa.
 
 Você pode emitir seus próprios eventos personalizados, e eles serão entregues através do webhook stream juntamente com os eventos do sistema.
 

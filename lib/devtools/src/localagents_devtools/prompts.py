@@ -54,7 +54,7 @@ Instructions:
 - Translate all section headers and descriptions naturally
 - Keep markdown formatting (##, ###, -, etc.) exactly as-is
 - Keep all proper nouns, code identifiers, class names, and technical terms unchanged
-  (e.g. "CrewAI", "LiteAgent", "ChromaDB", "MCP", "@username")
+  (e.g. "LocalAI", "LiteAgent", "ChromaDB", "MCP", "@username")
 - Keep the ## Contributors section and GitHub usernames unchanged
 - Do not add or remove any content, only translate"""
 )

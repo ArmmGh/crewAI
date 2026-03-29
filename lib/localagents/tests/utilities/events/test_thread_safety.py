@@ -1,4 +1,4 @@
-"""Tests for thread safety in CrewAI event bus.
+"""Tests for thread safety in LocalAI event bus.
 
 This module tests concurrent event emission and handler registration.
 """

@@ -1,7 +1,7 @@
 """
 StagehandTool Example
 
-This example demonstrates how to use the StagehandTool in a CrewAI workflow.
+This example demonstrates how to use the StagehandTool in a LocalAI workflow.
 It shows how to use the three main primitives: act, extract, and observe.
 
 Prerequisites:

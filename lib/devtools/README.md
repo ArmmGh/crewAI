@@ -1,6 +1,6 @@
 # crewai-devtools
 
-CLI for versioning and releasing crewAI packages.
+CLI for versioning and releasing localAI packages.
 
 ## Setup
 

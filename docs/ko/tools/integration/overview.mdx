@@ -1,17 +1,17 @@
 ---
 title: "개요"
-description: "CrewAI 에이전트를 외부 자동화 및 관리형 AI 서비스와 연결"
+description: "LocalAI 에이전트를 외부 자동화 및 관리형 AI 서비스와 연결"
 icon: "plug"
 mode: "wide"
 ---
 
-통합 도구를 사용하면 에이전트가 다른 자동화 플랫폼이나 관리형 AI 서비스에 작업을 위임할 수 있습니다. 이미 운영 중인 CrewAI Platform 자동화를 호출하거나 Amazon Bedrock과 같은 전문 제공업체에 태스크를 넘겨야 할 때 활용하세요.
+통합 도구를 사용하면 에이전트가 다른 자동화 플랫폼이나 관리형 AI 서비스에 작업을 위임할 수 있습니다. 이미 운영 중인 LocalAI Platform 자동화를 호출하거나 Amazon Bedrock과 같은 전문 제공업체에 태스크를 넘겨야 할 때 활용하세요.
 
 ## **사용 가능한 도구**
 
 <CardGroup cols={2}>
-  <Card title="CrewAI 자동화 실행 도구" icon="robot" href="/ko/tools/integration/crewaiautomationtool">
-    실행 중인 CrewAI Platform 자동화를 호출하고 사용자 입력을 전달하며, 결과를 에이전트로 다시 수집합니다.
+  <Card title="LocalAI 자동화 실행 도구" icon="robot" href="/ko/tools/integration/crewaiautomationtool">
+    실행 중인 LocalAI Platform 자동화를 호출하고 사용자 입력을 전달하며, 결과를 에이전트로 다시 수집합니다.
   </Card>
 
   <Card title="Bedrock Invoke Agent 도구" icon="aws" href="/ko/tools/integration/bedrockinvokeagenttool">
@@ -21,9 +21,9 @@ mode: "wide"
 
 ## **주요 사용 사례**
 
-- **자동화 연결**: 한 크루 또는 플로우에서 다른 CrewAI 자동화를 연속 실행
+- **자동화 연결**: 한 크루 또는 플로우에서 다른 LocalAI 자동화를 연속 실행
 - **엔터프라이즈 핸드오프**: 사내 정책과 가드레일을 담고 있는 Bedrock Agent에 태스크 위임
-- **하이브리드 워크플로우**: CrewAI의 추론 능력과 외부의 에이전트 API를 결합
+- **하이브리드 워크플로우**: LocalAI의 추론 능력과 외부의 에이전트 API를 결합
 - **장기 실행 작업**: 외부 자동화를 폴링하고 최종 결과를 현재 실행에 병합
 
 ## **빠른 시작 예시**
@@ -69,4 +69,4 @@ Crew(agents=[automation_strategist], tasks=[execute_playbook]).kickoff()
 - **지연 시간 고려**: 외부 자동화는 시간이 더 걸릴 수 있으므로 폴링 주기와 타임아웃을 적절히 설정하세요
 - **세션 재사용**: Bedrock Agent는 세션 ID를 지원하므로 여러 호출 간에 컨텍스트를 유지할 수 있습니다
 - **응답 검증**: 후속 단계로 전달하기 전에 외부 출력(JSON, 텍스트, 상태 코드 등)을 정규화하세요
-- **사용량 모니터링**: CrewAI Platform 로그나 AWS CloudWatch를 통해 할당량 초과와 실패를 조기에 감지하세요
+- **사용량 모니터링**: LocalAI Platform 로그나 AWS CloudWatch를 통해 할당량 초과와 실패를 조기에 감지하세요

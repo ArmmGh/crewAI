@@ -1,7 +1,7 @@
-## CrewAI Security Policy
+## LocalAI Security Policy
 
 We are committed to protecting the confidentiality, integrity, and availability of the
-CrewAI ecosystem.
+LocalAI ecosystem.
 
 ### How to Report
 

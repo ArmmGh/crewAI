@@ -1,13 +1,13 @@
 ---
 title: 'Qdrant Vector Search Tool'
-description: 'Semantic search capabilities for CrewAI agents using Qdrant vector database'
+description: 'Semantic search capabilities for LocalAI agents using Qdrant vector database'
 icon: vector-square
 mode: "wide"
 ---
 
 ## Overview
 
-The Qdrant Vector Search Tool enables semantic search capabilities in your CrewAI agents by leveraging [Qdrant](https://qdrant.tech/), a vector similarity search engine. This tool allows your agents to search through documents stored in a Qdrant collection using semantic similarity.
+The Qdrant Vector Search Tool enables semantic search capabilities in your LocalAI agents by leveraging [Qdrant](https://qdrant.tech/), a vector similarity search engine. This tool allows your agents to search through documents stored in a Qdrant collection using semantic similarity.
 
 ## Installation
 
@@ -51,7 +51,7 @@ Here's a complete example showing how to:
 1. Extract text from a PDF
 2. Generate embeddings using OpenAI
 3. Store in Qdrant
-4. Create a CrewAI agentic RAG workflow for semantic search
+4. Create a LocalAI agentic RAG workflow for semantic search
 
 ```python
 import os
@@ -134,7 +134,7 @@ qdrant_tool = QdrantVectorSearchTool(
     )
 )
 
-# Create CrewAI agents
+# Create LocalAI agents
 search_agent = Agent(
     role="Senior Semantic Search Agent",
     goal="Find and analyze documents based on semantic search",
@@ -169,7 +169,7 @@ answer_task = Task(
     agent=answer_agent
 )
 
-# Run CrewAI workflow
+# Run LocalAI workflow
 crew = Crew(
     agents=[search_agent, answer_agent],
     tasks=[search_task, answer_task],

@@ -1,1 +1,1 @@
-"""Knowledge utilities for crewAI."""
+"""Knowledge utilities for localAI."""

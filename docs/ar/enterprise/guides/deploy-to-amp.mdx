@@ -1,13 +1,13 @@
 ---
 title: "النشر على AMP"
-description: "انشر طاقمك أو تدفقك على CrewAI AMP"
+description: "انشر طاقمك أو تدفقك على LocalAI AMP"
 icon: "rocket"
 mode: "wide"
 ---
 
 <Note>
   بعد إنشاء طاقم أو تدفق محلياً (أو عبر Crew Studio)، الخطوة التالية هي
-  نشره على منصة CrewAI AMP. يغطي هذا الدليل طرق نشر متعددة
+  نشره على منصة LocalAI AMP. يغطي هذا الدليل طرق نشر متعددة
   لمساعدتك في اختيار النهج الأفضل لسير عملك.
 </Note>
 
@@ -25,35 +25,35 @@ mode: "wide"
 </CardGroup>
 
 <Info>
-  **الطواقم مقابل التدفقات**: يمكن نشر كلا نوعي المشاريع كـ "أتمتات" على CrewAI AMP.
+  **الطواقم مقابل التدفقات**: يمكن نشر كلا نوعي المشاريع كـ "أتمتات" على LocalAI AMP.
   عملية النشر هي نفسها، لكن لهما بنى مشاريع مختلفة.
   راجع [التحضير للنشر](/ar/enterprise/guides/prepare-for-deployment) للتفاصيل.
 </Info>
 
-## الخيار 1: النشر باستخدام CrewAI CLI
+## الخيار 1: النشر باستخدام LocalAI CLI
 
 يوفر CLI أسرع طريقة لنشر الطواقم أو التدفقات المطورة محلياً على منصة AMP.
 يكتشف CLI تلقائياً نوع مشروعك من `pyproject.toml` ويبني وفقاً لذلك.
 
 <Steps>
-  <Step title="تثبيت CrewAI CLI">
-    إذا لم تكن قد فعلت بالفعل، ثبّت CrewAI CLI:
+  <Step title="تثبيت LocalAI CLI">
+    إذا لم تكن قد فعلت بالفعل، ثبّت LocalAI CLI:
 
     ```bash
     pip install crewai[tools]
     ```
 
     <Tip>
-    يأتي CLI مع حزمة CrewAI الرئيسية، لكن الإضافة `[tools]` تضمن حصولك على جميع اعتماديات النشر.
+    يأتي CLI مع حزمة LocalAI الرئيسية، لكن الإضافة `[tools]` تضمن حصولك على جميع اعتماديات النشر.
     </Tip>
 
   </Step>
 
   <Step title="المصادقة مع منصة Enterprise">
-    أولاً، تحتاج لمصادقة CLI مع منصة CrewAI AMP:
+    أولاً، تحتاج لمصادقة CLI مع منصة LocalAI AMP:
 
     ```bash
-    # إذا كان لديك حساب CrewAI AMP بالفعل، أو تريد إنشاء واحد:
+    # إذا كان لديك حساب LocalAI AMP بالفعل، أو تريد إنشاء واحد:
     crewai login
     ```
 
@@ -114,7 +114,7 @@ mode: "wide"
 
 ## أوامر CLI إضافية
 
-يقدم CrewAI CLI عدة أوامر لإدارة عمليات النشر:
+يقدم LocalAI CLI عدة أوامر لإدارة عمليات النشر:
 
 ```bash
 # عرض جميع عمليات النشر
@@ -135,7 +135,7 @@ crewai deploy remove <deployment_id>
 
 ## الخيار 2: النشر مباشرة عبر واجهة الويب
 
-يمكنك أيضاً نشر طواقمك أو تدفقاتك مباشرة عبر واجهة ويب CrewAI AMP بربط حساب GitHub. لا يتطلب هذا النهج استخدام CLI على جهازك المحلي. تكتشف المنصة تلقائياً نوع مشروعك وتتعامل مع البناء بشكل مناسب.
+يمكنك أيضاً نشر طواقمك أو تدفقاتك مباشرة عبر واجهة ويب LocalAI AMP بربط حساب GitHub. لا يتطلب هذا النهج استخدام CLI على جهازك المحلي. تكتشف المنصة تلقائياً نوع مشروعك وتتعامل مع البناء بشكل مناسب.
 
 <Steps>
 
@@ -145,9 +145,9 @@ crewai deploy remove <deployment_id>
 
   </Step>
 
-  <Step title="ربط GitHub بـ CrewAI AMP">
+  <Step title="ربط GitHub بـ LocalAI AMP">
 
-    1. سجّل الدخول إلى [CrewAI AMP](https://app.crewai.com)
+    1. سجّل الدخول إلى [LocalAI AMP](https://app.crewai.com)
     2. انقر على زر "Connect GitHub"
 
     <Frame>
@@ -205,12 +205,12 @@ crewai deploy remove <deployment_id>
 
 ## الخيار 3: إعادة النشر باستخدام API (تكامل CI/CD)
 
-لعمليات النشر الآلية في خطوط أنابيب CI/CD، يمكنك استخدام CrewAI API لتشغيل إعادة نشر الطواقم الحالية. هذا مفيد بشكل خاص لـ GitHub Actions وJenkins أو سير عمل الأتمتة الأخرى.
+لعمليات النشر الآلية في خطوط أنابيب CI/CD، يمكنك استخدام LocalAI API لتشغيل إعادة نشر الطواقم الحالية. هذا مفيد بشكل خاص لـ GitHub Actions وJenkins أو سير عمل الأتمتة الأخرى.
 
 <Steps>
   <Step title="الحصول على رمز الوصول الشخصي">
 
-    انتقل إلى إعدادات حساب CrewAI AMP لإنشاء رمز API:
+    انتقل إلى إعدادات حساب LocalAI AMP لإنشاء رمز API:
 
     1. انتقل إلى [app.crewai.com](https://app.crewai.com)
     2. انقر على **Settings** → **Account** → **Personal Access Token**
@@ -223,7 +223,7 @@ crewai deploy remove <deployment_id>
 
     حدد موقع المعرّف الفريد لطاقمك المنشور:
 
-    1. انتقل إلى **Automations** في لوحة تحكم CrewAI AMP
+    1. انتقل إلى **Automations** في لوحة تحكم LocalAI AMP
     2. اختر الأتمتة/الطاقم الحالي
     3. انقر على **Additional Details**
     4. انسخ **UUID** — يحدد هذا نشر طاقمك المحدد
@@ -261,7 +261,7 @@ crewai deploy remove <deployment_id>
     إليك سير عمل GitHub Actions مع مشغلات نشر أكثر تعقيداً:
 
     ```yaml
-    name: Deploy CrewAI Automation
+    name: Deploy LocalAI Automation
 
     on:
       push:
@@ -279,7 +279,7 @@ crewai deploy remove <deployment_id>
           (github.event_name == 'pull_request' && contains(github.event.pull_request.labels.*.name, 'deploy')) ||
           (github.event_name == 'release')
         steps:
-          - name: Trigger CrewAI Redeployment
+          - name: Trigger LocalAI Redeployment
             run: |
               curl -X POST \
                    -H "Authorization: Bearer ${{ secrets.CREWAI_PAT }}" \

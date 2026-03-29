@@ -1,13 +1,13 @@
 ---
 title: Transporte Stdio
-description: Aprenda como conectar o CrewAI a servidores MCP locais usando o mecanismo de transporte Stdio (Entrada/Saída Padrão).
+description: Aprenda como conectar o LocalAI a servidores MCP locais usando o mecanismo de transporte Stdio (Entrada/Saída Padrão).
 icon: server
 mode: "wide"
 ---
 
 ## Visão Geral
 
-O transporte Stdio (Entrada/Saída Padrão) é projetado para conectar o `MCPServerAdapter` a servidores MCP locais que se comunicam por meio de seus fluxos de entrada e saída padrão. Isso é normalmente utilizado quando o servidor MCP é um script ou executável rodando na mesma máquina da sua aplicação CrewAI.
+O transporte Stdio (Entrada/Saída Padrão) é projetado para conectar o `MCPServerAdapter` a servidores MCP locais que se comunicam por meio de seus fluxos de entrada e saída padrão. Isso é normalmente utilizado quando o servidor MCP é um script ou executável rodando na mesma máquina da sua aplicação LocalAI.
 
 ## Conceitos-Chave
 
@@ -38,7 +38,7 @@ server_params=StdioServerParameters(
 with MCPServerAdapter(server_params) as tools:
     print(f"Available tools from Stdio MCP server: {[tool.name for tool in tools]}")
 
-    # Exemplo: Usando as ferramentas do servidor MCP Stdio em um Agente CrewAI
+    # Exemplo: Usando as ferramentas do servidor MCP Stdio em um Agente LocalAI
     pesquisador_local = Agent(
         role="Processador Local de Dados",
         goal="Processar dados usando uma ferramenta local baseada em Stdio.",

@@ -1,1 +1,1 @@
-"""OpenAI agent adapters for crewAI."""
+"""OpenAI agent adapters for localAI."""

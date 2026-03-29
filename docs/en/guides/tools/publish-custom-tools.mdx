@@ -1,13 +1,13 @@
 ---
 title: Publish Custom Tools
-description: How to build, package, and publish your own CrewAI-compatible tools to PyPI so any CrewAI user can install and use them.
+description: How to build, package, and publish your own LocalAI-compatible tools to PyPI so any LocalAI user can install and use them.
 icon: box-open
 mode: "wide"
 ---
 
 ## Overview
 
-CrewAI's tool system is designed to be extended. If you've built a tool that could benefit others, you can package it as a standalone Python library, publish it to PyPI, and make it available to any CrewAI user — no PR to the CrewAI repo required.
+LocalAI's tool system is designed to be extended. If you've built a tool that could benefit others, you can package it as a standalone Python library, publish it to PyPI, and make it available to any LocalAI user — no PR to the LocalAI repo required.
 
 This guide walks through the full process: implementing the tools contract, structuring your package, and publishing to PyPI.
 
@@ -17,7 +17,7 @@ If you just need a custom tool for your own project, see the [Create Custom Tool
 
 ## The Tools Contract
 
-Every CrewAI tool must satisfy one of two interfaces:
+Every LocalAI tool must satisfy one of two interfaces:
 
 ### Option 1: Subclass `BaseTool`
 
@@ -45,7 +45,7 @@ class GeolocateTool(BaseTool):
 
 ### Option 2: Use the `@tool` Decorator
 
-For simpler tools, the `@tool` decorator turns a function into a CrewAI tool. The function **must** have a docstring (used as the tool description) and type annotations.
+For simpler tools, the `@tool` decorator turns a function into a LocalAI tool. The function **must** have a docstring (used as the tool description) and type annotations.
 
 ```python
 from crewai.tools import tool
@@ -87,7 +87,7 @@ class GeolocateTool(BaseTool):
 
 ### Optional: Input Validation with `args_schema`
 
-Define a Pydantic model as your `args_schema` to get automatic input validation and clear error messages. If you don't provide one, CrewAI will infer it from your `_run` method's signature.
+Define a Pydantic model as your `args_schema` to get automatic input validation and clear error messages. If you don't provide one, LocalAI will infer it from your `_run` method's signature.
 
 ```python
 from pydantic import BaseModel, Field
@@ -148,7 +148,7 @@ crewai-geolocate/
 [project]
 name = "crewai-geolocate"
 version = "0.1.0"
-description = "A CrewAI tool for geolocating street addresses."
+description = "A LocalAI tool for geolocating street addresses."
 requires-python = ">=3.10"
 dependencies = [
     "crewai",

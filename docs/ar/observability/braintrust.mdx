@@ -1,19 +1,19 @@
 ---
 title: Braintrust
-description: تكامل Braintrust مع CrewAI باستخدام تتبع وتقييم OpenTelemetry
+description: تكامل Braintrust مع LocalAI باستخدام تتبع وتقييم OpenTelemetry
 icon: magnifying-glass-chart
 mode: "wide"
 ---
 
 # تكامل Braintrust
 
-يوضح هذا الدليل كيفية دمج **Braintrust** مع **CrewAI** باستخدام OpenTelemetry للتتبع والتقييم الشامل. بنهاية هذا الدليل، ستتمكن من تتبع وكلاء CrewAI ومراقبة أدائهم وتقييم مخرجاتهم باستخدام منصة المراقبة القوية من Braintrust.
+يوضح هذا الدليل كيفية دمج **Braintrust** مع **LocalAI** باستخدام OpenTelemetry للتتبع والتقييم الشامل. بنهاية هذا الدليل، ستتمكن من تتبع وكلاء LocalAI ومراقبة أدائهم وتقييم مخرجاتهم باستخدام منصة المراقبة القوية من Braintrust.
 
 > **ما هو Braintrust؟** [Braintrust](https://www.braintrust.dev) هو منصة تقييم ومراقبة للذكاء الاصطناعي توفر تتبعاً شاملاً وتقييماً ومراقبة لتطبيقات الذكاء الاصطناعي مع تتبع تجارب مدمج وتحليلات أداء.
 
 ## البدء
 
-سنمر عبر مثال بسيط لاستخدام CrewAI ودمجه مع Braintrust عبر OpenTelemetry للمراقبة والتقييم الشامل.
+سنمر عبر مثال بسيط لاستخدام LocalAI ودمجه مع Braintrust عبر OpenTelemetry للمراقبة والتقييم الشامل.
 
 ### الخطوة 1: تثبيت الاعتماديات
 
@@ -53,7 +53,7 @@ from braintrust.otel import BraintrustSpanProcessor
 from crewai import Agent, Crew, Task
 from crewai.llm import LLM
 from opentelemetry import trace
-from opentelemetry.instrumentation.crewai import CrewAIInstrumentor
+from opentelemetry.instrumentation.crewai import LocalAIInstrumentor
 from opentelemetry.instrumentation.openai import OpenAIInstrumentor
 from opentelemetry.sdk.trace import TracerProvider
 
@@ -67,16 +67,16 @@ def setup_tracing() -> None:
         trace.set_tracer_provider(provider)
 
     provider.add_span_processor(BraintrustSpanProcessor())
-    CrewAIInstrumentor().instrument(tracer_provider=provider)
+    LocalAIInstrumentor().instrument(tracer_provider=provider)
     OpenAIInstrumentor().instrument(tracer_provider=provider)
 
 
 setup_tracing()
 ```
 
-### الخطوة 4: إنشاء تطبيق CrewAI
+### الخطوة 4: إنشاء تطبيق LocalAI
 
-سننشئ تطبيق CrewAI حيث يتعاون وكيلان للبحث وكتابة مقال مدونة حول تطورات الذكاء الاصطناعي، مع تفعيل التتبع الشامل.
+سننشئ تطبيق LocalAI حيث يتعاون وكيلان للبحث وكتابة مقال مدونة حول تطورات الذكاء الاصطناعي، مع تفعيل التتبع الشامل.
 
 ```python
 from crewai import Agent, Crew, Process, Task
@@ -219,14 +219,14 @@ braintrust eval eval_crew.py
 
 ### معلومات التوافق
 - Python 3.8+
-- CrewAI >= 0.86.0
+- LocalAI >= 0.86.0
 - Braintrust >= 0.1.0
 - OpenTelemetry SDK >= 1.31.0
 
 ### المراجع
 - [وثائق Braintrust](https://www.braintrust.dev/docs) - نظرة عامة على منصة Braintrust
-- [تكامل Braintrust CrewAI](https://www.braintrust.dev/docs/integrations/crew-ai) - دليل التكامل الرسمي مع CrewAI
+- [تكامل Braintrust LocalAI](https://www.braintrust.dev/docs/integrations/crew-ai) - دليل التكامل الرسمي مع LocalAI
 - [Braintrust Eval SDK](https://www.braintrust.dev/docs/start/eval-sdk) - تشغيل التجارب عبر SDK
-- [وثائق CrewAI](https://docs.crewai.com/) - نظرة عامة على إطار عمل CrewAI
+- [وثائق LocalAI](https://docs.crewai.com/) - نظرة عامة على إطار عمل LocalAI
 - [وثائق OpenTelemetry](https://opentelemetry.io/docs/) - دليل OpenTelemetry
 - [Braintrust GitHub](https://github.com/braintrustdata/braintrust) - الكود المصدري لـ Braintrust SDK

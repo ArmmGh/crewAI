@@ -54,10 +54,10 @@ def _track_install() -> None:
         return
 
     try:
-        pixel_url = "https://api.scarf.sh/v2/packages/CrewAI/crewai/docs/00f2dad1-8334-4a39-934e-003b2e1146db"
+        pixel_url = "https://api.scarf.sh/v2/packages/LocalAI/crewai/docs/00f2dad1-8334-4a39-934e-003b2e1146db"
 
         req = urllib.request.Request(pixel_url)  # noqa: S310
-        req.add_header("User-Agent", f"CrewAI-Python/{__version__}")
+        req.add_header("User-Agent", f"LocalAI-Python/{__version__}")
 
         with urllib.request.urlopen(req, timeout=2):  # noqa: S310
             _telemetry_submitted = True

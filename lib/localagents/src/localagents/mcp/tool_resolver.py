@@ -1,4 +1,4 @@
-"""MCP tool resolution for CrewAI agents.
+"""MCP tool resolution for LocalAI agents.
 
 This module extracts all MCP-related tool resolution logic from the Agent class
 into a standalone MCPToolResolver. It handles three flavours of MCP reference:
@@ -44,7 +44,7 @@ _cache_ttl: Final[int] = 300  # 5 minutes
 
 
 class MCPToolResolver:
-    """Resolves MCP server references / configs into CrewAI ``BaseTool`` instances.
+    """Resolves MCP server references / configs into LocalAI ``BaseTool`` instances.
 
     Typical lifecycle::
 
@@ -67,7 +67,7 @@ class MCPToolResolver:
         return list(self._clients)
 
     def resolve(self, mcps: list[str | MCPServerConfig]) -> list[BaseTool]:
-        """Convert MCP server references/configs to CrewAI tools."""
+        """Convert MCP server references/configs to LocalAI tools."""
         all_tools: list[BaseTool] = []
         amp_refs: list[tuple[str, str | None]] = []
 
@@ -181,10 +181,10 @@ class MCPToolResolver:
         return all_tools, all_clients
 
     def _fetch_amp_mcp_configs(self, slugs: list[str]) -> dict[str, dict[str, Any]]:
-        """Fetch MCP server configurations via CrewAI+ API.
+        """Fetch MCP server configurations via LocalAI+ API.
 
-        Sends a GET request to the CrewAI+ mcps/configs endpoint with
-        comma-separated slugs. CrewAI+ proxies the request to crewai-oauth.
+        Sends a GET request to the LocalAI+ mcps/configs endpoint with
+        comma-separated slugs. LocalAI+ proxies the request to crewai-oauth.
 
         API-level failures return ``{}``; individual slugs will then
         surface as ``MCPConfigFetchFailedEvent`` in :meth:`_resolve_amp`.

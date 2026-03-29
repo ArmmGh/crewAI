@@ -1,4 +1,4 @@
-"""Tests for deterministic fingerprints in CrewAI components."""
+"""Tests for deterministic fingerprints in LocalAI components."""
 
 from datetime import datetime
 

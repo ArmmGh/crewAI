@@ -1,4 +1,4 @@
-"""Mypy plugin for CrewAI decorator type checking.
+"""Mypy plugin for LocalAI decorator type checking.
 
 This plugin informs mypy about attributes injected by the @CrewBase decorator.
 """

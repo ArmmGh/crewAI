@@ -1,17 +1,17 @@
 ---
 title: "خوادم MCP المخصصة"
-description: "اربط خوادم MCP الخاصة بك بـ CrewAI AMP مع وصول عام أو مصادقة بمفتاح API أو OAuth 2.0"
+description: "اربط خوادم MCP الخاصة بك بـ LocalAI AMP مع وصول عام أو مصادقة بمفتاح API أو OAuth 2.0"
 icon: "plug"
 mode: "wide"
 ---
 
-يدعم CrewAI AMP الاتصال بأي خادم MCP يُنفّذ [Model Context Protocol](https://modelcontextprotocol.io/). يمكنك إحضار خوادم عامة لا تتطلب مصادقة، وخوادم محمية بمفتاح API أو رمز حامل، وخوادم تستخدم OAuth 2.0 للوصول المفوّض الآمن.
+يدعم LocalAI AMP الاتصال بأي خادم MCP يُنفّذ [Model Context Protocol](https://modelcontextprotocol.io/). يمكنك إحضار خوادم عامة لا تتطلب مصادقة، وخوادم محمية بمفتاح API أو رمز حامل، وخوادم تستخدم OAuth 2.0 للوصول المفوّض الآمن.
 
 ## المتطلبات المسبقة
 
 <CardGroup cols={2}>
-  <Card title="حساب CrewAI AMP" icon="user">
-    تحتاج إلى حساب [CrewAI AMP](https://app.crewai.com) نشط.
+  <Card title="حساب LocalAI AMP" icon="user">
+    تحتاج إلى حساب [LocalAI AMP](https://app.crewai.com) نشط.
   </Card>
   <Card title="رابط خادم MCP" icon="link">
     رابط خادم MCP الذي تريد الاتصال به. يجب أن يكون الخادم متاحاً من الإنترنت ويدعم نقل Streamable HTTP.
@@ -22,7 +22,7 @@ mode: "wide"
 
 <Steps>
     <Step title="فتح الأدوات والتكاملات">
-        انتقل إلى **Tools & Integrations** في الشريط الجانبي الأيسر لـ CrewAI AMP، ثم اختر علامة تبويب **Connections**.
+        انتقل إلى **Tools & Integrations** في الشريط الجانبي الأيسر لـ LocalAI AMP، ثم اختر علامة تبويب **Connections**.
     </Step>
 
     <Step title="بدء إضافة خادم MCP مخصص">
@@ -74,7 +74,7 @@ mode: "wide"
 
 ### OAuth 2.0
 
-استخدم هذه الطريقة لخوادم MCP التي تتطلب تفويض OAuth 2.0. سيتعامل CrewAI مع تدفق OAuth الكامل، بما في ذلك تحديث الرمز.
+استخدم هذه الطريقة لخوادم MCP التي تتطلب تفويض OAuth 2.0. سيتعامل LocalAI مع تدفق OAuth الكامل، بما في ذلك تحديث الرمز.
 
 <Frame>
     <img src="/images/enterprise/custom-mcp-oauth.png" alt="خادم MCP مخصص مع OAuth 2.0" />
@@ -115,7 +115,7 @@ mode: "wide"
     </Step>
 
     <Step title="الإنشاء والتفويض">
-        انقر على **Create MCP Server**. سيتم توجيهك إلى مزود OAuth لتفويض الوصول. بمجرد التفويض، سيخزن CrewAI الرموز ويحدّثها تلقائياً حسب الحاجة.
+        انقر على **Create MCP Server**. سيتم توجيهك إلى مزود OAuth لتفويض الوصول. بمجرد التفويض، سيخزن LocalAI الرموز ويحدّثها تلقائياً حسب الحاجة.
     </Step>
 </Steps>
 
@@ -123,7 +123,7 @@ mode: "wide"
 
 بمجرد الاتصال، تظهر أدوات خادم MCP المخصص جنباً إلى جنب مع الاتصالات المدمجة في صفحة **Tools & Integrations**. يمكنك:
 
-- **تعيين الأدوات للوكلاء** في طواقمك تماماً كأي أداة CrewAI أخرى.
+- **تعيين الأدوات للوكلاء** في طواقمك تماماً كأي أداة LocalAI أخرى.
 - **إدارة الرؤية** للتحكم في أعضاء الفريق الذين يمكنهم استخدام الخادم.
 - **تعديل أو إزالة** الاتصال في أي وقت من قائمة الاتصالات.
 

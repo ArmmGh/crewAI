@@ -400,10 +400,10 @@ datasets: list[dict[str, Any]] = [
 
 
 class BrightDataDatasetTool(BaseTool):
-    """CrewAI-compatible tool for scraping structured data using Bright Data Datasets.
+    """LocalAI-compatible tool for scraping structured data using Bright Data Datasets.
 
     Attributes:
-        name (str): Tool name displayed in the CrewAI environment.
+        name (str): Tool name displayed in the LocalAI environment.
         description (str): Tool description shown to agents or users.
         args_schema (Type[BaseModel]): Pydantic schema for validating input arguments.
     """

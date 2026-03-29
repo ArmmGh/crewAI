@@ -1,4 +1,4 @@
-"""Merge Agent Handler tools wrapper for CrewAI."""
+"""Merge Agent Handler tools wrapper for LocalAI."""
 
 import json
 import logging
@@ -22,7 +22,7 @@ class MergeAgentHandlerTool(BaseTool):
     """
     Wrapper for Merge Agent Handler tools.
 
-    This tool allows CrewAI agents to execute tools from Merge Agent Handler,
+    This tool allows LocalAI agents to execute tools from Merge Agent Handler,
     which provides secure access to third-party integrations via the Model Context Protocol (MCP).
 
     Agent Handler manages authentication, permissions, and monitoring of all tool interactions.

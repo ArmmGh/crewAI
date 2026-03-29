@@ -66,8 +66,8 @@ async def _poll_task_until_complete(
         agent_branch: Agent tree branch for logging.
         history_length: Number of messages to retrieve per poll.
         max_polls: Max number of poll attempts (None = unlimited).
-        from_task: Optional CrewAI Task object for event metadata.
-        from_agent: Optional CrewAI Agent object for event metadata.
+        from_task: Optional LocalAI Task object for event metadata.
+        from_agent: Optional LocalAI Agent object for event metadata.
         context_id: A2A context ID for correlation.
         endpoint: A2A agent endpoint URL.
         a2a_agent_name: Name of the A2A agent from agent card.

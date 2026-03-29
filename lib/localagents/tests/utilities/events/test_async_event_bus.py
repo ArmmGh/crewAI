@@ -1,4 +1,4 @@
-"""Tests for async event handling in CrewAI event bus.
+"""Tests for async event handling in LocalAI event bus.
 
 This module tests async handler registration, execution, and the aemit method.
 """

@@ -1,17 +1,17 @@
 ---
 title: "أتمتة Webhook"
-description: "أتمتة سير عمل CrewAI AMP باستخدام webhooks مع منصات مثل ActivePieces وZapier وMake.com"
+description: "أتمتة سير عمل LocalAI AMP باستخدام webhooks مع منصات مثل ActivePieces وZapier وMake.com"
 icon: "webhook"
 mode: "wide"
 ---
 
-يتيح لك CrewAI AMP أتمتة سير عملك باستخدام webhooks. ستوجهك هذه المقالة خلال عملية إعداد واستخدام webhooks لبدء تنفيذ طاقمك، مع التركيز على التكامل مع ActivePieces، وهي منصة أتمتة سير العمل مشابهة لـ Zapier وMake.com.
+يتيح لك LocalAI AMP أتمتة سير عملك باستخدام webhooks. ستوجهك هذه المقالة خلال عملية إعداد واستخدام webhooks لبدء تنفيذ طاقمك، مع التركيز على التكامل مع ActivePieces، وهي منصة أتمتة سير العمل مشابهة لـ Zapier وMake.com.
 
 ## إعداد Webhooks
 
 <Steps>
     <Step title="الوصول إلى واجهة البدء">
-        - انتقل إلى لوحة تحكم CrewAI AMP
+        - انتقل إلى لوحة تحكم LocalAI AMP
         - ابحث عن قسم `/kickoff`، الذي يُستخدم لبدء تنفيذ الطاقم
             <Frame>
                 <img src="/images/enterprise/kickoff-interface.png" alt="واجهة البدء" />
@@ -44,7 +44,7 @@ mode: "wide"
         3. أضف خطوة إجراء HTTP
             - عيّن الإجراء إلى `Send HTTP request`
             - استخدم `POST` كطريقة
-            - عيّن عنوان URL إلى نقطة نهاية بدء CrewAI AMP
+            - عيّن عنوان URL إلى نقطة نهاية بدء LocalAI AMP
             - أضف الترويسات اللازمة (مثال: `Bearer Token`)
                 <Frame>
                     <img src="/images/enterprise/activepieces-headers.png" alt="ترويسات ActivePieces" />

@@ -12,24 +12,24 @@ mode: "wide"
 It provides a tracing feature that enhances LLM observability in your Generative AI applications by capturing detailed information about the execution of your application’s services. 
 Tracing provides a way to record the inputs, outputs, and metadata associated with each intermediate step of a request, enabling you to easily pinpoint the source of bugs and unexpected behaviors.
 
-![Overview of MLflow crewAI tracing usage](/images/mlflow-tracing.gif)
+![Overview of MLflow localAI tracing usage](/images/mlflow-tracing.gif)
 
 ### Features
 
-- **Tracing Dashboard**: Monitor activities of your crewAI agents with detailed dashboards that include inputs, outputs and metadata of spans.
-- **Automated Tracing**: A fully automated integration with crewAI, which can be enabled by running `mlflow.crewai.autolog()`. 
+- **Tracing Dashboard**: Monitor activities of your localAI agents with detailed dashboards that include inputs, outputs and metadata of spans.
+- **Automated Tracing**: A fully automated integration with localAI, which can be enabled by running `mlflow.crewai.autolog()`. 
 - **Manual Trace Instrumentation with minor efforts**: Customize trace instrumentation through MLflow's high-level fluent APIs such as decorators, function wrappers and context managers.
 - **OpenTelemetry Compatibility**: MLflow Tracing supports exporting traces to an OpenTelemetry Collector, which can then be used to export traces to various backends such as Jaeger, Zipkin, and AWS X-Ray.
-- **Package and Deploy Agents**: Package and deploy your crewAI agents to an inference server with a variety of deployment targets.
+- **Package and Deploy Agents**: Package and deploy your localAI agents to an inference server with a variety of deployment targets.
 - **Securely Host LLMs**: Host multiple LLM from various providers in one unified endpoint through MFflow gateway.
-- **Evaluation**: Evaluate your crewAI agents with a wide range of metrics using a convenient API `mlflow.evaluate()`.
+- **Evaluation**: Evaluate your localAI agents with a wide range of metrics using a convenient API `mlflow.evaluate()`.
 
 ## Setup Instructions
 
 <Steps>
     <Step title="Install MLflow package">
       ```shell
-      # The crewAI integration is available in mlflow>=2.19.0
+      # The localAI integration is available in mlflow>=2.19.0
       pip install mlflow
       ```
     </Step>
@@ -49,10 +49,10 @@ Tracing provides a way to record the inputs, outputs, and metadata associated wi
 
       # Optional: Set a tracking URI and an experiment name if you have a tracking server
       mlflow.set_tracking_uri("http://localhost:5000")
-      mlflow.set_experiment("CrewAI")
+      mlflow.set_experiment("LocalAI")
       ```
       
-      Example Usage for tracing CrewAI Agents:
+      Example Usage for tracing LocalAI Agents:
 
       ```python
       from crewai import Agent, Crew, Task
@@ -195,7 +195,7 @@ Tracing provides a way to record the inputs, outputs, and metadata associated wi
       Refer to [MLflow Tracing Documentation](https://mlflow.org/docs/latest/llms/tracing/index.html) for more configurations and use cases.
     </Step>
     <Step title="Visualize Activities of Agents">
-      Now traces for your crewAI agents are captured by MLflow. 
+      Now traces for your localAI agents are captured by MLflow. 
       Let's visit MLflow tracking server to view the traces and get insights into your Agents.
 
       Open `127.0.0.1:5000` on your browser to visit MLflow tracking server. 

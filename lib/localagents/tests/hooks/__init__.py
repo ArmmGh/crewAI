@@ -1,2 +1,2 @@
-"""Tests for CrewAI hooks functionality."""
+"""Tests for LocalAI hooks functionality."""
 

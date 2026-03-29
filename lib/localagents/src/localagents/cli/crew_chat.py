@@ -32,10 +32,10 @@ def check_conversational_crews_version(
     crewai_version: str, pyproject_data: dict[str, Any]
 ) -> bool:
     """
-    Check if the installed crewAI version supports conversational crews.
+    Check if the installed localAI version supports conversational crews.
 
     Args:
-        crewai_version: The current version of crewAI.
+        crewai_version: The current version of localAI.
         pyproject_data: Dictionary containing pyproject.toml data.
 
     Returns:
@@ -44,13 +44,13 @@ def check_conversational_crews_version(
     try:
         if version.parse(crewai_version) < version.parse(MIN_REQUIRED_VERSION):
             click.secho(
-                "You are using an older version of crewAI that doesn't support conversational crews. "
+                "You are using an older version of localAI that doesn't support conversational crews. "
                 "Run 'uv upgrade crewai' to get the latest version.",
                 fg="red",
             )
             return False
     except version.InvalidVersion:
-        click.secho("Invalid crewAI version format detected.", fg="red")
+        click.secho("Invalid localAI version format detected.", fg="red")
         return False
     return True
 
@@ -149,7 +149,7 @@ def build_system_message(crew_chat_inputs: ChatInputs) -> str:
     )
 
     return (
-        "You are a helpful AI assistant for the CrewAI platform. "
+        "You are a helpful AI assistant for the LocalAI platform. "
         "Your primary purpose is to assist users with the crew's specific tasks. "
         "You can answer general questions, but should guide users back to the crew's purpose afterward. "
         "For example, after answering a general question, remind the user of your main purpose, such as generating a research report, and prompt them to specify a topic or task related to the crew's purpose. "

@@ -156,7 +156,7 @@ def test_visualize_flow_structure_creates_html():
 
     assert "<!DOCTYPE html>" in html_content
     assert "<html" in html_content
-    assert "CrewAI Flow Visualization" in html_content
+    assert "LocalAI Flow Visualization" in html_content
     assert "network-container" in html_content
     assert "drawer" in html_content
     assert "nav-controls" in html_content

@@ -1,1 +1,1 @@
-"""Provider interfaces for extensible crewAI components."""
+"""Provider interfaces for extensible localAI components."""

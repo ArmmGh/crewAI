@@ -1,23 +1,23 @@
 ---
 title: 도구
-description: CrewAI 프레임워크 내에서 에이전트 협업과 작업 실행을 위해 도구를 이해하고 활용하기.
+description: LocalAI 프레임워크 내에서 에이전트 협업과 작업 실행을 위해 도구를 이해하고 활용하기.
 icon: screwdriver-wrench
 mode: "wide"
 ---
 
 ## 개요
 
-CrewAI 도구는 에이전트에게 웹 검색, 데이터 분석부터 동료 간 협업 및 작업 위임에 이르기까지 다양한 기능을 제공합니다.  
-이 문서에서는 CrewAI 프레임워크 내에서 이러한 도구를 생성, 통합 및 활용하는 방법과, 협업 도구에 초점을 맞춘 새로운 기능에 대해 설명합니다.
+LocalAI 도구는 에이전트에게 웹 검색, 데이터 분석부터 동료 간 협업 및 작업 위임에 이르기까지 다양한 기능을 제공합니다.  
+이 문서에서는 LocalAI 프레임워크 내에서 이러한 도구를 생성, 통합 및 활용하는 방법과, 협업 도구에 초점을 맞춘 새로운 기능에 대해 설명합니다.
 
 ## Tool이란 무엇인가?
 
-CrewAI에서 tool은 에이전트가 다양한 작업을 수행하기 위해 활용할 수 있는 기술 또는 기능입니다.
-이에는 [CrewAI Toolkit](https://github.com/joaomdmoura/crewai-tools) 및 [LangChain Tools](https://python.langchain.com/docs/integrations/tools)의 tool이 포함되어,
+LocalAI에서 tool은 에이전트가 다양한 작업을 수행하기 위해 활용할 수 있는 기술 또는 기능입니다.
+이에는 [LocalAI Toolkit](https://github.com/joaomdmoura/crewai-tools) 및 [LangChain Tools](https://python.langchain.com/docs/integrations/tools)의 tool이 포함되어,
 간단한 검색부터 복잡한 상호작용, 그리고 에이전트 간의 효과적인 협업까지 모두 가능하게 합니다.
 
 <Note type="info" title="엔터프라이즈 확장: Tools Repository">
-CrewAI 엔터프라이즈는 주요 비즈니스 시스템 및 API와의 사전 구축된 통합을 제공하는 종합적인 Tools Repository를 제공합니다. 며칠이 걸리던 엔터프라이즈 tool로 에이전트를 몇 분 만에 배포할 수 있습니다.
+LocalAI 엔터프라이즈는 주요 비즈니스 시스템 및 API와의 사전 구축된 통합을 제공하는 종합적인 Tools Repository를 제공합니다. 며칠이 걸리던 엔터프라이즈 tool로 에이전트를 몇 분 만에 배포할 수 있습니다.
 
 엔터프라이즈 Tools Repository에는 다음이 포함됩니다:
 - 인기 엔터프라이즈 시스템용 사전 구축 커넥터
@@ -35,9 +35,9 @@ CrewAI 엔터프라이즈는 주요 비즈니스 시스템 및 API와의 사전 
 - **캐싱 메커니즘**: 성능 최적화와 중복 작업 감소를 위한 지능형 캐싱 기능을 갖춤.
 - **비동기 지원**: 동기 및 비동기 도구를 모두 처리하여 논블로킹(Non-blocking) 작업을 가능하게 함.
 
-## CrewAI 도구 사용하기
+## LocalAI 도구 사용하기
 
-crewAI 도구로 에이전트의 기능을 확장하려면, 우선 추가 도구 패키지를 설치하세요:
+localAI 도구로 에이전트의 기능을 확장하려면, 우선 추가 도구 패키지를 설치하세요:
 
 ```bash
 pip install 'crewai[tools]'
@@ -48,7 +48,7 @@ pip install 'crewai[tools]'
 ```python Code
 import os
 from crewai import Agent, Task, Crew
-# crewAI 도구 임포트
+# localAI 도구 임포트
 from crewai_tools import (
     DirectoryReadTool,
     FileReadTool,
@@ -109,7 +109,7 @@ crew = Crew(
 crew.kickoff()
 ```
 
-## 사용 가능한 CrewAI 도구
+## 사용 가능한 LocalAI 도구
 
 - **에러 처리**: 모든 도구는 에러 처리 기능이 내장되어 있어, 에이전트가 예외 상황을 우아하게 관리하며 작업을 계속할 수 있습니다.
 - **캐싱 메커니즘**: 모든 도구는 캐싱을 지원하여, 에이전트가 이전에 얻은 결과를 효율적으로 재사용할 수 있고 외부 자원에 대한 부하를 줄이며 실행 시간을 단축할 수 있습니다. 또한 도구의 `cache_function` 속성을 사용하여 캐싱 메커니즘을 세밀하게 제어할 수 있습니다.
@@ -157,7 +157,7 @@ crew.kickoff()
   미리 구축된 옵션을 활용할 수 있습니다.
 </Tip>
 
-CrewAI 도구를 만드는 방법에는 두 가지 주요 방법이 있습니다:
+LocalAI 도구를 만드는 방법에는 두 가지 주요 방법이 있습니다:
 
 ### `BaseTool` 서브클래싱
 
@@ -181,7 +181,7 @@ class MyCustomTool(BaseTool):
 
 ## 비동기 도구 지원
 
-CrewAI는 비동기 도구를 지원하여, 네트워크 요청, 파일 I/O 또는 기타 비동기 작업과 같이 메인 실행 스레드를 차단하지 않고 비차단 연산을 수행하는 도구를 구현할 수 있습니다.
+LocalAI는 비동기 도구를 지원하여, 네트워크 요청, 파일 I/O 또는 기타 비동기 작업과 같이 메인 실행 스레드를 차단하지 않고 비차단 연산을 수행하는 도구를 구현할 수 있습니다.
 
 ### 비동기 툴 만들기
 
@@ -233,7 +233,7 @@ class MyFlow(Flow):
         return result
 ```
 
-CrewAI 프레임워크는 동기 및 비동기 도구의 실행을 자동으로 처리하므로, 별도로 호출 방법을 신경 쓸 필요가 없습니다.
+LocalAI 프레임워크는 동기 및 비동기 도구의 실행을 자동으로 처리하므로, 별도로 호출 방법을 신경 쓸 필요가 없습니다.
 
 ### `tool` 데코레이터 활용하기
 
@@ -280,4 +280,4 @@ writer1 = Agent(
 
 ## 결론
 
-도구는 CrewAI 에이전트의 역량을 확장하는 데 중요한 역할을 하며, 이를 통해 에이전트가 폭넓은 작업을 수행하고 효과적으로 협업할 수 있습니다. CrewAI로 솔루션을 구축할 때는, 맞춤형 또는 기존의 도구를 모두 활용하여 에이전트를 강화하고 AI 생태계를 향상시키세요. 에이전트의 성능과 기능을 최적화하기 위해 오류 처리, 캐싱 메커니즘, 그리고 도구 인자의 유연성도 고려해보시기 바랍니다.
+도구는 LocalAI 에이전트의 역량을 확장하는 데 중요한 역할을 하며, 이를 통해 에이전트가 폭넓은 작업을 수행하고 효과적으로 협업할 수 있습니다. LocalAI로 솔루션을 구축할 때는, 맞춤형 또는 기존의 도구를 모두 활용하여 에이전트를 강화하고 AI 생태계를 향상시키세요. 에이전트의 성능과 기능을 최적화하기 위해 오류 처리, 캐싱 메커니즘, 그리고 도구 인자의 유연성도 고려해보시기 바랍니다.

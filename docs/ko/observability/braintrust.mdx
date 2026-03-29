@@ -1,19 +1,19 @@
 ---
 title: Braintrust
-description: OpenTelemetry 추적 및 평가를 포함한 CrewAI용 Braintrust 통합
+description: OpenTelemetry 추적 및 평가를 포함한 LocalAI용 Braintrust 통합
 icon: magnifying-glass-chart
 mode: "wide"
 ---
 
 # Braintrust 통합
 
-이 가이드는 **Braintrust**를 **CrewAI**와 OpenTelemetry를 사용하여 포괄적인 추적 및 평가와 함께 통합하는 방법을 보여줍니다. 이 가이드를 완료하면 CrewAI agent를 추적하고, 성능을 모니터링하며, Braintrust의 강력한 관찰성 플랫폼을 사용하여 출력을 평가할 수 있습니다.
+이 가이드는 **Braintrust**를 **LocalAI**와 OpenTelemetry를 사용하여 포괄적인 추적 및 평가와 함께 통합하는 방법을 보여줍니다. 이 가이드를 완료하면 LocalAI agent를 추적하고, 성능을 모니터링하며, Braintrust의 강력한 관찰성 플랫폼을 사용하여 출력을 평가할 수 있습니다.
 
 > **Braintrust란?** [Braintrust](https://www.braintrust.dev)는 내장된 실험 추적 및 성능 분석을 통해 AI 애플리케이션에 대한 포괄적인 추적, 평가 및 모니터링을 제공하는 AI 평가 및 관찰성 플랫폼입니다.
 
 ## 시작하기
 
-CrewAI를 사용하고 포괄적인 관찰성 및 평가를 위해 OpenTelemetry를 통해 Braintrust와 통합하는 간단한 예제를 단계별로 안내합니다.
+LocalAI를 사용하고 포괄적인 관찰성 및 평가를 위해 OpenTelemetry를 통해 Braintrust와 통합하는 간단한 예제를 단계별로 안내합니다.
 
 ### 1단계: 의존성 설치
 
@@ -53,7 +53,7 @@ from braintrust.otel import BraintrustSpanProcessor
 from crewai import Agent, Crew, Task
 from crewai.llm import LLM
 from opentelemetry import trace
-from opentelemetry.instrumentation.crewai import CrewAIInstrumentor
+from opentelemetry.instrumentation.crewai import LocalAIInstrumentor
 from opentelemetry.instrumentation.openai import OpenAIInstrumentor
 from opentelemetry.sdk.trace import TracerProvider
 
@@ -67,16 +67,16 @@ def setup_tracing() -> None:
         trace.set_tracer_provider(provider)
 
     provider.add_span_processor(BraintrustSpanProcessor())
-    CrewAIInstrumentor().instrument(tracer_provider=provider)
+    LocalAIInstrumentor().instrument(tracer_provider=provider)
     OpenAIInstrumentor().instrument(tracer_provider=provider)
 
 
 setup_tracing()
 ```
 
-### 4단계: CrewAI 애플리케이션 생성하기
+### 4단계: LocalAI 애플리케이션 생성하기
 
-포괄적인 추적이 활성화된 CrewAI 애플리케이션을 생성합니다.
+포괄적인 추적이 활성화된 LocalAI 애플리케이션을 생성합니다.
 
 ```python
 from crewai import Agent, Crew, Process, Task
@@ -223,14 +223,14 @@ braintrust eval eval_crew.py
 
 ### 버전 호환성 정보
 - Python 3.8+
-- CrewAI >= 0.86.0
+- LocalAI >= 0.86.0
 - Braintrust >= 0.1.0
 - OpenTelemetry SDK >= 1.31.0
 
 ### 참고 자료
 - [Braintrust 문서](https://www.braintrust.dev/docs) - Braintrust 플랫폼 개요
-- [Braintrust CrewAI 통합](https://www.braintrust.dev/docs/integrations/crew-ai) - 공식 CrewAI 통합 가이드
+- [Braintrust LocalAI 통합](https://www.braintrust.dev/docs/integrations/crew-ai) - 공식 LocalAI 통합 가이드
 - [Braintrust Eval SDK](https://www.braintrust.dev/docs/start/eval-sdk) - SDK를 통한 실험 실행
-- [CrewAI 문서](https://docs.crewai.com/) - CrewAI 프레임워크 개요
+- [LocalAI 문서](https://docs.crewai.com/) - LocalAI 프레임워크 개요
 - [OpenTelemetry 문서](https://opentelemetry.io/docs/) - OpenTelemetry 가이드
 - [Braintrust GitHub](https://github.com/braintrustdata/braintrust) - Braintrust SDK 소스 코드

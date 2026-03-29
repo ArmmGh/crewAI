@@ -1,13 +1,13 @@
 ---
 title: Langfuse 통합
-description: OpenLit을 사용하여 OpenTelemetry를 통해 CrewAI와 Langfuse를 통합하는 방법을 알아보세요
+description: OpenLit을 사용하여 OpenTelemetry를 통해 LocalAI와 Langfuse를 통합하는 방법을 알아보세요
 icon: vials
 mode: "wide"
 ---
 
-# Langfuse와 CrewAI 통합하기
+# Langfuse와 LocalAI 통합하기
 
-이 노트북은 **OpenLit** SDK를 통해 OpenTelemetry를 사용하여 **Langfuse**를 **CrewAI**와 통합하는 방법을 보여줍니다. 이 노트북을 마치면 Langfuse를 사용해 CrewAI 애플리케이션을 추적하여 가시성과 디버깅을 향상시킬 수 있습니다.
+이 노트북은 **OpenLit** SDK를 통해 OpenTelemetry를 사용하여 **Langfuse**를 **LocalAI**와 통합하는 방법을 보여줍니다. 이 노트북을 마치면 Langfuse를 사용해 LocalAI 애플리케이션을 추적하여 가시성과 디버깅을 향상시킬 수 있습니다.
 
 > **Langfuse란 무엇인가요?** [Langfuse](https://langfuse.com)는 오픈 소스 LLM 엔지니어링 플랫폼입니다. 이는 LLM 애플리케이션을 위한 추적 및 모니터링 기능을 제공하며, 개발자들이 AI 시스템을 디버그, 분석 및 최적화하는 데 도움을 줍니다. Langfuse는 네이티브 통합, OpenTelemetry, API/SDK를 통해 다양한 도구 및 프레임워크와 연동됩니다.
 
@@ -15,7 +15,7 @@ mode: "wide"
 
 ## 시작하기
 
-CrewAI를 사용하고 OpenLit을 통해 OpenTelemetry로 Langfuse와 통합하는 간단한 예제를 함께 살펴보겠습니다.
+LocalAI를 사용하고 OpenLit을 통해 OpenTelemetry로 Langfuse와 통합하는 간단한 예제를 함께 살펴보겠습니다.
 
 ### 1단계: 의존성 설치
 
@@ -65,9 +65,9 @@ import openlit
 openlit.init()
 ```
 
-### 4단계: 간단한 CrewAI 애플리케이션 만들기
+### 4단계: 간단한 LocalAI 애플리케이션 만들기
 
-여러 에이전트가 협력하여 사용자의 질문에 답하는 간단한 CrewAI 애플리케이션을 만들어보겠습니다.
+여러 에이전트가 협력하여 사용자의 질문에 답하는 간단한 LocalAI 애플리케이션을 만들어보겠습니다.
 
 
 ```python
@@ -99,9 +99,9 @@ crew = Crew(
 
 ### 5단계: Langfuse에서 트레이스 확인하기
 
-에이전트를 실행한 후 [Langfuse](https://cloud.langfuse.com)에서 CrewAI 애플리케이션에서 생성된 트레이스를 확인할 수 있습니다. 여기서 LLM 상호작용의 자세한 단계들을 볼 수 있으며, 이를 통해 AI 에이전트의 디버깅 및 최적화에 도움이 됩니다.
+에이전트를 실행한 후 [Langfuse](https://cloud.langfuse.com)에서 LocalAI 애플리케이션에서 생성된 트레이스를 확인할 수 있습니다. 여기서 LLM 상호작용의 자세한 단계들을 볼 수 있으며, 이를 통해 AI 에이전트의 디버깅 및 최적화에 도움이 됩니다.
 
-![Langfuse의 CrewAI 예시 트레이스](https://langfuse.com/images/cookbook/integration_crewai/crewai-example-trace.png)
+![Langfuse의 LocalAI 예시 트레이스](https://langfuse.com/images/cookbook/integration_crewai/crewai-example-trace.png)
 
 _[Langfuse의 공개 예시 트레이스](https://cloud.langfuse.com/project/cloramnkj0002jz088vzn1ja4/traces/e2cf380ffc8d47d28da98f136140642b?timestamp=2025-02-05T15%3A12%3A02.717Z&observation=3b32338ee6a5d9af)_
 

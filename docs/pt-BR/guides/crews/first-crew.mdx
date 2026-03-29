@@ -7,9 +7,9 @@ mode: "wide"
 
 ## Liberando o Poder da IA Colaborativa
 
-Imagine ter uma equipe de agentes de IA especializados trabalhando juntos de forma harmoniosa para resolver problemas complexos, cada um contribuindo com suas habilidades únicas para alcançar um objetivo comum. Esse é o poder da CrewAI – um framework que permite criar sistemas colaborativos de IA que podem realizar tarefas muito além do que uma única IA conseguiria sozinha.
+Imagine ter uma equipe de agentes de IA especializados trabalhando juntos de forma harmoniosa para resolver problemas complexos, cada um contribuindo com suas habilidades únicas para alcançar um objetivo comum. Esse é o poder da LocalAI – um framework que permite criar sistemas colaborativos de IA que podem realizar tarefas muito além do que uma única IA conseguiria sozinha.
 
-Neste guia, vamos criar uma crew de pesquisa que irá nos ajudar a pesquisar e analisar um tema, e então criar um relatório abrangente. Este exemplo prático demonstra como agentes de IA podem colaborar para realizar tarefas complexas, mas é apenas o começo do que é possível com a CrewAI.
+Neste guia, vamos criar uma crew de pesquisa que irá nos ajudar a pesquisar e analisar um tema, e então criar um relatório abrangente. Este exemplo prático demonstra como agentes de IA podem colaborar para realizar tarefas complexas, mas é apenas o começo do que é possível com a LocalAI.
 
 ### O que Você Vai Construir e Aprender
 
@@ -33,13 +33,13 @@ Vamos começar a construir sua primeira crew!
 
 Antes de começar, certifique-se de que você:
 
-1. Instalou a CrewAI seguindo o [guia de instalação](/pt-BR/installation)
+1. Instalou a LocalAI seguindo o [guia de instalação](/pt-BR/installation)
 2. Configurou sua chave de API de LLM no ambiente, conforme o [guia de configuração do LLM](/pt-BR/concepts/llms#setting-up-your-llm)
 3. Tem conhecimento básico de Python
 
-## Passo 1: Crie um Novo Projeto CrewAI
+## Passo 1: Crie um Novo Projeto LocalAI
 
-Primeiro, vamos criar um novo projeto CrewAI usando a CLI. Este comando irá configurar toda a estrutura do projeto com os arquivos necessários, permitindo que você foque em definir seus agentes e suas tarefas, em vez de se preocupar com código boilerplate.
+Primeiro, vamos criar um novo projeto LocalAI usando a CLI. Este comando irá configurar toda a estrutura do projeto com os arquivos necessários, permitindo que você foque em definir seus agentes e suas tarefas, em vez de se preocupar com código boilerplate.
 
 ```bash
 crewai create crew research_crew
@@ -53,14 +53,14 @@ Isso irá gerar um projeto com a estrutura básica necessária para sua crew. A 
 - Uma implementação básica da crew
 - Um script principal para rodar a crew
 
-<Frame caption="CrewAI Framework Overview">
-  <img src="/images/crews.png" alt="CrewAI Framework Overview" />
+<Frame caption="LocalAI Framework Overview">
+  <img src="/images/crews.png" alt="LocalAI Framework Overview" />
 </Frame>
 
 
 ## Passo 2: Explore a Estrutura do Projeto
 
-Vamos dedicar um momento para entender a estrutura do projeto criada pela CLI. A CrewAI segue boas práticas para projetos Python, tornando fácil manter e estender seu código à medida que suas crews se tornam mais complexas.
+Vamos dedicar um momento para entender a estrutura do projeto criada pela CLI. A LocalAI segue boas práticas para projetos Python, tornando fácil manter e estender seu código à medida que suas crews se tornam mais complexas.
 
 ```
 research_crew/
@@ -85,7 +85,7 @@ Esta estrutura segue as melhores práticas para projetos Python e facilita a org
 
 ## Passo 3: Configure seus Agentes
 
-Agora vem a parte divertida – definir seus agentes de IA! Na CrewAI, agentes são entidades especializadas com papéis, objetivos e históricos específicos que moldam seu comportamento. Pense neles como personagens em uma peça, cada um com sua personalidade e propósito próprios.
+Agora vem a parte divertida – definir seus agentes de IA! Na LocalAI, agentes são entidades especializadas com papéis, objetivos e históricos específicos que moldam seu comportamento. Pense neles como personagens em uma peça, cada um com sua personalidade e propósito próprios.
 
 Para nossa crew de pesquisa, vamos criar dois agentes:
 1. Um **pesquisador** que é especialista em encontrar e organizar informações
@@ -125,7 +125,7 @@ Perceba como cada agente tem um papel, objetivo e histórico distintos. Esses el
 
 ## Passo 4: Defina suas Tarefas
 
-Com nossos agentes definidos, agora precisamos atribuir tarefas específicas para eles realizarem. Tarefas na CrewAI representam o trabalho concreto que os agentes irão executar, com instruções detalhadas e saídas esperadas.
+Com nossos agentes definidos, agora precisamos atribuir tarefas específicas para eles realizarem. Tarefas na LocalAI representam o trabalho concreto que os agentes irão executar, com instruções detalhadas e saídas esperadas.
 
 Para nossa crew de pesquisa, vamos definir duas tarefas principais:
 1. Uma **tarefa de pesquisa** para coletar informações abrangentes
@@ -274,7 +274,7 @@ if __name__ == "__main__":
     run()
 ```
 
-Este script prepara o ambiente, define o tema de pesquisa e inicia o trabalho da crew. O poder da CrewAI fica evidente em como esse código é simples – toda a complexidade do gerenciamento de múltiplos agentes de IA é tratada pelo framework.
+Este script prepara o ambiente, define o tema de pesquisa e inicia o trabalho da crew. O poder da LocalAI fica evidente em como esse código é simples – toda a complexidade do gerenciamento de múltiplos agentes de IA é tratada pelo framework.
 
 ## Passo 7: Defina suas Variáveis de Ambiente
 
@@ -289,7 +289,7 @@ Confira o [guia de configuração do LLM](/pt-BR/concepts/llms#setting-up-your-l
 
 ## Passo 8: Instale as Dependências
 
-Instale as dependências necessárias usando a CLI da CrewAI:
+Instale as dependências necessárias usando a CLI da LocalAI:
 
 ```bash
 crewai install
@@ -323,7 +323,7 @@ Tire um momento para valorizar o que você realizou – você criou um sistema n
 
 ## Explorando Outros Comandos da CLI
 
-A CrewAI oferece vários outros comandos úteis de CLI para trabalhar com crews:
+A LocalAI oferece vários outros comandos úteis de CLI para trabalhar com crews:
 
 ```bash
 # Ver todos os comandos disponíveis
@@ -386,8 +386,8 @@ Agora que você montou sua primeira crew, você pode:
 2. Testar estruturas de tarefas e fluxos de trabalho mais complexos
 3. Implementar ferramentas customizadas para dar novas capacidades aos agentes
 4. Aplicar sua crew em outros temas ou domínios de problemas
-5. Explorar [CrewAI Flows](/pt-BR/guides/flows/first-flow) para fluxos de trabalho avançados usando programação procedural
+5. Explorar [LocalAI Flows](/pt-BR/guides/flows/first-flow) para fluxos de trabalho avançados usando programação procedural
 
 <Check>
-Parabéns! Você construiu com sucesso sua primeira crew com o CrewAI, capaz de pesquisar e analisar qualquer tema que desejar. Essa experiência fundamental lhe deu as habilidades para criar sistemas de IA cada vez mais sofisticados, aptos a encarar problemas complexos e de múltiplas etapas por meio da inteligência colaborativa.
+Parabéns! Você construiu com sucesso sua primeira crew com o LocalAI, capaz de pesquisar e analisar qualquer tema que desejar. Essa experiência fundamental lhe deu as habilidades para criar sistemas de IA cada vez mais sofisticados, aptos a encarar problemas complexos e de múltiplas etapas por meio da inteligência colaborativa.
 </Check>

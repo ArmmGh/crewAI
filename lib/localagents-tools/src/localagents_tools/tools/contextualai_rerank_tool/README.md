@@ -1,7 +1,7 @@
 # ContextualAIRerankTool
 
 ## Description
-This tool is designed to integrate Contextual AI's enterprise-grade instruction-following reranker with CrewAI, enabling you to intelligently reorder documents based on relevance and custom criteria. Use this tool to enhance search result quality and document retrieval for RAG systems using Contextual AI's reranking models that understand context and follow specific instructions for optimal document ordering.
+This tool is designed to integrate Contextual AI's enterprise-grade instruction-following reranker with LocalAI, enabling you to intelligently reorder documents based on relevance and custom criteria. Use this tool to enhance search result quality and document retrieval for RAG systems using Contextual AI's reranking models that understand context and follow specific instructions for optimal document ordering.
 
 ## Installation
 To incorporate this tool into your project, follow the installation instructions below:

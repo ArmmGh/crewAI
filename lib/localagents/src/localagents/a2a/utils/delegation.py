@@ -181,13 +181,13 @@ def execute_a2a_delegation(
         extensions: Protocol extensions for custom fields.
         conversation_history: Previous Message objects from conversation.
         agent_id: Agent identifier for logging.
-        agent_role: Role of the CrewAI agent delegating the task.
+        agent_role: Role of the LocalAI agent delegating the task.
         agent_branch: Optional agent tree branch for logging.
         response_model: Optional Pydantic model for structured outputs.
         turn_number: Optional turn number for multi-turn conversations.
         updates: Update mechanism config from A2AConfig.updates.
-        from_task: Optional CrewAI Task object for event metadata.
-        from_agent: Optional CrewAI Agent object for event metadata.
+        from_task: Optional LocalAI Task object for event metadata.
+        from_agent: Optional LocalAI Agent object for event metadata.
         skill_id: Optional skill ID to target a specific agent capability.
         client_extensions: A2A protocol extension URIs the client supports.
         transport: Transport configuration (preferred, supported transports, gRPC settings).
@@ -280,13 +280,13 @@ async def aexecute_a2a_delegation(
         extensions: Protocol extensions for custom fields.
         conversation_history: Previous Message objects from conversation.
         agent_id: Agent identifier for logging.
-        agent_role: Role of the CrewAI agent delegating the task.
+        agent_role: Role of the LocalAI agent delegating the task.
         agent_branch: Optional agent tree branch for logging.
         response_model: Optional Pydantic model for structured outputs.
         turn_number: Optional turn number for multi-turn conversations.
         updates: Update mechanism config from A2AConfig.updates.
-        from_task: Optional CrewAI Task object for event metadata.
-        from_agent: Optional CrewAI Agent object for event metadata.
+        from_task: Optional LocalAI Task object for event metadata.
+        from_agent: Optional LocalAI Agent object for event metadata.
         skill_id: Optional skill ID to target a specific agent capability.
         client_extensions: A2A protocol extension URIs the client supports.
         transport: Transport configuration (preferred, supported transports, gRPC settings).

@@ -1,4 +1,4 @@
-"""A2A Protocol Extensions for CrewAI.
+"""A2A Protocol Extensions for LocalAI.
 
 This module contains extensions to the A2A (Agent-to-Agent) protocol.
 

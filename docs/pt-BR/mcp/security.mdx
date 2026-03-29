@@ -1,6 +1,6 @@
 ---
 title: Considerações de Segurança MCP
-description: Saiba mais sobre as principais melhores práticas de segurança ao integrar servidores MCP com seus agentes CrewAI.
+description: Saiba mais sobre as principais melhores práticas de segurança ao integrar servidores MCP com seus agentes LocalAI.
 icon: lock
 mode: "wide"
 ---
@@ -8,10 +8,10 @@ mode: "wide"
 ## Visão Geral
 
 <Warning>
-O aspecto mais crítico da segurança MCP é a **confiança**. Você deve **apenas** conectar seus agentes CrewAI a servidores MCP nos quais confie plenamente.
+O aspecto mais crítico da segurança MCP é a **confiança**. Você deve **apenas** conectar seus agentes LocalAI a servidores MCP nos quais confie plenamente.
 </Warning>
 
-Ao integrar serviços externos como servidores MCP (Model Context Protocol) aos seus agentes CrewAI, a segurança é fundamental.
+Ao integrar serviços externos como servidores MCP (Model Context Protocol) aos seus agentes LocalAI, a segurança é fundamental.
 Servidores MCP podem executar código, acessar dados ou interagir com outros sistemas com base nas ferramentas que expõem.
 É crucial compreender as implicações e seguir as melhores práticas para proteger suas aplicações e dados.
 
@@ -39,7 +39,7 @@ Evite conectar-se a servidores MCP desconhecidos ou não verificados, especialme
 
 Um risco significativo e sutil é o potencial para prompt injection através dos metadados das ferramentas. Veja como funciona:
 
-1. Quando seu agente CrewAI se conecta a um servidor MCP, ele normalmente solicita uma lista de ferramentas disponíveis.
+1. Quando seu agente LocalAI se conecta a um servidor MCP, ele normalmente solicita uma lista de ferramentas disponíveis.
 2. O servidor MCP responde com metadados para cada ferramenta, incluindo nome, descrição e descrições de parâmetros.
 3. O LLM (Modelo de Linguagem) subjacente do seu agente usa esses metadados para entender como e quando usar as ferramentas. Muitas vezes esses metadados são incorporados no system prompt ou contexto do LLM.
 4. Um servidor MCP malicioso pode construir seus metadados (nomes, descrições) para incluir instruções ocultas ou explícitas. Essas instruções podem atuar como prompt injection, efetivamente fazendo o LLM se comportar de determinada maneira, revelar informações sensíveis ou executar ações maliciosas.
@@ -52,7 +52,7 @@ Um risco significativo e sutil é o potencial para prompt injection através dos
 
 ### Segurança do Transporte Stdio
 
-O transporte Stdio (Entrada/Saída Padrão) é tipicamente usado para servidores MCP locais, rodando na mesma máquina que sua aplicação CrewAI.
+O transporte Stdio (Entrada/Saída Padrão) é tipicamente usado para servidores MCP locais, rodando na mesma máquina que sua aplicação LocalAI.
 
 - **Isolamento de Processo**: Embora geralmente seja mais seguro pois não envolve exposição de rede por padrão, assegure-se de que o script ou comando executado pelo `StdioServerParameters` é de uma fonte confiável e possui permissões de sistema de arquivos adequadas. Um script Stdio servidor malicioso pode ainda prejudicar seu sistema local.
 - **Saneamento de Entrada**: Se o seu script de servidor Stdio recebe entradas complexas derivadas das interações do agente, garanta que o script saneie essas entradas para evitar injection de comandos ou outras vulnerabilidades na lógica do script.
@@ -75,7 +75,7 @@ O [Problema do Confused Deputy](https://en.wikipedia.org/wiki/Confused_deputy_pr
 
 * Servidores proxy MCP usando IDs de cliente estáticos para serviços downstream **devem** obter consentimento explícito do usuário para *cada aplicação cliente ou agente* conectando-se a eles *antes* de iniciar um fluxo OAuth com o serviço de terceiros. Isso significa que o `MCP-Proxy` deve exibir uma tela de consentimento.
 
-**Implicação para Usuários CrewAI:**
+**Implicação para Usuários LocalAI:**
 
 * Fique atento se um servidor MCP redireciona você para múltiplas autenticações OAuth, especialmente se isso for inesperado ou se as permissões solicitadas forem muito amplas.
 * Prefira servidores MCP que deixem clara sua própria identidade e a identidade dos serviços de terceiros que possam fazer proxy.
@@ -92,7 +92,7 @@ Ao conectar-se a servidores MCP remotos via Server-Sent Events (SSE) ou HTTP tra
 **Proteja-se contra ataques de DNS Rebinding.**
 </Critical>
 
-DNS rebinding permite que um site controlado por atacante contorne a política de mesma origem e faça requisições para servidores na rede local do usuário (ex: `localhost`) ou intranet. Isso é particularmente arriscado se você roda um servidor MCP localmente (ex: para desenvolvimento) e um agente em um ambiente do tipo navegador (embora menos comum no backend CrewAI) ou se o servidor MCP está em uma rede interna.
+DNS rebinding permite que um site controlado por atacante contorne a política de mesma origem e faça requisições para servidores na rede local do usuário (ex: `localhost`) ou intranet. Isso é particularmente arriscado se você roda um servidor MCP localmente (ex: para desenvolvimento) e um agente em um ambiente do tipo navegador (embora menos comum no backend LocalAI) ou se o servidor MCP está em uma rede interna.
 
 **Estratégias de Mitigação para Implementadores de Servidores MCP:**
 - **Valide os Headers `Origin` e `Host`**: Servidores MCP (especialmente com SSE) devem validar os headers HTTP `Origin` e/ou `Host` para garantir que as requisições venham dos domínios/clientes esperados.
@@ -101,13 +101,13 @@ DNS rebinding permite que um site controlado por atacante contorne a política d
 
 ### b. Use HTTPS
 
-- **Criptografe Dados em Trânsito**: Sempre use HTTPS (HTTP Seguro) para URLs de servidores MCP remotos. Isso criptografa a comunicação entre sua aplicação CrewAI e o servidor MCP, protegendo contra escuta e ataques Man-in-the-Middle (MitM). O `MCPServerAdapter` respeitará o esquema (`http` ou `https`) fornecido na URL.
+- **Criptografe Dados em Trânsito**: Sempre use HTTPS (HTTP Seguro) para URLs de servidores MCP remotos. Isso criptografa a comunicação entre sua aplicação LocalAI e o servidor MCP, protegendo contra escuta e ataques Man-in-the-Middle (MitM). O `MCPServerAdapter` respeitará o esquema (`http` ou `https`) fornecido na URL.
 
 ### c. Token Passthrough (Anti-Padrão)
 
 Isso é uma preocupação principalmente para desenvolvedores de servidores MCP, mas entender o conceito ajuda a escolher servidores seguros.
 
-"Token passthrough" é quando um servidor MCP aceita um token de acesso do seu agente CrewAI (que pode ser um token para um serviço *diferente*, por exemplo, `ServiceA`) e simplesmente o repassa para outra API ( `ServiceB`) downstream sem validação adequada. Especificamente, `ServiceB` (ou o próprio servidor MCP) só deveria aceitar tokens explicitamente emitidos *para eles* (ou seja, o claim 'audience' no token deve corresponder ao servidor/serviço).
+"Token passthrough" é quando um servidor MCP aceita um token de acesso do seu agente LocalAI (que pode ser um token para um serviço *diferente*, por exemplo, `ServiceA`) e simplesmente o repassa para outra API ( `ServiceB`) downstream sem validação adequada. Especificamente, `ServiceB` (ou o próprio servidor MCP) só deveria aceitar tokens explicitamente emitidos *para eles* (ou seja, o claim 'audience' no token deve corresponder ao servidor/serviço).
 
 **Riscos:**
 
@@ -119,13 +119,13 @@ Isso é uma preocupação principalmente para desenvolvedores de servidores MCP,
 
 * Servidores MCP **NÃO DEVEM** aceitar tokens que não foram explicitamente emitidos para eles. Devem validar o claim de audiência dos tokens.
 
-**Implicação para Usuários CrewAI:**
+**Implicação para Usuários LocalAI:**
 
 * Embora isso não seja diretamente controlável pelo usuário, destaca a importância de conectar-se a servidores MCP bem projetados e que sigam as melhores práticas de segurança.
 
 #### Autenticação e Autorização
 
-- **Verifique a Identidade**: Se o servidor MCP fornece ferramentas sensíveis ou acesso a dados privados, ele DEVE implementar mecanismos de autenticação robustos para verificar a identidade do cliente (sua aplicação CrewAI). Isso pode envolver chaves de API, tokens OAuth ou outros métodos padrão.
+- **Verifique a Identidade**: Se o servidor MCP fornece ferramentas sensíveis ou acesso a dados privados, ele DEVE implementar mecanismos de autenticação robustos para verificar a identidade do cliente (sua aplicação LocalAI). Isso pode envolver chaves de API, tokens OAuth ou outros métodos padrão.
 - **Princípio do Menor Privilégio**: Certifique-se de que as credenciais usadas pelo `MCPServerAdapter` (se houver) tenham apenas as permissões necessárias para acessar as ferramentas requeridas.
 
 ### d. Validação e Saneamento de Entrada
@@ -135,16 +135,16 @@ Isso é uma preocupação principalmente para desenvolvedores de servidores MCP,
     - **Path Traversal:** Se uma ferramenta acessa arquivos com base em parâmetros de entrada, o servidor deve validar e sanitizar esses caminhos para evitar acesso a arquivos ou diretórios não autorizados (por exemplo, bloqueando sequências `../`).
     - **Verificações de Tipo e Faixa de Dados:** Servidores devem garantir que os dados de entrada estejam nos tipos esperados (ex: string, número, booleano) e dentro de faixas aceitáveis ou em formatos definidos (ex: regex para URLs).
     - **Validação de Schema JSON:** Todos os parâmetros das ferramentas devem ser validados estritamente com seus esquemas JSON definidos. Isso ajuda a capturar requisições mal formatadas precocemente.
-- **Atenção do Lado do Cliente**: Embora a validação no servidor seja fundamental, como usuário CrewAI, fique atento aos dados que seus agentes são configurados para enviar a ferramentas MCP, especialmente ao interagir com servidores MCP novos ou menos confiáveis.
+- **Atenção do Lado do Cliente**: Embora a validação no servidor seja fundamental, como usuário LocalAI, fique atento aos dados que seus agentes são configurados para enviar a ferramentas MCP, especialmente ao interagir com servidores MCP novos ou menos confiáveis.
 
 ### e. Limite de Taxa e Gerenciamento de Recursos
 
 - **Previna Abusos**: Servidores MCP devem implementar limite de taxa para prevenir abusos, seja intencional (ataques de negação de serviço) ou não intencional (ex: um agente mal configurado fazendo muitas requisições).
-- **Re-tentativas do Lado do Cliente**: Implemente lógica de repetição sensata em suas tarefas CrewAI se problemas de rede transitórios ou limites de taxa do servidor forem esperados, mas evite re-tentativas agressivas que possam aumentar a carga do servidor.
+- **Re-tentativas do Lado do Cliente**: Implemente lógica de repetição sensata em suas tarefas LocalAI se problemas de rede transitórios ou limites de taxa do servidor forem esperados, mas evite re-tentativas agressivas que possam aumentar a carga do servidor.
 
 ## 4. Conselhos para Implementação de Servidor MCP Seguro (Para Desenvolvedores)
 
-Se você está desenvolvendo um servidor MCP ao qual agentes CrewAI possam se conectar, considere estas melhores práticas além dos pontos acima:
+Se você está desenvolvendo um servidor MCP ao qual agentes LocalAI possam se conectar, considere estas melhores práticas além dos pontos acima:
 
 - **Siga Práticas de Código Seguro**: Adote princípios padrão de programação segura para sua linguagem e framework escolhidos (ex: OWASP Top 10).
 - **Princípio do Menor Privilégio**: Certifique-se de que o processo que executa o servidor MCP (especialmente para `Stdio`) tenha apenas as permissões mínimas necessárias. As próprias ferramentas também devem operar com o mínimo de privilégio necessário para executar sua função.
@@ -161,6 +161,6 @@ Se você está desenvolvendo um servidor MCP ao qual agentes CrewAI possam se co
 Para informações mais detalhadas sobre segurança MCP, consulte a documentação oficial:
 - **[Segurança de Transporte MCP](https://modelcontextprotocol.io/docs/concepts/transports#security-considerations)**
 
-Ao entender essas considerações de segurança e implementar as melhores práticas, você pode aproveitar com segurança o poder dos servidores MCP em seus projetos CrewAI.
+Ao entender essas considerações de segurança e implementar as melhores práticas, você pode aproveitar com segurança o poder dos servidores MCP em seus projetos LocalAI.
 Estes pontos não esgotam o assunto, mas cobrem as questões de segurança mais comuns e críticas.
 As ameaças continuarão a evoluir, por isso é importante se manter informado e adaptar suas medidas de segurança de acordo.

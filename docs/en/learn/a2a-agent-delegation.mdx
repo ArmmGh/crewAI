@@ -7,7 +7,7 @@ mode: "wide"
 
 ## A2A Agent Delegation
 
-CrewAI treats [A2A protocol](https://a2a-protocol.org/latest/) as a first-class delegation primitive, enabling agents to delegate tasks, request information, and collaborate with remote agents, as well as act as A2A-compliant server agents.
+LocalAI treats [A2A protocol](https://a2a-protocol.org/latest/) as a first-class delegation primitive, enabling agents to delegate tasks, request information, and collaborate with remote agents, as well as act as A2A-compliant server agents.
 In client mode, agents autonomously choose between local execution and remote delegation based on task requirements.
 
 ## How It Works
@@ -19,7 +19,7 @@ When an agent is configured with A2A capabilities:
    - Handle the task directly using its own capabilities
    - Delegate to a remote A2A agent for specialized handling
 3. If delegating, the agent communicates with the remote A2A agent through the protocol
-4. Results are returned to the CrewAI workflow
+4. Results are returned to the LocalAI workflow
 
 <Note>
   A2A delegation requires the `a2a-sdk` package. Install with: `uv add 'crewai[a2a]'` or `pip install 'crewai[a2a]'`
@@ -352,7 +352,7 @@ agent = Agent(
 
 ## Exposing Agents as A2A Servers
 
-You can expose your CrewAI agents as A2A-compliant servers, allowing other A2A clients to delegate tasks to them.
+You can expose your LocalAI agents as A2A-compliant servers, allowing other A2A clients to delegate tasks to them.
 
 ### Server Configuration
 

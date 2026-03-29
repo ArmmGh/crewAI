@@ -1,4 +1,4 @@
-# Contributing to CrewAI
+# Contributing to LocalAI
 
 ## AI-Generated Contributions
 
@@ -8,7 +8,7 @@ If your PR or issue was authored by an AI agent, coding assistant, or LLM (e.g.,
 
 ---
 
-Thank you for your interest in contributing to CrewAI. This guide covers everything you need to get started.
+Thank you for your interest in contributing to LocalAI. This guide covers everything you need to get started.
 
 ## Prerequisites
 
@@ -20,7 +20,7 @@ Thank you for your interest in contributing to CrewAI. This guide covers everyth
 
 ```bash
 git clone https://github.com/crewAIInc/crewAI.git
-cd crewAI
+cd localAI
 
 uv sync --all-groups --all-extras
 

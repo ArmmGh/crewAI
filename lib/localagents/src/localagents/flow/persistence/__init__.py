@@ -1,5 +1,5 @@
 """
-CrewAI Flow Persistence.
+LocalAI Flow Persistence.
 
 This module provides interfaces and implementations for persisting flow states.
 """

@@ -7,9 +7,9 @@ mode: "wide"
 
 ## Flows로 AI 워크플로우 제어하기
 
-CrewAI Flows는 AI 오케스트레이션의 새로운 수준을 제공합니다. 즉, AI agent crew의 협업 능력과 절차적 프로그래밍의 정밀성 및 유연성을 결합합니다. crew가 agent 협업에서 탁월하다면, flow는 AI 시스템의 다양한 구성요소가 어떻게 그리고 언제 상호작용하는지에 대해 세밀하게 제어할 수 있게 해줍니다.
+LocalAI Flows는 AI 오케스트레이션의 새로운 수준을 제공합니다. 즉, AI agent crew의 협업 능력과 절차적 프로그래밍의 정밀성 및 유연성을 결합합니다. crew가 agent 협업에서 탁월하다면, flow는 AI 시스템의 다양한 구성요소가 어떻게 그리고 언제 상호작용하는지에 대해 세밀하게 제어할 수 있게 해줍니다.
 
-이 가이드에서는 원하는 주제에 대한 포괄적인 학습 가이드를 생성하는 강력한 CrewAI Flow를 만드는 과정을 소개합니다. 이 튜토리얼을 통해 Flow가 일반 코드, 직접적인 LLM 호출, crew 기반 처리 등을 결합하여 AI 워크플로우에 구조적이고 이벤트 기반의 제어를 제공하는 방법을 시연할 것입니다.
+이 가이드에서는 원하는 주제에 대한 포괄적인 학습 가이드를 생성하는 강력한 LocalAI Flow를 만드는 과정을 소개합니다. 이 튜토리얼을 통해 Flow가 일반 코드, 직접적인 LLM 호출, crew 기반 처리 등을 결합하여 AI 워크플로우에 구조적이고 이벤트 기반의 제어를 제공하는 방법을 시연할 것입니다.
 
 ### 플로우의 강력한 점
 
@@ -43,13 +43,13 @@ CrewAI Flows는 AI 오케스트레이션의 새로운 수준을 제공합니다.
 
 시작하기 전에 다음을 확인하세요:
 
-1. [설치 가이드](/ko/installation)에 따라 CrewAI를 설치했는지 확인하십시오.
+1. [설치 가이드](/ko/installation)에 따라 LocalAI를 설치했는지 확인하십시오.
 2. [LLM 설정 가이드](/ko/concepts/llms#setting-up-your-llm)에 따라 환경에 LLM API 키를 설정했는지 확인하십시오.
 3. Python에 대한 기본적인 이해
 
-## 1단계: 새로운 CrewAI Flow 프로젝트 생성
+## 1단계: 새로운 LocalAI Flow 프로젝트 생성
 
-먼저, CLI를 사용하여 새로운 CrewAI Flow 프로젝트를 생성해봅시다. 이 명령어는 필요한 모든 디렉터리와 템플릿 파일이 포함된 기본 프로젝트 구조를 만들어줍니다.
+먼저, CLI를 사용하여 새로운 LocalAI Flow 프로젝트를 생성해봅시다. 이 명령어는 필요한 모든 디렉터리와 템플릿 파일이 포함된 기본 프로젝트 구조를 만들어줍니다.
 
 ```bash
 crewai create flow guide_creator_flow
@@ -58,8 +58,8 @@ cd guide_creator_flow
 
 이렇게 하면 flow에 필요한 기본 구조를 가진 프로젝트가 생성됩니다.
 
-<Frame caption="CrewAI Framework 개요">
-  <img src="/images/flows.png" alt="CrewAI Framework 개요" />
+<Frame caption="LocalAI Framework 개요">
+  <img src="/images/flows.png" alt="LocalAI Framework 개요" />
 </Frame>
 
 ## 2단계: 프로젝트 구조 이해하기
@@ -92,7 +92,7 @@ guide_creator_flow/
 
 ## 3단계: Content Writer Crew 추가
 
-우리 flow에는 콘텐츠 생성 프로세스를 처리할 전문화된 crew가 필요합니다. CrewAI CLI를 사용하여 content writer crew를 추가해봅시다:
+우리 flow에는 콘텐츠 생성 프로세스를 처리할 전문화된 crew가 필요합니다. LocalAI CLI를 사용하여 content writer crew를 추가해봅시다:
 
 ```bash
 crewai flow add-crew content-crew
@@ -454,7 +454,7 @@ crewai install
 
 ## 8단계: Flow 실행하기
 
-이제 여러분의 flow가 실제로 작동하는 모습을 볼 차례입니다! CrewAI CLI를 사용하여 flow를 실행하세요:
+이제 여러분의 flow가 실제로 작동하는 모습을 볼 차례입니다! LocalAI CLI를 사용하여 flow를 실행하세요:
 
 ```bash
 crewai flow kickoff
@@ -525,7 +525,7 @@ flow가 완료되면 `output` 디렉토리에서 두 개의 파일을 찾을 수
 
 ## 주요 특징 시연
 
-이 guide creator flow에서는 CrewAI의 여러 강력한 기능을 시연합니다:
+이 guide creator flow에서는 LocalAI의 여러 강력한 기능을 시연합니다:
 
 1. **사용자 상호작용**: flow는 사용자로부터 직접 입력을 수집합니다
 2. **직접적인 LLM 호출**: 효율적이고 단일 목적의 AI 상호작용을 위해 LLM 클래스를 사용합니다
@@ -609,5 +609,5 @@ result = ContentCrew().crew().kickoff(inputs={
 5. 여러 전문화된 crew를 하나의 flow에서 결합해 보세요.
 
 <Check>
-축하합니다! 정규 코드, 직접적인 LLM 호출, crew 기반 처리를 결합하여 포괄적인 가이드를 생성하는 첫 번째 CrewAI Flow를 성공적으로 구축하셨습니다. 이러한 기초적인 역량을 바탕으로 절차적 제어와 협업적 인텔리전스를 결합하여 복잡하고 다단계의 문제를 해결할 수 있는 점점 더 정교한 AI 애플리케이션을 만들 수 있습니다.
+축하합니다! 정규 코드, 직접적인 LLM 호출, crew 기반 처리를 결합하여 포괄적인 가이드를 생성하는 첫 번째 LocalAI Flow를 성공적으로 구축하셨습니다. 이러한 기초적인 역량을 바탕으로 절차적 제어와 협업적 인텔리전스를 결합하여 복잡하고 다단계의 문제를 해결할 수 있는 점점 더 정교한 AI 애플리케이션을 만들 수 있습니다.
 </Check>

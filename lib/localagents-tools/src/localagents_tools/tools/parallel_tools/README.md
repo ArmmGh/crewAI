@@ -16,7 +16,7 @@ Unified Parallel web search tool using the Parallel Search API (v1beta). Returns
 - `PARALLEL_API_KEY` (required)
 
 Optional (for the agent example):
-- `OPENAI_API_KEY` or other LLM provider keys supported by CrewAI
+- `OPENAI_API_KEY` or other LLM provider keys supported by LocalAI
 
 ## Parameters
 
@@ -138,7 +138,7 @@ Recent concerns about AI evaluations include: the rise of AI-related incidents a
 ```
 
 Tips:
-- Ensure your LLM provider keys are set (e.g., `GEMINI_API_KEY`) and CrewAI model config is in place.
+- Ensure your LLM provider keys are set (e.g., `GEMINI_API_KEY`) and LocalAI model config is in place.
 - For longer analyses, raise `max_chars_per_result` or use `processor="pro"` (higher quality, higher latency).
 
 ## Behavior

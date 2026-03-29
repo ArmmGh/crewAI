@@ -1,20 +1,20 @@
 ---
 title: Tasks
-description: Detailed guide on managing and creating tasks within the CrewAI framework.
+description: Detailed guide on managing and creating tasks within the LocalAI framework.
 icon: list-check
 mode: "wide"
 ---
 
 ## Overview
 
-In the CrewAI framework, a `Task` is a specific assignment completed by an `Agent`.
+In the LocalAI framework, a `Task` is a specific assignment completed by an `Agent`.
 
 Tasks provide all necessary details for execution, such as a description, the agent responsible, required tools, and more, facilitating a wide range of action complexities.
 
-Tasks within CrewAI can be collaborative, requiring multiple agents to work together. This is managed through the task properties and orchestrated by the Crew's process, enhancing teamwork and efficiency.
+Tasks within LocalAI can be collaborative, requiring multiple agents to work together. This is managed through the task properties and orchestrated by the Crew's process, enhancing teamwork and efficiency.
 
 <Note type="info" title="Enterprise Enhancement: Visual Task Builder">
-CrewAI AMP includes a Visual Task Builder in Crew Studio that simplifies complex task creation and chaining. Design your task flows visually and test them in real-time without writing code.
+LocalAI AMP includes a Visual Task Builder in Crew Studio that simplifies complex task creation and chaining. Design your task flows visually and test them in real-time without writing code.
 
 ![Task Builder Screenshot](/images/enterprise/crew-studio-interface.png)
 
@@ -74,13 +74,13 @@ crew = Crew(
 
 ## Creating Tasks
 
-There are two ways to create tasks in CrewAI: using **YAML configuration (recommended)** or defining them **directly in code**.
+There are two ways to create tasks in LocalAI: using **YAML configuration (recommended)** or defining them **directly in code**.
 
 ### YAML Configuration (Recommended)
 
-Using YAML configuration provides a cleaner, more maintainable way to define tasks. We strongly recommend using this approach to define tasks in your CrewAI projects.
+Using YAML configuration provides a cleaner, more maintainable way to define tasks. We strongly recommend using this approach to define tasks in your LocalAI projects.
 
-After creating your CrewAI project as outlined in the [Installation](/en/installation) section, navigate to the `src/latest_ai_development/config/tasks.yaml` file and modify the template to match your specific task requirements.
+After creating your LocalAI project as outlined in the [Installation](/en/installation) section, navigate to the `src/latest_ai_development/config/tasks.yaml` file and modify the template to match your specific task requirements.
 
 <Note>
 Variables in your YAML files (like `{topic}`) will be replaced with values from your inputs when running the crew:
@@ -207,15 +207,15 @@ reporting_task = Task(
 ```
 
 <Tip>
-  Directly specify an `agent` for assignment or let the `hierarchical` CrewAI's
+  Directly specify an `agent` for assignment or let the `hierarchical` LocalAI's
   process decide based on roles, availability, etc.
 </Tip>
 
 ## Task Output
 
-Understanding task outputs is crucial for building effective AI workflows. CrewAI provides a structured way to handle task results through the `TaskOutput` class, which supports multiple output formats and can be easily passed between tasks.
+Understanding task outputs is crucial for building effective AI workflows. LocalAI provides a structured way to handle task results through the `TaskOutput` class, which supports multiple output formats and can be easily passed between tasks.
 
-The output of a task in CrewAI framework is encapsulated within the `TaskOutput` class. This class provides a structured way to access results of a task, including various formats such as raw output, JSON, and Pydantic models.
+The output of a task in LocalAI framework is encapsulated within the `TaskOutput` class. This class provides a structured way to access results of a task, including various formats such as raw output, JSON, and Pydantic models.
 
 By default, the `TaskOutput` will only include the `raw` output. A `TaskOutput` will only include the `pydantic` or `json_dict` output if the original `Task` object was configured with `output_pydantic` or `output_json`, respectively.
 
@@ -352,7 +352,7 @@ Task guardrails provide a way to validate and transform task outputs before they
 are passed to the next task. This feature helps ensure data quality and provides
 feedback to agents when their output doesn't meet specific criteria.
 
-CrewAI supports two types of guardrails:
+LocalAI supports two types of guardrails:
 
 1. **Function-based guardrails**: Python functions with custom validation logic, giving you complete control over the validation process and ensuring reliable, deterministic results.
 
@@ -389,7 +389,7 @@ blog_task = Task(
 
 ### LLM-Based Guardrails (String Descriptions)
 
-Instead of writing custom validation functions, you can use string descriptions that leverage LLM-based validation. When you provide a string to the `guardrail` or `guardrails` parameter, CrewAI automatically creates an `LLMGuardrail` that uses the agent's LLM to validate the output based on your description.
+Instead of writing custom validation functions, you can use string descriptions that leverage LLM-based validation. When you provide a string to the `guardrail` or `guardrails` parameter, LocalAI automatically creates an `LLMGuardrail` that uses the agent's LLM to validate the output based on your description.
 
 **Requirements**:
 
@@ -797,7 +797,7 @@ By using output_pydantic or output_json, you ensure that your tasks produce outp
 
 ## Integrating Tools with Tasks
 
-Leverage tools from the [CrewAI Toolkit](https://github.com/joaomdmoura/crewai-tools) and [LangChain Tools](https://python.langchain.com/docs/integrations/tools) for enhanced task performance and agent interaction.
+Leverage tools from the [LocalAI Toolkit](https://github.com/joaomdmoura/crewai-tools) and [LangChain Tools](https://python.langchain.com/docs/integrations/tools) for enhanced task performance and agent interaction.
 
 ## Creating a Task with Tools
 
@@ -842,7 +842,7 @@ This demonstrates how tasks with specific tools can override an agent's default 
 
 ## Referring to Other Tasks
 
-In CrewAI, the output of one task is automatically relayed into the next one, but you can specifically define what tasks' output, including multiple, should be used as context for another task.
+In LocalAI, the output of one task is automatically relayed into the next one, but you can specifically define what tasks' output, including multiple, should be used as context for another task.
 
 This is useful when you have a task that depends on the output of another task that is not performed immediately after it. This is done through the `context` attribute of the task:
 
@@ -968,7 +968,7 @@ print(f"""
 
 ## Tool Override Mechanism
 
-Specifying tools in a task allows for dynamic adaptation of agent capabilities, emphasizing CrewAI's flexibility.
+Specifying tools in a task allows for dynamic adaptation of agent capabilities, emphasizing LocalAI's flexibility.
 
 ## Error Handling and Validation Mechanisms
 
@@ -977,15 +977,15 @@ While creating and executing tasks, certain validation mechanisms are in place t
 - Ensuring only one output type is set per task to maintain clear output expectations.
 - Preventing the manual assignment of the `id` attribute to uphold the integrity of the unique identifier system.
 
-These validations help in maintaining the consistency and reliability of task executions within the crewAI framework.
+These validations help in maintaining the consistency and reliability of task executions within the localAI framework.
 
 ## Creating Directories when Saving Files
 
-The `create_directory` parameter controls whether CrewAI should automatically create directories when saving task outputs to files. This feature is particularly useful for organizing outputs and ensuring that file paths are correctly structured, especially when working with complex project hierarchies.
+The `create_directory` parameter controls whether LocalAI should automatically create directories when saving task outputs to files. This feature is particularly useful for organizing outputs and ensuring that file paths are correctly structured, especially when working with complex project hierarchies.
 
 ### Default Behavior
 
-By default, `create_directory=True`, which means CrewAI will automatically create any missing directories in the output file path:
+By default, `create_directory=True`, which means LocalAI will automatically create any missing directories in the output file path:
 
 ```python Code
 # Default behavior - directories are created automatically
@@ -1055,7 +1055,7 @@ audit_task:
 
 ### Error Handling
 
-When `create_directory=False` and the directory doesn't exist, CrewAI will raise a `RuntimeError`:
+When `create_directory=False` and the directory doesn't exist, LocalAI will raise a `RuntimeError`:
 
 ```python Code
 try:
@@ -1066,12 +1066,12 @@ except RuntimeError as e:
     # Create directory manually or use fallback location
 ```
 
-Check out the video below to see how to use structured outputs in CrewAI:
+Check out the video below to see how to use structured outputs in LocalAI:
 
 <iframe
   className="w-full aspect-video rounded-xl"
   src="https://www.youtube.com/embed/dNpKQk5uxHw"
-  title="Structured outputs in CrewAI"
+  title="Structured outputs in LocalAI"
   frameBorder="0"
   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
   referrerPolicy="strict-origin-when-cross-origin"
@@ -1080,7 +1080,7 @@ Check out the video below to see how to use structured outputs in CrewAI:
 
 ## Conclusion
 
-Tasks are the driving force behind the actions of agents in CrewAI.
+Tasks are the driving force behind the actions of agents in LocalAI.
 By properly defining tasks and their outcomes, you set the stage for your AI agents to work effectively, either independently or as a collaborative unit.
-Equipping tasks with appropriate tools, understanding the execution process, and following robust validation practices are crucial for maximizing CrewAI's potential,
+Equipping tasks with appropriate tools, understanding the execution process, and following robust validation practices are crucial for maximizing LocalAI's potential,
 ensuring agents are effectively prepared for their assignments and that tasks are executed as intended.

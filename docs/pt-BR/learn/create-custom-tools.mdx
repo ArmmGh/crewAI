@@ -1,13 +1,13 @@
 ---
 title: Criar Ferramentas Personalizadas
-description: Guia abrangente sobre como criar, utilizar e gerenciar ferramentas personalizadas dentro do framework CrewAI, incluindo novas funcionalidades e tratamento de erros.
+description: Guia abrangente sobre como criar, utilizar e gerenciar ferramentas personalizadas dentro do framework LocalAI, incluindo novas funcionalidades e tratamento de erros.
 icon: hammer
 mode: "wide"
 ---
 
-## Criando e Utilizando Ferramentas no CrewAI
+## Criando e Utilizando Ferramentas no LocalAI
 
-Este guia traz instruções detalhadas sobre como criar ferramentas personalizadas para o framework CrewAI e como gerenciar e utilizar essas ferramentas de forma eficiente,
+Este guia traz instruções detalhadas sobre como criar ferramentas personalizadas para o framework LocalAI e como gerenciar e utilizar essas ferramentas de forma eficiente,
 incorporando funcionalidades recentes, como delegação de ferramentas, tratamento de erros e chamada dinâmica de ferramentas. Destaca também a importância de ferramentas de colaboração,
 permitindo que agentes executem uma ampla gama de ações.
 
@@ -72,7 +72,7 @@ cached_tool.cache_function = my_cache_strategy
 
 ### Criando Ferramentas Assíncronas
 
-O CrewAI suporta ferramentas assíncronas para operações de I/O não bloqueantes. Isso é útil quando sua ferramenta precisa fazer requisições HTTP, consultas a banco de dados ou outras operações de I/O.
+O LocalAI suporta ferramentas assíncronas para operações de I/O não bloqueantes. Isso é útil quando sua ferramenta precisa fazer requisições HTTP, consultas a banco de dados ou outras operações de I/O.
 
 #### Usando o Decorador `@tool` com Funções Assíncronas
 
@@ -121,4 +121,4 @@ class WebFetcherTool(BaseTool):
 ```
 
 Seguindo essas orientações e incorporando novas funcionalidades e ferramentas de colaboração nos seus processos de criação e gerenciamento de ferramentas,
-você pode aproveitar ao máximo as capacidades do framework CrewAI, aprimorando tanto a experiência de desenvolvimento quanto a eficiência dos seus agentes de IA.
+você pode aproveitar ao máximo as capacidades do framework LocalAI, aprimorando tanto a experiência de desenvolvimento quanto a eficiência dos seus agentes de IA.

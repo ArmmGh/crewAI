@@ -1,1 +1,1 @@
-"""Evaluators for crewAI."""
+"""Evaluators for localAI."""

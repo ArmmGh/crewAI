@@ -3,7 +3,7 @@ from tempfile import TemporaryDirectory
 from typing import cast
 from unittest.mock import MagicMock, Mock, patch
 
-from crewai_tools.adapters.crewai_rag_adapter import CrewAIRagAdapter
+from crewai_tools.adapters.crewai_rag_adapter import LocalAIRagAdapter
 from crewai_tools.tools.rag.rag_tool import RagTool
 
 
@@ -12,7 +12,7 @@ from crewai_tools.tools.rag.rag_tool import RagTool
 def test_rag_tool_initialization(
     mock_create_client: Mock, mock_get_rag_client: Mock
 ) -> None:
-    """Test that RagTool initializes with CrewAI adapter by default."""
+    """Test that RagTool initializes with LocalAI adapter by default."""
     mock_client = MagicMock()
     mock_client.get_or_create_collection = MagicMock(return_value=None)
     mock_get_rag_client.return_value = mock_client
@@ -23,9 +23,9 @@ def test_rag_tool_initialization(
 
     tool = MyTool()
     assert tool.adapter is not None
-    assert isinstance(tool.adapter, CrewAIRagAdapter)
+    assert isinstance(tool.adapter, LocalAIRagAdapter)
 
-    adapter = cast(CrewAIRagAdapter, tool.adapter)
+    adapter = cast(LocalAIRagAdapter, tool.adapter)
     assert adapter.collection_name == "rag_tool_collection"
     assert adapter._client is not None
 
@@ -222,7 +222,7 @@ def test_rag_tool_with_azure_config_without_env_vars(
         tool = MyTool(config=config)
 
         assert tool.adapter is not None
-        assert isinstance(tool.adapter, CrewAIRagAdapter)
+        assert isinstance(tool.adapter, LocalAIRagAdapter)
 
 
 @patch("crewai_tools.adapters.crewai_rag_adapter.create_client")
@@ -258,7 +258,7 @@ def test_rag_tool_with_openai_config_without_env_vars(
         tool = MyTool(config=config)
 
         assert tool.adapter is not None
-        assert isinstance(tool.adapter, CrewAIRagAdapter)
+        assert isinstance(tool.adapter, LocalAIRagAdapter)
 
 
 @patch("crewai_tools.adapters.crewai_rag_adapter.create_client")
@@ -298,4 +298,4 @@ def test_rag_tool_config_with_qdrant_and_azure_embeddings(
         tool = MyTool(config=config)
 
         assert tool.adapter is not None
-        assert isinstance(tool.adapter, CrewAIRagAdapter)
+        assert isinstance(tool.adapter, LocalAIRagAdapter)

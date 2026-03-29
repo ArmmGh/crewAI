@@ -1,15 +1,15 @@
 ---
 title: Mastering Flow State Management
-description: A comprehensive guide to managing, persisting, and leveraging state in CrewAI Flows for building robust AI applications.
+description: A comprehensive guide to managing, persisting, and leveraging state in LocalAI Flows for building robust AI applications.
 icon: diagram-project
 mode: "wide"
 ---
 
 ## Understanding the Power of State in Flows
 
-State management is the backbone of any sophisticated AI workflow. In CrewAI Flows, the state system allows you to maintain context, share data between steps, and build complex application logic. Mastering state management is essential for creating reliable, maintainable, and powerful AI applications.
+State management is the backbone of any sophisticated AI workflow. In LocalAI Flows, the state system allows you to maintain context, share data between steps, and build complex application logic. Mastering state management is essential for creating reliable, maintainable, and powerful AI applications.
 
-This guide will walk you through everything you need to know about managing state in CrewAI Flows, from basic concepts to advanced techniques, with practical code examples along the way.
+This guide will walk you through everything you need to know about managing state in LocalAI Flows, from basic concepts to advanced techniques, with practical code examples along the way.
 
 ### Why State Management Matters
 
@@ -28,7 +28,7 @@ Let's explore how to leverage these capabilities effectively.
 
 ### The Flow State Lifecycle
 
-In CrewAI Flows, the state follows a predictable lifecycle:
+In LocalAI Flows, the state follows a predictable lifecycle:
 
 1. **Initialization** - When a flow is created, its state is initialized (either as an empty dictionary or a Pydantic model instance)
 2. **Modification** - Flow methods access and modify the state as they execute
@@ -40,7 +40,7 @@ Understanding this lifecycle is crucial for designing effective flows.
 
 ### Two Approaches to State Management
 
-CrewAI offers two ways to manage state in your flows:
+LocalAI offers two ways to manage state in your flows:
 
 1. **Unstructured State** - Using dictionary-like objects for flexibility
 2. **Structured State** - Using Pydantic models for type safety and validation
@@ -276,7 +276,7 @@ This pattern allows you to combine direct data passing with state updates for ma
 
 ## Persisting Flow State
 
-One of CrewAI's most powerful features is the ability to persist flow state across executions. This enables workflows that can be paused, resumed, and even recovered after failures.
+One of LocalAI's most powerful features is the ability to persist flow state across executions. This enables workflows that can be paused, resumed, and even recovered after failures.
 
 ### The @persist() Decorator
 
@@ -485,7 +485,7 @@ This pattern of creating helper methods keeps your flow methods clean while enab
 
 ## State Management with Crews
 
-One of the most powerful patterns in CrewAI is combining flow state management with crew execution.
+One of the most powerful patterns in LocalAI is combining flow state management with crew execution.
 
 ### Passing State to Crews
 
@@ -779,14 +779,14 @@ def visualize_state(self):
 
 ## Conclusion
 
-Mastering state management in CrewAI Flows gives you the power to build sophisticated, robust AI applications that maintain context, make complex decisions, and deliver consistent results.
+Mastering state management in LocalAI Flows gives you the power to build sophisticated, robust AI applications that maintain context, make complex decisions, and deliver consistent results.
 
 Whether you choose unstructured or structured state, implementing proper state management practices will help you create flows that are maintainable, extensible, and effective at solving real-world problems.
 
 As you develop more complex flows, remember that good state management is about finding the right balance between flexibility and structure, making your code both powerful and easy to understand.
 
 <Check>
-You've now mastered the concepts and practices of state management in CrewAI Flows! With this knowledge, you can create robust AI workflows that effectively maintain context, share data between steps, and build sophisticated application logic.
+You've now mastered the concepts and practices of state management in LocalAI Flows! With this knowledge, you can create robust AI workflows that effectively maintain context, share data between steps, and build sophisticated application logic.
 </Check>
 
 ## Next Steps

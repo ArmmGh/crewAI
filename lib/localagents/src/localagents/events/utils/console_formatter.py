@@ -90,7 +90,7 @@ class ConsoleFormatter:
         try:
             is_newer, current, latest = is_newer_version_available()
             if is_newer and latest:
-                message = f"""A new version of CrewAI is available!
+                message = f"""A new version of LocalAI is available!
 
 Current version: {current}
 Latest version:  {latest}

@@ -1,1 +1,1 @@
-"""LangGraph adapter for crewAI."""
+"""LangGraph adapter for localAI."""

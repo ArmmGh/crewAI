@@ -1,17 +1,17 @@
 ---
 title: "Servidores MCP Personalizados"
-description: "Conecte seus próprios servidores MCP ao CrewAI AMP com acesso público, autenticação por token ou OAuth 2.0"
+description: "Conecte seus próprios servidores MCP ao LocalAI AMP com acesso público, autenticação por token ou OAuth 2.0"
 icon: "plug"
 mode: "wide"
 ---
 
-O CrewAI AMP suporta a conexão com qualquer servidor MCP que implemente o [Model Context Protocol](https://modelcontextprotocol.io/). Você pode conectar servidores públicos que não exigem autenticação, servidores protegidos por chave de API ou token bearer, e servidores que utilizam OAuth 2.0 para acesso delegado seguro.
+O LocalAI AMP suporta a conexão com qualquer servidor MCP que implemente o [Model Context Protocol](https://modelcontextprotocol.io/). Você pode conectar servidores públicos que não exigem autenticação, servidores protegidos por chave de API ou token bearer, e servidores que utilizam OAuth 2.0 para acesso delegado seguro.
 
 ## Pré-requisitos
 
 <CardGroup cols={2}>
-  <Card title="Conta CrewAI AMP" icon="user">
-    Você precisa de uma conta ativa no [CrewAI AMP](https://app.crewai.com).
+  <Card title="Conta LocalAI AMP" icon="user">
+    Você precisa de uma conta ativa no [LocalAI AMP](https://app.crewai.com).
   </Card>
   <Card title="URL do Servidor MCP" icon="link">
     A URL do servidor MCP que você deseja conectar. O servidor deve ser acessível pela internet e suportar transporte Streamable HTTP.
@@ -22,7 +22,7 @@ O CrewAI AMP suporta a conexão com qualquer servidor MCP que implemente o [Mode
 
 <Steps>
     <Step title="Acesse Tools & Integrations">
-        Navegue até **Tools & Integrations** no menu lateral esquerdo do CrewAI AMP e selecione a aba **Connections**.
+        Navegue até **Tools & Integrations** no menu lateral esquerdo do LocalAI AMP e selecione a aba **Connections**.
     </Step>
 
     <Step title="Inicie a adição de um Servidor MCP Personalizado">
@@ -74,7 +74,7 @@ Se seu servidor espera um token `Bearer` no header `Authorization`, defina o Hea
 
 ### OAuth 2.0
 
-Use este método para servidores MCP que requerem autorização OAuth 2.0. O CrewAI gerenciará todo o fluxo OAuth, incluindo a renovação de tokens.
+Use este método para servidores MCP que requerem autorização OAuth 2.0. O LocalAI gerenciará todo o fluxo OAuth, incluindo a renovação de tokens.
 
 <Frame>
     <img src="/images/enterprise/custom-mcp-oauth.png" alt="Servidor MCP Personalizado com OAuth 2.0" />
@@ -115,7 +115,7 @@ Use este método para servidores MCP que requerem autorização OAuth 2.0. O Cre
     </Step>
 
     <Step title="Crie e autorize">
-        Clique em **Create MCP Server**. Você será redirecionado ao seu provedor OAuth para autorizar o acesso. Uma vez autorizado, o CrewAI armazenará os tokens e os renovará automaticamente conforme necessário.
+        Clique em **Create MCP Server**. Você será redirecionado ao seu provedor OAuth para autorizar o acesso. Uma vez autorizado, o LocalAI armazenará os tokens e os renovará automaticamente conforme necessário.
     </Step>
 </Steps>
 
@@ -123,7 +123,7 @@ Use este método para servidores MCP que requerem autorização OAuth 2.0. O Cre
 
 Uma vez conectado, as ferramentas do seu servidor MCP personalizado aparecem junto com as conexões integradas na página **Tools & Integrations**. Você pode:
 
-- **Atribuir ferramentas a agentes** nas suas crews, assim como qualquer outra ferramenta CrewAI.
+- **Atribuir ferramentas a agentes** nas suas crews, assim como qualquer outra ferramenta LocalAI.
 - **Gerenciar visibilidade** para controlar quais membros da equipe podem usar o servidor.
 - **Editar ou remover** a conexão a qualquer momento na lista de Connections.
 

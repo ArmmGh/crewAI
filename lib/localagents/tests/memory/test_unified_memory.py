@@ -737,9 +737,9 @@ def test_intra_batch_dedup_drops_near_identical(tmp_path: Path) -> None:
 
     mem.remember_many(
         [
-            "CrewAI ensures reliable operation.",
-            "CrewAI ensures reliable operation.",
-            "CrewAI ensures reliable operation.",
+            "LocalAI ensures reliable operation.",
+            "LocalAI ensures reliable operation.",
+            "LocalAI ensures reliable operation.",
         ],
         scope="/test",
         categories=["reliability"],
@@ -775,7 +775,7 @@ def test_intra_batch_dedup_keeps_merely_similar(tmp_path: Path) -> None:
     mem = Memory(storage=str(tmp_path / "db"), llm=llm, embedder=embedder)
 
     mem.remember_many(
-        ["CrewAI handles complex tasks.", "Python is the best language."],
+        ["LocalAI handles complex tasks.", "Python is the best language."],
         scope="/test",
         categories=["tech"],
         importance=0.6,
@@ -810,13 +810,13 @@ def test_batch_consolidation_deduplicates_against_storage(
     from crewai.memory.types import MemoryRecord
 
     mem._storage.save([
-        MemoryRecord(content="CrewAI is great.", scope="/test", importance=0.7, embedding=emb),
+        MemoryRecord(content="LocalAI is great.", scope="/test", importance=0.7, embedding=emb),
     ])
     assert mem._storage.count() == 1
 
     # remember_many with the same content + a new one (all identical embeddings)
     mem.remember_many(
-        ["CrewAI is great.", "CrewAI is wonderful."],
+        ["LocalAI is great.", "LocalAI is wonderful."],
         scope="/test",
         categories=["review"],
         importance=0.7,

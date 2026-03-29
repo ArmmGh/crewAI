@@ -1,4 +1,4 @@
-"""Logging and warning utility functions for CrewAI."""
+"""Logging and warning utility functions for LocalAI."""
 
 from collections.abc import Generator
 import contextlib

@@ -163,7 +163,7 @@ class A2AMessageSentEvent(A2AEventBase):
         context_id: A2A context ID grouping related tasks.
         message_id: Unique A2A message identifier.
         is_multiturn: Whether this is part of a multiturn conversation.
-        agent_role: Role of the CrewAI agent sending the message.
+        agent_role: Role of the LocalAI agent sending the message.
         endpoint: A2A agent endpoint URL.
         a2a_agent_name: Name of the A2A agent from agent card.
         skill_id: ID of the specific skill being invoked.
@@ -196,7 +196,7 @@ class A2AResponseReceivedEvent(A2AEventBase):
         is_multiturn: Whether this is part of a multiturn conversation.
         status: Response status (input_required, completed, etc.).
         final: Whether this is the final response in the stream.
-        agent_role: Role of the CrewAI agent (for display).
+        agent_role: Role of the LocalAI agent (for display).
         endpoint: A2A agent endpoint URL.
         a2a_agent_name: Name of the A2A agent from agent card.
         metadata: Custom A2A metadata key-value pairs.
@@ -400,7 +400,7 @@ class A2AStreamingStartedEvent(A2AEventBase):
         a2a_agent_name: Name of the A2A agent from agent card.
         turn_number: Current turn number (1-indexed).
         is_multiturn: Whether this is part of a multiturn conversation.
-        agent_role: Role of the CrewAI agent.
+        agent_role: Role of the LocalAI agent.
         metadata: Custom A2A metadata key-value pairs.
         extensions: List of A2A extension URIs in use.
     """

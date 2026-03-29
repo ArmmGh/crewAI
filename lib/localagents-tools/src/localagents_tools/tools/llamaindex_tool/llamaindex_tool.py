@@ -65,7 +65,7 @@ class LlamaIndexTool(BaseTool):
             raise ValueError(f"Expected a BaseQueryEngine, got {type(query_engine)}")
 
         # NOTE: by default the schema expects an `input` variable. However this
-        # confuses crewAI so we are renaming to `query`.
+        # confuses localAI so we are renaming to `query`.
         class QueryToolSchema(BaseModel):
             """Schema for query tool."""
 

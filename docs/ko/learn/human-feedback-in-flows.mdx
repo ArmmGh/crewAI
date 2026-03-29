@@ -1,6 +1,6 @@
 ---
 title: Flow에서 인간 피드백
-description: "@human_feedback 데코레이터를 사용하여 CrewAI Flow에 인간 피드백을 직접 통합하는 방법을 알아보세요"
+description: "@human_feedback 데코레이터를 사용하여 LocalAI Flow에 인간 피드백을 직접 통합하는 방법을 알아보세요"
 icon: user-check
 mode: "wide"
 ---
@@ -8,10 +8,10 @@ mode: "wide"
 ## 개요
 
 <Note>
-`@human_feedback` 데코레이터는 **CrewAI 버전 1.8.0 이상**이 필요합니다. 이 기능을 사용하기 전에 설치를 업데이트하세요.
+`@human_feedback` 데코레이터는 **LocalAI 버전 1.8.0 이상**이 필요합니다. 이 기능을 사용하기 전에 설치를 업데이트하세요.
 </Note>
 
-`@human_feedback` 데코레이터는 CrewAI Flow 내에서 직접 human-in-the-loop(HITL) 워크플로우를 가능하게 합니다. Flow 실행을 일시 중지하고, 인간에게 검토를 위해 출력을 제시하고, 피드백을 수집하고, 선택적으로 피드백 결과에 따라 다른 리스너로 라우팅할 수 있습니다.
+`@human_feedback` 데코레이터는 LocalAI Flow 내에서 직접 human-in-the-loop(HITL) 워크플로우를 가능하게 합니다. Flow 실행을 일시 중지하고, 인간에게 검토를 위해 출력을 제시하고, 피드백을 수집하고, 선택적으로 피드백 결과에 따라 다른 리스너로 라우팅할 수 있습니다.
 
 이는 특히 다음과 같은 경우에 유용합니다:
 
@@ -689,7 +689,7 @@ class ArticleReviewFlow(Flow):
 
 ## 관련 문서
 
-- [Flow 개요](/ko/concepts/flows) - CrewAI Flow에 대해 알아보기
+- [Flow 개요](/ko/concepts/flows) - LocalAI Flow에 대해 알아보기
 - [Flow 상태 관리](/ko/guides/flows/mastering-flow-state) - Flow에서 상태 관리하기
 - [Flow 영속성](/ko/concepts/flows#persistence) - Flow 상태 영속화
 - [@router를 사용한 라우팅](/ko/concepts/flows#router) - 조건부 라우팅에 대해 더 알아보기

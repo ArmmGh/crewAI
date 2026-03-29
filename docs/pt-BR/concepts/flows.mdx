@@ -1,15 +1,15 @@
 ---
 title: Flows
-description: Saiba como criar e gerenciar fluxos de trabalho de IA usando CrewAI Flows.
+description: Saiba como criar e gerenciar fluxos de trabalho de IA usando LocalAI Flows.
 icon: arrow-progress
 mode: "wide"
 ---
 
 ## Visão Geral
 
-O CrewAI Flows é um recurso poderoso projetado para simplificar a criação e o gerenciamento de fluxos de trabalho de IA. Os flows permitem que desenvolvedores combinem e coordenem tarefas de codificação e crews de forma eficiente, proporcionando uma estrutura robusta para a construção de automações de IA sofisticadas.
+O LocalAI Flows é um recurso poderoso projetado para simplificar a criação e o gerenciamento de fluxos de trabalho de IA. Os flows permitem que desenvolvedores combinem e coordenem tarefas de codificação e crews de forma eficiente, proporcionando uma estrutura robusta para a construção de automações de IA sofisticadas.
 
-Os flows permitem que você crie fluxos de trabalho estruturados e orientados por eventos. Eles oferecem uma forma integrada de conectar múltiplas tarefas, gerenciar estado e controlar o fluxo de execução nas suas aplicações de IA. Com flows, você pode facilmente projetar e implementar processos de múltiplas etapas que exploram todo o potencial das capacidades do CrewAI.
+Os flows permitem que você crie fluxos de trabalho estruturados e orientados por eventos. Eles oferecem uma forma integrada de conectar múltiplas tarefas, gerenciar estado e controlar o fluxo de execução nas suas aplicações de IA. Com flows, você pode facilmente projetar e implementar processos de múltiplas etapas que exploram todo o potencial das capacidades do LocalAI.
 
 1. **Criação Simplificada de Fluxos de Trabalho**: Conecte facilmente múltiplas crews e tarefas para criar workflows de IA complexos.
 
@@ -66,7 +66,7 @@ O decorador `@listen()` pode ser usado de várias formas:
 
 ### Saída de um Flow
 
-Acessar e manipular a saída de um Flow é essencial para integrar seus workflows de IA a aplicações ou sistemas maiores. O CrewAI Flows fornece mecanismos fáceis para recuperar a saída final, acessar resultados intermediários e gerenciar o estado geral do seu Flow.
+Acessar e manipular a saída de um Flow é essencial para integrar seus workflows de IA a aplicações ou sistemas maiores. O LocalAI Flows fornece mecanismos fáceis para recuperar a saída final, acessar resultados intermediários e gerenciar o estado geral do seu Flow.
 
 #### Recuperando a Saída Final
 
@@ -113,19 +113,19 @@ counter=2 message='Hello from first_method - updated by second_method'
 Neste exemplo, o estado é atualizado tanto por `first_method` quanto por `second_method`.
 Após o término da execução, é possível acessar o estado final e observar as atualizações realizadas por esses métodos.
 
-Ao garantir que a saída do método final seja retornada e oferecer acesso ao estado, o CrewAI Flows facilita a integração dos resultados dos seus workflows de IA em aplicações maiores,
+Ao garantir que a saída do método final seja retornada e oferecer acesso ao estado, o LocalAI Flows facilita a integração dos resultados dos seus workflows de IA em aplicações maiores,
 além de permitir o gerenciamento e o acesso ao estado durante toda a execução do Flow.
 
 ## Gerenciamento de Estado em Flows
 
-Gerenciar o estado de forma eficaz é fundamental para construir fluxos de trabalho de IA confiáveis e de fácil manutenção. O CrewAI Flows oferece mecanismos robustos para o gerenciamento de estado tanto não estruturado quanto estruturado,
+Gerenciar o estado de forma eficaz é fundamental para construir fluxos de trabalho de IA confiáveis e de fácil manutenção. O LocalAI Flows oferece mecanismos robustos para o gerenciamento de estado tanto não estruturado quanto estruturado,
 permitindo que o desenvolvedor escolha a abordagem que melhor se adapta à sua aplicação.
 
 ### Gerenciamento de Estado Não Estruturado
 
 No gerenciamento de estado não estruturado, todo o estado é armazenado no atributo `state` da classe `Flow`.
 Essa abordagem oferece flexibilidade, permitindo que o desenvolvedor adicione ou modifique atributos do estado conforme necessário sem precisar definir um esquema rígido.
-Mesmo com estados não estruturados, os flows do CrewAI geram e mantêm automaticamente um identificador único (UUID) para cada instância de estado.
+Mesmo com estados não estruturados, os flows do LocalAI geram e mantêm automaticamente um identificador único (UUID) para cada instância de estado.
 
 ```python Code
 # (O código não é traduzido)
@@ -145,7 +145,7 @@ Mesmo com estados não estruturados, os flows do CrewAI geram e mantêm automati
 No gerenciamento de estado estruturado, utilizam-se esquemas pré-definidos para garantir consistência e segurança de tipos em todo o workflow.
 Ao usar modelos como o `BaseModel` da Pydantic, os desenvolvedores podem definir a forma exata do estado, melhorando a validação e fornecendo auto-complete nos ambientes de desenvolvimento.
 
-Cada estado nos flows do CrewAI recebe automaticamente um identificador único (UUID) para ajudar no rastreamento e gerenciamento. Esse ID é gerado e mantido automaticamente pelo sistema de flows.
+Cada estado nos flows do LocalAI recebe automaticamente um identificador único (UUID) para ajudar no rastreamento e gerenciamento. Esse ID é gerado e mantido automaticamente pelo sistema de flows.
 
 ```python Code
 # (O código não é traduzido)
@@ -171,11 +171,11 @@ Cada estado nos flows do CrewAI recebe automaticamente um identificador único (
   - Segurança de tipos e validação são importantes para a confiabilidade da aplicação.
   - É desejado usar recursos da IDE como auto-completar e checagem de tipos para uma melhor experiência de desenvolvimento.
 
-Ao oferecer as duas opções de gerenciamento de estado, o CrewAI Flows permite que desenvolvedores criem fluxos de IA que sejam ao mesmo tempo flexíveis e robustos, atendendo a uma ampla variedade de requisitos de aplicação.
+Ao oferecer as duas opções de gerenciamento de estado, o LocalAI Flows permite que desenvolvedores criem fluxos de IA que sejam ao mesmo tempo flexíveis e robustos, atendendo a uma ampla variedade de requisitos de aplicação.
 
 ## Persistência de Flow
 
-O decorador @persist permite a persistência automática do estado nos flows do CrewAI, garantindo que você mantenha o estado do flow entre reinicializações ou execuções diferentes do workflow. Esse decorador pode ser aplicado tanto ao nível de classe, quanto ao nível de método, oferecendo flexibilidade sobre como gerenciar a persistência do estado.
+O decorador @persist permite a persistência automática do estado nos flows do LocalAI, garantindo que você mantenha o estado do flow entre reinicializações ou execuções diferentes do workflow. Esse decorador pode ser aplicado tanto ao nível de classe, quanto ao nível de método, oferecendo flexibilidade sobre como gerenciar a persistência do estado.
 
 ### Persistência no Nível de Classe
 
@@ -235,7 +235,7 @@ Para um controle mais granular, você pode aplicar @persist em métodos específ
    - Backend de persistência personalizável através da interface FlowPersistence
    - Suporte para soluções de armazenamento especializadas além do SQLite
    - Compatibilidade tanto com estados estruturados (Pydantic) quanto não estruturados (dict)
-   - Integração perfeita com os padrões de flow existentes no CrewAI
+   - Integração perfeita com os padrões de flow existentes no LocalAI
 
 A arquitetura de persistência enfatiza precisão técnica e opções de personalização, permitindo que desenvolvedores mantenham controle total sobre o gerenciamento de estado enquanto se beneficiam dos recursos de confiabilidade integrados.
 
@@ -310,7 +310,7 @@ Ao executar esse Flow, a saída será diferente dependendo do valor booleano ale
 ### Human in the Loop (feedback humano)
 
 <Note>
-O decorador `@human_feedback` requer **CrewAI versão 1.8.0 ou superior**.
+O decorador `@human_feedback` requer **LocalAI versão 1.8.0 ou superior**.
 </Note>
 
 O decorador `@human_feedback` permite fluxos de trabalho human-in-the-loop, pausando a execução do flow para coletar feedback de um humano. Isso é útil para portões de aprovação, revisão de qualidade e pontos de decisão que requerem julgamento humano.
@@ -380,15 +380,15 @@ Esse exemplo demonstra diversos recursos fundamentais do uso de agentes em flows
 
 ## Adicionando Crews aos Flows
 
-Criar um flow com múltiplas crews no CrewAI é simples.
+Criar um flow com múltiplas crews no LocalAI é simples.
 
-Você pode gerar um novo projeto CrewAI que já inclui toda a estrutura para criar um flow com várias crews executando o seguinte comando:
+Você pode gerar um novo projeto LocalAI que já inclui toda a estrutura para criar um flow com várias crews executando o seguinte comando:
 
 ```bash
 crewai create flow name_of_flow
 ```
 
-Esse comando irá gerar um novo projeto CrewAI com a estrutura de pastas necessária. O projeto gerado inclui uma crew pré-criada chamada `poem_crew`, já funcional. Você pode usar essa crew como modelo, copiando, colando e editando para criar outras crews.
+Esse comando irá gerar um novo projeto LocalAI com a estrutura de pastas necessária. O projeto gerado inclui uma crew pré-criada chamada `poem_crew`, já funcional. Você pode usar essa crew como modelo, copiando, colando e editando para criar outras crews.
 
 ### Estrutura de Pastas
 
@@ -464,15 +464,15 @@ O flow será executado, e você verá a saída no console.
 
 ## Plotando Flows
 
-Visualizar seus fluxos de trabalho de IA proporciona insights valiosos sobre a estrutura e os caminhos de execução dos flows. O CrewAI oferece uma ferramenta de visualização poderosa que permite gerar plots interativos dos flows, facilitando o entendimento e a otimização dos workflows de IA.
+Visualizar seus fluxos de trabalho de IA proporciona insights valiosos sobre a estrutura e os caminhos de execução dos flows. O LocalAI oferece uma ferramenta de visualização poderosa que permite gerar plots interativos dos flows, facilitando o entendimento e a otimização dos workflows de IA.
 
 ### O que são Plots?
 
-No CrewAI, plots são representações gráficas dos fluxos de trabalho de IA. Eles mostram as tarefas, suas conexões e o fluxo de dados entre elas. Essa visualização ajuda a compreender a sequência de operações, identificar gargalos e garantir que a lógica do workflow está alinhada com o esperado.
+No LocalAI, plots são representações gráficas dos fluxos de trabalho de IA. Eles mostram as tarefas, suas conexões e o fluxo de dados entre elas. Essa visualização ajuda a compreender a sequência de operações, identificar gargalos e garantir que a lógica do workflow está alinhada com o esperado.
 
 ### Como Gerar um Plot
 
-O CrewAI oferece duas formas práticas de gerar plots dos seus flows:
+O LocalAI oferece duas formas práticas de gerar plots dos seus flows:
 
 #### Opção 1: Usando o método `plot()`
 
@@ -486,7 +486,7 @@ Esse comando gera um arquivo chamado `my_flow_plot.html` no diretório atual. Ab
 
 #### Opção 2: Usando a Linha de Comando
 
-Em projetos CrewAI estruturados, é possível gerar um plot pela linha de comando. Isso é útil para projetos maiores, onde você deseja visualizar toda a configuração do flow.
+Em projetos LocalAI estruturados, é possível gerar um plot pela linha de comando. Isso é útil para projetos maiores, onde você deseja visualizar toda a configuração do flow.
 
 ```bash
 crewai flow plot
@@ -502,28 +502,28 @@ Ao visualizar seus flows, você tem clareza do formato do workflow, facilitando 
 
 ### Conclusão
 
-A plotagem dos flows é um recurso poderoso do CrewAI para aprimorar o design e o gerenciamento de fluxos de IA complexos. Usando o método `plot()` ou a linha de comando, você obtém uma visão visual dos workflows, benefício tanto para desenvolvimento quanto para apresentação.
+A plotagem dos flows é um recurso poderoso do LocalAI para aprimorar o design e o gerenciamento de fluxos de IA complexos. Usando o método `plot()` ou a linha de comando, você obtém uma visão visual dos workflows, benefício tanto para desenvolvimento quanto para apresentação.
 
 ## Próximos Passos
 
 Se você deseja explorar exemplos adicionais de flows, acompanhe alguns exemplos em nosso repositório de exemplos. Aqui estão quatro sugestões específicas de flows, cada uma demonstrando casos de uso distintos para você escolher conforme seu problema:
 
-1. **Email Auto Responder Flow**: Este exemplo demonstra um loop infinito, onde um job de background roda continuamente automatizando respostas de email. É ideal para tarefas rotineiras sem intervenção manual. [Ver Exemplo](https://github.com/crewAIInc/crewAI-examples/tree/main/email_auto_responder_flow)
+1. **Email Auto Responder Flow**: Este exemplo demonstra um loop infinito, onde um job de background roda continuamente automatizando respostas de email. É ideal para tarefas rotineiras sem intervenção manual. [Ver Exemplo](https://github.com/localAIInc/localAI-examples/tree/main/email_auto_responder_flow)
 
-2. **Lead Score Flow**: Destaca como adicionar feedback humano e manipular diferentes ramos condicionais usando router. Um ótimo aprendizado para workflows com decisão dinâmica e supervisão humana. [Ver Exemplo](https://github.com/crewAIInc/crewAI-examples/tree/main/lead-score-flow)
+2. **Lead Score Flow**: Destaca como adicionar feedback humano e manipular diferentes ramos condicionais usando router. Um ótimo aprendizado para workflows com decisão dinâmica e supervisão humana. [Ver Exemplo](https://github.com/localAIInc/localAI-examples/tree/main/lead-score-flow)
 
-3. **Write a Book Flow**: Exemplo ideal para encadear múltiplas crews, onde a saída de uma é usada por outra. Uma crew faz um sumário do livro inteiro, outra gera capítulos... Tudo conectado para entregar um livro completo. Perfeito para processos longos e coordenados. [Ver Exemplo](https://github.com/crewAIInc/crewAI-examples/tree/main/write_a_book_with_flows)
+3. **Write a Book Flow**: Exemplo ideal para encadear múltiplas crews, onde a saída de uma é usada por outra. Uma crew faz um sumário do livro inteiro, outra gera capítulos... Tudo conectado para entregar um livro completo. Perfeito para processos longos e coordenados. [Ver Exemplo](https://github.com/localAIInc/localAI-examples/tree/main/write_a_book_with_flows)
 
-4. **Meeting Assistant Flow**: Demonstra como transmitir um evento para desencadear múltiplas ações posteriores. Exemplo: ao finalizar uma reunião, atualizar um Trello, enviar mensagem no Slack e salvar resultados ao mesmo tempo. Indicado para gerenciamento completo de tarefas e notificações. [Ver Exemplo](https://github.com/crewAIInc/crewAI-examples/tree/main/meeting_assistant_flow)
+4. **Meeting Assistant Flow**: Demonstra como transmitir um evento para desencadear múltiplas ações posteriores. Exemplo: ao finalizar uma reunião, atualizar um Trello, enviar mensagem no Slack e salvar resultados ao mesmo tempo. Indicado para gerenciamento completo de tarefas e notificações. [Ver Exemplo](https://github.com/localAIInc/localAI-examples/tree/main/meeting_assistant_flow)
 
-Explore esses exemplos para descobrir como aproveitar CrewAI Flows em diferentes contextos – desde automação de tarefas repetitivas até o gerenciamento de processos dinâmicos com decisões e feedback humano.
+Explore esses exemplos para descobrir como aproveitar LocalAI Flows em diferentes contextos – desde automação de tarefas repetitivas até o gerenciamento de processos dinâmicos com decisões e feedback humano.
 
-Além disso, confira nosso vídeo no YouTube sobre como utilizar flows no CrewAI abaixo!
+Além disso, confira nosso vídeo no YouTube sobre como utilizar flows no LocalAI abaixo!
 
 <iframe
   className="w-full aspect-video rounded-xl"
   src="https://www.youtube.com/embed/MTb5my6VOT8"
-  title="Visão geral de Flows no CrewAI"
+  title="Visão geral de Flows no LocalAI"
   frameBorder="0"
   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
   referrerPolicy="strict-origin-when-cross-origin"

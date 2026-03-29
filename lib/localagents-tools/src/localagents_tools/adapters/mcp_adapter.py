@@ -1,4 +1,4 @@
-"""MCPServer for CrewAI."""
+"""MCPServer for LocalAI."""
 
 from __future__ import annotations
 
@@ -29,10 +29,10 @@ try:
     from mcpadapt.core import MCPAdapt, ToolAdapter
 
     class CrewAIToolAdapter(ToolAdapter):
-        """Adapter that creates CrewAI tools with properly normalized JSON schemas.
+        """Adapter that creates LocalAI tools with properly normalized JSON schemas.
 
         This adapter bypasses mcpadapt's model creation which adds invalid null values
-        to field schemas, instead using CrewAI's own schema utilities.
+        to field schemas, instead using LocalAI's own schema utilities.
         """
 
         def adapt(
@@ -40,20 +40,20 @@ try:
             func: Callable[[dict[str, Any] | None], CallToolResult],
             mcp_tool: Tool,
         ) -> BaseTool:
-            """Adapt a MCP tool to a CrewAI tool.
+            """Adapt a MCP tool to a LocalAI tool.
 
             Args:
                 func: The function to call when the tool is invoked.
                 mcp_tool: The MCP tool definition to adapt.
 
             Returns:
-                A CrewAI BaseTool instance.
+                A LocalAI BaseTool instance.
             """
             tool_name = sanitize_tool_name(mcp_tool.name)
             tool_description = mcp_tool.description or ""
             args_model = create_model_from_schema(mcp_tool.inputSchema)
 
-            class CrewAIMCPTool(BaseTool):
+            class LocalAIMCPTool(BaseTool):
                 name: str = tool_name
                 description: str = tool_description
                 args_schema: type[BaseModel] = args_model
@@ -82,11 +82,11 @@ try:
                         f"Tool Description: {self.description}"
                     )
 
-            return CrewAIMCPTool()
+            return LocalAIMCPTool()
 
         async def async_adapt(self, afunc: Any, mcp_tool: Tool) -> Any:
-            """Async adaptation is not supported by CrewAI."""
-            raise NotImplementedError("async is not supported by the CrewAI framework.")
+            """Async adaptation is not supported by LocalAI."""
+            raise NotImplementedError("async is not supported by the LocalAI framework.")
 
     MCP_AVAILABLE = True
 except ImportError as e:
@@ -95,7 +95,7 @@ except ImportError as e:
 
 
 class MCPServerAdapter:
-    """Manages the lifecycle of an MCP server and make its tools available to CrewAI.
+    """Manages the lifecycle of an MCP server and make its tools available to LocalAI.
 
     Note: tools can only be accessed after the server has been started with the
         `start()` method.
@@ -199,13 +199,13 @@ class MCPServerAdapter:
 
     @property
     def tools(self) -> ToolCollection[BaseTool]:
-        """The CrewAI tools available from the MCP server.
+        """The LocalAI tools available from the MCP server.
 
         Raises:
             ValueError: If the MCP server is not started.
 
         Returns:
-            The CrewAI tools available from the MCP server.
+            The LocalAI tools available from the MCP server.
         """
         if self._tools is None:
             raise ValueError(

@@ -6,16 +6,16 @@ from pydantic import BaseModel, Field, create_model
 import requests
 
 
-class InvokeCrewAIAutomationInput(BaseModel):
-    """Input schema for InvokeCrewAIAutomationTool."""
+class InvokeLocalAIAutomationInput(BaseModel):
+    """Input schema for InvokeLocalAIAutomationTool."""
 
     prompt: str = Field(..., description="The prompt or query to send to the crew")
 
 
-class InvokeCrewAIAutomationTool(BaseTool):
-    """A CrewAI tool for invoking external crew/flows APIs.
+class InvokeLocalAIAutomationTool(BaseTool):
+    """A LocalAI tool for invoking external crew/flows APIs.
 
-    This tool provides CrewAI Platform API integration with external crew services, supporting:
+    This tool provides LocalAI Platform API integration with external crew services, supporting:
     - Dynamic input schema configuration
     - Automatic polling for task completion
     - Bearer token authentication
@@ -23,7 +23,7 @@ class InvokeCrewAIAutomationTool(BaseTool):
 
     Example:
         Basic usage:
-        >>> tool = InvokeCrewAIAutomationTool(
+        >>> tool = InvokeLocalAIAutomationTool(
         ...     crew_api_url="https://api.example.com",
         ...     crew_bearer_token="your_token",
         ...     crew_name="My Crew",
@@ -37,7 +37,7 @@ class InvokeCrewAIAutomationTool(BaseTool):
         ...         default="default_value", description="Description of param2"
         ...     ),
         ... }
-        >>> tool = InvokeCrewAIAutomationTool(
+        >>> tool = InvokeLocalAIAutomationTool(
         ...     crew_api_url="https://api.example.com",
         ...     crew_bearer_token="your_token",
         ...     crew_name="My Crew",
@@ -47,7 +47,7 @@ class InvokeCrewAIAutomationTool(BaseTool):
 
     Example:
         >>> tools = [
-        ...     InvokeCrewAIAutomationTool(
+        ...     InvokeLocalAIAutomationTool(
         ...         crew_api_url="https://canary-crew-[...].crewai.com",
         ...         crew_bearer_token="[Your token: abcdef012345]",
         ...         crew_name="State of AI Report",
@@ -62,8 +62,8 @@ class InvokeCrewAIAutomationTool(BaseTool):
     """
 
     name: str = "invoke_amp_automation"
-    description: str = "Invokes an CrewAI Platform Automation using API"
-    args_schema: type[BaseModel] = InvokeCrewAIAutomationInput
+    description: str = "Invokes an LocalAI Platform Automation using API"
+    args_schema: type[BaseModel] = InvokeLocalAIAutomationInput
 
     crew_api_url: str
     crew_bearer_token: str
@@ -78,7 +78,7 @@ class InvokeCrewAIAutomationTool(BaseTool):
         max_polling_time: int = 10 * 60,
         crew_inputs: dict[str, Any] | None = None,
     ):
-        """Initialize the InvokeCrewAIAutomationTool.
+        """Initialize the InvokeLocalAIAutomationTool.
 
         Args:
             crew_api_url: Base URL of the crew API service
@@ -102,9 +102,9 @@ class InvokeCrewAIAutomationTool(BaseTool):
                     fields[field_name] = (str, field_def)
 
             # Create dynamic model
-            args_schema = create_model("DynamicInvokeCrewAIAutomationInput", **fields)  # type: ignore[call-overload]
+            args_schema = create_model("DynamicInvokeLocalAIAutomationInput", **fields)  # type: ignore[call-overload]
         else:
-            args_schema = InvokeCrewAIAutomationInput
+            args_schema = InvokeLocalAIAutomationInput
 
         # Initialize the parent class with proper field values
         super().__init__(

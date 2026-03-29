@@ -28,7 +28,7 @@ Essa configuração permite acompanhar hiperparâmetros e monitorar problemas de
 - **Detecção de Prompt Injection**: Identifique possíveis injeções de código e vazamentos de segredos.
 - **Gerenciamento de Chaves de API e Segredos**: Gerencie suas chaves de API e segredos do LLM de forma centralizada e segura, evitando práticas inseguras.
 - **Gerenciamento de Prompt**: Gerencie e versiona prompts de Agente usando o PromptHub para acesso consistente e fácil entre os agentes.
-- **Model Playground** Teste e compare diferentes modelos para seus agentes CrewAI antes da implantação.
+- **Model Playground** Teste e compare diferentes modelos para seus agentes LocalAI antes da implantação.
 
 ## Instruções de Configuração
 
@@ -62,7 +62,7 @@ Essa configuração permite acompanhar hiperparâmetros e monitorar problemas de
           openlit.init(otlp_endpoint="http://127.0.0.1:4318")
           ```
           
-          Exemplo de uso para monitoramento de um Agente CrewAI:
+          Exemplo de uso para monitoramento de um Agente LocalAI:
     
           ```python
           from crewai import Agent, Task, Crew, Process
@@ -122,7 +122,7 @@ Essa configuração permite acompanhar hiperparâmetros e monitorar problemas de
           export OTEL_EXPORTER_OTLP_ENDPOINT = "http://127.0.0.1:4318"
           ```
 
-          Exemplo de uso para monitoramento de um Agente CrewAI Async:
+          Exemplo de uso para monitoramento de um Agente LocalAI Async:
 
           ```python
           import asyncio

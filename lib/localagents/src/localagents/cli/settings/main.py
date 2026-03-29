@@ -23,7 +23,7 @@ class SettingsCommand(BaseCommand):
 
     def list(self) -> None:
         """List all CLI configuration parameters."""
-        table = Table(title="CrewAI CLI Configuration")
+        table = Table(title="LocalAI CLI Configuration")
         table.add_column("Setting", style="cyan", no_wrap=True)
         table.add_column("Value", style="green")
         table.add_column("Description", style="yellow")

@@ -1,15 +1,15 @@
 ---
 title: 퀵스타트
-description: 5분 이내에 CrewAI로 첫 번째 AI 에이전트를 구축해보세요.
+description: 5분 이내에 LocalAI로 첫 번째 AI 에이전트를 구축해보세요.
 icon: rocket
 mode: "wide"
 ---
 
-## 첫 번째 CrewAI Agent 만들기
+## 첫 번째 LocalAI Agent 만들기
 
 이제 주어진 주제나 항목에 대해 `최신 AI 개발 동향`을 `연구`하고 `보고`하는 간단한 crew를 만들어보겠습니다.
 
-진행하기 전에 CrewAI 설치를 완료했는지 확인하세요.
+진행하기 전에 LocalAI 설치를 완료했는지 확인하세요.
 아직 설치하지 않았다면, [설치 가이드](/ko/installation)를 참고해 설치할 수 있습니다.
 
 아래 단계를 따라 Crewing을 시작하세요! 🚣‍♂️
@@ -214,9 +214,9 @@ mode: "wide"
   </Step>
 
   <Step title="엔터프라이즈 대안: Crew Studio에서 생성">
-  CrewAI AMP 사용자는 코드를 작성하지 않고도 동일한 crew를 생성할 수 있습니다:
+  LocalAI AMP 사용자는 코드를 작성하지 않고도 동일한 crew를 생성할 수 있습니다:
 
-1. CrewAI AMP 계정에 로그인하세요([app.crewai.com](https://app.crewai.com)에서 무료 계정 만들기)
+1. LocalAI AMP 계정에 로그인하세요([app.crewai.com](https://app.crewai.com)에서 무료 계정 만들기)
 2. Crew Studio 열기
 3. 구현하려는 자동화 내용을 입력하세요
 4. 미션을 시각적으로 생성하고 순차적으로 연결하세요
@@ -224,8 +224,8 @@ mode: "wide"
 
 ![Crew Studio Quickstart](/images/enterprise/crew-studio-interface.png)
 
-  <Card title="CrewAI AMP 체험하기" icon="rocket" href="https://app.crewai.com">
-    CrewAI AOP에서 무료 계정을 시작하세요
+  <Card title="LocalAI AMP 체험하기" icon="rocket" href="https://app.crewai.com">
+    LocalAI AOP에서 무료 계정을 시작하세요
   </Card>
   </Step>
   <Step title="최종 보고서 확인하기">
@@ -254,7 +254,7 @@ mode: "wide"
     - **Semantic Kernel**: Focuses on natural language processing and understanding, enabling agents to comprehend user intentions better.
     - **Promptflow**: Provides tools for developers to create conversational agents that can navigate complex interactions seamlessly.
     - **Langchain**: Specializes in leveraging various APIs to ensure agents can access and utilize external data effectively.
-    - **CrewAI**: Aimed at collaborative environments, CrewAI strengthens teamwork by facilitating communication through AI-driven insights.
+    - **LocalAI**: Aimed at collaborative environments, LocalAI strengthens teamwork by facilitating communication through AI-driven insights.
     - **MemGPT**: Combines memory-optimized architectures with generative capabilities, allowing for more personalized interactions with users.
 
     These frameworks empower developers to build versatile and intelligent agents that can engage users, perform advanced analytics, and execute various tasks aligned with organizational goals.
@@ -310,7 +310,7 @@ crew 프로젝트 설정이 완료되었으며, 이제 자신만의 agentic work
 
 YAML 파일(`agents.yaml` 및 `tasks.yaml`)에서 사용하는 이름은 Python 코드의 메서드 이름과 일치해야 합니다.
 예를 들어, 특정 task에 대한 agent를 `tasks.yaml` 파일에서 참조할 수 있습니다.
-이러한 명명 일관성을 지키면 CrewAI가 설정과 코드를 자동으로 연결할 수 있습니다. 그렇지 않으면 task가 참조를 제대로 인식하지 못할 수 있습니다.
+이러한 명명 일관성을 지키면 LocalAI가 설정과 코드를 자동으로 연결할 수 있습니다. 그렇지 않으면 task가 참조를 제대로 인식하지 못할 수 있습니다.
 
 #### 예시 참조
 
@@ -350,14 +350,14 @@ email_summarizer_task:
 
 ## Crew 배포하기
 
-production 환경에 crew를 배포하는 가장 쉬운 방법은 [CrewAI AMP](http://app.crewai.com)를 통해서입니다.
+production 환경에 crew를 배포하는 가장 쉬운 방법은 [LocalAI AMP](http://app.crewai.com)를 통해서입니다.
 
-CLI를 사용하여 [CrewAI AMP](http://app.crewai.com)에 crew를 배포하는 단계별 시연은 이 영상 튜토리얼을 참고하세요.
+CLI를 사용하여 [LocalAI AMP](http://app.crewai.com)에 crew를 배포하는 단계별 시연은 이 영상 튜토리얼을 참고하세요.
 
 <iframe
   className="w-full aspect-video rounded-xl"
   src="https://www.youtube.com/embed/3EqSV-CYDZA"
-  title="CrewAI Deployment Guide"
+  title="LocalAI Deployment Guide"
   frameBorder="0"
   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
   allowFullScreen
@@ -365,7 +365,7 @@ CLI를 사용하여 [CrewAI AMP](http://app.crewai.com)에 crew를 배포하는 
 
 <CardGroup cols={2}>
   <Card title="Enterprise에 배포" icon="rocket" href="http://app.crewai.com">
-    CrewAI AOP로 시작하여 몇 번의 클릭만으로 production 환경에 crew를
+    LocalAI AOP로 시작하여 몇 번의 클릭만으로 production 환경에 crew를
     배포하세요.
   </Card>
   <Card
@@ -374,6 +374,6 @@ CLI를 사용하여 [CrewAI AMP](http://app.crewai.com)에 crew를 배포하는 
     href="https://community.crewai.com"
   >
     오픈 소스 커뮤니티에 참여하여 아이디어를 나누고, 프로젝트를 공유하며, 다른
-    CrewAI 개발자들과 소통하세요.
+    LocalAI 개발자들과 소통하세요.
   </Card>
 </CardGroup>

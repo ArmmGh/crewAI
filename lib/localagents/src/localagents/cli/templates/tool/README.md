@@ -1,6 +1,6 @@
 # {{folder_name}}
 
-{{folder_name}} is a CrewAI Tool. This template is designed to help you create
+{{folder_name}} is a LocalAI Tool. This template is designed to help you create
 custom tools to power up your crews.
 
 ## Installing
@@ -38,11 +38,11 @@ crewai tool install {{tool_name}}
 
 ## Support
 
-For support, questions, or feedback regarding the {{crew_name}} tool or CrewAI.
+For support, questions, or feedback regarding the {{crew_name}} tool or LocalAI.
 
 - Visit our [documentation](https://docs.crewai.com)
 - Reach out to us through our [GitHub repository](https://github.com/joaomdmoura/crewai)
 - [Join our Discord](https://discord.com/invite/X4JWnZnxPb)
 - [Chat with our docs](https://chatg.pt/DWjSBZn)
 
-Let's create wonders together with the power and simplicity of crewAI.
+Let's create wonders together with the power and simplicity of localAI.

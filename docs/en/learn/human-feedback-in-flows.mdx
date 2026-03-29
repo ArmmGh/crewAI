@@ -1,6 +1,6 @@
 ---
 title: Human Feedback in Flows
-description: Learn how to integrate human feedback directly into your CrewAI Flows using the @human_feedback decorator
+description: Learn how to integrate human feedback directly into your LocalAI Flows using the @human_feedback decorator
 icon: user-check
 mode: "wide"
 ---
@@ -8,10 +8,10 @@ mode: "wide"
 ## Overview
 
 <Note>
-The `@human_feedback` decorator requires **CrewAI version 1.8.0 or higher**. Make sure to update your installation before using this feature.
+The `@human_feedback` decorator requires **LocalAI version 1.8.0 or higher**. Make sure to update your installation before using this feature.
 </Note>
 
-The `@human_feedback` decorator enables human-in-the-loop (HITL) workflows directly within CrewAI Flows. It allows you to pause flow execution, present output to a human for review, collect their feedback, and optionally route to different listeners based on the feedback outcome.
+The `@human_feedback` decorator enables human-in-the-loop (HITL) workflows directly within LocalAI Flows. It allows you to pause flow execution, present output to a human for review, collect their feedback, and optionally route to different listeners based on the feedback outcome.
 
 This is particularly valuable for:
 
@@ -699,7 +699,7 @@ class ArticleReviewFlow(Flow):
 
 ## Related Documentation
 
-- [Flows Overview](/en/concepts/flows) - Learn about CrewAI Flows
+- [Flows Overview](/en/concepts/flows) - Learn about LocalAI Flows
 - [Flow State Management](/en/guides/flows/mastering-flow-state) - Managing state in flows
 - [Flow Persistence](/en/concepts/flows#persistence) - Persisting flow state
 - [Routing with @router](/en/concepts/flows#router) - More about conditional routing

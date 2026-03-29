@@ -9,7 +9,7 @@ mode: "wide"
 
 ## Description
 
-CrewAI offers a family of Brave Search tools, each targeting a specific [Brave Search API](https://brave.com/search/api/) endpoint.
+LocalAI offers a family of Brave Search tools, each targeting a specific [Brave Search API](https://brave.com/search/api/) endpoint.
 Rather than a single catch-all tool, you can pick exactly the tool that matches the kind of results your agent needs:
 
 | Tool | Endpoint | Use case |
@@ -52,7 +52,7 @@ pip install 'crewai[tools]'
 from crewai_tools import BraveWebSearchTool
 
 tool = BraveWebSearchTool()
-results = tool.run(q="CrewAI agent framework")
+results = tool.run(q="LocalAI agent framework")
 print(results)
 ```
 
@@ -244,7 +244,7 @@ full_response = tool.run(q="Brave Search API")
 
 ## Agent Integration Example
 
-Here's how to equip a CrewAI agent with multiple Brave Search tools:
+Here's how to equip a LocalAI agent with multiple Brave Search tools:
 
 ```python Code
 from crewai import Agent
@@ -313,4 +313,4 @@ Key differences:
 
 ## Conclusion
 
-The Brave Search tool suite gives your CrewAI agents flexible, endpoint-specific access to the Brave Search API. Whether you need web pages, breaking news, images, or videos, there is a dedicated tool with validated parameters and built-in resilience. Pick the tool that fits your use case, and refer to the [Brave Search API documentation](https://brave.com/search/api/) for the full details on available parameters and response formats.
+The Brave Search tool suite gives your LocalAI agents flexible, endpoint-specific access to the Brave Search API. Whether you need web pages, breaking news, images, or videos, there is a dedicated tool with validated parameters and built-in resilience. Pick the tool that fits your use case, and refer to the [Brave Search API documentation](https://brave.com/search/api/) for the full details on available parameters and response formats.

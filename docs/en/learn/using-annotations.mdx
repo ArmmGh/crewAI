@@ -1,6 +1,6 @@
 ---
 title: "Using Annotations in crew.py"
-description: "Learn how to use annotations to properly structure agents, tasks, and components in CrewAI"
+description: "Learn how to use annotations to properly structure agents, tasks, and components in LocalAI"
 icon: "at"
 mode: "wide"
 ---
@@ -9,11 +9,11 @@ This guide explains how to use annotations to properly reference **agents**, **t
 
 ## Introduction
 
-Annotations in the CrewAI framework are used to decorate classes and methods, providing metadata and functionality to various components of your crew. These annotations help in organizing and structuring your code, making it more readable and maintainable.
+Annotations in the LocalAI framework are used to decorate classes and methods, providing metadata and functionality to various components of your crew. These annotations help in organizing and structuring your code, making it more readable and maintainable.
 
 ## Available Annotations
 
-The CrewAI framework provides the following annotations:
+The LocalAI framework provides the following annotations:
 
 - `@CrewBase`: Used to decorate the main crew class.
 - `@agent`: Decorates methods that define and return Agent objects.
@@ -148,4 +148,4 @@ Note how the `llm` and `tools` in the YAML file correspond to the methods decora
 - **Flexibility**: Design your crew to be flexible by allowing easy addition or removal of agents and tasks.
 - **YAML-Code Correspondence**: Ensure that the names and structures in your YAML files correspond correctly to the decorated methods in your Python code.
 
-By following these guidelines and properly using annotations, you can create well-structured and maintainable crews using the CrewAI framework.
+By following these guidelines and properly using annotations, you can create well-structured and maintainable crews using the LocalAI framework.

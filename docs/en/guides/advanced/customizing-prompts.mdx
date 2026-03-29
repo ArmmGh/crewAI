@@ -1,13 +1,13 @@
 ---
 title: Customizing Prompts
-description: Dive deeper into low-level prompt customization for CrewAI, enabling super custom and complex use cases for different models and languages.
+description: Dive deeper into low-level prompt customization for LocalAI, enabling super custom and complex use cases for different models and languages.
 icon: message-pen
 mode: "wide"
 ---
 
 ## Why Customize Prompts?
 
-Although CrewAI's default prompts work well for many scenarios, low-level customization opens the door to significantly more flexible and powerful agent behavior. Here's why you might want to take advantage of this deeper control:
+Although LocalAI's default prompts work well for many scenarios, low-level customization opens the door to significantly more flexible and powerful agent behavior. Here's why you might want to take advantage of this deeper control:
 
 1. **Optimize for specific LLMs** – Different models (such as GPT-4, Claude, or Llama) thrive with prompt formats tailored to their unique architectures.
 2. **Change the language** – Build agents that operate exclusively in languages beyond English, handling nuances with precision.
@@ -15,30 +15,30 @@ Although CrewAI's default prompts work well for many scenarios, low-level custom
 4. **Adjust tone and style** – Make agents more formal, casual, creative, or analytical.
 5. **Support super custom use cases** – Utilize advanced prompt structures and formatting to meet intricate, project-specific requirements.
 
-This guide explores how to tap into CrewAI's prompts at a lower level, giving you fine-grained control over how agents think and interact.
+This guide explores how to tap into LocalAI's prompts at a lower level, giving you fine-grained control over how agents think and interact.
 
-## Understanding CrewAI's Prompt System
+## Understanding LocalAI's Prompt System
 
-Under the hood, CrewAI employs a modular prompt system that you can customize extensively:
+Under the hood, LocalAI employs a modular prompt system that you can customize extensively:
 
 - **Agent templates** – Govern each agent's approach to their assigned role.
 - **Prompt slices** – Control specialized behaviors such as tasks, tool usage, and output structure.
 - **Error handling** – Direct how agents respond to failures, exceptions, or timeouts.
 - **Tool-specific prompts** – Define detailed instructions for how tools are invoked or utilized.
 
-Check out the [original prompt templates in CrewAI's repository](https://github.com/crewAIInc/crewAI/blob/main/src/crewai/translations/en.json) to see how these elements are organized. From there, you can override or adapt them as needed to unlock advanced behaviors.
+Check out the [original prompt templates in LocalAI's repository](https://github.com/localAIInc/localAI/blob/main/src/crewai/translations/en.json) to see how these elements are organized. From there, you can override or adapt them as needed to unlock advanced behaviors.
 
 ## Understanding Default System Instructions
 
 <Warning>
-**Production Transparency Issue**: CrewAI automatically injects default instructions into your prompts that you might not be aware of. This section explains what's happening under the hood and how to gain full control.
+**Production Transparency Issue**: LocalAI automatically injects default instructions into your prompts that you might not be aware of. This section explains what's happening under the hood and how to gain full control.
 </Warning>
 
-When you define an agent with `role`, `goal`, and `backstory`, CrewAI automatically adds additional system instructions that control formatting and behavior. Understanding these default injections is crucial for production systems where you need full prompt transparency.
+When you define an agent with `role`, `goal`, and `backstory`, LocalAI automatically adds additional system instructions that control formatting and behavior. Understanding these default injections is crucial for production systems where you need full prompt transparency.
 
-### What CrewAI Automatically Injects
+### What LocalAI Automatically Injects
 
-Based on your agent configuration, CrewAI adds different default instructions:
+Based on your agent configuration, LocalAI adds different default instructions:
 
 #### For Agents Without Tools
 ```text
@@ -206,7 +206,7 @@ One straightforward approach is to create a JSON file for the prompts you want t
 1. Craft a JSON file with your updated prompt slices.
 2. Reference that file via the `prompt_file` parameter in your Crew.
 
-CrewAI then merges your customizations with the defaults, so you don't have to redefine every prompt. Here's how:
+LocalAI then merges your customizations with the defaults, so you don't have to redefine every prompt. Here's how:
 
 ### Example: Basic Prompt Customization
 
@@ -310,8 +310,8 @@ Through this deeper configuration, you can exercise comprehensive, low-level con
 
 ## Conclusion
 
-Low-level prompt customization in CrewAI opens the door to super custom, complex use cases. By establishing well-organized prompt files (or direct inline templates), you can accommodate various models, languages, and specialized domains. This level of flexibility ensures you can craft precisely the AI behavior you need, all while knowing CrewAI still provides reliable defaults when you don't override them.
+Low-level prompt customization in LocalAI opens the door to super custom, complex use cases. By establishing well-organized prompt files (or direct inline templates), you can accommodate various models, languages, and specialized domains. This level of flexibility ensures you can craft precisely the AI behavior you need, all while knowing LocalAI still provides reliable defaults when you don't override them.
 
 <Check>
-You now have the foundation for advanced prompt customizations in CrewAI. Whether you're adapting for model-specific structures or domain-specific constraints, this low-level approach lets you shape agent interactions in highly specialized ways.
+You now have the foundation for advanced prompt customizations in LocalAI. Whether you're adapting for model-specific structures or domain-specific constraints, this low-level approach lets you shape agent interactions in highly specialized ways.
 </Check>

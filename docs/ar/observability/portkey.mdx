@@ -1,17 +1,17 @@
 ---
 title: تكامل Portkey
-description: كيفية استخدام Portkey مع CrewAI
+description: كيفية استخدام Portkey مع LocalAI
 icon: key
 mode: "wide"
 ---
 
-<img src="https://raw.githubusercontent.com/siddharthsambharia-portkey/Portkey-Product-Images/main/Portkey-CrewAI.png" alt="Portkey CrewAI Header Image" width="70%" />
+<img src="https://raw.githubusercontent.com/siddharthsambharia-portkey/Portkey-Product-Images/main/Portkey-LocalAI.png" alt="Portkey LocalAI Header Image" width="70%" />
 
 
 
 ## مقدمة
 
-يعزز Portkey إمكانيات CrewAI بميزات جاهزة للإنتاج، محولاً طواقم الوكلاء التجريبية إلى أنظمة متينة من خلال توفير:
+يعزز Portkey إمكانيات LocalAI بميزات جاهزة للإنتاج، محولاً طواقم الوكلاء التجريبية إلى أنظمة متينة من خلال توفير:
 
 - **مراقبة كاملة** لكل خطوة وكيل واستخدام أداة وتفاعل
 - **موثوقية مدمجة** مع آليات الاحتياط وإعادة المحاولة وموازنة الأحمال
@@ -34,8 +34,8 @@ pip install -U crewai portkey-ai
 أنشئ مفتاح API لـ Portkey مع حدود ميزانية/معدل اختيارية من [لوحة تحكم Portkey](https://app.portkey.ai/). يمكنك أيضاً إرفاق إعدادات للموثوقية والتخزين المؤقت والمزيد لهذا المفتاح. المزيد عن هذا لاحقاً.
 </Step>
 
-<Step title="إعداد CrewAI مع Portkey">
-التكامل بسيط - ما عليك سوى تحديث إعداد LLM في تكوين CrewAI الخاص بك:
+<Step title="إعداد LocalAI مع Portkey">
+التكامل بسيط - ما عليك سوى تحديث إعداد LLM في تكوين LocalAI الخاص بك:
 
 ```python
 from crewai import LLM
@@ -76,12 +76,12 @@ gpt_llm = LLM(
 
 ### 1. مراقبة محسّنة
 
-يوفر Portkey مراقبة شاملة لوكلاء CrewAI، مما يساعدك على فهم ما يحدث بالضبط أثناء كل عملية تنفيذ.
+يوفر Portkey مراقبة شاملة لوكلاء LocalAI، مما يساعدك على فهم ما يحدث بالضبط أثناء كل عملية تنفيذ.
 
 <Tabs>
   <Tab title="التتبعات">
 <Frame>
-    <img src="https://raw.githubusercontent.com/siddharthsambharia-portkey/Portkey-Product-Images/refs/heads/main/CrewAI%20Product%2011.1.webp"/>
+    <img src="https://raw.githubusercontent.com/siddharthsambharia-portkey/Portkey-Product-Images/refs/heads/main/LocalAI%20Product%2011.1.webp"/>
 </Frame>
 
 توفر التتبعات عرضاً هرمياً لتنفيذ طاقمك، يظهر تسلسل استدعاءات LLM واستدعاءات الأدوات وانتقالات الحالة.
@@ -103,7 +103,7 @@ portkey_llm = LLM(
 
   <Tab title="السجلات">
 <Frame>
-    <img src="https://raw.githubusercontent.com/siddharthsambharia-portkey/Portkey-Product-Images/refs/heads/main/CrewAI%20Portkey%20Docs%20Metadata.png"/>
+    <img src="https://raw.githubusercontent.com/siddharthsambharia-portkey/Portkey-Product-Images/refs/heads/main/LocalAI%20Portkey%20Docs%20Metadata.png"/>
 </Frame>
 
 يسجّل Portkey كل تفاعل مع نماذج LLM، بما في ذلك:
@@ -118,7 +118,7 @@ portkey_llm = LLM(
 
   <Tab title="المقاييس ولوحات المعلومات">
 <Frame>
-    <img src="https://raw.githubusercontent.com/siddharthsambharia-portkey/Portkey-Product-Images/refs/heads/main/CrewAI%20Dashboard.png"/>
+    <img src="https://raw.githubusercontent.com/siddharthsambharia-portkey/Portkey-Product-Images/refs/heads/main/LocalAI%20Dashboard.png"/>
 </Frame>
 
 يوفر Portkey لوحات معلومات مدمجة تساعدك على:
@@ -133,10 +133,10 @@ portkey_llm = LLM(
 
   <Tab title="تصفية البيانات الوصفية">
 <Frame>
-  <img src="https://raw.githubusercontent.com/siddharthsambharia-portkey/Portkey-Product-Images/refs/heads/main/Metadata%20Filters%20from%20CrewAI.png" alt="Analytics with metadata filters" />
+  <img src="https://raw.githubusercontent.com/siddharthsambharia-portkey/Portkey-Product-Images/refs/heads/main/Metadata%20Filters%20from%20LocalAI.png" alt="Analytics with metadata filters" />
 </Frame>
 
-أضف بيانات وصفية مخصصة لتكوين LLM في CrewAI لتمكين تصفية وتقسيم قوية:
+أضف بيانات وصفية مخصصة لتكوين LLM في LocalAI لتمكين تصفية وتقسيم قوية:
 
 ```python
 portkey_llm = LLM(
@@ -164,7 +164,7 @@ portkey_llm = LLM(
 
 عند تشغيل الطواقم في الإنتاج، قد تحدث مشكلات - حدود معدل API أو مشكلات الشبكة أو انقطاعات المزود. تضمن ميزات الموثوقية في Portkey استمرار عمل وكلائك بسلاسة حتى عند حدوث مشكلات.
 
-من السهل تفعيل الاحتياط في إعداد CrewAI الخاص بك باستخدام تكوين Portkey:
+من السهل تفعيل الاحتياط في إعداد LocalAI الخاص بك باستخدام تكوين Portkey:
 
 ```python
 from crewai import LLM
@@ -221,12 +221,12 @@ portkey_llm = LLM(
   </Card>
 </CardGroup>
 
-### 3. إدارة الموجهات في CrewAI
+### 3. إدارة الموجهات في LocalAI
 
-يساعدك استوديو هندسة الموجهات من Portkey في إنشاء وإدارة وتحسين الموجهات المستخدمة في وكلاء CrewAI. بدلاً من ترميز الموجهات أو التعليمات بشكل ثابت، استخدم API عرض الموجهات من Portkey لجلب وتطبيق موجهاتك المُصدَرة ديناميكياً.
+يساعدك استوديو هندسة الموجهات من Portkey في إنشاء وإدارة وتحسين الموجهات المستخدمة في وكلاء LocalAI. بدلاً من ترميز الموجهات أو التعليمات بشكل ثابت، استخدم API عرض الموجهات من Portkey لجلب وتطبيق موجهاتك المُصدَرة ديناميكياً.
 
 <Frame caption="إدارة الموجهات في مكتبة موجهات Portkey">
-![Prompt Playground Interface](https://raw.githubusercontent.com/siddharthsambharia-portkey/Portkey-Product-Images/refs/heads/main/CrewAI%20Portkey%20Docs.webp)
+![Prompt Playground Interface](https://raw.githubusercontent.com/siddharthsambharia-portkey/Portkey-Product-Images/refs/heads/main/LocalAI%20Portkey%20Docs.webp)
 </Frame>
 
 <Tabs>
@@ -238,7 +238,7 @@ portkey_llm = LLM(
 3. مقارنة المخرجات بين إصدارات موجهات مختلفة
 4. التعاون مع أعضاء الفريق في تطوير الموجهات
 
-تجعل هذه البيئة المرئية من الأسهل صياغة موجهات فعالة لكل خطوة في سير عمل وكلاء CrewAI.
+تجعل هذه البيئة المرئية من الأسهل صياغة موجهات فعالة لكل خطوة في سير عمل وكلاء LocalAI.
   </Tab>
 
   <Tab title="استخدام قوالب الموجهات">
@@ -338,11 +338,11 @@ prompt_data = portkey_admin.prompts.render(
 
 ### 4. حواجز الحماية لطواقم آمنة
 
-تضمن حواجز الحماية أن وكلاء CrewAI يعملون بأمان ويستجيبون بشكل مناسب في جميع الحالات.
+تضمن حواجز الحماية أن وكلاء LocalAI يعملون بأمان ويستجيبون بشكل مناسب في جميع الحالات.
 
 **لماذا تستخدم حواجز الحماية؟**
 
-قد يواجه وكلاء CrewAI أوضاع فشل مختلفة:
+قد يواجه وكلاء LocalAI أوضاع فشل مختلفة:
 - توليد محتوى ضار أو غير مناسب
 - تسريب معلومات حساسة مثل المعلومات الشخصية
 - توهم معلومات غير صحيحة
@@ -394,7 +394,7 @@ researcher = Agent(
 
 ### 5. تتبع المستخدمين باستخدام البيانات الوصفية
 
-تتبع المستخدمين الفرديين عبر وكلاء CrewAI باستخدام نظام البيانات الوصفية في Portkey.
+تتبع المستخدمين الفرديين عبر وكلاء LocalAI باستخدام نظام البيانات الوصفية في Portkey.
 
 **ما هي البيانات الوصفية في Portkey؟**
 
@@ -436,7 +436,7 @@ researcher = Agent(
 مع وجود البيانات الوصفية، يمكنك تصفية التحليلات حسب المستخدم وتحليل مقاييس الأداء على أساس كل مستخدم:
 
 <Frame caption="تصفية التحليلات حسب المستخدم">
-  <img src="https://raw.githubusercontent.com/siddharthsambharia-portkey/Portkey-Product-Images/refs/heads/main/Metadata%20Filters%20from%20CrewAI.png"/>
+  <img src="https://raw.githubusercontent.com/siddharthsambharia-portkey/Portkey-Product-Images/refs/heads/main/Metadata%20Filters%20from%20LocalAI.png"/>
 </Frame>
 
 يمكّن هذا:
@@ -451,7 +451,7 @@ researcher = Agent(
 
 ### 6. التخزين المؤقت لطواقم فعالة
 
-طبّق التخزين المؤقت لجعل وكلاء CrewAI أكثر كفاءة وفعالية من حيث التكلفة:
+طبّق التخزين المؤقت لجعل وكلاء LocalAI أكثر كفاءة وفعالية من حيث التكلفة:
 
 <Tabs>
   <Tab title="التخزين المؤقت البسيط">
@@ -525,7 +525,7 @@ researcher = Agent(
 
 ### 7. التوافق بين النماذج
 
-يدعم CrewAI مزودي LLM متعددين، ويوسّع Portkey هذه القدرة من خلال توفير الوصول إلى أكثر من 200 نموذج LLM عبر واجهة موحدة. يمكنك التبديل بسهولة بين نماذج مختلفة دون تغيير منطق الوكيل الأساسي:
+يدعم LocalAI مزودي LLM متعددين، ويوسّع Portkey هذه القدرة من خلال توفير الوصول إلى أكثر من 200 نموذج LLM عبر واجهة موحدة. يمكنك التبديل بسهولة بين نماذج مختلفة دون تغيير منطق الوكيل الأساسي:
 
 ```python
 from crewai import Agent, LLM
@@ -577,10 +577,10 @@ researcher = Agent(
   اطلع على القائمة الكاملة لمزودي LLM المدعومين من Portkey
 </Card>
 
-## إعداد حوكمة المؤسسة لـ CrewAI
+## إعداد حوكمة المؤسسة لـ LocalAI
 
 **لماذا حوكمة المؤسسة؟**
-إذا كنت تستخدم CrewAI داخل مؤسستك، فأنت بحاجة إلى مراعاة عدة جوانب حوكمة:
+إذا كنت تستخدم LocalAI داخل مؤسستك، فأنت بحاجة إلى مراعاة عدة جوانب حوكمة:
 - **إدارة التكاليف**: التحكم في إنفاق الذكاء الاصطناعي وتتبعه عبر الفرق
 - **التحكم في الوصول**: إدارة الفرق التي يمكنها استخدام نماذج محددة
 - **تحليلات الاستخدام**: فهم كيفية استخدام الذكاء الاصطناعي عبر المؤسسة
@@ -625,7 +625,7 @@ researcher = Agent(
 3. احفظ ولاحظ اسم التكوين للخطوة التالية
 
 <Frame>
-<img src="https://raw.githubusercontent.com/siddharthsambharia-portkey/Portkey-Product-Images/refs/heads/main/CrewAI%20Portkey%20Docs%20Config.png" width="500"/>
+<img src="https://raw.githubusercontent.com/siddharthsambharia-portkey/Portkey-Product-Images/refs/heads/main/LocalAI%20Portkey%20Docs%20Config.png" width="500"/>
 
 </Frame>
 </Step>
@@ -638,13 +638,13 @@ researcher = Agent(
 3. أنشئ واحفظ مفتاح API الخاص بك
 
 <Frame>
-<img src="https://raw.githubusercontent.com/siddharthsambharia-portkey/Portkey-Product-Images/refs/heads/main/CrewAI%20API%20Key.png" width="500"/>
+<img src="https://raw.githubusercontent.com/siddharthsambharia-portkey/Portkey-Product-Images/refs/heads/main/LocalAI%20API%20Key.png" width="500"/>
 
 </Frame>
 </Step>
 
-<Step title="الاتصال بـ CrewAI">
-بعد إعداد مفتاح API لـ Portkey مع التكوين المرفق، اربطه بوكلاء CrewAI:
+<Step title="الاتصال بـ LocalAI">
+بعد إعداد مفتاح API لـ Portkey مع التكوين المرفق، اربطه بوكلاء LocalAI:
 
 ```python
 from crewai import Agent, LLM
@@ -761,7 +761,7 @@ researcher = Agent(
 
   <Accordion title="الخطوة 4: النشر والمراقبة">
     ### الخطوة 4: النشر والمراقبة
-    بعد توزيع مفاتيح API على أعضاء فريقك، يصبح إعداد CrewAI الجاهز للمؤسسة جاهزاً للعمل. يمكن لكل عضو في الفريق الآن استخدام مفاتيح API المخصصة له مع مستويات وصول وضوابط ميزانية مناسبة.
+    بعد توزيع مفاتيح API على أعضاء فريقك، يصبح إعداد LocalAI الجاهز للمؤسسة جاهزاً للعمل. يمكن لكل عضو في الفريق الآن استخدام مفاتيح API المخصصة له مع مستويات وصول وضوابط ميزانية مناسبة.
 
     راقب الاستخدام في لوحة تحكم Portkey:
     - تتبع التكاليف حسب القسم
@@ -774,7 +774,7 @@ researcher = Agent(
 
 <Note>
 ### ميزات المؤسسة متاحة الآن
-**تكامل CrewAI الخاص بك يتضمن الآن:**
+**تكامل LocalAI الخاص بك يتضمن الآن:**
 - ضوابط ميزانية للأقسام
 - حوكمة الوصول للنماذج
 - تتبع الاستخدام والإسناد
@@ -785,16 +785,16 @@ researcher = Agent(
 ## الأسئلة الشائعة
 
 <AccordionGroup>
-  <Accordion title="كيف يعزز Portkey إمكانيات CrewAI؟">
-    يضيف Portkey جاهزية الإنتاج لـ CrewAI من خلال مراقبة شاملة (تتبعات وسجلات ومقاييس) وميزات موثوقية (احتياط وإعادة محاولة وتخزين مؤقت) والوصول إلى أكثر من 200 نموذج LLM عبر واجهة موحدة. هذا يسهّل تصحيح الأخطاء وتحسين وتوسيع تطبيقات الوكلاء.
+  <Accordion title="كيف يعزز Portkey إمكانيات LocalAI؟">
+    يضيف Portkey جاهزية الإنتاج لـ LocalAI من خلال مراقبة شاملة (تتبعات وسجلات ومقاييس) وميزات موثوقية (احتياط وإعادة محاولة وتخزين مؤقت) والوصول إلى أكثر من 200 نموذج LLM عبر واجهة موحدة. هذا يسهّل تصحيح الأخطاء وتحسين وتوسيع تطبيقات الوكلاء.
   </Accordion>
 
-  <Accordion title="هل يمكنني استخدام Portkey مع تطبيقات CrewAI الحالية؟">
-    نعم! يتكامل Portkey بسلاسة مع تطبيقات CrewAI الحالية. ما عليك سوى تحديث كود تكوين LLM بالنسخة المُمكّنة من Portkey. يبقى باقي كود الوكيل والطاقم دون تغيير.
+  <Accordion title="هل يمكنني استخدام Portkey مع تطبيقات LocalAI الحالية؟">
+    نعم! يتكامل Portkey بسلاسة مع تطبيقات LocalAI الحالية. ما عليك سوى تحديث كود تكوين LLM بالنسخة المُمكّنة من Portkey. يبقى باقي كود الوكيل والطاقم دون تغيير.
   </Accordion>
 
-  <Accordion title="هل يعمل Portkey مع جميع ميزات CrewAI؟">
-    يدعم Portkey جميع ميزات CrewAI، بما في ذلك الوكلاء والأدوات وسير العمل مع تدخل بشري وجميع أنواع عمليات المهام (تسلسلي وهرمي وغيرها). يضيف المراقبة والموثوقية دون تقييد أي من وظائف الإطار.
+  <Accordion title="هل يعمل Portkey مع جميع ميزات LocalAI؟">
+    يدعم Portkey جميع ميزات LocalAI، بما في ذلك الوكلاء والأدوات وسير العمل مع تدخل بشري وجميع أنواع عمليات المهام (تسلسلي وهرمي وغيرها). يضيف المراقبة والموثوقية دون تقييد أي من وظائف الإطار.
   </Accordion>
 
   <Accordion title="هل يمكنني تتبع الاستخدام عبر وكلاء متعددين في طاقم؟">
@@ -814,8 +814,8 @@ researcher = Agent(
 ## الموارد
 
 <CardGroup cols="3">
-  <Card title="وثائق CrewAI" icon="book" href="https://docs.crewai.com/">
-    <p>وثائق CrewAI الرسمية</p>
+  <Card title="وثائق LocalAI" icon="book" href="https://docs.crewai.com/">
+    <p>وثائق LocalAI الرسمية</p>
   </Card>
   <Card title="احجز عرضاً توضيحياً" icon="calendar" href="https://calendly.com/portkey-ai">
     <p>احصل على إرشادات مخصصة لتنفيذ هذا التكامل</p>

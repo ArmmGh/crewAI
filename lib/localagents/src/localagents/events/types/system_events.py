@@ -1,4 +1,4 @@
-"""System signal event types for CrewAI.
+"""System signal event types for LocalAI.
 
 This module contains event types for system-level signals like SIGTERM,
 allowing listeners to perform cleanup operations before process termination.

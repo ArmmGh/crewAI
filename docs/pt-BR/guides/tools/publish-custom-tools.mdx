@@ -1,13 +1,13 @@
 ---
 title: Publicar Ferramentas Personalizadas
-description: Como construir, empacotar e publicar suas próprias ferramentas compatíveis com CrewAI no PyPI para que qualquer usuário do CrewAI possa instalá-las e usá-las.
+description: Como construir, empacotar e publicar suas próprias ferramentas compatíveis com LocalAI no PyPI para que qualquer usuário do LocalAI possa instalá-las e usá-las.
 icon: box-open
 mode: "wide"
 ---
 
 ## Visão Geral
 
-O sistema de ferramentas do CrewAI foi projetado para ser extensível. Se você construiu uma ferramenta que pode beneficiar outros, pode empacotá-la como uma biblioteca Python independente, publicá-la no PyPI e disponibilizá-la para qualquer usuário do CrewAI — sem necessidade de PR para o repositório do CrewAI.
+O sistema de ferramentas do LocalAI foi projetado para ser extensível. Se você construiu uma ferramenta que pode beneficiar outros, pode empacotá-la como uma biblioteca Python independente, publicá-la no PyPI e disponibilizá-la para qualquer usuário do LocalAI — sem necessidade de PR para o repositório do LocalAI.
 
 Este guia percorre todo o processo: implementação do contrato de ferramentas, estruturação do pacote e publicação no PyPI.
 
@@ -17,7 +17,7 @@ Se você precisa apenas de uma ferramenta personalizada para seu próprio projet
 
 ## O Contrato de Ferramentas
 
-Toda ferramenta CrewAI deve satisfazer uma das duas interfaces:
+Toda ferramenta LocalAI deve satisfazer uma das duas interfaces:
 
 ### Opção 1: Subclassificar `BaseTool`
 
@@ -45,7 +45,7 @@ class GeolocateTool(BaseTool):
 
 ### Opção 2: Usar o Decorador `@tool`
 
-Para ferramentas mais simples, o decorador `@tool` transforma uma função em uma ferramenta CrewAI. A função **deve** ter uma docstring (usada como descrição da ferramenta) e anotações de tipo.
+Para ferramentas mais simples, o decorador `@tool` transforma uma função em uma ferramenta LocalAI. A função **deve** ter uma docstring (usada como descrição da ferramenta) e anotações de tipo.
 
 ```python
 from crewai.tools import tool
@@ -87,7 +87,7 @@ class GeolocateTool(BaseTool):
 
 ### Opcional: Validação de Entrada com `args_schema`
 
-Defina um modelo Pydantic como seu `args_schema` para obter validação automática de entrada e mensagens de erro claras. Se não fornecer um, o CrewAI irá inferi-lo da assinatura do seu método `_run`.
+Defina um modelo Pydantic como seu `args_schema` para obter validação automática de entrada e mensagens de erro claras. Se não fornecer um, o LocalAI irá inferi-lo da assinatura do seu método `_run`.
 
 ```python
 from pydantic import BaseModel, Field
@@ -148,7 +148,7 @@ crewai-geolocate/
 [project]
 name = "crewai-geolocate"
 version = "0.1.0"
-description = "Uma ferramenta CrewAI para geolocalizar endereços."
+description = "Uma ferramenta LocalAI para geolocalizar endereços."
 requires-python = ">=3.10"
 dependencies = [
     "crewai",

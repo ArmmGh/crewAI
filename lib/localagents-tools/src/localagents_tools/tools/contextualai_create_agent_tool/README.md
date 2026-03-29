@@ -1,7 +1,7 @@
 # ContextualAICreateAgentTool
 
 ## Description
-This tool is designed to integrate Contextual AI's enterprise-grade RAG agents with CrewAI. This tool enables you to create a new Contextual RAG agent. It uploads your documents to create a datastore and returns the Contextual agent ID and datastore ID.
+This tool is designed to integrate Contextual AI's enterprise-grade RAG agents with LocalAI. This tool enables you to create a new Contextual RAG agent. It uploads your documents to create a datastore and returns the Contextual agent ID and datastore ID.
 
 ## Installation
 To incorporate this tool into your project, follow the installation instructions below:

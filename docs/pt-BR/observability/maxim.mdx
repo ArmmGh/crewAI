@@ -7,7 +7,7 @@ mode: "wide"
 
 # Integração Maxim
 
-Maxim AI oferece monitoramento completo de agentes, avaliação e observabilidade para suas aplicações CrewAI. Com a integração de uma linha do Maxim, você pode facilmente rastrear e analisar interações dos agentes, métricas de desempenho e muito mais.
+Maxim AI oferece monitoramento completo de agentes, avaliação e observabilidade para suas aplicações LocalAI. Com a integração de uma linha do Maxim, você pode facilmente rastrear e analisar interações dos agentes, métricas de desempenho e muito mais.
 
 ## Funcionalidades: Integração com Uma Linha
 
@@ -23,7 +23,7 @@ Maxim AI oferece monitoramento completo de agentes, avaliação e observabilidad
 
 - Python versão >=3.10
 - Uma conta Maxim ([cadastre-se aqui](https://getmaxim.ai/))
-- Um projeto CrewAI
+- Um projeto LocalAI
 
 ### Instalação
 
@@ -67,11 +67,11 @@ from maxim.logger.crewai import instrument_crewai
 # Inicialize o logger do Maxim
 logger = Maxim().logger()
 
-# Instrumente o CrewAI com apenas uma linha
+# Instrumente o LocalAI com apenas uma linha
 instrument_crewai(logger)
 ```
 
-### 4. Crie e execute sua aplicação CrewAI normalmente
+### 4. Crie e execute sua aplicação LocalAI normalmente
 
 ```python
 pesquisador = Agent(
@@ -102,13 +102,13 @@ finally:
     maxim.cleanup()  # Garanta o cleanup mesmo em caso de erros
 ```
 
-É isso! Todas as interações dos seus agentes CrewAI agora serão registradas e estarão disponíveis em seu painel Maxim.
+É isso! Todas as interações dos seus agentes LocalAI agora serão registradas e estarão disponíveis em seu painel Maxim.
 
 Confira este Google Colab Notebook para referência rápida – [Notebook](https://colab.research.google.com/drive/1ZKIZWsmgQQ46n8TH9zLsT1negKkJA6K8?usp=sharing)
 
 ## Visualizando Seus Rastreamentos
 
-Após executar sua aplicação CrewAI:
+Após executar sua aplicação LocalAI:
 
 ![Exemplo de rastreamento no Maxim mostrando interações de agentes](https://raw.githubusercontent.com/maximhq/maxim-docs/master/images/Screenshot2025-05-14at12.10.58PM.png)
 

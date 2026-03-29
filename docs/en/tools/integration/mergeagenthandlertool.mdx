@@ -1,13 +1,13 @@
 ---
 title: Merge Agent Handler Tool
-description: Enables CrewAI agents to securely access third-party integrations like Linear, GitHub, Slack, and more through Merge's Agent Handler platform
+description: Enables LocalAI agents to securely access third-party integrations like Linear, GitHub, Slack, and more through Merge's Agent Handler platform
 icon: diagram-project
 mode: "wide"
 ---
 
 # `MergeAgentHandlerTool`
 
-The `MergeAgentHandlerTool` enables CrewAI agents to securely access third-party integrations through [Merge's Agent Handler](https://www.merge.dev/products/merge-agent-handler) platform. Agent Handler provides pre-built, secure connectors to popular tools like Linear, GitHub, Slack, Notion, and hundreds more—all with built-in authentication, permissions, and monitoring.
+The `MergeAgentHandlerTool` enables LocalAI agents to securely access third-party integrations through [Merge's Agent Handler](https://www.merge.dev/products/merge-agent-handler) platform. Agent Handler provides pre-built, secure connectors to popular tools like Linear, GitHub, Slack, Notion, and hundreds more—all with built-in authentication, permissions, and monitoring.
 
 ## Installation
 
@@ -29,7 +29,7 @@ uv pip install 'crewai[tools]'
 3. **Register users** who will authenticate with the third-party services
 4. **Get your API key** from the Agent Handler dashboard
 5. **Set environment variable**: `export AGENT_HANDLER_API_KEY='your-key-here'`
-6. **Start building** with the MergeAgentHandlerTool in CrewAI
+6. **Start building** with the MergeAgentHandlerTool in LocalAI
 
 ## Notes
 
@@ -56,7 +56,7 @@ linear_create_tool = MergeAgentHandlerTool.from_tool_name(
     registered_user_id="91b2b905-e866-40c8-8be2-efe53827a0aa"
 )
 
-# Create a CrewAI agent that uses the tool
+# Create a LocalAI agent that uses the tool
 project_manager = Agent(
     role='Project Manager',
     goal='Manage project tasks and issues efficiently',

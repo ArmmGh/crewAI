@@ -22,9 +22,9 @@ source venv/bin/activate
 # venv\Scripts\activate
 ```
 
-### Step 2: Install CrewAI Tools
+### Step 2: Install LocalAI Tools
 
-To incorporate this tool into your project, install CrewAI with tools support:
+To incorporate this tool into your project, install LocalAI with tools support:
 
 ```shell
 pip install 'crewai[tools]'
@@ -72,7 +72,7 @@ You can do this via the [Agent Handler dashboard](https://ah.merge.dev) or the [
 
 ### Example 1: Using a specific tool
 
-The following example demonstrates how to initialize a specific tool and use it with a CrewAI agent:
+The following example demonstrates how to initialize a specific tool and use it with a LocalAI agent:
 
 ```python
 from crewai_tools import MergeAgentHandlerTool

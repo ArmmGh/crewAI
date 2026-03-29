@@ -1,4 +1,4 @@
-"""MCP server configuration models for CrewAI agents.
+"""MCP server configuration models for LocalAI agents.
 
 This module provides Pydantic models for configuring MCP servers with
 various transport types, similar to OpenAI's Agents SDK.

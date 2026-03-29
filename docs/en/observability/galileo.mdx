@@ -1,15 +1,15 @@
 ---
 title: Galileo
-description: Galileo integration for CrewAI tracing and evaluation
+description: Galileo integration for LocalAI tracing and evaluation
 icon: telescope
 mode: "wide"
 ---
 
 ## Overview
 
-This guide demonstrates how to integrate **Galileo** with **CrewAI**
+This guide demonstrates how to integrate **Galileo** with **LocalAI**
 for comprehensive tracing and Evaluation Engineering.
-By the end of this guide, you will be able to trace your CrewAI agents,
+By the end of this guide, you will be able to trace your LocalAI agents,
 monitor their performance, and evaluate their behaviour with
 Galileo's powerful observability platform.
 
@@ -22,16 +22,16 @@ transparency, and continuous improvement across the AI lifecycle.
 
 ## Getting started
 
-This tutorial follows the [CrewAI quickstart](/en/quickstart) and shows how to add
-Galileo's [CrewAIEventListener](https://v2docs.galileo.ai/sdk-api/python/reference/handlers/crewai/handler),
+This tutorial follows the [LocalAI quickstart](/en/quickstart) and shows how to add
+Galileo's [LocalAIEventListener](https://v2docs.galileo.ai/sdk-api/python/reference/handlers/crewai/handler),
 an event handler.
 For more information, see Galileo’s
-[Add Galileo to a CrewAI Application](https://v2docs.galileo.ai/how-to-guides/third-party-integrations/add-galileo-to-crewai/add-galileo-to-crewai)
+[Add Galileo to a LocalAI Application](https://v2docs.galileo.ai/how-to-guides/third-party-integrations/add-galileo-to-crewai/add-galileo-to-crewai)
 how-to guide.
 
-> **Note** This tutorial assumes you have completed the [CrewAI quickstart](/en/quickstart).
+> **Note** This tutorial assumes you have completed the [LocalAI quickstart](/en/quickstart).
 If you want a completed comprehensive example, see the Galileo
-[CrewAI sdk-example repo](https://github.com/rungalileo/sdk-examples/tree/main/python/agent/crew-ai).
+[LocalAI sdk-example repo](https://github.com/rungalileo/sdk-examples/tree/main/python/agent/crew-ai).
 
 ### Step 1: Install dependencies
 
@@ -44,7 +44,7 @@ preferred tool:
 uv add galileo 
 ```
 
-### Step 2: Add to the .env file from the [CrewAI quickstart](/en/quickstart)
+### Step 2: Add to the .env file from the [LocalAI quickstart](/en/quickstart)
 
 ```bash
 # Your Galileo API key
@@ -59,12 +59,12 @@ GALILEO_LOG_STREAM="your-galileo-log-stream "
 
 ### Step 3: Add the Galileo event listener
 
-To enable logging with Galileo, you need to create an instance of the `CrewAIEventListener`.
-Import the Galileo CrewAI handler package by
+To enable logging with Galileo, you need to create an instance of the `LocalAIEventListener`.
+Import the Galileo LocalAI handler package by
 adding the following code at the top of your main.py file:
 
 ```python
-from galileo.handlers.crewai.handler import CrewAIEventListener
+from galileo.handlers.crewai.handler import LocalAIEventListener
 ```
 
 At the start of your run function, create the event listener:
@@ -72,16 +72,16 @@ At the start of your run function, create the event listener:
 ```python
 def run():
     # Create the event listener
-    CrewAIEventListener()
+    LocalAIEventListener()
     # The rest of your existing code goes here
 ```
 
 When you create the listener instance, it is automatically
-registered with CrewAI.
+registered with LocalAI.
 
 ### Step 4: Run your crew
 
-Run your crew with the CrewAI CLI:
+Run your crew with the LocalAI CLI:
 
 ```bash
 crewai run
@@ -95,16 +95,16 @@ Once your crew has finished, the traces will be flushed and appear in Galileo.
   
 ## Understanding the Galileo Integration
 
-Galileo integrates with CrewAI by registering an event listener
+Galileo integrates with LocalAI by registering an event listener
 that captures Crew execution events (e.g., agent actions, tool calls, model responses)
 and forwards them to Galileo for observability and evaluation.
 
 ### Understanding the event listener
 
-Creating a `CrewAIEventListener()` instance is all that’s
-required to enable Galileo for a CrewAI run. When instantiated, the listener:
+Creating a `LocalAIEventListener()` instance is all that’s
+required to enable Galileo for a LocalAI run. When instantiated, the listener:
 
-- Automatically registers itself with CrewAI
+- Automatically registers itself with LocalAI
 - Reads Galileo configuration from environment variables
 - Logs all run data to the Galileo project and log stream specified by
   `GALILEO_PROJECT` and `GALILEO_LOG_STREAM`

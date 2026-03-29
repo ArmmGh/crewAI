@@ -1,13 +1,13 @@
 ---
 title: Crews
-description: Compreendendo e utilizando crews no framework crewAI com atributos e funcionalidades abrangentes.
+description: Compreendendo e utilizando crews no framework localAI com atributos e funcionalidades abrangentes.
 icon: people-group
 mode: "wide"
 ---
 
 ## Visão Geral
 
-Uma crew no crewAI representa um grupo colaborativo de agentes trabalhando em conjunto para alcançar um conjunto de tarefas. Cada crew define a estratégia de execução de tarefas, colaboração entre agentes e o fluxo de trabalho geral.
+Uma crew no localAI representa um grupo colaborativo de agentes trabalhando em conjunto para alcançar um conjunto de tarefas. Cada crew define a estratégia de execução de tarefas, colaboração entre agentes e o fluxo de trabalho geral.
 
 ## Atributos de Crew
 
@@ -26,7 +26,7 @@ Uma crew no crewAI representa um grupo colaborativo de agentes trabalhando em co
 | **Embedder** _(opcional)_             | `embedder`              | Configuração do embedder a ser utilizado pela crew. Atualmente mais usado por memory. O padrão é `{"provider": "openai"}`.                                                        |
 | **Step Callback** _(opcional)_        | `step_callback`         | Uma função chamada após cada etapa de cada agente. Pode ser usada para registrar as ações do agente ou executar outras operações; não sobrescreve o `step_callback` específico do agente.                                |
 | **Task Callback** _(opcional)_        | `task_callback`         | Uma função chamada após a conclusão de cada tarefa. Útil para monitoramento ou para operações adicionais pós-execução da task.                                                     |
-| **Share Crew** _(opcional)_           | `share_crew`            | Se deseja compartilhar as informações completas da crew e execução com a equipe do crewAI para melhorar a biblioteca e nos permitir treinar modelos.                                 |
+| **Share Crew** _(opcional)_           | `share_crew`            | Se deseja compartilhar as informações completas da crew e execução com a equipe do localAI para melhorar a biblioteca e nos permitir treinar modelos.                                 |
 | **Output Log File** _(opcional)_      | `output_log_file`       | Defina como True para salvar logs como logs.txt no diretório atual ou forneça um caminho de arquivo. Os logs estarão em formato JSON se o nome terminar com .json, caso contrário .txt. O padrão é `None`.                |
 | **Manager Agent** _(opcional)_        | `manager_agent`         | `manager` define um agente customizado que será utilizado como gerente.                                                                                                             |
 | **Prompt File** _(opcional)_          | `prompt_file`           | Caminho para o arquivo JSON de prompt a ser utilizado pela crew.                                                                                                                   |
@@ -41,13 +41,13 @@ Uma crew no crewAI representa um grupo colaborativo de agentes trabalhando em co
 
 ## Criando Crews
 
-Existem duas maneiras de criar crews no CrewAI: utilizando **configuração YAML (recomendado)** ou definindo diretamente **em código**.
+Existem duas maneiras de criar crews no LocalAI: utilizando **configuração YAML (recomendado)** ou definindo diretamente **em código**.
 
 ### Configuração YAML (Recomendado)
 
-O uso da configuração YAML proporciona uma forma mais limpa e fácil de manter para definir crews, sendo consistente com a definição de agentes e tasks em projetos CrewAI.
+O uso da configuração YAML proporciona uma forma mais limpa e fácil de manter para definir crews, sendo consistente com a definição de agentes e tasks em projetos LocalAI.
 
-Após criar seu projeto CrewAI conforme descrito na seção [Instalação](/pt-BR/installation), você pode definir sua crew em uma classe que herda de `CrewBase` e utiliza decorators para definir agentes, tarefas e a própria crew.
+Após criar seu projeto LocalAI conforme descrito na seção [Instalação](/pt-BR/installation), você pode definir sua crew em uma classe que herda de `CrewBase` e utiliza decorators para definir agentes, tarefas e a própria crew.
 
 #### Exemplo de Classe Crew com Decorators
 
@@ -133,7 +133,7 @@ A classe `CrewBase`, junto com esses decorators, automatiza a coleta de agentes 
 
 #### Visão geral dos Decorators de `annotations.py`
 
-O CrewAI fornece vários decorators no arquivo `annotations.py` que são usados para marcar métodos dentro de sua classe crew para tratamento especial:
+O LocalAI fornece vários decorators no arquivo `annotations.py` que são usados para marcar métodos dentro de sua classe crew para tratamento especial:
 
 - `@CrewBase`: Marca a classe como classe base de crew.
 - `@agent`: Denota um método que retorna um objeto `Agent`.
@@ -206,7 +206,7 @@ Neste exemplo:
 
 ## Saída da Crew
 
-A saída de uma crew no framework CrewAI é encapsulada na classe `CrewOutput`.
+A saída de uma crew no framework LocalAI é encapsulada na classe `CrewOutput`.
 Essa classe fornece uma forma estruturada de acessar os resultados da execução da crew, incluindo vários formatos como string bruta, JSON e modelos Pydantic.
 O `CrewOutput` inclui os resultados da tarefa final, uso de tokens e as saídas das tasks individuais.
 
@@ -305,7 +305,7 @@ print(result)
 
 ### Diferentes Formas de Iniciar uma Crew
 
-Assim que sua crew estiver definida, inicie o fluxo de trabalho com o método kickoff apropriado. O CrewAI oferece vários métodos para melhor controle do processo.
+Assim que sua crew estiver definida, inicie o fluxo de trabalho com o método kickoff apropriado. O LocalAI oferece vários métodos para melhor controle do processo.
 
 #### Métodos Síncronos
 
@@ -314,7 +314,7 @@ Assim que sua crew estiver definida, inicie o fluxo de trabalho com o método ki
 
 #### Métodos Assíncronos
 
-O CrewAI oferece duas abordagens para execução assíncrona:
+O LocalAI oferece duas abordagens para execução assíncrona:
 
 | Método | Tipo | Descrição |
 |--------|------|-------------|
@@ -390,7 +390,7 @@ Saiba mais sobre streaming no guia [Streaming na Execução da Crew](/pt-BR/lear
 
 Agora é possível reiniciar a execução a partir de uma task específica usando o comando CLI `replay`.
 
-O recurso de replay no CrewAI permite reexecutar a partir de uma task específica através da interface de linha de comando (CLI). Rodando o comando `crewai replay -t <task_id>`, você pode especificar o `task_id` para o processo de replay.
+O recurso de replay no LocalAI permite reexecutar a partir de uma task específica através da interface de linha de comando (CLI). Rodando o comando `crewai replay -t <task_id>`, você pode especificar o `task_id` para o processo de replay.
 
 Kickoffs agora salvam localmente as saídas das tasks dos kickoffs recentes para permitir replay posteriormente.
 
@@ -399,7 +399,7 @@ Kickoffs agora salvam localmente as saídas das tasks dos kickoffs recentes para
 Para usar o recurso de replay, siga estes passos:
 
 1. Abra seu terminal ou prompt de comando.
-2. Navegue até o diretório do seu projeto CrewAI.
+2. Navegue até o diretório do seu projeto LocalAI.
 3. Execute o seguinte comando:
 
 Para visualizar os IDs das últimas tasks do kickoff, utilize:

@@ -1,13 +1,13 @@
 ---
 title: Datadog Integration
-description: Learn how to integrate Datadog with CrewAI to submit LLM Observability traces to Datadog.
+description: Learn how to integrate Datadog with LocalAI to submit LLM Observability traces to Datadog.
 icon: dog
 mode: "wide"
 ---
 
-# Integrate Datadog with CrewAI
+# Integrate Datadog with LocalAI
 
-This guide will demonstrate how to integrate **[Datadog LLM Observability](https://docs.datadoghq.com/llm_observability/)** with **CrewAI** using [Datadog auto-instrumentation](https://docs.datadoghq.com/llm_observability/instrumentation/auto_instrumentation?tab=python). By the end of this guide, you will be able to submit LLM Observability traces to Datadog and view your CrewAI agent runs in Datadog LLM Observability's [Agentic Execution View](https://docs.datadoghq.com/llm_observability/monitoring/agent_monitoring).
+This guide will demonstrate how to integrate **[Datadog LLM Observability](https://docs.datadoghq.com/llm_observability/)** with **LocalAI** using [Datadog auto-instrumentation](https://docs.datadoghq.com/llm_observability/instrumentation/auto_instrumentation?tab=python). By the end of this guide, you will be able to submit LLM Observability traces to Datadog and view your LocalAI agent runs in Datadog LLM Observability's [Agentic Execution View](https://docs.datadoghq.com/llm_observability/monitoring/agent_monitoring).
 
 ## What is Datadog LLM Observability?
 
@@ -45,7 +45,7 @@ export GEMINI_API_KEY=<YOUR_GEMINI_API_KEY>
 ...
 ```
 
-### Create a CrewAI Agent Application
+### Create a LocalAI Agent Application
 
 ```python
 # crewai_agent.py
@@ -106,4 +106,4 @@ Additionally, you can view the execution graph view of the trace, which shows th
 ## References
 
 - [Datadog LLM Observability](https://www.datadoghq.com/product/llm-observability/)
-- [Datadog LLM Observability CrewAI Auto-Instrumentation](https://docs.datadoghq.com/llm_observability/instrumentation/auto_instrumentation?tab=python#crew-ai)
+- [Datadog LLM Observability LocalAI Auto-Instrumentation](https://docs.datadoghq.com/llm_observability/instrumentation/auto_instrumentation?tab=python#crew-ai)

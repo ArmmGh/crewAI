@@ -69,7 +69,7 @@ class DocsAnalysis(BaseModel):
 # --- Prompts ---
 
 _ANALYZE_SYSTEM: Final[str] = """\
-You are a documentation analyst for the CrewAI open-source framework.
+You are a documentation analyst for the LocalAI open-source framework.
 
 Analyze git diffs and determine what documentation changes are needed.
 
@@ -86,12 +86,12 @@ Do NOT flag internal refactors, test changes, CI changes, or type annotation fix
 _ANALYZE_USER: Final[str] = "Analyze the following git diff:\n\n"
 
 _GENERATE_DOC_PROMPT: Final[str] = """\
-You are a technical writer for the CrewAI open-source framework.
+You are a technical writer for the LocalAI open-source framework.
 
 Generate documentation in MDX format for the following change.
 
 Rules:
-- Use the same style and structure as existing CrewAI docs
+- Use the same style and structure as existing LocalAI docs
 - Start with YAML frontmatter: title, description, icon (optional)
 - Use MDX components: <Tip>, <Warning>, <Note>, <Info>, <Steps>, <Step>, \
 <CodeGroup>, <Card>, <CardGroup>, <Tabs>, <Tab>, <Accordion>, <AccordionGroup>
@@ -109,7 +109,7 @@ Context about the change:
 Generate the full MDX file content:"""
 
 _UPDATE_DOC_PROMPT: Final[str] = """\
-You are a technical writer for the CrewAI open-source framework.
+You are a technical writer for the LocalAI open-source framework.
 
 Update the following existing documentation based on the code changes described below.
 

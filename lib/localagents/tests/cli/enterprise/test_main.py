@@ -48,7 +48,7 @@ class TestEnterpriseConfigureCommand(unittest.TestCase):
 
         expected_headers = {
             "Content-Type": "application/json",
-            "User-Agent": "CrewAI-CLI/1.0.0",
+            "User-Agent": "LocalAI-CLI/1.0.0",
             "X-Crewai-Version": "1.0.0",
         }
         mock_requests_get.assert_called_once_with(

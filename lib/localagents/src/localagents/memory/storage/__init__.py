@@ -1,1 +1,1 @@
-"""Memory storage implementations for crewAI."""
+"""Memory storage implementations for localAI."""

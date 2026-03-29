@@ -1,4 +1,4 @@
-"""Base event listener for CrewAI event system."""
+"""Base event listener for LocalAI event system."""
 
 from abc import ABC, abstractmethod
 

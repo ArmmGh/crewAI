@@ -9,7 +9,7 @@ mode: "wide"
 
 ## Descrição
 
-O `CodeInterpreterTool` permite que agentes CrewAI executem códigos Python 3 gerados autonomamente. Essa funcionalidade é particularmente valiosa, pois permite que os agentes criem códigos, os executem, obtenham os resultados e usem essas informações para orientar decisões e ações subsequentes.
+O `CodeInterpreterTool` permite que agentes LocalAI executem códigos Python 3 gerados autonomamente. Essa funcionalidade é particularmente valiosa, pois permite que os agentes criem códigos, os executem, obtenham os resultados e usem essas informações para orientar decisões e ações subsequentes.
 
 Há diversas formas de usar esta ferramenta:
 
@@ -35,7 +35,7 @@ O `CodeInterpreterTool` registra a estratégia de execução selecionada no STDO
 
 ## Instalação
 
-Para utilizar esta ferramenta, você precisa instalar o pacote de ferramentas CrewAI:
+Para utilizar esta ferramenta, você precisa instalar o pacote de ferramentas LocalAI:
 
 ```shell
 pip install 'crewai[tools]'
@@ -43,7 +43,7 @@ pip install 'crewai[tools]'
 
 ## Exemplo
 
-O exemplo a seguir demonstra como usar o `CodeInterpreterTool` com um agente CrewAI:
+O exemplo a seguir demonstra como usar o `CodeInterpreterTool` com um agente LocalAI:
 
 ```python Code
 from crewai import Agent, Task, Crew, Process
@@ -122,7 +122,7 @@ Ao utilizar a ferramenta com um agente, o agente precisará fornecer:
 
 ## Exemplo de Integração com Agente
 
-Aqui está um exemplo mais detalhado de como integrar o `CodeInterpreterTool` com um agente CrewAI:
+Aqui está um exemplo mais detalhado de como integrar o `CodeInterpreterTool` com um agente LocalAI:
 
 ```python Code
 from crewai import Agent, Task, Crew
@@ -207,4 +207,4 @@ Por padrão, o `CodeInterpreterTool` executa o código em um container Docker is
 
 ## Conclusão
 
-O `CodeInterpreterTool` oferece uma maneira poderosa para que agentes CrewAI executem código Python em um ambiente relativamente seguro. Permitindo que agentes escrevam e executem códigos, ele amplia significativamente sua capacidade de resolução de problemas, especialmente para tarefas que envolvem análise de dados, cálculos ou outros trabalhos computacionais. Esta ferramenta é especialmente útil para agentes que precisam realizar operações complexas que são mais eficientemente expressas em código do que em linguagem natural.
+O `CodeInterpreterTool` oferece uma maneira poderosa para que agentes LocalAI executem código Python em um ambiente relativamente seguro. Permitindo que agentes escrevam e executem códigos, ele amplia significativamente sua capacidade de resolução de problemas, especialmente para tarefas que envolvem análise de dados, cálculos ou outros trabalhos computacionais. Esta ferramenta é especialmente útil para agentes que precisam realizar operações complexas que são mais eficientemente expressas em código do que em linguagem natural.

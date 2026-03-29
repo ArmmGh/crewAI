@@ -1,13 +1,13 @@
 ---
 title: Sequential Processes
-description: A comprehensive guide to utilizing the sequential processes for task execution in CrewAI projects.
+description: A comprehensive guide to utilizing the sequential processes for task execution in LocalAI projects.
 icon: forward
 mode: "wide"
 ---
 
 ## Introduction
 
-CrewAI offers a flexible framework for executing tasks in a structured manner, supporting both sequential and hierarchical processes. 
+LocalAI offers a flexible framework for executing tasks in a structured manner, supporting both sequential and hierarchical processes. 
 This guide outlines how to effectively implement these processes to ensure efficient task execution and project completion.
 
 ## Sequential Process Overview
@@ -101,7 +101,7 @@ To create an asynchronous task, set `async_execution=True` when defining the tas
 
 ### Memory and Caching
 
-CrewAI supports both memory and caching features:
+LocalAI supports both memory and caching features:
 
 - **Memory**: Enable by setting `memory=True` when creating the Crew. This allows agents to retain information across tasks.
 - **Caching**: By default, caching is enabled. Set `cache=False` to disable it.
@@ -115,7 +115,7 @@ You can set callbacks at both the task and step level:
 
 ### Usage Metrics
 
-CrewAI tracks token usage across all tasks and agents. You can access these metrics after execution.
+LocalAI tracks token usage across all tasks and agents. You can access these metrics after execution.
 
 ## Best Practices for Sequential Processes
 

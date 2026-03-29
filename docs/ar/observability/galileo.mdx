@@ -1,21 +1,21 @@
 ---
 title: Galileo
-description: تكامل Galileo مع CrewAI للتتبع والتقييم
+description: تكامل Galileo مع LocalAI للتتبع والتقييم
 icon: telescope
 mode: "wide"
 ---
 
 ## نظرة عامة
 
-يوضح هذا الدليل كيفية دمج **Galileo** مع **CrewAI** للتتبع الشامل وهندسة التقييم. بنهاية هذا الدليل، ستتمكن من تتبع وكلاء CrewAI ومراقبة أدائهم وتقييم سلوكهم باستخدام منصة المراقبة القوية من Galileo.
+يوضح هذا الدليل كيفية دمج **Galileo** مع **LocalAI** للتتبع الشامل وهندسة التقييم. بنهاية هذا الدليل، ستتمكن من تتبع وكلاء LocalAI ومراقبة أدائهم وتقييم سلوكهم باستخدام منصة المراقبة القوية من Galileo.
 
 > **ما هو Galileo؟** [Galileo](https://galileo.ai) هو منصة تقييم ومراقبة للذكاء الاصطناعي توفر تتبعاً شاملاً وتقييماً ومراقبة لتطبيقات الذكاء الاصطناعي. تمكّن الفرق من التقاط البيانات الحقيقية وإنشاء حواجز قوية وتشغيل تجارب منهجية مع تتبع تجارب مدمج وتحليلات أداء.
 
 ## البدء
 
-يتبع هذا البرنامج التعليمي [البدء السريع مع CrewAI](/ar/quickstart) ويوضح كيفية إضافة [CrewAIEventListener](https://v2docs.galileo.ai/sdk-api/python/reference/handlers/crewai/handler) من Galileo كمعالج أحداث.
+يتبع هذا البرنامج التعليمي [البدء السريع مع LocalAI](/ar/quickstart) ويوضح كيفية إضافة [LocalAIEventListener](https://v2docs.galileo.ai/sdk-api/python/reference/handlers/crewai/handler) من Galileo كمعالج أحداث.
 
-> **ملاحظة** يفترض هذا البرنامج التعليمي أنك أكملت [البدء السريع مع CrewAI](/ar/quickstart).
+> **ملاحظة** يفترض هذا البرنامج التعليمي أنك أكملت [البدء السريع مع LocalAI](/ar/quickstart).
 
 ### الخطوة 1: تثبيت الاعتماديات
 
@@ -25,7 +25,7 @@ mode: "wide"
 uv add galileo
 ```
 
-### الخطوة 2: أضف إلى ملف .env من [البدء السريع مع CrewAI](/ar/quickstart)
+### الخطوة 2: أضف إلى ملف .env من [البدء السريع مع LocalAI](/ar/quickstart)
 
 ```bash
 # Your Galileo API key
@@ -40,10 +40,10 @@ GALILEO_LOG_STREAM="your-galileo-log-stream "
 
 ### الخطوة 3: إضافة مستمع أحداث Galileo
 
-لتفعيل التسجيل مع Galileo، تحتاج إلى إنشاء مثيل من `CrewAIEventListener`. استورد حزمة معالج CrewAI من Galileo بإضافة الكود التالي في أعلى ملف main.py:
+لتفعيل التسجيل مع Galileo، تحتاج إلى إنشاء مثيل من `LocalAIEventListener`. استورد حزمة معالج LocalAI من Galileo بإضافة الكود التالي في أعلى ملف main.py:
 
 ```python
-from galileo.handlers.crewai.handler import CrewAIEventListener
+from galileo.handlers.crewai.handler import LocalAIEventListener
 ```
 
 في بداية دالة التشغيل، أنشئ مستمع الأحداث:
@@ -51,15 +51,15 @@ from galileo.handlers.crewai.handler import CrewAIEventListener
 ```python
 def run():
     # Create the event listener
-    CrewAIEventListener()
+    LocalAIEventListener()
     # The rest of your existing code goes here
 ```
 
-عند إنشاء مثيل المستمع، يتم تسجيله تلقائياً مع CrewAI.
+عند إنشاء مثيل المستمع، يتم تسجيله تلقائياً مع LocalAI.
 
 ### الخطوة 4: شغّل طاقمك
 
-شغّل طاقمك باستخدام CrewAI CLI:
+شغّل طاقمك باستخدام LocalAI CLI:
 
 ```bash
 crewai run
@@ -73,13 +73,13 @@ crewai run
 
 ## فهم تكامل Galileo
 
-يتكامل Galileo مع CrewAI عن طريق تسجيل مستمع أحداث يلتقط أحداث تنفيذ الطاقم (مثل إجراءات الوكلاء واستدعاءات الأدوات واستجابات النماذج) ويعيد توجيهها إلى Galileo للمراقبة والتقييم.
+يتكامل Galileo مع LocalAI عن طريق تسجيل مستمع أحداث يلتقط أحداث تنفيذ الطاقم (مثل إجراءات الوكلاء واستدعاءات الأدوات واستجابات النماذج) ويعيد توجيهها إلى Galileo للمراقبة والتقييم.
 
 ### فهم مستمع الأحداث
 
-إنشاء مثيل `CrewAIEventListener()` هو كل ما يلزم لتفعيل Galileo لتشغيل CrewAI. عند الإنشاء، يقوم المستمع بـ:
+إنشاء مثيل `LocalAIEventListener()` هو كل ما يلزم لتفعيل Galileo لتشغيل LocalAI. عند الإنشاء، يقوم المستمع بـ:
 
-- التسجيل تلقائياً مع CrewAI
+- التسجيل تلقائياً مع LocalAI
 - قراءة إعدادات Galileo من متغيرات البيئة
 - تسجيل جميع بيانات التشغيل في مشروع Galileo وتدفق السجل المحدد بواسطة `GALILEO_PROJECT` و `GALILEO_LOG_STREAM`
 

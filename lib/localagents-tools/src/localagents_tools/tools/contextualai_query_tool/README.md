@@ -1,7 +1,7 @@
 # ContextualAIQueryTool
 
 ## Description
-This tool is designed to integrate Contextual AI's enterprise-grade RAG agents with CrewAI. Run this tool to query existing Contextual AI RAG agents that have been pre-configured with documents and knowledge bases.
+This tool is designed to integrate Contextual AI's enterprise-grade RAG agents with LocalAI. Run this tool to query existing Contextual AI RAG agents that have been pre-configured with documents and knowledge bases.
 
 ## Installation
 To incorporate this tool into your project, follow the installation instructions below:

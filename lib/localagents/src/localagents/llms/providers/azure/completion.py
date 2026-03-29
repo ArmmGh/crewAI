@@ -507,10 +507,10 @@ class AzureCompletion(BaseLLM):
     def _convert_tools_for_interference(  # type: ignore[override]
         self, tools: list[dict[str, Any]]
     ) -> list[ChatCompletionsToolDefinition]:
-        """Convert CrewAI tool format to Azure OpenAI function calling format.
+        """Convert LocalAI tool format to Azure OpenAI function calling format.
 
         Args:
-            tools: List of CrewAI tool definitions
+            tools: List of LocalAI tool definitions
 
         Returns:
             List of Azure ChatCompletionsToolDefinition objects

@@ -25,7 +25,7 @@ _JSON_OBJECT_PATTERN: Final[re.Pattern[str]] = re.compile(r"\{[\s\S]*}")
 
 
 class BaseConverterAdapter(ABC):
-    """Abstract base class for converter adapters in CrewAI.
+    """Abstract base class for converter adapters in LocalAI.
 
     Defines the common interface for converting agent outputs to structured formats.
     All converter adapters must implement the methods defined here.

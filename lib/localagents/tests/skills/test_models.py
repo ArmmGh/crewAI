@@ -42,7 +42,7 @@ class TestSkillFrontmatter:
             name="web-search",
             description="Search the web",
             license="Apache-2.0",
-            compatibility="crewai>=0.1.0",
+            compatibility="localai>=0.1.0",
             metadata={"author": "test"},
             allowed_tools=["browser"],
         )

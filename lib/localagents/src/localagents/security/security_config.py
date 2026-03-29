@@ -1,12 +1,12 @@
 """Security Configuration Module
 
-This module provides configuration for CrewAI security features, including:
+This module provides configuration for LocalAI security features, including:
 - Authentication settings
 - Scoping rules
 - Fingerprinting
 
 The SecurityConfig class is the primary interface for managing security settings
-in CrewAI applications.
+in LocalAI applications.
 """
 
 from typing import Any
@@ -19,9 +19,9 @@ from crewai.security.fingerprint import Fingerprint
 
 class SecurityConfig(BaseModel):
     """
-    Configuration for CrewAI security features.
+    Configuration for LocalAI security features.
 
-    This class manages security settings for CrewAI agents, including:
+    This class manages security settings for LocalAI agents, including:
     - Authentication credentials *TODO*
     - Identity information (agent fingerprints)
     - Scoping rules *TODO*

@@ -51,7 +51,7 @@ class ComposioTool(BaseTool):
         action: t.Any,
         **kwargs: t.Any,
     ) -> te.Self:
-        """Wrap a composio tool as crewAI tool."""
+        """Wrap a composio tool as localAI tool."""
         from composio import Action, ComposioToolSet
         from composio.constants import DEFAULT_ENTITY_ID
         from composio.utils.shared import json_schema_to_model

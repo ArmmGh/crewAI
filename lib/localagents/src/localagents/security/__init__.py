@@ -1,7 +1,7 @@
 """
-CrewAI security module.
+LocalAI security module.
 
-This module provides security-related functionality for CrewAI, including:
+This module provides security-related functionality for LocalAI, including:
 - Fingerprinting for component identity and tracking
 - Security configuration for controlling access and permissions
 - Future: authentication, scoping, and delegation mechanisms

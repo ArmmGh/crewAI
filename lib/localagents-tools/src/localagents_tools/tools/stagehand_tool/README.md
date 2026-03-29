@@ -1,6 +1,6 @@
 # Stagehand Web Automation Tool
 
-This tool integrates the [Stagehand](https://docs.stagehand.dev/) framework with CrewAI, allowing agents to interact with websites and automate browser tasks using natural language instructions.
+This tool integrates the [Stagehand](https://docs.stagehand.dev/) framework with LocalAI, allowing agents to interact with websites and automate browser tasks using natural language instructions.
 
 ## Description
 
@@ -13,7 +13,7 @@ Stagehand is a powerful browser automation framework built by Browserbase that a
 - Observe and identify elements
 - Perform complex workflows
 
-The StagehandTool wraps the Stagehand Python SDK to provide CrewAI agents with the ability to control a real web browser and interact with websites using three core primitives:
+The StagehandTool wraps the Stagehand Python SDK to provide LocalAI agents with the ability to control a real web browser and interact with websites using three core primitives:
 
 1. **Act**: Perform actions like clicking, typing, or navigating
 2. **Extract**: Extract structured data from web pages
@@ -270,4 +270,4 @@ stagehand_tool = StagehandTool(
 
 For more information about Stagehand, visit [the Stagehand documentation](https://docs.stagehand.dev/).
 
-For questions about the CrewAI integration, join our [Slack](https://stagehand.dev/slack) or open an issue in this repository.
+For questions about the LocalAI integration, join our [Slack](https://stagehand.dev/slack) or open an issue in this repository.

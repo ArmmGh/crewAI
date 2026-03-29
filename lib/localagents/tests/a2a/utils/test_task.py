@@ -17,7 +17,7 @@ from crewai.a2a.utils.task import cancel, cancellable, execute
 
 @pytest.fixture
 def mock_agent() -> MagicMock:
-    """Create a mock CrewAI agent."""
+    """Create a mock LocalAI agent."""
     agent = MagicMock()
     agent.role = "Test Agent"
     agent.tools = []

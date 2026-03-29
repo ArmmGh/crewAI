@@ -1,4 +1,4 @@
-"""Project package for CrewAI."""
+"""Project package for LocalAI."""
 
 from crewai.project.annotations import (
     after_kickoff,

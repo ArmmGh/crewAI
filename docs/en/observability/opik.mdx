@@ -1,6 +1,6 @@
 ---
 title: Opik Integration
-description: Learn how to use Comet Opik to debug, evaluate, and monitor your CrewAI applications with comprehensive tracing, automated evaluations, and production-ready dashboards. 
+description: Learn how to use Comet Opik to debug, evaluate, and monitor your LocalAI applications with comprehensive tracing, automated evaluations, and production-ready dashboards. 
 icon: meteor
 mode: "wide"
 ---
@@ -10,10 +10,10 @@ mode: "wide"
 With [Comet Opik](https://www.comet.com/docs/opik/), debug, evaluate, and monitor your LLM applications, RAG systems, and agentic workflows with comprehensive tracing, automated evaluations, and production-ready dashboards.
 
 <Frame caption="Opik Agent Dashboard">
-  <img src="/images/opik-crewai-dashboard.png" alt="Opik agent monitoring example with CrewAI" />
+  <img src="/images/opik-crewai-dashboard.png" alt="Opik agent monitoring example with LocalAI" />
 </Frame>
 
-Opik provides comprehensive support for every stage of your CrewAI application development:
+Opik provides comprehensive support for every stage of your LocalAI application development:
 
 - **Log Traces and Spans**: Automatically track LLM calls and application logic to debug and analyze development and production systems. Manually or programmatically annotate, view, and compare responses across projects.
 - **Evaluate Your LLM Application's Performance**: Evaluate against a custom test set and run built-in evaluation metrics or define your own metrics in the SDK or UI.
@@ -27,7 +27,7 @@ To use the hosted version, simply [create a free Comet account](https://www.come
 
 To run the Opik platform locally, see our [installation guide](https://www.comet.com/docs/opik/self-host/overview/) for more information.
 
-For this guide we will use CrewAI’s quickstart example.
+For this guide we will use LocalAI’s quickstart example.
 
 <Steps>
     <Step title="Install required packages">
@@ -52,8 +52,8 @@ For this guide we will use CrewAI’s quickstart example.
       os.environ["OPENAI_API_KEY"] = getpass.getpass("Enter your OpenAI API key: ")
       ```
     </Step>
-    <Step title="Using CrewAI">
-      The first step is to create our project. We will use an example from CrewAI’s documentation:
+    <Step title="Using LocalAI">
+      The first step is to create our project. We will use an example from LocalAI’s documentation:
 
       ```python
       from crewai import Agent, Crew, Task, Process
@@ -114,7 +114,7 @@ For this guide we will use CrewAI’s quickstart example.
 
       print(result)
       ```
-      After running your CrewAI application, visit the Opik app to view:
+      After running your LocalAI application, visit the Opik app to view:
       - LLM traces, spans, and their metadata
       - Agent interactions and task execution flow
       - Performance metrics like latency and token usage
@@ -125,6 +125,6 @@ For this guide we will use CrewAI’s quickstart example.
 ## Resources
 
 - [🦉 Opik Documentation](https://www.comet.com/docs/opik/)
-- [👉 Opik + CrewAI Colab](https://colab.research.google.com/github/comet-ml/opik/blob/main/apps/opik-documentation/documentation/docs/cookbook/crewai.ipynb)
+- [👉 Opik + LocalAI Colab](https://colab.research.google.com/github/comet-ml/opik/blob/main/apps/opik-documentation/documentation/docs/cookbook/crewai.ipynb)
 - [🐦 X](https://x.com/cometml)
 - [💬 Slack](https://slack.comet.com/)

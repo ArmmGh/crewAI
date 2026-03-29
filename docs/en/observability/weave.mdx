@@ -1,6 +1,6 @@
 ---
 title: Weave Integration
-description: Learn how to use Weights & Biases (W&B) Weave to track, experiment with, evaluate, and improve your CrewAI applications.
+description: Learn how to use Weights & Biases (W&B) Weave to track, experiment with, evaluate, and improve your LocalAI applications.
 icon: radar
 mode: "wide"
 ---
@@ -9,16 +9,16 @@ mode: "wide"
 
 [Weights & Biases (W&B) Weave](https://weave-docs.wandb.ai/) is a framework for tracking, experimenting with, evaluating, deploying, and improving LLM-based applications. 
 
-![Overview of W&B Weave CrewAI tracing usage](/images/weave-tracing.gif)
+![Overview of W&B Weave LocalAI tracing usage](/images/weave-tracing.gif)
 
-Weave provides comprehensive support for every stage of your CrewAI application development:
+Weave provides comprehensive support for every stage of your LocalAI application development:
 
 - **Tracing & Monitoring**: Automatically track LLM calls and application logic to debug and analyze production systems
 - **Systematic Iteration**: Refine and iterate on prompts, datasets, and models
 - **Evaluation**: Use custom or pre-built scorers to systematically assess and enhance agent performance
 - **Guardrails**: Protect your agents with pre- and post-safeguards for content moderation and prompt safety
 
-Weave automatically captures traces for your CrewAI applications, enabling you to monitor and analyze your agents' performance, interactions, and execution flow. This helps you build better evaluation datasets and optimize your agent workflows.
+Weave automatically captures traces for your LocalAI applications, enabling you to monitor and analyze your agents' performance, interactions, and execution flow. This helps you build better evaluation datasets and optimize your agent workflows.
 
 ## Setup Instructions
 
@@ -96,30 +96,30 @@ Weave automatically captures traces for your CrewAI applications, enabling you t
       ```
     </Step>
     <Step title="View Traces in Weave">
-      After running your CrewAI application, visit the Weave URL provided during initialization to view:
+      After running your LocalAI application, visit the Weave URL provided during initialization to view:
       - LLM calls and their metadata
       - Agent interactions and task execution flow
       - Performance metrics like latency and token usage
       - Any errors or issues that occurred during execution
 
       <Frame caption="Weave Tracing Dashboard">
-        <img src="/images/weave-tracing.png" alt="Weave tracing example with CrewAI" />
+        <img src="/images/weave-tracing.png" alt="Weave tracing example with LocalAI" />
       </Frame>
     </Step>
 </Steps>
 
 ## Features
 
-- Weave automatically captures all CrewAI operations: agent interactions and task executions; LLM calls with metadata and token usage; tool usage and results.
-- The integration supports all CrewAI execution methods: `kickoff()`, `kickoff_for_each()`, `kickoff_async()`, and `kickoff_for_each_async()`.
-- Automatic tracing of all [crewAI-tools](https://github.com/crewAIInc/crewAI-tools).
+- Weave automatically captures all LocalAI operations: agent interactions and task executions; LLM calls with metadata and token usage; tool usage and results.
+- The integration supports all LocalAI execution methods: `kickoff()`, `kickoff_for_each()`, `kickoff_async()`, and `kickoff_for_each_async()`.
+- Automatic tracing of all [localAI-tools](https://github.com/localAIInc/localAI-tools).
 - Flow feature support with decorator patching (`@start`, `@listen`, `@router`, `@or_`, `@and_`).
-- Track custom guardrails passed to CrewAI `Task` with `@weave.op()`.
+- Track custom guardrails passed to LocalAI `Task` with `@weave.op()`.
 
-For detailed information on what's supported, visit the [Weave CrewAI documentation](https://weave-docs.wandb.ai/guides/integrations/crewai/#getting-started-with-flow).
+For detailed information on what's supported, visit the [Weave LocalAI documentation](https://weave-docs.wandb.ai/guides/integrations/crewai/#getting-started-with-flow).
 
 ## Resources
 
 - [📘 Weave Documentation](https://weave-docs.wandb.ai)
-- [📊 Example Weave x CrewAI dashboard](https://wandb.ai/ayut/crewai_demo/weave/traces?cols=%7B%22wb_run_id%22%3Afalse%2C%22attributes.weave.client_version%22%3Afalse%2C%22attributes.weave.os_name%22%3Afalse%2C%22attributes.weave.os_release%22%3Afalse%2C%22attributes.weave.os_version%22%3Afalse%2C%22attributes.weave.source%22%3Afalse%2C%22attributes.weave.sys_version%22%3Afalse%7D&peekPath=%2Fayut%2Fcrewai_demo%2Fcalls%2F0195c838-38cb-71a2-8a15-651ecddf9d89)
+- [📊 Example Weave x LocalAI dashboard](https://wandb.ai/ayut/crewai_demo/weave/traces?cols=%7B%22wb_run_id%22%3Afalse%2C%22attributes.weave.client_version%22%3Afalse%2C%22attributes.weave.os_name%22%3Afalse%2C%22attributes.weave.os_release%22%3Afalse%2C%22attributes.weave.os_version%22%3Afalse%2C%22attributes.weave.source%22%3Afalse%2C%22attributes.weave.sys_version%22%3Afalse%7D&peekPath=%2Fayut%2Fcrewai_demo%2Fcalls%2F0195c838-38cb-71a2-8a15-651ecddf9d89)
 - [🐦 X](https://x.com/weave_wb)

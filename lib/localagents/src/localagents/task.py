@@ -486,7 +486,7 @@ class Task(BaseModel):
     def handle_max_retries_deprecation(self) -> Self:
         if self.max_retries is not None:
             warnings.warn(
-                "The 'max_retries' parameter is deprecated and will be removed in CrewAI v1.0.0. "
+                "The 'max_retries' parameter is deprecated and will be removed in LocalAI v1.0.0. "
                 "Please use 'guardrail_max_retries' instead.",
                 DeprecationWarning,
                 stacklevel=2,

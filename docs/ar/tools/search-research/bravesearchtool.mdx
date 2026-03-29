@@ -9,7 +9,7 @@ mode: "wide"
 
 ## الوصف
 
-تقدم CrewAI عائلة من أدوات بحث Brave، كل منها يستهدف نقطة نهاية محددة في [واجهة برمجة تطبيقات Brave Search](https://brave.com/search/api/). بدلاً من أداة واحدة شاملة، يمكنك اختيار الأداة التي تتطابق بدقة مع نوع النتائج التي يحتاجها وكيلك:
+تقدم LocalAI عائلة من أدوات بحث Brave، كل منها يستهدف نقطة نهاية محددة في [واجهة برمجة تطبيقات Brave Search](https://brave.com/search/api/). بدلاً من أداة واحدة شاملة، يمكنك اختيار الأداة التي تتطابق بدقة مع نوع النتائج التي يحتاجها وكيلك:
 
 | الأداة | نقطة النهاية | حالة الاستخدام |
 | --- | --- | --- |
@@ -51,7 +51,7 @@ pip install 'crewai[tools]'
 from crewai_tools import BraveWebSearchTool
 
 tool = BraveWebSearchTool()
-results = tool.run(q="CrewAI agent framework")
+results = tool.run(q="LocalAI agent framework")
 print(results)
 ```
 
@@ -242,7 +242,7 @@ full_response = tool.run(q="Brave Search API")
 
 ## مثال على التكامل مع الوكيل
 
-إليك كيفية تزويد وكيل CrewAI بأدوات بحث Brave متعددة:
+إليك كيفية تزويد وكيل LocalAI بأدوات بحث Brave متعددة:
 
 ```python Code
 from crewai import Agent
@@ -311,4 +311,4 @@ results = tool.run(q="AI agents", country="US", count=5)
 
 ## الخلاصة
 
-توفر مجموعة أدوات بحث Brave لوكلاء CrewAI وصولاً مرناً ومحدداً بنقطة النهاية إلى واجهة برمجة تطبيقات Brave Search. سواء كنت تحتاج إلى صفحات ويب أو أخبار عاجلة أو صور أو مقاطع فيديو، هناك أداة مخصصة مع معاملات مُتحقق منها ومرونة مدمجة. اختر الأداة المناسبة لحالة استخدامك، وارجع إلى [وثائق واجهة Brave Search API](https://brave.com/search/api/) للحصول على التفاصيل الكاملة حول المعاملات المتاحة وصيغ الاستجابة.
+توفر مجموعة أدوات بحث Brave لوكلاء LocalAI وصولاً مرناً ومحدداً بنقطة النهاية إلى واجهة برمجة تطبيقات Brave Search. سواء كنت تحتاج إلى صفحات ويب أو أخبار عاجلة أو صور أو مقاطع فيديو، هناك أداة مخصصة مع معاملات مُتحقق منها ومرونة مدمجة. اختر الأداة المناسبة لحالة استخدامك، وارجع إلى [وثائق واجهة Brave Search API](https://brave.com/search/api/) للحصول على التفاصيل الكاملة حول المعاملات المتاحة وصيغ الاستجابة.

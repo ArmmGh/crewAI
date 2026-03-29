@@ -147,10 +147,10 @@ class RagTool(BaseTool):
     @model_validator(mode="after")
     def _ensure_adapter(self) -> Self:
         if isinstance(self.adapter, RagTool._AdapterPlaceholder):
-            from crewai_tools.adapters.crewai_rag_adapter import CrewAIRagAdapter
+            from crewai_tools.adapters.crewai_rag_adapter import LocalAIRagAdapter
 
             provider_cfg = self._parse_config(self.config)
-            self.adapter = CrewAIRagAdapter(
+            self.adapter = LocalAIRagAdapter(
                 collection_name=self.collection_name,
                 summarize=self.summarize,
                 similarity_threshold=self.similarity_threshold,
@@ -177,7 +177,7 @@ class RagTool(BaseTool):
         if provider not in supported:
             raise ValueError(
                 f"Unsupported vector database provider: '{provider}'. "
-                f"CrewAI RAG currently supports: {', '.join(supported)}."
+                f"LocalAI RAG currently supports: {', '.join(supported)}."
             )
 
         embedding_spec: ProviderSpec | None = config.get("embedding_model")

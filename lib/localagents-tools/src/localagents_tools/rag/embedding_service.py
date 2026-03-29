@@ -1,5 +1,5 @@
 """
-Enhanced embedding service that leverages CrewAI's existing embedding providers.
+Enhanced embedding service that leverages LocalAI's existing embedding providers.
 This replaces the litellm-based EmbeddingService with a more flexible architecture.
 """
 
@@ -36,7 +36,7 @@ class EmbeddingConfig(BaseModel):
 
 class EmbeddingService:
     """
-    Enhanced embedding service that uses CrewAI's existing embedding providers.
+    Enhanced embedding service that uses LocalAI's existing embedding providers.
 
     Supports multiple providers:
     - openai: OpenAI embeddings (text-embedding-3-small, text-embedding-3-large, etc.)
@@ -109,11 +109,11 @@ class EmbeddingService:
         return None
 
     def _initialize_embedding_function(self) -> None:
-        """Initialize the embedding function using CrewAI's factory."""
+        """Initialize the embedding function using LocalAI's factory."""
         try:
             from crewai.rag.embeddings.factory import build_embedder
 
-            # Build the configuration for CrewAI's factory
+            # Build the configuration for LocalAI's factory
             config = self._build_provider_config()
 
             # Create the embedding function
@@ -126,7 +126,7 @@ class EmbeddingService:
 
         except ImportError as e:
             raise ImportError(
-                f"CrewAI embedding providers not available. "
+                f"LocalAI embedding providers not available. "
                 f"Make sure crewai is installed: {e}"
             ) from e
         except Exception as e:
@@ -136,7 +136,7 @@ class EmbeddingService:
             ) from e
 
     def _build_provider_config(self) -> dict[str, Any]:
-        """Build configuration dictionary for CrewAI's embedding factory."""
+        """Build configuration dictionary for LocalAI's embedding factory."""
         base_config = {"provider": self.config.provider, "config": {}}
 
         # Provider-specific configuration mapping

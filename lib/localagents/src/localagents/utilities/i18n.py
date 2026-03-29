@@ -1,4 +1,4 @@
-"""Internationalization support for CrewAI prompts and messages."""
+"""Internationalization support for LocalAI prompts and messages."""
 
 from functools import lru_cache
 import json

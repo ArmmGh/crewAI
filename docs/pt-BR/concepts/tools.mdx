@@ -1,23 +1,23 @@
 ---
 title: Ferramentas
-description: Compreendendo e aproveitando ferramentas dentro do framework CrewAI para colaboração e execução de tarefas por agentes.
+description: Compreendendo e aproveitando ferramentas dentro do framework LocalAI para colaboração e execução de tarefas por agentes.
 icon: screwdriver-wrench
 mode: "wide"
 ---
 
 ## Visão geral
 
-As ferramentas do CrewAI capacitam agentes com habilidades que vão desde busca na web e análise de dados até colaboração e delegação de tarefas entre colegas de trabalho.
-Esta documentação descreve como criar, integrar e aproveitar essas ferramentas dentro do framework CrewAI, incluindo um novo foco em ferramentas de colaboração.
+As ferramentas do LocalAI capacitam agentes com habilidades que vão desde busca na web e análise de dados até colaboração e delegação de tarefas entre colegas de trabalho.
+Esta documentação descreve como criar, integrar e aproveitar essas ferramentas dentro do framework LocalAI, incluindo um novo foco em ferramentas de colaboração.
 
 ## O que é uma Ferramenta?
 
-Uma ferramenta no CrewAI é uma habilidade ou função que os agentes podem utilizar para executar diversas ações.
-Isso inclui ferramentas do [CrewAI Toolkit](https://github.com/joaomdmoura/crewai-tools) e [LangChain Tools](https://python.langchain.com/docs/integrations/tools),
+Uma ferramenta no LocalAI é uma habilidade ou função que os agentes podem utilizar para executar diversas ações.
+Isso inclui ferramentas do [LocalAI Toolkit](https://github.com/joaomdmoura/crewai-tools) e [LangChain Tools](https://python.langchain.com/docs/integrations/tools),
 permitindo desde buscas simples até interações complexas e trabalho em equipe eficiente entre agentes.
 
 <Note type="info" title="Aprimoramento para Empresas: Repositório de Ferramentas">
-O CrewAI AMP oferece um Repositório de Ferramentas abrangente, com integrações pré-construídas para sistemas empresariais e APIs comuns. Implemente agentes com ferramentas corporativas em minutos em vez de dias.
+O LocalAI AMP oferece um Repositório de Ferramentas abrangente, com integrações pré-construídas para sistemas empresariais e APIs comuns. Implemente agentes com ferramentas corporativas em minutos em vez de dias.
 
 O Repositório de Ferramentas Empresariais inclui:
 
@@ -36,9 +36,9 @@ O Repositório de Ferramentas Empresariais inclui:
 - **Mecanismo de Cache**: Possui cache inteligente para otimizar desempenho e reduzir operações redundantes.
 - **Suporte Assíncrono**: Suporta ferramentas síncronas e assíncronas, permitindo operações não bloqueantes.
 
-## Utilizando Ferramentas CrewAI
+## Utilizando Ferramentas LocalAI
 
-Para aprimorar as capacidades de seus agentes com as ferramentas do CrewAI, comece instalando nosso pacote extra de ferramentas:
+Para aprimorar as capacidades de seus agentes com as ferramentas do LocalAI, comece instalando nosso pacote extra de ferramentas:
 
 ```bash
 pip install 'crewai[tools]'
@@ -49,7 +49,7 @@ Aqui está um exemplo demonstrando seu uso:
 ```python Code
 import os
 from crewai import Agent, Task, Crew
-# Importando ferramentas do crewAI
+# Importando ferramentas do localAI
 from crewai_tools import (
     DirectoryReadTool,
     FileReadTool,
@@ -110,7 +110,7 @@ crew = Crew(
 crew.kickoff()
 ```
 
-## Ferramentas CrewAI Disponíveis
+## Ferramentas LocalAI Disponíveis
 
 - **Tratamento de Erros**: Todas as ferramentas são construídas com capacidades de tratamento de erros, permitindo que os agentes administrem exceções de forma adequada e prossigam com suas tarefas.
 - **Mecanismo de Cache**: Todas as ferramentas suportam cache, possibilitando que agentes reutilizem de forma eficiente resultados obtidos anteriormente, reduzindo a carga em recursos externos e acelerando o tempo de execução. Também é possível definir controles mais precisos sobre o mecanismo de cache usando o atributo `cache_function` na ferramenta.
@@ -158,7 +158,7 @@ Aqui está uma lista das ferramentas disponíveis e suas descrições:
   necessidades de seus agentes ou utilizar opções pré-construídas.
 </Tip>
 
-Existem duas formas principais de criar uma ferramenta CrewAI:
+Existem duas formas principais de criar uma ferramenta LocalAI:
 
 ### Herança de `BaseTool`
 
@@ -182,7 +182,7 @@ class MyCustomTool(BaseTool):
 
 ## Suporte a Ferramentas Assíncronas
 
-O CrewAI suporta ferramentas assíncronas, permitindo que você implemente ferramentas que realizam operações não bloqueantes, como requisições de rede, I/O de arquivos ou outras operações async sem bloquear o fluxo principal de execução.
+O LocalAI suporta ferramentas assíncronas, permitindo que você implemente ferramentas que realizam operações não bloqueantes, como requisições de rede, I/O de arquivos ou outras operações async sem bloquear o fluxo principal de execução.
 
 ### Criando Ferramentas Assíncronas
 
@@ -234,7 +234,7 @@ class MyFlow(Flow):
         return result
 ```
 
-O framework CrewAI lida automaticamente com a execução de ferramentas síncronas e assíncronas, então você não precisa se preocupar com diferenças na chamada.
+O framework LocalAI lida automaticamente com a execução de ferramentas síncronas e assíncronas, então você não precisa se preocupar com diferenças na chamada.
 
 ### Utilizando o Decorador `tool`
 
@@ -283,6 +283,6 @@ writer1 = Agent(
 
 ## Conclusão
 
-Ferramentas são fundamentais para expandir as capacidades dos agentes CrewAI, permitindo que assumam uma ampla gama de tarefas e colaborem de forma eficiente.
-Ao construir soluções com CrewAI, aproveite tanto ferramentas existentes quanto personalizadas para potencializar seus agentes e ampliar o ecossistema de IA. Considere utilizar tratamento de erros,
+Ferramentas são fundamentais para expandir as capacidades dos agentes LocalAI, permitindo que assumam uma ampla gama de tarefas e colaborem de forma eficiente.
+Ao construir soluções com LocalAI, aproveite tanto ferramentas existentes quanto personalizadas para potencializar seus agentes e ampliar o ecossistema de IA. Considere utilizar tratamento de erros,
 mecanismos de cache e a flexibilidade de argumentos das ferramentas para otimizar o desempenho e as capacidades dos seus agentes.

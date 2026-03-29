@@ -5,7 +5,7 @@ icon: robots
 mode: "wide"
 ---
 
-Interoperability is a core concept in CrewAI. This guide will show you how to bring your own agents that work within a Crew.
+Interoperability is a core concept in LocalAI. This guide will show you how to bring your own agents that work within a Crew.
 
 
 ## Adapter Guide for Bringing your own agents (Langgraph Agents, OpenAI Agents, etc...)
@@ -19,7 +19,7 @@ We require 3 adapters to turn any agent from different frameworks to work within
 ## BaseAgentAdapter
 This abstract class defines the common interface and functionality that all
 agent adapters must implement. It extends BaseAgent to maintain compatibility
-with the CrewAI framework while adding adapter-specific requirements.
+with the LocalAI framework while adding adapter-specific requirements.
 
 Required Methods:
 
@@ -27,7 +27,7 @@ Required Methods:
 2. `def configure_structured_output`
 
 ## Creating your own Adapter
-To integrate an agent from a different framework (e.g., LangGraph, Autogen, OpenAI Assistants) into CrewAI, you need to create a custom adapter by inheriting from `BaseAgentAdapter`. This adapter acts as a compatibility layer, translating between the CrewAI interfaces and the specific requirements of your external agent.
+To integrate an agent from a different framework (e.g., LangGraph, Autogen, OpenAI Assistants) into LocalAI, you need to create a custom adapter by inheriting from `BaseAgentAdapter`. This adapter acts as a compatibility layer, translating between the LocalAI interfaces and the specific requirements of your external agent.
 
 Here's how you implement your custom adapter:
 
@@ -42,7 +42,7 @@ Here's how you implement your custom adapter:
     ```
 
 2.  **Implement `__init__`**:
-    The constructor should call the parent class constructor `super().__init__(**kwargs)` and perform any initialization specific to your external agent. You can use the optional `agent_config` dictionary passed during CrewAI's `Agent` initialization to configure your adapter and the underlying agent.
+    The constructor should call the parent class constructor `super().__init__(**kwargs)` and perform any initialization specific to your external agent. You can use the optional `agent_config` dictionary passed during LocalAI's `Agent` initialization to configure your adapter and the underlying agent.
 
     ```python
     def __init__(self, agent_config: Optional[Dict[str, Any]] = None, **kwargs: Any):
@@ -53,14 +53,14 @@ Here's how you implement your custom adapter:
     ```
 
 3.  **Implement `configure_tools`**:
-    This abstract method is crucial. It receives a list of CrewAI `BaseTool` instances. Your implementation must convert or adapt these tools into the format expected by your external agent framework. This might involve wrapping them, extracting specific attributes, or registering them with the external agent instance.
+    This abstract method is crucial. It receives a list of LocalAI `BaseTool` instances. Your implementation must convert or adapt these tools into the format expected by your external agent framework. This might involve wrapping them, extracting specific attributes, or registering them with the external agent instance.
 
     ```python
     def configure_tools(self, tools: Optional[List[BaseTool]] = None) -> None:
         if tools:
             adapted_tools = []
             for tool in tools:
-                # Adapt CrewAI BaseTool to the format your agent expects
+                # Adapt LocalAI BaseTool to the format your agent expects
                 # Example: adapted_tool = adapt_to_my_framework(tool)
                 # adapted_tools.append(adapted_tool)
                 pass # Replace with your actual adaptation logic
@@ -75,7 +75,7 @@ Here's how you implement your custom adapter:
     ```
 
 4.  **Implement `configure_structured_output`**:
-    This method is called when the CrewAI `Agent` is configured with structured output requirements (e.g., `output_json` or `output_pydantic`). Your adapter needs to ensure the external agent is set up to comply with these requirements. This might involve setting specific parameters on the external agent or ensuring its underlying model supports the requested format. If the external agent doesn't support structured output in a way compatible with CrewAI's expectations, you might need to handle the conversion or raise an appropriate error.
+    This method is called when the LocalAI `Agent` is configured with structured output requirements (e.g., `output_json` or `output_pydantic`). Your adapter needs to ensure the external agent is set up to comply with these requirements. This might involve setting specific parameters on the external agent or ensuring its underlying model supports the requested format. If the external agent doesn't support structured output in a way compatible with LocalAI's expectations, you might need to handle the conversion or raise an appropriate error.
 
     ```python
     def configure_structured_output(self, structured_output: Any) -> None:
@@ -85,10 +85,10 @@ Here's how you implement your custom adapter:
         print(f"Configuring structured output for MyCustomAgentAdapter: {structured_output}")
     ```
 
-By implementing these methods, your `MyCustomAgentAdapter` will allow your custom agent implementation to function correctly within a CrewAI crew, interacting with tasks and tools seamlessly. Remember to replace the example comments and print statements with your actual adaptation logic specific to the external agent framework you are integrating.
+By implementing these methods, your `MyCustomAgentAdapter` will allow your custom agent implementation to function correctly within a LocalAI crew, interacting with tasks and tools seamlessly. Remember to replace the example comments and print statements with your actual adaptation logic specific to the external agent framework you are integrating.
 
 ## BaseToolAdapter implementation
-The `BaseToolAdapter` class is responsible for converting CrewAI's native `BaseTool` objects into a format that your specific external agent framework can understand and utilize. Different agent frameworks (like LangGraph, OpenAI Assistants, etc.) have their own unique ways of defining and handling tools, and the `BaseToolAdapter` acts as the translator.
+The `BaseToolAdapter` class is responsible for converting LocalAI's native `BaseTool` objects into a format that your specific external agent framework can understand and utilize. Different agent frameworks (like LangGraph, OpenAI Assistants, etc.) have their own unique ways of defining and handling tools, and the `BaseToolAdapter` acts as the translator.
 
 Here's how you implement your custom tool adapter:
 
@@ -103,11 +103,11 @@ Here's how you implement your custom tool adapter:
     ```
 
 2.  **Implement `configure_tools`**:
-    This is the core abstract method you must implement. It receives a list of CrewAI `BaseTool` instances provided to the agent. Your task is to iterate through this list, adapt each `BaseTool` into the format expected by your external framework, and store the converted tools in the `self.converted_tools` list (which is initialized in the base class constructor).
+    This is the core abstract method you must implement. It receives a list of LocalAI `BaseTool` instances provided to the agent. Your task is to iterate through this list, adapt each `BaseTool` into the format expected by your external framework, and store the converted tools in the `self.converted_tools` list (which is initialized in the base class constructor).
 
     ```python
     def configure_tools(self, tools: List[BaseTool]) -> None:
-        """Configure and convert CrewAI tools for the specific implementation."""
+        """Configure and convert LocalAI tools for the specific implementation."""
         self.converted_tools = [] # Reset in case it's called multiple times
         for tool in tools:
             # Sanitize the tool name if required by the target framework
@@ -142,7 +142,7 @@ Here's how you implement your custom tool adapter:
 
     # --- Helper method for adaptation (Example) ---
     def adapt_tool_to_my_framework(self, tool: BaseTool, sanitized_name: str) -> Any:
-        # Replace this with the actual logic to convert a CrewAI BaseTool
+        # Replace this with the actual logic to convert a LocalAI BaseTool
         # to the format needed by your specific external agent framework.
         # This will vary greatly depending on the target framework.
         adapted_representation = {
@@ -192,7 +192,7 @@ Here's how you implement your custom tool adapter:
 By creating a `BaseToolAdapter`, you decouple the tool conversion logic from the agent adaptation, making the integration cleaner and more modular. Remember to replace the placeholder examples with the actual conversion logic required by your specific external agent framework.
 
 ## BaseConverter
-The `BaseConverterAdapter` plays a crucial role when a CrewAI `Task` requires an agent to return its final output in a specific structured format, such as JSON or a Pydantic model. It bridges the gap between CrewAI's structured output requirements and the capabilities of your external agent.
+The `BaseConverterAdapter` plays a crucial role when a LocalAI `Task` requires an agent to return its final output in a specific structured format, such as JSON or a Pydantic model. It bridges the gap between LocalAI's structured output requirements and the capabilities of your external agent.
 
 Its primary responsibilities are:
 1.  **Configuring the Agent for Structured Output:** Based on the `Task`'s requirements (`output_json` or `output_pydantic`), it instructs the associated `BaseAgentAdapter` (and indirectly, the external agent) on what format is expected.
@@ -227,7 +227,7 @@ Here's how you implement your custom converter adapter:
     ```
 
 3.  **Implement `configure_structured_output`**:
-    This method receives the CrewAI `Task` object. You need to check the task's `output_json` and `output_pydantic` attributes to determine the required output structure. Store this information (e.g., in `_output_type` and `_output_schema`) and potentially call configuration methods on your `self.agent_adapter` if the external agent needs specific setup for structured output (which might have been partially handled in the agent adapter's `configure_structured_output` already).
+    This method receives the LocalAI `Task` object. You need to check the task's `output_json` and `output_pydantic` attributes to determine the required output structure. Store this information (e.g., in `_output_type` and `_output_schema`) and potentially call configuration methods on your `self.agent_adapter` if the external agent needs specific setup for structured output (which might have been partially handled in the agent adapter's `configure_structured_output` already).
 
     ```python
     def configure_structured_output(self, task: Task) -> None:
@@ -315,7 +315,7 @@ Here's how you implement your custom converter adapter:
             return result # No processing needed for plain text
     ```
 
-By implementing these methods, your `MyCustomConverterAdapter` ensures that structured output requests from CrewAI tasks are correctly handled by your integrated external agent, improving the reliability and usability of your custom agent within the CrewAI framework.
+By implementing these methods, your `MyCustomConverterAdapter` ensures that structured output requests from LocalAI tasks are correctly handled by your integrated external agent, improving the reliability and usability of your custom agent within the LocalAI framework.
 
 ## Out of the Box Adapters
 
@@ -340,7 +340,7 @@ from crewai.agents.agent_adapters.langgraph.langgraph_adapter import (
 )
 from crewai.agents.agent_adapters.openai_agents.openai_adapter import OpenAIAgentAdapter
 
-# CrewAI Agent
+# LocalAI Agent
 code_helper_agent = Agent(
     role="Code Helper",
     goal="Help users solve coding problems effectively and provide clear explanations.",
@@ -397,7 +397,7 @@ task3 = Task(
     agent=reporter_agent,
     output_json=Report,
 )
-# Use in CrewAI
+# Use in LocalAI
 crew = Crew(
     agents=[code_helper_agent, link_finder_agent, reporter_agent],
     tasks=[task, task2, task3],

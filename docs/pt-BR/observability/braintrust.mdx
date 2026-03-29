@@ -1,19 +1,19 @@
 ---
 title: Braintrust
-description: Integração do Braintrust para CrewAI com rastreamento OpenTelemetry e avaliação
+description: Integração do Braintrust para LocalAI com rastreamento OpenTelemetry e avaliação
 icon: magnifying-glass-chart
 mode: "wide"
 ---
 
 # Integração Braintrust
 
-Este guia demonstra como integrar o **Braintrust** com **CrewAI** usando OpenTelemetry para rastreamento e avaliação abrangentes. Ao final deste guia, você poderá rastrear seus agentes CrewAI, monitorar seu desempenho e avaliar suas saídas usando a poderosa plataforma de observabilidade do Braintrust.
+Este guia demonstra como integrar o **Braintrust** com **LocalAI** usando OpenTelemetry para rastreamento e avaliação abrangentes. Ao final deste guia, você poderá rastrear seus agentes LocalAI, monitorar seu desempenho e avaliar suas saídas usando a poderosa plataforma de observabilidade do Braintrust.
 
 > **O que é Braintrust?** [Braintrust](https://www.braintrust.dev) é uma plataforma de avaliação e observabilidade de IA que fornece rastreamento, avaliação e monitoramento abrangentes para aplicações de IA com rastreamento de experimentos e análises de desempenho integrados.
 
 ## Começar
 
-Vamos percorrer um exemplo simples de uso do CrewAI e integração com Braintrust via OpenTelemetry para observabilidade e avaliação abrangentes.
+Vamos percorrer um exemplo simples de uso do LocalAI e integração com Braintrust via OpenTelemetry para observabilidade e avaliação abrangentes.
 
 ### Passo 1: Instalar Dependências
 
@@ -53,7 +53,7 @@ from braintrust.otel import BraintrustSpanProcessor
 from crewai import Agent, Crew, Task
 from crewai.llm import LLM
 from opentelemetry import trace
-from opentelemetry.instrumentation.crewai import CrewAIInstrumentor
+from opentelemetry.instrumentation.crewai import LocalAIInstrumentor
 from opentelemetry.instrumentation.openai import OpenAIInstrumentor
 from opentelemetry.sdk.trace import TracerProvider
 
@@ -67,16 +67,16 @@ def setup_tracing() -> None:
         trace.set_tracer_provider(provider)
 
     provider.add_span_processor(BraintrustSpanProcessor())
-    CrewAIInstrumentor().instrument(tracer_provider=provider)
+    LocalAIInstrumentor().instrument(tracer_provider=provider)
     OpenAIInstrumentor().instrument(tracer_provider=provider)
 
 
 setup_tracing()
 ```
 
-### Passo 4: Criar uma Aplicação CrewAI
+### Passo 4: Criar uma Aplicação LocalAI
 
-Vamos criar uma aplicação CrewAI onde dois agentes colaboram para pesquisar e escrever um post de blog sobre avanços em IA, com rastreamento abrangente habilitado.
+Vamos criar uma aplicação LocalAI onde dois agentes colaboram para pesquisar e escrever um post de blog sobre avanços em IA, com rastreamento abrangente habilitado.
 
 ```python
 from crewai import Agent, Crew, Process, Task
@@ -224,14 +224,14 @@ Veja o [guia do Eval SDK do Braintrust](https://www.braintrust.dev/docs/start/ev
 
 ### Informações de Compatibilidade de Versão
 - Python 3.8+
-- CrewAI >= 0.86.0
+- LocalAI >= 0.86.0
 - Braintrust >= 0.1.0
 - OpenTelemetry SDK >= 1.31.0
 
 ### Referências
 - [Documentação Braintrust](https://www.braintrust.dev/docs) - Visão geral da plataforma Braintrust
-- [Integração CrewAI Braintrust](https://www.braintrust.dev/docs/integrations/crew-ai) - Guia oficial de integração CrewAI
+- [Integração LocalAI Braintrust](https://www.braintrust.dev/docs/integrations/crew-ai) - Guia oficial de integração LocalAI
 - [Eval SDK Braintrust](https://www.braintrust.dev/docs/start/eval-sdk) - Execute experimentos via SDK
-- [Documentação CrewAI](https://docs.crewai.com/) - Visão geral do framework CrewAI
+- [Documentação LocalAI](https://docs.crewai.com/) - Visão geral do framework LocalAI
 - [Documentação OpenTelemetry](https://opentelemetry.io/docs/) - Guia OpenTelemetry
 - [GitHub Braintrust](https://github.com/braintrustdata/braintrust) - Código fonte do SDK Braintrust

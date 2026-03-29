@@ -1,13 +1,13 @@
 ---
 title: Memória
-description: Aproveitando o sistema de memória unificado no CrewAI para aprimorar as capacidades dos agentes.
+description: Aproveitando o sistema de memória unificado no LocalAI para aprimorar as capacidades dos agentes.
 icon: database
 mode: "wide"
 ---
 
 ## Visão Geral
 
-O CrewAI oferece um **sistema de memória unificado** -- uma única classe `Memory` que substitui memórias de curto prazo, longo prazo, entidades e externa por uma API inteligente. A memória usa um LLM para analisar o conteúdo ao salvar (inferindo escopo, categorias e importância) e suporta recall com profundidade adaptativa e pontuação composta que combina similaridade semântica, recência e importância.
+O LocalAI oferece um **sistema de memória unificado** -- uma única classe `Memory` que substitui memórias de curto prazo, longo prazo, entidades e externa por uma API inteligente. A memória usa um LLM para analisar o conteúdo ao salvar (inferindo escopo, categorias e importância) e suporta recall com profundidade adaptativa e pontuação composta que combina similaridade semântica, recência e importância.
 
 Você pode usar a memória de quatro formas: **standalone** (scripts, notebooks), **com Crews**, **com Agentes** ou **dentro de Flows**.
 
@@ -389,7 +389,7 @@ Ao salvar novo conteúdo, o pipeline de codificação verifica automaticamente r
 - **delete** -- O registro existente está desatualizado, substituído ou contradito.
 - **insert_new** -- Se o novo conteúdo também deve ser inserido como um registro separado.
 
-Isso evita o acúmulo de duplicatas. Por exemplo, se você salvar "CrewAI garante operação confiável" três vezes, a consolidação reconhece as duplicatas e mantém apenas um registro.
+Isso evita o acúmulo de duplicatas. Por exemplo, se você salvar "LocalAI garante operação confiável" três vezes, a consolidação reconhece as duplicatas e mantém apenas um registro.
 
 ### Dedup Intra-batch
 
@@ -398,9 +398,9 @@ Ao usar `remember_many()`, os itens dentro do mesmo batch são comparados entre 
 ```python
 # Apenas 2 registros são armazenados (o terceiro é quase duplicata do primeiro)
 memory.remember_many([
-    "CrewAI supports complex workflows.",
+    "LocalAI supports complex workflows.",
     "Python is a great language.",
-    "CrewAI supports complex workflows.",  # descartado pelo dedup intra-batch
+    "LocalAI supports complex workflows.",  # descartado pelo dedup intra-batch
 ])
 ```
 

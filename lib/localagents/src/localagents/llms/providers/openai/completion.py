@@ -769,7 +769,7 @@ class OpenAICompletion(BaseLLM):
     def _convert_tools_for_responses(
         self, tools: list[dict[str, BaseTool]]
     ) -> list[dict[str, Any]]:
-        """Convert CrewAI tools to Responses API format.
+        """Convert LocalAI tools to Responses API format.
 
         Responses API uses internally-tagged format (flat structure):
         {
@@ -1533,7 +1533,7 @@ class OpenAICompletion(BaseLLM):
             params["tools"] = self._convert_tools_for_interference(tools)
             params["tool_choice"] = "auto"
 
-        # Filter out CrewAI-specific parameters that shouldn't go to the API
+        # Filter out LocalAI-specific parameters that shouldn't go to the API
         crewai_specific_params = {
             "callbacks",
             "available_functions",
@@ -1551,7 +1551,7 @@ class OpenAICompletion(BaseLLM):
     def _convert_tools_for_interference(
         self, tools: list[dict[str, BaseTool]]
     ) -> list[dict[str, Any]]:
-        """Convert CrewAI tool format to OpenAI function calling format."""
+        """Convert LocalAI tool format to OpenAI function calling format."""
         from crewai.llms.providers.utils.common import safe_tool_conversion
         from crewai.utilities.pydantic_schema_utils import (
             force_additional_properties_false,

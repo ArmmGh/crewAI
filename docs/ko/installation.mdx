@@ -1,6 +1,6 @@
 ---
 title: 설치
-description: CrewAI 시작하기 - 설치, 구성, 그리고 첫 번째 AI crew 구축하기
+description: LocalAI 시작하기 - 설치, 구성, 그리고 첫 번째 AI crew 구축하기
 icon: wrench
 mode: "wide"
 ---
@@ -12,7 +12,7 @@ mode: "wide"
 <iframe
   className="w-full aspect-video rounded-xl"
   src="https://www.youtube.com/embed/-kSOTtYzgEw"
-  title="CrewAI Installation Guide"
+  title="LocalAI Installation Guide"
   frameBorder="0"
   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
   allowFullScreen
@@ -23,7 +23,7 @@ mode: "wide"
 <Note>
   **Python 버전 요구 사항**
 
-CrewAI는 `Python >=3.10 및 <3.14`가 필요합니다. 버전을 확인하는 방법은 다음과 같습니다:
+LocalAI는 `Python >=3.10 및 <3.14`가 필요합니다. 버전을 확인하는 방법은 다음과 같습니다:
 
 ```bash
 python3 --version
@@ -33,7 +33,7 @@ Python을 업데이트해야 하는 경우, [python.org/downloads](https://pytho
 
 </Note>
 
-CrewAI는 의존성 관리와 패키지 처리를 위해 `uv`를 사용합니다. 프로젝트 설정과 실행을 간소화하여 원활한 경험을 제공합니다.
+LocalAI는 의존성 관리와 패키지 처리를 위해 `uv`를 사용합니다. 프로젝트 설정과 실행을 간소화하여 원활한 경험을 제공합니다.
 
 아직 `uv`를 설치하지 않았다면 **1단계**를 따라 빠르게 시스템에 설치할 수 있습니다. 이미 설치되어 있다면 **2단계**로 건너뛸 수 있습니다.
 
@@ -62,7 +62,7 @@ CrewAI는 의존성 관리와 패키지 처리를 위해 `uv`를 사용합니다
         문제가 발생하면 [UV 설치 가이드](https://docs.astral.sh/uv/getting-started/installation/)를 참고하세요.
     </Step>
 
-    <Step title="CrewAI 설치 🚀">
+    <Step title="LocalAI 설치 🚀">
       - 다음 명령어를 실행하여 `crewai` CLI를 설치하세요:
         ```shell
         uv tool install crewai
@@ -96,7 +96,7 @@ CrewAI는 의존성 관리와 패키지 처리를 위해 `uv`를 사용합니다
 
 </Steps>
 
-# CrewAI 프로젝트 생성하기
+# LocalAI 프로젝트 생성하기
 
 에이전트 및 태스크를 정의할 때 구조적인 접근 방식을 위해 `YAML` 템플릿 스캐폴딩을 사용하는 것을 권장합니다. 다음은 시작 방법입니다:
 
@@ -166,23 +166,23 @@ CrewAI는 의존성 관리와 패키지 처리를 위해 `uv`를 사용합니다
 ## 엔터프라이즈 설치 옵션
 
 <Note type="info">
-팀과 조직을 위해, CrewAI는 설치 복잡성을 없애는 엔터프라이즈 배포 옵션을 제공합니다:
+팀과 조직을 위해, LocalAI는 설치 복잡성을 없애는 엔터프라이즈 배포 옵션을 제공합니다:
 
-### CrewAI AMP (SaaS)
+### LocalAI AMP (SaaS)
 
 - 설치가 전혀 필요하지 않습니다 - [app.crewai.com](https://app.crewai.com)에서 무료로 가입하세요
 - 자동 업데이트 및 유지 보수
 - 관리형 인프라 및 확장성 지원
 - 코딩 없이 Crew 생성
 
-### CrewAI Factory (자가 호스팅)
+### LocalAI Factory (자가 호스팅)
 
 - 귀하의 인프라를 위한 컨테이너화된 배포
 - 온프레미스 배포를 포함하여 모든 하이퍼스케일러 지원
 - 기존 보안 시스템과의 통합
 
 <Card title="엔터프라이즈 옵션 살펴보기" icon="building" href="https://crewai.com/enterprise">
-  CrewAI의 엔터프라이즈 서비스에 대해 알아보고 데모를 예약하세요
+  LocalAI의 엔터프라이즈 서비스에 대해 알아보고 데모를 예약하세요
 </Card>
 </Note>
 
@@ -190,7 +190,7 @@ CrewAI는 의존성 관리와 패키지 처리를 위해 `uv`를 사용합니다
 
 <CardGroup cols={2}>
   <Card title="첫 번째 Agent 만들기" icon="code" href="/ko/quickstart">
-    빠른 시작 가이드를 따라 CrewAI 에이전트를 처음 만들어보고 직접 경험해
+    빠른 시작 가이드를 따라 LocalAI 에이전트를 처음 만들어보고 직접 경험해
     보세요.
   </Card>
   <Card
@@ -198,6 +198,6 @@ CrewAI는 의존성 관리와 패키지 처리를 위해 `uv`를 사용합니다
     icon="comments"
     href="https://community.crewai.com"
   >
-    다른 개발자들과 소통하고, 도움을 받으며, CrewAI 경험을 공유하세요.
+    다른 개발자들과 소통하고, 도움을 받으며, LocalAI 경험을 공유하세요.
   </Card>
 </CardGroup>

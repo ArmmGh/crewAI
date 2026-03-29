@@ -1,4 +1,4 @@
-"""CrewAI platform tool builder for fetching and creating action tools."""
+"""LocalAI platform tool builder for fetching and creating action tools."""
 
 import logging
 import os
@@ -9,7 +9,7 @@ from crewai.tools import BaseTool
 import requests
 
 from crewai_tools.tools.crewai_platform_tools.crewai_platform_action_tool import (
-    CrewAIPlatformActionTool,
+    LocalAIPlatformActionTool,
 )
 from crewai_tools.tools.crewai_platform_tools.misc import (
     get_platform_api_base_url,
@@ -87,7 +87,7 @@ class CrewaiPlatformToolBuilder:
             function_details = action_schema.get("function", {})
             description = function_details.get("description", f"Execute {action_name}")
 
-            tool = CrewAIPlatformActionTool(
+            tool = LocalAIPlatformActionTool(
                 description=description,
                 action_name=action_name,
                 action_schema=action_schema,

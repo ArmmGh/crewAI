@@ -1,4 +1,4 @@
-"""Telemetry module for CrewAI.
+"""Telemetry module for LocalAI.
 
 This module provides anonymous telemetry collection for development purposes.
 No prompts, task descriptions, agent backstories/goals, responses, or sensitive
@@ -86,7 +86,7 @@ class SafeOTLPSpanExporter(OTLPSpanExporter):
 
 
 class Telemetry:
-    """Handle anonymous telemetry for the CrewAI package.
+    """Handle anonymous telemetry for the LocalAI package.
 
     Attributes:
         ready: Whether telemetry is initialized and ready.

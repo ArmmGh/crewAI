@@ -1,13 +1,13 @@
 ---
 title: 에이전트
-description: CrewAI 프레임워크 내에서 에이전트를 생성하고 관리하는 자세한 가이드입니다.
+description: LocalAI 프레임워크 내에서 에이전트를 생성하고 관리하는 자세한 가이드입니다.
 icon: robot
 mode: "wide"
 ---
 
 ## 에이전트 개요
 
-CrewAI 프레임워크에서 `Agent`는 다음과 같은 역할을 수행하는 자율적 단위입니다:
+LocalAI 프레임워크에서 `Agent`는 다음과 같은 역할을 수행하는 자율적 단위입니다:
 - 특정 작업 수행
 - 자신의 역할과 목표에 기반한 의사결정
 - 도구를 활용하여 목표 달성
@@ -20,7 +20,7 @@ CrewAI 프레임워크에서 `Agent`는 다음과 같은 역할을 수행하는 
 </Tip>
 
 <Note type="info" title="엔터프라이즈 확장: 시각적 에이전트 빌더">
-CrewAI AOP에는 코드를 작성하지 않고도 에이전트 생성 및 구성을 간편하게 할 수 있는 시각적 에이전트 빌더가 포함되어 있습니다. 에이전트를 시각적으로 설계하고 실시간으로 테스트하세요.
+LocalAI AOP에는 코드를 작성하지 않고도 에이전트 생성 및 구성을 간편하게 할 수 있는 시각적 에이전트 빌더가 포함되어 있습니다. 에이전트를 시각적으로 설계하고 실시간으로 테스트하세요.
 
 ![Visual Agent Builder Screenshot](/images/enterprise/crew-studio-interface.png)
 
@@ -66,13 +66,13 @@ CrewAI AOP에는 코드를 작성하지 않고도 에이전트 생성 및 구성
 
 ## 에이전트 생성
 
-CrewAI에서 에이전트를 생성하는 방법에는 **YAML 구성(권장)**을 사용하는 방법과 **코드에서 직접 정의**하는 두 가지가 있습니다.
+LocalAI에서 에이전트를 생성하는 방법에는 **YAML 구성(권장)**을 사용하는 방법과 **코드에서 직접 정의**하는 두 가지가 있습니다.
 
 ### YAML 구성 (권장)
 
-YAML 구성을 사용하면 에이전트를 보다 깔끔하고 유지 관리하기 쉽도록 정의할 수 있습니다. CrewAI 프로젝트에서 이 방식을 사용하는 것을 강력히 권장합니다.
+YAML 구성을 사용하면 에이전트를 보다 깔끔하고 유지 관리하기 쉽도록 정의할 수 있습니다. LocalAI 프로젝트에서 이 방식을 사용하는 것을 강력히 권장합니다.
 
-[설치](/ko/installation) 섹션에 설명된 대로 CrewAI 프로젝트를 생성한 후, `src/latest_ai_development/config/agents.yaml` 파일로 이동하여 템플릿을 여러분의 요구 사항에 맞게 수정하세요.
+[설치](/ko/installation) 섹션에 설명된 대로 LocalAI 프로젝트를 생성한 후, `src/latest_ai_development/config/agents.yaml` 파일로 이동하여 템플릿을 여러분의 요구 사항에 맞게 수정하세요.
 
 <Note>
 YAML 파일의 변수(예: `{topic}`)는 crew를 실행할 때 입력값에서 가져온 값으로 대체됩니다:
@@ -321,8 +321,8 @@ multimodal_agent = Agent(
 
 ## 에이전트 도구
 
-에이전트는 다양한 도구를 장착하여 그 능력을 향상시킬 수 있습니다. CrewAI는 다음의 도구들을 지원합니다:
-- [CrewAI Toolkit](https://github.com/joaomdmoura/crewai-tools)
+에이전트는 다양한 도구를 장착하여 그 능력을 향상시킬 수 있습니다. LocalAI는 다음의 도구들을 지원합니다:
+- [LocalAI Toolkit](https://github.com/joaomdmoura/crewai-tools)
 - [LangChain Tools](https://python.langchain.com/docs/integrations/tools)
 
 에이전트에 도구를 추가하는 방법은 다음과 같습니다:
@@ -365,18 +365,18 @@ analyst = Agent(
 
 ## 컨텍스트 윈도우 관리
 
-CrewAI는 대화가 언어 모델의 토큰 한도를 초과하는 상황을 처리하기 위해 정교한 자동 컨텍스트 윈도우 관리 기능을 포함하고 있습니다. 이 강력한 기능은 `respect_context_window` 매개변수로 제어됩니다.
+LocalAI는 대화가 언어 모델의 토큰 한도를 초과하는 상황을 처리하기 위해 정교한 자동 컨텍스트 윈도우 관리 기능을 포함하고 있습니다. 이 강력한 기능은 `respect_context_window` 매개변수로 제어됩니다.
 
 ### 컨텍스트 윈도우 관리 방식
 
-에이전트의 대화 기록이 LLM의 컨텍스트 윈도우 크기를 초과할 경우, CrewAI는 이 상황을 자동으로 감지하고 다음 중 하나를 수행할 수 있습니다:
+에이전트의 대화 기록이 LLM의 컨텍스트 윈도우 크기를 초과할 경우, LocalAI는 이 상황을 자동으로 감지하고 다음 중 하나를 수행할 수 있습니다:
 
 1. **자동으로 내용을 요약** ( `respect_context_window=True` 인 경우)
 2. **오류와 함께 실행 중지** ( `respect_context_window=False` 인 경우)
 
 ### 자동 컨텍스트 처리 (`respect_context_window=True`)
 
-이 설정은 대부분의 사용 사례에서 **기본값이자 권장 옵션**입니다. 활성화되면 CrewAI는 다음과 같이 동작합니다:
+이 설정은 대부분의 사용 사례에서 **기본값이자 권장 옵션**입니다. 활성화되면 LocalAI는 다음과 같이 동작합니다:
 
 ```python Code
 # Agent with automatic context management (default)
@@ -391,7 +391,7 @@ smart_agent = Agent(
 
 **컨텍스트 한도를 초과할 경우 발생하는 일:**
 - ⚠️ **경고 메시지**: `"Context length exceeded. Summarizing content to fit the model context window."`
-- 🔄 **자동 요약**: CrewAI가 대화 기록을 지능적으로 요약함
+- 🔄 **자동 요약**: LocalAI가 대화 기록을 지능적으로 요약함
 - ✅ **작업 지속**: 요약된 컨텍스트로 작업이 원활하게 계속됨
 - 📝 **정보 보존**: 토큰 수를 줄이면서도 주요 정보는 유지됨
 
@@ -524,7 +524,7 @@ agent = Agent(
 ```
 
 <Note>
-컨텍스트 윈도우 관리 기능은 백그라운드에서 자동으로 작동합니다. 특별한 함수를 호출할 필요가 없으며, 원하는 동작에 맞게 `respect_context_window`만 설정하면 CrewAI가 나머지를 처리합니다!
+컨텍스트 윈도우 관리 기능은 백그라운드에서 자동으로 작동합니다. 특별한 함수를 호출할 필요가 없으며, 원하는 동작에 맞게 `respect_context_window`만 설정하면 LocalAI가 나머지를 처리합니다!
 </Note>
 
 ## `kickoff()`을 사용한 에이전트 직접 상호작용

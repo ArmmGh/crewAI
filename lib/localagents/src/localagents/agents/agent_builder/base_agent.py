@@ -71,7 +71,7 @@ PlatformAppOrAction = PlatformApp | str
 
 
 class BaseAgent(BaseModel, ABC, metaclass=AgentMeta):
-    """Abstract Base Class for all third party agents compatible with CrewAI.
+    """Abstract Base Class for all third party agents compatible with LocalAI.
 
     Attributes:
         id (UUID4): Unique identifier for the agent.
@@ -95,7 +95,7 @@ class BaseAgent(BaseModel, ABC, metaclass=AgentMeta):
         knowledge_sources: Knowledge sources for the agent.
         knowledge_storage: Custom knowledge storage for the agent.
         security_config: Security configuration for the agent, including fingerprinting.
-        apps: List of enterprise applications that the agent can access through CrewAI AMP Tools.
+        apps: List of enterprise applications that the agent can access through LocalAI AMP Tools.
 
     Methods:
         execute_task(task: Any, context: str | None = None, tools: list[BaseTool] | None = None) -> str:
@@ -205,7 +205,7 @@ class BaseAgent(BaseModel, ABC, metaclass=AgentMeta):
     )
     apps: list[PlatformAppOrAction] | None = Field(
         default=None,
-        description="List of applications or application/action combinations that the agent can access through CrewAI Platform. Can contain app names (e.g., 'gmail') or specific actions (e.g., 'gmail/send_email')",
+        description="List of applications or application/action combinations that the agent can access through LocalAI Platform. Can contain app names (e.g., 'gmail') or specific actions (e.g., 'gmail/send_email')",
     )
     mcps: list[str | MCPServerConfig] | None = Field(
         default=None,

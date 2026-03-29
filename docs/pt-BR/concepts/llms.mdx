@@ -1,21 +1,21 @@
 ---
 title: 'LLMs'
-description: 'Um guia abrangente para configurar e usar Modelos de Linguagem de Grande Escala (LLMs) em seus projetos CrewAI'
+description: 'Um guia abrangente para configurar e usar Modelos de Linguagem de Grande Escala (LLMs) em seus projetos LocalAI'
 icon: 'microchip-ai'
 mode: "wide"
 ---
 
 ## Visão Geral
 
-O CrewAI integra-se com múltiplos provedores de LLM através do LiteLLM, oferecendo flexibilidade para você escolher o modelo certo para o seu caso de uso específico. Este guia irá ajudá-lo a entender como configurar e usar diferentes provedores de LLM em seus projetos CrewAI.
+O LocalAI integra-se com múltiplos provedores de LLM através do LiteLLM, oferecendo flexibilidade para você escolher o modelo certo para o seu caso de uso específico. Este guia irá ajudá-lo a entender como configurar e usar diferentes provedores de LLM em seus projetos LocalAI.
 
 ## O que são LLMs?
 
-Modelos de Linguagem de Grande Escala (LLMs) são a inteligência central por trás dos agentes CrewAI. Eles permitem que os agentes compreendam o contexto, tomem decisões e gerem respostas semelhantes às humanas. Veja o que você precisa saber:
+Modelos de Linguagem de Grande Escala (LLMs) são a inteligência central por trás dos agentes LocalAI. Eles permitem que os agentes compreendam o contexto, tomem decisões e gerem respostas semelhantes às humanas. Veja o que você precisa saber:
 
 <CardGroup cols={2}>
   <Card title="Noções Básicas de LLM" icon="brain">
-    Modelos de Linguagem de Grande Escala são sistemas de IA treinados em grandes volumes de dados textuais. Eles potencializam a inteligência dos agentes CrewAI, permitindo compreender e gerar textos de voz humana.
+    Modelos de Linguagem de Grande Escala são sistemas de IA treinados em grandes volumes de dados textuais. Eles potencializam a inteligência dos agentes LocalAI, permitindo compreender e gerar textos de voz humana.
   </Card>
   <Card title="Janela de Contexto" icon="window">
     A janela de contexto determina quanto texto um LLM pode processar de uma só vez. Janelas maiores (por exemplo, 128K tokens) permitem mais contexto, porém podem ser mais caras e lentas.
@@ -30,7 +30,7 @@ Modelos de Linguagem de Grande Escala (LLMs) são a inteligência central por tr
 
 ## Configurando seu LLM
 
-Existem diferentes locais no código do CrewAI onde você pode especificar o modelo a ser utilizado. Após definir o modelo usado, será necessário fornecer a configuração (como uma chave de API) para cada provedor de modelo. Veja a seção de [exemplos de configuração de provedores](#provider-configuration-examples) para seu provedor.
+Existem diferentes locais no código do LocalAI onde você pode especificar o modelo a ser utilizado. Após definir o modelo usado, será necessário fornecer a configuração (como uma chave de API) para cada provedor de modelo. Veja a seção de [exemplos de configuração de provedores](#provider-configuration-examples) para seu provedor.
 
 <Tabs>
   <Tab title="1. Variáveis de Ambiente">
@@ -106,7 +106,7 @@ Existem diferentes locais no código do CrewAI onde você pode especificar o mod
 </Tabs>
 
 <Info>
-  O CrewAI oferece integrações nativas via SDK para OpenAI, Anthropic, Google (Gemini API), Azure e AWS Bedrock — sem necessidade de instalação extra além dos extras específicos do provedor (ex.: `uv add "crewai[openai]"`).
+  O LocalAI oferece integrações nativas via SDK para OpenAI, Anthropic, Google (Gemini API), Azure e AWS Bedrock — sem necessidade de instalação extra além dos extras específicos do provedor (ex.: `uv add "crewai[openai]"`).
 
   Todos os outros provedores são alimentados pelo **LiteLLM**. Se você planeja usar algum deles, adicione-o como dependência ao seu projeto:
   ```bash
@@ -116,7 +116,7 @@ Existem diferentes locais no código do CrewAI onde você pode especificar o mod
 
 ## Exemplos de Configuração de Provedores
 
-O CrewAI suporta uma grande variedade de provedores de LLM, cada um com recursos, métodos de autenticação e capacidades de modelo únicos.
+O LocalAI suporta uma grande variedade de provedores de LLM, cada um com recursos, métodos de autenticação e capacidades de modelo únicos.
 Nesta seção, você encontrará exemplos detalhados que ajudam a selecionar, configurar e otimizar o LLM que melhor atende às necessidades do seu projeto.
 
 <AccordionGroup>
@@ -132,7 +132,7 @@ Nesta seção, você encontrará exemplos detalhados que ajudam a selecionar, co
     OPENAI_ORGANIZATION=<your-org-id>
     ```
 
-    Exemplo de uso em seu projeto CrewAI:
+    Exemplo de uso em seu projeto LocalAI:
     ```python Code
     from crewai import LLM
 
@@ -202,7 +202,7 @@ Nesta seção, você encontrará exemplos detalhados que ajudam a selecionar, co
     LLAMA_API_KEY=LLM|your_api_key_here
     ```
 
-    Exemplo de uso em seu projeto CrewAI:
+    Exemplo de uso em seu projeto LocalAI:
     ```python Code
     from crewai import LLM
 
@@ -239,7 +239,7 @@ Nesta seção, você encontrará exemplos detalhados que ajudam a selecionar, co
     ANTHROPIC_API_BASE=<custom-base-url>
     ```
 
-    Exemplo de uso em seu projeto CrewAI:
+    Exemplo de uso em seu projeto LocalAI:
     ```python Code
     llm = LLM(
         model="anthropic/claude-3-sonnet-20240229-v1:0",
@@ -346,7 +346,7 @@ Nesta seção, você encontrará exemplos detalhados que ajudam a selecionar, co
     vertex_credentials_json = json.dumps(vertex_credentials)
     ```
 
-    Exemplo de uso em seu projeto CrewAI:
+    Exemplo de uso em seu projeto LocalAI:
     ```python Code
     from crewai import LLM
 
@@ -387,7 +387,7 @@ Nesta seção, você encontrará exemplos detalhados que ajudam a selecionar, co
     AZURE_API_TYPE=<your-azure-api-type>
     ```
 
-    Exemplo de uso em seu projeto CrewAI:
+    Exemplo de uso em seu projeto LocalAI:
     ```python Code
     llm = LLM(
         model="azure/gpt-4",
@@ -403,7 +403,7 @@ Nesta seção, você encontrará exemplos detalhados que ajudam a selecionar, co
     AWS_DEFAULT_REGION=<your-region>
     ```
 
-    Exemplo de uso em seu projeto CrewAI:
+    Exemplo de uso em seu projeto LocalAI:
     ```python Code
     llm = LLM(
         model="bedrock/anthropic.claude-3-sonnet-20240229-v1:0"
@@ -451,7 +451,7 @@ Nesta seção, você encontrará exemplos detalhados que ajudam a selecionar, co
     AWS_DEFAULT_REGION=<your-region>
     ```
 
-    Exemplo de uso em seu projeto CrewAI:
+    Exemplo de uso em seu projeto LocalAI:
     ```python Code
     llm = LLM(
         model="sagemaker/<my-endpoint>"
@@ -470,7 +470,7 @@ Nesta seção, você encontrará exemplos detalhados que ajudam a selecionar, co
     MISTRAL_API_KEY=<your-api-key>
     ```
 
-    Exemplo de uso em seu projeto CrewAI:
+    Exemplo de uso em seu projeto LocalAI:
     ```python Code
     llm = LLM(
         model="mistral/mistral-large-latest",
@@ -490,7 +490,7 @@ Nesta seção, você encontrará exemplos detalhados que ajudam a selecionar, co
     NVIDIA_API_KEY=<your-api-key>
     ```
 
-    Exemplo de uso em seu projeto CrewAI:
+    Exemplo de uso em seu projeto LocalAI:
     ```python Code
     llm = LLM(
         model="nvidia_nim/meta/llama3-70b-instruct",
@@ -627,7 +627,7 @@ Nesta seção, você encontrará exemplos detalhados que ajudam a selecionar, co
     GROQ_API_KEY=<your-api-key>
     ```
 
-    Exemplo de uso em seu projeto CrewAI:
+    Exemplo de uso em seu projeto LocalAI:
     ```python Code
     llm = LLM(
         model="groq/llama-3.2-90b-text-preview",
@@ -659,7 +659,7 @@ Nesta seção, você encontrará exemplos detalhados que ajudam a selecionar, co
     WATSONX_DEPLOYMENT_SPACE_ID=<your-space-id>
     ```
 
-    Exemplo de uso em seu projeto CrewAI:
+    Exemplo de uso em seu projeto LocalAI:
     ```python Code
     llm = LLM(
         model="watsonx/meta-llama/llama-3-1-70b-instruct",
@@ -697,7 +697,7 @@ Nesta seção, você encontrará exemplos detalhados que ajudam a selecionar, co
     FIREWORKS_API_KEY=<your-api-key>
     ```
 
-    Exemplo de uso em seu projeto CrewAI:
+    Exemplo de uso em seu projeto LocalAI:
     ```python Code
     llm = LLM(
         model="fireworks_ai/accounts/fireworks/models/llama-v3-70b-instruct",
@@ -717,7 +717,7 @@ Nesta seção, você encontrará exemplos detalhados que ajudam a selecionar, co
     PERPLEXITY_API_KEY=<your-api-key>
     ```
 
-    Exemplo de uso em seu projeto CrewAI:
+    Exemplo de uso em seu projeto LocalAI:
     ```python Code
     llm = LLM(
         model="llama-3.1-sonar-large-128k-online",
@@ -737,7 +737,7 @@ Nesta seção, você encontrará exemplos detalhados que ajudam a selecionar, co
     HF_TOKEN=<your-api-key>
     ```
 
-    Exemplo de uso em seu projeto CrewAI:
+    Exemplo de uso em seu projeto LocalAI:
     ```python Code
     llm = LLM(
         model="huggingface/meta-llama/Meta-Llama-3.1-8B-Instruct"
@@ -757,7 +757,7 @@ Nesta seção, você encontrará exemplos detalhados que ajudam a selecionar, co
     SAMBANOVA_API_KEY=<your-api-key>
     ```
 
-    Exemplo de uso em seu projeto CrewAI:
+    Exemplo de uso em seu projeto LocalAI:
     ```python Code
     llm = LLM(
         model="sambanova/Meta-Llama-3.1-8B-Instruct",
@@ -785,7 +785,7 @@ Nesta seção, você encontrará exemplos detalhados que ajudam a selecionar, co
     CEREBRAS_API_KEY=<your-api-key>
     ```
 
-    Exemplo de uso em seu projeto CrewAI:
+    Exemplo de uso em seu projeto LocalAI:
     ```python Code
     llm = LLM(
         model="cerebras/llama3.1-70b",
@@ -814,7 +814,7 @@ Nesta seção, você encontrará exemplos detalhados que ajudam a selecionar, co
     OPENROUTER_API_KEY=<your-api-key>
     ```
 
-    Exemplo de uso em seu projeto CrewAI:
+    Exemplo de uso em seu projeto LocalAI:
     ```python Code
     llm = LLM(
         model="openrouter/deepseek/deepseek-r1",
@@ -838,7 +838,7 @@ Nesta seção, você encontrará exemplos detalhados que ajudam a selecionar, co
 
 ## Respostas em streaming
 
-O CrewAI suporta respostas em streaming de LLMs, permitindo que sua aplicação receba e processe saídas em tempo real assim que são geradas.
+O LocalAI suporta respostas em streaming de LLMs, permitindo que sua aplicação receba e processe saídas em tempo real assim que são geradas.
 
 <Tabs>
   <Tab title="Configuração Básica">
@@ -858,7 +858,7 @@ O CrewAI suporta respostas em streaming de LLMs, permitindo que sua aplicação 
   </Tab>
 
   <Tab title="Manipulação de Eventos">
-    O CrewAI emite eventos para cada chunk recebido durante o streaming:
+    O LocalAI emite eventos para cada chunk recebido durante o streaming:
 
     ```python
     from crewai.events import (
@@ -884,7 +884,7 @@ O CrewAI suporta respostas em streaming de LLMs, permitindo que sua aplicação 
 
 ## Chamada Estruturada de LLM
 
-O CrewAI suporta respostas estruturadas de LLMs permitindo que você defina um `response_format` usando um modelo Pydantic. Isso permite que o framework automaticamente faça o parsing e valide a saída, facilitando a integração da resposta em sua aplicação sem pós-processamento manual.
+O LocalAI suporta respostas estruturadas de LLMs permitindo que você defina um `response_format` usando um modelo Pydantic. Isso permite que o framework automaticamente faça o parsing e valide a saída, facilitando a integração da resposta em sua aplicação sem pós-processamento manual.
 
 Por exemplo, é possível definir um modelo Pydantic para representar a resposta esperada e passá-lo como `response_format` ao instanciar o LLM. O modelo será utilizado para converter a resposta do LLM em um objeto Python estruturado.
 
@@ -915,12 +915,12 @@ Saiba como obter o máximo da configuração do seu LLM:
 
 <AccordionGroup>
   <Accordion title="Gestão da Janela de Contexto">
-    O CrewAI inclui recursos inteligentes para gerenciamento de contexto:
+    O LocalAI inclui recursos inteligentes para gerenciamento de contexto:
 
     ```python
     from crewai import LLM
 
-    # O CrewAI automaticamente gerencia:
+    # O LocalAI automaticamente gerencia:
     # 1. Contagem e acompanhamento de tokens
     # 2. Resumo de conteúdo quando necessário
     # 3. Divisão de tarefas para grandes contextos
@@ -977,7 +977,7 @@ Saiba como obter o máximo da configuração do seu LLM:
   </Accordion>
 
   <Accordion title="Descartar Parâmetros Adicionais">
-    O CrewAI usa Litellm internamente para chamadas LLM, permitindo descartar parâmetros adicionais desnecessários para seu caso de uso. Isso pode simplificar seu código e reduzir a complexidade da configuração do LLM.
+    O LocalAI usa Litellm internamente para chamadas LLM, permitindo descartar parâmetros adicionais desnecessários para seu caso de uso. Isso pode simplificar seu código e reduzir a complexidade da configuração do LLM.
     Por exemplo, se não precisar enviar o parâmetro <code>stop</code>, basta omiti-lo na chamada do LLM:
 
     ```python

@@ -291,10 +291,10 @@ async def execute(
     context: RequestContext,
     event_queue: EventQueue,
 ) -> None:
-    """Execute an A2A task using a CrewAI agent.
+    """Execute an A2A task using a LocalAI agent.
 
     Args:
-        agent: The CrewAI agent to execute the task.
+        agent: The LocalAI agent to execute the task.
         context: The A2A request context containing the user's message.
         event_queue: The event queue for sending responses back.
     """
@@ -443,7 +443,7 @@ async def execute_with_extensions(
     """Execute an A2A task with extension hooks.
 
     Args:
-        agent: The CrewAI agent to execute the task.
+        agent: The LocalAI agent to execute the task.
         context: The A2A request context containing the user's message.
         event_queue: The event queue for sending responses back.
         extension_registry: Registry of server extensions.

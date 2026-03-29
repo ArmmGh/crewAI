@@ -2,7 +2,7 @@
 
 ## Description
 
-The `TavilyExtractorTool` allows CrewAI agents to extract structured content from web pages using the Tavily API. It can process single URLs or lists of URLs and provides options for controlling the extraction depth and including images.
+The `TavilyExtractorTool` allows LocalAI agents to extract structured content from web pages using the Tavily API. It can process single URLs or lists of URLs and provides options for controlling the extraction depth and including images.
 
 ## Installation
 
@@ -20,7 +20,7 @@ export TAVILY_API_KEY='your-tavily-api-key'
 
 ## Example
 
-Here's how to initialize and use the `TavilyExtractorTool` within a CrewAI agent:
+Here's how to initialize and use the `TavilyExtractorTool` within a LocalAI agent:
 
 ```python
 import os

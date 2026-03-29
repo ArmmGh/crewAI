@@ -9,7 +9,7 @@ mode: "wide"
 
 ## الوصف
 
-صُممت `RagTool` للإجابة على الأسئلة من خلال الاستفادة من قوة التوليد المعزز بالاسترجاع (RAG) عبر نظام RAG الأصلي في CrewAI.
+صُممت `RagTool` للإجابة على الأسئلة من خلال الاستفادة من قوة التوليد المعزز بالاسترجاع (RAG) عبر نظام RAG الأصلي في LocalAI.
 توفر قاعدة معرفية ديناميكية يمكن الاستعلام عنها لاسترجاع المعلومات ذات الصلة من مصادر بيانات متنوعة.
 هذه الأداة مفيدة بشكل خاص للتطبيقات التي تتطلب الوصول إلى مجموعة واسعة من المعلومات وتحتاج إلى تقديم إجابات ذات صلة بالسياق.
 
@@ -76,8 +76,8 @@ def knowledge_expert(self) -> Agent:
 تقبل `RagTool` المعاملات التالية:
 
 - **summarize**: اختياري. ما إذا كان يتم تلخيص المحتوى المسترجع. القيمة الافتراضية `False`.
-- **adapter**: اختياري. محول مخصص لقاعدة المعرفة. إذا لم يُقدَّم، سيُستخدم CrewAIRagAdapter.
-- **config**: اختياري. إعداد نظام RAG الأساسي في CrewAI. يقبل TypedDict من نوع `RagToolConfig` مع مفاتيح اختيارية `embedding_model` (ProviderSpec) و`vectordb` (VectorDbConfig). جميع قيم الإعداد المقدمة برمجياً لها الأولوية على متغيرات البيئة.
+- **adapter**: اختياري. محول مخصص لقاعدة المعرفة. إذا لم يُقدَّم، سيُستخدم LocalAIRagAdapter.
+- **config**: اختياري. إعداد نظام RAG الأساسي في LocalAI. يقبل TypedDict من نوع `RagToolConfig` مع مفاتيح اختيارية `embedding_model` (ProviderSpec) و`vectordb` (VectorDbConfig). جميع قيم الإعداد المقدمة برمجياً لها الأولوية على متغيرات البيئة.
 
 ## إضافة المحتوى
 
@@ -99,7 +99,7 @@ rag_tool.add(data_type="directory", path="path/to/your/directory")
 
 ## مثال على التكامل مع الوكيل
 
-إليك كيفية دمج `RagTool` مع وكيل CrewAI:
+إليك كيفية دمج `RagTool` مع وكيل LocalAI:
 
 ```python Code
 from crewai import Agent

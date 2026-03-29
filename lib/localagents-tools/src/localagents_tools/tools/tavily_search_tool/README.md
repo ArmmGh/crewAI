@@ -2,7 +2,7 @@
 
 ## Description
 
-The `TavilySearchTool` provides an interface to the Tavily Search API, enabling CrewAI agents to perform comprehensive web searches. It allows for specifying search depth, topics, time ranges, included/excluded domains, and whether to include direct answers, raw content, or images in the results. The tool returns the search results as a JSON string.
+The `TavilySearchTool` provides an interface to the Tavily Search API, enabling LocalAI agents to perform comprehensive web searches. It allows for specifying search depth, topics, time ranges, included/excluded domains, and whether to include direct answers, raw content, or images in the results. The tool returns the search results as a JSON string.
 
 ## Installation
 
@@ -22,7 +22,7 @@ export TAVILY_API_KEY='your_tavily_api_key'
 
 ## Example
 
-Here's how to initialize and use the `TavilySearchTool` within a CrewAI agent:
+Here's how to initialize and use the `TavilySearchTool` within a LocalAI agent:
 
 ```python
 import os

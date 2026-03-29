@@ -162,7 +162,7 @@ class Crew(FlowTrackable, BaseModel):
         step_callback: Callback to be executed after each step for every agents
             execution.
         share_crew: Whether you want to share the complete crew information and
-            execution with crewAI to make the library better, and allow us to
+            execution with localAI to make the library better, and allow us to
             train models.
         planning: Plan the crew execution and add the plan to the crew.
         chat_llm: The language model used for orchestrating chat interactions

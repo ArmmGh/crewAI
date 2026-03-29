@@ -1,7 +1,7 @@
-"""Event bus for managing and dispatching events in CrewAI.
+"""Event bus for managing and dispatching events in LocalAI.
 
 This module provides a singleton event bus that allows registration and handling
-of events throughout the CrewAI system, supporting both synchronous and asynchronous
+of events throughout the LocalAI system, supporting both synchronous and asynchronous
 event handlers with optional dependency management.
 """
 
@@ -52,7 +52,7 @@ R = TypeVar("R")
 
 
 class CrewAIEventsBus:
-    """Singleton event bus for handling events in CrewAI.
+    """Singleton event bus for handling events in LocalAI.
 
     This class manages event registration and emission for both synchronous
     and asynchronous event handlers, automatically scheduling async handlers
@@ -124,7 +124,7 @@ class CrewAIEventsBus:
         self._loop = asyncio.new_event_loop()
         self._loop_thread = threading.Thread(
             target=self._run_loop,
-            name="CrewAIEventsLoop",
+            name="LocalAIEventsLoop",
             daemon=True,
         )
         self._loop_thread.start()

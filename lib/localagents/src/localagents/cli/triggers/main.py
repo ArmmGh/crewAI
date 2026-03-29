@@ -13,7 +13,7 @@ console = Console()
 
 class TriggersCommand(BaseCommand, PlusAPIMixin):
     """
-    A class to handle trigger-related operations for CrewAI projects.
+    A class to handle trigger-related operations for LocalAI projects.
     """
 
     def __init__(self) -> None:

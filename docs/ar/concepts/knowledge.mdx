@@ -1,13 +1,13 @@
 ---
 title: المعرفة
-description: ما هي المعرفة في CrewAI وكيفية استخدامها.
+description: ما هي المعرفة في LocalAI وكيفية استخدامها.
 icon: book
 mode: "wide"
 ---
 
 ## نظرة عامة
 
-المعرفة في CrewAI هي نظام قوي يتيح لوكلاء الذكاء الاصطناعي الوصول إلى مصادر المعلومات الخارجية واستخدامها أثناء مهامهم.
+المعرفة في LocalAI هي نظام قوي يتيح لوكلاء الذكاء الاصطناعي الوصول إلى مصادر المعلومات الخارجية واستخدامها أثناء مهامهم.
 فكّر فيها كمنح وكلائك مكتبة مرجعية يمكنهم الرجوع إليها أثناء العمل.
 
 <Info>
@@ -27,7 +27,7 @@ mode: "wide"
 
 ### إعداد عميل المتجه (RAG)
 
-يوفر CrewAI تجريدًا لعميل RAG محايد بالنسبة للمزود لمتاجر المتجهات. المزود الافتراضي هو ChromaDB، ويتم دعم Qdrant أيضًا. يمكنك التبديل بين المزودين باستخدام أدوات الإعداد.
+يوفر LocalAI تجريدًا لعميل RAG محايد بالنسبة للمزود لمتاجر المتجهات. المزود الافتراضي هو ChromaDB، ويتم دعم Qdrant أيضًا. يمكنك التبديل بين المزودين باستخدام أدوات الإعداد.
 
 المدعوم حاليًا:
 - ChromaDB (افتراضي)
@@ -51,7 +51,7 @@ client = qdrant_client  # or chromadb_client
 client.create_collection(collection_name="docs")
 client.add_documents(
     collection_name="docs",
-    documents=[{"id": "1", "content": "CrewAI enables collaborative AI agents."}],
+    documents=[{"id": "1", "content": "LocalAI enables collaborative AI agents."}],
 )
 results = client.search(collection_name="docs", query="collaborative agents", limit=3)
 
@@ -152,7 +152,7 @@ result = crew.kickoff(
 
 ## مصادر المعرفة المدعومة
 
-يدعم CrewAI أنواعًا متعددة من مصادر المعرفة جاهزة للاستخدام:
+يدعم LocalAI أنواعًا متعددة من مصادر المعرفة جاهزة للاستخدام:
 
 <CardGroup cols={2}>
   <Card title="مصادر نصية" icon="text">
@@ -219,7 +219,7 @@ json_source = JSONKnowledgeSource(
 ## معرفة Agent مقابل معرفة Crew: دليل شامل
 
 <Info>
-**فهم مستويات المعرفة**: يدعم CrewAI المعرفة على مستوى كل من Agent و Crew. يوضح هذا القسم بالضبط كيف يعمل كل منهما، ومتى يتم تهيئتهما، ويعالج المفاهيم الخاطئة الشائعة حول التبعيات.
+**فهم مستويات المعرفة**: يدعم LocalAI المعرفة على مستوى كل من Agent و Crew. يوضح هذا القسم بالضبط كيف يعمل كل منهما، ومتى يتم تهيئتهما، ويعالج المفاهيم الخاطئة الشائعة حول التبعيات.
 </Info>
 
 ### كيف تعمل تهيئة المعرفة فعليًا
@@ -282,7 +282,7 @@ agent_collection_name = agent.role  # e.g., "Technical Specialist"
 crew_collection_name = "crew"
 
 # Both stored in same ChromaDB instance but different collections
-# Path: ~/.local/share/CrewAI/{project}/knowledge/
+# Path: ~/.local/share/LocalAI/{project}/knowledge/
 #   ├── crew/                    # Crew knowledge collection
 #   ├── Technical Specialist/    # Agent knowledge collection
 #   └── Another Agent Role/      # Another agent's collection
@@ -441,18 +441,18 @@ agent = Agent(
 ## شفافية تخزين المعرفة
 
 <Info>
-**فهم تخزين المعرفة**: يخزّن CrewAI مصادر المعرفة تلقائيًا في مجلدات خاصة بالمنصة باستخدام ChromaDB للتخزين المتجهي. فهم هذه المواقع والإعدادات الافتراضية يساعد في النشر في بيئة الإنتاج وتصحيح الأخطاء وإدارة التخزين.
+**فهم تخزين المعرفة**: يخزّن LocalAI مصادر المعرفة تلقائيًا في مجلدات خاصة بالمنصة باستخدام ChromaDB للتخزين المتجهي. فهم هذه المواقع والإعدادات الافتراضية يساعد في النشر في بيئة الإنتاج وتصحيح الأخطاء وإدارة التخزين.
 </Info>
 
-### أين يخزّن CrewAI ملفات المعرفة
+### أين يخزّن LocalAI ملفات المعرفة
 
-بشكل افتراضي، يستخدم CrewAI نفس نظام التخزين مثل الذاكرة، حيث يخزّن المعرفة في مجلدات خاصة بالمنصة:
+بشكل افتراضي، يستخدم LocalAI نفس نظام التخزين مثل الذاكرة، حيث يخزّن المعرفة في مجلدات خاصة بالمنصة:
 
 #### مواقع التخزين الافتراضية حسب المنصة
 
 **macOS:**
 ```
-~/Library/Application Support/CrewAI/{project_name}/
+~/Library/Application Support/LocalAI/{project_name}/
 └── knowledge/                    # Knowledge ChromaDB files
     ├── chroma.sqlite3           # ChromaDB metadata
     ├── {collection_id}/         # Vector embeddings
@@ -461,7 +461,7 @@ agent = Agent(
 
 **Linux:**
 ```
-~/.local/share/CrewAI/{project_name}/
+~/.local/share/LocalAI/{project_name}/
 └── knowledge/
     ├── chroma.sqlite3
     ├── {collection_id}/
@@ -470,7 +470,7 @@ agent = Agent(
 
 **Windows:**
 ```
-C:\Users\{username}\AppData\Local\CrewAI\{project_name}\
+C:\Users\{username}\AppData\Local\LocalAI\{project_name}\
 └── knowledge\
     ├── chroma.sqlite3
     ├── {collection_id}\
@@ -479,7 +479,7 @@ C:\Users\{username}\AppData\Local\CrewAI\{project_name}\
 
 ### معرفة موقع تخزين المعرفة
 
-لرؤية المكان الذي يخزّن فيه CrewAI ملفات المعرفة بالضبط:
+لرؤية المكان الذي يخزّن فيه LocalAI ملفات المعرفة بالضبط:
 
 ```python
 from crewai.utilities.paths import db_storage_path
@@ -515,7 +515,7 @@ else:
 import os
 from crewai import Crew
 
-# Set custom storage location for all CrewAI data
+# Set custom storage location for all LocalAI data
 os.environ["CREWAI_STORAGE_DIR"] = "./my_project_storage"
 
 # All knowledge will now be stored in ./my_project_storage/knowledge/
@@ -564,7 +564,7 @@ os.environ["CREWAI_STORAGE_DIR"] = str(knowledge_dir)
 ### سلوك مزود التضمين الافتراضي
 
 <Info>
-**مزود التضمين الافتراضي**: يستخدم CrewAI افتراضيًا تضمينات OpenAI (`text-embedding-3-small`) لتخزين المعرفة، حتى عند استخدام مزودي LLM مختلفين. يمكنك تخصيص هذا بسهولة ليتوافق مع إعدادك.
+**مزود التضمين الافتراضي**: يستخدم LocalAI افتراضيًا تضمينات OpenAI (`text-embedding-3-small`) لتخزين المعرفة، حتى عند استخدام مزودي LLM مختلفين. يمكنك تخصيص هذا بسهولة ليتوافق مع إعدادك.
 </Info>
 
 #### فهم السلوك الافتراضي
@@ -580,7 +580,7 @@ agent = Agent(
     llm=LLM(provider="anthropic", model="claude-3-sonnet")  # Using Claude
 )
 
-# CrewAI will still use OpenAI embeddings by default for knowledge
+# LocalAI will still use OpenAI embeddings by default for knowledge
 # This ensures consistency but may not match your LLM provider preference
 knowledge_source = StringKnowledgeSource(content="Research data...")
 
@@ -666,7 +666,7 @@ agent = Agent(
 
 ### إعادة صياغة الاستعلام
 
-ينفذ CrewAI آلية إعادة صياغة استعلام ذكية لتحسين استرجاع المعرفة. عندما يحتاج وكيل إلى البحث في مصادر المعرفة، يتم تحويل موجّه المهمة الخام تلقائيًا إلى استعلام بحث أكثر فعالية.
+ينفذ LocalAI آلية إعادة صياغة استعلام ذكية لتحسين استرجاع المعرفة. عندما يحتاج وكيل إلى البحث في مصادر المعرفة، يتم تحويل موجّه المهمة الخام تلقائيًا إلى استعلام بحث أكثر فعالية.
 
 #### كيف تعمل إعادة صياغة الاستعلام
 
@@ -703,7 +703,7 @@ rewritten_query = "What movies did John watch last week?"
 
 ### أحداث المعرفة
 
-يُصدر CrewAI أحداثًا أثناء عملية استرجاع المعرفة يمكنك الاستماع إليها باستخدام نظام الأحداث. تتيح لك هذه الأحداث مراقبة وتصحيح أخطاء وتحليل كيفية استرجاع المعرفة واستخدامها بواسطة وكلائك.
+يُصدر LocalAI أحداثًا أثناء عملية استرجاع المعرفة يمكنك الاستماع إليها باستخدام نظام الأحداث. تتيح لك هذه الأحداث مراقبة وتصحيح أخطاء وتحليل كيفية استرجاع المعرفة واستخدامها بواسطة وكلائك.
 
 #### أحداث المعرفة المتاحة
 
@@ -743,7 +743,7 @@ knowledge_monitor = KnowledgeMonitorListener()
 
 ### مصادر المعرفة المخصصة
 
-يتيح لك CrewAI إنشاء مصادر معرفة مخصصة لأي نوع من البيانات عن طريق توسيع فئة `BaseKnowledgeSource`. لنقم بإنشاء مثال عملي يجلب ويعالج مقالات أخبار الفضاء.
+يتيح لك LocalAI إنشاء مصادر معرفة مخصصة لأي نوع من البيانات عن طريق توسيع فئة `BaseKnowledgeSource`. لنقم بإنشاء مثال عملي يجلب ويعالج مقالات أخبار الفضاء.
 
 #### مثال مصدر معرفة أخبار الفضاء
 
@@ -936,7 +936,7 @@ import chromadb
 from crewai.utilities.paths import db_storage_path
 import os
 
-# Connect to CrewAI's knowledge ChromaDB
+# Connect to LocalAI's knowledge ChromaDB
 knowledge_path = os.path.join(db_storage_path(), "knowledge")
 
 if os.path.exists(knowledge_path):
@@ -1013,7 +1013,7 @@ crew = Crew(
 **أخطاء "رفض إذن ChromaDB":**
 ```bash
 # Fix storage permissions
-chmod -R 755 ~/.local/share/CrewAI/
+chmod -R 755 ~/.local/share/LocalAI/
 ```
 
 **المعرفة لا تستمر بين عمليات التشغيل:**
@@ -1043,7 +1043,7 @@ crew.reset_memories(command_type='knowledge')
 
 ### مسح المعرفة
 
-إذا كنت بحاجة إلى مسح المعرفة المخزّنة في CrewAI، يمكنك استخدام أمر `crewai reset-memories` مع خيار `--knowledge`.
+إذا كنت بحاجة إلى مسح المعرفة المخزّنة في LocalAI، يمكنك استخدام أمر `crewai reset-memories` مع خيار `--knowledge`.
 
 ```bash Command
 crewai reset-memories --knowledge
@@ -1067,10 +1067,10 @@ crewai reset-memories --knowledge
   </Accordion>
 
   <Accordion title="المعرفة لمرة واحدة">
-    - مع هيكل الملفات النموذجي الذي يوفره CrewAI، يتم تضمين مصادر المعرفة في كل مرة يتم فيها تشغيل kickoff.
+    - مع هيكل الملفات النموذجي الذي يوفره LocalAI، يتم تضمين مصادر المعرفة في كل مرة يتم فيها تشغيل kickoff.
     - إذا كانت مصادر المعرفة كبيرة، فإن هذا يؤدي إلى عدم كفاءة وزيادة وقت الاستجابة، حيث يتم تضمين نفس البيانات في كل مرة.
     - لحل هذه المشكلة، قم بتهيئة معامل knowledge مباشرة بدلاً من معامل knowledge_sources.
-    - رابط للمشكلة للحصول على فكرة كاملة [Github Issue](https://github.com/crewAIInc/crewAI/issues/2755)
+    - رابط للمشكلة للحصول على فكرة كاملة [Github Issue](https://github.com/localAIInc/localAI/issues/2755)
   </Accordion>
 
   <Accordion title="إدارة المعرفة">

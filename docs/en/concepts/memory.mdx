@@ -1,13 +1,13 @@
 ---
 title: Memory
-description: Leveraging the unified memory system in CrewAI to enhance agent capabilities.
+description: Leveraging the unified memory system in LocalAI to enhance agent capabilities.
 icon: database
 mode: "wide"
 ---
 
 ## Overview
 
-CrewAI provides a **unified memory system** -- a single `Memory` class that replaces separate short-term, long-term, entity, and external memory types with one intelligent API. Memory uses an LLM to analyze content when saving (inferring scope, categories, and importance) and supports adaptive-depth recall with composite scoring that blends semantic similarity, recency, and importance.
+LocalAI provides a **unified memory system** -- a single `Memory` class that replaces separate short-term, long-term, entity, and external memory types with one intelligent API. Memory uses an LLM to analyze content when saving (inferring scope, categories, and importance) and supports adaptive-depth recall with composite scoring that blends semantic similarity, recency, and importance.
 
 You can use memory four ways: **standalone** (scripts, notebooks), **with Crews**, **with Agents**, or **inside Flows**.
 
@@ -389,7 +389,7 @@ When saving new content, the encoding pipeline automatically checks for similar 
 - **delete** -- The existing record is outdated, superseded, or contradicted.
 - **insert_new** -- Whether the new content should also be inserted as a separate record.
 
-This prevents duplicates from accumulating. For example, if you save "CrewAI ensures reliable operation" three times, consolidation recognizes the duplicates and keeps only one record.
+This prevents duplicates from accumulating. For example, if you save "LocalAI ensures reliable operation" three times, consolidation recognizes the duplicates and keeps only one record.
 
 ### Intra-batch Dedup
 
@@ -398,9 +398,9 @@ When using `remember_many()`, items within the same batch are compared against e
 ```python
 # Only 2 records are stored (the third is a near-duplicate of the first)
 memory.remember_many([
-    "CrewAI supports complex workflows.",
+    "LocalAI supports complex workflows.",
     "Python is a great language.",
-    "CrewAI supports complex workflows.",  # dropped by intra-batch dedup
+    "LocalAI supports complex workflows.",  # dropped by intra-batch dedup
 ])
 ```
 

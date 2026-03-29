@@ -126,7 +126,7 @@ def create_extension_registry_from_config(
     """Create an extension registry from A2A client configuration.
 
     Extracts client_extensions from each A2AClientConfig and registers them
-    with the ExtensionRegistry. These extensions provide CrewAI-specific
+    with the ExtensionRegistry. These extensions provide LocalAI-specific
     processing hooks (tool injection, prompt augmentation, response processing).
 
     Note: A2A protocol extensions (URI strings sent via X-A2A-Extensions header)

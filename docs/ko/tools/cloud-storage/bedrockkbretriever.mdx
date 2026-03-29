@@ -7,7 +7,7 @@ mode: "wide"
 
 # `BedrockKBRetrieverTool`
 
-`BedrockKBRetrieverTool`은 CrewAI 에이전트가 자연어 쿼리를 사용하여 Amazon Bedrock Knowledge Bases에서 정보를 검색할 수 있도록 합니다.
+`BedrockKBRetrieverTool`은 LocalAI 에이전트가 자연어 쿼리를 사용하여 Amazon Bedrock Knowledge Bases에서 정보를 검색할 수 있도록 합니다.
 
 ## 설치
 
@@ -23,7 +23,7 @@ uv pip install 'crewai[tools]'
 
 ## 사용법
 
-CrewAI agent와 함께 이 도구를 사용하는 방법은 다음과 같습니다:
+LocalAI agent와 함께 이 도구를 사용하는 방법은 다음과 같습니다:
 
 ```python {2, 4-17}
 from crewai import Agent, Task, Crew
@@ -35,7 +35,7 @@ kb_tool = BedrockKBRetrieverTool(
     number_of_results=5
 )
 
-# Create a CrewAI agent that uses the tool
+# Create a LocalAI agent that uses the tool
 researcher = Agent(
     role='Knowledge Base Researcher',
     goal='Find information about company policies',
@@ -141,17 +141,17 @@ policy_expert = Agent(
 ## 사용 사례
 
 ### 엔터프라이즈 지식 통합
-- 민감한 데이터를 노출하지 않고도 CrewAI 에이전트가 귀사의 독점 지식에 접근할 수 있도록 합니다.
+- 민감한 데이터를 노출하지 않고도 LocalAI 에이전트가 귀사의 독점 지식에 접근할 수 있도록 합니다.
 - 에이전트가 귀사의 특정 정책, 절차 및 문서를 기반으로 의사 결정을 내릴 수 있도록 허용합니다.
 - 데이터 보안을 유지하면서 내부 문서를 기반으로 질문에 답변할 수 있는 에이전트를 생성합니다.
 
 ### 전문 분야 지식
-- CrewAI 에이전트를 도메인별 지식 베이스(법률, 의료, 기술 등)에 재학습 없이 연결할 수 있습니다
+- LocalAI 에이전트를 도메인별 지식 베이스(법률, 의료, 기술 등)에 재학습 없이 연결할 수 있습니다
 - 이미 AWS 환경에서 관리되고 있는 기존 지식 저장소를 활용할 수 있습니다
-- CrewAI의 추론과 지식 베이스의 도메인별 정보를 결합할 수 있습니다
+- LocalAI의 추론과 지식 베이스의 도메인별 정보를 결합할 수 있습니다
 
 ### 데이터 기반 의사결정
-- Ground CrewAI 에이전트 응답을 일반 지식이 아닌 실제 회사 데이터에 기반하게 하세요
+- Ground LocalAI 에이전트 응답을 일반 지식이 아닌 실제 회사 데이터에 기반하게 하세요
 - 에이전트가 귀사의 특정 비즈니스 맥락과 문서를 바탕으로 추천을 제공하도록 보장하세요
 - 지식 기반에서 사실 정보를 검색하여 환각을 줄이세요
 
@@ -161,6 +161,6 @@ policy_expert = Agent(
 - 대규모 지식 베이스를 효율적으로 처리하기 위해 AWS의 확장 가능한 인프라를 활용합니다.
 
 ### 컴플라이언스 및 거버넌스
-- CrewAI 에이전트가 회사의 승인된 문서에 부합하는 응답을 제공하도록 보장하십시오
+- LocalAI 에이전트가 회사의 승인된 문서에 부합하는 응답을 제공하도록 보장하십시오
 - 에이전트가 사용한 정보 출처에 대한 감사 가능한 기록을 만드십시오
 - 에이전트가 접근할 수 있는 정보 출처를 제어하십시오

@@ -1,13 +1,13 @@
 ---
 title: MCP DSL Integration
-description: Learn how to use CrewAI's simple DSL syntax to integrate MCP servers directly with your agents using the mcps field.
+description: Learn how to use LocalAI's simple DSL syntax to integrate MCP servers directly with your agents using the mcps field.
 icon: code
 mode: "wide"
 ---
 
 ## Overview
 
-CrewAI's MCP DSL (Domain Specific Language) integration provides the **simplest way** to connect your agents to MCP (Model Context Protocol) servers. Just add an `mcps` field to your agent and CrewAI handles all the complexity automatically.
+LocalAI's MCP DSL (Domain Specific Language) integration provides the **simplest way** to connect your agents to MCP (Model Context Protocol) servers. Just add an `mcps` field to your agent and LocalAI handles all the complexity automatically.
 
 <Info>
   This is the **recommended approach** for most MCP use cases. For advanced
@@ -64,7 +64,7 @@ Use the `#` syntax to select specific tools from a server:
 
 ### Connected MCP Integrations
 
-Connect MCP servers from the CrewAI catalog or bring your own. Once connected in your account, reference them by slug:
+Connect MCP servers from the LocalAI catalog or bring your own. Once connected in your account, reference them by slug:
 
 ```python
 # Connected MCP with all tools
@@ -134,11 +134,11 @@ print(f"Research completed with {len(multi_source_agent.mcps)} MCP data sources"
 
 ## Tool Naming and Organization
 
-CrewAI automatically handles tool naming to prevent conflicts:
+LocalAI automatically handles tool naming to prevent conflicts:
 
 ```python
 # Original MCP server has tools: "search", "analyze"
-# CrewAI creates tools: "mcp_exa_ai_search", "mcp_exa_ai_analyze"
+# LocalAI creates tools: "mcp_exa_ai_search", "mcp_exa_ai_analyze"
 
 agent = Agent(
     role="Tool Organization Demo",
@@ -232,7 +232,7 @@ agent = Agent(
 
 ## Integration with Existing Features
 
-MCP tools work seamlessly with other CrewAI features:
+MCP tools work seamlessly with other LocalAI features:
 
 ```python
 from crewai.tools import BaseTool
@@ -332,7 +332,7 @@ mcps=["https://mcp.example.com/mcp?api_key=valid_key"]
 
 ```python
 # Server may be slow or overloaded
-# CrewAI will log warnings and continue with other servers
+# LocalAI will log warnings and continue with other servers
 # Check server status or try backup servers
 ```
 

@@ -7,7 +7,7 @@ mode: "wide"
 
 ## Introdução
 
-O CrewAI oferece a capacidade de reexecutar uma tarefa especificada a partir do último crew kickoff. Esse recurso é particularmente útil quando você concluiu um kickoff e deseja tentar novamente determinadas tarefas, ou não precisa buscar dados novamente porque seus agentes já possuem o contexto salvo da execução do kickoff, sendo necessário apenas reexecutar as tarefas desejadas.
+O LocalAI oferece a capacidade de reexecutar uma tarefa especificada a partir do último crew kickoff. Esse recurso é particularmente útil quando você concluiu um kickoff e deseja tentar novamente determinadas tarefas, ou não precisa buscar dados novamente porque seus agentes já possuem o contexto salvo da execução do kickoff, sendo necessário apenas reexecutar as tarefas desejadas.
 
 <Note>
     Você deve executar `crew.kickoff()` antes de poder reexecutar uma tarefa. 
@@ -22,7 +22,7 @@ Para utilizar o recurso de reexecução, siga estes passos:
 
 <Steps>
    <Step title="Abra seu terminal ou prompt de comando."></Step>
-   <Step title="Navegue até o diretório onde está localizado seu projeto CrewAI."></Step>
+   <Step title="Navegue até o diretório onde está localizado seu projeto LocalAI."></Step>
    <Step title="Execute os seguintes comandos:">
       Para visualizar os task_ids do último kickoff, utilize:
 
@@ -59,7 +59,7 @@ Para reexecutar uma tarefa programaticamente, siga os passos abaixo:
             Replay the crew execution from a specific task.
             """
             task_id = '<task_id>'
-            inputs = {"topic": "CrewAI Training"}  # This is optional; you can pass in the inputs you want to replay; otherwise, it uses the previous kickoff's inputs.
+            inputs = {"topic": "LocalAI Training"}  # This is optional; you can pass in the inputs you want to replay; otherwise, it uses the previous kickoff's inputs.
             try:
                 YourCrewName_Crew().crew().replay(task_id=task_id, inputs=inputs)
 
@@ -75,5 +75,5 @@ Para reexecutar uma tarefa programaticamente, siga os passos abaixo:
 
 ## Conclusão
 
-Com as melhorias acima e funcionalidades detalhadas, a reexecução de tarefas específicas no CrewAI ficou mais eficiente e robusta. 
+Com as melhorias acima e funcionalidades detalhadas, a reexecução de tarefas específicas no LocalAI ficou mais eficiente e robusta. 
 Certifique-se de seguir exatamente os comandos e passos para aproveitar ao máximo esses recursos.

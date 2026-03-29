@@ -399,10 +399,10 @@ async def _afetch_agent_card_impl(
 
 
 def _task_to_skill(task: Task) -> AgentSkill:
-    """Convert a CrewAI Task to an A2A AgentSkill.
+    """Convert a LocalAI Task to an A2A AgentSkill.
 
     Args:
-        task: The CrewAI Task to convert.
+        task: The LocalAI Task to convert.
 
     Returns:
         AgentSkill representing the task's capability.

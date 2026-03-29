@@ -1,4 +1,4 @@
-"""Hallucination Guardrail Placeholder for CrewAI.
+"""Hallucination Guardrail Placeholder for LocalAI.
 
 This is a no-op version of the HallucinationGuardrail for the open-source repository.
 

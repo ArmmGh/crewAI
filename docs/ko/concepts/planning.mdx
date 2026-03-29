@@ -1,13 +1,13 @@
 ---
 title: 계획
-description: CrewAI Crew에 계획을 추가하고 성능을 향상시키는 방법을 알아보세요.
+description: LocalAI Crew에 계획을 추가하고 성능을 향상시키는 방법을 알아보세요.
 icon: ruler-combined
 mode: "wide"
 ---
 
 ## 개요
 
-CrewAI의 planning 기능을 통해 crew에 계획 수립 기능을 추가할 수 있습니다. 해당 기능을 활성화하면, 각 Crew 반복 전에 모든 Crew 정보가 AgentPlanner로 전송되어 작업이 단계별로 계획되며, 이 계획이 각 작업 설명에 추가됩니다.
+LocalAI의 planning 기능을 통해 crew에 계획 수립 기능을 추가할 수 있습니다. 해당 기능을 활성화하면, 각 Crew 반복 전에 모든 Crew 정보가 AgentPlanner로 전송되어 작업이 단계별로 계획되며, 이 계획이 각 작업 설명에 추가됩니다.
 
 ### Planning 기능 사용하기
 
@@ -30,7 +30,7 @@ my_crew = Crew(
 이 시점부터 crew는 planning이 활성화되며, 각 반복 전에 작업이 계획됩니다.
 
 <Warning>
-Planning이 활성화되면, crewAI는 planning을 위해 기본 LLM으로 `gpt-4o-mini`를 사용합니다. 이 기능은 유효한 OpenAI API 키가 필요합니다. 에이전트가 서로 다른 LLM을 사용할 수도 있기 때문에, OpenAI API 키가 설정되어 있지 않거나 LLM API 호출과 관련된 예상치 못한 동작이 발생할 경우 혼란을 일으킬 수 있습니다.
+Planning이 활성화되면, localAI는 planning을 위해 기본 LLM으로 `gpt-4o-mini`를 사용합니다. 이 기능은 유효한 OpenAI API 키가 필요합니다. 에이전트가 서로 다른 LLM을 사용할 수도 있기 때문에, OpenAI API 키가 설정되어 있지 않거나 LLM API 호출과 관련된 예상치 못한 동작이 발생할 경우 혼란을 일으킬 수 있습니다.
 </Warning>
 
 #### LLM 계획하기

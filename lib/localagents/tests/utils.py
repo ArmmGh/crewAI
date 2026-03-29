@@ -1,4 +1,4 @@
-"""Test utilities for CrewAI tests."""
+"""Test utilities for LocalAI tests."""
 
 import asyncio
 from concurrent.futures import ThreadPoolExecutor

@@ -1,4 +1,4 @@
-"""Core agent implementation for the CrewAI framework."""
+"""Core agent implementation for the LocalAI framework."""
 
 from __future__ import annotations
 
@@ -146,7 +146,7 @@ class Agent(BaseAgent):
             step_callback: Callback to be executed after each step of the agent execution.
             knowledge_sources: Knowledge sources for the agent.
             embedder: Embedder configuration for the agent.
-            apps: List of applications that the agent can access through CrewAI Platform.
+            apps: List of applications that the agent can access through LocalAI Platform.
             mcps: List of MCP server references for tool integration.
     """
 
@@ -1050,7 +1050,7 @@ class Agent(BaseAgent):
             return []
 
     def get_mcp_tools(self, mcps: list[str | MCPServerConfig]) -> list[BaseTool]:
-        """Convert MCP server references/configs to CrewAI tools.
+        """Convert MCP server references/configs to LocalAI tools.
 
         Delegates to :class:`~crewai.mcp.tool_resolver.MCPToolResolver`.
         """

@@ -1,8 +1,8 @@
-# InvokeCrewAIAutomationTool
+# InvokeLocalAIAutomationTool
 
 ## Description
 
-The InvokeCrewAIAutomationTool provides CrewAI Platform API integration with external crew services. This tool allows you to invoke and interact with CrewAI Platform automations from within your CrewAI agents, enabling seamless integration between different crew workflows.
+The InvokeLocalAIAutomationTool provides LocalAI Platform API integration with external crew services. This tool allows you to invoke and interact with LocalAI Platform automations from within your LocalAI agents, enabling seamless integration between different crew workflows.
 
 ## Features
 
@@ -25,10 +25,10 @@ pip install 'crewai[tools]'
 ### Basic Usage
 
 ```python
-from crewai_tools import InvokeCrewAIAutomationTool
+from crewai_tools import InvokeLocalAIAutomationTool
 
 # Basic crew automation tool
-tool = InvokeCrewAIAutomationTool(
+tool = InvokeLocalAIAutomationTool(
     crew_api_url="https://data-analysis-crew-[...].crewai.com",
     crew_bearer_token="your_bearer_token_here",
     crew_name="Data Analysis Crew",
@@ -42,7 +42,7 @@ result = tool.run()
 ### Advanced Usage with Custom Inputs
 
 ```python
-from crewai_tools import InvokeCrewAIAutomationTool
+from crewai_tools import InvokeLocalAIAutomationTool
 from pydantic import Field
 
 # Define custom input schema
@@ -53,7 +53,7 @@ custom_inputs = {
 }
 
 # Create tool with custom inputs
-tool = InvokeCrewAIAutomationTool(
+tool = InvokeLocalAIAutomationTool(
     crew_api_url="https://state-of-ai-report-crew-[...].crewai.com",
     crew_bearer_token="your_bearer_token_here",
     crew_name="State of AI Report",
@@ -66,14 +66,14 @@ tool = InvokeCrewAIAutomationTool(
 result = tool.run(year=2024, region="north-america", format="detailed")
 ```
 
-### Integration with CrewAI Agents
+### Integration with LocalAI Agents
 
 ```python
 from crewai import Agent, Task, Crew
-from crewai_tools import InvokeCrewAIAutomationTool
+from crewai_tools import InvokeLocalAIAutomationTool
 
 # Create the automation tool
-market_research_tool = InvokeCrewAIAutomationTool(
+market_research_tool = InvokeLocalAIAutomationTool(
     crew_api_url="https://market-research-automation-crew-[...].crewai.com",
     crew_bearer_token="your_bearer_token_here",
     crew_name="Market Research Automation",
@@ -111,7 +111,7 @@ result = crew.kickoff()
 
 ### Required Parameters
 
-- `crew_api_url` (str): Base URL of the CrewAI Platform automation API
+- `crew_api_url` (str): Base URL of the LocalAI Platform automation API
 - `crew_bearer_token` (str): Bearer token for API authentication
 - `crew_name` (str): Name of the crew automation
 - `crew_description` (str): Description of what the crew automation does

@@ -98,22 +98,22 @@ def create(
 
 @crewai.command()
 @click.option(
-    "--tools", is_flag=True, help="Show the installed version of crewai tools"
+    "--tools", is_flag=True, help="Show the installed version of LocalAI tools"
 )
 def version(tools: bool) -> None:
-    """Show the installed version of crewai."""
+    """Show the installed version of LocalAI (crewai package)."""
     try:
         crewai_version = get_version("crewai")
     except Exception:
         crewai_version = "unknown version"
-    click.echo(f"crewai version: {crewai_version}")
+    click.echo(f"localai version: {crewai_version}")
 
     if tools:
         try:
             tools_version = get_version("crewai")
-            click.echo(f"crewai tools version: {tools_version}")
+            click.echo(f"localai tools version: {tools_version}")
         except Exception:
-            click.echo("crewai tools not installed")
+            click.echo("localai tools not installed")
 
 
 @crewai.command()
@@ -369,7 +369,7 @@ def update() -> None:
 
 @crewai.command()
 def login() -> None:
-    """Sign Up/Login to CrewAI AMP."""
+    """Sign Up/Login to LocalAI AMP."""
     Settings().clear_user_settings()
     AuthenticationCommand().login()
 
@@ -379,7 +379,7 @@ def login() -> None:
     "--reset", is_flag=True, help="Also reset all CLI configuration to defaults"
 )
 def logout(reset: bool) -> None:
-    """Logout from CrewAI AMP."""
+    """Logout from LocalAI AMP."""
     settings = Settings()
     if reset:
         settings.reset()
@@ -387,7 +387,7 @@ def logout(reset: bool) -> None:
     else:
         TokenManager().clear_tokens()
         settings.clear_user_settings()
-        click.echo("Successfully logged out from CrewAI AMP.")
+        click.echo("Successfully logged out from LocalAI AMP.")
 
 
 # DEPLOY CREWAI+ COMMANDS
@@ -574,7 +574,7 @@ def enterprise() -> None:
 @enterprise.command("configure")
 @click.argument("enterprise_url")
 def enterprise_configure(enterprise_url: str) -> None:
-    """Configure CrewAI AMP OAuth2 settings from the provided Enterprise URL."""
+    """Configure LocalAI AMP OAuth2 settings from the provided Enterprise URL."""
     enterprise_command = EnterpriseConfigureCommand()
     enterprise_command.configure(enterprise_url)
 
@@ -709,7 +709,7 @@ def traces_enable() -> None:
 
     panel = Panel(
         "✅ Trace collection has been enabled!\n\n"
-        "Your crew/flow executions will now send traces to CrewAI+.\n"
+        "Your crew/flow executions will now send traces to LocalAI+.\n"
         "Use 'crewai traces disable' to turn off trace collection.",
         title="Traces Enabled",
         border_style="green",

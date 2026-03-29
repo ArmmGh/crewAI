@@ -1,14 +1,14 @@
 ---
 title: "Private Package Registries"
-description: "Install private Python packages from authenticated PyPI registries in CrewAI AMP"
+description: "Install private Python packages from authenticated PyPI registries in LocalAI AMP"
 icon: "lock"
 mode: "wide"
 ---
 
 <Note>
-  This guide covers how to configure your CrewAI project to install Python packages
+  This guide covers how to configure your LocalAI project to install Python packages
   from private PyPI registries (Azure DevOps Artifacts, GitHub Packages, GitLab, AWS CodeArtifact, etc.)
-  when deploying to CrewAI AMP.
+  when deploying to LocalAI AMP.
 </Note>
 
 ## When You Need This
@@ -20,7 +20,7 @@ rather than the public PyPI, you'll need to:
 2. Tell UV **which** packages come from that index (a source mapping)
 3. Provide **credentials** so UV can authenticate during install
 
-CrewAI AMP uses [UV](https://docs.astral.sh/uv/) for dependency resolution and installation.
+LocalAI AMP uses [UV](https://docs.astral.sh/uv/) for dependency resolution and installation.
 UV supports authenticated private registries through `pyproject.toml` configuration combined
 with environment variables for credentials.
 
@@ -124,7 +124,7 @@ For example, an index named `my-private-registry` uses:
 | `UV_INDEX_MY_PRIVATE_REGISTRY_PASSWORD` | Your registry password or token/PAT |
 
 <Warning>
-  These environment variables **must** be added via the CrewAI AMP **Environment Variables** settings —
+  These environment variables **must** be added via the LocalAI AMP **Environment Variables** settings —
   either globally or at the deployment level. They cannot be set in `.env` files or hardcoded in your project.
 
   See [Setting Environment Variables in AMP](#setting-environment-variables-in-amp) below.
@@ -153,12 +153,12 @@ Replace placeholder values with your actual organization and feed details.
 
 ## Setting Environment Variables in AMP
 
-Private registry credentials must be configured as environment variables in CrewAI AMP.
+Private registry credentials must be configured as environment variables in LocalAI AMP.
 You have two options:
 
 <Tabs>
   <Tab title="Web Interface">
-    1. Log in to [CrewAI AMP](https://app.crewai.com)
+    1. Log in to [LocalAI AMP](https://app.crewai.com)
     2. Navigate to your automation
     3. Open the **Environment Variables** tab
     4. Add each variable (`UV_INDEX_*_USERNAME` and `UV_INDEX_*_PASSWORD`) with its value
@@ -191,7 +191,7 @@ To update credentials on an existing deployment, see [Update Your Crew — Envir
 
 ## How It All Fits Together
 
-When CrewAI AMP builds your automation, the resolution flow works like this:
+When LocalAI AMP builds your automation, the resolution flow works like this:
 
 <Steps>
   <Step title="Build starts">

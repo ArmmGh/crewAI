@@ -11,10 +11,10 @@ if TYPE_CHECKING:
 
 
 class BaseToolAdapter(ABC):
-    """Base class for all tool adapters in CrewAI.
+    """Base class for all tool adapters in LocalAI.
 
     This abstract class defines the common interface that all tool adapters
-    must implement. It provides the structure for adapting CrewAI tools to
+    must implement. It provides the structure for adapting LocalAI tools to
     different frameworks and platforms.
     """
 

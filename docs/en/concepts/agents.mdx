@@ -1,13 +1,13 @@
 ---
 title: Agents
-description: Detailed guide on creating and managing agents within the CrewAI framework.
+description: Detailed guide on creating and managing agents within the LocalAI framework.
 icon: robot
 mode: "wide"
 ---
 
 ## Overview of an Agent
 
-In the CrewAI framework, an `Agent` is an autonomous unit that can:
+In the LocalAI framework, an `Agent` is an autonomous unit that can:
 
 - Perform specific tasks
 - Make decisions based on its role and goal
@@ -24,7 +24,7 @@ In the CrewAI framework, an `Agent` is an autonomous unit that can:
 </Tip>
 
 <Note type="info" title="Enterprise Enhancement: Visual Agent Builder">
-CrewAI AMP includes a Visual Agent Builder that simplifies agent creation and configuration without writing code. Design your agents visually and test them in real-time.
+LocalAI AMP includes a Visual Agent Builder that simplifies agent creation and configuration without writing code. Design your agents visually and test them in real-time.
 
 ![Visual Agent Builder Screenshot](/images/enterprise/crew-studio-interface.png)
 
@@ -71,13 +71,13 @@ The Visual Agent Builder enables:
 
 ## Creating Agents
 
-There are two ways to create agents in CrewAI: using **YAML configuration (recommended)** or defining them **directly in code**.
+There are two ways to create agents in LocalAI: using **YAML configuration (recommended)** or defining them **directly in code**.
 
 ### YAML Configuration (Recommended)
 
-Using YAML configuration provides a cleaner, more maintainable way to define agents. We strongly recommend using this approach in your CrewAI projects.
+Using YAML configuration provides a cleaner, more maintainable way to define agents. We strongly recommend using this approach in your LocalAI projects.
 
-After creating your CrewAI project as outlined in the [Installation](/en/installation) section, navigate to the `src/latest_ai_development/config/agents.yaml` file and modify the template to match your requirements.
+After creating your LocalAI project as outlined in the [Installation](/en/installation) section, navigate to the `src/latest_ai_development/config/agents.yaml` file and modify the template to match your requirements.
 
 <Note>
 Variables in your YAML files (like `{topic}`) will be replaced with values from your inputs when running the crew:
@@ -345,9 +345,9 @@ multimodal_agent = Agent(
 
 ## Agent Tools
 
-Agents can be equipped with various tools to enhance their capabilities. CrewAI supports tools from:
+Agents can be equipped with various tools to enhance their capabilities. LocalAI supports tools from:
 
-- [CrewAI Toolkit](https://github.com/joaomdmoura/crewai-tools)
+- [LocalAI Toolkit](https://github.com/joaomdmoura/crewai-tools)
 - [LangChain Tools](https://python.langchain.com/docs/integrations/tools)
 
 Here's how to add tools to an agent:
@@ -391,18 +391,18 @@ analyst = Agent(
 
 ## Context Window Management
 
-CrewAI includes sophisticated automatic context window management to handle situations where conversations exceed the language model's token limits. This powerful feature is controlled by the `respect_context_window` parameter.
+LocalAI includes sophisticated automatic context window management to handle situations where conversations exceed the language model's token limits. This powerful feature is controlled by the `respect_context_window` parameter.
 
 ### How Context Window Management Works
 
-When an agent's conversation history grows too large for the LLM's context window, CrewAI automatically detects this situation and can either:
+When an agent's conversation history grows too large for the LLM's context window, LocalAI automatically detects this situation and can either:
 
 1. **Automatically summarize content** (when `respect_context_window=True`)
 2. **Stop execution with an error** (when `respect_context_window=False`)
 
 ### Automatic Context Handling (`respect_context_window=True`)
 
-This is the **default and recommended setting** for most use cases. When enabled, CrewAI will:
+This is the **default and recommended setting** for most use cases. When enabled, LocalAI will:
 
 ```python Code
 # Agent with automatic context management (default)
@@ -418,7 +418,7 @@ smart_agent = Agent(
 **What happens when context limits are exceeded:**
 
 - ⚠️ **Warning message**: `"Context length exceeded. Summarizing content to fit the model context window."`
-- 🔄 **Automatic summarization**: CrewAI intelligently summarizes the conversation history
+- 🔄 **Automatic summarization**: LocalAI intelligently summarizes the conversation history
 - ✅ **Continued execution**: Task execution continues seamlessly with the summarized context
 - 📝 **Preserved information**: Key information is retained while reducing token count
 
@@ -560,7 +560,7 @@ agent = Agent(
 <Note>
   The context window management feature works automatically in the background.
   You don't need to call any special functions - just set
-  `respect_context_window` to your preferred behavior and CrewAI handles the
+  `respect_context_window` to your preferred behavior and LocalAI handles the
   rest!
 </Note>
 

@@ -1,12 +1,12 @@
 ---
 title: واجهة سطر الأوامر
-description: تعرّف على كيفية استخدام واجهة سطر أوامر CrewAI للتفاعل مع CrewAI.
+description: تعرّف على كيفية استخدام واجهة سطر أوامر LocalAI للتفاعل مع LocalAI.
 icon: terminal
 mode: "wide"
 ---
 
 <Warning>
-  منذ الإصدار 0.140.0، بدأ CrewAI AMP عملية نقل مزود تسجيل الدخول.
+  منذ الإصدار 0.140.0، بدأ LocalAI AMP عملية نقل مزود تسجيل الدخول.
   لذلك، تم تحديث تدفق المصادقة عبر CLI. المستخدمون الذين يسجلون الدخول
   باستخدام Google، أو الذين أنشأوا حساباتهم بعد 3 يوليو 2025 لن يتمكنوا
   من تسجيل الدخول مع الإصدارات القديمة من مكتبة `crewai`.
@@ -14,11 +14,11 @@ mode: "wide"
 
 ## نظرة عامة
 
-توفر واجهة سطر أوامر CrewAI مجموعة من الأوامر للتفاعل مع CrewAI، مما يتيح لك إنشاء وتدريب وتشغيل وإدارة الأطقم والتدفقات.
+توفر واجهة سطر أوامر LocalAI مجموعة من الأوامر للتفاعل مع LocalAI، مما يتيح لك إنشاء وتدريب وتشغيل وإدارة الأطقم والتدفقات.
 
 ## التثبيت
 
-لاستخدام واجهة سطر أوامر CrewAI، تأكد من تثبيت CrewAI:
+لاستخدام واجهة سطر أوامر LocalAI، تأكد من تثبيت LocalAI:
 
 ```shell Terminal
 pip install crewai
@@ -26,7 +26,7 @@ pip install crewai
 
 ## الاستخدام الأساسي
 
-الهيكل الأساسي لأمر CrewAI CLI هو:
+الهيكل الأساسي لأمر LocalAI CLI هو:
 
 ```shell Terminal
 crewai [COMMAND] [OPTIONS] [ARGUMENTS]
@@ -54,13 +54,13 @@ crewai create flow my_new_flow
 
 ### 2. الإصدار
 
-عرض الإصدار المثبت من CrewAI.
+عرض الإصدار المثبت من LocalAI.
 
 ```shell Terminal
 crewai version [OPTIONS]
 ```
 
-- `--tools`: (اختياري) عرض الإصدار المثبت من أدوات CrewAI
+- `--tools`: (اختياري) عرض الإصدار المثبت من أدوات LocalAI
 
 ### 3. التدريب
 
@@ -159,9 +159,9 @@ def crew(self) -> Crew:
 
 ### 10. النشر
 
-نشر الطاقم أو التدفق إلى [CrewAI AMP](https://app.crewai.com).
+نشر الطاقم أو التدفق إلى [LocalAI AMP](https://app.crewai.com).
 
-- **المصادقة**: تحتاج لتكون مصادقًا للنشر إلى CrewAI AMP.
+- **المصادقة**: تحتاج لتكون مصادقًا للنشر إلى LocalAI AMP.
 
   ```shell Terminal
   crewai login
@@ -199,7 +199,7 @@ def crew(self) -> Crew:
 
 ### 11. إدارة المؤسسة
 
-إدارة مؤسسات CrewAI AMP.
+إدارة مؤسسات LocalAI AMP.
 
 ```shell Terminal
 crewai org [COMMAND] [OPTIONS]
@@ -211,7 +211,7 @@ crewai org [COMMAND] [OPTIONS]
 
 ### 12. تسجيل الدخول
 
-المصادقة مع CrewAI AMP باستخدام تدفق رمز الجهاز الآمن.
+المصادقة مع LocalAI AMP باستخدام تدفق رمز الجهاز الآمن.
 
 ```shell Terminal
 crewai login
@@ -219,7 +219,7 @@ crewai login
 
 ### 13. إدارة التهيئة
 
-إدارة إعدادات تهيئة CLI لـ CrewAI.
+إدارة إعدادات تهيئة CLI لـ LocalAI.
 
 ```shell Terminal
 crewai config [COMMAND] [OPTIONS]
@@ -275,7 +275,7 @@ crewai traces [COMMAND]
 </Note>
 
 <Tip>
-  يتعامل CrewAI CLI مع المصادقة لمستودع الأدوات تلقائيًا عند
+  يتعامل LocalAI CLI مع المصادقة لمستودع الأدوات تلقائيًا عند
   إضافة حزم إلى مشروعك. فقط أضف `crewai` قبل أي أمر `uv`
   لاستخدامه. مثلًا `crewai uv add requests`.
 </Tip>

@@ -1,1 +1,1 @@
-"""Agent tools for crewAI."""
+"""Agent tools for localAI."""

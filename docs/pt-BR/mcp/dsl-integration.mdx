@@ -1,13 +1,13 @@
 ---
 title: Integração DSL MCP
-description: Aprenda a usar a sintaxe DSL simples do CrewAI para integrar servidores MCP diretamente com seus agentes usando o campo mcps.
+description: Aprenda a usar a sintaxe DSL simples do LocalAI para integrar servidores MCP diretamente com seus agentes usando o campo mcps.
 icon: code
 mode: "wide"
 ---
 
 ## Visão Geral
 
-A integração DSL (Domain Specific Language) MCP do CrewAI oferece a **forma mais simples** de conectar seus agentes aos servidores MCP (Model Context Protocol). Basta adicionar um campo `mcps` ao seu agente e o CrewAI cuida de toda a complexidade automaticamente.
+A integração DSL (Domain Specific Language) MCP do LocalAI oferece a **forma mais simples** de conectar seus agentes aos servidores MCP (Model Context Protocol). Basta adicionar um campo `mcps` ao seu agente e o LocalAI cuida de toda a complexidade automaticamente.
 
 <Info>
   Esta é a **abordagem recomendada** para a maioria dos casos de uso de MCP.
@@ -64,7 +64,7 @@ Use a sintaxe `#` para selecionar ferramentas específicas de um servidor:
 
 ### Integrações MCP Conectadas
 
-Conecte servidores MCP do catálogo CrewAI ou traga os seus próprios. Uma vez conectados em sua conta, referencie-os pelo slug:
+Conecte servidores MCP do catálogo LocalAI ou traga os seus próprios. Uma vez conectados em sua conta, referencie-os pelo slug:
 
 ```python
 # MCP conectado com todas as ferramentas
@@ -139,7 +139,7 @@ print(f"Pesquisa concluída com {len(agente_multi_fonte.mcps)} fontes de dados M
 - ⚡ **Otimizado para Performance**: Conexões sob demanda com cache de esquemas
 - 🛡️ **Resiliência a Erros**: Tratamento gracioso de servidores indisponíveis
 - ⏱️ **Proteção por Timeout**: Timeouts integrados previnem conexões travadas
-- 📊 **Integração Transparente**: Funciona perfeitamente com recursos existentes do CrewAI
+- 📊 **Integração Transparente**: Funciona perfeitamente com recursos existentes do LocalAI
 
 ## Tratamento de Erros
 

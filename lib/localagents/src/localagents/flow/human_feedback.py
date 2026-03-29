@@ -1,7 +1,7 @@
 """Human feedback decorator for Flow methods.
 
 This module provides the @human_feedback decorator that enables human-in-the-loop
-workflows within CrewAI Flows. It allows collecting human feedback on method outputs
+workflows within LocalAI Flows. It allows collecting human feedback on method outputs
 and optionally routing to different listeners based on the feedback.
 
 Supports both synchronous (blocking) and asynchronous (non-blocking) feedback
@@ -332,7 +332,7 @@ def human_feedback(
             raise ValueError(
                 "llm is required when emit is specified. "
                 "Provide an LLM model string (e.g., 'gpt-4o-mini') or a BaseLLM instance. "
-                "See the CrewAI Human-in-the-Loop (HITL) documentation for more information: "
+                "See the LocalAI Human-in-the-Loop (HITL) documentation for more information: "
                 "https://docs.crewai.com/en/learn/human-feedback-in-flows"
             )
         if default_outcome is not None and default_outcome not in emit:

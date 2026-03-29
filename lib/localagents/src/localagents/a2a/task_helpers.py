@@ -164,8 +164,8 @@ def process_task_state(
             polling passes None to extract from task).
         endpoint: A2A agent endpoint URL.
         a2a_agent_name: Name of the A2A agent from agent card.
-        from_task: Optional CrewAI Task for event metadata.
-        from_agent: Optional CrewAI Agent for event metadata.
+        from_task: Optional LocalAI Task for event metadata.
+        from_agent: Optional LocalAI Agent for event metadata.
         is_final: Whether this is the final response in the stream.
 
     Returns:
@@ -311,8 +311,8 @@ async def send_message_and_get_task_id(
         turn_number: Current turn number
         is_multiturn: Whether multi-turn conversation
         agent_role: Agent role for logging
-        from_task: Optional CrewAI Task object for event metadata.
-        from_agent: Optional CrewAI Agent object for event metadata.
+        from_task: Optional LocalAI Task object for event metadata.
+        from_agent: Optional LocalAI Agent object for event metadata.
         endpoint: Optional A2A endpoint URL.
         a2a_agent_name: Optional A2A agent name.
         context_id: Optional A2A context ID for correlation.

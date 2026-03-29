@@ -1,6 +1,6 @@
 # crewai-files
 
-File handling utilities for CrewAI multimodal inputs.
+File handling utilities for LocalAI multimodal inputs.
 
 ## Supported File Types
 

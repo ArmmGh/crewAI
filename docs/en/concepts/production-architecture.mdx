@@ -1,13 +1,13 @@
 ---
 title: Production Architecture
-description: Best practices for building production-ready AI applications with CrewAI
+description: Best practices for building production-ready AI applications with LocalAI
 icon: server
 mode: "wide"
 ---
 
 # The Flow-First Mindset
 
-When building production AI applications with CrewAI, **we recommend starting with a Flow**.
+When building production AI applications with LocalAI, **we recommend starting with a Flow**.
 
 While it's possible to run individual Crews or Agents, wrapping them in a Flow provides the necessary structure for a robust, scalable application.
 
@@ -15,11 +15,11 @@ While it's possible to run individual Crews or Agents, wrapping them in a Flow p
 
 1.  **State Management**: Flows provide a built-in way to manage state across different steps of your application. This is crucial for passing data between Crews, maintaining context, and handling user inputs.
 2.  **Control**: Flows allow you to define precise execution paths, including loops, conditionals, and branching logic. This is essential for handling edge cases and ensuring your application behaves predictably.
-3.  **Observability**: Flows provide a clear structure that makes it easier to trace execution, debug issues, and monitor performance. We recommend using [CrewAI Tracing](/en/observability/tracing) for detailed insights. Simply run `crewai login` to enable free observability features.
+3.  **Observability**: Flows provide a clear structure that makes it easier to trace execution, debug issues, and monitor performance. We recommend using [LocalAI Tracing](/en/observability/tracing) for detailed insights. Simply run `crewai login` to enable free observability features.
 
 ## The Architecture
 
-A typical production CrewAI application looks like this:
+A typical production LocalAI application looks like this:
 
 ```mermaid
 graph TD
@@ -81,7 +81,7 @@ Delegate complex tasks to Crews. A Crew should be focused on a specific goal (e.
 
 ## Control Primitives
 
-Leverage CrewAI's control primitives to add robustness and control to your Crews.
+Leverage LocalAI's control primitives to add robustness and control to your Crews.
 
 ### 1. Task Guardrails
 Use [Task Guardrails](/en/concepts/tasks#task-guardrails) to validate task outputs before they are accepted. This ensures that your agents produce high-quality results.
@@ -125,8 +125,8 @@ def log_request(context):
 
 When deploying your Flow, consider the following:
 
-### CrewAI Enterprise
-The easiest way to deploy your Flow is using CrewAI Enterprise. It handles the infrastructure, authentication, and monitoring for you.
+### LocalAI Enterprise
+The easiest way to deploy your Flow is using LocalAI Enterprise. It handles the infrastructure, authentication, and monitoring for you.
 
 Check out the [Deployment Guide](/en/enterprise/guides/deploy-crew) to get started.
 

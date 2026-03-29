@@ -148,14 +148,14 @@ def convert_tools_to_openai_schema(
     dict[str, Callable[..., Any]],
     dict[str, BaseTool | CrewStructuredTool],
 ]:
-    """Convert CrewAI tools to OpenAI function calling format.
+    """Convert LocalAI tools to OpenAI function calling format.
 
-    This function converts CrewAI BaseTool and CrewStructuredTool objects
+    This function converts LocalAI BaseTool and CrewStructuredTool objects
     into the OpenAI-compatible tool schema format that can be passed to
     LLM providers for native function calling.
 
     Args:
-        tools: List of CrewAI tool objects to convert.
+        tools: List of LocalAI tool objects to convert.
 
     Returns:
         Tuple containing:

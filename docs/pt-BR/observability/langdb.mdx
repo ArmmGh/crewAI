@@ -1,16 +1,16 @@
 ---
 title: Integração LangDB
-description: Governe, proteja e otimize seus fluxos de trabalho CrewAI com LangDB AI Gateway—acesse mais de 350 modelos, roteamento automático, otimização de custos e observabilidade completa.
+description: Governe, proteja e otimize seus fluxos de trabalho LocalAI com LangDB AI Gateway—acesse mais de 350 modelos, roteamento automático, otimização de custos e observabilidade completa.
 icon: database
 mode: "wide"
 ---
 
 # Introdução
 
-[LangDB AI Gateway](https://langdb.ai) fornece APIs compatíveis com OpenAI para conectar com múltiplos Modelos de Linguagem Grandes e serve como uma plataforma de observabilidade que torna effortless rastrear fluxos de trabalho CrewAI de ponta a ponta, proporcionando acesso a mais de 350 modelos de linguagem. Com uma única chamada `init()`, todas as interações de agentes, execuções de tarefas e chamadas LLM são capturadas, fornecendo observabilidade abrangente e infraestrutura de IA pronta para produção para suas aplicações.
+[LangDB AI Gateway](https://langdb.ai) fornece APIs compatíveis com OpenAI para conectar com múltiplos Modelos de Linguagem Grandes e serve como uma plataforma de observabilidade que torna effortless rastrear fluxos de trabalho LocalAI de ponta a ponta, proporcionando acesso a mais de 350 modelos de linguagem. Com uma única chamada `init()`, todas as interações de agentes, execuções de tarefas e chamadas LLM são capturadas, fornecendo observabilidade abrangente e infraestrutura de IA pronta para produção para suas aplicações.
 
-<Frame caption="Exemplo de Rastreamento CrewAI LangDB">
-  <img src="/images/langdb-1.png" alt="Exemplo de rastreamento CrewAI LangDB" />
+<Frame caption="Exemplo de Rastreamento LocalAI LangDB">
+  <img src="/images/langdb-1.png" alt="Exemplo de rastreamento LocalAI LangDB" />
 </Frame>
 
 **Confira:** [Ver o exemplo de trace ao vivo](https://app.langdb.ai/sharing/threads/3becbfed-a1be-ae84-ea3c-4942867a3e22)
@@ -24,7 +24,7 @@ mode: "wide"
 - **Guardrails**: Implemente medidas de segurança e controles de conformidade para comportamento de agentes
 
 ### Observabilidade e Rastreamento
-- **Rastreamento Automático**: Uma única chamada `init()` captura todas as interações CrewAI
+- **Rastreamento Automático**: Uma única chamada `init()` captura todas as interações LocalAI
 - **Visibilidade Ponta a Ponta**: Monitore fluxos de trabalho de agentes do início ao fim
 - **Rastreamento de Uso de Ferramentas**: Rastreie quais ferramentas os agentes usam e seus resultados
 - **Monitoramento de Chamadas de Modelo**: Insights detalhados sobre interações LLM
@@ -36,7 +36,7 @@ mode: "wide"
 
 <Steps>
   <Step title="Instalar LangDB">
-    Instale o cliente LangDB com flag de recurso CrewAI:
+    Instale o cliente LangDB com flag de recurso LocalAI:
     ```bash
     pip install 'pylangdb[crewai]'
     ```
@@ -50,14 +50,14 @@ mode: "wide"
     ```
   </Step>
   <Step title="Inicializar Rastreamento">
-    Importe e inicialize LangDB antes de configurar seu código CrewAI:
+    Importe e inicialize LangDB antes de configurar seu código LocalAI:
     ```python
     from pylangdb.crewai import init
     # Inicializar LangDB
     init()
     ```
   </Step>
-  <Step title="Configurar CrewAI com LangDB">
+  <Step title="Configurar LocalAI com LangDB">
     Configure seu LLM com cabeçalhos LangDB:
     ```python
     from crewai import Agent, Task, Crew, LLM
@@ -76,14 +76,14 @@ mode: "wide"
 
 ## Exemplo de Início Rápido
 
-Aqui está um exemplo simples para começar com LangDB e CrewAI:
+Aqui está um exemplo simples para começar com LangDB e LocalAI:
 
 ```python
 import os
 from pylangdb.crewai import init
 from crewai import Agent, Task, Crew, LLM
 
-# Inicializar LangDB antes de qualquer importação CrewAI
+# Inicializar LangDB antes de qualquer importação LocalAI
 init()
 
 def create_llm(model):
@@ -146,7 +146,7 @@ export SERPER_API_KEY="<sua_chave_api_serper>"  # Para capacidades de busca na w
 import os
 import sys
 from pylangdb.crewai import init
-init()  # Inicializar LangDB antes de qualquer importação CrewAI
+init()  # Inicializar LangDB antes de qualquer importação LocalAI
 from dotenv import load_dotenv
 from crewai import Agent, Task, Crew, Process, LLM
 from crewai_tools import SerperDevTool
@@ -230,10 +230,10 @@ python main.py "Soluções de Energia Sustentável"
 
 ## Visualizando Traces no LangDB
 
-Após executar sua aplicação CrewAI, você pode visualizar traces detalhados no dashboard LangDB:
+Após executar sua aplicação LocalAI, você pode visualizar traces detalhados no dashboard LangDB:
 
 <Frame caption="Dashboard de Trace LangDB">
-  <img src="/images/langdb-2.png" alt="Dashboard de trace LangDB mostrando fluxo de trabalho CrewAI" />
+  <img src="/images/langdb-2.png" alt="Dashboard de trace LangDB mostrando fluxo de trabalho LocalAI" />
 </Frame>
 
 ### O Que Você Verá
@@ -249,7 +249,7 @@ Após executar sua aplicação CrewAI, você pode visualizar traces detalhados n
 
 ### Problemas Comuns
 
-- **Nenhum trace aparecendo**: Certifique-se de que `init()` seja chamado antes de qualquer importação CrewAI
+- **Nenhum trace aparecendo**: Certifique-se de que `init()` seja chamado antes de qualquer importação LocalAI
 - **Erros de autenticação**: Verifique sua chave API LangDB e ID do projeto
 
 
@@ -263,7 +263,7 @@ Após executar sua aplicação CrewAI, você pode visualizar traces detalhados n
     Tutoriais passo a passo para construir agentes de IA
   </Card>
   <Card title="Exemplos GitHub" icon="github" href="https://github.com/langdb/langdb-samples/tree/main/examples/crewai" >
-    Exemplos completos de integração CrewAI
+    Exemplos completos de integração LocalAI
   </Card>
   <Card title="Dashboard LangDB" icon="chart-line" href="https://app.langdb.ai">
     Acesse seus traces e análises
@@ -278,7 +278,7 @@ Após executar sua aplicação CrewAI, você pode visualizar traces detalhados n
 
 ## Próximos Passos
 
-Este guia cobriu o básico da integração do LangDB AI Gateway com CrewAI. Para aprimorar ainda mais seus fluxos de trabalho de IA, explore:
+Este guia cobriu o básico da integração do LangDB AI Gateway com LocalAI. Para aprimorar ainda mais seus fluxos de trabalho de IA, explore:
 
 - **Modelos Virtuais**: Crie configurações de modelo personalizadas com estratégias de roteamento
 - **Guardrails e Segurança**: Implemente filtragem de conteúdo e controles de conformidade

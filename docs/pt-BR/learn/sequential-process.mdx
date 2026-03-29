@@ -1,13 +1,13 @@
 ---
 title: Processos Sequenciais
-description: Um guia abrangente para utilizar os processos sequenciais na execução de tarefas em projetos CrewAI.
+description: Um guia abrangente para utilizar os processos sequenciais na execução de tarefas em projetos LocalAI.
 icon: forward
 mode: "wide"
 ---
 
 ## Introdução
 
-O CrewAI oferece uma estrutura flexível para execução de tarefas de maneira estruturada, suportando tanto processos sequenciais quanto hierárquicos.
+O LocalAI oferece uma estrutura flexível para execução de tarefas de maneira estruturada, suportando tanto processos sequenciais quanto hierárquicos.
 Este guia descreve como implementar esses processos de forma eficaz para garantir execução eficiente das tarefas e a conclusão do projeto.
 
 ## Visão Geral do Processo Sequencial
@@ -101,7 +101,7 @@ Para criar uma tarefa assíncrona, defina `async_execution=True` ao criar a tare
 
 ### Memória e Cache
 
-O CrewAI suporta recursos de memória e cache:
+O LocalAI suporta recursos de memória e cache:
 
 - **Memória**: Habilite definindo `memory=True` ao criar a Crew. Isso permite aos agentes reter informações entre as tarefas.
 - **Cache**: Por padrão, o cache está habilitado. Defina `cache=False` para desativá-lo.
@@ -115,7 +115,7 @@ Você pode definir callbacks tanto no nível da tarefa quanto no nível de etapa
 
 ### Métricas de Uso
 
-O CrewAI rastreia o uso de tokens em todas as tarefas e agentes. Você pode acessar essas métricas após a execução.
+O LocalAI rastreia o uso de tokens em todas as tarefas e agentes. Você pode acessar essas métricas após a execução.
 
 ## Melhores Práticas para Processos Sequenciais
 

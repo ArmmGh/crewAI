@@ -1,16 +1,16 @@
 ---
 title: "Visão Geral de Triggers"
-description: "Entenda como os triggers da CrewAI AMP funcionam, como gerenciá-los e onde encontrar playbooks específicos de integração"
+description: "Entenda como os triggers da LocalAI AMP funcionam, como gerenciá-los e onde encontrar playbooks específicos de integração"
 icon: "bolt"
 mode: "wide"
 ---
 
-Os triggers da CrewAI AMP conectam suas automações a eventos em tempo real nas ferramentas que sua equipe já usa. Em vez de fazer polling ou depender de execuções manuais, os triggers escutam mudanças — novos e‑mails, atualizações de calendário, alterações no CRM — e iniciam imediatamente a crew ou flow que você definiu.
+Os triggers da LocalAI AMP conectam suas automações a eventos em tempo real nas ferramentas que sua equipe já usa. Em vez de fazer polling ou depender de execuções manuais, os triggers escutam mudanças — novos e‑mails, atualizações de calendário, alterações no CRM — e iniciam imediatamente a crew ou flow que você definiu.
 
 <iframe
   className="w-full aspect-video rounded-xl"
   src="https://www.youtube.com/embed/TpQ45lAZh48"
-  title="Visão geral dos triggers da CrewAI"
+  title="Visão geral dos triggers da LocalAI"
   frameBorder="0"
   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
   allowFullScreen
@@ -83,7 +83,7 @@ Os guias abaixo explicam, em detalhe, como habilitar e testar cada integração:
 </Card>
 
   <Card title="Trigger do Zapier" icon="bolt">
-    <a href="/pt-BR/enterprise/guides/zapier-trigger">Integre a CrewAI com milhares de apps suportados pelo Zapier.</a>
+    <a href="/pt-BR/enterprise/guides/zapier-trigger">Integre a LocalAI com milhares de apps suportados pelo Zapier.</a>
   </Card>
 </CardGroup>
 
@@ -100,7 +100,7 @@ Com triggers você pode:
 
 ### Visualizando Triggers Disponíveis
 
-1. Abra sua automação no painel da CrewAI
+1. Abra sua automação no painel da LocalAI
 2. Clique na aba **Triggers** para listar todas as integrações disponíveis
 
 <Frame>
@@ -148,11 +148,11 @@ Antes de ativar em produção, confirme que você:
 - Definiu variáveis de ambiente necessárias (tokens, IDs de tenant, segredos)
 - Criou tarefas que analisam o payload no primeiro passo da crew/flow
 - Decidiu se usará `allow_crewai_trigger_context` para injetar contexto automaticamente
-- Configurou monitoramento (webhooks, históricos da CrewAI, alertas externos)
+- Configurou monitoramento (webhooks, históricos da LocalAI, alertas externos)
 
 ### Testando Triggers Localmente com CLI
 
-A CLI da CrewAI fornece comandos poderosos para ajudá-lo a desenvolver e testar automações orientadas por triggers sem fazer deploy para produção.
+A CLI da LocalAI fornece comandos poderosos para ajudá-lo a desenvolver e testar automações orientadas por triggers sem fazer deploy para produção.
 
 #### Listar Triggers Disponíveis
 
@@ -288,4 +288,4 @@ def delegar_para_crew(self, crewai_trigger_payload: dict = None):
 - Use `crewai triggers list` para verificar quais triggers estão disponíveis para suas integrações conectadas
 - Após o deployment, sua crew receberá o payload real do trigger, então teste minuciosamente localmente primeiro
 
-Os triggers transformam suas implantações CrewAI em sistemas orientados por eventos, integrando-se perfeitamente aos processos e ferramentas já usados pelo seu time.
+Os triggers transformam suas implantações LocalAI em sistemas orientados por eventos, integrando-se perfeitamente aos processos e ferramentas já usados pelo seu time.

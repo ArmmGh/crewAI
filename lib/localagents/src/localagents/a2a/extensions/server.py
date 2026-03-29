@@ -1,4 +1,4 @@
-"""A2A protocol server extensions for CrewAI agents.
+"""A2A protocol server extensions for LocalAI agents.
 
 This module provides the base class and context for implementing A2A protocol
 extensions on the server side. Extensions allow agents to offer additional

@@ -1,38 +1,38 @@
 <p align="center">
-  <a href="https://github.com/crewAIInc/crewAI">
-    <img src="docs/images/crewai_logo.png" width="600px" alt="Open source Multi-AI Agent orchestration framework">
+  <a href="https://github.com/localai/localai">
+    <img src="docs/images/localai_logo.png" width="600px" alt="Open source Multi-AI Agent orchestration framework">
   </a>
 </p>
 <p align="center" style="display: flex; justify-content: center; gap: 20px; align-items: center;">
   <a href="https://trendshift.io/repositories/11239" target="_blank">
-    <img src="https://trendshift.io/api/badge/repositories/11239" alt="crewAIInc%2FcrewAI | Trendshift" style="width: 250px; height: 55px;" width="250" height="55"/>
+    <img src="https://trendshift.io/api/badge/repositories/11239" alt="localai%2Flocalai | Trendshift" style="width: 250px; height: 55px;" width="250" height="55"/>
   </a>
 </p>
 
 <p align="center">
-  <a href="https://crewai.com">Homepage</a>
+  <a href="https://localai.com">Homepage</a>
   ·
-  <a href="https://docs.crewai.com">Docs</a>
+  <a href="https://docs.localai.com">Docs</a>
   ·
-  <a href="https://app.crewai.com">Start Cloud Trial</a>
+  <a href="https://app.localai.com">Start Cloud Trial</a>
   ·
-  <a href="https://blog.crewai.com">Blog</a>
+  <a href="https://blog.localai.com">Blog</a>
   ·
-  <a href="https://community.crewai.com">Forum</a>
+  <a href="https://community.localai.com">Forum</a>
 </p>
 
 <p align="center">
-  <a href="https://github.com/crewAIInc/crewAI">
-    <img src="https://img.shields.io/github/stars/crewAIInc/crewAI" alt="GitHub Repo stars">
+  <a href="https://github.com/localai/localai">
+    <img src="https://img.shields.io/github/stars/localai/localai" alt="GitHub Repo stars">
   </a>
-  <a href="https://github.com/crewAIInc/crewAI/network/members">
-    <img src="https://img.shields.io/github/forks/crewAIInc/crewAI" alt="GitHub forks">
+  <a href="https://github.com/localai/localai/network/members">
+    <img src="https://img.shields.io/github/forks/localai/localai" alt="GitHub forks">
   </a>
-  <a href="https://github.com/crewAIInc/crewAI/issues">
-    <img src="https://img.shields.io/github/issues/crewAIInc/crewAI" alt="GitHub issues">
+  <a href="https://github.com/localai/localai/issues">
+    <img src="https://img.shields.io/github/issues/localai/localai" alt="GitHub issues">
   </a>
-  <a href="https://github.com/crewAIInc/crewAI/pulls">
-    <img src="https://img.shields.io/github/issues-pr/crewAIInc/crewAI" alt="GitHub pull requests">
+  <a href="https://github.com/localai/localai/pulls">
+    <img src="https://img.shields.io/github/issues-pr/localai/localai" alt="GitHub pull requests">
   </a>
   <a href="https://opensource.org/licenses/MIT">
     <img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License: MIT">
@@ -40,33 +40,33 @@
 </p>
 
 <p align="center">
-  <a href="https://pypi.org/project/crewai/">
-    <img src="https://img.shields.io/pypi/v/crewai" alt="PyPI version">
+  <a href="https://pypi.org/project/localai/">
+    <img src="https://img.shields.io/pypi/v/localai" alt="PyPI version">
   </a>
-  <a href="https://pypi.org/project/crewai/">
-    <img src="https://img.shields.io/pypi/dm/crewai" alt="PyPI downloads">
+  <a href="https://pypi.org/project/localai/">
+    <img src="https://img.shields.io/pypi/dm/localai" alt="PyPI downloads">
   </a>
-  <a href="https://twitter.com/crewAIInc">
-    <img src="https://img.shields.io/twitter/follow/crewAIInc?style=social" alt="Twitter Follow">
+  <a href="https://twitter.com/localai">
+    <img src="https://img.shields.io/twitter/follow/localai?style=social" alt="Twitter Follow">
   </a>
 </p>
 
 ### Fast and Flexible Multi-Agent Automation Framework
 
-> CrewAI is a lean, lightning-fast Python framework built entirely from scratch—completely **independent of LangChain or other agent frameworks**.
+> Local AI is a lean, lightning-fast Python framework built entirely from scratch—completely **independent of LangChain or other agent frameworks**.
 > It empowers developers with both high-level simplicity and precise low-level control, ideal for creating autonomous AI agents tailored to any scenario.
 
-- **CrewAI Crews**: Optimize for autonomy and collaborative intelligence.
-- **CrewAI Flows**: The **enterprise and production architecture** for building and deploying multi-agent systems. Enable granular, event-driven control, single LLM calls for precise task orchestration and supports Crews natively
+- **Local AI Crews**: Optimize for autonomy and collaborative intelligence.
+- **Local AI Flows**: The **enterprise and production architecture** for building and deploying multi-agent systems. Enable granular, event-driven control, single LLM calls for precise task orchestration and supports Crews natively
 
-With over 100,000 developers certified through our community courses at [learn.crewai.com](https://learn.crewai.com), CrewAI is rapidly becoming the
+With over 100,000 developers certified through our community courses at [learn.localai.com](https://learn.localai.com), Local AI is rapidly becoming the
 standard for enterprise-ready AI automation.
 
-# CrewAI AMP Suite
+# Local AI AMP Suite
 
-CrewAI AMP Suite is a comprehensive bundle tailored for organizations that require secure, scalable, and easy-to-manage agent-driven automation.
+Local AI AMP Suite is a comprehensive bundle tailored for organizations that require secure, scalable, and easy-to-manage agent-driven automation.
 
-You can try one part of the suite the [Crew Control Plane for free](https://app.crewai.com)
+You can try one part of the suite the [Crew Control Plane for free](https://app.localai.com)
 
 ## Crew Control Plane Key Features:
 
@@ -76,18 +76,18 @@ You can try one part of the suite the [Crew Control Plane for free](https://app.
 - **Advanced Security**: Built-in robust security and compliance measures ensuring safe deployment and management.
 - **Actionable Insights**: Real-time analytics and reporting to optimize performance and decision-making.
 - **24/7 Support**: Dedicated enterprise support to ensure uninterrupted operation and quick resolution of issues.
-- **On-premise and Cloud Deployment Options**: Deploy CrewAI AMP on-premise or in the cloud, depending on your security and compliance requirements.
+- **On-premise and Cloud Deployment Options**: Deploy Local AI AMP on-premise or in the cloud, depending on your security and compliance requirements.
 
-CrewAI AMP is designed for enterprises seeking a powerful, reliable solution to transform complex business processes into efficient,
+Local AI AMP is designed for enterprises seeking a powerful, reliable solution to transform complex business processes into efficient,
 intelligent automations.
 
 ## Table of contents
 
-- [Why CrewAI?](#why-crewai)
+- [Why Local AI?](#why-local-ai)
 - [Getting Started](#getting-started)
 - [Key Features](#key-features)
 - [Understanding Flows and Crews](#understanding-flows-and-crews)
-- [CrewAI vs LangGraph](#how-crewai-compares)
+- [Local AI vs LangGraph](#how-local-ai-compares)
 - [Examples](#examples)
   - [Quick Tutorial](#quick-tutorial)
   - [Write Job Descriptions](#write-job-descriptions)
@@ -95,19 +95,19 @@ intelligent automations.
   - [Stock Analysis](#stock-analysis)
   - [Using Crews and Flows Together](#using-crews-and-flows-together)
 - [Connecting Your Crew to a Model](#connecting-your-crew-to-a-model)
-- [How CrewAI Compares](#how-crewai-compares)
+- [How Local AI Compares](#how-local-ai-compares)
 - [Frequently Asked Questions (FAQ)](#frequently-asked-questions-faq)
 - [Contribution](#contribution)
 - [Telemetry](#telemetry)
 - [License](#license)
 
-## Why CrewAI?
+## Why Local AI?
 
 <div align="center" style="margin-bottom: 30px;">
-  <img src="docs/images/asset.png" alt="CrewAI Logo" width="100%">
+  <img src="docs/images/asset.png" alt="Local AI Logo" width="100%">
 </div>
 
-CrewAI unlocks the true potential of multi-agent automation, delivering the best-in-class combination of speed, flexibility, and control with either Crews of AI Agents or Flows of Events:
+Local AI unlocks the true potential of multi-agent automation, delivering the best-in-class combination of speed, flexibility, and control with either Crews of AI Agents or Flows of Events:
 
 - **Standalone Framework**: Built from scratch, independent of LangChain or any other agent framework.
 - **High Performance**: Optimized for speed and minimal resource usage, enabling faster execution.
@@ -115,42 +115,40 @@ CrewAI unlocks the true potential of multi-agent automation, delivering the best
 - **Ideal for Every Use Case**: Proven effective for both simple tasks and highly complex, real-world, enterprise-grade scenarios.
 - **Robust Community**: Backed by a rapidly growing community of over **100,000 certified** developers offering comprehensive support and resources.
 
-CrewAI empowers developers and enterprises to confidently build intelligent automations, bridging the gap between simplicity, flexibility, and performance.
+Local AI empowers developers and enterprises to confidently build intelligent automations, bridging the gap between simplicity, flexibility, and performance.
 
 ## Getting Started
 
-Setup and run your first CrewAI agents by following this tutorial.
+Setup and run your first Local AI agents by following this tutorial.
 
-[![CrewAI Getting Started Tutorial](https://img.youtube.com/vi/-kSOTtYzgEw/hqdefault.jpg)](https://www.youtube.com/watch?v=-kSOTtYzgEw "CrewAI Getting Started Tutorial")
+[![Local AI Getting Started Tutorial](https://img.youtube.com/vi/-kSOTtYzgEw/hqdefault.jpg)](https://www.youtube.com/watch?v=-kSOTtYzgEw "Local AI Getting Started Tutorial")
 
 ###
 
 Learning Resources
 
-Learn CrewAI through our comprehensive courses:
+Learn Local AI through our comprehensive courses:
 
-- [Multi AI Agent Systems with CrewAI](https://www.deeplearning.ai/short-courses/multi-ai-agent-systems-with-crewai/) - Master the fundamentals of multi-agent systems
-- [Practical Multi AI Agents and Advanced Use Cases](https://www.deeplearning.ai/short-courses/practical-multi-ai-agents-and-advanced-use-cases-with-crewai/) - Deep dive into advanced implementations
+- [Multi AI Agent Systems with Local AI](https://www.deeplearning.ai/short-courses/multi-ai-agent-systems-with-localai/) - Master the fundamentals of multi-agent systems
+- [Practical Multi AI Agents and Advanced Use Cases](https://www.deeplearning.ai/short-courses/practical-multi-ai-agents-and-advanced-use-cases-with-localai/) - Deep dive into advanced implementations
 
 ### Understanding Flows and Crews
 
-CrewAI offers two powerful, complementary approaches that work seamlessly together to build sophisticated AI applications:
+Local AI offers two powerful, complementary approaches that work seamlessly together to build sophisticated AI applications:
 
 1. **Crews**: Teams of AI agents with true autonomy and agency, working together to accomplish complex tasks through role-based collaboration. Crews enable:
-
    - Natural, autonomous decision-making between agents
    - Dynamic task delegation and collaboration
    - Specialized roles with defined goals and expertise
    - Flexible problem-solving approaches
 
 2. **Flows**: Production-ready, event-driven workflows that deliver precise control over complex automations. Flows provide:
-
    - Fine-grained control over execution paths for real-world scenarios
    - Secure, consistent state management between tasks
    - Clean integration of AI agents with production Python code
    - Conditional branching for complex business logic
 
-The true power of CrewAI emerges when combining Crews and Flows. This synergy allows you to:
+The true power of Local AI emerges when combining Crews and Flows. This synergy allows you to:
 
 - Build complex, production-grade applications
 - Balance autonomy with precise control
@@ -159,22 +157,22 @@ The true power of CrewAI emerges when combining Crews and Flows. This synergy al
 
 ### Getting Started with Installation
 
-To get started with CrewAI, follow these simple steps:
+To get started with Local AI, follow these simple steps:
 
 ### 1. Installation
 
-Ensure you have Python >=3.10 <3.14 installed on your system. CrewAI uses [UV](https://docs.astral.sh/uv/) for dependency management and package handling, offering a seamless setup and execution experience.
+Ensure you have Python >=3.10 <3.14 installed on your system. Local AI uses [UV](https://docs.astral.sh/uv/) for dependency management and package handling, offering a seamless setup and execution experience.
 
-First, install CrewAI:
+First, install Local AI:
 
 ```shell
-uv pip install crewai
+uv pip install localai
 ```
 
-If you want to install the 'crewai' package along with its optional features that include additional tools for agents, you can do so by using the following command:
+If you want to install the 'localai' package along with its optional features that include additional tools for agents, you can do so by using the following command:
 
 ```shell
-uv pip install 'crewai[tools]'
+uv pip install 'localai[tools]'
 ```
 
 The command above installs the basic package and also adds extra components which require more dependencies to function.
@@ -186,12 +184,10 @@ If you encounter issues during installation or usage, here are some common solut
 #### Common Issues
 
 1. **ModuleNotFoundError: No module named 'tiktoken'**
-
-   - Install tiktoken explicitly: `uv pip install 'crewai[embeddings]'`
-   - If using embedchain or other tools: `uv pip install 'crewai[tools]'`
+   - Install tiktoken explicitly: `uv pip install 'localai[embeddings]'`
+   - If using embedchain or other tools: `uv pip install 'localai[tools]'`
 
 2. **Failed building wheel for tiktoken**
-
    - Ensure Rust compiler is installed (see installation steps above)
    - For Windows: Verify Visual C++ Build Tools are installed
    - Try upgrading pip: `uv pip install --upgrade pip`
@@ -199,10 +195,10 @@ If you encounter issues during installation or usage, here are some common solut
 
 ### 2. Setting Up Your Crew with the YAML Configuration
 
-To create a new CrewAI project, run the following CLI (Command Line Interface) command:
+To create a new Local AI project, run the following CLI (Command Line Interface) command:
 
 ```shell
-crewai create crew <project_name>
+localai create crew <project_name>
 ```
 
 This command creates a new project folder with the following structure:
@@ -241,7 +237,7 @@ You can now start developing your crew by editing the files in the `src/my_proje
 Instantiate your crew:
 
 ```shell
-crewai create crew latest-ai-development
+localai create crew latest-ai-development
 ```
 
 Modify the files as needed to fit your use case:
@@ -299,10 +295,10 @@ reporting_task:
 
 ```python
 # src/my_project/crew.py
-from crewai import Agent, Crew, Process, Task
-from crewai.project import CrewBase, agent, crew, task
-from crewai_tools import SerperDevTool
-from crewai.agents.agent_builder.base_agent import BaseAgent
+from localai import Agent, Crew, Process, Task
+from localai.project import CrewBase, agent, crew, task
+from localai_tools import SerperDevTool
+from localai.agents.agent_builder.base_agent import BaseAgent
 from typing import List
 
 @CrewBase
@@ -379,13 +375,13 @@ Lock the dependencies and install them by using the CLI command but first, navig
 
 ```shell
 cd my_project
-crewai install (Optional)
+localai install (Optional)
 ```
 
 To run your crew, execute the following command in the root of your project:
 
 ```bash
-crewai run
+localai run
 ```
 
 or
@@ -394,64 +390,64 @@ or
 python src/my_project/main.py
 ```
 
-If an error happens due to the usage of poetry, please run the following command to update your crewai package:
+If an error happens due to the usage of poetry, please run the following command to update your localai package:
 
 ```bash
-crewai update
+localai update
 ```
 
 You should see the output in the console and the `report.md` file should be created in the root of your project with the full final report.
 
-In addition to the sequential process, you can use the hierarchical process, which automatically assigns a manager to the defined crew to properly coordinate the planning and execution of tasks through delegation and validation of results. [See more about the processes here](https://docs.crewai.com/core-concepts/Processes/).
+In addition to the sequential process, you can use the hierarchical process, which automatically assigns a manager to the defined crew to properly coordinate the planning and execution of tasks through delegation and validation of results. [See more about the processes here](https://docs.localai.com/core-concepts/Processes/).
 
 ## Key Features
 
-CrewAI stands apart as a lean, standalone, high-performance multi-AI Agent framework delivering simplicity, flexibility, and precise control—free from the complexity and limitations found in other agent frameworks.
+Local AI stands apart as a lean, standalone, high-performance multi-AI Agent framework delivering simplicity, flexibility, and precise control—free from the complexity and limitations found in other agent frameworks.
 
 - **Standalone & Lean**: Completely independent from other frameworks like LangChain, offering faster execution and lighter resource demands.
-- **Flexible & Precise**: Easily orchestrate autonomous agents through intuitive [Crews](https://docs.crewai.com/concepts/crews) or precise [Flows](https://docs.crewai.com/concepts/flows), achieving perfect balance for your needs.
+- **Flexible & Precise**: Easily orchestrate autonomous agents through intuitive [Crews](https://docs.localai.com/concepts/crews) or precise [Flows](https://docs.localai.com/concepts/flows), achieving perfect balance for your needs.
 - **Seamless Integration**: Effortlessly combine Crews (autonomy) and Flows (precision) to create complex, real-world automations.
 - **Deep Customization**: Tailor every aspect—from high-level workflows down to low-level internal prompts and agent behaviors.
 - **Reliable Performance**: Consistent results across simple tasks and complex, enterprise-level automations.
 - **Thriving Community**: Backed by robust documentation and over 100,000 certified developers, providing exceptional support and guidance.
 
-Choose CrewAI to easily build powerful, adaptable, and production-ready AI automations.
+Choose Local AI to easily build powerful, adaptable, and production-ready AI automations.
 
 ## Examples
 
-You can test different real life examples of AI crews in the [CrewAI-examples repo](https://github.com/crewAIInc/crewAI-examples?tab=readme-ov-file):
+You can test different real life examples of AI crews in the [Local AI examples repo](https://github.com/localai/localai-examples?tab=readme-ov-file):
 
-- [Landing Page Generator](https://github.com/crewAIInc/crewAI-examples/tree/main/crews/landing_page_generator)
-- [Having Human input on the execution](https://docs.crewai.com/how-to/Human-Input-on-Execution)
-- [Trip Planner](https://github.com/crewAIInc/crewAI-examples/tree/main/crews/trip_planner)
-- [Stock Analysis](https://github.com/crewAIInc/crewAI-examples/tree/main/crews/stock_analysis)
+- [Landing Page Generator](https://github.com/localai/localai-examples/tree/main/crews/landing_page_generator)
+- [Having Human input on the execution](https://docs.localai.com/how-to/Human-Input-on-Execution)
+- [Trip Planner](https://github.com/localai/localai-examples/tree/main/crews/trip_planner)
+- [Stock Analysis](https://github.com/localai/localai-examples/tree/main/crews/stock_analysis)
 
 ### Quick Tutorial
 
-[![CrewAI Tutorial](https://img.youtube.com/vi/tnejrr-0a94/maxresdefault.jpg)](https://www.youtube.com/watch?v=tnejrr-0a94 "CrewAI Tutorial")
+[![Local AI Tutorial](https://img.youtube.com/vi/tnejrr-0a94/maxresdefault.jpg)](https://www.youtube.com/watch?v=tnejrr-0a94 "Local AI Tutorial")
 
 ### Write Job Descriptions
 
-[Check out code for this example](https://github.com/crewAIInc/crewAI-examples/tree/main/crews/job-posting) or watch a video below:
+[Check out code for this example](https://github.com/localai/localai-examples/tree/main/crews/job-posting) or watch a video below:
 
 [![Jobs postings](https://img.youtube.com/vi/u98wEMz-9to/maxresdefault.jpg)](https://www.youtube.com/watch?v=u98wEMz-9to "Jobs postings")
 
 ### Trip Planner
 
-[Check out code for this example](https://github.com/crewAIInc/crewAI-examples/tree/main/crews/trip_planner) or watch a video below:
+[Check out code for this example](https://github.com/localai/localai-examples/tree/main/crews/trip_planner) or watch a video below:
 
 [![Trip Planner](https://img.youtube.com/vi/xis7rWp-hjs/maxresdefault.jpg)](https://www.youtube.com/watch?v=xis7rWp-hjs "Trip Planner")
 
 ### Stock Analysis
 
-[Check out code for this example](https://github.com/crewAIInc/crewAI-examples/tree/main/crews/stock_analysis) or watch a video below:
+[Check out code for this example](https://github.com/localai/localai-examples/tree/main/crews/stock_analysis) or watch a video below:
 
 [![Stock Analysis](https://img.youtube.com/vi/e0Uj4yWdaAg/maxresdefault.jpg)](https://www.youtube.com/watch?v=e0Uj4yWdaAg "Stock Analysis")
 
 ### Using Crews and Flows Together
 
-CrewAI's power truly shines when combining Crews with Flows to create sophisticated automation pipelines.
-CrewAI flows support logical operators like `or_` and `and_` to combine multiple conditions. This can be used with `@start`, `@listen`, or `@router` decorators to create complex triggering conditions.
+Local AI's power truly shines when combining Crews with Flows to create sophisticated automation pipelines.
+Local AI flows support logical operators like `or_` and `and_` to combine multiple conditions. This can be used with `@start`, `@listen`, or `@router` decorators to create complex triggering conditions.
 
 - `or_`: Triggers when any of the specified conditions are met.
 - `and_`Triggers when all of the specified conditions are met.
@@ -459,8 +455,8 @@ CrewAI flows support logical operators like `or_` and `and_` to combine multiple
 Here's how you can orchestrate multiple Crews within a Flow:
 
 ```python
-from crewai.flow.flow import Flow, listen, start, router, or_
-from crewai import Crew, Agent, Task, Process
+from localai.flow.flow import Flow, listen, start, router, or_
+from localai import Crew, Agent, Task, Process
 from pydantic import BaseModel
 
 # Define structured state for precise control
@@ -549,24 +545,24 @@ This example demonstrates how to:
 
 ## Connecting Your Crew to a Model
 
-CrewAI supports using various LLMs through a variety of connection options. By default your agents will use the OpenAI API when querying the model. However, there are several other ways to allow your agents to connect to models. For example, you can configure your agents to use a local model via the Ollama tool.
+Local AI supports using various LLMs through a variety of connection options. By default your agents will use the OpenAI API when querying the model. However, there are several other ways to allow your agents to connect to models. For example, you can configure your agents to use a local model via the Ollama tool.
 
-Please refer to the [Connect CrewAI to LLMs](https://docs.crewai.com/how-to/LLM-Connections/) page for details on configuring your agents' connections to models.
+Please refer to the [Connect Local AI to LLMs](https://docs.localai.com/how-to/LLM-Connections/) page for details on configuring your agents' connections to models.
 
-## How CrewAI Compares
+## How Local AI Compares
 
-**CrewAI's Advantage**: CrewAI combines autonomous agent intelligence with precise workflow control through its unique Crews and Flows architecture. The framework excels at both high-level orchestration and low-level customization, enabling complex, production-grade systems with granular control.
+**Local AI's Advantage**: Local AI combines autonomous agent intelligence with precise workflow control through its unique Crews and Flows architecture. The framework excels at both high-level orchestration and low-level customization, enabling complex, production-grade systems with granular control.
 
 - **LangGraph**: While LangGraph provides a foundation for building agent workflows, its approach requires significant boilerplate code and complex state management patterns. The framework's tight coupling with LangChain can limit flexibility when implementing custom agent behaviors or integrating with external systems.
 
-_P.S. CrewAI demonstrates significant performance advantages over LangGraph, executing 5.76x faster in certain cases like this QA task example ([see comparison](https://github.com/crewAIInc/crewAI-examples/tree/main/Notebooks/CrewAI%20Flows%20%26%20Langgraph/QA%20Agent)) while achieving higher evaluation scores with faster completion times in certain coding tasks, like in this example ([detailed analysis](https://github.com/crewAIInc/crewAI-examples/blob/main/Notebooks/CrewAI%20Flows%20%26%20Langgraph/Coding%20Assistant/coding_assistant_eval.ipynb))._
+_P.S. Local AI demonstrates significant performance advantages over LangGraph, executing 5.76x faster in certain cases like this QA task example ([see comparison](https://github.com/localai/localai-examples/tree/main/Notebooks/Local%20AI%20Flows%20%26%20Langgraph/QA%20Agent)) while achieving higher evaluation scores with faster completion times in certain coding tasks, like in this example ([detailed analysis](https://github.com/localai/localai-examples/blob/main/Notebooks/Local%20AI%20Flows%20%26%20Langgraph/Coding%20Assistant/coding_assistant_eval.ipynb))._
 
 - **Autogen**: While Autogen excels at creating conversational agents capable of working together, it lacks an inherent concept of process. In Autogen, orchestrating agents' interactions requires additional programming, which can become complex and cumbersome as the scale of tasks grows.
 - **ChatDev**: ChatDev introduced the idea of processes into the realm of AI agents, but its implementation is quite rigid. Customizations in ChatDev are limited and not geared towards production environments, which can hinder scalability and flexibility in real-world applications.
 
 ## Contribution
 
-CrewAI is open-source and we welcome contributions. If you're looking to contribute, please:
+Local AI is open-source and we welcome contributions. If you're looking to contribute, please:
 
 - Fork the repository.
 - Create a new branch for your feature.
@@ -619,13 +615,13 @@ uv pip install dist/*.tar.gz
 
 ## Telemetry
 
-CrewAI uses anonymous telemetry to collect usage data with the main purpose of helping us improve the library by focusing our efforts on the most used features, integrations and tools.
+Local AI uses anonymous telemetry to collect usage data with the main purpose of helping us improve the library by focusing our efforts on the most used features, integrations and tools.
 
 It's pivotal to understand that **NO data is collected** concerning prompts, task descriptions, agents' backstories or goals, usage of tools, API calls, responses, any data processed by the agents, or secrets and environment variables, with the exception of the conditions mentioned. When the `share_crew` feature is enabled, detailed data including task descriptions, agents' backstories or goals, and other specific attributes are collected to provide deeper insights while respecting user privacy. Users can disable telemetry by setting the environment variable OTEL_SDK_DISABLED to true.
 
 Data collected includes:
 
-- Version of CrewAI
+- Version of Local AI
   - So we can understand how many users are using the latest version
 - Version of Python
   - So we can decide on what versions to better support
@@ -650,131 +646,131 @@ Users can opt-in to Further Telemetry, sharing the complete telemetry data by se
 
 ## License
 
-CrewAI is released under the [MIT License](https://github.com/crewAIInc/crewAI/blob/main/LICENSE).
+Local AI is released under the [MIT License](https://github.com/localai/localai/blob/main/LICENSE).
 
 ## Frequently Asked Questions (FAQ)
 
 ### General
 
-- [What exactly is CrewAI?](#q-what-exactly-is-crewai)
-- [How do I install CrewAI?](#q-how-do-i-install-crewai)
-- [Does CrewAI depend on LangChain?](#q-does-crewai-depend-on-langchain)
-- [Is CrewAI open-source?](#q-is-crewai-open-source)
-- [Does CrewAI collect data from users?](#q-does-crewai-collect-data-from-users)
+- [What exactly is Local AI?](#q-what-exactly-is-local-ai)
+- [How do I install Local AI?](#q-how-do-i-install-local-ai)
+- [Does Local AI depend on LangChain?](#q-does-local-ai-depend-on-langchain)
+- [Is Local AI open-source?](#q-is-local-ai-open-source)
+- [Does Local AI collect data from users?](#q-does-local-ai-collect-data-from-users)
 
 ### Features and Capabilities
 
-- [Can CrewAI handle complex use cases?](#q-can-crewai-handle-complex-use-cases)
-- [Can I use CrewAI with local AI models?](#q-can-i-use-crewai-with-local-ai-models)
+- [Can Local AI handle complex use cases?](#q-can-local-ai-handle-complex-use-cases)
+- [Can I use Local AI with local AI models?](#q-can-i-use-local-ai-with-local-ai-models)
 - [What makes Crews different from Flows?](#q-what-makes-crews-different-from-flows)
-- [How is CrewAI better than LangChain?](#q-how-is-crewai-better-than-langchain)
-- [Does CrewAI support fine-tuning or training custom models?](#q-does-crewai-support-fine-tuning-or-training-custom-models)
+- [How is Local AI better than LangChain?](#q-how-is-local-ai-better-than-langchain)
+- [Does Local AI support fine-tuning or training custom models?](#q-does-local-ai-support-fine-tuning-or-training-custom-models)
 
 ### Resources and Community
 
-- [Where can I find real-world CrewAI examples?](#q-where-can-i-find-real-world-crewai-examples)
-- [How can I contribute to CrewAI?](#q-how-can-i-contribute-to-crewai)
+- [Where can I find real-world Local AI examples?](#q-where-can-i-find-real-world-local-ai-examples)
+- [How can I contribute to Local AI?](#q-how-can-i-contribute-to-local-ai)
 
 ### Enterprise Features
 
-- [What additional features does CrewAI AMP offer?](#q-what-additional-features-does-crewai-amp-offer)
-- [Is CrewAI AMP available for cloud and on-premise deployments?](#q-is-crewai-amp-available-for-cloud-and-on-premise-deployments)
-- [Can I try CrewAI AMP for free?](#q-can-i-try-crewai-amp-for-free)
+- [What additional features does Local AI AMP offer?](#q-what-additional-features-does-local-ai-amp-offer)
+- [Is Local AI AMP available for cloud and on-premise deployments?](#q-is-local-ai-amp-available-for-cloud-and-on-premise-deployments)
+- [Can I try Local AI AMP for free?](#q-can-i-try-local-ai-amp-for-free)
 
-### Q: What exactly is CrewAI?
+### Q: What exactly is Local AI?
 
-A: CrewAI is a standalone, lean, and fast Python framework built specifically for orchestrating autonomous AI agents. Unlike frameworks like LangChain, CrewAI does not rely on external dependencies, making it leaner, faster, and simpler.
+A: Local AI is a standalone, lean, and fast Python framework built specifically for orchestrating autonomous AI agents. Unlike frameworks like LangChain, Local AI does not rely on external dependencies, making it leaner, faster, and simpler.
 
-### Q: How do I install CrewAI?
+### Q: How do I install Local AI?
 
-A: Install CrewAI using pip:
+A: Install Local AI using pip:
 
 ```shell
-uv pip install crewai
+uv pip install localai
 ```
 
 For additional tools, use:
 
 ```shell
-uv pip install 'crewai[tools]'
+uv pip install 'localai[tools]'
 ```
 
-### Q: Does CrewAI depend on LangChain?
+### Q: Does Local AI depend on LangChain?
 
-A: No. CrewAI is built entirely from the ground up, with no dependencies on LangChain or other agent frameworks. This ensures a lean, fast, and flexible experience.
+A: No. Local AI is built entirely from the ground up, with no dependencies on LangChain or other agent frameworks. This ensures a lean, fast, and flexible experience.
 
-### Q: Can CrewAI handle complex use cases?
+### Q: Can Local AI handle complex use cases?
 
-A: Yes. CrewAI excels at both simple and highly complex real-world scenarios, offering deep customization options at both high and low levels, from internal prompts to sophisticated workflow orchestration.
+A: Yes. Local AI excels at both simple and highly complex real-world scenarios, offering deep customization options at both high and low levels, from internal prompts to sophisticated workflow orchestration.
 
-### Q: Can I use CrewAI with local AI models?
+### Q: Can I use Local AI with local AI models?
 
-A: Absolutely! CrewAI supports various language models, including local ones. Tools like Ollama and LM Studio allow seamless integration. Check the [LLM Connections documentation](https://docs.crewai.com/how-to/LLM-Connections/) for more details.
+A: Absolutely! Local AI supports various language models, including local ones. Tools like Ollama and LM Studio allow seamless integration. Check the [LLM Connections documentation](https://docs.localai.com/how-to/LLM-Connections/) for more details.
 
 ### Q: What makes Crews different from Flows?
 
 A: Crews provide autonomous agent collaboration, ideal for tasks requiring flexible decision-making and dynamic interaction. Flows offer precise, event-driven control, ideal for managing detailed execution paths and secure state management. You can seamlessly combine both for maximum effectiveness.
 
-### Q: How is CrewAI better than LangChain?
+### Q: How is Local AI better than LangChain?
 
-A: CrewAI provides simpler, more intuitive APIs, faster execution speeds, more reliable and consistent results, robust documentation, and an active community—addressing common criticisms and limitations associated with LangChain.
+A: Local AI provides simpler, more intuitive APIs, faster execution speeds, more reliable and consistent results, robust documentation, and an active community—addressing common criticisms and limitations associated with LangChain.
 
-### Q: Is CrewAI open-source?
+### Q: Is Local AI open-source?
 
-A: Yes, CrewAI is open-source and actively encourages community contributions and collaboration.
+A: Yes, Local AI is open-source and actively encourages community contributions and collaboration.
 
-### Q: Does CrewAI collect data from users?
+### Q: Does Local AI collect data from users?
 
-A: CrewAI collects anonymous telemetry data strictly for improvement purposes. Sensitive data such as prompts, tasks, or API responses are never collected unless explicitly enabled by the user.
+A: Local AI collects anonymous telemetry data strictly for improvement purposes. Sensitive data such as prompts, tasks, or API responses are never collected unless explicitly enabled by the user.
 
-### Q: Where can I find real-world CrewAI examples?
+### Q: Where can I find real-world Local AI examples?
 
-A: Check out practical examples in the [CrewAI-examples repository](https://github.com/crewAIInc/crewAI-examples), covering use cases like trip planners, stock analysis, and job postings.
+A: Check out practical examples in the [Local AI examples repository](https://github.com/localai/localai-examples), covering use cases like trip planners, stock analysis, and job postings.
 
-### Q: How can I contribute to CrewAI?
+### Q: How can I contribute to Local AI?
 
 A: Contributions are warmly welcomed! Fork the repository, create your branch, implement your changes, and submit a pull request. See the Contribution section of the README for detailed guidelines.
 
-### Q: What additional features does CrewAI AMP offer?
+### Q: What additional features does Local AI AMP offer?
 
-A: CrewAI AMP provides advanced features such as a unified control plane, real-time observability, secure integrations, advanced security, actionable insights, and dedicated 24/7 enterprise support.
+A: Local AI AMP provides advanced features such as a unified control plane, real-time observability, secure integrations, advanced security, actionable insights, and dedicated 24/7 enterprise support.
 
-### Q: Is CrewAI AMP available for cloud and on-premise deployments?
+### Q: Is Local AI AMP available for cloud and on-premise deployments?
 
-A: Yes, CrewAI AMP supports both cloud-based and on-premise deployment options, allowing enterprises to meet their specific security and compliance requirements.
+A: Yes, Local AI AMP supports both cloud-based and on-premise deployment options, allowing enterprises to meet their specific security and compliance requirements.
 
-### Q: Can I try CrewAI AMP for free?
+### Q: Can I try Local AI AMP for free?
 
-A: Yes, you can explore part of the CrewAI AMP Suite by accessing the [Crew Control Plane](https://app.crewai.com) for free.
+A: Yes, you can explore part of the Local AI AMP Suite by accessing the [Crew Control Plane](https://app.localai.com) for free.
 
-### Q: Does CrewAI support fine-tuning or training custom models?
+### Q: Does Local AI support fine-tuning or training custom models?
 
-A: Yes, CrewAI can integrate with custom-trained or fine-tuned models, allowing you to enhance your agents with domain-specific knowledge and accuracy.
+A: Yes, Local AI can integrate with custom-trained or fine-tuned models, allowing you to enhance your agents with domain-specific knowledge and accuracy.
 
-### Q: Can CrewAI agents interact with external tools and APIs?
+### Q: Can Local AI agents interact with external tools and APIs?
 
-A: Absolutely! CrewAI agents can easily integrate with external tools, APIs, and databases, empowering them to leverage real-world data and resources.
+A: Absolutely! Local AI agents can easily integrate with external tools, APIs, and databases, empowering them to leverage real-world data and resources.
 
-### Q: Is CrewAI suitable for production environments?
+### Q: Is Local AI suitable for production environments?
 
-A: Yes, CrewAI is explicitly designed with production-grade standards, ensuring reliability, stability, and scalability for enterprise deployments.
+A: Yes, Local AI is explicitly designed with production-grade standards, ensuring reliability, stability, and scalability for enterprise deployments.
 
-### Q: How scalable is CrewAI?
+### Q: How scalable is Local AI?
 
-A: CrewAI is highly scalable, supporting simple automations and large-scale enterprise workflows involving numerous agents and complex tasks simultaneously.
+A: Local AI is highly scalable, supporting simple automations and large-scale enterprise workflows involving numerous agents and complex tasks simultaneously.
 
-### Q: Does CrewAI offer debugging and monitoring tools?
+### Q: Does Local AI offer debugging and monitoring tools?
 
-A: Yes, CrewAI AMP includes advanced debugging, tracing, and real-time observability features, simplifying the management and troubleshooting of your automations.
+A: Yes, Local AI AMP includes advanced debugging, tracing, and real-time observability features, simplifying the management and troubleshooting of your automations.
 
-### Q: What programming languages does CrewAI support?
+### Q: What programming languages does Local AI support?
 
-A: CrewAI is primarily Python-based but easily integrates with services and APIs written in any programming language through its flexible API integration capabilities.
+A: Local AI is primarily Python-based but easily integrates with services and APIs written in any programming language through its flexible API integration capabilities.
 
-### Q: Does CrewAI offer educational resources for beginners?
+### Q: Does Local AI offer educational resources for beginners?
 
-A: Yes, CrewAI provides extensive beginner-friendly tutorials, courses, and documentation through learn.crewai.com, supporting developers at all skill levels.
+A: Yes, Local AI provides extensive beginner-friendly tutorials, courses, and documentation through learn.localai.com, supporting developers at all skill levels.
 
-### Q: Can CrewAI automate human-in-the-loop workflows?
+### Q: Can Local AI automate human-in-the-loop workflows?
 
-A: Yes, CrewAI fully supports human-in-the-loop workflows, allowing seamless collaboration between human experts and AI agents for enhanced decision-making.
+A: Yes, Local AI fully supports human-in-the-loop workflows, allowing seamless collaboration between human experts and AI agents for enhanced decision-making.

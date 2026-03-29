@@ -1,1 +1,1 @@
-"""Exceptions for crewAI."""
+"""Exceptions for localAI."""

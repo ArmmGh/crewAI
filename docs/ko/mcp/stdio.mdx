@@ -1,13 +1,13 @@
 ---
 title: Stdio 전송
-description: Stdio(표준 입력/출력) 전송 메커니즘을 사용하여 CrewAI를 로컬 MCP 서버에 연결하는 방법을 알아보세요.
+description: Stdio(표준 입력/출력) 전송 메커니즘을 사용하여 LocalAI를 로컬 MCP 서버에 연결하는 방법을 알아보세요.
 icon: server
 mode: "wide"
 ---
 
 ## 개요
 
-Stdio(표준 입력/출력) 트랜스포트는 `MCPServerAdapter`를 로컬 MCP 서버에 연결하기 위해 설계되었습니다. 이 MCP 서버는 표준 입력 및 출력 스트림을 통해 통신합니다. 이는 일반적으로 MCP 서버가 CrewAI 애플리케이션과 동일한 머신에서 실행되는 스크립트나 실행 파일일 때 사용됩니다.
+Stdio(표준 입력/출력) 트랜스포트는 `MCPServerAdapter`를 로컬 MCP 서버에 연결하기 위해 설계되었습니다. 이 MCP 서버는 표준 입력 및 출력 스트림을 통해 통신합니다. 이는 일반적으로 MCP 서버가 LocalAI 애플리케이션과 동일한 머신에서 실행되는 스크립트나 실행 파일일 때 사용됩니다.
 
 ## 주요 개념
 
@@ -38,7 +38,7 @@ server_params=StdioServerParameters(
 with MCPServerAdapter(server_params) as tools:
     print(f"Available tools from Stdio MCP server: {[tool.name for tool in tools]}")
 
-    # Example: Using the tools from the Stdio MCP server in a CrewAI Agent
+    # Example: Using the tools from the Stdio MCP server in a LocalAI Agent
     research_agent = Agent(
         role="Local Data Processor",
         goal="Process data using a local Stdio-based tool.",

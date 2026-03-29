@@ -1,4 +1,4 @@
-"""Error message definitions for CrewAI database operations.
+"""Error message definitions for LocalAI database operations.
 
 This module provides standardized error classes and message templates
 for database operations and agent repository handling.

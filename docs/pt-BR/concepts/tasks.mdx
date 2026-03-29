@@ -1,20 +1,20 @@
 ---
 title: Tarefas
-description: Guia detalhado sobre como gerenciar e criar tarefas dentro do framework CrewAI.
+description: Guia detalhado sobre como gerenciar e criar tarefas dentro do framework LocalAI.
 icon: list-check
 mode: "wide"
 ---
 
 ## Visão Geral
 
-No framework CrewAI, uma `Task` (Tarefa) é uma atribuição específica executada por um `Agent` (Agente).
+No framework LocalAI, uma `Task` (Tarefa) é uma atribuição específica executada por um `Agent` (Agente).
 
 As tarefas fornecem todos os detalhes necessários para sua execução, como descrição, agente responsável, ferramentas exigidas e mais, facilitando uma ampla gama de complexidades de ação.
 
-As tarefas dentro do CrewAI podem ser colaborativas, exigindo que múltiplos agentes trabalhem juntos. Isso é gerenciado por meio das propriedades da tarefa e orquestrado pelo processo do Crew, potencializando o trabalho em equipe e a eficiência.
+As tarefas dentro do LocalAI podem ser colaborativas, exigindo que múltiplos agentes trabalhem juntos. Isso é gerenciado por meio das propriedades da tarefa e orquestrado pelo processo do Crew, potencializando o trabalho em equipe e a eficiência.
 
 <Note type="info" title="Aprimoramento Empresarial: Construtor Visual de Tarefas">
-O CrewAI AMP inclui um Construtor Visual de Tarefas no Crew Studio, que simplifica a criação e o encadeamento de tarefas complexas. Projete seus fluxos de tarefas visualmente e teste-os em tempo real sem necessidade de escrever código.
+O LocalAI AMP inclui um Construtor Visual de Tarefas no Crew Studio, que simplifica a criação e o encadeamento de tarefas complexas. Projete seus fluxos de tarefas visualmente e teste-os em tempo real sem necessidade de escrever código.
 
 ![Task Builder Screenshot](/images/enterprise/crew-studio-interface.png)
 
@@ -67,13 +67,13 @@ crew = Crew(
 
 ## Criando Tarefas
 
-Existem duas maneiras de criar tarefas no CrewAI: utilizando **configuração YAML (recomendado)** ou definindo-as **diretamente no código**.
+Existem duas maneiras de criar tarefas no LocalAI: utilizando **configuração YAML (recomendado)** ou definindo-as **diretamente no código**.
 
 ### Configuração YAML (Recomendado)
 
-Utilizar configuração YAML oferece uma forma mais limpa e de fácil manutenção para definir tarefas. Recomendamos fortemente esse método em seus projetos CrewAI.
+Utilizar configuração YAML oferece uma forma mais limpa e de fácil manutenção para definir tarefas. Recomendamos fortemente esse método em seus projetos LocalAI.
 
-Após criar seu projeto CrewAI conforme indicado na seção [Instalação](/pt-BR/installation), navegue até o arquivo `src/latest_ai_development/config/tasks.yaml` e modifique o template para refletir os requisitos específicos das tarefas.
+Após criar seu projeto LocalAI conforme indicado na seção [Instalação](/pt-BR/installation), navegue até o arquivo `src/latest_ai_development/config/tasks.yaml` e modifique o template para refletir os requisitos específicos das tarefas.
 
 <Note>
 Variáveis em seus arquivos YAML (como `{topic}`) serão substituídas por valores vindos dos seus inputs ao executar o crew:
@@ -201,14 +201,14 @@ reporting_task = Task(
 
 <Tip>
   Especifique diretamente um `agent` para a tarefa ou permita que o processo
-  `hierarchical` do CrewAI decida com base em papéis, disponibilidade, etc.
+  `hierarchical` do LocalAI decida com base em papéis, disponibilidade, etc.
 </Tip>
 
 ## Saída da Tarefa
 
-Compreender as saídas das tarefas é crucial para construir fluxos de trabalho de IA eficazes. O CrewAI oferece uma maneira estruturada de lidar com resultados usando a classe `TaskOutput`, que suporta múltiplos formatos de saída e pode ser facilmente passada entre tarefas.
+Compreender as saídas das tarefas é crucial para construir fluxos de trabalho de IA eficazes. O LocalAI oferece uma maneira estruturada de lidar com resultados usando a classe `TaskOutput`, que suporta múltiplos formatos de saída e pode ser facilmente passada entre tarefas.
 
-A saída de uma tarefa no framework CrewAI é encapsulada na classe `TaskOutput`. Essa classe fornece uma maneira estruturada de acessar os resultados da tarefa, incluindo vários formatos como saída bruta, JSON e modelos Pydantic.
+A saída de uma tarefa no framework LocalAI é encapsulada na classe `TaskOutput`. Essa classe fornece uma maneira estruturada de acessar os resultados da tarefa, incluindo vários formatos como saída bruta, JSON e modelos Pydantic.
 
 Por padrão, o `TaskOutput` incluirá apenas a saída `raw`. Um `TaskOutput` só terá as saídas `pydantic` ou `json_dict` se o objeto original da `Task` estiver configurado com `output_pydantic` ou `output_json`, respectivamente.
 
@@ -637,7 +637,7 @@ Utilizando `output_pydantic` ou `output_json`, você garante que suas tarefas pr
 
 ## Integrando Ferramentas com Tarefas
 
-Utilize ferramentas do [CrewAI Toolkit](https://github.com/joaomdmoura/crewai-tools) e [LangChain Tools](https://python.langchain.com/docs/integrations/tools) para ampliar o desempenho das tarefas e aprimorar a interação dos agentes.
+Utilize ferramentas do [LocalAI Toolkit](https://github.com/joaomdmoura/crewai-tools) e [LangChain Tools](https://python.langchain.com/docs/integrations/tools) para ampliar o desempenho das tarefas e aprimorar a interação dos agentes.
 
 ## Criando uma Tarefa com Ferramentas
 
@@ -682,7 +682,7 @@ Isso demonstra como tarefas com ferramentas específicas podem sobrescrever o co
 
 ## Referenciando Outras Tarefas
 
-No CrewAI, a saída de uma tarefa é automaticamente repassada para a próxima, mas você pode definir explicitamente de quais tarefas a saída deve ser utilizada como contexto por outra, inclusive múltiplas saídas.
+No LocalAI, a saída de uma tarefa é automaticamente repassada para a próxima, mas você pode definir explicitamente de quais tarefas a saída deve ser utilizada como contexto por outra, inclusive múltiplas saídas.
 
 É útil especialmente quando você precisa que uma tarefa dependa do resultado de outra que não é executada imediatamente antes dela. Isso é feito pelo atributo `context`:
 
@@ -808,7 +808,7 @@ print(f"""
 
 ## Mecanismo de Sobrescrição de Ferramentas
 
-Especificar ferramentas em uma tarefa permite a adaptação dinâmica das capacidades do agente, destacando a flexibilidade do CrewAI.
+Especificar ferramentas em uma tarefa permite a adaptação dinâmica das capacidades do agente, destacando a flexibilidade do LocalAI.
 
 ## Mecanismos de Validação e Tratamento de Erros
 
@@ -817,7 +817,7 @@ Ao criar e executar tarefas, determinados mecanismos de validação garantem a r
 - Garantir que apenas um tipo de saída seja definido por tarefa para manter expectativas de saída claras.
 - Impedir a atribuição manual do atributo `id`, preservando a integridade do sistema de identificadores únicos.
 
-Estas validações colaboram para a consistência e confiabilidade das execuções de tarefas no framework CrewAI.
+Estas validações colaboram para a consistência e confiabilidade das execuções de tarefas no framework LocalAI.
 
 ## Guardrails em Tarefas
 
@@ -965,11 +965,11 @@ task = Task(
 
 ## Criando Diretórios ao Salvar Arquivos
 
-O parâmetro `create_directory` controla se o CrewAI deve criar automaticamente diretórios ao salvar saídas de tarefas em arquivos. Este recurso é particularmente útil para organizar outputs e garantir que os caminhos de arquivos estejam estruturados corretamente, especialmente ao trabalhar com hierarquias de projetos complexas.
+O parâmetro `create_directory` controla se o LocalAI deve criar automaticamente diretórios ao salvar saídas de tarefas em arquivos. Este recurso é particularmente útil para organizar outputs e garantir que os caminhos de arquivos estejam estruturados corretamente, especialmente ao trabalhar com hierarquias de projetos complexas.
 
 ### Comportamento Padrão
 
-Por padrão, `create_directory=True`, o que significa que o CrewAI criará automaticamente qualquer diretório ausente no caminho do arquivo de saída:
+Por padrão, `create_directory=True`, o que significa que o LocalAI criará automaticamente qualquer diretório ausente no caminho do arquivo de saída:
 
 ```python Code
 # Comportamento padrão - diretórios são criados automaticamente
@@ -1039,7 +1039,7 @@ audit_task:
 
 ### Tratamento de Erros
 
-Quando `create_directory=False` e o diretório não existe, o CrewAI gerará um `RuntimeError`:
+Quando `create_directory=False` e o diretório não existe, o LocalAI gerará um `RuntimeError`:
 
 ```python Code
 try:
@@ -1050,12 +1050,12 @@ except RuntimeError as e:
     # Criar diretório manualmente ou usar local alternativo
 ```
 
-Veja o vídeo abaixo para aprender como utilizar saídas estruturadas no CrewAI:
+Veja o vídeo abaixo para aprender como utilizar saídas estruturadas no LocalAI:
 
 <iframe
   className="w-full aspect-video rounded-xl"
   src="https://www.youtube.com/embed/dNpKQk5uxHw"
-  title="Saídas estruturadas no CrewAI"
+  title="Saídas estruturadas no LocalAI"
   frameBorder="0"
   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
   referrerPolicy="strict-origin-when-cross-origin"
@@ -1064,7 +1064,7 @@ Veja o vídeo abaixo para aprender como utilizar saídas estruturadas no CrewAI:
 
 ## Conclusão
 
-Tarefas são a força motriz por trás das ações dos agentes no CrewAI.
+Tarefas são a força motriz por trás das ações dos agentes no LocalAI.
 Ao definir corretamente as tarefas e seus resultados, você prepara seus agentes de IA para trabalhar de forma eficaz, seja de forma independente ou colaborativa.
-Equipar tarefas com as ferramentas adequadas, compreender o processo de execução e seguir práticas sólidas de validação são fundamentais para maximizar o potencial do CrewAI,
+Equipar tarefas com as ferramentas adequadas, compreender o processo de execução e seguir práticas sólidas de validação são fundamentais para maximizar o potencial do LocalAI,
 assegurando que os agentes estejam devidamente preparados para suas atribuições e que as tarefas sejam executadas conforme o esperado.

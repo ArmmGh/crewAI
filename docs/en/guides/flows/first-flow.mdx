@@ -7,9 +7,9 @@ mode: "wide"
 
 ## Taking Control of AI Workflows with Flows
 
-CrewAI Flows represent the next level in AI orchestration - combining the collaborative power of AI agent crews with the precision and flexibility of procedural programming. While crews excel at agent collaboration, flows give you fine-grained control over exactly how and when different components of your AI system interact.
+LocalAI Flows represent the next level in AI orchestration - combining the collaborative power of AI agent crews with the precision and flexibility of procedural programming. While crews excel at agent collaboration, flows give you fine-grained control over exactly how and when different components of your AI system interact.
 
-In this guide, we'll walk through creating a powerful CrewAI Flow that generates a comprehensive learning guide on any topic. This tutorial will demonstrate how Flows provide structured, event-driven control over your AI workflows by combining regular code, direct LLM calls, and crew-based processing.
+In this guide, we'll walk through creating a powerful LocalAI Flow that generates a comprehensive learning guide on any topic. This tutorial will demonstrate how Flows provide structured, event-driven control over your AI workflows by combining regular code, direct LLM calls, and crew-based processing.
 
 ### What Makes Flows Powerful
 
@@ -43,14 +43,14 @@ Let's dive in and build your first flow!
 
 Before starting, make sure you have:
 
-1. Installed CrewAI following the [installation guide](/en/installation)
+1. Installed LocalAI following the [installation guide](/en/installation)
 2. Set up your LLM API key in your environment, following the [LLM setup
    guide](/en/concepts/llms#setting-up-your-llm)
 3. Basic understanding of Python
 
-## Step 1: Create a New CrewAI Flow Project
+## Step 1: Create a New LocalAI Flow Project
 
-First, let's create a new CrewAI Flow project using the CLI. This command sets up a scaffolded project with all the necessary directories and template files for your flow.
+First, let's create a new LocalAI Flow project using the CLI. This command sets up a scaffolded project with all the necessary directories and template files for your flow.
 
 ```bash
 crewai create flow guide_creator_flow
@@ -59,8 +59,8 @@ cd guide_creator_flow
 
 This will generate a project with the basic structure needed for your flow.
 
-<Frame caption="CrewAI Framework Overview">
-  <img src="/images/flows.png" alt="CrewAI Framework Overview" />
+<Frame caption="LocalAI Framework Overview">
+  <img src="/images/flows.png" alt="LocalAI Framework Overview" />
 </Frame>
 
 ## Step 2: Understanding the Project Structure
@@ -93,7 +93,7 @@ We'll modify this structure to create our guide creator flow, which will orchest
 
 ## Step 3: Add a Content Writer Crew
 
-Our flow will need a specialized crew to handle the content creation process. Let's use the CrewAI CLI to add a content writer crew:
+Our flow will need a specialized crew to handle the content creation process. Let's use the LocalAI CLI to add a content writer crew:
 
 ```bash
 crewai flow add-crew content-crew
@@ -464,7 +464,7 @@ crewai install
 
 ## Step 8: Run Your Flow
 
-Now it's time to see your flow in action! Run it using the CrewAI CLI:
+Now it's time to see your flow in action! Run it using the LocalAI CLI:
 
 ```bash
 crewai flow kickoff
@@ -535,7 +535,7 @@ The same patterns can be applied to create flows for:
 
 ## Key Features Demonstrated
 
-This guide creator flow demonstrates several powerful features of CrewAI:
+This guide creator flow demonstrates several powerful features of LocalAI:
 
 1. **User interaction**: The flow collects input directly from the user
 2. **Direct LLM calls**: Uses the LLM class for efficient, single-purpose AI interactions
@@ -619,5 +619,5 @@ Now that you've built your first flow, you can:
 5. Combine multiple specialized crews in a single flow
 
 <Check>
-Congratulations! You've successfully built your first CrewAI Flow that combines regular code, direct LLM calls, and crew-based processing to create a comprehensive guide. These foundational skills enable you to create increasingly sophisticated AI applications that can tackle complex, multi-stage problems through a combination of procedural control and collaborative intelligence.
+Congratulations! You've successfully built your first LocalAI Flow that combines regular code, direct LLM calls, and crew-based processing to create a comprehensive guide. These foundational skills enable you to create increasingly sophisticated AI applications that can tackle complex, multi-stage problems through a combination of procedural control and collaborative intelligence.
 </Check>

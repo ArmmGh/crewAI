@@ -572,7 +572,7 @@ def _build_multimodal_message_with_upload(
 
     Note: OpenAI Chat Completions API only supports file_id for PDFs via
     type="file", not for images. For image file_id support, OpenAI requires
-    the Responses API (type="input_image"). Since crewAI uses Chat Completions,
+    the Responses API (type="input_image"). Since localAI uses Chat Completions,
     we test file_id uploads with Anthropic which supports file_id for all types.
 
     Returns:
@@ -644,7 +644,7 @@ class TestAnthropicFileUploadIntegration:
     We test file_id uploads with Anthropic because OpenAI Chat Completions API
     only supports file_id references for PDFs (type="file"), not images.
     OpenAI's Responses API supports image file_id (type="input_image"), but
-    crewAI currently uses Chat Completions. Anthropic supports file_id for
+    localAI currently uses Chat Completions. Anthropic supports file_id for
     all content types including images.
     """
 

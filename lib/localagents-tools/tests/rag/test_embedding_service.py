@@ -107,9 +107,9 @@ class TestEmbeddingService:
     @patch('crewai.rag.embeddings.factory.build_embedder')
     def test_initialization_import_error(self, mock_build_embedder):
         """Test initialization with import error."""
-        mock_build_embedder.side_effect = ImportError("CrewAI not installed")
+        mock_build_embedder.side_effect = ImportError("LocalAI not installed")
 
-        with pytest.raises(ImportError, match="CrewAI embedding providers not available"):
+        with pytest.raises(ImportError, match="LocalAI embedding providers not available"):
             EmbeddingService(provider="openai", model="test-model", api_key="test-key")
 
     @patch('crewai.rag.embeddings.factory.build_embedder')

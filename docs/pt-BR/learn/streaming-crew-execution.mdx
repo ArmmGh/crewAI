@@ -1,17 +1,17 @@
 ---
 title: Streaming na Execução da Crew
-description: Transmita saída em tempo real da execução da sua crew no CrewAI
+description: Transmita saída em tempo real da execução da sua crew no LocalAI
 icon: wave-pulse
 mode: "wide"
 ---
 
 ## Introdução
 
-O CrewAI fornece a capacidade de transmitir saída em tempo real durante a execução da crew, permitindo que você exiba resultados conforme são gerados, em vez de esperar que todo o processo seja concluído. Este recurso é particularmente útil para construir aplicações interativas, fornecer feedback ao usuário e monitorar processos de longa duração.
+O LocalAI fornece a capacidade de transmitir saída em tempo real durante a execução da crew, permitindo que você exiba resultados conforme são gerados, em vez de esperar que todo o processo seja concluído. Este recurso é particularmente útil para construir aplicações interativas, fornecer feedback ao usuário e monitorar processos de longa duração.
 
 ## Como o Streaming Funciona
 
-Quando o streaming está ativado, o CrewAI captura respostas do LLM e chamadas de ferramentas conforme acontecem, empacotando-as em chunks estruturados que incluem contexto sobre qual task e agent está executando. Você pode iterar sobre esses chunks em tempo real e acessar o resultado final quando a execução for concluída.
+Quando o streaming está ativado, o LocalAI captura respostas do LLM e chamadas de ferramentas conforme acontecem, empacotando-as em chunks estruturados que incluem contexto sobre qual task e agent está executando. Você pode iterar sobre esses chunks em tempo real e acessar o resultado final quando a execução for concluída.
 
 ## Ativando o Streaming
 
@@ -353,4 +353,4 @@ except Exception as e:
         print("O streaming foi completado mas ocorreu um erro")
 ```
 
-Ao aproveitar o streaming, você pode construir aplicações mais responsivas e interativas com o CrewAI, fornecendo aos usuários visibilidade em tempo real da execução dos agentes e resultados.
+Ao aproveitar o streaming, você pode construir aplicações mais responsivas e interativas com o LocalAI, fornecendo aos usuários visibilidade em tempo real da execução dos agentes e resultados.

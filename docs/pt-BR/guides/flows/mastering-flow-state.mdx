@@ -1,15 +1,15 @@
 ---
 title: Dominando o Gerenciamento de Estado em Flows
-description: Um guia abrangente sobre como gerenciar, persistir e utilizar o estado em CrewAI Flows para construir aplicações de IA robustas.
+description: Um guia abrangente sobre como gerenciar, persistir e utilizar o estado em LocalAI Flows para construir aplicações de IA robustas.
 icon: diagram-project
 mode: "wide"
 ---
 
 ## Entendendo o Poder do Estado em Flows
 
-O gerenciamento de estado é a espinha dorsal de qualquer workflow de IA sofisticado. Nos Flows da CrewAI, o sistema de estado permite manter o contexto, compartilhar dados entre etapas e construir lógicas de aplicação complexas. Dominar o gerenciamento de estado é essencial para criar aplicações de IA confiáveis, sustentáveis e poderosas.
+O gerenciamento de estado é a espinha dorsal de qualquer workflow de IA sofisticado. Nos Flows da LocalAI, o sistema de estado permite manter o contexto, compartilhar dados entre etapas e construir lógicas de aplicação complexas. Dominar o gerenciamento de estado é essencial para criar aplicações de IA confiáveis, sustentáveis e poderosas.
 
-Este guia vai te levar por tudo o que você precisa saber sobre como gerenciar o estado em CrewAI Flows, desde conceitos básicos até técnicas avançadas, com exemplos práticos de código ao longo do conteúdo.
+Este guia vai te levar por tudo o que você precisa saber sobre como gerenciar o estado em LocalAI Flows, desde conceitos básicos até técnicas avançadas, com exemplos práticos de código ao longo do conteúdo.
 
 ### Por Que o Gerenciamento de Estado Importa
 
@@ -28,7 +28,7 @@ Vamos explorar como aproveitar essas capacidades de forma eficiente.
 
 ### O Ciclo de Vida do Estado em um Flow
 
-Nos Flows da CrewAI, o estado segue um ciclo de vida previsível:
+Nos Flows da LocalAI, o estado segue um ciclo de vida previsível:
 
 1. **Inicialização** – Quando um flow é criado, seu estado é inicializado (como um dicionário vazio ou uma instância de modelo Pydantic)
 2. **Modificação** – Os métodos do flow acessam e modificam o estado durante a execução
@@ -40,7 +40,7 @@ Compreender esse ciclo de vida é crucial para projetar flows eficientes.
 
 ### Duas Abordagens Para Gerenciar Estado
 
-A CrewAI oferece duas maneiras para você gerenciar o estado nos seus flows:
+A LocalAI oferece duas maneiras para você gerenciar o estado nos seus flows:
 
 1. **Estado Não Estruturado** – Usando objetos do tipo dicionário para mais flexibilidade
 2. **Estado Estruturado** – Usando modelos Pydantic para segurança de tipo e validação
@@ -145,7 +145,7 @@ Esse padrão permite combinar passagem de dados direta com atualizações de est
 
 ## Persistindo o Estado do Flow
 
-Uma das funcionalidades mais poderosas da CrewAI é a habilidade de persistir o estado do flow entre execuções. Isso habilita workflows que podem ser pausados, retomados e até recuperados após falhas.
+Uma das funcionalidades mais poderosas da LocalAI é a habilidade de persistir o estado do flow entre execuções. Isso habilita workflows que podem ser pausados, retomados e até recuperados após falhas.
 
 ### O Decorador @persist()
 
@@ -189,7 +189,7 @@ Esse padrão de criar métodos auxiliares mantém seus métodos de flow limpos, 
 
 ## Gerenciamento de Estado com Crews
 
-Um dos padrões mais poderosos na CrewAI é combinar o gerenciamento de estado do flow com a execução de crews.
+Um dos padrões mais poderosos na LocalAI é combinar o gerenciamento de estado do flow com a execução de crews.
 
 ### Passando Estado para Crews
 
@@ -277,14 +277,14 @@ Você pode adicionar métodos para visualizar seu estado durante o debug:
 
 ## Conclusão
 
-Dominar o gerenciamento de estado em CrewAI Flows te dá poder para construir aplicações de IA sofisticadas e robustas, que mantêm contexto, tomam decisões complexas e entregam resultados consistentes.
+Dominar o gerenciamento de estado em LocalAI Flows te dá poder para construir aplicações de IA sofisticadas e robustas, que mantêm contexto, tomam decisões complexas e entregam resultados consistentes.
 
 Seja escolhendo estado não estruturado ou estruturado, implementar boas práticas de gerenciamento de estado irá ajudar a criar flows manteníveis, extensíveis e eficazes na resolução de problemas do mundo real.
 
 À medida que desenvolver flows mais complexos, lembre-se de que um bom gerenciamento de estado está relacionado ao equilíbrio entre flexibilidade e estrutura, tornando seu código tanto poderoso quanto fácil de entender.
 
 <Check>
-Agora você domina os conceitos e práticas de gerenciamento de estado em CrewAI Flows! Com este conhecimento, você pode criar workflows de IA robustos que mantêm contexto, compartilham dados entre as etapas e constroem lógicas avançadas de aplicação.
+Agora você domina os conceitos e práticas de gerenciamento de estado em LocalAI Flows! Com este conhecimento, você pode criar workflows de IA robustos que mantêm contexto, compartilham dados entre as etapas e constroem lógicas avançadas de aplicação.
 </Check>
 
 ## Próximos Passos

@@ -520,7 +520,7 @@ def test_gemini_tool_conversion():
     """
     llm = LLM(model="google/gemini-2.0-flash-001")
 
-    # Mock tool in CrewAI format
+    # Mock tool in LocalAI format
     crewai_tools = [{
         "type": "function",
         "function": {

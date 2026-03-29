@@ -1,7 +1,7 @@
-"""LangGraph agent adapter for CrewAI integration.
+"""LangGraph agent adapter for LocalAI integration.
 
 This module contains the LangGraphAgentAdapter class that integrates LangGraph ReAct agents
-with CrewAI's agent system. Provides memory persistence, tool integration, and structured
+with LocalAI's agent system. Provides memory persistence, tool integration, and structured
 output functionality.
 """
 
@@ -36,9 +36,9 @@ from crewai.utilities.import_utils import require
 
 
 class LangGraphAgentAdapter(BaseAgentAdapter):
-    """Adapter for LangGraph agents to work with CrewAI.
+    """Adapter for LangGraph agents to work with LocalAI.
 
-    This adapter integrates LangGraph's ReAct agents with CrewAI's agent system,
+    This adapter integrates LangGraph's ReAct agents with LocalAI's agent system,
     providing memory persistence, tool integration, and structured output support.
     """
 

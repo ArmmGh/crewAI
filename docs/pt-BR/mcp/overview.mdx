@@ -1,6 +1,6 @@
 ---
-title: "Servidores MCP como Ferramentas no CrewAI"
-description: "Aprenda como integrar servidores MCP como ferramentas nos seus agentes CrewAI usando a biblioteca `crewai-tools`."
+title: "Servidores MCP como Ferramentas no LocalAI"
+description: "Aprenda como integrar servidores MCP como ferramentas nos seus agentes LocalAI usando a biblioteca `crewai-tools`."
 icon: plug
 mode: "wide"
 ---
@@ -9,7 +9,7 @@ mode: "wide"
 
 O [Model Context Protocol](https://modelcontextprotocol.io/introduction) (MCP) fornece uma maneira padronizada para agentes de IA fornecerem contexto para LLMs comunicando-se com serviços externos, conhecidos como Servidores MCP.
 
-O CrewAI oferece **duas abordagens** para integração MCP:
+O LocalAI oferece **duas abordagens** para integração MCP:
 
 ### 🚀 **Novo: Integração DSL Simples** (Recomendado)
 
@@ -44,12 +44,12 @@ Atualmente, suportamos os seguintes mecanismos de transporte:
 
 ## Tutorial em Vídeo
 
-Assista a este tutorial em vídeo para um guia abrangente sobre a integração do MCP com o CrewAI:
+Assista a este tutorial em vídeo para um guia abrangente sobre a integração do MCP com o LocalAI:
 
 <iframe
   className="w-full aspect-video rounded-xl"
   src="https://www.youtube.com/embed/TpQ45lAZh48"
-  title="CrewAI MCP Integration Guide"
+  title="LocalAI MCP Integration Guide"
   frameBorder="0"
   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
   allowFullScreen
@@ -65,7 +65,7 @@ uv pip install 'crewai-tools[mcp]'
 
 ## Conceitos Chave & Primeiros Passos
 
-A classe `MCPServerAdapter` da `crewai-tools` é a principal forma de conectar-se a um servidor MCP e disponibilizar suas ferramentas aos seus agentes CrewAI. Ela suporta diferentes mecanismos de transporte e simplifica o gerenciamento de conexões.
+A classe `MCPServerAdapter` da `crewai-tools` é a principal forma de conectar-se a um servidor MCP e disponibilizar suas ferramentas aos seus agentes LocalAI. Ela suporta diferentes mecanismos de transporte e simplifica o gerenciamento de conexões.
 
 O uso de um gerenciador de contexto Python (`with`) é a **abordagem recomendada** para o `MCPServerAdapter`. Ele lida automaticamente com a abertura e o fechamento da conexão com o servidor MCP.
 
@@ -292,7 +292,7 @@ class CrewWithCustomTimeout:
   </Card>
 </CardGroup>
 
-Confira este repositório para demonstrações completas e exemplos de integração MCP com CrewAI! 👇
+Confira este repositório para demonstrações completas e exemplos de integração MCP com LocalAI! 👇
 
 <Card
   title="Repositório GitHub"
@@ -300,7 +300,7 @@ Confira este repositório para demonstrações completas e exemplos de integraç
   href="https://github.com/tonykipkemboi/crewai-mcp-demo"
   target="_blank"
 >
-  Demo MCP do CrewAI
+  Demo MCP do LocalAI
 </Card>
 
 ## Segurança ao Usar MCP
@@ -325,5 +325,5 @@ Para mais detalhes, consulte a [documentação de Segurança de Transporte da MC
 ### Limitações
 
 - **Primitivas Suportadas**: Atualmente, o `MCPServerAdapter` suporta principalmente a adaptação de `tools` MCP.
-  Outras primitivas MCP como `prompts` ou `resources` não são integradas diretamente como componentes CrewAI através deste adaptador por enquanto.
+  Outras primitivas MCP como `prompts` ou `resources` não são integradas diretamente como componentes LocalAI através deste adaptador por enquanto.
 - **Manipulação de Saída**: O adaptador normalmente processa a saída principal de texto de uma ferramenta MCP (por exemplo, `.content[0].text`). Saídas complexas ou multimodais podem exigir tratamento customizado caso não se encaixem nesse padrão.

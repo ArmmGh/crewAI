@@ -157,7 +157,7 @@ class FirstTimeTraceHandler:
             pass
 
         panel_content = f"""
-🎉 Your First CrewAI Execution Trace is Ready!
+🎉 Your First LocalAI Execution Trace is Ready!
 
 View your execution details here:
 {self.ephemeral_url}

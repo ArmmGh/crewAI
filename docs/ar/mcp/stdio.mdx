@@ -1,13 +1,13 @@
 ---
 title: نقل Stdio
-description: تعلم كيفية ربط CrewAI بخوادم MCP المحلية باستخدام آلية نقل Stdio (الإدخال/الإخراج القياسي).
+description: تعلم كيفية ربط LocalAI بخوادم MCP المحلية باستخدام آلية نقل Stdio (الإدخال/الإخراج القياسي).
 icon: server
 mode: "wide"
 ---
 
 ## نظرة عامة
 
-صُمم نقل Stdio (الإدخال/الإخراج القياسي) لربط `MCPServerAdapter` بخوادم MCP المحلية التي تتواصل عبر تدفقات الإدخال والإخراج القياسية. يُستخدم هذا عادةً عندما يكون خادم MCP نصاً برمجياً أو ملفاً تنفيذياً يعمل على نفس الجهاز مثل تطبيق CrewAI.
+صُمم نقل Stdio (الإدخال/الإخراج القياسي) لربط `MCPServerAdapter` بخوادم MCP المحلية التي تتواصل عبر تدفقات الإدخال والإخراج القياسية. يُستخدم هذا عادةً عندما يكون خادم MCP نصاً برمجياً أو ملفاً تنفيذياً يعمل على نفس الجهاز مثل تطبيق LocalAI.
 
 ## المفاهيم الرئيسية
 
@@ -38,7 +38,7 @@ server_params=StdioServerParameters(
 with MCPServerAdapter(server_params) as tools:
     print(f"Available tools from Stdio MCP server: {[tool.name for tool in tools]}")
 
-    # Example: Using the tools from the Stdio MCP server in a CrewAI Agent
+    # Example: Using the tools from the Stdio MCP server in a LocalAI Agent
     research_agent = Agent(
         role="Local Data Processor",
         goal="Process data using a local Stdio-based tool.",

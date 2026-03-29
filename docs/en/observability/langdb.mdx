@@ -1,16 +1,16 @@
 ---
 title: LangDB Integration
-description: Govern, secure, and optimize your CrewAI workflows with LangDB AI Gateway—access 350+ models, automatic routing, cost optimization, and full observability.
+description: Govern, secure, and optimize your LocalAI workflows with LangDB AI Gateway—access 350+ models, automatic routing, cost optimization, and full observability.
 icon: database
 mode: "wide"
 ---
 
 # Introduction
 
-[LangDB AI Gateway](https://langdb.ai) provides OpenAI-compatible APIs to connect with multiple Large Language Models and serves as an observability platform that makes it effortless to trace CrewAI workflows end-to-end while providing access to 350+ language models. With a single `init()` call, all agent interactions, task executions, and LLM calls are captured, providing comprehensive observability and production-ready AI infrastructure for your applications.
+[LangDB AI Gateway](https://langdb.ai) provides OpenAI-compatible APIs to connect with multiple Large Language Models and serves as an observability platform that makes it effortless to trace LocalAI workflows end-to-end while providing access to 350+ language models. With a single `init()` call, all agent interactions, task executions, and LLM calls are captured, providing comprehensive observability and production-ready AI infrastructure for your applications.
 
-<Frame caption="LangDB CrewAI Trace Example">
-  <img src="/images/langdb-1.png" alt="LangDB CrewAI trace example" />
+<Frame caption="LangDB LocalAI Trace Example">
+  <img src="/images/langdb-1.png" alt="LangDB LocalAI trace example" />
 </Frame>
 
 **Checkout:** [View the live trace example](https://app.langdb.ai/sharing/threads/3becbfed-a1be-ae84-ea3c-4942867a3e22)
@@ -24,7 +24,7 @@ mode: "wide"
 - **Guardrails**: Implement safety measures and compliance controls for agent behavior
 
 ### Observability & Tracing
-- **Automatic Tracing**: Single `init()` call captures all CrewAI interactions
+- **Automatic Tracing**: Single `init()` call captures all LocalAI interactions
 - **End-to-End Visibility**: Monitor agent workflows from start to finish
 - **Tool Usage Tracking**: Track which tools agents use and their outcomes
 - **Model Call Monitoring**: Detailed insights into LLM interactions
@@ -36,7 +36,7 @@ mode: "wide"
 
 <Steps>
   <Step title="Install LangDB">
-    Install the LangDB client with CrewAI feature flag:
+    Install the LangDB client with LocalAI feature flag:
     ```bash
     pip install 'pylangdb[crewai]'
     ```
@@ -50,14 +50,14 @@ mode: "wide"
     ```
   </Step>
   <Step title="Initialize Tracing">
-    Import and initialize LangDB before configuring your CrewAI code:
+    Import and initialize LangDB before configuring your LocalAI code:
     ```python
     from pylangdb.crewai import init
     # Initialize LangDB
     init()
     ```
   </Step>
-  <Step title="Configure CrewAI with LangDB">
+  <Step title="Configure LocalAI with LangDB">
     Set up your LLM with LangDB headers:
     ```python
     from crewai import Agent, Task, Crew, LLM
@@ -76,14 +76,14 @@ mode: "wide"
 
 ## Quick Start Example
 
-Here's a simple example to get you started with LangDB and CrewAI:
+Here's a simple example to get you started with LangDB and LocalAI:
 
 ```python
 import os
 from pylangdb.crewai import init
 from crewai import Agent, Task, Crew, LLM
 
-# Initialize LangDB before any CrewAI imports
+# Initialize LangDB before any LocalAI imports
 init()
 
 def create_llm(model):
@@ -146,7 +146,7 @@ export SERPER_API_KEY="<your_serper_api_key>"  # For web search capabilities
 import os
 import sys
 from pylangdb.crewai import init
-init()  # Initialize LangDB before any CrewAI imports
+init()  # Initialize LangDB before any LocalAI imports
 from dotenv import load_dotenv
 from crewai import Agent, Task, Crew, Process, LLM
 from crewai_tools import SerperDevTool
@@ -230,10 +230,10 @@ python main.py "Sustainable Energy Solutions"
 
 ## Viewing Traces in LangDB
 
-After running your CrewAI application, you can view detailed traces in the LangDB dashboard:
+After running your LocalAI application, you can view detailed traces in the LangDB dashboard:
 
 <Frame caption="LangDB Trace Dashboard">
-  <img src="/images/langdb-2.png" alt="LangDB trace dashboard showing CrewAI workflow" />
+  <img src="/images/langdb-2.png" alt="LangDB trace dashboard showing LocalAI workflow" />
 </Frame>
 
 ### What You'll See
@@ -249,7 +249,7 @@ After running your CrewAI application, you can view detailed traces in the LangD
 
 ### Common Issues
 
-- **No traces appearing**: Ensure `init()` is called before any CrewAI imports
+- **No traces appearing**: Ensure `init()` is called before any LocalAI imports
 - **Authentication errors**: Verify your LangDB API key and project ID
 
 
@@ -263,7 +263,7 @@ After running your CrewAI application, you can view detailed traces in the LangD
     Step-by-step tutorials for building AI agents
   </Card>
   <Card title="GitHub Examples" icon="github" href="https://github.com/langdb/langdb-samples/tree/main/examples/crewai" >
-    Complete CrewAI integration examples
+    Complete LocalAI integration examples
   </Card>
   <Card title="LangDB Dashboard" icon="chart-line" href="https://app.langdb.ai">
     Access your traces and analytics
@@ -278,7 +278,7 @@ After running your CrewAI application, you can view detailed traces in the LangD
 
 ## Next Steps
 
-This guide covered the basics of integrating LangDB AI Gateway with CrewAI. To further enhance your AI workflows, explore:
+This guide covered the basics of integrating LangDB AI Gateway with LocalAI. To further enhance your AI workflows, explore:
 
 - **Virtual Models**: Create custom model configurations with routing strategies
 - **Guardrails & Safety**: Implement content filtering and compliance controls

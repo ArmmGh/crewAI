@@ -1,13 +1,13 @@
 ---
 title: Knowledge
-description: O que é knowledge em CrewAI e como usá-lo.
+description: O que é knowledge em LocalAI e como usá-lo.
 icon: book
 mode: "wide"
 ---
 
 ## Visão Geral
 
-Knowledge no CrewAI é um sistema poderoso que permite que agentes de IA acessem e utilizem fontes de informação externas durante suas tarefas.
+Knowledge no LocalAI é um sistema poderoso que permite que agentes de IA acessem e utilizem fontes de informação externas durante suas tarefas.
 Pense nisso como dar aos seus agentes uma biblioteca de referência que eles podem consultar enquanto trabalham.
 
 <Info>
@@ -117,7 +117,7 @@ result = crew.kickoff(
 
 ## Fontes de Knowledge Suportadas
 
-O CrewAI suporta vários tipos de fontes de knowledge prontas para uso:
+O LocalAI suporta vários tipos de fontes de knowledge prontas para uso:
 
 <CardGroup cols={2}>
   <Card title="Fontes de Texto" icon="text">
@@ -184,7 +184,7 @@ json_source = JSONKnowledgeSource(
 ## Knowledge de Agente vs Crew: Guia Completo
 
 <Info>
-**Entendendo os Níveis de Knowledge**: O CrewAI suporta knowledge tanto no nível de agente quanto de crew. Esta seção esclarece exatamente como cada um funciona, quando são inicializados, e aborda equívocos comuns sobre dependências.
+**Entendendo os Níveis de Knowledge**: O LocalAI suporta knowledge tanto no nível de agente quanto de crew. Esta seção esclarece exatamente como cada um funciona, quando são inicializados, e aborda equívocos comuns sobre dependências.
 </Info>
 
 ### Como a Inicialização de Knowledge Realmente Funciona
@@ -247,7 +247,7 @@ agent_collection_name = agent.role  # e.g., "Especialista Técnico"
 crew_collection_name = "crew"
 
 # Both stored in same ChromaDB instance but different collections
-# Path: ~/.local/share/CrewAI/{project}/knowledge/
+# Path: ~/.local/share/LocalAI/{project}/knowledge/
 #   ├── crew/                    # Crew knowledge collection
 #   ├── Especialista Técnico/    # Agent knowledge collection
 #   └── Another Agent Role/      # Another agent's collection
@@ -406,18 +406,18 @@ Configuração de armazenamento personalizada para gerenciar como o knowledge é
 ## Transparência do Armazenamento de Knowledge
 
 <Info>
-**Entendendo o Armazenamento de Knowledge**: O CrewAI armazena automaticamente as fontes de knowledge em diretórios específicos da plataforma usando ChromaDB para armazenamento vetorial. Entender essas localizações e padrões ajuda com implantações de produção, depuração e gerenciamento de armazenamento.
+**Entendendo o Armazenamento de Knowledge**: O LocalAI armazena automaticamente as fontes de knowledge em diretórios específicos da plataforma usando ChromaDB para armazenamento vetorial. Entender essas localizações e padrões ajuda com implantações de produção, depuração e gerenciamento de armazenamento.
 </Info>
 
-### Onde o CrewAI Armazena Arquivos de Knowledge
+### Onde o LocalAI Armazena Arquivos de Knowledge
 
-Por padrão, o CrewAI usa o mesmo sistema de armazenamento que a memória, armazenando knowledge em diretórios específicos da plataforma:
+Por padrão, o LocalAI usa o mesmo sistema de armazenamento que a memória, armazenando knowledge em diretórios específicos da plataforma:
 
 #### Localizações de Armazenamento Padrão por Plataforma
 
 **macOS:**
 ```
-~/Library/Application Support/CrewAI/{project_name}/
+~/Library/Application Support/LocalAI/{project_name}/
 └── knowledge/                    # Knowledge ChromaDB files
     ├── chroma.sqlite3           # ChromaDB metadata
     ├── {collection_id}/         # Vector embeddings
@@ -426,7 +426,7 @@ Por padrão, o CrewAI usa o mesmo sistema de armazenamento que a memória, armaz
 
 **Linux:**
 ```
-~/.local/share/CrewAI/{project_name}/
+~/.local/share/LocalAI/{project_name}/
 └── knowledge/
     ├── chroma.sqlite3
     ├── {collection_id}/
@@ -435,7 +435,7 @@ Por padrão, o CrewAI usa o mesmo sistema de armazenamento que a memória, armaz
 
 **Windows:**
 ```
-C:\Users\{username}\AppData\Local\CrewAI\{project_name}\
+C:\Users\{username}\AppData\Local\LocalAI\{project_name}\
 └── knowledge\
     ├── chroma.sqlite3
     ├── {collection_id}\
@@ -444,7 +444,7 @@ C:\Users\{username}\AppData\Local\CrewAI\{project_name}\
 
 ### Encontrando Sua Localização de Armazenamento de Knowledge
 
-Para ver exatamente onde o CrewAI está armazenando seus arquivos de knowledge:
+Para ver exatamente onde o LocalAI está armazenando seus arquivos de knowledge:
 
 ```python
 from crewai.utilities.paths import db_storage_path
@@ -480,7 +480,7 @@ else:
 import os
 from crewai import Crew
 
-# Set custom storage location for all CrewAI data
+# Set custom storage location for all LocalAI data
 os.environ["CREWAI_STORAGE_DIR"] = "./my_project_storage"
 
 # All knowledge will now be stored in ./my_project_storage/knowledge/
@@ -529,7 +529,7 @@ os.environ["CREWAI_STORAGE_DIR"] = str(knowledge_dir)
 ### Comportamento Padrão do Provedor de Embedding
 
 <Info>
-**Provedor de Embedding Padrão**: O CrewAI usa por padrão embeddings da OpenAI (`text-embedding-3-small`) para armazenamento de knowledge, mesmo quando usa diferentes provedores de LLM. Você pode facilmente personalizar isso para corresponder à sua configuração.
+**Provedor de Embedding Padrão**: O LocalAI usa por padrão embeddings da OpenAI (`text-embedding-3-small`) para armazenamento de knowledge, mesmo quando usa diferentes provedores de LLM. Você pode facilmente personalizar isso para corresponder à sua configuração.
 </Info>
 
 #### Entendendo o Comportamento Padrão
@@ -545,7 +545,7 @@ agent = Agent(
     llm=LLM(provider="anthropic", model="claude-3-sonnet")  # Using Claude
 )
 
-# CrewAI will still use OpenAI embeddings by default for knowledge
+# LocalAI will still use OpenAI embeddings by default for knowledge
 # This ensures consistency but may not match your LLM provider preference
 knowledge_source = StringKnowledgeSource(content="Research data...")
 
@@ -631,7 +631,7 @@ agent = Agent(
 
 ### Reescrita de Consulta
 
-O CrewAI implementa um mecanismo inteligente de reescrita de consulta para otimizar a recuperação de knowledge. Quando um agente precisa pesquisar nas fontes de knowledge, o prompt da tarefa bruto é automaticamente transformado em uma consulta de pesquisa mais eficaz.
+O LocalAI implementa um mecanismo inteligente de reescrita de consulta para otimizar a recuperação de knowledge. Quando um agente precisa pesquisar nas fontes de knowledge, o prompt da tarefa bruto é automaticamente transformado em uma consulta de pesquisa mais eficaz.
 
 #### Como a Reescrita de Consulta Funciona
 
@@ -668,7 +668,7 @@ A consulta reescrita é mais focada na necessidade de informação principal e r
 
 ### Eventos de Knowledge
 
-O CrewAI emite eventos durante o processo de recuperação de knowledge que você pode escutar usando o sistema de eventos. Esses eventos permitem que você monitore, depure e analise como o knowledge está sendo recuperado e usado pelos seus agentes.
+O LocalAI emite eventos durante o processo de recuperação de knowledge que você pode escutar usando o sistema de eventos. Esses eventos permitem que você monitore, depure e analise como o knowledge está sendo recuperado e usado pelos seus agentes.
 
 #### Eventos de Knowledge Disponíveis
 
@@ -708,7 +708,7 @@ Para mais informações sobre como usar eventos, consulte a documentação [Even
 
 ### Fontes de Knowledge Personalizadas
 
-O CrewAI permite que você crie fontes de knowledge personalizadas para qualquer tipo de dados estendendo a classe `BaseKnowledgeSource`. Vamos criar um exemplo prático que busca e processa artigos de notícias espaciais.
+O LocalAI permite que você crie fontes de knowledge personalizadas para qualquer tipo de dados estendendo a classe `BaseKnowledgeSource`. Vamos criar um exemplo prático que busca e processa artigos de notícias espaciais.
 
 #### Exemplo de Fonte de Knowledge de Notícias Espaciais
 
@@ -901,7 +901,7 @@ import chromadb
 from crewai.utilities.paths import db_storage_path
 import os
 
-# Connect to CrewAI's knowledge ChromaDB
+# Connect to LocalAI's knowledge ChromaDB
 knowledge_path = os.path.join(db_storage_path(), "knowledge")
 
 if os.path.exists(knowledge_path):
@@ -978,7 +978,7 @@ crew = Crew(
 **Erros "ChromaDB permissão negada":**
 ```bash
 # Fix storage permissions
-chmod -R 755 ~/.local/share/CrewAI/
+chmod -R 755 ~/.local/share/LocalAI/
 ```
 
 **Knowledge não persistindo entre execuções:**
@@ -1008,7 +1008,7 @@ crew.reset_memories(command_type='knowledge')
 
 ### Limpando Knowledge
 
-Se você precisar limpar o knowledge armazenado no CrewAI, você pode usar o comando `crewai reset-memories` com a opção `--knowledge`.
+Se você precisar limpar o knowledge armazenado no LocalAI, você pode usar o comando `crewai reset-memories` com a opção `--knowledge`.
 
 ```bash Command
 crewai reset-memories --knowledge
@@ -1032,10 +1032,10 @@ Isso é útil quando você atualizou suas fontes de knowledge e quer garantir qu
   </Accordion>
 
   <Accordion title="Knowledge de Uma Vez">
-    - Com a estrutura de arquivo típica fornecida pelo CrewAI, as fontes de knowledge são incorporadas toda vez que o kickoff é acionado.
+    - Com a estrutura de arquivo típica fornecida pelo LocalAI, as fontes de knowledge são incorporadas toda vez que o kickoff é acionado.
     - Se as fontes de knowledge são grandes, isso leva à ineficiência e latência aumentada, pois os mesmos dados são incorporados cada vez.
     - Para resolver isso, inicialize diretamente o parâmetro knowledge em vez do parâmetro knowledge_sources.
-    - Link para a issue para ter a ideia completa [Github Issue](https://github.com/crewAIInc/crewAI/issues/2755)
+    - Link para a issue para ter a ideia completa [Github Issue](https://github.com/localAIInc/localAI/issues/2755)
   </Accordion>
 
   <Accordion title="Gerenciamento de Knowledge">

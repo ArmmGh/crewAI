@@ -1,4 +1,4 @@
-"""LangGraph structured output converter for CrewAI task integration.
+"""LangGraph structured output converter for LocalAI task integration.
 
 This module contains the LangGraphConverterAdapter class that handles structured
 output conversion for LangGraph agents, supporting JSON and Pydantic model formats.

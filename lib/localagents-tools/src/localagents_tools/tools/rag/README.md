@@ -1,6 +1,6 @@
 # RagTool: A Dynamic Knowledge Base Tool
 
-RagTool is designed to answer questions by leveraging the power of RAG by leveraging (EmbedChain). It integrates seamlessly with the CrewAI ecosystem, offering a versatile and powerful solution for information retrieval.
+RagTool is designed to answer questions by leveraging the power of RAG by leveraging (EmbedChain). It integrates seamlessly with the LocalAI ecosystem, offering a versatile and powerful solution for information retrieval.
 
 ## **Overview**
 
@@ -52,7 +52,7 @@ rag_tool = RagTool().from_web_page('https://example.com')
 
 ## **Contribution**
 
-Contributions to RagTool and the broader CrewAI tools ecosystem are welcome. To contribute, please follow the standard GitHub workflow for forking the repository, making changes, and submitting a pull request.
+Contributions to RagTool and the broader LocalAI tools ecosystem are welcome. To contribute, please follow the standard GitHub workflow for forking the repository, making changes, and submitting a pull request.
 
 ## **License**
 

@@ -1,4 +1,4 @@
-"""Prompt generation and management utilities for CrewAI agents."""
+"""Prompt generation and management utilities for LocalAI agents."""
 
 from __future__ import annotations
 

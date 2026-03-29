@@ -1,4 +1,4 @@
-"""Usage metrics tracking for CrewAI execution.
+"""Usage metrics tracking for LocalAI execution.
 
 This module provides models for tracking token usage and request metrics
 during crew and agent execution.

@@ -268,7 +268,7 @@ class SingleStoreSearchTool(BaseTool):
 
         # Add tool identification to connection attributes
         self.connection_args["conn_attrs"]["_connector_name"] = (
-            "crewAI SingleStore Tool"
+            "localAI SingleStore Tool"
         )
         self.connection_args["conn_attrs"]["_connector_version"] = "1.0"
 

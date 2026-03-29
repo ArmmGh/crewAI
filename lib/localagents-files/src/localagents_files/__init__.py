@@ -1,4 +1,4 @@
-"""File handling utilities for crewAI tasks."""
+"""File handling utilities for localAI tasks."""
 
 from crewai_files.cache.cleanup import (
     cleanup_expired_files,

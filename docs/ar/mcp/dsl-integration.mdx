@@ -1,13 +1,13 @@
 ---
 title: تكامل MCP DSL
-description: تعلم كيفية استخدام صياغة DSL البسيطة في CrewAI لدمج خوادم MCP مباشرة مع وكلائك باستخدام حقل mcps.
+description: تعلم كيفية استخدام صياغة DSL البسيطة في LocalAI لدمج خوادم MCP مباشرة مع وكلائك باستخدام حقل mcps.
 icon: code
 mode: "wide"
 ---
 
 ## نظرة عامة
 
-يوفر تكامل MCP DSL (لغة المجال المحددة) في CrewAI **الطريقة الأبسط** لربط وكلائك بخوادم MCP (بروتوكول سياق النموذج). ما عليك سوى إضافة حقل `mcps` إلى وكيلك وسيتعامل CrewAI مع كل التعقيدات تلقائياً.
+يوفر تكامل MCP DSL (لغة المجال المحددة) في LocalAI **الطريقة الأبسط** لربط وكلائك بخوادم MCP (بروتوكول سياق النموذج). ما عليك سوى إضافة حقل `mcps` إلى وكيلك وسيتعامل LocalAI مع كل التعقيدات تلقائياً.
 
 <Info>
   هذا هو **النهج الموصى به** لمعظم حالات استخدام MCP. للسيناريوهات المتقدمة
@@ -64,7 +64,7 @@ agent = Agent(
 
 ### تكاملات MCP المتصلة
 
-اربط خوادم MCP من كتالوج CrewAI أو أحضر خوادمك الخاصة. بمجرد الاتصال في حسابك، أشر إليها بالمعرف المختصر:
+اربط خوادم MCP من كتالوج LocalAI أو أحضر خوادمك الخاصة. بمجرد الاتصال في حسابك، أشر إليها بالمعرف المختصر:
 
 ```python
 # Connected MCP with all tools
@@ -134,11 +134,11 @@ print(f"Research completed with {len(multi_source_agent.mcps)} MCP data sources"
 
 ## تسمية الأدوات والتنظيم
 
-يتعامل CrewAI تلقائياً مع تسمية الأدوات لمنع التعارضات:
+يتعامل LocalAI تلقائياً مع تسمية الأدوات لمنع التعارضات:
 
 ```python
 # Original MCP server has tools: "search", "analyze"
-# CrewAI creates tools: "mcp_exa_ai_search", "mcp_exa_ai_analyze"
+# LocalAI creates tools: "mcp_exa_ai_search", "mcp_exa_ai_analyze"
 
 agent = Agent(
     role="Tool Organization Demo",
@@ -232,7 +232,7 @@ agent = Agent(
 
 ## التكامل مع الميزات الموجودة
 
-تعمل أدوات MCP بسلاسة مع ميزات CrewAI الأخرى:
+تعمل أدوات MCP بسلاسة مع ميزات LocalAI الأخرى:
 
 ```python
 from crewai.tools import BaseTool
@@ -332,7 +332,7 @@ mcps=["https://mcp.example.com/mcp?api_key=valid_key"]
 
 ```python
 # Server may be slow or overloaded
-# CrewAI will log warnings and continue with other servers
+# LocalAI will log warnings and continue with other servers
 # Check server status or try backup servers
 ```
 

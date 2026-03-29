@@ -1,4 +1,4 @@
-"""MCP client with session management for CrewAI agents."""
+"""MCP client with session management for LocalAI agents."""
 
 import asyncio
 from collections.abc import Callable, Coroutine

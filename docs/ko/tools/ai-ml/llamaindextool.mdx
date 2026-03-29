@@ -9,7 +9,7 @@ mode: "wide"
 
 ## 설명
 
-`LlamaIndexTool`은 LlamaIndex 도구 및 쿼리 엔진에 대한 일반적인 래퍼로 설계되어, LlamaIndex 리소스를 RAG/agentic 파이프라인의 도구로 활용하여 CrewAI 에이전트에 연동할 수 있도록 합니다. 이 도구를 통해 LlamaIndex의 강력한 데이터 처리 및 검색 기능을 CrewAI 워크플로우에 원활하게 통합할 수 있습니다.
+`LlamaIndexTool`은 LlamaIndex 도구 및 쿼리 엔진에 대한 일반적인 래퍼로 설계되어, LlamaIndex 리소스를 RAG/agentic 파이프라인의 도구로 활용하여 LocalAI 에이전트에 연동할 수 있도록 합니다. 이 도구를 통해 LlamaIndex의 강력한 데이터 처리 및 검색 기능을 LocalAI 워크플로우에 원활하게 통합할 수 있습니다.
 
 ## 설치
 
@@ -25,7 +25,7 @@ uv add llama-index
 
 1. **LlamaIndex 설치**: 위의 명령어를 사용하여 LlamaIndex 패키지를 설치하세요.
 2. **LlamaIndex 설정**: [LlamaIndex 문서](https://docs.llamaindex.ai/)를 참고하여 RAG/에이전트 파이프라인을 설정하세요.
-3. **도구 또는 쿼리 엔진 생성**: CrewAI와 함께 사용할 LlamaIndex 도구 또는 쿼리 엔진을 생성하세요.
+3. **도구 또는 쿼리 엔진 생성**: LocalAI와 함께 사용할 LlamaIndex 도구 또는 쿼리 엔진을 생성하세요.
 
 ## 예시
 
@@ -144,4 +144,4 @@ def from_query_engine(
 
 ## 결론
 
-`LlamaIndexTool`은 LlamaIndex의 기능을 CrewAI 에이전트에 통합할 수 있는 강력한 방법을 제공합니다. LlamaIndex 도구와 쿼리 엔진을 래핑함으로써, 에이전트가 정교한 데이터 검색 및 처리 기능을 활용할 수 있게 하여, 복잡한 정보 소스를 다루는 능력을 강화합니다.
+`LlamaIndexTool`은 LlamaIndex의 기능을 LocalAI 에이전트에 통합할 수 있는 강력한 방법을 제공합니다. LlamaIndex 도구와 쿼리 엔진을 래핑함으로써, 에이전트가 정교한 데이터 검색 및 처리 기능을 활용할 수 있게 하여, 복잡한 정보 소스를 다루는 능력을 강화합니다.

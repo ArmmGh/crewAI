@@ -25,7 +25,7 @@ Set the following environment variables:
 
 ## Usage
 
-To use the AWS S3 tools in your CrewAI agents, import the necessary tools and include them in your agent's configuration:
+To use the AWS S3 tools in your LocalAI agents, import the necessary tools and include them in your agent's configuration:
 
 ```python
 from crewai_tools.aws.s3 import S3ReaderTool, S3WriterTool
@@ -49,4 +49,4 @@ def file_uploader(self) -> Agent:
     )
 ```
 
-These tools can be used to read from and write to S3 buckets within your CrewAI workflows. Make sure you have properly configured your AWS credentials as mentioned in the AWS Connectivity section above.
+These tools can be used to read from and write to S3 buckets within your LocalAI workflows. Make sure you have properly configured your AWS credentials as mentioned in the AWS Connectivity section above.

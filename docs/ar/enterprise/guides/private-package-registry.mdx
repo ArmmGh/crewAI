@@ -1,14 +1,14 @@
 ---
 title: "سجلات الحزم الخاصة"
-description: "تثبيت حزم Python الخاصة من سجلات PyPI المصادق عليها في CrewAI AMP"
+description: "تثبيت حزم Python الخاصة من سجلات PyPI المصادق عليها في LocalAI AMP"
 icon: "lock"
 mode: "wide"
 ---
 
 <Note>
-  يغطي هذا الدليل كيفية تهيئة مشروع CrewAI لتثبيت حزم Python
+  يغطي هذا الدليل كيفية تهيئة مشروع LocalAI لتثبيت حزم Python
   من سجلات PyPI الخاصة (Azure DevOps Artifacts، GitHub Packages، GitLab، AWS CodeArtifact، إلخ.)
-  عند النشر على CrewAI AMP.
+  عند النشر على LocalAI AMP.
 </Note>
 
 ## متى تحتاج هذا
@@ -20,7 +20,7 @@ mode: "wide"
 2. إخبار UV **أي** حزم تأتي من ذلك الفهرس (تعيين مصدر)
 3. تقديم **بيانات اعتماد** حتى يتمكن UV من المصادقة أثناء التثبيت
 
-يستخدم CrewAI AMP [UV](https://docs.astral.sh/uv/) لحل وتثبيت الاعتماديات.
+يستخدم LocalAI AMP [UV](https://docs.astral.sh/uv/) لحل وتثبيت الاعتماديات.
 يدعم UV السجلات الخاصة المصادق عليها عبر تهيئة `pyproject.toml` مع
 متغيرات بيئة لبيانات الاعتماد.
 
@@ -124,7 +124,7 @@ UV_INDEX_{UPPER_NAME}_PASSWORD
 | `UV_INDEX_MY_PRIVATE_REGISTRY_PASSWORD` | كلمة مرور السجل أو الرمز/PAT |
 
 <Warning>
-  هذه المتغيرات **يجب** إضافتها عبر إعدادات **Environment Variables** في CrewAI AMP —
+  هذه المتغيرات **يجب** إضافتها عبر إعدادات **Environment Variables** في LocalAI AMP —
   إما عالمياً أو على مستوى النشر. لا يمكن تعيينها في ملفات `.env` أو ترميزها في مشروعك.
 
   راجع [تعيين متغيرات البيئة في AMP](#setting-environment-variables-in-amp) أدناه.
@@ -153,12 +153,12 @@ UV_INDEX_{UPPER_NAME}_PASSWORD
 
 ## تعيين متغيرات البيئة في AMP
 
-يجب تهيئة بيانات اعتماد السجل الخاص كمتغيرات بيئة في CrewAI AMP.
+يجب تهيئة بيانات اعتماد السجل الخاص كمتغيرات بيئة في LocalAI AMP.
 لديك خياران:
 
 <Tabs>
   <Tab title="واجهة الويب">
-    1. سجّل الدخول إلى [CrewAI AMP](https://app.crewai.com)
+    1. سجّل الدخول إلى [LocalAI AMP](https://app.crewai.com)
     2. انتقل إلى أتمتتك
     3. افتح علامة تبويب **Environment Variables**
     4. أضف كل متغير (`UV_INDEX_*_USERNAME` و`UV_INDEX_*_PASSWORD`) مع قيمته
@@ -191,7 +191,7 @@ UV_INDEX_{UPPER_NAME}_PASSWORD
 
 ## كيف يعمل الكل معاً
 
-عندما يبني CrewAI AMP أتمتتك، يعمل تدفق الحل هكذا:
+عندما يبني LocalAI AMP أتمتتك، يعمل تدفق الحل هكذا:
 
 <Steps>
   <Step title="بدء البناء">

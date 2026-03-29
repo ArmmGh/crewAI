@@ -46,7 +46,7 @@ class CrewStructuredTool:
     """A structured tool that can operate on any number of inputs.
 
     This tool intends to replace StructuredTool with a custom implementation
-    that integrates better with CrewAI's ecosystem.
+    that integrates better with LocalAI's ecosystem.
     """
 
     def __init__(

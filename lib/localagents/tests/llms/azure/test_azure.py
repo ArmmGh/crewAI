@@ -661,7 +661,7 @@ def test_azure_tool_conversion():
     """
     llm = LLM(model="azure/gpt-4")
 
-    # Mock tool in CrewAI format
+    # Mock tool in LocalAI format
     crewai_tools = [{
         "type": "function",
         "function": {

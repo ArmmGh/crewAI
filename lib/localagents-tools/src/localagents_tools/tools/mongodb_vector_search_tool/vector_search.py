@@ -135,7 +135,7 @@ class MongoDBVectorSearchTool(BaseTool):
 
         self._client: MongoClient[dict[str, Any]] = MongoClient(
             self.connection_string,
-            driver=DriverInfo(name="CrewAI", version=version("crewai-tools")),
+            driver=DriverInfo(name="LocalAI", version=version("crewai-tools")),
         )
         self._coll = self._client[self.database_name][self.collection_name]
 

@@ -1,6 +1,6 @@
 # AWS Bedrock Browser Tools
 
-This toolkit provides a set of tools for interacting with web browsers through AWS Bedrock Browser. It enables your CrewAI agents to navigate websites, extract content, click elements, and more.
+This toolkit provides a set of tools for interacting with web browsers through AWS Bedrock Browser. It enables your LocalAI agents to navigate websites, extract content, click elements, and more.
 
 ## Features
 
@@ -36,7 +36,7 @@ llm = LLM(
     region_name="us-west-2",
 )
 
-# Create a CrewAI agent that uses the browser tools
+# Create a LocalAI agent that uses the browser tools
 research_agent = Agent(
     role="Web Researcher",
     goal="Research and summarize web content",

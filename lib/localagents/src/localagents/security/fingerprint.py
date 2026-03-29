@@ -1,7 +1,7 @@
 """Fingerprint Module
 
 This module provides functionality for generating and validating unique identifiers
-for CrewAI agents. These identifiers are used for tracking, auditing, and security.
+for LocalAI agents. These identifiers are used for tracking, auditing, and security.
 """
 
 from datetime import datetime

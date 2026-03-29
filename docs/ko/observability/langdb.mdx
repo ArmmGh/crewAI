@@ -1,6 +1,6 @@
 ---
 title: LangDB 통합
-description: LangDB AI Gateway로 CrewAI 워크플로우를 관리, 보안, 최적화하세요—350개 이상의 모델 액세스, 자동 라우팅, 비용 최적화, 완전한 가시성을 제공합니다.
+description: LangDB AI Gateway로 LocalAI 워크플로우를 관리, 보안, 최적화하세요—350개 이상의 모델 액세스, 자동 라우팅, 비용 최적화, 완전한 가시성을 제공합니다.
 icon: database
 mode: "wide"
 ---
@@ -9,8 +9,8 @@ mode: "wide"
 
 [LangDB AI Gateway](https://langdb.ai)는 여러 대형 언어 모델과의 연결을 지원하는 OpenAI 호환 API를 제공하며, 350개 이상의 언어 모델에 접근할 수 있도록 해주는 관측 플랫폼입니다. 단 한 번의 `init()` 호출로 모든 에이전트 상호작용, 작업 실행 및 LLM 호출이 캡처되어, 애플리케이션을 위한 종합적인 관측성과 프로덕션 수준의 AI 인프라를 제공합니다.
 
-<Frame caption="LangDB CrewAI 추적 예시">
-  <img src="/images/langdb-1.png" alt="LangDB CrewAI trace example" />
+<Frame caption="LangDB LocalAI 추적 예시">
+  <img src="/images/langdb-1.png" alt="LangDB LocalAI trace example" />
 </Frame>
 
 **확인:** [실시간 추적 예시 보기](https://app.langdb.ai/sharing/threads/3becbfed-a1be-ae84-ea3c-4942867a3e22)
@@ -24,7 +24,7 @@ mode: "wide"
 - **가드레일**: 에이전트 행동에 대한 안전 조치 및 컴플라이언스 제어 구현
 
 ### 가시성 및 추적
-- **자동 추적**: 단일 `init()` 호출로 모든 CrewAI 상호작용을 캡처
+- **자동 추적**: 단일 `init()` 호출로 모든 LocalAI 상호작용을 캡처
 - **엔드-투-엔드 가시성**: 에이전트 워크플로우를 시작부터 끝까지 모니터링
 - **도구 사용 추적**: 에이전트가 사용하는 도구와 그 결과를 추적
 - **모델 호출 모니터링**: LLM 상호작용에 대한 상세한 인사이트 제공
@@ -36,7 +36,7 @@ mode: "wide"
 
 <Steps>
   <Step title="LangDB 설치">
-    CrewAI 기능 플래그와 함께 LangDB 클라이언트를 설치하세요:
+    LocalAI 기능 플래그와 함께 LangDB 클라이언트를 설치하세요:
     ```bash
     pip install 'pylangdb[crewai]'
     ```
@@ -50,14 +50,14 @@ mode: "wide"
     ```
   </Step>
   <Step title="추적(Tracing) 초기화">
-    CrewAI 코드를 설정하기 전에 LangDB를 임포트하고 초기화하세요:
+    LocalAI 코드를 설정하기 전에 LangDB를 임포트하고 초기화하세요:
     ```python
     from pylangdb.crewai import init
     # Initialize LangDB
     init()
     ```
   </Step>
-  <Step title="CrewAI와 LangDB 연동 설정">
+  <Step title="LocalAI와 LangDB 연동 설정">
     LangDB 헤더와 함께 LLM을 설정하세요:
     ```python
     from crewai import Agent, Task, Crew, LLM
@@ -76,14 +76,14 @@ mode: "wide"
 
 ## 빠른 시작 예제
 
-여기 LangDB와 CrewAI를 시작하는 간단한 예제가 있습니다:
+여기 LangDB와 LocalAI를 시작하는 간단한 예제가 있습니다:
 
 ```python
 import os
 from pylangdb.crewai import init
 from crewai import Agent, Task, Crew, LLM
 
-# Initialize LangDB before any CrewAI imports
+# Initialize LangDB before any LocalAI imports
 init()
 
 def create_llm(model):
@@ -146,7 +146,7 @@ export SERPER_API_KEY="<your_serper_api_key>"  # For web search capabilities
 import os
 import sys
 from pylangdb.crewai import init
-init()  # Initialize LangDB before any CrewAI imports
+init()  # Initialize LangDB before any LocalAI imports
 from dotenv import load_dotenv
 from crewai import Agent, Task, Crew, Process, LLM
 from crewai_tools import SerperDevTool
@@ -230,10 +230,10 @@ python main.py "Sustainable Energy Solutions"
 
 ## LangDB에서 트레이스 보기
 
-CrewAI 애플리케이션을 실행한 후, LangDB 대시보드에서 자세한 트레이스를 확인할 수 있습니다:
+LocalAI 애플리케이션을 실행한 후, LangDB 대시보드에서 자세한 트레이스를 확인할 수 있습니다:
 
 <Frame caption="LangDB 트레이스 대시보드">
-  <img src="/images/langdb-2.png" alt="LangDB 트레이스 대시보드에서 CrewAI 워크플로우 표시" />
+  <img src="/images/langdb-2.png" alt="LangDB 트레이스 대시보드에서 LocalAI 워크플로우 표시" />
 </Frame>
 
 ### 볼 수 있는 내용
@@ -248,7 +248,7 @@ CrewAI 애플리케이션을 실행한 후, LangDB 대시보드에서 자세한 
 
 ### 일반적인 문제
 
-- **추적이 나타나지 않음**: `init()`이 CrewAI 임포트 이전에 호출되었는지 확인하세요
+- **추적이 나타나지 않음**: `init()`이 LocalAI 임포트 이전에 호출되었는지 확인하세요
 - **인증 오류**: LangDB API 키와 프로젝트 ID를 확인하세요
 
 ## 리소스
@@ -261,7 +261,7 @@ CrewAI 애플리케이션을 실행한 후, LangDB 대시보드에서 자세한 
     AI 에이전트 구축을 위한 단계별 튜토리얼
   </Card>
   <Card title="GitHub 예제" icon="github" href="https://github.com/langdb/langdb-samples/tree/main/examples/crewai" >
-    CrewAI 통합 전체 예제
+    LocalAI 통합 전체 예제
   </Card>
   <Card title="LangDB 대시보드" icon="chart-line" href="https://app.langdb.ai">
     트레이스 및 분석 액세스
@@ -276,7 +276,7 @@ CrewAI 애플리케이션을 실행한 후, LangDB 대시보드에서 자세한 
 
 ## 다음 단계
 
-이 가이드에서는 LangDB AI Gateway를 CrewAI와 통합하는 기본 사항을 다루었습니다. AI 워크플로우를 더욱 강화하려면 다음을 탐색해보세요:
+이 가이드에서는 LangDB AI Gateway를 LocalAI와 통합하는 기본 사항을 다루었습니다. AI 워크플로우를 더욱 강화하려면 다음을 탐색해보세요:
 
 - **Virtual Models**: 라우팅 전략을 사용한 맞춤형 모델 구성 만들기
 - **Guardrails & Safety**: 콘텐츠 필터링 및 컴플라이언스 제어 구현

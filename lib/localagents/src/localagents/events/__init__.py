@@ -1,10 +1,10 @@
-"""CrewAI events system for monitoring and extending agent behavior.
+"""LocalAI events system for monitoring and extending agent behavior.
 
 This module provides the event infrastructure that allows users to:
 - Monitor agent, task, and crew execution
 - Track memory operations and performance
 - Build custom logging and analytics
-- Extend CrewAI with custom event handlers
+- Extend LocalAI with custom event handlers
 - Declare handler dependencies for ordered execution
 """
 

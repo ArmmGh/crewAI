@@ -1,4 +1,4 @@
-"""JSON encoder for handling CrewAI specific types."""
+"""JSON encoder for handling LocalAI specific types."""
 
 import base64
 from datetime import date, datetime
@@ -12,10 +12,10 @@ from pydantic import BaseModel
 
 
 class CrewJSONEncoder(json.JSONEncoder):
-    """Custom JSON encoder for CrewAI objects and special types."""
+    """Custom JSON encoder for LocalAI objects and special types."""
 
     def default(self, obj: Any) -> Any:
-        """Custom serialization for CrewAI specific types.
+        """Custom serialization for LocalAI specific types.
 
         Args:
             obj: The object to serialize.

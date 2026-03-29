@@ -484,7 +484,7 @@ class CodeInterpreterToolkit:
         # Create the code interpreter toolkit
         toolkit, code_tools = create_code_interpreter_toolkit(region="us-west-2")
 
-        # Create a CrewAI agent that uses the code interpreter tools
+        # Create a LocalAI agent that uses the code interpreter tools
         developer_agent = Agent(
             role="Python Developer",
             goal="Create and execute Python code to solve problems",
@@ -563,7 +563,7 @@ class CodeInterpreterToolkit:
         """Get the list of code interpreter tools.
 
         Returns:
-            List of CrewAI tools
+            List of LocalAI tools
         """
         return self.tools
 

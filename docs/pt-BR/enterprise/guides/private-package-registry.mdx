@@ -1,14 +1,14 @@
 ---
 title: "Registros de Pacotes Privados"
-description: "Instale pacotes Python privados de registros PyPI autenticados no CrewAI AMP"
+description: "Instale pacotes Python privados de registros PyPI autenticados no LocalAI AMP"
 icon: "lock"
 mode: "wide"
 ---
 
 <Note>
-  Este guia aborda como configurar seu projeto CrewAI para instalar pacotes Python
+  Este guia aborda como configurar seu projeto LocalAI para instalar pacotes Python
   de registros PyPI privados (Azure DevOps Artifacts, GitHub Packages, GitLab, AWS CodeArtifact, etc.)
-  ao implantar no CrewAI AMP.
+  ao implantar no LocalAI AMP.
 </Note>
 
 ## Quando Você Precisa Disso
@@ -20,7 +20,7 @@ em vez do PyPI público, você precisará:
 2. Informar ao UV **quais** pacotes vêm desse index (um mapeamento de source)
 3. Fornecer **credenciais** para que o UV possa autenticar durante a instalação
 
-O CrewAI AMP usa [UV](https://docs.astral.sh/uv/) para resolução e instalação de dependências.
+O LocalAI AMP usa [UV](https://docs.astral.sh/uv/) para resolução e instalação de dependências.
 O UV suporta registros privados autenticados por meio da configuração do `pyproject.toml` combinada
 com variáveis de ambiente para credenciais.
 
@@ -124,7 +124,7 @@ Por exemplo, um index chamado `my-private-registry` usa:
 | `UV_INDEX_MY_PRIVATE_REGISTRY_PASSWORD` | Sua senha ou token/PAT do registro |
 
 <Warning>
-  Essas variáveis de ambiente **devem** ser adicionadas pelas configurações de **Variáveis de Ambiente** do CrewAI AMP —
+  Essas variáveis de ambiente **devem** ser adicionadas pelas configurações de **Variáveis de Ambiente** do LocalAI AMP —
   globalmente ou no nível da implantação. Elas não podem ser definidas em arquivos `.env` ou codificadas no seu projeto.
 
   Veja [Configurar Variáveis de Ambiente no AMP](#configurar-variáveis-de-ambiente-no-amp) abaixo.
@@ -153,12 +153,12 @@ Substitua os valores de exemplo pelos detalhes reais da sua organização e feed
 
 ## Configurar Variáveis de Ambiente no AMP
 
-As credenciais do registro privado devem ser configuradas como variáveis de ambiente no CrewAI AMP.
+As credenciais do registro privado devem ser configuradas como variáveis de ambiente no LocalAI AMP.
 Você tem duas opções:
 
 <Tabs>
   <Tab title="Interface Web">
-    1. Faça login no [CrewAI AMP](https://app.crewai.com)
+    1. Faça login no [LocalAI AMP](https://app.crewai.com)
     2. Navegue até sua automação
     3. Abra a aba **Environment Variables**
     4. Adicione cada variável (`UV_INDEX_*_USERNAME` e `UV_INDEX_*_PASSWORD`) com seu valor
@@ -191,7 +191,7 @@ Para atualizar credenciais em uma implantação existente, veja [Atualizar Seu C
 
 ## Como Tudo se Conecta
 
-Quando o CrewAI AMP faz o build da sua automação, o fluxo de resolução funciona assim:
+Quando o LocalAI AMP faz o build da sua automação, o fluxo de resolução funciona assim:
 
 <Steps>
   <Step title="Build inicia">

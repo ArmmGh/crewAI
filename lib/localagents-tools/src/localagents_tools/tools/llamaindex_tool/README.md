@@ -2,7 +2,7 @@
 
 ## Description
 This tool is designed to be a general wrapper around LlamaIndex tools and query engines, enabling you to leverage LlamaIndex resources
-in terms of RAG/agentic pipelines as tools to plug into CrewAI agents.
+in terms of RAG/agentic pipelines as tools to plug into LocalAI agents.
 
 ## Installation
 To incorporate this tool into your project, follow the installation instructions below:
@@ -47,7 +47,7 @@ query_tool = LlamaIndexTool.from_query_engine(
 ## Steps to Get Started
 To effectively use the `LlamaIndexTool`, follow these steps:
 
-1. **Install CrewAI**: Confirm that the `crewai[tools]` package is installed in your Python environment.
+1. **Install LocalAI**: Confirm that the `crewai[tools]` package is installed in your Python environment.
 2. **Install and use LlamaIndex**: Follow LlamaIndex documentation (https://docs.llamaindex.ai/) to setup a RAG/agent pipeline.
 
 

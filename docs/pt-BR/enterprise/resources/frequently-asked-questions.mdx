@@ -1,6 +1,6 @@
 ---
 title: FAQs
-description: "Perguntas frequentes sobre CrewAI AMP"
+description: "Perguntas frequentes sobre LocalAI AMP"
 icon: "circle-question"
 mode: "wide"
 ---
@@ -10,12 +10,12 @@ mode: "wide"
         No processo hierárquico, um agente gerente é criado automaticamente e coordena o fluxo de trabalho, delegando tarefas e validando resultados para uma execução eficiente e simplificada. O agente gerente utiliza ferramentas para facilitar a delegação e execução de tarefas por agentes sob sua orientação. O LLM do gerente é fundamental para o processo hierárquico e deve ser configurado corretamente para funcionar adequadamente.
     </Accordion>
 
-    <Accordion title="Onde posso encontrar a documentação mais recente da CrewAI?">
-        A documentação mais atualizada da CrewAI está disponível em nosso site oficial de documentação: https://docs.crewai.com/
-        <Card href="https://docs.crewai.com/" icon="books">CrewAI Docs</Card>
+    <Accordion title="Onde posso encontrar a documentação mais recente da LocalAI?">
+        A documentação mais atualizada da LocalAI está disponível em nosso site oficial de documentação: https://docs.crewai.com/
+        <Card href="https://docs.crewai.com/" icon="books">LocalAI Docs</Card>
     </Accordion>
 
-    <Accordion title="Quais as principais diferenças entre os Processos Hierárquico e Sequencial na CrewAI?">
+    <Accordion title="Quais as principais diferenças entre os Processos Hierárquico e Sequencial na LocalAI?">
         #### Processo Hierárquico:
         - As tarefas são delegadas e executadas com base em uma cadeia de comando estruturada
         - Um modelo de linguagem do gerente (`manager_llm`) deve ser especificado para o agente gerente
@@ -34,7 +34,7 @@ mode: "wide"
         - **Gestão de tarefas complexas**: Controle preciso da disponibilidade de ferramentas por agente
     </Accordion>
 
-    <Accordion title="Quais são os benefícios do uso de memória no framework CrewAI?">
+    <Accordion title="Quais são os benefícios do uso de memória no framework LocalAI?">
         - **Aprendizado adaptativo**: As crews tornam-se mais eficientes ao longo do tempo, adaptando-se a novas informações e aprimorando sua abordagem às tarefas
         - **Personalização aprimorada**: A memória permite que os agentes recordem preferências do usuário e interações anteriores, possibilitando experiências personalizadas
         - **Resolução aprimorada de problemas**: O acesso a um repositório rico em memória auxilia os agentes a tomarem decisões mais informadas, baseando-se em aprendizados anteriores e insights contextuais
@@ -44,7 +44,7 @@ mode: "wide"
         Definir um limite máximo de RPM para um agente evita que ele faça solicitações excessivas a serviços externos, o que pode ajudar a evitar limites de taxa e melhorar o desempenho.
     </Accordion>
 
-    <Accordion title="Qual o papel da entrada humana na execução de tarefas dentro de uma crew da CrewAI?">
+    <Accordion title="Qual o papel da entrada humana na execução de tarefas dentro de uma crew da LocalAI?">
         A entrada humana permite que os agentes solicitem informações adicionais ou esclarecimentos quando necessário. Este recurso é fundamental em processos de tomada de decisão complexos ou quando os agentes precisam de mais detalhes para concluir uma tarefa com eficácia.
 
         Para integrar a entrada humana na execução do agente, defina a flag `human_input` na definição da tarefa. Quando habilitada, o agente solicitará a entrada do usuário antes de entregar sua resposta final. Essa entrada pode fornecer contexto extra, esclarecer ambiguidades ou validar a saída do agente.
@@ -52,8 +52,8 @@ mode: "wide"
         Para orientações detalhadas de implementação, veja nosso [guia Human-in-the-Loop](/pt-BR/enterprise/guides/human-in-the-loop).
     </Accordion>
 
-    <Accordion title="Quais opções avançadas de customização estão disponíveis para aprimorar e personalizar o comportamento e as capacidades dos agentes na CrewAI?">
-        A CrewAI oferece diversas opções avançadas de customização:
+    <Accordion title="Quais opções avançadas de customização estão disponíveis para aprimorar e personalizar o comportamento e as capacidades dos agentes na LocalAI?">
+        A LocalAI oferece diversas opções avançadas de customização:
 
         - **Customização de Modelo de Linguagem**: Os agentes podem ser personalizados com modelos de linguagem específicos (`llm`) e modelos de linguagem para chamadas de função (`function_calling_llm`)
         - **Configurações de Desempenho e Debug**: Ajuste o desempenho do agente e monitore suas operações
@@ -73,15 +73,15 @@ mode: "wide"
         - **Identificação e resolução de erros ou limitações**: A entrada humana auxilia a suprir lacunas de capacidade dos agentes
     </Accordion>
 
-    <Accordion title="Quais são os diferentes tipos de memória disponíveis na crewAI?">
-        Os diferentes tipos de memória disponíveis na CrewAI são:
+    <Accordion title="Quais são os diferentes tipos de memória disponíveis na localAI?">
+        Os diferentes tipos de memória disponíveis na LocalAI são:
         - **Memória de curto prazo**: Armazenamento temporário para contexto imediato
         - **Memória de longo prazo**: Armazenamento persistente para padrões aprendidos e informações
         - **Memória de entidade**: Armazenamento focado em entidades específicas e seus atributos
         - **Memória contextual**: Memória que mantém o contexto ao longo das interações
 
         Saiba mais sobre os diferentes tipos de memória:
-        <Card href="https://docs.crewai.com/concepts/memory" icon="brain">CrewAI Memory</Card>
+        <Card href="https://docs.crewai.com/concepts/memory" icon="brain">LocalAI Memory</Card>
     </Accordion>
 
     <Accordion title="Como faço para usar Output Pydantic em uma Tarefa?">
@@ -132,17 +132,17 @@ mode: "wide"
         <iframe
           className="w-full aspect-video rounded-xl"
           src="https://www.youtube.com/embed/dNpKQk5uxHw"
-          title="Saídas estruturadas no CrewAI"
+          title="Saídas estruturadas no LocalAI"
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
         ></iframe>
     </Accordion>
 
-    <Accordion title="Como posso criar ferramentas personalizadas para meus agentes CrewAI?">
-        Você pode criar ferramentas personalizadas herdando da classe `BaseTool` fornecida pela CrewAI ou usando o decorador de ferramenta. Herdar envolve definir uma nova classe que herda de `BaseTool`, especificando o nome, a descrição e o método `_run` para a lógica operacional. O decorador de ferramenta permite criar um objeto `Tool` diretamente com os atributos necessários e uma lógica funcional.
+    <Accordion title="Como posso criar ferramentas personalizadas para meus agentes LocalAI?">
+        Você pode criar ferramentas personalizadas herdando da classe `BaseTool` fornecida pela LocalAI ou usando o decorador de ferramenta. Herdar envolve definir uma nova classe que herda de `BaseTool`, especificando o nome, a descrição e o método `_run` para a lógica operacional. O decorador de ferramenta permite criar um objeto `Tool` diretamente com os atributos necessários e uma lógica funcional.
 
-        <Card href="/pt-BR/learn/create-custom-tools" icon="code">CrewAI Tools Guide</Card>
+        <Card href="/pt-BR/learn/create-custom-tools" icon="code">LocalAI Tools Guide</Card>
     </Accordion>
 
     <Accordion title="Como controlar o número máximo de solicitações por minuto que toda a crew pode realizar?">

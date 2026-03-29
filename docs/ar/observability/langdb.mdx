@@ -1,16 +1,16 @@
 ---
 title: تكامل LangDB
-description: إدارة وتأمين وتحسين سير عمل CrewAI مع بوابة LangDB AI — الوصول إلى أكثر من 350 نموذجاً وتوجيه تلقائي وتحسين التكاليف ومراقبة كاملة.
+description: إدارة وتأمين وتحسين سير عمل LocalAI مع بوابة LangDB AI — الوصول إلى أكثر من 350 نموذجاً وتوجيه تلقائي وتحسين التكاليف ومراقبة كاملة.
 icon: database
 mode: "wide"
 ---
 
 # مقدمة
 
-توفر [بوابة LangDB AI](https://langdb.ai) واجهات API متوافقة مع OpenAI للاتصال بنماذج لغة كبيرة متعددة وتعمل كمنصة مراقبة تجعل تتبع سير عمل CrewAI شاملاً وسهلاً مع توفير الوصول إلى أكثر من 350 نموذج لغة. مع استدعاء `init()` واحد، يتم التقاط جميع تفاعلات الوكلاء وتنفيذ المهام واستدعاءات LLM، مما يوفر مراقبة شاملة وبنية تحتية جاهزة للإنتاج لتطبيقاتك.
+توفر [بوابة LangDB AI](https://langdb.ai) واجهات API متوافقة مع OpenAI للاتصال بنماذج لغة كبيرة متعددة وتعمل كمنصة مراقبة تجعل تتبع سير عمل LocalAI شاملاً وسهلاً مع توفير الوصول إلى أكثر من 350 نموذج لغة. مع استدعاء `init()` واحد، يتم التقاط جميع تفاعلات الوكلاء وتنفيذ المهام واستدعاءات LLM، مما يوفر مراقبة شاملة وبنية تحتية جاهزة للإنتاج لتطبيقاتك.
 
-<Frame caption="مثال تتبع LangDB CrewAI">
-  <img src="/images/langdb-1.png" alt="مثال تتبع LangDB CrewAI" />
+<Frame caption="مثال تتبع LangDB LocalAI">
+  <img src="/images/langdb-1.png" alt="مثال تتبع LangDB LocalAI" />
 </Frame>
 
 **تحقق من:** [عرض مثال التتبع المباشر](https://app.langdb.ai/sharing/threads/3becbfed-a1be-ae84-ea3c-4942867a3e22)
@@ -24,7 +24,7 @@ mode: "wide"
 - **حواجز الحماية**: تنفيذ تدابير السلامة وضوابط الامتثال لسلوك الوكلاء
 
 ### المراقبة والتتبع
-- **تتبع تلقائي**: استدعاء `init()` واحد يلتقط جميع تفاعلات CrewAI
+- **تتبع تلقائي**: استدعاء `init()` واحد يلتقط جميع تفاعلات LocalAI
 - **رؤية شاملة**: مراقبة سير عمل الوكلاء من البداية إلى النهاية
 - **تتبع استخدام الأدوات**: تتبع الأدوات التي يستخدمها الوكلاء ونتائجها
 - **مراقبة استدعاءات النماذج**: رؤى مفصلة لتفاعلات LLM
@@ -36,7 +36,7 @@ mode: "wide"
 
 <Steps>
   <Step title="تثبيت LangDB">
-    ثبّت عميل LangDB مع علامة ميزة CrewAI:
+    ثبّت عميل LangDB مع علامة ميزة LocalAI:
     ```bash
     pip install 'pylangdb[crewai]'
     ```
@@ -50,14 +50,14 @@ mode: "wide"
     ```
   </Step>
   <Step title="تهيئة التتبع">
-    استورد وهيّئ LangDB قبل إعداد كود CrewAI:
+    استورد وهيّئ LangDB قبل إعداد كود LocalAI:
     ```python
     from pylangdb.crewai import init
     # Initialize LangDB
     init()
     ```
   </Step>
-  <Step title="إعداد CrewAI مع LangDB">
+  <Step title="إعداد LocalAI مع LangDB">
     قم بإعداد LLM مع رؤوس LangDB:
     ```python
     from crewai import Agent, Task, Crew, LLM
@@ -112,10 +112,10 @@ print(result)
 
 ## عرض التتبعات في LangDB
 
-بعد تشغيل تطبيق CrewAI، يمكنك عرض تتبعات مفصلة في لوحة معلومات LangDB:
+بعد تشغيل تطبيق LocalAI، يمكنك عرض تتبعات مفصلة في لوحة معلومات LangDB:
 
 <Frame caption="لوحة معلومات تتبع LangDB">
-  <img src="/images/langdb-2.png" alt="لوحة معلومات تتبع LangDB تعرض سير عمل CrewAI" />
+  <img src="/images/langdb-2.png" alt="لوحة معلومات تتبع LangDB تعرض سير عمل LocalAI" />
 </Frame>
 
 ### ما ستراه
@@ -130,7 +130,7 @@ print(result)
 
 ### المشاكل الشائعة
 
-- **عدم ظهور تتبعات**: تأكد من استدعاء `init()` قبل أي استيرادات CrewAI
+- **عدم ظهور تتبعات**: تأكد من استدعاء `init()` قبل أي استيرادات LocalAI
 - **أخطاء المصادقة**: تحقق من مفتاح API ومعرف المشروع في LangDB
 
 ## الموارد
@@ -143,7 +143,7 @@ print(result)
     برامج تعليمية خطوة بخطوة لبناء وكلاء AI
   </Card>
   <Card title="أمثلة GitHub" icon="github" href="https://github.com/langdb/langdb-samples/tree/main/examples/crewai">
-    أمثلة تكامل CrewAI الكاملة
+    أمثلة تكامل LocalAI الكاملة
   </Card>
   <Card title="لوحة معلومات LangDB" icon="chart-line" href="https://app.langdb.ai">
     الوصول إلى تتبعاتك وتحليلاتك
@@ -158,7 +158,7 @@ print(result)
 
 ## الخطوات التالية
 
-غطى هذا الدليل أساسيات دمج بوابة LangDB AI مع CrewAI. لتعزيز سير عمل الذكاء الاصطناعي بشكل أكبر، استكشف:
+غطى هذا الدليل أساسيات دمج بوابة LangDB AI مع LocalAI. لتعزيز سير عمل الذكاء الاصطناعي بشكل أكبر، استكشف:
 
 - **النماذج الافتراضية**: إنشاء إعدادات نماذج مخصصة مع استراتيجيات توجيه
 - **حواجز الحماية والسلامة**: تنفيذ تصفية المحتوى وضوابط الامتثال

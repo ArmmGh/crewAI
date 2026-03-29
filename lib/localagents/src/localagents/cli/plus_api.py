@@ -11,7 +11,7 @@ from crewai.cli.version import get_crewai_version
 
 class PlusAPI:
     """
-    This class exposes methods for working with the CrewAI+ API.
+    This class exposes methods for working with the LocalAI+ API.
     """
 
     TOOLS_RESOURCE = "/crewai_plus/api/v1/tools"
@@ -26,7 +26,7 @@ class PlusAPI:
         self.api_key = api_key
         self.headers = {
             "Content-Type": "application/json",
-            "User-Agent": f"CrewAI-CLI/{get_crewai_version()}",
+            "User-Agent": f"LocalAI-CLI/{get_crewai_version()}",
             "X-Crewai-Version": get_crewai_version(),
         }
         if api_key:

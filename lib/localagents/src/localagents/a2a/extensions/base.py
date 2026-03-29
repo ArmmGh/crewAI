@@ -1,9 +1,9 @@
-"""Base extension interface for CrewAI A2A wrapper processing hooks.
+"""Base extension interface for LocalAI A2A wrapper processing hooks.
 
-This module defines the protocol for extending CrewAI's A2A wrapper functionality
+This module defines the protocol for extending LocalAI's A2A wrapper functionality
 with custom logic for tool injection, prompt augmentation, and response processing.
 
-Note: These are CrewAI-specific processing hooks, NOT A2A protocol extensions.
+Note: These are LocalAI-specific processing hooks, NOT A2A protocol extensions.
 A2A protocol extensions are capability declarations using AgentExtension objects
 in AgentCard.capabilities.extensions, activated via the A2A-Extensions HTTP header.
 See: https://a2a-protocol.org/latest/topics/extensions/

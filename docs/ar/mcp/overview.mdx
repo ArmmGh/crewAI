@@ -1,6 +1,6 @@
 ---
-title: "خوادم MCP كأدوات في CrewAI"
-description: "تعلم كيفية دمج خوادم MCP كأدوات في وكلاء CrewAI باستخدام مكتبة `crewai-tools`."
+title: "خوادم MCP كأدوات في LocalAI"
+description: "تعلم كيفية دمج خوادم MCP كأدوات في وكلاء LocalAI باستخدام مكتبة `crewai-tools`."
 icon: plug
 mode: "wide"
 ---
@@ -9,7 +9,7 @@ mode: "wide"
 
 يوفر [بروتوكول سياق النموذج](https://modelcontextprotocol.io/introduction) (MCP) طريقة موحدة لوكلاء الذكاء الاصطناعي لتوفير سياق لنماذج اللغة الكبيرة من خلال التواصل مع خدمات خارجية تُعرف بخوادم MCP.
 
-يقدم CrewAI **نهجين** لتكامل MCP:
+يقدم LocalAI **نهجين** لتكامل MCP:
 
 ### تكامل DSL البسيط (الموصى به)
 
@@ -17,7 +17,7 @@ mode: "wide"
 
 #### المراجع النصية (إعداد سريع)
 
-مثالية لخوادم HTTPS البعيدة وتكاملات MCP المتصلة من كتالوج CrewAI:
+مثالية لخوادم HTTPS البعيدة وتكاملات MCP المتصلة من كتالوج LocalAI:
 
 ```python
 from crewai import Agent
@@ -88,12 +88,12 @@ agent = Agent(
 
 ## فيديو تعليمي
 
-شاهد هذا الفيديو التعليمي للحصول على دليل شامل حول تكامل MCP مع CrewAI:
+شاهد هذا الفيديو التعليمي للحصول على دليل شامل حول تكامل MCP مع LocalAI:
 
 <iframe
   className="w-full aspect-video rounded-xl"
   src="https://www.youtube.com/embed/TpQ45lAZh48"
-  title="CrewAI MCP Integration Guide"
+  title="LocalAI MCP Integration Guide"
   frameBorder="0"
   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
   allowFullScreen
@@ -101,7 +101,7 @@ agent = Agent(
 
 ## التثبيت
 
-يتطلب تكامل CrewAI MCP مكتبة `mcp`:
+يتطلب تكامل LocalAI MCP مكتبة `mcp`:
 
 ```shell
 # For Simple DSL Integration (Recommended)
@@ -206,7 +206,7 @@ mcps=[
 
 #### تكاملات MCP المتصلة
 
-اربط خوادم MCP من كتالوج CrewAI أو أحضر خوادمك الخاصة. بمجرد الاتصال في حسابك، أشر إليها بالمعرف المختصر:
+اربط خوادم MCP من كتالوج LocalAI أو أحضر خوادمك الخاصة. بمجرد الاتصال في حسابك، أشر إليها بالمعرف المختصر:
 
 ```python
 mcps=[
@@ -391,7 +391,7 @@ mcps=[
 - **محسّن للأداء**: اتصالات حسب الطلب مع تخزين مؤقت للمخططات
 - **مرونة في الأخطاء**: تعامل أنيق مع الخوادم غير المتاحة
 - **حماية المهلة الزمنية**: مهلات زمنية مدمجة تمنع تعليق الاتصالات
-- **تكامل شفاف**: يعمل بسلاسة مع ميزات CrewAI الموجودة
+- **تكامل شفاف**: يعمل بسلاسة مع ميزات LocalAI الموجودة
 - **دعم نقل كامل**: أنواع نقل Stdio وHTTP/Streamable HTTP وSSE
 - **تصفية متقدمة**: قدرات تصفية أدوات ثابتة وديناميكية
 - **مصادقة مرنة**: دعم للرؤوس ومتغيرات البيئة ومعاملات الاستعلام
@@ -655,7 +655,7 @@ def another_agent(self):
   </Card>
 </CardGroup>
 
-تحقق من هذا المستودع للحصول على عروض وأمثلة كاملة لتكامل MCP مع CrewAI!
+تحقق من هذا المستودع للحصول على عروض وأمثلة كاملة لتكامل MCP مع LocalAI!
 
 <Card
   title="GitHub Repository"
@@ -663,7 +663,7 @@ def another_agent(self):
   href="https://github.com/tonykipkemboi/crewai-mcp-demo"
   target="_blank"
 >
-  CrewAI MCP Demo
+  LocalAI MCP Demo
 </Card>
 
 ## البقاء آمناً مع MCP
@@ -686,5 +686,5 @@ def another_agent(self):
 ### القيود
 
 - **الأوليات المدعومة**: حالياً، يدعم `MCPServerAdapter` بشكل أساسي تكييف `أدوات` MCP.
-  لا يتم دمج أوليات MCP الأخرى مثل `prompts` أو `resources` مباشرة كمكونات CrewAI من خلال هذا المحول في هذا الوقت.
+  لا يتم دمج أوليات MCP الأخرى مثل `prompts` أو `resources` مباشرة كمكونات LocalAI من خلال هذا المحول في هذا الوقت.
 - **معالجة المخرجات**: يعالج المحول عادةً المخرجات النصية الرئيسية من أداة MCP (مثل `.content[0].text`). قد تتطلب المخرجات المعقدة أو متعددة الوسائط معالجة مخصصة إذا لم تتناسب مع هذا النمط.

@@ -1,26 +1,26 @@
 ---
 title: "Listeners de Evento"
-description: "Acesse eventos do CrewAI para criar integrações e monitoramento personalizados"
+description: "Acesse eventos do LocalAI para criar integrações e monitoramento personalizados"
 icon: spinner
 mode: "wide"
 ---
 
 ## Visão Geral
 
-O CrewAI oferece um sistema de eventos poderoso que permite escutar e reagir a diversos eventos que ocorrem durante a execução do seu Crew. Esse recurso possibilita a criação de integrações personalizadas, soluções de monitoramento, sistemas de log ou qualquer outra funcionalidade que precise ser acionada com base nos eventos internos do CrewAI.
+O LocalAI oferece um sistema de eventos poderoso que permite escutar e reagir a diversos eventos que ocorrem durante a execução do seu Crew. Esse recurso possibilita a criação de integrações personalizadas, soluções de monitoramento, sistemas de log ou qualquer outra funcionalidade que precise ser acionada com base nos eventos internos do LocalAI.
 
 ## Como Funciona
 
-O CrewAI utiliza uma arquitetura de event bus para emitir eventos ao longo do ciclo de vida da execução. O sistema de eventos é construído a partir dos seguintes componentes:
+O LocalAI utiliza uma arquitetura de event bus para emitir eventos ao longo do ciclo de vida da execução. O sistema de eventos é construído a partir dos seguintes componentes:
 
 1. **CrewAIEventsBus**: Um event bus singleton que gerencia o registro e emissão de eventos
 2. **BaseEvent**: Classe base para todos os eventos do sistema
 3. **BaseEventListener**: Classe base abstrata para criar listeners de evento personalizados
 
-Quando ações específicas ocorrem no CrewAI (como a inicialização de um Crew, um Agent concluindo uma tarefa ou o uso de uma ferramenta), o sistema emite os eventos correspondentes. Você pode registrar handlers para esses eventos para executar código personalizado quando eles acontecerem.
+Quando ações específicas ocorrem no LocalAI (como a inicialização de um Crew, um Agent concluindo uma tarefa ou o uso de uma ferramenta), o sistema emite os eventos correspondentes. Você pode registrar handlers para esses eventos para executar código personalizado quando eles acontecerem.
 
 <Note type="info" title="Aprimoramento Enterprise: Prompt Tracing">
-O CrewAI AMP fornece o recurso Prompt Tracing, que aproveita o sistema de eventos para rastrear, armazenar e visualizar todos os prompts, respostas e metadados associados. Isso proporciona poderosas capacidades de depuração e transparência nas operações dos seus agentes.
+O LocalAI AMP fornece o recurso Prompt Tracing, que aproveita o sistema de eventos para rastrear, armazenar e visualizar todos os prompts, respostas e metadados associados. Isso proporciona poderosas capacidades de depuração e transparência nas operações dos seus agentes.
 
 ![Prompt Tracing Dashboard](/images/enterprise/traces-overview.png)
 
@@ -179,11 +179,11 @@ class MyCustomCrew:
     # Sua implementação do crew...
 ```
 
-É assim que listeners de eventos de terceiros são registrados no código do CrewAI.
+É assim que listeners de eventos de terceiros são registrados no código do LocalAI.
 
 ## Tipos de Eventos Disponíveis
 
-O CrewAI fornece uma ampla variedade de eventos para escuta:
+O LocalAI fornece uma ampla variedade de eventos para escuta:
 
 ### Eventos de Crew
 
@@ -400,7 +400,7 @@ Listeners de evento podem ser usados para várias finalidades:
 1. **Log e Monitoramento**: Monitore a execução do seu Crew e registre eventos importantes
 2. **Analytics**: Colete dados sobre o desempenho e comportamento do seu Crew
 3. **Depuração**: Configure listeners temporários para debugar problemas específicos
-4. **Integração**: Conecte o CrewAI a sistemas externos como plataformas de monitoramento, bancos de dados ou serviços de notificação
+4. **Integração**: Conecte o LocalAI a sistemas externos como plataformas de monitoramento, bancos de dados ou serviços de notificação
 5. **Comportamento Personalizado**: Dispare ações personalizadas com base em eventos específicos
 
 ## Boas Práticas
@@ -411,4 +411,4 @@ Listeners de evento podem ser usados para várias finalidades:
 4. **Escuta Seletiva**: Escute apenas eventos que realmente precisa tratar
 5. **Testes**: Teste seus listeners de evento isoladamente para garantir que se comportam conforme esperado
 
-Aproveitando o sistema de eventos do CrewAI, é possível estender a funcionalidade e integrá-lo facilmente à sua infraestrutura existente.
+Aproveitando o sistema de eventos do LocalAI, é possível estender a funcionalidade e integrá-lo facilmente à sua infraestrutura existente.

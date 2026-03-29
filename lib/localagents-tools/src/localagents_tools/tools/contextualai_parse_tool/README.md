@@ -1,7 +1,7 @@
 # ContextualAIParseTool
 
 ## Description
-This tool is designed to integrate Contextual AI's enterprise-grade document parsing capabilities with CrewAI, enabling you to leverage advanced AI-powered document understanding for complex layouts, tables, and figures. Use this tool to extract structured content from your documents using Contextual AI's powerful document parser.
+This tool is designed to integrate Contextual AI's enterprise-grade document parsing capabilities with LocalAI, enabling you to leverage advanced AI-powered document understanding for complex layouts, tables, and figures. Use this tool to extract structured content from your documents using Contextual AI's powerful document parser.
 
 ## Installation
 To incorporate this tool into your project, follow the installation instructions below:

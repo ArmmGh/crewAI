@@ -1,14 +1,14 @@
 <div align="center">
 
-![Logo of crewAI, two people rowing on a boat](./assets/crewai_logo.png)
+![Logo of localAI, two people rowing on a boat](./assets/crewai_logo.png)
 
 <div align="left">
 
-# CrewAI Tools
+# LocalAI Tools
 
-Empower your CrewAI agents with powerful, customizable tools to elevate their capabilities and tackle sophisticated, real-world tasks.
+Empower your LocalAI agents with powerful, customizable tools to elevate their capabilities and tackle sophisticated, real-world tasks.
 
-CrewAI Tools provide the essential functionality to extend your agents, helping you rapidly enhance your automations with reliable, ready-to-use tools or custom-built solutions tailored precisely to your needs.
+LocalAI Tools provide the essential functionality to extend your agents, helping you rapidly enhance your automations with reliable, ready-to-use tools or custom-built solutions tailored precisely to your needs.
 
 ---
 
@@ -20,7 +20,7 @@ CrewAI Tools provide the essential functionality to extend your agents, helping 
 
 ## Available Tools
 
-CrewAI provides an extensive collection of powerful tools ready to enhance your agents:
+LocalAI provides an extensive collection of powerful tools ready to enhance your agents:
 
 - **File Management**: `FileReadTool`, `FileWriteTool`
 - **Web Scraping**: `ScrapeWebsiteTool`, `SeleniumScrapingTool`
@@ -35,7 +35,7 @@ And many more robust tools to simplify your agent integrations.
 
 ## Creating Custom Tools
 
-CrewAI offers two straightforward approaches to creating custom tools:
+LocalAI offers two straightforward approaches to creating custom tools:
 
 ### Subclassing `BaseTool`
 
@@ -67,11 +67,11 @@ def my_custom_function(input):
 
 ---
 
-## CrewAI Tools and MCP
+## LocalAI Tools and MCP
 
-CrewAI Tools supports the Model Context Protocol (MCP). It gives you access to thousands of tools from the hundreds of MCP servers out there built by the community.
+LocalAI Tools supports the Model Context Protocol (MCP). It gives you access to thousands of tools from the hundreds of MCP servers out there built by the community.
 
-Before you start using MCP with CrewAI tools, you need to install the `mcp` extra dependencies:
+Before you start using MCP with LocalAI tools, you need to install the `mcp` extra dependencies:
 
 ```bash
 pip install crewai-tools[mcp]
@@ -79,12 +79,12 @@ pip install crewai-tools[mcp]
 uv add crewai-tools --extra mcp
 ```
 
-To quickly get started with MCP in CrewAI you have 2 options:
+To quickly get started with MCP in LocalAI you have 2 options:
 
 ### Option 1: Fully managed connection
 
 In this scenario we use a contextmanager (`with` statement) to start and stop the the connection with the MCP server.
-This is done in the background and you only get to interact with the CrewAI tools corresponding to the MCP server's tools.
+This is done in the background and you only get to interact with the LocalAI tools corresponding to the MCP server's tools.
 
 For an STDIO based MCP server:
 
@@ -99,7 +99,7 @@ serverparams = StdioServerParameters(
 )
 
 with MCPServerAdapter(serverparams) as tools:
-    # tools is now a list of CrewAI Tools matching 1:1 with the MCP server's tools
+    # tools is now a list of LocalAI Tools matching 1:1 with the MCP server's tools
     agent = Agent(..., tools=tools)
     task = Task(...)
     crew = Crew(..., agents=[agent], tasks=[task])
@@ -110,7 +110,7 @@ For an SSE based MCP server:
 ```python
 serverparams = {"url": "http://localhost:8000/sse"}
 with MCPServerAdapter(serverparams) as tools:
-    # tools is now a list of CrewAI Tools matching 1:1 with the MCP server's tools
+    # tools is now a list of LocalAI Tools matching 1:1 with the MCP server's tools
     agent = Agent(..., tools=tools)
     task = Task(...)
     crew = Crew(..., agents=[agent], tasks=[task])
@@ -138,7 +138,7 @@ serverparams = StdioServerParameters(
 try:
     mcp_server_adapter = MCPServerAdapter(serverparams)
     tools = mcp_server_adapter.tools
-    # tools is now a list of CrewAI Tools matching 1:1 with the MCP server's tools
+    # tools is now a list of LocalAI Tools matching 1:1 with the MCP server's tools
     agent = Agent(..., tools=tools)
     task = Task(...)
     crew = Crew(..., agents=[agent], tasks=[task])
@@ -160,7 +160,7 @@ serverparams = {"url": "http://localhost:8000/sse"}
 try:
     mcp_server_adapter = MCPServerAdapter(serverparams)
     tools = mcp_server_adapter.tools
-    # tools is now a list of CrewAI Tools matching 1:1 with the MCP server's tools
+    # tools is now a list of LocalAI Tools matching 1:1 with the MCP server's tools
     agent = Agent(..., tools=tools)
     task = Task(...)
     crew = Crew(..., agents=[agent], tasks=[task])
@@ -184,7 +184,7 @@ Always make sure that you trust the MCP Server before using it. Using an STDIO s
 
 ---
 
-## Why Use CrewAI Tools?
+## Why Use LocalAI Tools?
 
 - **Simplicity & Flexibility**: Easy-to-use yet powerful enough for complex workflows.
 - **Rapid Integration**: Seamlessly incorporate external services, APIs, and databases.
@@ -226,4 +226,4 @@ Join our rapidly growing community and receive real-time support:
 - [Discourse](https://community.crewai.com/)
 - [Open an Issue](https://github.com/crewAIInc/crewAI/issues)
 
-Build smarter, faster, and more powerful AI solutions—powered by CrewAI Tools.
+Build smarter, faster, and more powerful AI solutions—powered by LocalAI Tools.

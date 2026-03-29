@@ -563,7 +563,7 @@ class GeminiCompletion(BaseLLM):
     def _convert_tools_for_interference(  # type: ignore[override]
         self, tools: list[dict[str, Any]]
     ) -> list[types.Tool]:
-        """Convert CrewAI tool format to Gemini function declaration format."""
+        """Convert LocalAI tool format to Gemini function declaration format."""
         gemini_tools = []
 
         from crewai.llms.providers.utils.common import safe_tool_conversion

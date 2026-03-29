@@ -1,6 +1,6 @@
-"""LangGraph tool adapter for CrewAI tool integration.
+"""LangGraph tool adapter for LocalAI tool integration.
 
-This module contains the LangGraphToolAdapter class that converts CrewAI tools
+This module contains the LangGraphToolAdapter class that converts LocalAI tools
 to LangGraph-compatible format using langchain_core.tools.
 """
 
@@ -13,9 +13,9 @@ from crewai.tools.base_tool import BaseTool
 
 
 class LangGraphToolAdapter(BaseToolAdapter):
-    """Adapts CrewAI tools to LangGraph agent tool compatible format.
+    """Adapts LocalAI tools to LangGraph agent tool compatible format.
 
-    Converts CrewAI BaseTool instances to langchain_core.tools format
+    Converts LocalAI BaseTool instances to langchain_core.tools format
     that can be used by LangGraph agents.
     """
 
@@ -23,20 +23,20 @@ class LangGraphToolAdapter(BaseToolAdapter):
         """Initialize the tool adapter.
 
         Args:
-            tools: Optional list of CrewAI tools to adapt.
+            tools: Optional list of LocalAI tools to adapt.
         """
         super().__init__()
         self.original_tools: list[BaseTool] = tools or []
         self.converted_tools: list[Any] = []
 
     def configure_tools(self, tools: list[BaseTool]) -> None:
-        """Configure and convert CrewAI tools to LangGraph-compatible format.
+        """Configure and convert LocalAI tools to LangGraph-compatible format.
 
         LangGraph expects tools in langchain_core.tools format. This method
-        converts CrewAI BaseTool instances to StructuredTool instances.
+        converts LocalAI BaseTool instances to StructuredTool instances.
 
         Args:
-            tools: List of CrewAI tools to convert.
+            tools: List of LocalAI tools to convert.
         """
         from langchain_core.tools import BaseTool as LangChainBaseTool, StructuredTool
 
@@ -55,11 +55,11 @@ class LangGraphToolAdapter(BaseToolAdapter):
             async def tool_wrapper(
                 *args: Any, tool: BaseTool = tool, **kwargs: Any
             ) -> Any:
-                """Wrapper function to adapt CrewAI tool calls to LangGraph format.
+                """Wrapper function to adapt LocalAI tool calls to LangGraph format.
 
                 Args:
                     *args: Positional arguments for the tool.
-                    tool: The CrewAI tool to wrap.
+                    tool: The LocalAI tool to wrap.
                     **kwargs: Keyword arguments for the tool.
 
                 Returns:

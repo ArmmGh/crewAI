@@ -1,13 +1,13 @@
 ---
 title: Planejamento
-description: Aprenda como adicionar planejamento à sua CrewAI Crew e melhorar sua performance.
+description: Aprenda como adicionar planejamento à sua LocalAI Crew e melhorar sua performance.
 icon: ruler-combined
 mode: "wide"
 ---
 
 ## Visão geral
 
-O recurso de planejamento no CrewAI permite que você adicione capacidade de planejamento à sua crew. Quando ativado, antes de cada iteração da Crew, todas as informações da Crew são enviadas para um AgentPlanner que irá planejar as tarefas passo a passo, e este plano será adicionado à descrição de cada tarefa.
+O recurso de planejamento no LocalAI permite que você adicione capacidade de planejamento à sua crew. Quando ativado, antes de cada iteração da Crew, todas as informações da Crew são enviadas para um AgentPlanner que irá planejar as tarefas passo a passo, e este plano será adicionado à descrição de cada tarefa.
 
 ### Usando o recurso de Planejamento
 
@@ -30,7 +30,7 @@ minha_crew = Crew(
 A partir deste ponto, sua crew terá o planejamento ativado, e as tarefas serão planejadas antes de cada iteração.
 
 <Warning>
-Quando o planejamento está ativado, o crewAI irá usar `gpt-4o-mini` como o LLM padrão para planejamento, o que requer uma chave de API válida da OpenAI. Como seus agentes podem estar usando LLMs diferentes, isso pode causar confusão se você não tiver uma chave de API da OpenAI configurada ou se estiver experimentando um comportamento inesperado relacionado a chamadas de API de LLM.
+Quando o planejamento está ativado, o localAI irá usar `gpt-4o-mini` como o LLM padrão para planejamento, o que requer uma chave de API válida da OpenAI. Como seus agentes podem estar usando LLMs diferentes, isso pode causar confusão se você não tiver uma chave de API da OpenAI configurada ou se estiver experimentando um comportamento inesperado relacionado a chamadas de API de LLM.
 </Warning>
 
 #### LLM de Planejamento

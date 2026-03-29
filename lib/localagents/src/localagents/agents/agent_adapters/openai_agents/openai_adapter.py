@@ -1,7 +1,7 @@
-"""OpenAI agents adapter for CrewAI integration.
+"""OpenAI agents adapter for LocalAI integration.
 
 This module contains the OpenAIAgentAdapter class that integrates OpenAI Assistants
-with CrewAI's agent system, providing tool integration and structured output support.
+with LocalAI's agent system, providing tool integration and structured output support.
 """
 
 from typing import Any, cast
@@ -49,7 +49,7 @@ enable_verbose_stdout_logging = openai_agents_module.enable_verbose_stdout_loggi
 class OpenAIAgentAdapter(BaseAgentAdapter):
     """Adapter for OpenAI Assistants.
 
-    Integrates OpenAI Assistants API with CrewAI's agent system, providing
+    Integrates OpenAI Assistants API with LocalAI's agent system, providing
     tool configuration, structured output handling, and task execution.
     """
 

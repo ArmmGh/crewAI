@@ -1,12 +1,12 @@
 ---
 title: Single Sign-On (SSO)
 icon: "key"
-description: Configure enterprise SSO authentication for CrewAI Platform — SaaS and Factory
+description: Configure enterprise SSO authentication for LocalAI Platform — SaaS and Factory
 ---
 
 ## Overview
 
-CrewAI Platform supports enterprise Single Sign-On (SSO) across both **SaaS (AMP)** and **Factory (self-hosted)** deployments. SSO enables your team to authenticate using your organization's existing identity provider, enforcing centralized access control, MFA policies, and user lifecycle management.
+LocalAI Platform supports enterprise Single Sign-On (SSO) across both **SaaS (AMP)** and **Factory (self-hosted)** deployments. SSO enables your team to authenticate using your organization's existing identity provider, enforcing centralized access control, MFA policies, and user lifecycle management.
 
 ### Supported Providers
 
@@ -32,15 +32,15 @@ CrewAI Platform supports enterprise Single Sign-On (SSO) across both **SaaS (AMP
 
 ### Default Authentication
 
-CrewAI's managed SaaS platform (AMP) uses **WorkOS** as the default authentication provider. When you sign up at [app.crewai.com](https://app.crewai.com), authentication is handled through `login.crewai.com` — no additional SSO configuration is required.
+LocalAI's managed SaaS platform (AMP) uses **WorkOS** as the default authentication provider. When you sign up at [app.crewai.com](https://app.crewai.com), authentication is handled through `login.crewai.com` — no additional SSO configuration is required.
 
 ### Enterprise Custom SSO
 
-Enterprise SaaS customers can configure SSO with their own identity provider (Entra ID, Okta, Auth0). Contact your CrewAI account team to enable custom SSO for your organization. Once configured:
+Enterprise SaaS customers can configure SSO with their own identity provider (Entra ID, Okta, Auth0). Contact your LocalAI account team to enable custom SSO for your organization. Once configured:
 
 1. Your team members authenticate through your organization's IdP
 2. Access control and MFA policies are enforced by your IdP
-3. The CrewAI CLI automatically detects your SSO configuration via `crewai enterprise configure`
+3. The LocalAI CLI automatically detects your SSO configuration via `crewai enterprise configure`
 
 ### CLI Defaults (SaaS)
 
@@ -62,7 +62,7 @@ Factory (self-hosted) deployments require you to configure SSO by setting enviro
   <Step title="Register an Application">
     1. Go to [portal.azure.com](https://portal.azure.com) → **Microsoft Entra ID** → **App registrations** → **New registration**
     2. Configure:
-       - **Name:** `CrewAI` (or your preferred name)
+       - **Name:** `LocalAI` (or your preferred name)
        - **Supported account types:** Accounts in this organizational directory only
        - **Redirect URI:** Select **Web**, enter `https://<your-domain>/auth/entra_id/callback`
     3. Click **Register**
@@ -142,7 +142,7 @@ Factory (self-hosted) deployments require you to configure SSO by setting enviro
     1. Open Okta Admin Console → **Applications** → **Create App Integration**
     2. Select **OIDC - OpenID Connect** → **Web Application** → **Next**
     3. Configure:
-       - **App integration name:** `CrewAI SSO`
+       - **App integration name:** `LocalAI SSO`
        - **Sign-in redirect URI:** `https://<your-domain>/auth/okta/callback`
        - **Sign-out redirect URI:** `https://<your-domain>`
        - **Assignments:** Choose who can access (everyone or specific groups)
@@ -321,7 +321,7 @@ Factory (self-hosted) deployments require you to configure SSO by setting enviro
 
 ## CLI Authentication
 
-The CrewAI CLI supports SSO authentication via the **Device Authorization Grant** flow. This allows developers to authenticate from their terminal without exposing credentials.
+The LocalAI CLI supports SSO authentication via the **Device Authorization Grant** flow. This allows developers to authenticate from their terminal without exposing credentials.
 
 ### Quick Setup
 
@@ -340,7 +340,7 @@ crewai login
 ```
 
 <Note>
-  Requires CrewAI CLI version **1.6.0** or higher for Entra ID, **0.159.0** or higher for Okta, and **1.9.0** or higher for Keycloak.
+  Requires LocalAI CLI version **1.6.0** or higher for Entra ID, **0.159.0** or higher for Okta, and **1.9.0** or higher for Keycloak.
 </Note>
 
 ### Manual CLI Configuration
@@ -364,7 +364,7 @@ crewai config set enterprise_base_url https://your-factory-url.app
 
 | Setting | Description | Example |
 |---|---|---|
-| `enterprise_base_url` | Your CrewAI instance URL | `https://crewai.yourcompany.com` |
+| `enterprise_base_url` | Your LocalAI instance URL | `https://crewai.yourcompany.com` |
 | `oauth2_provider` | Provider name | `workos`, `okta`, `auth0`, `entra_id`, `keycloak` |
 | `oauth2_domain` | Provider domain | `your-domain.okta.com` |
 | `oauth2_client_id` | OAuth2 client ID | `0oaqnwji7pGW7VT6T697` |
@@ -388,7 +388,7 @@ crewai config list
 
 ## Role-Based Access Control (RBAC)
 
-CrewAI Platform provides granular RBAC that integrates with your SSO provider.
+LocalAI Platform provides granular RBAC that integrates with your SSO provider.
 
 ### Permission Model
 
@@ -545,6 +545,6 @@ For Factory deployments using Entra ID, admin access is controlled via App Roles
 
 ## Next Steps
 
-- [Installation Guide](/installation) — Get started with CrewAI
+- [Installation Guide](/installation) — Get started with LocalAI
 - [Quickstart](/quickstart) — Build your first crew
 - [RBAC Setup](/enterprise/features/rbac) — Detailed role and permission management
