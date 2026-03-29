@@ -1,7 +1,7 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "aspen",
-  "name": "CrewAI",
+  "name": "LocalAgents",
   "colors": {
     "primary": "#EB6658",
     "light": "#F3A78B",
@@ -22,7 +22,7 @@
         "title": "Request a feature",
         "description": "Join the discussion on GitHub to request a new feature",
         "icon": "plus",
-        "href": "https://github.com/crewAIInc/crewAI/issues/new/choose"
+        "href": "https://github.com/localai-org/LocalAgents/issues/new/choose"
       }
     ]
   },
@@ -34,22 +34,22 @@
           "anchors": [
             {
               "anchor": "Website",
-              "href": "https://crewai.com",
+              "href": "https://localagents.dev",
               "icon": "globe"
             },
             {
               "anchor": "Forum",
-              "href": "https://community.crewai.com",
+              "href": "https://community.localagents.dev",
               "icon": "discourse"
             },
             {
               "anchor": "Blog",
-              "href": "https://blog.crewai.com",
+              "href": "https://blog.localagents.dev",
               "icon": "newspaper"
             },
             {
               "anchor": "CrewGPT",
-              "href": "https://chatgpt.com/g/g-qqTuUWsBY-crewai-assistant",
+              "href": "https://chatgpt.com/g/g-qqTuUWsBY-localagents-assistant",
               "icon": "robot"
             }
           ]
@@ -293,7 +293,7 @@
                         "pages": [
                           "en/tools/integration/overview",
                           "en/tools/integration/bedrockinvokeagenttool",
-                          "en/tools/integration/crewaiautomationtool",
+                          "en/tools/integration/localagentsautomationtool",
                           "en/tools/integration/mergeagenthandlertool"
                         ]
                       },
@@ -763,7 +763,7 @@
                         "pages": [
                           "en/tools/integration/overview",
                           "en/tools/integration/bedrockinvokeagenttool",
-                          "en/tools/integration/crewaiautomationtool",
+                          "en/tools/integration/localagentsautomationtool",
                           "en/tools/integration/mergeagenthandlertool"
                         ]
                       },
@@ -1232,7 +1232,7 @@
                         "pages": [
                           "en/tools/integration/overview",
                           "en/tools/integration/bedrockinvokeagenttool",
-                          "en/tools/integration/crewaiautomationtool",
+                          "en/tools/integration/localagentsautomationtool",
                           "en/tools/integration/mergeagenthandlertool"
                         ]
                       },
@@ -1701,7 +1701,7 @@
                         "pages": [
                           "en/tools/integration/overview",
                           "en/tools/integration/bedrockinvokeagenttool",
-                          "en/tools/integration/crewaiautomationtool",
+                          "en/tools/integration/localagentsautomationtool",
                           "en/tools/integration/mergeagenthandlertool"
                         ]
                       },
@@ -2169,7 +2169,7 @@
                         "pages": [
                           "en/tools/integration/overview",
                           "en/tools/integration/bedrockinvokeagenttool",
-                          "en/tools/integration/crewaiautomationtool",
+                          "en/tools/integration/localagentsautomationtool",
                           "en/tools/integration/mergeagenthandlertool"
                         ]
                       },
@@ -2637,7 +2637,7 @@
                         "pages": [
                           "en/tools/integration/overview",
                           "en/tools/integration/bedrockinvokeagenttool",
-                          "en/tools/integration/crewaiautomationtool",
+                          "en/tools/integration/localagentsautomationtool",
                           "en/tools/integration/mergeagenthandlertool"
                         ]
                       },
@@ -3106,7 +3106,7 @@
                         "pages": [
                           "en/tools/integration/overview",
                           "en/tools/integration/bedrockinvokeagenttool",
-                          "en/tools/integration/crewaiautomationtool",
+                          "en/tools/integration/localagentsautomationtool",
                           "en/tools/integration/mergeagenthandlertool"
                         ]
                       },
@@ -3346,22 +3346,22 @@
           "anchors": [
             {
               "anchor": "Website",
-              "href": "https://crewai.com",
+              "href": "https://localagents.dev",
               "icon": "globe"
             },
             {
               "anchor": "F\u00f3rum",
-              "href": "https://community.crewai.com",
+              "href": "https://community.localagents.dev",
               "icon": "discourse"
             },
             {
               "anchor": "Blog",
-              "href": "https://blog.crewai.com",
+              "href": "https://blog.localagents.dev",
               "icon": "newspaper"
             },
             {
               "anchor": "CrewGPT",
-              "href": "https://chatgpt.com/g/g-qqTuUWsBY-crewai-assistant",
+              "href": "https://chatgpt.com/g/g-qqTuUWsBY-localagents-assistant",
               "icon": "robot"
             }
           ]
@@ -3594,7 +3594,7 @@
                         "pages": [
                           "pt-BR/tools/integration/overview",
                           "pt-BR/tools/integration/bedrockinvokeagenttool",
-                          "pt-BR/tools/integration/crewaiautomationtool"
+                          "pt-BR/tools/integration/localagentsautomationtool"
                         ]
                       },
                       {
@@ -4048,7 +4048,7 @@
                         "pages": [
                           "pt-BR/tools/integration/overview",
                           "pt-BR/tools/integration/bedrockinvokeagenttool",
-                          "pt-BR/tools/integration/crewaiautomationtool"
+                          "pt-BR/tools/integration/localagentsautomationtool"
                         ]
                       },
                       {
@@ -4502,7 +4502,7 @@
                         "pages": [
                           "pt-BR/tools/integration/overview",
                           "pt-BR/tools/integration/bedrockinvokeagenttool",
-                          "pt-BR/tools/integration/crewaiautomationtool"
+                          "pt-BR/tools/integration/localagentsautomationtool"
                         ]
                       },
                       {
@@ -4956,7 +4956,7 @@
                         "pages": [
                           "pt-BR/tools/integration/overview",
                           "pt-BR/tools/integration/bedrockinvokeagenttool",
-                          "pt-BR/tools/integration/crewaiautomationtool"
+                          "pt-BR/tools/integration/localagentsautomationtool"
                         ]
                       },
                       {
@@ -5409,7 +5409,7 @@
                         "pages": [
                           "pt-BR/tools/integration/overview",
                           "pt-BR/tools/integration/bedrockinvokeagenttool",
-                          "pt-BR/tools/integration/crewaiautomationtool"
+                          "pt-BR/tools/integration/localagentsautomationtool"
                         ]
                       },
                       {
@@ -5862,7 +5862,7 @@
                         "pages": [
                           "pt-BR/tools/integration/overview",
                           "pt-BR/tools/integration/bedrockinvokeagenttool",
-                          "pt-BR/tools/integration/crewaiautomationtool"
+                          "pt-BR/tools/integration/localagentsautomationtool"
                         ]
                       },
                       {
@@ -6316,7 +6316,7 @@
                         "pages": [
                           "pt-BR/tools/integration/overview",
                           "pt-BR/tools/integration/bedrockinvokeagenttool",
-                          "pt-BR/tools/integration/crewaiautomationtool"
+                          "pt-BR/tools/integration/localagentsautomationtool"
                         ]
                       },
                       {
@@ -6552,22 +6552,22 @@
           "anchors": [
             {
               "anchor": "\uc6f9\uc0ac\uc774\ud2b8",
-              "href": "https://crewai.com",
+              "href": "https://localagents.dev",
               "icon": "globe"
             },
             {
               "anchor": "\ud3ec\ub7fc",
-              "href": "https://community.crewai.com",
+              "href": "https://community.localagents.dev",
               "icon": "discourse"
             },
             {
               "anchor": "\ube14\ub85c\uadf8",
-              "href": "https://blog.crewai.com",
+              "href": "https://blog.localagents.dev",
               "icon": "newspaper"
             },
             {
               "anchor": "CrewGPT",
-              "href": "https://chatgpt.com/g/g-qqTuUWsBY-crewai-assistant",
+              "href": "https://chatgpt.com/g/g-qqTuUWsBY-localagents-assistant",
               "icon": "robot"
             }
           ]
@@ -6811,7 +6811,7 @@
                         "pages": [
                           "ko/tools/integration/overview",
                           "ko/tools/integration/bedrockinvokeagenttool",
-                          "ko/tools/integration/crewaiautomationtool"
+                          "ko/tools/integration/localagentsautomationtool"
                         ]
                       },
                       {
@@ -7277,7 +7277,7 @@
                         "pages": [
                           "ko/tools/integration/overview",
                           "ko/tools/integration/bedrockinvokeagenttool",
-                          "ko/tools/integration/crewaiautomationtool"
+                          "ko/tools/integration/localagentsautomationtool"
                         ]
                       },
                       {
@@ -7743,7 +7743,7 @@
                         "pages": [
                           "ko/tools/integration/overview",
                           "ko/tools/integration/bedrockinvokeagenttool",
-                          "ko/tools/integration/crewaiautomationtool"
+                          "ko/tools/integration/localagentsautomationtool"
                         ]
                       },
                       {
@@ -8209,7 +8209,7 @@
                         "pages": [
                           "ko/tools/integration/overview",
                           "ko/tools/integration/bedrockinvokeagenttool",
-                          "ko/tools/integration/crewaiautomationtool"
+                          "ko/tools/integration/localagentsautomationtool"
                         ]
                       },
                       {
@@ -8674,7 +8674,7 @@
                         "pages": [
                           "ko/tools/integration/overview",
                           "ko/tools/integration/bedrockinvokeagenttool",
-                          "ko/tools/integration/crewaiautomationtool"
+                          "ko/tools/integration/localagentsautomationtool"
                         ]
                       },
                       {
@@ -9139,7 +9139,7 @@
                         "pages": [
                           "ko/tools/integration/overview",
                           "ko/tools/integration/bedrockinvokeagenttool",
-                          "ko/tools/integration/crewaiautomationtool"
+                          "ko/tools/integration/localagentsautomationtool"
                         ]
                       },
                       {
@@ -9605,7 +9605,7 @@
                         "pages": [
                           "ko/tools/integration/overview",
                           "ko/tools/integration/bedrockinvokeagenttool",
-                          "ko/tools/integration/crewaiautomationtool"
+                          "ko/tools/integration/localagentsautomationtool"
                         ]
                       },
                       {
@@ -9842,22 +9842,22 @@
           "anchors": [
             {
               "anchor": "\u0627\u0644\u0645\u0648\u0642\u0639",
-              "href": "https://crewai.com",
+              "href": "https://localagents.dev",
               "icon": "globe"
             },
             {
               "anchor": "\u0627\u0644\u0645\u0646\u062a\u062f\u0649",
-              "href": "https://community.crewai.com",
+              "href": "https://community.localagents.dev",
               "icon": "discourse"
             },
             {
               "anchor": "\u0627\u0644\u0645\u062f\u0648\u0651\u0646\u0629",
-              "href": "https://blog.crewai.com",
+              "href": "https://blog.localagents.dev",
               "icon": "newspaper"
             },
             {
               "anchor": "CrewGPT",
-              "href": "https://chatgpt.com/g/g-qqTuUWsBY-crewai-assistant",
+              "href": "https://chatgpt.com/g/g-qqTuUWsBY-localagents-assistant",
               "icon": "robot"
             }
           ]
@@ -10101,7 +10101,7 @@
                         "pages": [
                           "ar/tools/integration/overview",
                           "ar/tools/integration/bedrockinvokeagenttool",
-                          "ar/tools/integration/crewaiautomationtool"
+                          "ar/tools/integration/localagentsautomationtool"
                         ]
                       },
                       {
@@ -10567,7 +10567,7 @@
                         "pages": [
                           "ar/tools/integration/overview",
                           "ar/tools/integration/bedrockinvokeagenttool",
-                          "ar/tools/integration/crewaiautomationtool"
+                          "ar/tools/integration/localagentsautomationtool"
                         ]
                       },
                       {
@@ -11033,7 +11033,7 @@
                         "pages": [
                           "ar/tools/integration/overview",
                           "ar/tools/integration/bedrockinvokeagenttool",
-                          "ar/tools/integration/crewaiautomationtool"
+                          "ar/tools/integration/localagentsautomationtool"
                         ]
                       },
                       {
@@ -11499,7 +11499,7 @@
                         "pages": [
                           "ar/tools/integration/overview",
                           "ar/tools/integration/bedrockinvokeagenttool",
-                          "ar/tools/integration/crewaiautomationtool"
+                          "ar/tools/integration/localagentsautomationtool"
                         ]
                       },
                       {
@@ -11964,7 +11964,7 @@
                         "pages": [
                           "ar/tools/integration/overview",
                           "ar/tools/integration/bedrockinvokeagenttool",
-                          "ar/tools/integration/crewaiautomationtool"
+                          "ar/tools/integration/localagentsautomationtool"
                         ]
                       },
                       {
@@ -12429,7 +12429,7 @@
                         "pages": [
                           "ar/tools/integration/overview",
                           "ar/tools/integration/bedrockinvokeagenttool",
-                          "ar/tools/integration/crewaiautomationtool"
+                          "ar/tools/integration/localagentsautomationtool"
                         ]
                       },
                       {
@@ -12895,7 +12895,7 @@
                         "pages": [
                           "ar/tools/integration/overview",
                           "ar/tools/integration/bedrockinvokeagenttool",
-                          "ar/tools/integration/crewaiautomationtool"
+                          "ar/tools/integration/localagentsautomationtool"
                         ]
                       },
                       {
@@ -13147,17 +13147,17 @@
     "links": [
       {
         "label": "Start Cloud Trial",
-        "href": "https://app.crewai.com",
+        "href": "https://app.localagents.dev",
         "icon": "arrow-up-right-from-square"
       }
     ],
     "primary": {
       "type": "github",
-      "href": "https://github.com/crewAIInc/crewAI"
+      "href": "https://github.com/localai-org/LocalAgents"
     }
   },
   "api": {
-    "baseUrl": "https://your-actual-crew-name.crewai.com",
+    "baseUrl": "https://your-actual-crew-name.localagents.dev",
     "auth": {
       "method": "bearer",
       "name": "Authorization"
@@ -13170,11 +13170,11 @@
     "indexing": "all",
     "metatags": {
       "og:type": "website",
-      "og:site_name": "CrewAI Documentation",
-      "og:image": "https://docs.crewai.com/images/crew_only_logo.png",
+      "og:site_name": "LocalAgents Documentation",
+      "og:image": "https://docs.localagents.dev/images/crew_only_logo.png",
       "twitter:card": "summary_large_image",
-      "twitter:site": "@crewAIInc",
-      "keywords": "AI agents, multi-agent systems, CrewAI, artificial intelligence, automation, Python framework, agent collaboration, AI workflows"
+      "twitter:site": "@localai-org",
+      "keywords": "AI agents, multi-agent systems, LocalAgents, artificial intelligence, automation, Python framework, agent collaboration, AI workflows"
     }
   },
   "feedback": {
@@ -13275,12 +13275,12 @@
   },
   "footer": {
     "socials": {
-      "website": "https://crewai.com",
-      "x": "https://x.com/crewAIInc",
-      "github": "https://github.com/crewAIInc/crewAI",
-      "linkedin": "https://www.linkedin.com/company/crewai-inc",
-      "youtube": "https://youtube.com/@crewAIInc",
-      "reddit": "https://www.reddit.com/r/crewAIInc/"
+      "website": "https://localagents.dev",
+      "x": "https://x.com/localai-org",
+      "github": "https://github.com/localai-org/LocalAgents",
+      "linkedin": "https://www.linkedin.com/company/localagents-inc",
+      "youtube": "https://youtube.com/@localai-org",
+      "reddit": "https://www.reddit.com/r/localai-org/"
     }
   }
 }

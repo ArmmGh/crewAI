@@ -1,4 +1,4 @@
-"""Pytest configuration for crewAI workspace."""
+"""Pytest configuration for LocalAgents workspace."""
 
 import base64
 from collections.abc import Generator
@@ -78,11 +78,11 @@ def cleanup_event_handlers() -> Generator[None, Any, None]:
     yield
 
     try:
-        from crewai.events.event_bus import crewai_event_bus
+        from localagents.events.event_bus import localagents_event_bus
 
-        with crewai_event_bus._rwlock.w_locked():
-            crewai_event_bus._sync_handlers.clear()
-            crewai_event_bus._async_handlers.clear()
+        with localagents_event_bus._rwlock.w_locked():
+            localagents_event_bus._sync_handlers.clear()
+            localagents_event_bus._async_handlers.clear()
     except Exception:  # noqa: S110
         pass
 
@@ -90,8 +90,8 @@ def cleanup_event_handlers() -> Generator[None, Any, None]:
 @pytest.fixture(autouse=True, scope="function")
 def reset_event_state() -> None:
     """Reset event system state before each test for isolation."""
-    from crewai.events.base_events import reset_emission_counter
-    from crewai.events.event_context import (
+    from localagents.events.base_events import reset_emission_counter
+    from localagents.events.event_context import (
         EventContextConfig,
         _event_context_config,
         _event_id_stack,
@@ -104,9 +104,9 @@ def reset_event_state() -> None:
 
 @pytest.fixture(autouse=True, scope="function")
 def setup_test_environment() -> Generator[None, Any, None]:
-    """Setup test environment for crewAI workspace."""
+    """Setup test environment for LocalAgents workspace."""
     with tempfile.TemporaryDirectory() as temp_dir:
-        storage_dir = Path(temp_dir) / "crewai_test_storage"
+        storage_dir = Path(temp_dir) / "localagents_test_storage"
         storage_dir.mkdir(parents=True, exist_ok=True)
 
         if not storage_dir.exists() or not storage_dir.is_dir():
@@ -248,14 +248,14 @@ def vcr_cassette_dir(request: Any) -> str:
     """Generate cassette directory path based on test module location.
 
     Organizes cassettes to mirror test directory structure within each package:
-    lib/crewai/tests/llms/google/test_google.py -> lib/crewai/tests/cassettes/llms/google/
-    lib/crewai-tools/tests/tools/test_search.py -> lib/crewai-tools/tests/cassettes/tools/
+    lib/localagents/tests/llms/google/test_google.py -> lib/localagents/tests/cassettes/llms/google/
+    lib/localagents-tools/tests/tools/test_search.py -> lib/localagents-tools/tests/cassettes/tools/
     """
     test_file = Path(request.fspath)
 
     for parent in test_file.parents:
         if (
-            parent.name in ("crewai", "crewai-tools", "crewai-files")
+            parent.name in ("localagents", "localagents-tools", "localagents-files")
             and parent.parent.name == "lib"
         ):
             package_root = parent
