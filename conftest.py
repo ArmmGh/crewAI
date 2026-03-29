@@ -78,11 +78,11 @@ def cleanup_event_handlers() -> Generator[None, Any, None]:
     yield
 
     try:
-        from localagents.events.event_bus import localagents_event_bus
+        from crewai.events.event_bus import crewai_event_bus
 
-        with localagents_event_bus._rwlock.w_locked():
-            localagents_event_bus._sync_handlers.clear()
-            localagents_event_bus._async_handlers.clear()
+        with crewai_event_bus._rwlock.w_locked():
+            crewai_event_bus._sync_handlers.clear()
+            crewai_event_bus._async_handlers.clear()
     except Exception:  # noqa: S110
         pass
 
@@ -90,8 +90,8 @@ def cleanup_event_handlers() -> Generator[None, Any, None]:
 @pytest.fixture(autouse=True, scope="function")
 def reset_event_state() -> None:
     """Reset event system state before each test for isolation."""
-    from localagents.events.base_events import reset_emission_counter
-    from localagents.events.event_context import (
+    from crewai.events.base_events import reset_emission_counter
+    from crewai.events.event_context import (
         EventContextConfig,
         _event_context_config,
         _event_id_stack,
@@ -255,7 +255,7 @@ def vcr_cassette_dir(request: Any) -> str:
 
     for parent in test_file.parents:
         if (
-            parent.name in ("localagents", "localagents-tools", "localagents-files")
+            parent.name in ("crewai", "crewai-tools", "crewai-files")
             and parent.parent.name == "lib"
         ):
             package_root = parent
