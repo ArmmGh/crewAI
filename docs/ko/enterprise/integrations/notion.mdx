@@ -13,41 +13,41 @@ mode: "wide"
 
 Notion 통합을 사용하기 전에 다음을 확인하세요:
 
-- 활성 구독이 있는 [LocalAI AMP](https://app.crewai.com) 계정
+- 활성 구독이 있는 [LocalAI AMP](https://app.localagents.com) 계정
 - 적절한 워크스페이스 권한이 있는 Notion 계정
-- [통합 페이지](https://app.crewai.com/crewai_plus/connectors)를 통해 Notion 계정을 연결함
+- [통합 페이지](https://app.localagents.com/localagents_plus/connectors)를 통해 Notion 계정을 연결함
 
 ## Notion 연동 설정
 
 ### 1. Notion 계정 연결하기
 
-1. [LocalAI AMP Integrations](https://app.crewai.com/crewai_plus/connectors)로 이동합니다.
+1. [LocalAI AMP Integrations](https://app.localagents.com/localagents_plus/connectors)로 이동합니다.
 2. 인증 통합(Auhtentication Integrations) 섹션에서 **Notion**을(를) 찾습니다.
 3. **Connect**를 클릭하고 OAuth 플로우를 완료합니다.
 4. 페이지 및 데이터베이스 관리를 위한 필요한 권한을 부여합니다.
-5. [통합 설정](https://app.crewai.com/crewai_plus/settings/integrations)에서 Enterprise Token을 복사합니다.
+5. [통합 설정](https://app.localagents.com/localagents_plus/settings/integrations)에서 Enterprise Token을 복사합니다.
 
 ### 2. 필수 패키지 설치
 
 ```bash
-uv add crewai-tools
+uv add localagents-tools
 ```
 
 ### 3. 환경 변수 설정
 
 <Note>
   `Agent(apps=[])`와 함께 통합을 사용하려면 Enterprise Token으로
-  `CREWAI_PLATFORM_INTEGRATION_TOKEN` 환경 변수를 설정해야 합니다.
+  `LOCALAGENTS_PLATFORM_INTEGRATION_TOKEN` 환경 변수를 설정해야 합니다.
 </Note>
 
 ```bash
-export CREWAI_PLATFORM_INTEGRATION_TOKEN="your_enterprise_token"
+export LOCALAGENTS_PLATFORM_INTEGRATION_TOKEN="your_enterprise_token"
 ```
 
 또는 `.env` 파일에 추가하세요:
 
 ```
-CREWAI_PLATFORM_INTEGRATION_TOKEN=your_enterprise_token
+LOCALAGENTS_PLATFORM_INTEGRATION_TOKEN=your_enterprise_token
 ```
 
 ## 사용 가능한 액션
@@ -306,7 +306,7 @@ CREWAI_PLATFORM_INTEGRATION_TOKEN=your_enterprise_token
 ### 기본 Notion Agent 설정
 
 ```python
-from crewai import Agent, Task, Crew
+from localagents import Agent, Task, Crew
 
 # Create an agent with Notion capabilities
 notion_agent = Agent(
@@ -361,7 +361,7 @@ crew.kickoff()
 ### 지식 베이스 관리
 
 ```python
-from crewai import Agent, Task, Crew
+from localagents import Agent, Task, Crew
 
 knowledge_curator = Agent(
     role="Knowledge Curator",
@@ -393,7 +393,7 @@ crew.kickoff()
 ### 콘텐츠 구조 및 구성
 
 ```python
-from crewai import Agent, Task, Crew
+from localagents import Agent, Task, Crew
 
 content_organizer = Agent(
     role="Content Organizer",
@@ -426,7 +426,7 @@ crew.kickoff()
 ### 자동화된 문서화 워크플로우
 
 ```python
-from crewai import Agent, Task, Crew
+from localagents import Agent, Task, Crew
 
 doc_automator = Agent(
     role="Documentation Automator",
@@ -514,7 +514,7 @@ crew.kickoff()
 <Card
   title="도움이 필요하신가요?"
   icon="headset"
-  href="mailto:support@crewai.com"
+  href="mailto:support@localagents.com"
 >
   Notion 연동 설정 또는 문제 해결에 대해 지원팀에 문의해 주세요.
 </Card>

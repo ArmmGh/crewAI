@@ -24,8 +24,8 @@ Você pode se conectar a um servidor MCP baseado em SSE usando duas abordagens p
 Utilizar um gerenciador de contexto Python (`with` statement) é a abordagem recomendada. Ele lida automaticamente com o estabelecimento e o encerramento da conexão com o servidor MCP SSE.
 
 ```python
-from crewai import Agent, Task, Crew, Process
-from crewai_tools import MCPServerAdapter
+from localagents import Agent, Task, Crew, Process
+from localagents_tools import MCPServerAdapter
 
 server_params = {
     "url": "http://localhost:8000/sse", # Replace with your actual SSE server URL
@@ -86,8 +86,8 @@ Você **DEVE** chamar `mcp_server_adapter.stop()` para garantir que a conexão s
 </Info>
 
 ```python
-from crewai import Agent, Task, Crew, Process
-from crewai_tools import MCPServerAdapter
+from localagents import Agent, Task, Crew, Process
+from localagents_tools import MCPServerAdapter
 
 server_params = {
     "url": "http://localhost:8000/sse", # Replace with your actual SSE server URL

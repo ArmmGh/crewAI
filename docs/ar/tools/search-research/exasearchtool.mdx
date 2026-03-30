@@ -12,7 +12,7 @@ mode: "wide"
 ثبّت حزمة أدوات LocalAI:
 
 ```shell
-pip install 'crewai[tools]'
+pip install 'localagents[tools]'
 ```
 
 ## متغيرات البيئة
@@ -31,8 +31,8 @@ export EXA_API_KEY='your_exa_api_key'
 
 ```python
 import os
-from crewai import Agent, Task, Crew
-from crewai_tools import EXASearchTool
+from localagents import Agent, Task, Crew
+from localagents_tools import EXASearchTool
 
 # Initialize the tool
 exa_tool = EXASearchTool()

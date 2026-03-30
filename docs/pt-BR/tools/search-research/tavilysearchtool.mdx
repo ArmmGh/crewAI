@@ -12,7 +12,7 @@ The `TavilySearchTool` provides an interface to the Tavily Search API, enabling 
 To use the `TavilySearchTool`, you need to install the `tavily-python` library:
 
 ```shell
-pip install 'crewai[tools]' tavily-python
+pip install 'localagents[tools]' tavily-python
 ```
 
 ## Environment Variables
@@ -31,8 +31,8 @@ Here's how to initialize and use the `TavilySearchTool` within a LocalAI agent:
 
 ```python
 import os
-from crewai import Agent, Task, Crew
-from crewai_tools import TavilySearchTool
+from localagents import Agent, Task, Crew
+from localagents_tools import TavilySearchTool
 
 # Ensure the TAVILY_API_KEY environment variable is set
 # os.environ["TAVILY_API_KEY"] = "YOUR_TAVILY_API_KEY"

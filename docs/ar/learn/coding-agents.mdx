@@ -14,7 +14,7 @@ mode: "wide"
 لتمكين تنفيذ الكود لـ Agent، عيّن معامل `allow_code_execution` إلى `True` عند إنشاء الـ Agent.
 
 ```python Code
-from crewai import Agent
+from localagents import Agent
 
 coding_agent = Agent(
     role="Senior Python Developer",
@@ -34,7 +34,7 @@ coding_agent = Agent(
 
 2. **معالجة الأخطاء**: تتضمن ميزة تنفيذ الكود معالجة أخطاء. إذا أثار الكود المُنفَّذ استثناءً، سيتلقى الـ Agent رسالة الخطأ ويمكنه محاولة تصحيح الكود. يتحكم معامل `max_retry_limit` (الافتراضي 2) في الحد الأقصى لعدد المحاولات.
 
-3. **التبعيات**: لاستخدام ميزة تنفيذ الكود، تحتاج لتثبيت حزمة `crewai_tools`.
+3. **التبعيات**: لاستخدام ميزة تنفيذ الكود، تحتاج لتثبيت حزمة `localagents_tools`.
 
 ## عملية تنفيذ الكود
 
@@ -56,7 +56,7 @@ coding_agent = Agent(
 ## مثال استخدام
 
 ```python Code
-from crewai import Agent, Task, Crew
+from localagents import Agent, Task, Crew
 
 coding_agent = Agent(
     role="Python Data Analyst",

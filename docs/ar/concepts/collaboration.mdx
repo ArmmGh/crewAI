@@ -12,7 +12,7 @@ mode: "wide"
 ## البدء السريع: تفعيل التعاون
 
 ```python
-from crewai import Agent, Crew, Task
+from localagents import Agent, Crew, Task
 
 # تفعيل التعاون للوكلاء
 researcher = Agent(
@@ -64,7 +64,7 @@ crew = Crew(
 إليك مثالًا كاملًا يوضح تعاون الوكلاء في مهمة إنشاء المحتوى:
 
 ```python
-from crewai import Agent, Crew, Task, Process
+from localagents import Agent, Crew, Task, Process
 
 # إنشاء وكلاء تعاونيين
 researcher = Agent(
@@ -164,7 +164,7 @@ collaborative_task = Task(
 للمشاريع المعقدة، استخدم عملية هرمية مع وكيل مدير:
 
 ```python
-from crewai import Agent, Crew, Task, Process
+from localagents import Agent, Crew, Task, Process
 
 # وكيل المدير ينسق الفريق
 manager = Agent(

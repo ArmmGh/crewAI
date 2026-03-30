@@ -13,7 +13,7 @@ mode: "wide"
 ## ما هي الأداة؟
 
 الأداة في LocalAI هي مهارة أو وظيفة يمكن للوكلاء استخدامها لأداء إجراءات مختلفة.
-يشمل ذلك أدوات من [مجموعة أدوات LocalAI](https://github.com/joaomdmoura/crewai-tools) و[أدوات LangChain](https://python.langchain.com/docs/integrations/tools)،
+يشمل ذلك أدوات من [مجموعة أدوات LocalAI](https://github.com/joaomdmoura/localagents-tools) و[أدوات LangChain](https://python.langchain.com/docs/integrations/tools)،
 مما يُمكّن كل شيء من عمليات البحث البسيطة إلى التفاعلات المعقدة والعمل الجماعي الفعال بين الوكلاء.
 
 <Note type="info" title="تحسين المؤسسات: مستودع الأدوات">
@@ -41,16 +41,16 @@ mode: "wide"
 لتعزيز قدرات وكلائك بأدوات LocalAI، ابدأ بتثبيت حزمة الأدوات الإضافية:
 
 ```bash
-pip install 'crewai[tools]'
+pip install 'localagents[tools]'
 ```
 
 إليك مثالًا يوضح استخدامها:
 
 ```python Code
 import os
-from crewai import Agent, Task, Crew
+from localagents import Agent, Task, Crew
 # استيراد أدوات localAI
-from crewai_tools import (
+from localagents_tools import (
     DirectoryReadTool,
     FileReadTool,
     SerperDevTool,
@@ -163,7 +163,7 @@ crew.kickoff()
 ### الوراثة من `BaseTool`
 
 ```python Code
-from crewai.tools import BaseTool
+from localagents.tools import BaseTool
 from pydantic import BaseModel, Field
 
 class MyToolInput(BaseModel):
@@ -191,7 +191,7 @@ class MyCustomTool(BaseTool):
 #### 1. استخدام مزيّن `tool` مع دوال Async
 
 ```python Code
-from crewai.tools import tool
+from localagents.tools import tool
 
 @tool("fetch_data_async")
 async def fetch_data_async(query: str) -> str:
@@ -204,7 +204,7 @@ async def fetch_data_async(query: str) -> str:
 #### 2. تنفيذ طرق Async في فئات الأدوات المخصصة
 
 ```python Code
-from crewai.tools import BaseTool
+from localagents.tools import BaseTool
 
 class AsyncCustomTool(BaseTool):
     name: str = "async_custom_tool"
@@ -239,7 +239,7 @@ class MyFlow(Flow):
 ### استخدام مزيّن `tool`
 
 ```python Code
-from crewai.tools import tool
+from localagents.tools import tool
 @tool("Name of my tool")
 def my_tool(question: str) -> str:
     """Clear description for what this tool is useful for, your agent will need this information to use it."""
@@ -256,7 +256,7 @@ def my_tool(question: str) -> str:
 </Tip>
 
 ```python Code
-from crewai.tools import tool
+from localagents.tools import tool
 
 @tool
 def multiplication_tool(first_number: int, second_number: int) -> str:

@@ -15,13 +15,13 @@ Integre [Apify Actors](https://apify.com/actors) nos seus fluxos de trabalho Loc
 O `ApifyActorsTool` conecta [Apify Actors](https://apify.com/actors), programas em nuvem para raspagem e automação web, aos seus fluxos de trabalho LocalAI.
 Utilize qualquer um dos mais de 4.000 Actors disponíveis na [Apify Store](https://apify.com/store) para casos de uso como extração de dados de redes sociais, motores de busca, mapas online, sites de e-commerce, portais de viagem ou sites em geral.
 
-Para mais detalhes, consulte a [integração Apify LocalAI](https://docs.apify.com/platform/integrations/crewai) na documentação do Apify.
+Para mais detalhes, consulte a [integração Apify LocalAI](https://docs.apify.com/platform/integrations/localagents) na documentação do Apify.
 
 ## Passos para começar
 
 <Steps>
     <Step title="Instale as dependências">
-        Instale `crewai[tools]` e `langchain-apify` usando pip: `pip install 'crewai[tools]' langchain-apify`.
+        Instale `localagents[tools]` e `langchain-apify` usando pip: `pip install 'localagents[tools]' langchain-apify`.
     </Step>
     <Step title="Obtenha um token de API do Apify">
         Cadastre-se no [Apify Console](https://console.apify.com/) e obtenha seu [token de API do Apify](https://console.apify.com/settings/integrations).
@@ -36,7 +36,7 @@ Para mais detalhes, consulte a [integração Apify LocalAI](https://docs.apify.c
 Use o `ApifyActorsTool` manualmente para executar o [RAG Web Browser Actor](https://apify.com/apify/rag-web-browser) e realizar uma busca na web:
 
 ```python
-from crewai_tools import ApifyActorsTool
+from localagents_tools import ApifyActorsTool
 
 # Inicialize a ferramenta com um Apify Actor
 tool = ApifyActorsTool(actor_name="apify/rag-web-browser")
@@ -55,17 +55,17 @@ for result in results:
 Veja abaixo a saída do código acima:
 
 ```text
-URL: https://www.example.com/crewai-intro
+URL: https://www.example.com/localagents-intro
 Content: LocalAI is a framework for building AI-powered workflows...
-URL: https://docs.crewai.com/
+URL: https://docs.localagents.com/
 Content: Official documentation for LocalAI...
 ```
 
 O `ApifyActorsTool` busca automaticamente a definição do Actor e o esquema de entrada no Apify utilizando o `actor_name` fornecido e então constrói a descrição da ferramenta e o esquema dos argumentos. Isso significa que você só precisa informar um `actor_name` válido, e a ferramenta faz o resto quando usada com agentes—não é necessário especificar o `run_input`. Veja como funciona:
 
 ```python
-from crewai import Agent
-from crewai_tools import ApifyActorsTool
+from localagents import Agent
+from localagents_tools import ApifyActorsTool
 
 rag_browser = ApifyActorsTool(actor_name="apify/rag-web-browser")
 
@@ -79,7 +79,7 @@ agent = Agent(
 
 Você pode executar outros Actors da [Apify Store](https://apify.com/store) apenas alterando o `actor_name` e, ao usar manualmente, ajustando o `run_input` de acordo com o esquema de entrada do Actor.
 
-Para um exemplo de uso com agentes, consulte o [template LocalAI Actor](https://apify.com/templates/python-crewai).
+Para um exemplo de uso com agentes, consulte o [template LocalAI Actor](https://apify.com/templates/python-localagents).
 
 ## Configuração
 
@@ -97,4 +97,4 @@ O `ApifyActorsTool` exige os seguintes inputs para funcionar:
 - **[Apify](https://apify.com/)**: Explore a plataforma Apify.
 - **[Como criar um agente de IA no Apify](https://blog.apify.com/how-to-build-an-ai-agent/)** - Um guia completo, passo a passo, para criar, publicar e monetizar agentes de IA na plataforma Apify.
 - **[RAG Web Browser Actor](https://apify.com/apify/rag-web-browser)**: Um Actor popular para busca na web para LLMs.
-- **[Guia de Integração LocalAI](https://docs.apify.com/platform/integrations/crewai)**: Siga o guia oficial para integrar Apify e LocalAI.
+- **[Guia de Integração LocalAI](https://docs.apify.com/platform/integrations/localagents)**: Siga o guia oficial para integrar Apify e LocalAI.

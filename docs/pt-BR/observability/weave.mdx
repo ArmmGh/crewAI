@@ -25,7 +25,7 @@ O Weave captura automaticamente rastreamentos (traces) de suas aplicações Loca
 <Steps>
     <Step title="Instale os pacotes necessários">
       ```shell
-      pip install crewai weave
+      pip install localagents weave
       ```
     </Step>
     <Step title="Crie uma conta no W&B">
@@ -38,14 +38,14 @@ O Weave captura automaticamente rastreamentos (traces) de suas aplicações Loca
       import weave
 
       # Inicialize o Weave com o nome do seu projeto
-      weave.init(project_name="crewai_demo")
+      weave.init(project_name="localagents_demo")
       ```
       
       Após a inicialização, o Weave fornecerá uma URL onde você poderá visualizar seus rastreamentos e métricas.
     </Step>
     <Step title="Crie seus Crews/Flows">
       ```python
-      from crewai import Agent, Task, Crew, LLM, Process
+      from localagents import Agent, Task, Crew, LLM, Process
 
       # Crie um LLM com temperatura 0 para garantir saídas determinísticas
       llm = LLM(model="gpt-4o", temperature=0)
@@ -116,10 +116,10 @@ O Weave captura automaticamente rastreamentos (traces) de suas aplicações Loca
 - Suporte ao recurso flow com patching por decorador (`@start`, `@listen`, `@router`, `@or_`, `@and_`).
 - Rastreie guardrails personalizados passados para o `Task` do LocalAI com `@weave.op()`.
 
-Para informações detalhadas sobre o que é suportado, acesse a [documentação do Weave LocalAI](https://weave-docs.wandb.ai/guides/integrations/crewai/#getting-started-with-flow).
+Para informações detalhadas sobre o que é suportado, acesse a [documentação do Weave LocalAI](https://weave-docs.wandb.ai/guides/integrations/localagents/#getting-started-with-flow).
 
 ## Recursos
 
 - [📘 Documentação do Weave](https://weave-docs.wandb.ai)
-- [📊 Exemplo de dashboard Weave x LocalAI](https://wandb.ai/ayut/crewai_demo/weave/traces?cols=%7B%22wb_run_id%22%3Afalse%2C%22attributes.weave.client_version%22%3Afalse%2C%22attributes.weave.os_name%22%3Afalse%2C%22attributes.weave.os_release%22%3Afalse%2C%22attributes.weave.os_version%22%3Afalse%2C%22attributes.weave.source%22%3Afalse%2C%22attributes.weave.sys_version%22%3Afalse%7D&peekPath=%2Fayut%2Fcrewai_demo%2Fcalls%2F0195c838-38cb-71a2-8a15-651ecddf9d89)
+- [📊 Exemplo de dashboard Weave x LocalAI](https://wandb.ai/ayut/localagents_demo/weave/traces?cols=%7B%22wb_run_id%22%3Afalse%2C%22attributes.weave.client_version%22%3Afalse%2C%22attributes.weave.os_name%22%3Afalse%2C%22attributes.weave.os_release%22%3Afalse%2C%22attributes.weave.os_version%22%3Afalse%2C%22attributes.weave.source%22%3Afalse%2C%22attributes.weave.sys_version%22%3Afalse%7D&peekPath=%2Fayut%2Flocalagents_demo%2Fcalls%2F0195c838-38cb-71a2-8a15-651ecddf9d89)
 - [🐦 X](https://x.com/weave_wb)

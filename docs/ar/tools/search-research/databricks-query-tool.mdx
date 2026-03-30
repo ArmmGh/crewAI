@@ -14,7 +14,7 @@ mode: "wide"
 ## التثبيت
 
 ```shell
-uv add crewai-tools[databricks-sdk]
+uv add localagents-tools[databricks-sdk]
 ```
 
 ## متغيرات البيئة
@@ -27,8 +27,8 @@ uv add crewai-tools[databricks-sdk]
 ## مثال
 
 ```python Code
-from crewai import Agent, Task, Crew
-from crewai_tools import DatabricksQueryTool
+from localagents import Agent, Task, Crew
+from localagents_tools import DatabricksQueryTool
 
 tool = DatabricksQueryTool(
     default_catalog="main",

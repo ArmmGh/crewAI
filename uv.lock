@@ -14,10 +14,10 @@ resolution-markers = [
 
 [manifest]
 members = [
-    "crewai",
-    "crewai-devtools",
-    "crewai-files",
-    "crewai-tools",
+    "localagents",
+    "localagents-devtools",
+    "localagents-files",
+    "localagents-tools",
 ]
 overrides = [
     { name = "langchain-core", specifier = ">=1.2.11,<2" },
@@ -1189,8 +1189,8 @@ wheels = [
 ]
 
 [[package]]
-name = "crewai"
-source = { editable = "lib/crewai" }
+name = "localagents"
+source = { editable = "lib/localagents" }
 dependencies = [
     { name = "aiosqlite" },
     { name = "appdirs" },
@@ -1250,7 +1250,7 @@ embeddings = [
     { name = "tiktoken" },
 ]
 file-processing = [
-    { name = "crewai-files" },
+    { name = "localagents-files" },
 ]
 google-genai = [
     { name = "google-genai" },
@@ -1274,7 +1274,7 @@ qdrant-edge = [
     { name = "qdrant-edge-py" },
 ]
 tools = [
-    { name = "crewai-tools" },
+    { name = "localagents-tools" },
 ]
 voyageai = [
     { name = "voyageai" },
@@ -1296,8 +1296,8 @@ requires-dist = [
     { name = "boto3", marker = "extra == 'bedrock'", specifier = "~=1.40.45" },
     { name = "chromadb", specifier = "~=1.1.0" },
     { name = "click", specifier = "~=8.1.7" },
-    { name = "crewai-files", marker = "extra == 'file-processing'", editable = "lib/crewai-files" },
-    { name = "crewai-tools", marker = "extra == 'tools'", editable = "lib/crewai-tools" },
+    { name = "localagents-files", marker = "extra == 'file-processing'", editable = "lib/localagents-files" },
+    { name = "localagents-tools", marker = "extra == 'tools'", editable = "lib/localagents-tools" },
     { name = "docling", marker = "extra == 'docling'", specifier = "~=2.75.0" },
     { name = "google-genai", marker = "extra == 'google-genai'", specifier = "~=1.65.0" },
     { name = "httpx", specifier = "~=0.28.1" },
@@ -1340,7 +1340,7 @@ requires-dist = [
 provides-extras = ["a2a", "anthropic", "aws", "azure-ai-inference", "bedrock", "docling", "embeddings", "file-processing", "google-genai", "litellm", "mem0", "openpyxl", "pandas", "qdrant", "qdrant-edge", "tools", "voyageai", "watson"]
 
 [[package]]
-name = "crewai-devtools"
+name = "localagents-devtools"
 source = { editable = "lib/devtools" }
 dependencies = [
     { name = "click" },
@@ -1362,8 +1362,8 @@ requires-dist = [
 ]
 
 [[package]]
-name = "crewai-files"
-source = { editable = "lib/crewai-files" }
+name = "localagents-files"
+source = { editable = "lib/localagents-files" }
 dependencies = [
     { name = "aiocache" },
     { name = "aiofiles" },
@@ -1386,11 +1386,11 @@ requires-dist = [
 ]
 
 [[package]]
-name = "crewai-tools"
-source = { editable = "lib/crewai-tools" }
+name = "localagents-tools"
+source = { editable = "lib/localagents-tools" }
 dependencies = [
     { name = "beautifulsoup4" },
-    { name = "crewai" },
+    { name = "localagents" },
     { name = "docker" },
     { name = "pymupdf" },
     { name = "python-docx" },
@@ -1525,7 +1525,7 @@ requires-dist = [
     { name = "composio-core", marker = "extra == 'composio-core'", specifier = ">=0.6.11.post1" },
     { name = "contextual-client", marker = "extra == 'contextual'", specifier = ">=0.1.0" },
     { name = "couchbase", marker = "extra == 'couchbase'", specifier = ">=4.3.5" },
-    { name = "crewai", editable = "lib/crewai" },
+    { name = "localagents", editable = "lib/localagents" },
     { name = "cryptography", marker = "extra == 'snowflake'", specifier = ">=43.0.3" },
     { name = "databricks-sdk", marker = "extra == 'databricks-sdk'", specifier = ">=0.46.0" },
     { name = "docker", specifier = "~=7.1.0" },

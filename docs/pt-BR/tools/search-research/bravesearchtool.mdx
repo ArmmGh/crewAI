@@ -16,14 +16,14 @@ Esta ferramenta foi desenvolvida para realizar buscas na web utilizando a Brave 
 Para incorporar esta ferramenta ao seu projeto, siga as instruções de instalação abaixo:
 
 ```shell
-pip install 'crewai[tools]'
+pip install 'localagents[tools]'
 ```
 
 ## Passos para Começar
 
 Para utilizar o `BraveSearchTool` de forma eficaz, siga estes passos:
 
-1. **Instalação do Pacote**: Confirme que o pacote `crewai[tools]` está instalado no seu ambiente Python.
+1. **Instalação do Pacote**: Confirme que o pacote `localagents[tools]` está instalado no seu ambiente Python.
 2. **Obtenção da Chave de API**: Obtenha uma chave de API do Brave Search registrando-se em [Brave Search API](https://api.search.brave.com/app/keys).
 3. **Configuração do Ambiente**: Armazene a chave de API obtida em uma variável de ambiente chamada `BRAVE_API_KEY` para facilitar seu uso pela ferramenta.
 
@@ -32,7 +32,7 @@ Para utilizar o `BraveSearchTool` de forma eficaz, siga estes passos:
 O exemplo a seguir demonstra como inicializar a ferramenta e executar uma busca com uma determinada consulta:
 
 ```python Code
-from crewai_tools import BraveSearchTool
+from localagents_tools import BraveSearchTool
 
 # Inicialize a ferramenta para capacidades de busca na internet
 tool = BraveSearchTool()
@@ -56,7 +56,7 @@ O `BraveSearchTool` aceita os seguintes parâmetros:
 Veja um exemplo demonstrando como usar a ferramenta com parâmetros adicionais:
 
 ```python Code
-from crewai_tools import BraveSearchTool
+from localagents_tools import BraveSearchTool
 
 # Inicialize a ferramenta com parâmetros personalizados
 tool = BraveSearchTool(
@@ -75,9 +75,9 @@ print(results)
 Veja como integrar o `BraveSearchTool` com um agente LocalAI:
 
 ```python Code
-from crewai import Agent
-from crewai.project import agent
-from crewai_tools import BraveSearchTool
+from localagents import Agent
+from localagents.project import agent
+from localagents_tools import BraveSearchTool
 
 # Inicialize a ferramenta
 brave_search_tool = BraveSearchTool()

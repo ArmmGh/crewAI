@@ -18,17 +18,17 @@ This capability makes it especially useful for extracting specific information f
 
 ## Installation
 
-To get started with the PDFSearchTool, first, ensure the crewai_tools package is installed with the following command:
+To get started with the PDFSearchTool, first, ensure the localagents_tools package is installed with the following command:
 
 ```shell
-pip install 'crewai[tools]'
+pip install 'localagents[tools]'
 ```
 
 ## Example
 Here's how to use the PDFSearchTool to search within a PDF document:
 
 ```python Code
-from crewai_tools import PDFSearchTool
+from localagents_tools import PDFSearchTool
 
 # Initialize the tool allowing for any PDF content search if the path is provided during execution
 tool = PDFSearchTool()
@@ -48,7 +48,7 @@ tool = PDFSearchTool(pdf='path/to/your/document.pdf')
 By default, the tool uses OpenAI for both embeddings and summarization. To customize the model, you can use a config dictionary as follows. Note: a vector database is required because generated embeddings must be stored and queried from a vectordb.
 
 ```python Code
-from crewai_tools import PDFSearchTool
+from localagents_tools import PDFSearchTool
 
 # - embedding_model (required): choose provider + provider-specific config
 # - vectordb (required): choose vector DB and pass its config

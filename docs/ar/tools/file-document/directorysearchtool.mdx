@@ -17,18 +17,18 @@ mode: "wide"
 
 ## التثبيت
 
-لاستخدام DirectorySearchTool، ابدأ بتثبيت حزمة crewai_tools. نفّذ الأمر التالي في الطرفية:
+لاستخدام DirectorySearchTool، ابدأ بتثبيت حزمة localagents_tools. نفّذ الأمر التالي في الطرفية:
 
 ```shell
-pip install 'crewai[tools]'
+pip install 'localagents[tools]'
 ```
 
 ## التهيئة والاستخدام
 
-قم باستيراد DirectorySearchTool من حزمة `crewai_tools` للبدء. يمكنك تهيئة الأداة بدون تحديد مجلد، مما يتيح تعيين مجلد البحث أثناء التشغيل. بدلاً من ذلك، يمكن تهيئة الأداة بمجلد محدد مسبقاً.
+قم باستيراد DirectorySearchTool من حزمة `localagents_tools` للبدء. يمكنك تهيئة الأداة بدون تحديد مجلد، مما يتيح تعيين مجلد البحث أثناء التشغيل. بدلاً من ذلك، يمكن تهيئة الأداة بمجلد محدد مسبقاً.
 
 ```python Code
-from crewai_tools import DirectorySearchTool
+from localagents_tools import DirectorySearchTool
 
 # For dynamic directory specification at runtime
 tool = DirectorySearchTool()

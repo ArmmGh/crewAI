@@ -37,8 +37,8 @@ flowchart LR
 Aqui está a maneira mais simples de adicionar feedback humano a um flow:
 
 ```python Code
-from crewai.flow.flow import Flow, start, listen
-from crewai.flow.human_feedback import human_feedback
+from localagents.flow.flow import Flow, start, listen
+from localagents.flow.human_feedback import human_feedback
 
 class SimpleReviewFlow(Flow):
     @start()
@@ -98,8 +98,8 @@ def handle_feedback(self, result):
 Quando você especifica `emit`, o decorador se torna um roteador. O feedback livre do humano é interpretado por um LLM e mapeado para um dos outcomes especificados:
 
 ```python Code
-from crewai.flow.flow import Flow, start, listen, or_
-from crewai.flow.human_feedback import human_feedback
+from localagents.flow.flow import Flow, start, listen, or_
+from localagents.flow.human_feedback import human_feedback
 
 class ReviewFlow(Flow):
     @start()
@@ -140,7 +140,7 @@ Um método `@start()` só executa uma vez no início do flow. Se você precisa d
 O dataclass `HumanFeedbackResult` contém todas as informações sobre uma interação de feedback humano:
 
 ```python Code
-from crewai.flow.human_feedback import HumanFeedbackResult
+from localagents.flow.human_feedback import HumanFeedbackResult
 
 @dataclass
 class HumanFeedbackResult:
@@ -203,8 +203,8 @@ Aqui está um exemplo completo implementando um fluxo de revisão e aprovação 
 <CodeGroup>
 
 ```python Code
-from crewai.flow.flow import Flow, start, listen, or_
-from crewai.flow.human_feedback import human_feedback, HumanFeedbackResult
+from localagents.flow.flow import Flow, start, listen, or_
+from localagents.flow.human_feedback import human_feedback, HumanFeedbackResult
 from pydantic import BaseModel
 
 
@@ -437,7 +437,7 @@ Por padrão, `@human_feedback` bloqueia a execução aguardando entrada no conso
 Use o parâmetro `provider` para especificar uma estratégia customizada de coleta de feedback:
 
 ```python Code
-from crewai.flow import Flow, start, human_feedback, HumanFeedbackProvider, HumanFeedbackPending, PendingFeedbackContext
+from localagents.flow import Flow, start, human_feedback, HumanFeedbackProvider, HumanFeedbackPending, PendingFeedbackContext
 
 class WebhookProvider(HumanFeedbackProvider):
     """Provider que pausa o flow e aguarda callback de webhook."""
@@ -541,7 +541,7 @@ class PendingFeedbackContext:
 ### Exemplo Completo de Flow Assíncrono
 
 ```python Code
-from crewai.flow import (
+from localagents.flow import (
     Flow, start, listen, human_feedback,
     HumanFeedbackProvider, HumanFeedbackPending, PendingFeedbackContext
 )

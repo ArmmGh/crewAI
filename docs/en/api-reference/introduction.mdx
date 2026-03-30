@@ -36,7 +36,7 @@ All API requests require authentication using a Bearer token. Include your token
 
 ```bash
 curl -H "Authorization: Bearer YOUR_CREW_TOKEN" \
-  https://your-crew-url.crewai.com/inputs
+  https://your-crew-url.localagents.com/inputs
 ```
 
 ### Token Types
@@ -56,7 +56,7 @@ curl -H "Authorization: Bearer YOUR_CREW_TOKEN" \
 Each deployed crew has its own unique API endpoint:
 
 ```
-https://your-crew-name.crewai.com
+https://your-crew-name.localagents.com
 ```
 
 Replace `your-crew-name` with your actual crew's URL from the dashboard.
@@ -111,7 +111,7 @@ Each endpoint page shows you:
 **Example workflow:**
 
 1. **Copy this cURL example** from any endpoint page
-2. **Replace `your-actual-crew-name.crewai.com`** with your real crew URL
+2. **Replace `your-actual-crew-name.localagents.com`** with your real crew URL
 3. **Replace the Bearer token** with your real token from the dashboard
 4. **Run the request** in your terminal or API client
 
@@ -121,14 +121,14 @@ Each endpoint page shows you:
   <Card
     title="Enterprise Support"
     icon="headset"
-    href="mailto:support@crewai.com"
+    href="mailto:support@localagents.com"
   >
     Get help with API integration and troubleshooting
   </Card>
   <Card
     title="Enterprise Dashboard"
     icon="chart-line"
-    href="https://app.crewai.com"
+    href="https://app.localagents.com"
   >
     Manage your crews and view execution logs
   </Card>

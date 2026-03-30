@@ -9,10 +9,10 @@ icon: file-image
 O LocalAI suporta entradas de arquivos multimodais nativos, permitindo que você passe imagens, PDFs, áudio, vídeo e arquivos de texto diretamente para seus agentes. Os arquivos são formatados automaticamente para os requisitos da API de cada provedor LLM.
 
 <Note type="info" title="Dependência Opcional">
-O suporte a arquivos requer o pacote opcional `crewai-files`. Instale com:
+O suporte a arquivos requer o pacote opcional `localagents-files`. Instale com:
 
 ```bash
-uv add 'crewai[file-processing]'
+uv add 'localagents[file-processing]'
 ```
 </Note>
 
@@ -34,7 +34,7 @@ O LocalAI suporta cinco tipos de arquivo específicos mais uma classe genérica 
 | **Genérico** | `File` | Detecta automaticamente o tipo do conteúdo |
 
 ```python
-from crewai_files import File, ImageFile, PDFFile, AudioFile, VideoFile, TextFile
+from localagents_files import File, ImageFile, PDFFile, AudioFile, VideoFile, TextFile
 
 image = ImageFile(source="screenshot.png")
 pdf = PDFFile(source="report.pdf")
@@ -52,7 +52,7 @@ O parâmetro `source` aceita múltiplos tipos de entrada e detecta automaticamen
 ### De Caminho
 
 ```python
-from crewai_files import ImageFile
+from localagents_files import ImageFile
 
 image = ImageFile(source="./images/chart.png")
 ```
@@ -60,7 +60,7 @@ image = ImageFile(source="./images/chart.png")
 ### De URL
 
 ```python
-from crewai_files import ImageFile
+from localagents_files import ImageFile
 
 image = ImageFile(source="https://example.com/image.png")
 ```
@@ -68,7 +68,7 @@ image = ImageFile(source="https://example.com/image.png")
 ### De Bytes
 
 ```python
-from crewai_files import ImageFile, FileBytes
+from localagents_files import ImageFile, FileBytes
 
 image_bytes = download_image_from_api()
 image = ImageFile(source=FileBytes(data=image_bytes, filename="downloaded.png"))
@@ -84,8 +84,8 @@ Arquivos podem ser passados em múltiplos níveis, com níveis mais específicos
 Passe arquivos ao iniciar uma crew:
 
 ```python
-from crewai import Crew
-from crewai_files import ImageFile
+from localagents import Crew
+from localagents_files import ImageFile
 
 crew = Crew(agents=[analyst], tasks=[analysis_task])
 
@@ -103,8 +103,8 @@ result = crew.kickoff(
 Anexe arquivos a tasks específicas:
 
 ```python
-from crewai import Task
-from crewai_files import ImageFile
+from localagents import Task
+from localagents_files import ImageFile
 
 task = Task(
     description="Analise o gráfico de vendas e identifique tendências em {chart}",
@@ -120,8 +120,8 @@ task = Task(
 Passe arquivos para flows, que automaticamente herdam para crews:
 
 ```python
-from crewai.flow.flow import Flow, start
-from crewai_files import ImageFile
+from localagents.flow.flow import Flow, start
+from localagents_files import ImageFile
 
 class AnalysisFlow(Flow):
     @start()
@@ -139,8 +139,8 @@ result = flow.kickoff(
 Passe arquivos diretamente no kickoff do agente:
 
 ```python
-from crewai import Agent
-from crewai_files import ImageFile
+from localagents import Agent
+from localagents_files import ImageFile
 
 agent = Agent(
     role="Image Analyst",
@@ -215,7 +215,7 @@ Você não precisa gerenciar isso. O LocalAI usa automaticamente o método mais 
 Controle como os arquivos são processados quando excedem os limites do provedor:
 
 ```python
-from crewai_files import ImageFile, PDFFile
+from localagents_files import ImageFile, PDFFile
 
 image = ImageFile(source="large.png", mode="strict")
 image = ImageFile(source="large.png", mode="auto")

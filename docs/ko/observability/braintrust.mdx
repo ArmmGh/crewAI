@@ -18,7 +18,7 @@ LocalAI를 사용하고 포괄적인 관찰성 및 평가를 위해 OpenTelemetr
 ### 1단계: 의존성 설치
 
 ```bash
-uv add braintrust[otel] crewai crewai-tools opentelemetry-instrumentation-openai opentelemetry-instrumentation-crewai python-dotenv
+uv add braintrust[otel] localagents localagents-tools opentelemetry-instrumentation-openai opentelemetry-instrumentation-localagents python-dotenv
 ```
 
 ### 2단계: 환경 변수 설정
@@ -37,7 +37,7 @@ OPENAI_API_KEY = getpass("🔑 OpenAI API 키를 입력하세요: ")
 
 # 환경 변수 설정
 os.environ["BRAINTRUST_API_KEY"] = BRAINTRUST_API_KEY
-os.environ["BRAINTRUST_PARENT"] = "project_name:crewai-demo"
+os.environ["BRAINTRUST_PARENT"] = "project_name:localagents-demo"
 os.environ["OPENAI_API_KEY"] = OPENAI_API_KEY
 ```
 
@@ -50,10 +50,10 @@ import os
 from typing import Any, Dict
 
 from braintrust.otel import BraintrustSpanProcessor
-from crewai import Agent, Crew, Task
-from crewai.llm import LLM
+from localagents import Agent, Crew, Task
+from localagents.llm import LLM
 from opentelemetry import trace
-from opentelemetry.instrumentation.crewai import LocalAIInstrumentor
+from opentelemetry.instrumentation.localagents import LocalAIInstrumentor
 from opentelemetry.instrumentation.openai import OpenAIInstrumentor
 from opentelemetry.sdk.trace import TracerProvider
 
@@ -79,8 +79,8 @@ setup_tracing()
 포괄적인 추적이 활성화된 LocalAI 애플리케이션을 생성합니다.
 
 ```python
-from crewai import Agent, Crew, Process, Task
-from crewai_tools import SerperDevTool
+from localagents import Agent, Crew, Process, Task
+from localagents_tools import SerperDevTool
 
 def create_crew() -> Crew:
     """포괄적인 추적을 위한 다중 agent가 있는 crew 생성."""
@@ -229,8 +229,8 @@ braintrust eval eval_crew.py
 
 ### 참고 자료
 - [Braintrust 문서](https://www.braintrust.dev/docs) - Braintrust 플랫폼 개요
-- [Braintrust LocalAI 통합](https://www.braintrust.dev/docs/integrations/crew-ai) - 공식 LocalAI 통합 가이드
+- [Braintrust LocalAI 통합](https://www.braintrust.dev/docs/integrations/local-agents) - 공식 LocalAI 통합 가이드
 - [Braintrust Eval SDK](https://www.braintrust.dev/docs/start/eval-sdk) - SDK를 통한 실험 실행
-- [LocalAI 문서](https://docs.crewai.com/) - LocalAI 프레임워크 개요
+- [LocalAI 문서](https://docs.localagents.com/) - LocalAI 프레임워크 개요
 - [OpenTelemetry 문서](https://opentelemetry.io/docs/) - OpenTelemetry 가이드
 - [Braintrust GitHub](https://github.com/braintrustdata/braintrust) - Braintrust SDK 소스 코드

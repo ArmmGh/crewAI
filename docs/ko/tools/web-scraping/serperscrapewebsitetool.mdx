@@ -15,14 +15,14 @@ mode: "wide"
 
 `SerperScrapeWebsiteTool`을 효과적으로 사용하려면 다음 단계를 따르세요:
 
-1. **패키지 설치**: Python 환경에 `crewai[tools]` 패키지가 설치되어 있는지 확인합니다.
+1. **패키지 설치**: Python 환경에 `localagents[tools]` 패키지가 설치되어 있는지 확인합니다.
 2. **API 키 획득**: `serper.dev`에 계정을 등록하여 `serper.dev` API 키를 획득합니다.
 3. **환경 구성**: 획득한 API 키를 `SERPER_API_KEY`라는 환경 변수에 저장하여 도구에서 사용할 수 있도록 합니다.
 
 이 도구를 프로젝트에 포함시키려면 아래 설치 안내를 따르세요:
 
 ```shell
-pip install 'crewai[tools]'
+pip install 'localagents[tools]'
 ```
 
 ## 예시
@@ -30,7 +30,7 @@ pip install 'crewai[tools]'
 다음 예시는 도구를 초기화하고 웹사이트를 스크랩하는 방법을 보여줍니다:
 
 ```python Code
-from crewai_tools import SerperScrapeWebsiteTool
+from localagents_tools import SerperScrapeWebsiteTool
 
 # Initialize the tool for website scraping capabilities
 tool = SerperScrapeWebsiteTool()
@@ -51,19 +51,19 @@ result = tool.run(url="https://example.com", include_markdown=True)
 여기 다양한 매개변수와 함께 도구를 사용하는 방법을 보여주는 예시가 있습니다:
 
 ```python Code
-from crewai_tools import SerperScrapeWebsiteTool
+from localagents_tools import SerperScrapeWebsiteTool
 
 tool = SerperScrapeWebsiteTool()
 
 # 마크다운 형식으로 스크레이프 (기본값)
 markdown_result = tool.run(
-    url="https://docs.crewai.com",
+    url="https://docs.localagents.com",
     include_markdown=True
 )
 
 # 일반 텍스트용 마크다운 미포함 스크레이프
 plain_result = tool.run(
-    url="https://docs.crewai.com",
+    url="https://docs.localagents.com",
     include_markdown=False
 )
 

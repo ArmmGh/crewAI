@@ -37,7 +37,7 @@ Understanding which type you're deploying is essential because they have differe
 | **Main logic location** | `src/project_name/crew.py` | `src/project_name/main.py` (Flow class) |
 | **Entry point function** | `run()` in `main.py` | `kickoff()` in `main.py` |
 | **pyproject.toml type** | `type = "crew"` | `type = "flow"` |
-| **CLI create command** | `crewai create crew name` | `crewai create flow name` |
+| **CLI create command** | `localagents create crew name` | `localagents create flow name` |
 | **Config location** | `src/project_name/config/` | `src/project_name/crews/crew_name/config/` |
 | **Can contain other crews** | No | Yes (in `crews/` folder) |
 
@@ -45,7 +45,7 @@ Understanding which type you're deploying is essential because they have differe
 
 ### Crew Project Structure
 
-When you run `crewai create crew my_crew`, you get this structure:
+When you run `localagents create crew my_crew`, you get this structure:
 
 ```
 my_crew/
@@ -74,7 +74,7 @@ my_crew/
 
 ### Flow Project Structure
 
-When you run `crewai create flow my_flow`, you get this structure:
+When you run `localagents create flow my_flow`, you get this structure:
 
 ```
 my_flow/
@@ -111,18 +111,18 @@ Use this checklist to verify your project is ready for deployment.
 
 ### 1. Verify pyproject.toml Configuration
 
-Your `pyproject.toml` must include the correct `[tool.crewai]` section:
+Your `pyproject.toml` must include the correct `[tool.localagents]` section:
 
 <Tabs>
   <Tab title="For Crews">
     ```toml
-    [tool.crewai]
+    [tool.localagents]
     type = "crew"
     ```
   </Tab>
   <Tab title="For Flows">
     ```toml
-    [tool.crewai]
+    [tool.localagents]
     type = "flow"
     ```
   </Tab>
@@ -162,9 +162,9 @@ git push
 - Crews embedded inside Flow projects
 
 ```python
-from crewai import Agent, Crew, Process, Task
-from crewai.project import CrewBase, agent, crew, task
-from crewai.agents.agent_builder.base_agent import BaseAgent
+from localagents import Agent, Crew, Process, Task
+from localagents.project import CrewBase, agent, crew, task
+from localagents.agents.agent_builder.base_agent import BaseAgent
 from typing import List
 
 @CrewBase  # This decorator is REQUIRED
@@ -229,7 +229,7 @@ Both Crews and Flows have their entry point in `src/project_name/main.py`:
 
     ```python
     # src/my_flow/main.py
-    from crewai.flow import Flow, listen, start
+    from localagents.flow import Flow, listen, start
     from my_flow.crews.poem_crew.poem_crew import PoemCrew
 
     class MyFlow(Flow):
@@ -273,7 +273,7 @@ Run these commands from your project root to quickly verify your setup:
 
 ```bash
 # 1. Check project type in pyproject.toml
-grep -A2 "\[tool.crewai\]" pyproject.toml
+grep -A2 "\[tool.localagents\]" pyproject.toml
 
 # 2. Verify uv.lock exists
 ls -la uv.lock || echo "ERROR: uv.lock missing! Run 'uv lock'"

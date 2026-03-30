@@ -43,10 +43,10 @@ mode: "wide"
 
 ## التثبيت
 
-قم بتثبيت حزمة crewai_tools
+قم بتثبيت حزمة localagents_tools
 
 ```shell
-pip install 'crewai[tools]'
+pip install 'localagents[tools]'
 ```
 
 ## الاستخدام
@@ -54,7 +54,7 @@ pip install 'crewai[tools]'
 لاستخدام أداة NL2SQLTool، تحتاج إلى تمرير عنوان URI لقاعدة البيانات إلى الأداة. يجب أن يكون العنوان بصيغة `dialect+driver://username:password@host:port/database`.
 
 ```python Code
-from crewai_tools import NL2SQLTool
+from localagents_tools import NL2SQLTool
 
 # psycopg2 was installed to run this example with PostgreSQL
 nl2sql = NL2SQLTool(db_uri="postgresql://example@localhost:5432/test_db")
@@ -76,8 +76,8 @@ def researcher(self) -> Agent:
 
 حاول الوكيل الحصول على المعلومات من قاعدة البيانات، الاستعلام الأول كان خاطئاً فحاول الوكيل مرة أخرى وحصل على المعلومات الصحيحة ومررها إلى الوكيل التالي.
 
-![alt text](https://github.com/localAIInc/localAI-tools/blob/main/crewai_tools/tools/nl2sql/images/image-2.png?raw=true)
-![alt text](https://github.com/localAIInc/localAI-tools/raw/main/crewai_tools/tools/nl2sql/images/image-3.png)
+![alt text](https://github.com/localAIInc/localAI-tools/blob/main/localagents_tools/tools/nl2sql/images/image-2.png?raw=true)
+![alt text](https://github.com/localAIInc/localAI-tools/raw/main/localagents_tools/tools/nl2sql/images/image-3.png)
 
 
 كان هدف المهمة الثانية:
@@ -86,11 +86,11 @@ def researcher(self) -> Agent:
 
 الآن تصبح الأمور مثيرة للاهتمام، حيث يولّد الوكيل استعلام SQL ليس فقط لإنشاء الجدول بل أيضاً لإدراج البيانات فيه. وفي النهاية لا يزال الوكيل يُرجع التقرير النهائي الذي يتطابق تماماً مع ما كان في قاعدة البيانات.
 
-![alt text](https://github.com/localAIInc/localAI-tools/raw/main/crewai_tools/tools/nl2sql/images/image-4.png)
-![alt text](https://github.com/localAIInc/localAI-tools/raw/main/crewai_tools/tools/nl2sql/images/image-5.png)
+![alt text](https://github.com/localAIInc/localAI-tools/raw/main/localagents_tools/tools/nl2sql/images/image-4.png)
+![alt text](https://github.com/localAIInc/localAI-tools/raw/main/localagents_tools/tools/nl2sql/images/image-5.png)
 
-![alt text](https://github.com/localAIInc/localAI-tools/raw/main/crewai_tools/tools/nl2sql/images/image-9.png)
-![alt text](https://github.com/localAIInc/localAI-tools/raw/main/crewai_tools/tools/nl2sql/images/image-7.png)
+![alt text](https://github.com/localAIInc/localAI-tools/raw/main/localagents_tools/tools/nl2sql/images/image-9.png)
+![alt text](https://github.com/localAIInc/localAI-tools/raw/main/localagents_tools/tools/nl2sql/images/image-7.png)
 
 
 هذا مثال بسيط على كيفية استخدام أداة NL2SQLTool للتفاعل مع قاعدة البيانات وتوليد التقارير بناءً على البيانات الموجودة فيها.

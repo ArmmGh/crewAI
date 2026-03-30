@@ -34,7 +34,7 @@ from outlook_message_crew import OutlookMessageTrigger
 
 crew = OutlookMessageTrigger().crew()
 crew.kickoff({
-    "crewai_trigger_payload": outlook_payload,
+    "localagents_trigger_payload": outlook_payload,
 })
 ```
 
@@ -46,16 +46,16 @@ crew.kickoff({
 
 ```bash
 # عرض جميع المشغلات المتاحة
-crewai triggers list
+localagents triggers list
 
 # محاكاة مشغل Outlook بحمولة واقعية
-crewai triggers run microsoft_outlook/email_received
+localagents triggers run microsoft_outlook/email_received
 ```
 
-سينفذ أمر `crewai triggers run` طاقمك بحمولة Outlook كاملة، مما يتيح لك اختبار منطق التحليل قبل النشر.
+سينفذ أمر `localagents triggers run` طاقمك بحمولة Outlook كاملة، مما يتيح لك اختبار منطق التحليل قبل النشر.
 
 <Warning>
-  استخدم `crewai triggers run microsoft_outlook/email_received` (وليس `crewai run`)
+  استخدم `localagents triggers run microsoft_outlook/email_received` (وليس `localagents run`)
   لمحاكاة تنفيذ المشغل أثناء التطوير. بعد النشر، سيتلقى طاقمك
   حمولة المشغل تلقائياً.
 </Warning>
@@ -63,7 +63,7 @@ crewai triggers run microsoft_outlook/email_received
 ## استكشاف الأخطاء وإصلاحها
 
 - تحقق من أن موصل Outlook لا يزال مفوّضاً؛ يجب تجديد الاشتراك دورياً
-- اختبر محلياً بـ `crewai triggers run microsoft_outlook/email_received` لرؤية هيكل الحمولة بالضبط
+- اختبر محلياً بـ `localagents triggers run microsoft_outlook/email_received` لرؤية هيكل الحمولة بالضبط
 - إذا كانت المرفقات مفقودة، تأكد من أن اشتراك webhook يتضمن علامة `includeResourceData`
 - راجع سجلات التنفيذ عندما تفشل الأحداث في المطابقة — حمولات الإلغاء تفتقد قوائم الحاضرين حسب التصميم ويجب أن يأخذ الطاقم ذلك في الاعتبار
-- تذكر: استخدم `crewai triggers run` (وليس `crewai run`) لمحاكاة تنفيذ المشغل
+- تذكر: استخدم `localagents triggers run` (وليس `localagents run`) لمحاكاة تنفيذ المشغل

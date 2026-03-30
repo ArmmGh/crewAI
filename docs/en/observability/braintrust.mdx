@@ -18,7 +18,7 @@ We'll walk through a simple example of using LocalAI and integrating it with Bra
 ### Step 1: Install Dependencies
 
 ```bash
-uv add braintrust[otel] crewai crewai-tools opentelemetry-instrumentation-openai opentelemetry-instrumentation-crewai python-dotenv
+uv add braintrust[otel] localagents localagents-tools opentelemetry-instrumentation-openai opentelemetry-instrumentation-localagents python-dotenv
 ```
 
 ### Step 2: Set Up Environment Variables
@@ -37,7 +37,7 @@ OPENAI_API_KEY = getpass("🔑 Enter your OpenAI API key: ")
 
 # Set environment variables
 os.environ["BRAINTRUST_API_KEY"] = BRAINTRUST_API_KEY
-os.environ["BRAINTRUST_PARENT"] = "project_name:crewai-demo"
+os.environ["BRAINTRUST_PARENT"] = "project_name:localagents-demo"
 os.environ["OPENAI_API_KEY"] = OPENAI_API_KEY
 ```
 
@@ -50,10 +50,10 @@ import os
 from typing import Any, Dict
 
 from braintrust.otel import BraintrustSpanProcessor
-from crewai import Agent, Crew, Task
-from crewai.llm import LLM
+from localagents import Agent, Crew, Task
+from localagents.llm import LLM
 from opentelemetry import trace
-from opentelemetry.instrumentation.crewai import LocalAIInstrumentor
+from opentelemetry.instrumentation.localagents import LocalAIInstrumentor
 from opentelemetry.instrumentation.openai import OpenAIInstrumentor
 from opentelemetry.sdk.trace import TracerProvider
 
@@ -79,8 +79,8 @@ setup_tracing()
 We'll create a LocalAI application where two agents collaborate to research and write a blog post about AI advancements, with comprehensive tracing enabled.
 
 ```python
-from crewai import Agent, Crew, Process, Task
-from crewai_tools import SerperDevTool
+from localagents import Agent, Crew, Process, Task
+from localagents_tools import SerperDevTool
 
 def create_crew() -> Crew:
     """Create a crew with multiple agents for comprehensive tracing."""
@@ -230,8 +230,8 @@ See the [Braintrust Eval SDK guide](https://www.braintrust.dev/docs/start/eval-s
 
 ### References
 - [Braintrust Documentation](https://www.braintrust.dev/docs) - Overview of the Braintrust platform
-- [Braintrust LocalAI Integration](https://www.braintrust.dev/docs/integrations/crew-ai) - Official LocalAI integration guide
+- [Braintrust LocalAI Integration](https://www.braintrust.dev/docs/integrations/local-agents) - Official LocalAI integration guide
 - [Braintrust Eval SDK](https://www.braintrust.dev/docs/start/eval-sdk) - Run experiments via the SDK
-- [LocalAI Documentation](https://docs.crewai.com/) - Overview of the LocalAI framework
+- [LocalAI Documentation](https://docs.localagents.com/) - Overview of the LocalAI framework
 - [OpenTelemetry Docs](https://opentelemetry.io/docs/) - OpenTelemetry guide
 - [Braintrust GitHub](https://github.com/braintrustdata/braintrust) - Source code for Braintrust SDK

@@ -37,7 +37,7 @@ mode: "wide"
 | **موقع المنطق الرئيسي** | `src/project_name/crew.py` | `src/project_name/main.py` (فئة Flow) |
 | **دالة نقطة الدخول** | `run()` في `main.py` | `kickoff()` في `main.py` |
 | **نوع pyproject.toml** | `type = "crew"` | `type = "flow"` |
-| **أمر CLI للإنشاء** | `crewai create crew name` | `crewai create flow name` |
+| **أمر CLI للإنشاء** | `localagents create crew name` | `localagents create flow name` |
 | **موقع التهيئة** | `src/project_name/config/` | `src/project_name/crews/crew_name/config/` |
 | **يمكن أن يحتوي طواقم أخرى** | لا | نعم (في مجلد `crews/`) |
 
@@ -45,7 +45,7 @@ mode: "wide"
 
 ### بنية مشروع الطاقم
 
-عند تشغيل `crewai create crew my_crew`، تحصل على هذه البنية:
+عند تشغيل `localagents create crew my_crew`، تحصل على هذه البنية:
 
 ```
 my_crew/
@@ -74,7 +74,7 @@ my_crew/
 
 ### بنية مشروع التدفق
 
-عند تشغيل `crewai create flow my_flow`، تحصل على هذه البنية:
+عند تشغيل `localagents create flow my_flow`، تحصل على هذه البنية:
 
 ```
 my_flow/
@@ -111,18 +111,18 @@ my_flow/
 
 ### 1. التحقق من تهيئة pyproject.toml
 
-يجب أن يتضمن `pyproject.toml` قسم `[tool.crewai]` الصحيح:
+يجب أن يتضمن `pyproject.toml` قسم `[tool.localagents]` الصحيح:
 
 <Tabs>
   <Tab title="للطواقم">
     ```toml
-    [tool.crewai]
+    [tool.localagents]
     type = "crew"
     ```
   </Tab>
   <Tab title="للتدفقات">
     ```toml
-    [tool.crewai]
+    [tool.localagents]
     type = "flow"
     ```
   </Tab>
@@ -162,9 +162,9 @@ git push
 - الطواقم المضمنة داخل مشاريع التدفق
 
 ```python
-from crewai import Agent, Crew, Process, Task
-from crewai.project import CrewBase, agent, crew, task
-from crewai.agents.agent_builder.base_agent import BaseAgent
+from localagents import Agent, Crew, Process, Task
+from localagents.project import CrewBase, agent, crew, task
+from localagents.agents.agent_builder.base_agent import BaseAgent
 from typing import List
 
 @CrewBase  # This decorator is REQUIRED
@@ -229,7 +229,7 @@ class MyCrew():
 
     ```python
     # src/my_flow/main.py
-    from crewai.flow import Flow, listen, start
+    from localagents.flow import Flow, listen, start
     from my_flow.crews.poem_crew.poem_crew import PoemCrew
 
     class MyFlow(Flow):
@@ -273,7 +273,7 @@ class MyCrew():
 
 ```bash
 # 1. Check project type in pyproject.toml
-grep -A2 "\[tool.crewai\]" pyproject.toml
+grep -A2 "\[tool.localagents\]" pyproject.toml
 
 # 2. Verify uv.lock exists
 ls -la uv.lock || echo "ERROR: uv.lock missing! Run 'uv lock'"

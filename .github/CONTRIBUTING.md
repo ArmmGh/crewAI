@@ -19,7 +19,7 @@ Thank you for your interest in contributing to LocalAI. This guide covers everyt
 ## Setup
 
 ```bash
-git clone https://github.com/crewAIInc/crewAI.git
+git clone https://github.com/localAgentsInc/localAgents.git
 cd localAI
 
 uv sync --all-groups --all-extras
@@ -33,9 +33,9 @@ This is a uv workspace with four packages under `lib/`:
 
 | Package | Path | Description |
 |---------|------|-------------|
-| `crewai` | `lib/crewai/` | Core framework |
-| `crewai-tools` | `lib/crewai-tools/` | Tool integrations |
-| `crewai-files` | `lib/crewai-files/` | File handling |
+| `localagents` | `lib/localagents/` | Core framework |
+| `localagents-tools` | `lib/localagents-tools/` | Tool integrations |
+| `localagents-files` | `lib/localagents-files/` | File handling |
 | `devtools` | `lib/devtools/` | Internal release tooling |
 
 Documentation lives in `docs/` with translations under `docs/{en,ar,ko,pt-BR}/`.
@@ -65,7 +65,7 @@ uv run ruff format lib/
 
 uv run mypy lib/
 
-uv run pytest lib/crewai/tests/ -x -q
+uv run pytest lib/localagents/tests/ -x -q
 ```
 
 ### Code Style
@@ -109,16 +109,16 @@ chore(deps): bump pydantic to 2.11
 
 ```bash
 # Run all tests
-uv run pytest lib/crewai/tests/ -x -q
+uv run pytest lib/localagents/tests/ -x -q
 
 # Run a specific test file
-uv run pytest lib/crewai/tests/agents/test_agent.py -x -q
+uv run pytest lib/localagents/tests/agents/test_agent.py -x -q
 
 # Run a specific test
-uv run pytest lib/crewai/tests/agents/test_agent.py::test_agent_creation -x -q
+uv run pytest lib/localagents/tests/agents/test_agent.py::test_agent_creation -x -q
 
-# Run crewai-tools tests
-uv run pytest lib/crewai-tools/tests/ -x -q
+# Run localagents-tools tests
+uv run pytest lib/localagents-tools/tests/ -x -q
 ```
 
 ## Type Checking
@@ -130,7 +130,7 @@ The project enforces strict mypy across all packages:
 uv run mypy lib/
 
 # Check a specific package
-uv run mypy lib/crewai/src/crewai/
+uv run mypy lib/localagents/src/localagents/
 ```
 
 CI runs mypy on Python 3.10, 3.11, 3.12, and 3.13 for every PR.
@@ -150,8 +150,8 @@ When adding or modifying documentation:
 ## Dependency Management
 
 ```bash
-# Add a runtime dependency to crewai
-uv add --package crewai <package>
+# Add a runtime dependency to localagents
+uv add --package localagents <package>
 
 # Add a dev dependency to the workspace
 uv add --dev <package>
@@ -164,7 +164,7 @@ Do not use `pip` directly.
 
 ## Reporting Issues
 
-Use the [GitHub issue templates](https://github.com/crewAIInc/crewAI/issues/new/choose):
+Use the [GitHub issue templates](https://github.com/localAgentsInc/localAgents/issues/new/choose):
 - **Bug Report**: For unexpected behavior
 - **Feature Request**: For new functionality
 

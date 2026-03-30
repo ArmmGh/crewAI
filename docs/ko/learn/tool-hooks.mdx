@@ -84,7 +84,7 @@ def wrong_approach(context: ToolCallHookContext) -> None:
 더 깔끔한 구문을 위해 데코레이터를 사용합니다:
 
 ```python
-from crewai.hooks import before_tool_call, after_tool_call
+from localagents.hooks import before_tool_call, after_tool_call
 
 @before_tool_call
 def block_dangerous_tools(context):
@@ -108,9 +108,9 @@ def sanitize_results(context):
 특정 크루 인스턴스에 대한 훅을 등록합니다:
 
 ```python
-from crewai import CrewBase
-from crewai.project import crew
-from crewai.hooks import before_tool_call_crew, after_tool_call_crew
+from localagents import CrewBase
+from localagents.project import crew
+from localagents.hooks import before_tool_call_crew, after_tool_call_crew
 
 @CrewBase
 class MyProjCrew:
@@ -350,7 +350,7 @@ def debug_tool_result(context: ToolCallHookContext) -> None:
 ### 훅 등록 해제
 
 ```python
-from crewai.hooks import (
+from localagents.hooks import (
     unregister_before_tool_call_hook,
     unregister_after_tool_call_hook
 )
@@ -368,7 +368,7 @@ print(f"등록 해제됨: {success}")
 ### 훅 지우기
 
 ```python
-from crewai.hooks import (
+from localagents.hooks import (
     clear_before_tool_call_hooks,
     clear_after_tool_call_hooks,
     clear_all_tool_call_hooks
@@ -457,7 +457,7 @@ def safe_validation(context: ToolCallHookContext) -> bool | None:
 ## 타입 안전성
 
 ```python
-from crewai.hooks import ToolCallHookContext, BeforeToolCallHookType, AfterToolCallHookType
+from localagents.hooks import ToolCallHookContext, BeforeToolCallHookType, AfterToolCallHookType
 
 # 명시적 타입 주석
 def my_before_hook(context: ToolCallHookContext) -> bool | None:

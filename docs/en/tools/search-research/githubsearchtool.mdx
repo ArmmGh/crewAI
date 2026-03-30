@@ -17,13 +17,13 @@ The GithubSearchTool is a Retrieval-Augmented Generation (RAG) tool specifically
 
 ## Installation
 
-To use the GithubSearchTool, first ensure the crewai_tools package is installed in your Python environment:
+To use the GithubSearchTool, first ensure the localagents_tools package is installed in your Python environment:
 
 ```shell
-pip install 'crewai[tools]'
+pip install 'localagents[tools]'
 ```
 
-This command installs the necessary package to run the GithubSearchTool along with any other tools included in the crewai_tools package.
+This command installs the necessary package to run the GithubSearchTool along with any other tools included in the localagents_tools package.
 
 Get a GitHub Personal Access Token at https://github.com/settings/tokens (Developer settings → Fine‑grained tokens or classic tokens).
 
@@ -32,7 +32,7 @@ Get a GitHub Personal Access Token at https://github.com/settings/tokens (Develo
 Here’s how you can use the GithubSearchTool to perform semantic searches within a GitHub repository:
 
 ```python Code
-from crewai_tools import GithubSearchTool
+from localagents_tools import GithubSearchTool
 
 # Initialize the tool for semantic searches within a specific GitHub repository
 tool = GithubSearchTool(

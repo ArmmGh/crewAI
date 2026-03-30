@@ -4,14 +4,14 @@ description: Enables LocalAI agents to invoke LocalAI Platform automations and l
 icon: robot
 ---
 
-# `InvokeCrewAIAutomationTool`
+# `InvokeLocalAgentsAutomationTool`
 
-The `InvokeCrewAIAutomationTool` provides LocalAI Platform API integration with external crew services. This tool allows you to invoke and interact with LocalAI Platform automations from within your LocalAI agents, enabling seamless integration between different crew workflows.
+The `InvokeLocalAgentsAutomationTool` provides LocalAI Platform API integration with external crew services. This tool allows you to invoke and interact with LocalAI Platform automations from within your LocalAI agents, enabling seamless integration between different crew workflows.
 
 ## Installation
 
 ```bash
-uv pip install 'crewai[tools]'
+uv pip install 'localagents[tools]'
 ```
 
 ## Requirements
@@ -25,12 +25,12 @@ uv pip install 'crewai[tools]'
 Here's how to use the tool with a LocalAI agent:
 
 ```python {2, 4-9}
-from crewai import Agent, Task, Crew
-from crewai_tools import InvokeCrewAIAutomationTool
+from localagents import Agent, Task, Crew
+from localagents_tools import InvokeLocalAgentsAutomationTool
 
 # Initialize the tool
-automation_tool = InvokeCrewAIAutomationTool(
-    crew_api_url="https://data-analysis-crew-[...].crewai.com",
+automation_tool = InvokeLocalAgentsAutomationTool(
+    crew_api_url="https://data-analysis-crew-[...].localagents.com",
     crew_bearer_token="your_bearer_token_here",
     crew_name="Data Analysis Crew",
     crew_description="Analyzes data and generates insights"
@@ -78,8 +78,8 @@ print(result)
 ## Environment Variables
 
 ```bash
-CREWAI_API_URL=https://your-crew-automation.crewai.com  # Alternative to passing crew_api_url
-CREWAI_BEARER_TOKEN=your_bearer_token_here              # Alternative to passing crew_bearer_token
+LOCALAGENTS_API_URL=https://your-crew-automation.localagents.com  # Alternative to passing crew_api_url
+LOCALAGENTS_BEARER_TOKEN=your_bearer_token_here              # Alternative to passing crew_bearer_token
 ```
 
 ## Advanced Usage
@@ -87,8 +87,8 @@ CREWAI_BEARER_TOKEN=your_bearer_token_here              # Alternative to passing
 ### Custom Input Schema with Dynamic Parameters
 
 ```python {2, 4-15}
-from crewai import Agent, Task, Crew
-from crewai_tools import InvokeCrewAIAutomationTool
+from localagents import Agent, Task, Crew
+from localagents_tools import InvokeLocalAgentsAutomationTool
 from pydantic import Field
 
 # Define custom input schema
@@ -99,8 +99,8 @@ custom_inputs = {
 }
 
 # Create tool with custom inputs
-market_research_tool = InvokeCrewAIAutomationTool(
-    crew_api_url="https://state-of-ai-report-crew-[...].crewai.com",
+market_research_tool = InvokeLocalAgentsAutomationTool(
+    crew_api_url="https://state-of-ai-report-crew-[...].localagents.com",
     crew_bearer_token="your_bearer_token_here",
     crew_name="State of AI Report",
     crew_description="Retrieves a comprehensive report on state of AI for a given year and region",
@@ -135,26 +135,26 @@ result = crew.kickoff()
 ### Multi-Stage Automation Workflow
 
 ```python {2, 4-35}
-from crewai import Agent, Task, Crew, Process
-from crewai_tools import InvokeCrewAIAutomationTool
+from localagents import Agent, Task, Crew, Process
+from localagents_tools import InvokeLocalAgentsAutomationTool
 
 # Initialize different automation tools
-data_collection_tool = InvokeCrewAIAutomationTool(
-    crew_api_url="https://data-collection-crew-[...].crewai.com",
+data_collection_tool = InvokeLocalAgentsAutomationTool(
+    crew_api_url="https://data-collection-crew-[...].localagents.com",
     crew_bearer_token="your_bearer_token_here",
     crew_name="Data Collection Automation",
     crew_description="Collects and preprocesses raw data"
 )
 
-analysis_tool = InvokeCrewAIAutomationTool(
-    crew_api_url="https://analysis-crew-[...].crewai.com",
+analysis_tool = InvokeLocalAgentsAutomationTool(
+    crew_api_url="https://analysis-crew-[...].localagents.com",
     crew_bearer_token="your_bearer_token_here",
     crew_name="Analysis Automation",
     crew_description="Performs advanced data analysis and modeling"
 )
 
-reporting_tool = InvokeCrewAIAutomationTool(
-    crew_api_url="https://reporting-crew-[...].crewai.com",
+reporting_tool = InvokeLocalAgentsAutomationTool(
+    crew_api_url="https://reporting-crew-[...].localagents.com",
     crew_bearer_token="your_bearer_token_here",
     crew_name="Reporting Automation",
     crew_description="Generates comprehensive reports and visualizations"

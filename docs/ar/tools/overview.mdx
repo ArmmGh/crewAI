@@ -117,7 +117,7 @@ mode: "wide"
 3. **تكوين** أي مفاتيح API أو إعدادات مطلوبة
 
 ```python
-from crewai_tools import FileReadTool, SerperDevTool
+from localagents_tools import FileReadTool, SerperDevTool
 
 # Add tools to your agent
 agent = Agent(
@@ -132,7 +132,7 @@ agent = Agent(
 يمكنك تعيين حد أقصى لعدد استخدامات الأداة لمنع استخدامها أكثر من عدد معين من المرات. بشكل افتراضي، الحد الأقصى لعدد الاستخدامات غير محدود.
 
 ```python
-from crewai_tools import FileReadTool
+from localagents_tools import FileReadTool
 
 tool = FileReadTool(max_usage_count=5, ...)
 ```

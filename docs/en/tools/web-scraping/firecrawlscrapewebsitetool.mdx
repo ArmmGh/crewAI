@@ -14,10 +14,10 @@ mode: "wide"
 ## Installation
 
 - Get an API key from [firecrawl.dev](https://firecrawl.dev) and set it in environment variables (`FIRECRAWL_API_KEY`).
-- Install the [Firecrawl SDK](https://github.com/mendableai/firecrawl) along with `crewai[tools]` package:
+- Install the [Firecrawl SDK](https://github.com/mendableai/firecrawl) along with `localagents[tools]` package:
 
 ```shell
-pip install firecrawl-py 'crewai[tools]'
+pip install firecrawl-py 'localagents[tools]'
 ```
 
 ## Example
@@ -25,7 +25,7 @@ pip install firecrawl-py 'crewai[tools]'
 Utilize the FirecrawlScrapeWebsiteTool as follows to allow your agent to load websites:
 
 ```python Code
-from crewai_tools import FirecrawlScrapeWebsiteTool
+from localagents_tools import FirecrawlScrapeWebsiteTool
 
 tool = FirecrawlScrapeWebsiteTool(url='firecrawl.dev')
 ```

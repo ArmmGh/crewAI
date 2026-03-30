@@ -17,7 +17,7 @@ Tracing provides a way to record the inputs, outputs, and metadata associated wi
 ### Features
 
 - **Tracing Dashboard**: Monitor activities of your localAI agents with detailed dashboards that include inputs, outputs and metadata of spans.
-- **Automated Tracing**: A fully automated integration with localAI, which can be enabled by running `mlflow.crewai.autolog()`. 
+- **Automated Tracing**: A fully automated integration with localAI, which can be enabled by running `mlflow.localagents.autolog()`. 
 - **Manual Trace Instrumentation with minor efforts**: Customize trace instrumentation through MLflow's high-level fluent APIs such as decorators, function wrappers and context managers.
 - **OpenTelemetry Compatibility**: MLflow Tracing supports exporting traces to an OpenTelemetry Collector, which can then be used to export traces to various backends such as Jaeger, Zipkin, and AWS X-Ray.
 - **Package and Deploy Agents**: Package and deploy your localAI agents to an inference server with a variety of deployment targets.
@@ -45,7 +45,7 @@ Tracing provides a way to record the inputs, outputs, and metadata associated wi
       ```python
       import mlflow
 
-      mlflow.crewai.autolog()
+      mlflow.localagents.autolog()
 
       # Optional: Set a tracking URI and an experiment name if you have a tracking server
       mlflow.set_tracking_uri("http://localhost:5000")
@@ -55,9 +55,9 @@ Tracing provides a way to record the inputs, outputs, and metadata associated wi
       Example Usage for tracing LocalAI Agents:
 
       ```python
-      from crewai import Agent, Crew, Task
-      from crewai.knowledge.source.string_knowledge_source import StringKnowledgeSource
-      from crewai_tools import SerperDevTool, WebsiteSearchTool
+      from localagents import Agent, Crew, Task
+      from localagents.knowledge.source.string_knowledge_source import StringKnowledgeSource
+      from localagents_tools import SerperDevTool, WebsiteSearchTool
 
       from textwrap import dedent
 
@@ -200,7 +200,7 @@ Tracing provides a way to record the inputs, outputs, and metadata associated wi
 
       Open `127.0.0.1:5000` on your browser to visit MLflow tracking server. 
       <Frame caption="MLflow Tracing Dashboard">
-        <img src="/images/mlflow1.png" alt="MLflow tracing example with crewai" />
+        <img src="/images/mlflow1.png" alt="MLflow tracing example with localagents" />
       </Frame>
     </Step>
 </Steps> 

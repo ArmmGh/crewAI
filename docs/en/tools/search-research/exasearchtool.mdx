@@ -12,7 +12,7 @@ The `EXASearchTool` lets LocalAI agents search the web using the [Exa](https://e
 Install the LocalAI tools package:
 
 ```shell
-pip install 'crewai[tools]'
+pip install 'localagents[tools]'
 ```
 
 ## Environment Variables
@@ -31,8 +31,8 @@ Here's how to use the `EXASearchTool` within a LocalAI agent:
 
 ```python
 import os
-from crewai import Agent, Task, Crew
-from crewai_tools import EXASearchTool
+from localagents import Agent, Task, Crew
+from localagents_tools import EXASearchTool
 
 # Initialize the tool
 exa_tool = EXASearchTool()

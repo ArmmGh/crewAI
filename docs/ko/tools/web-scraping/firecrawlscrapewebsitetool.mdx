@@ -14,10 +14,10 @@ mode: "wide"
 ## 설치
 
 - [firecrawl.dev](https://firecrawl.dev)에서 API 키를 받아 환경 변수(`FIRECRAWL_API_KEY`)에 설정합니다.
-- [Firecrawl SDK](https://github.com/mendableai/firecrawl)와 `crewai[tools]` 패키지를 설치합니다:
+- [Firecrawl SDK](https://github.com/mendableai/firecrawl)와 `localagents[tools]` 패키지를 설치합니다:
 
 ```shell
-pip install firecrawl-py 'crewai[tools]'
+pip install firecrawl-py 'localagents[tools]'
 ```
 
 ## 예시
@@ -25,7 +25,7 @@ pip install firecrawl-py 'crewai[tools]'
 FirecrawlScrapeWebsiteTool을 다음과 같이 활용하여 에이전트가 웹사이트를 불러올 수 있도록 합니다:
 
 ```python Code
-from crewai_tools import FirecrawlScrapeWebsiteTool
+from localagents_tools import FirecrawlScrapeWebsiteTool
 
 tool = FirecrawlScrapeWebsiteTool(url='firecrawl.dev')
 ```

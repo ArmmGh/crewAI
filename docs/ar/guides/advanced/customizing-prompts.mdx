@@ -26,7 +26,7 @@ mode: "wide"
 - **معالجة الأخطاء** – توجيه كيفية استجابة الـ Agents للإخفاقات والاستثناءات وحالات انتهاء المهلة.
 - **مطالبات خاصة بالأدوات** – تعريف تعليمات مفصلة لكيفية استدعاء الأدوات أو استخدامها.
 
-اطلع على [قوالب المطالبات الأصلية في مستودع LocalAI](https://github.com/localAIInc/localAI/blob/main/src/crewai/translations/en.json) لمعرفة كيفية تنظيم هذه العناصر. من هناك، يمكنك تجاوزها أو تكييفها حسب الحاجة لفتح سلوكيات متقدمة.
+اطلع على [قوالب المطالبات الأصلية في مستودع LocalAI](https://github.com/localAIInc/localAI/blob/main/src/localagents/translations/en.json) لمعرفة كيفية تنظيم هذه العناصر. من هناك، يمكنك تجاوزها أو تكييفها حسب الحاجة لفتح سلوكيات متقدمة.
 
 ## فهم تعليمات النظام الافتراضية
 
@@ -65,8 +65,8 @@ Ensure the final output does not include any code block markers like ```json or 
 لمعرفة المطالبة المرسلة بالضبط إلى LLM، يمكنك فحص المطالبة المولّدة:
 
 ```python
-from crewai import Agent, Crew, Task
-from crewai.utilities.prompts import Prompts
+from localagents import Agent, Crew, Task
+from localagents.utilities.prompts import Prompts
 
 # Create your agent
 agent = Agent(
@@ -115,7 +115,7 @@ print(f"Expected Output: {task.expected_output}")
 
 #### الخيار 1: القوالب المخصصة (مُوصى به)
 ```python
-from crewai import Agent
+from localagents import Agent
 
 # Define your own system template without default instructions
 custom_system_template = """You are {role}. {backstory}
@@ -223,7 +223,7 @@ agent = Agent(
 ثم ادمجه هكذا:
 
 ```python
-from crewai import Agent, Crew, Task, Process
+from localagents import Agent, Crew, Task, Process
 
 # Create agents and tasks as normal
 researcher = Agent(
@@ -265,8 +265,8 @@ https://www.llama.com/docs/model-cards-and-prompt-formats/llama3_1/#prompt-templ
 إليك مثالاً يوضح كيف يمكنك ضبط Agent للاستفادة من Llama 3.3 في الكود:
 
 ```python
-from crewai import Agent, Crew, Task, Process
-from crewai_tools import DirectoryReadTool, FileReadTool
+from localagents import Agent, Crew, Task, Process
+from localagents_tools import DirectoryReadTool, FileReadTool
 
 # Define templates for system, user (prompt), and assistant (response) messages
 system_template = """<|begin_of_text|><|start_header_id|>system<|end_header_id|>{{ .System }}<|eot_id|>"""

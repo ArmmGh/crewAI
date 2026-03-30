@@ -5,7 +5,7 @@ LocalAI ecosystem.
 
 ### How to Report
 
-Please submit reports to **crewai-vdp-ess@submit.bugcrowd.com**
+Please submit reports to **localagents-vdp-ess@submit.bugcrowd.com**
 
 - **Please do not** disclose vulnerabilities via public GitHub issues, pull requests,
   or social media

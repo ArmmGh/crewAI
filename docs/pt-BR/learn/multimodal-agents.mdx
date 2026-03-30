@@ -14,7 +14,7 @@ O LocalAI suporta agentes multimodais que podem processar tanto conteúdo textua
 Para criar um agente multimodal, basta definir o parâmetro `multimodal` como `True` ao inicializar seu agente:
 
 ```python
-from crewai import Agent
+from localagents import Agent
 
 agent = Agent(
     role="Image Analyst",
@@ -33,7 +33,7 @@ O agente multimodal vem pré-configurado com a `AddImageTool`, permitindo que el
 Aqui está um exemplo completo mostrando como usar um agente multimodal para analisar uma imagem:
 
 ```python
-from crewai import Agent, Task, Crew
+from localagents import Agent, Task, Crew
 
 # Create a multimodal agent
 image_analyst = Agent(
@@ -64,7 +64,7 @@ result = crew.kickoff()
 Você pode fornecer contexto adicional ou perguntas específicas sobre a imagem ao criar tarefas para agentes multimodais. A descrição da tarefa pode incluir aspectos específicos nos quais você deseja que o agente foque:
 
 ```python
-from crewai import Agent, Task, Crew
+from localagents import Agent, Task, Crew
 
 # Create a multimodal agent for detailed analysis
 expert_analyst = Agent(

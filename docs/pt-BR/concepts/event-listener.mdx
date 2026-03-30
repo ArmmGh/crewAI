@@ -13,7 +13,7 @@ O LocalAI oferece um sistema de eventos poderoso que permite escutar e reagir a 
 
 O LocalAI utiliza uma arquitetura de event bus para emitir eventos ao longo do ciclo de vida da execução. O sistema de eventos é construído a partir dos seguintes componentes:
 
-1. **CrewAIEventsBus**: Um event bus singleton que gerencia o registro e emissão de eventos
+1. **LocalAgentsEventsBus**: Um event bus singleton que gerencia o registro e emissão de eventos
 2. **BaseEvent**: Classe base para todos os eventos do sistema
 3. **BaseEventListener**: Classe base abstrata para criar listeners de evento personalizados
 
@@ -46,28 +46,28 @@ Para criar um listener de evento personalizado, você precisa:
 Veja um exemplo simples de uma classe de listener de evento personalizado:
 
 ```python
-from crewai.events import (
+from localagents.events import (
     CrewKickoffStartedEvent,
     CrewKickoffCompletedEvent,
     AgentExecutionCompletedEvent,
 )
-from crewai.events import BaseEventListener
+from localagents.events import BaseEventListener
 
 class MeuListenerPersonalizado(BaseEventListener):
     def __init__(self):
         super().__init__()
 
-    def setup_listeners(self, crewai_event_bus):
-        @crewai_event_bus.on(CrewKickoffStartedEvent)
+    def setup_listeners(self, localagents_event_bus):
+        @localagents_event_bus.on(CrewKickoffStartedEvent)
         def ao_iniciar_crew(source, event):
             print(f"Crew '{event.crew_name}' iniciou a execução!")
 
-        @crewai_event_bus.on(CrewKickoffCompletedEvent)
+        @localagents_event_bus.on(CrewKickoffCompletedEvent)
         def ao_finalizar_crew(source, event):
             print(f"Crew '{event.crew_name}' finalizou a execução!")
             print(f"Saída: {event.output}")
 
-        @crewai_event_bus.on(AgentExecutionCompletedEvent)
+        @localagents_event_bus.on(AgentExecutionCompletedEvent)
         def ao_finalizar_execucao_agente(source, event):
             print(f"Agente '{event.agent.role}' concluiu a tarefa")
             print(f"Saída: {event.output}")
@@ -91,7 +91,7 @@ Crie e importe seu listener no início do arquivo de implementação do seu Crew
 
 ```python
 # No seu arquivo crew.py
-from crewai import Agent, Crew, Task
+from localagents import Agent, Crew, Task
 from my_listeners import MyCustomListener
 
 # Crie uma instância do seu listener
@@ -114,7 +114,7 @@ Crie e importe seu listener no início do arquivo de implementação do seu Flow
 
 ```python
 # Em seu arquivo main.py ou flow.py
-from crewai.flow import Flow, listen, start
+from localagents.flow import Flow, listen, start
 from my_listeners import MyCustomListener
 
 # Crie uma instância do seu listener
@@ -148,7 +148,7 @@ my_project/
 
 ```python
 # my_custom_listener.py
-from crewai.events import BaseEventListener
+from localagents.events import BaseEventListener
 # ... importe events ...
 
 class MyCustomListener(BaseEventListener):
@@ -381,10 +381,10 @@ Campos adicionais variam pelo tipo de evento. Por exemplo, `CrewKickoffCompleted
 Para lidar temporariamente com eventos (útil para testes ou operações específicas), você pode usar o context manager `scoped_handlers`:
 
 ```python
-from crewai.events import crewai_event_bus, CrewKickoffStartedEvent
+from localagents.events import localagents_event_bus, CrewKickoffStartedEvent
 
-with crewai_event_bus.scoped_handlers():
-    @crewai_event_bus.on(CrewKickoffStartedEvent)
+with localagents_event_bus.scoped_handlers():
+    @localagents_event_bus.on(CrewKickoffStartedEvent)
     def temp_handler(source, event):
         print("Este handler só existe neste contexto")
 

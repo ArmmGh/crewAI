@@ -35,7 +35,7 @@ mode: "wide"
 
 <Tabs>
   <Tab title="1. متغيرات البيئة">
-    أبسط طريقة للبدء. عيّن النموذج في بيئتك مباشرة، من خلال ملف `.env` أو في كود تطبيقك. إذا استخدمت `crewai create` لبدء مشروعك، سيكون مُعيّنًا بالفعل.
+    أبسط طريقة للبدء. عيّن النموذج في بيئتك مباشرة، من خلال ملف `.env` أو في كود تطبيقك. إذا استخدمت `localagents create` لبدء مشروعك، سيكون مُعيّنًا بالفعل.
 
     ```bash .env
     MODEL=model-id  # e.g. gpt-4o, gemini-2.0-flash, claude-3-sonnet-...
@@ -73,7 +73,7 @@ mode: "wide"
     لأقصى مرونة، أعدّ LLMs مباشرة في كود Python:
 
     ```python {4,8}
-    from crewai import LLM
+    from localagents import LLM
 
     # Basic configuration
     llm = LLM(model="model-id-here")  # gpt-4o, gemini-2.0-flash, anthropic/claude...
@@ -107,11 +107,11 @@ mode: "wide"
 </Tabs>
 
 <Info>
-  يوفر LocalAI تكاملات SDK أصلية لـ OpenAI و Anthropic و Google (Gemini API) و Azure و AWS Bedrock -- لا حاجة لتثبيت إضافي بخلاف الملحقات الخاصة بالمزود (مثل `uv add "crewai[openai]"`).
+  يوفر LocalAI تكاملات SDK أصلية لـ OpenAI و Anthropic و Google (Gemini API) و Azure و AWS Bedrock -- لا حاجة لتثبيت إضافي بخلاف الملحقات الخاصة بالمزود (مثل `uv add "localagents[openai]"`).
 
   جميع المزودين الآخرين مدعومون بواسطة **LiteLLM**. إذا كنت تخطط لاستخدام أي منهم، أضفه كتبعية لمشروعك:
   ```bash
-  uv add 'crewai[litellm]'
+  uv add 'localagents[litellm]'
   ```
 </Info>
 
@@ -134,7 +134,7 @@ mode: "wide"
 
     **الاستخدام الأساسي:**
     ```python Code
-    from crewai import LLM
+    from localagents import LLM
 
     llm = LLM(
         model="openai/gpt-4o",
@@ -146,7 +146,7 @@ mode: "wide"
 
     **الإعداد المتقدم:**
     ```python Code
-    from crewai import LLM
+    from localagents import LLM
 
     llm = LLM(
         model="openai/gpt-4o",
@@ -174,7 +174,7 @@ mode: "wide"
     **المخرجات المهيكلة:**
     ```python Code
     from pydantic import BaseModel
-    from crewai import LLM
+    from localagents import LLM
 
     class ResponseFormat(BaseModel):
         name: str
@@ -221,7 +221,7 @@ mode: "wide"
     تقدم OpenAI واجهتي API: Chat Completions (الافتراضية) و Responses API الأحدث. تم تصميم Responses API من الأساس مع دعم أصلي متعدد الوسائط -- النص والصور والصوت واستدعاءات الدوال كلها مكوّنات أساسية. توفر أداءً أفضل مع نماذج الاستدلال وتدعم ميزات إضافية مثل السلسلة التلقائية والأدوات المدمجة.
 
     ```python Code
-    from crewai import LLM
+    from localagents import LLM
 
     # Use the Responses API instead of Chat Completions
     llm = LLM(
@@ -249,13 +249,13 @@ mode: "wide"
 
     **ملاحظة:** لاستخدام OpenAI، ثبّت التبعيات المطلوبة:
     ```bash
-    uv add "crewai[openai]"
+    uv add "localagents[openai]"
     ```
   </Accordion>
 
   <Accordion title="Meta-Llama">
     توفر Meta Llama API الوصول إلى عائلة نماذج اللغة الكبيرة من Meta.
-    الـ API متاحة عبر [Meta Llama API](https://llama.developer.meta.com?utm_source=partner-crewai&utm_medium=website).
+    الـ API متاحة عبر [Meta Llama API](https://llama.developer.meta.com?utm_source=partner-localagents&utm_medium=website).
     عيّن متغيرات البيئة التالية في ملف `.env`:
 
     ```toml Code
@@ -265,7 +265,7 @@ mode: "wide"
 
     مثال الاستخدام في مشروع LocalAI:
     ```python Code
-    from crewai import LLM
+    from localagents import LLM
 
     # Initialize Meta Llama LLM
     llm = LLM(
@@ -287,7 +287,7 @@ mode: "wide"
 
     **ملاحظة:** يستخدم هذا المزود LiteLLM. أضفه كتبعية لمشروعك:
     ```bash
-    uv add 'crewai[litellm]'
+    uv add 'localagents[litellm]'
     ```
   </Accordion>
 
@@ -301,7 +301,7 @@ mode: "wide"
 
     **الاستخدام الأساسي:**
     ```python Code
-    from crewai import LLM
+    from localagents import LLM
 
     llm = LLM(
         model="anthropic/claude-3-5-sonnet-20241022",
@@ -312,7 +312,7 @@ mode: "wide"
 
     **الإعداد المتقدم:**
     ```python Code
-    from crewai import LLM
+    from localagents import LLM
 
     llm = LLM(
         model="anthropic/claude-3-5-sonnet-20241022",
@@ -333,7 +333,7 @@ mode: "wide"
     يدعم LocalAI ميزة التفكير الموسّع من Anthropic، التي تتيح لـ Claude التفكير في المشكلات بطريقة أكثر شبهًا بالبشر قبل الاستجابة. مفيد بشكل خاص لمهام الاستدلال والتحليل وحل المشكلات المعقدة.
 
     ```python Code
-    from crewai import LLM
+    from localagents import LLM
 
     # Enable extended thinking with default settings
     llm = LLM(
@@ -406,7 +406,7 @@ mode: "wide"
 
     **ملاحظة:** لاستخدام Anthropic، ثبّت التبعيات المطلوبة:
     ```bash
-    uv add "crewai[anthropic]"
+    uv add "localagents[anthropic]"
     ```
   </Accordion>
 
@@ -431,7 +431,7 @@ mode: "wide"
 
     **الاستخدام الأساسي:**
     ```python Code
-    from crewai import LLM
+    from localagents import LLM
 
     llm = LLM(
         model="gemini/gemini-2.0-flash",
@@ -442,7 +442,7 @@ mode: "wide"
 
     **الإعداد المتقدم:**
     ```python Code
-    from crewai import LLM
+    from localagents import LLM
 
     llm = LLM(
         model="gemini/gemini-2.5-flash",
@@ -472,7 +472,7 @@ mode: "wide"
 
     ثم استخدم LLM كالمعتاد:
     ```python Code
-    from crewai import LLM
+    from localagents import LLM
 
     llm = LLM(
         model="gemini/gemini-2.0-flash",
@@ -490,7 +490,7 @@ mode: "wide"
 
     **إعداد Vertex AI (حساب خدمة):**
     ```python Code
-    from crewai import LLM
+    from localagents import LLM
 
     llm = LLM(
         model="gemini/gemini-1.5-pro",
@@ -530,7 +530,7 @@ mode: "wide"
 
     **ملاحظة:** لاستخدام Google Gemini، ثبّت التبعيات المطلوبة:
     ```bash
-    uv add "crewai[google-genai]"
+    uv add "localagents[google-genai]"
     ```
 
     القائمة الكاملة للنماذج متاحة في [وثائق نماذج Gemini](https://ai.google.dev/gemini-api/docs/models).
@@ -553,7 +553,7 @@ mode: "wide"
 
     مثال الاستخدام في مشروع LocalAI:
     ```python Code
-    from crewai import LLM
+    from localagents import LLM
 
     llm = LLM(
         model="gemini-1.5-pro-latest", # or vertex_ai/gemini-1.5-pro-latest
@@ -564,7 +564,7 @@ mode: "wide"
 
     **ملاحظة:** يستخدم هذا المزود LiteLLM. أضفه كتبعية لمشروعك:
     ```bash
-    uv add 'crewai[litellm]'
+    uv add 'localagents[litellm]'
     ```
   </Accordion>
 
@@ -592,7 +592,7 @@ mode: "wide"
 
     **ملاحظة:** لاستخدام Azure AI Inference، ثبّت التبعيات المطلوبة:
     ```bash
-    uv add "crewai[azure-ai-inference]"
+    uv add "localagents[azure-ai-inference]"
     ```
   </Accordion>
 
@@ -612,7 +612,7 @@ mode: "wide"
 
     **الاستخدام الأساسي:**
     ```python Code
-    from crewai import LLM
+    from localagents import LLM
 
     llm = LLM(
         model="bedrock/anthropic.claude-3-5-sonnet-20241022-v2:0",
@@ -622,7 +622,7 @@ mode: "wide"
 
     **الإعداد المتقدم:**
     ```python Code
-    from crewai import LLM
+    from localagents import LLM
 
     llm = LLM(
         model="bedrock/anthropic.claude-3-5-sonnet-20241022-v2:0",
@@ -704,7 +704,7 @@ mode: "wide"
 
     **ملاحظة:** لاستخدام AWS Bedrock، ثبّت التبعيات المطلوبة:
     ```bash
-    uv add "crewai[bedrock]"
+    uv add "localagents[bedrock]"
     ```
   </Accordion>
 
@@ -724,7 +724,7 @@ mode: "wide"
 
     **ملاحظة:** يستخدم هذا المزود LiteLLM. أضفه كتبعية لمشروعك:
     ```bash
-    uv add 'crewai[litellm]'
+    uv add 'localagents[litellm]'
     ```
   </Accordion>
 
@@ -744,7 +744,7 @@ mode: "wide"
 
     **ملاحظة:** يستخدم هذا المزود LiteLLM. أضفه كتبعية لمشروعك:
     ```bash
-    uv add 'crewai[litellm]'
+    uv add 'localagents[litellm]'
     ```
   </Accordion>
 
@@ -835,7 +835,7 @@ mode: "wide"
 
     **ملاحظة:** يستخدم هذا المزود LiteLLM. أضفه كتبعية لمشروعك:
     ```bash
-    uv add 'crewai[litellm]'
+    uv add 'localagents[litellm]'
     ```
   </Accordion>
 
@@ -851,10 +851,10 @@ mode: "wide"
 
     2. ثبّت النموذج المحلي. لـ Llama 3.1-8b اتبع [التعليمات](https://build.nvidia.com/meta/llama-3_1-8b-instruct/deploy)
 
-    3. أعدّ نماذج crewai المحلية:
+    3. أعدّ نماذج localagents المحلية:
 
     ```python Code
-    from crewai.llm import LLM
+    from localagents.llm import LLM
 
     local_nvidia_nim_llm = LLM(
         model="openai/meta/llama-3.1-8b-instruct", # it's an openai-api compatible model
@@ -880,7 +880,7 @@ mode: "wide"
 
     **ملاحظة:** يستخدم هذا المزود LiteLLM. أضفه كتبعية لمشروعك:
     ```bash
-    uv add 'crewai[litellm]'
+    uv add 'localagents[litellm]'
     ```
   </Accordion>
 
@@ -906,7 +906,7 @@ mode: "wide"
 
     **ملاحظة:** يستخدم هذا المزود LiteLLM. أضفه كتبعية لمشروعك:
     ```bash
-    uv add 'crewai[litellm]'
+    uv add 'localagents[litellm]'
     ```
   </Accordion>
 
@@ -933,7 +933,7 @@ mode: "wide"
 
     **ملاحظة:** يستخدم هذا المزود LiteLLM. أضفه كتبعية لمشروعك:
     ```bash
-    uv add 'crewai[litellm]'
+    uv add 'localagents[litellm]'
     ```
   </Accordion>
 
@@ -951,7 +951,7 @@ mode: "wide"
 
     **ملاحظة:** يستخدم هذا المزود LiteLLM. أضفه كتبعية لمشروعك:
     ```bash
-    uv add 'crewai[litellm]'
+    uv add 'localagents[litellm]'
     ```
   </Accordion>
 
@@ -971,7 +971,7 @@ mode: "wide"
 
     **ملاحظة:** يستخدم هذا المزود LiteLLM. أضفه كتبعية لمشروعك:
     ```bash
-    uv add 'crewai[litellm]'
+    uv add 'localagents[litellm]'
     ```
   </Accordion>
 
@@ -991,7 +991,7 @@ mode: "wide"
 
     **ملاحظة:** يستخدم هذا المزود LiteLLM. أضفه كتبعية لمشروعك:
     ```bash
-    uv add 'crewai[litellm]'
+    uv add 'localagents[litellm]'
     ```
   </Accordion>
 
@@ -1010,7 +1010,7 @@ mode: "wide"
 
     **ملاحظة:** يستخدم هذا المزود LiteLLM. أضفه كتبعية لمشروعك:
     ```bash
-    uv add 'crewai[litellm]'
+    uv add 'localagents[litellm]'
     ```
   </Accordion>
 
@@ -1038,7 +1038,7 @@ mode: "wide"
 
     **ملاحظة:** يستخدم هذا المزود LiteLLM. أضفه كتبعية لمشروعك:
     ```bash
-    uv add 'crewai[litellm]'
+    uv add 'localagents[litellm]'
     ```
   </Accordion>
 
@@ -1068,7 +1068,7 @@ mode: "wide"
 
     **ملاحظة:** يستخدم هذا المزود LiteLLM. أضفه كتبعية لمشروعك:
     ```bash
-    uv add 'crewai[litellm]'
+    uv add 'localagents[litellm]'
     ```
   </Accordion>
 
@@ -1095,7 +1095,7 @@ mode: "wide"
 
     **ملاحظة:** يستخدم هذا المزود LiteLLM. أضفه كتبعية لمشروعك:
     ```bash
-    uv add 'crewai[litellm]'
+    uv add 'localagents[litellm]'
     ```
   </Accordion>
 
@@ -1122,7 +1122,7 @@ mode: "wide"
 
     **ملاحظة:** يستخدم هذا المزود LiteLLM. أضفه كتبعية لمشروعك:
     ```bash
-    uv add 'crewai[litellm]'
+    uv add 'localagents[litellm]'
     ```
   </Accordion>
 </AccordionGroup>
@@ -1136,7 +1136,7 @@ mode: "wide"
     فعّل البث بتعيين معامل `stream` إلى `True` عند تهيئة LLM:
 
     ```python
-    from crewai import LLM
+    from localagents import LLM
 
     # Create an LLM with streaming enabled
     llm = LLM(
@@ -1152,14 +1152,14 @@ mode: "wide"
     يُصدر LocalAI أحداثًا لكل جزء يتم تلقيه أثناء البث:
 
     ```python
-    from crewai.events import (
+    from localagents.events import (
       LLMStreamChunkEvent
     )
-    from crewai.events import BaseEventListener
+    from localagents.events import BaseEventListener
 
     class MyCustomListener(BaseEventListener):
-        def setup_listeners(self, crewai_event_bus):
-            @crewai_event_bus.on(LLMStreamChunkEvent)
+        def setup_listeners(self, localagents_event_bus):
+            @localagents_event_bus.on(LLMStreamChunkEvent)
             def on_llm_stream_chunk(self, event: LLMStreamChunkEvent):
               # Process each chunk as it arrives
               print(f"Received chunk: {event.chunk}")
@@ -1176,13 +1176,13 @@ mode: "wide"
     جميع أحداث LLM في LocalAI تتضمن معلومات Agent والمهمة، مما يتيح لك تتبع وتصفية تفاعلات LLM بواسطة وكلاء أو مهام محددة:
 
     ```python
-    from crewai import LLM, Agent, Task, Crew
-    from crewai.events import LLMStreamChunkEvent
-    from crewai.events import BaseEventListener
+    from localagents import LLM, Agent, Task, Crew
+    from localagents.events import LLMStreamChunkEvent
+    from localagents.events import BaseEventListener
 
     class MyCustomListener(BaseEventListener):
-        def setup_listeners(self, crewai_event_bus):
-            @crewai_event_bus.on(LLMStreamChunkEvent)
+        def setup_listeners(self, localagents_event_bus):
+            @localagents_event_bus.on(LLMStreamChunkEvent)
             def on_llm_stream_chunk(source, event):
                 if researcher.id == event.agent_id:
                     print("\n==============\n Got event:", event, "\n==============\n")
@@ -1232,7 +1232,7 @@ mode: "wide"
 
     ```python
     import asyncio
-    from crewai import LLM
+    from localagents import LLM
 
     async def main():
         llm = LLM(model="openai/gpt-4o")
@@ -1252,7 +1252,7 @@ mode: "wide"
 
     ```python
     import asyncio
-    from crewai import LLM
+    from localagents import LLM
 
     async def stream_async():
         llm = LLM(model="openai/gpt-4o", stream=True)
@@ -1271,7 +1271,7 @@ mode: "wide"
 يدعم LocalAI الاستجابات المهيكلة من استدعاءات LLM من خلال السماح لك بتحديد `response_format` باستخدام نموذج Pydantic. يمكّن هذا الإطار من تحليل المخرجات والتحقق منها تلقائيًا، مما يسهّل دمج الاستجابة في تطبيقك دون معالجة لاحقة يدوية.
 
 ```python Code
-from crewai import LLM
+from localagents import LLM
 
 class Dog(BaseModel):
     name: str
@@ -1300,7 +1300,7 @@ print(response)
     يتضمن LocalAI ميزات إدارة سياق ذكية:
 
     ```python
-    from crewai import LLM
+    from localagents import LLM
 
     # LocalAI automatically handles:
     # 1. Token counting and tracking
@@ -1362,7 +1362,7 @@ print(response)
     يستخدم LocalAI داخليًا حزم SDK أصلية لاستدعاءات LLM، مما يتيح لك إسقاط معاملات إضافية غير مطلوبة لحالة الاستخدام الخاصة بك. يمكن أن يساعد هذا في تبسيط كودك وتقليل تعقيد إعداد LLM.
 
     ```python
-    from crewai import LLM
+    from localagents import LLM
     import os
 
     os.environ["OPENAI_API_KEY"] = "<api-key>"
@@ -1385,8 +1385,8 @@ print(response)
     **الاستخدام الأساسي:**
     ```python
 import httpx
-from crewai import LLM
-from crewai.llms.hooks import BaseInterceptor
+from localagents import LLM
+from localagents.llms.hooks import BaseInterceptor
 
 class CustomInterceptor(BaseInterceptor[httpx.Request, httpx.Response]):
     """Custom interceptor to modify requests and responses."""

@@ -85,7 +85,7 @@ def wrong_approach(context: LLMCallHookContext) -> None:
 더 깔끔한 구문을 위해 데코레이터를 사용합니다:
 
 ```python
-from crewai.hooks import before_llm_call, after_llm_call
+from localagents.hooks import before_llm_call, after_llm_call
 
 @before_llm_call
 def validate_iteration_count(context):
@@ -108,9 +108,9 @@ def sanitize_response(context):
 특정 크루 인스턴스에 대한 훅을 등록합니다:
 
 ```python
-from crewai import CrewBase
-from crewai.project import crew
-from crewai.hooks import before_llm_call_crew, after_llm_call_crew
+from localagents import CrewBase
+from localagents.project import crew
+from localagents.hooks import before_llm_call_crew, after_llm_call_crew
 
 @CrewBase
 class MyProjCrew:
@@ -254,7 +254,7 @@ def debug_response(context: LLMCallHookContext) -> None:
 ### 훅 등록 해제
 
 ```python
-from crewai.hooks import (
+from localagents.hooks import (
     unregister_before_llm_call_hook,
     unregister_after_llm_call_hook
 )
@@ -271,7 +271,7 @@ unregister_before_llm_call_hook(my_hook)  # 찾으면 True 반환
 ### 훅 지우기
 
 ```python
-from crewai.hooks import (
+from localagents.hooks import (
     clear_before_llm_call_hooks,
     clear_after_llm_call_hooks,
     clear_all_llm_call_hooks
@@ -377,7 +377,7 @@ def safe_hook(context: LLMCallHookContext) -> bool | None:
 ## 타입 안전성
 
 ```python
-from crewai.hooks import LLMCallHookContext, BeforeLLMCallHookType, AfterLLMCallHookType
+from localagents.hooks import LLMCallHookContext, BeforeLLMCallHookType, AfterLLMCallHookType
 
 # 명시적 타입 주석
 def my_before_hook(context: LLMCallHookContext) -> bool | None:

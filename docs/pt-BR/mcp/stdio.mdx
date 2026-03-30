@@ -23,8 +23,8 @@ Você pode se conectar a um servidor MCP baseado em Stdio usando duas abordagens
 Usar um context manager do Python (declaração `with`) é a abordagem recomendada. Ela lida automaticamente com o início do processo do servidor MCP e sua finalização quando o contexto é encerrado.
 
 ```python
-from crewai import Agent, Task, Crew, Process
-from crewai_tools import MCPServerAdapter
+from localagents import Agent, Task, Crew, Process
+from localagents_tools import MCPServerAdapter
 from mcp import StdioServerParameters
 import os
 
@@ -76,8 +76,8 @@ Você **DEVE** chamar `mcp_server_adapter.stop()` para garantir que o processo d
 </Info>
 
 ```python
-from crewai import Agent, Task, Crew, Process
-from crewai_tools import MCPServerAdapter
+from localagents import Agent, Task, Crew, Process
+from localagents_tools import MCPServerAdapter
 from mcp import StdioServerParameters
 import os
 

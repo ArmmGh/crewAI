@@ -52,9 +52,9 @@ After creating your LocalAI project as outlined in the [Installation](/en/instal
 #### Example Crew Class with Decorators
 
 ```python code
-from crewai import Agent, Crew, Task, Process
-from crewai.project import CrewBase, agent, task, crew, before_kickoff, after_kickoff
-from crewai.agents.agent_builder.base_agent import BaseAgent
+from localagents import Agent, Crew, Task, Process
+from localagents.project import CrewBase, agent, task, crew, before_kickoff, after_kickoff
+from localagents.agents.agent_builder.base_agent import BaseAgent
 from typing import List
 
 @CrewBase
@@ -66,8 +66,8 @@ class YourCrewName:
 
     # Paths to your YAML configuration files
     # To see an example agent and task defined in YAML, checkout the following:
-    # - Task: https://docs.crewai.com/concepts/tasks#yaml-configuration-recommended
-    # - Agents: https://docs.crewai.com/concepts/agents#yaml-configuration-recommended
+    # - Task: https://docs.localagents.com/concepts/tasks#yaml-configuration-recommended
+    # - Agents: https://docs.localagents.com/concepts/agents#yaml-configuration-recommended
     agents_config = 'config/agents.yaml'
     tasks_config = 'config/tasks.yaml'
 
@@ -149,8 +149,8 @@ These decorators help in organizing your crew's structure and automatically coll
 Alternatively, you can define the crew directly in code without using YAML configuration files.
 
 ```python code
-from crewai import Agent, Crew, Task, Process
-from crewai_tools import YourCustomTool
+from localagents import Agent, Crew, Task, Process
+from localagents_tools import YourCustomTool
 
 class YourCrewName:
     def agent_one(self) -> Agent:
@@ -392,7 +392,7 @@ Learn more about streaming in the [Streaming Crew Execution](/en/learn/streaming
 
 You can now replay from a specific task using our CLI command `replay`.
 
-The replay feature in LocalAI allows you to replay from a specific task using the command-line interface (CLI). By running the command `crewai replay -t <task_id>`, you can specify the `task_id` for the replay process.
+The replay feature in LocalAI allows you to replay from a specific task using the command-line interface (CLI). By running the command `localagents replay -t <task_id>`, you can specify the `task_id` for the replay process.
 
 Kickoffs will now save the latest kickoffs returned task outputs locally for you to be able to replay from.
 
@@ -407,13 +407,13 @@ To use the replay feature, follow these steps:
 To view the latest kickoff task IDs, use:
 
 ```shell
-crewai log-tasks-outputs
+localagents log-tasks-outputs
 ```
 
 Then, to replay from a specific task, use:
 
 ```shell
-crewai replay -t <task_id>
+localagents replay -t <task_id>
 ```
 
 These commands let you replay from your latest kickoff tasks, still retaining context from previously executed tasks.

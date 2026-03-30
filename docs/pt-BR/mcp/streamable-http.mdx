@@ -24,8 +24,8 @@ Você tem dois métodos principais para gerenciar o ciclo de vida da conexão co
 A abordagem recomendada é usar um gerenciador de contexto Python (`with` statement), que lida automaticamente com a configuração e encerramento da conexão.
 
 ```python
-from crewai import Agent, Task, Crew, Process
-from crewai_tools import MCPServerAdapter
+from localagents import Agent, Task, Crew, Process
+from localagents_tools import MCPServerAdapter
 
 server_params = {
     "url": "http://localhost:8001/mcp", # Replace with your actual Streamable HTTP server URL
@@ -76,8 +76,8 @@ Para cenários que exigem controle mais explícito, você pode gerenciar a conex
 </Info>
 
 ```python
-from crewai import Agent, Task, Crew, Process
-from crewai_tools import MCPServerAdapter
+from localagents import Agent, Task, Crew, Process
+from localagents_tools import MCPServerAdapter
 
 server_params = {
     "url": "http://localhost:8001/mcp", # Replace with your actual Streamable HTTP server URL

@@ -14,9 +14,9 @@ Esta ferramenta permite que o Agente gere imagens com base no texto de entrada f
 
 ## Instalação
 
-Instale o pacote crewai_tools
+Instale o pacote localagents_tools
 ```shell
-pip install 'crewai[tools]'
+pip install 'localagents[tools]'
 ```
 
 ## Exemplo
@@ -24,7 +24,7 @@ pip install 'crewai[tools]'
 Lembre-se de que, ao usar esta ferramenta, o texto deve ser gerado pelo próprio Agente. O texto deve ser uma descrição da imagem que você deseja gerar.
 
 ```python Code
-from crewai_tools import DallETool
+from localagents_tools import DallETool
 
 Agent(
     ...
@@ -35,7 +35,7 @@ Agent(
 Se necessário, você também pode ajustar os parâmetros do modelo DALL-E passando-os como argumentos para a classe `DallETool`. Por exemplo:
 
 ```python Code
-from crewai_tools import DallETool
+from localagents_tools import DallETool
 
 dalle_tool = DallETool(model="dall-e-3",
                        size="1024x1024",

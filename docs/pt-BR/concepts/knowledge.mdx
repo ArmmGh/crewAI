@@ -28,8 +28,8 @@ Além disso, use caminhos relativos do diretório `knowledge` ao criar a fonte.
 ### Exemplo Básico de Knowledge com String
 
 ```python Code
-from crewai import Agent, Task, Crew, Process, LLM
-from crewai.knowledge.source.string_knowledge_source import StringKnowledgeSource
+from localagents import Agent, Task, Crew, Process, LLM
+from localagents.knowledge.source.string_knowledge_source import StringKnowledgeSource
 
 # Create a knowledge source
 content = "Users name is John. He is 30 years old and lives in San Francisco."
@@ -72,8 +72,8 @@ result = crew.kickoff(inputs={"question": "What city does John live in and how o
 </Note>
 
 ```python Code
-from crewai import LLM, Agent, Crew, Process, Task
-from crewai.knowledge.source.crew_docling_source import CrewDoclingSource
+from localagents import LLM, Agent, Crew, Process, Task
+from localagents.knowledge.source.crew_docling_source import CrewDoclingSource
 
 # Create a knowledge source from web content
 content_source = CrewDoclingSource(
@@ -134,7 +134,7 @@ O LocalAI suporta vários tipos de fontes de knowledge prontas para uso:
 
 ### Fonte de Knowledge de Arquivo de Texto
 ```python
-from crewai.knowledge.source.text_file_knowledge_source import TextFileKnowledgeSource
+from localagents.knowledge.source.text_file_knowledge_source import TextFileKnowledgeSource
 
 text_source = TextFileKnowledgeSource(
     file_paths=["document.txt", "another.txt"]
@@ -143,7 +143,7 @@ text_source = TextFileKnowledgeSource(
 
 ### Fonte de Knowledge PDF
 ```python
-from crewai.knowledge.source.pdf_knowledge_source import PDFKnowledgeSource
+from localagents.knowledge.source.pdf_knowledge_source import PDFKnowledgeSource
 
 pdf_source = PDFKnowledgeSource(
     file_paths=["document.pdf", "another.pdf"]
@@ -152,7 +152,7 @@ pdf_source = PDFKnowledgeSource(
 
 ### Fonte de Knowledge CSV
 ```python
-from crewai.knowledge.source.csv_knowledge_source import CSVKnowledgeSource
+from localagents.knowledge.source.csv_knowledge_source import CSVKnowledgeSource
 
 csv_source = CSVKnowledgeSource(
     file_paths=["data.csv"]
@@ -161,7 +161,7 @@ csv_source = CSVKnowledgeSource(
 
 ### Fonte de Knowledge Excel
 ```python
-from crewai.knowledge.source.excel_knowledge_source import ExcelKnowledgeSource
+from localagents.knowledge.source.excel_knowledge_source import ExcelKnowledgeSource
 
 excel_source = ExcelKnowledgeSource(
     file_paths=["spreadsheet.xlsx"]
@@ -170,7 +170,7 @@ excel_source = ExcelKnowledgeSource(
 
 ### Fonte de Knowledge JSON
 ```python
-from crewai.knowledge.source.json_knowledge_source import JSONKnowledgeSource
+from localagents.knowledge.source.json_knowledge_source import JSONKnowledgeSource
 
 json_source = JSONKnowledgeSource(
     file_paths=["data.json"]
@@ -193,8 +193,8 @@ Aqui está exatamente o que acontece quando você usa knowledge:
 
 #### Knowledge no Nível do Agente (Independente)
 ```python
-from crewai import Agent, Task, Crew
-from crewai.knowledge.source.string_knowledge_source import StringKnowledgeSource
+from localagents import Agent, Task, Crew
+from localagents.knowledge.source.string_knowledge_source import StringKnowledgeSource
 
 # Agent with its own knowledge - NO crew knowledge needed
 specialist_knowledge = StringKnowledgeSource(
@@ -257,8 +257,8 @@ crew_collection_name = "crew"
 
 #### Exemplo 1: Knowledge Apenas do Agente
 ```python
-from crewai import Agent, Task, Crew
-from crewai.knowledge.source.string_knowledge_source import StringKnowledgeSource
+from localagents import Agent, Task, Crew
+from localagents.knowledge.source.string_knowledge_source import StringKnowledgeSource
 
 # Agent-specific knowledge
 agent_knowledge = StringKnowledgeSource(
@@ -376,7 +376,7 @@ As fontes de knowledge no nível do agente serão usadas pelo **agente específi
 Você pode configurar a configuração de knowledge para a crew ou agente.
 
 ```python Code
-from crewai.knowledge.knowledge_config import KnowledgeConfig
+from localagents.knowledge.knowledge_config import KnowledgeConfig
 
 knowledge_config = KnowledgeConfig(results_limit=10, score_threshold=0.5)
 
@@ -447,7 +447,7 @@ C:\Users\{username}\AppData\Local\LocalAI\{project_name}\
 Para ver exatamente onde o LocalAI está armazenando seus arquivos de knowledge:
 
 ```python
-from crewai.utilities.paths import db_storage_path
+from localagents.utilities.paths import db_storage_path
 import os
 
 # Get the knowledge storage path
@@ -478,10 +478,10 @@ else:
 #### Opção 1: Variável de Ambiente (Recomendado)
 ```python
 import os
-from crewai import Crew
+from localagents import Crew
 
 # Set custom storage location for all LocalAI data
-os.environ["CREWAI_STORAGE_DIR"] = "./my_project_storage"
+os.environ["LOCALAGENTS_STORAGE_DIR"] = "./my_project_storage"
 
 # All knowledge will now be stored in ./my_project_storage/knowledge/
 crew = Crew(
@@ -493,8 +493,8 @@ crew = Crew(
 
 #### Opção 2: Armazenamento de Knowledge Personalizado
 ```python
-from crewai.knowledge.storage.knowledge_storage import KnowledgeStorage
-from crewai.knowledge.source.string_knowledge_source import StringKnowledgeSource
+from localagents.knowledge.storage.knowledge_storage import KnowledgeStorage
+from localagents.knowledge.source.string_knowledge_source import StringKnowledgeSource
 
 # Create custom storage with specific embedder
 custom_storage = KnowledgeStorage(
@@ -521,7 +521,7 @@ from pathlib import Path
 project_root = Path(__file__).parent
 knowledge_dir = project_root / "knowledge_storage"
 
-os.environ["CREWAI_STORAGE_DIR"] = str(knowledge_dir)
+os.environ["LOCALAGENTS_STORAGE_DIR"] = str(knowledge_dir)
 
 # Now all knowledge will be stored in your project directory
 ```
@@ -534,8 +534,8 @@ os.environ["CREWAI_STORAGE_DIR"] = str(knowledge_dir)
 
 #### Entendendo o Comportamento Padrão
 ```python
-from crewai import Agent, Crew, LLM
-from crewai.knowledge.source.string_knowledge_source import StringKnowledgeSource
+from localagents import Agent, Crew, LLM
+from localagents.knowledge.source.string_knowledge_source import StringKnowledgeSource
 
 # When using Claude as your LLM...
 agent = Agent(
@@ -682,19 +682,19 @@ O LocalAI emite eventos durante o processo de recuperação de knowledge que voc
 #### Exemplo: Monitorando Recuperação de Knowledge
 
 ```python
-from crewai.events import (
+from localagents.events import (
     KnowledgeRetrievalStartedEvent,
     KnowledgeRetrievalCompletedEvent,
     BaseEventListener,
 )
 
 class KnowledgeMonitorListener(BaseEventListener):
-    def setup_listeners(self, crewai_event_bus):
-        @crewai_event_bus.on(KnowledgeRetrievalStartedEvent)
+    def setup_listeners(self, localagents_event_bus):
+        @localagents_event_bus.on(KnowledgeRetrievalStartedEvent)
         def on_knowledge_retrieval_started(source, event):
             print(f"Agent '{event.agent.role}' started retrieving knowledge")
 
-        @crewai_event_bus.on(KnowledgeRetrievalCompletedEvent)
+        @localagents_event_bus.on(KnowledgeRetrievalCompletedEvent)
         def on_knowledge_retrieval_completed(source, event):
             print(f"Agent '{event.agent.role}' completed knowledge retrieval")
             print(f"Query: {event.query}")
@@ -715,8 +715,8 @@ O LocalAI permite que você crie fontes de knowledge personalizadas para qualque
 <CodeGroup>
 
 ```python Code
-from crewai import Agent, Task, Crew, Process, LLM
-from crewai.knowledge.source.base_knowledge_source import BaseKnowledgeSource
+from localagents import Agent, Task, Crew, Process, LLM
+from localagents.knowledge.source.base_knowledge_source import BaseKnowledgeSource
 import requests
 from datetime import datetime
 from typing import Dict, Any
@@ -836,8 +836,8 @@ The latest developments in space exploration, based on recent space news article
 
 #### Verificar Inicialização de Knowledge do Agente
 ```python
-from crewai import Agent, Crew, Task
-from crewai.knowledge.source.string_knowledge_source import StringKnowledgeSource
+from localagents import Agent, Crew, Task
+from localagents.knowledge.source.string_knowledge_source import StringKnowledgeSource
 
 knowledge_source = StringKnowledgeSource(content="Test knowledge")
 
@@ -864,7 +864,7 @@ print(f"Number of sources: {len(agent.knowledge.sources)}")
 #### Verificar Localizações de Armazenamento de Knowledge
 ```python
 import os
-from crewai.utilities.paths import db_storage_path
+from localagents.utilities.paths import db_storage_path
 
 # Check storage structure
 storage_path = db_storage_path()
@@ -898,7 +898,7 @@ if hasattr(agent, 'knowledge') and agent.knowledge:
 #### Inspecionar Coleções de Knowledge
 ```python
 import chromadb
-from crewai.utilities.paths import db_storage_path
+from localagents.utilities.paths import db_storage_path
 import os
 
 # Connect to LocalAI's knowledge ChromaDB
@@ -922,7 +922,7 @@ else:
 
 #### Verificar Processamento de Knowledge
 ```python
-from crewai.knowledge.source.string_knowledge_source import StringKnowledgeSource
+from localagents.knowledge.source.string_knowledge_source import StringKnowledgeSource
 
 # Create a test knowledge source
 test_source = StringKnowledgeSource(
@@ -948,7 +948,7 @@ for i, chunk in enumerate(test_source.chunks[:3]):  # Show first 3 chunks
 **Erros "Arquivo não encontrado":**
 ```python
 # Ensure files are in the correct location
-from crewai.utilities.constants import KNOWLEDGE_DIRECTORY
+from localagents.utilities.constants import KNOWLEDGE_DIRECTORY
 import os
 
 knowledge_dir = KNOWLEDGE_DIRECTORY  # Usually "knowledge"
@@ -985,9 +985,9 @@ chmod -R 755 ~/.local/share/LocalAI/
 ```python
 # Verify storage location consistency
 import os
-from crewai.utilities.paths import db_storage_path
+from localagents.utilities.paths import db_storage_path
 
-print("CREWAI_STORAGE_DIR:", os.getenv("CREWAI_STORAGE_DIR"))
+print("LOCALAGENTS_STORAGE_DIR:", os.getenv("LOCALAGENTS_STORAGE_DIR"))
 print("Computed storage path:", db_storage_path())
 print("Knowledge path:", os.path.join(db_storage_path(), "knowledge"))
 ```
@@ -1002,16 +1002,16 @@ crew.reset_memories(command_type='agent_knowledge')
 crew.reset_memories(command_type='knowledge')
 
 # CLI commands
-# crewai reset-memories --agent-knowledge  # Agent knowledge only
-# crewai reset-memories --knowledge        # All knowledge
+# localagents reset-memories --agent-knowledge  # Agent knowledge only
+# localagents reset-memories --knowledge        # All knowledge
 ```
 
 ### Limpando Knowledge
 
-Se você precisar limpar o knowledge armazenado no LocalAI, você pode usar o comando `crewai reset-memories` com a opção `--knowledge`.
+Se você precisar limpar o knowledge armazenado no LocalAI, você pode usar o comando `localagents reset-memories` com a opção `--knowledge`.
 
 ```bash Command
-crewai reset-memories --knowledge
+localagents reset-memories --knowledge
 ```
 
 Isso é útil quando você atualizou suas fontes de knowledge e quer garantir que os agentes estejam usando as informações mais recentes.
@@ -1049,7 +1049,7 @@ Isso é útil quando você atualizou suas fontes de knowledge e quer garantir qu
   </Accordion>
 
   <Accordion title="Melhores Práticas de Produção">
-    - Configure `CREWAI_STORAGE_DIR` para uma localização conhecida em produção
+    - Configure `LOCALAGENTS_STORAGE_DIR` para uma localização conhecida em produção
     - Escolha provedores de embedding explícitos para corresponder à sua configuração de LLM e evitar conflitos de chave de API
     - Monitore o tamanho do armazenamento de knowledge conforme ele cresce com adições de documentos
     - Organize fontes de knowledge por domínio ou propósito usando nomes de coleção

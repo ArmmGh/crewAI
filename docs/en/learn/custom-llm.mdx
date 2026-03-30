@@ -14,7 +14,7 @@ LocalAI supports custom LLM implementations through the `BaseLLM` abstract base 
 Here's a minimal custom LLM implementation:
 
 ```python
-from crewai import BaseLLM
+from localagents import BaseLLM
 from typing import Any, Dict, List, Optional, Union
 import requests
 
@@ -76,7 +76,7 @@ class CustomLLM(BaseLLM):
 ## Using Your Custom LLM
 
 ```python
-from crewai import Agent, Task, Crew
+from localagents import Agent, Task, Crew
 
 # Assuming you have the CustomLLM class defined above
 # Create your custom LLM
@@ -175,7 +175,7 @@ def call(self, messages, tools=None, callbacks=None, available_functions=None):
 ### Custom Authentication
 
 ```python
-from crewai import BaseLLM
+from localagents import BaseLLM
 from typing import Optional
 
 class CustomAuthLLM(BaseLLM):
@@ -315,7 +315,7 @@ def __init__(self, model: str, api_key: str, temperature: Optional[float] = None
 ## Testing Your Custom LLM
 
 ```python
-from crewai import Agent, Task, Crew
+from localagents import Agent, Task, Crew
 
 def test_custom_llm():
     llm = CustomLLM(

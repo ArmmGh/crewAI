@@ -135,9 +135,9 @@ MAXIM_LOG_REPO_ID=your_repo_id_here
 ### 2. Import the required packages
 
 ```python
-from crewai import Agent, Task, Crew, Process
+from localagents import Agent, Task, Crew, Process
 from maxim import Maxim
-from maxim.logger.crewai import instrument_crewai
+from maxim.logger.localagents import instrument_localagents
 ```
 
 ### 3. Initialise Maxim with your API key
@@ -145,7 +145,7 @@ from maxim.logger.crewai import instrument_crewai
 
 ```python {8}
 # Instrument LocalAI with just one line
-instrument_crewai(Maxim().logger())
+instrument_localagents(Maxim().logger())
 ```
 
 ### 4. Create and run your LocalAI application as usual
@@ -197,30 +197,30 @@ After running your LocalAI application:
    - Performance metrics
    - Cost analytics
 
-    <img src='https://raw.githubusercontent.com/akmadan/localAI/docs_maxim_observability/docs/images/crewai_traces.gif'> </img>
+    <img src='https://raw.githubusercontent.com/akmadan/localAI/docs_maxim_observability/docs/images/localagents_traces.gif'> </img>
 
 ## Troubleshooting
 
 ### Common Issues
 
 - **No traces appearing**: Ensure your API key and repository ID are correct
-- Ensure you've **`called instrument_crewai()`** **_before_** running your crew. This initializes logging hooks correctly.
-- Set `debug=True` in your `instrument_crewai()` call to surface any internal errors:
+- Ensure you've **`called instrument_localagents()`** **_before_** running your crew. This initializes logging hooks correctly.
+- Set `debug=True` in your `instrument_localagents()` call to surface any internal errors:
 
   ```python
-  instrument_crewai(logger, debug=True)
+  instrument_localagents(logger, debug=True)
   ```
 - Configure your agents with `verbose=True` to capture detailed logs:
 
   ```python
   agent = CrewAgent(..., verbose=True)
   ```
-- Double-check that `instrument_crewai()` is called **before** creating or executing agents. This might be obvious, but it's a common oversight.
+- Double-check that `instrument_localagents()` is called **before** creating or executing agents. This might be obvious, but it's a common oversight.
 
 ## Resources
 
 <CardGroup cols="3">
-  <Card title="LocalAI Docs" icon="book" href="https://docs.crewai.com/">
+  <Card title="LocalAI Docs" icon="book" href="https://docs.localagents.com/">
     Official LocalAI documentation
   </Card>
   <Card title="Maxim Docs" icon="book" href="https://getmaxim.ai/docs">

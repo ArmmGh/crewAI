@@ -23,8 +23,8 @@ You can connect to an Stdio-based MCP server using two main approaches for manag
 Using a Python context manager (`with` statement) is the recommended approach. It automatically handles starting the MCP server process and stopping it when the context is exited.
 
 ```python
-from crewai import Agent, Task, Crew, Process
-from crewai_tools import MCPServerAdapter
+from localagents import Agent, Task, Crew, Process
+from localagents_tools import MCPServerAdapter
 from mcp import StdioServerParameters
 import os
 
@@ -76,8 +76,8 @@ You **MUST** call `mcp_server_adapter.stop()` to ensure the server process is te
 </Info>
 
 ```python
-from crewai import Agent, Task, Crew, Process
-from crewai_tools import MCPServerAdapter
+from localagents import Agent, Task, Crew, Process
+from localagents_tools import MCPServerAdapter
 from mcp import StdioServerParameters
 import os
 

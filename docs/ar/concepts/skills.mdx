@@ -30,7 +30,7 @@ my-skill/
 name: my-skill
 description: Short description of what this skill does and when to use it.
 license: Apache-2.0                    # optional
-compatibility: crewai>=0.1.0          # optional
+compatibility: localagents>=0.1.0          # optional
 metadata:                              # optional
   author: your-name
   version: "1.0"
@@ -59,7 +59,7 @@ into the agent's prompt when the skill is activated.
 مرر مسارات مجلدات المهارات إلى وكيل:
 
 ```python
-from crewai import Agent
+from localagents import Agent
 
 agent = Agent(
     role="Researcher",
@@ -74,7 +74,7 @@ agent = Agent(
 تُدمج مسارات المهارات في الطاقم مع كل وكيل:
 
 ```python
-from crewai import Crew
+from localagents import Crew
 
 crew = Crew(
     agents=[agent],
@@ -89,7 +89,7 @@ crew = Crew(
 
 ```python
 from pathlib import Path
-from crewai.skills import discover_skills, activate_skill
+from localagents.skills import discover_skills, activate_skill
 
 skills = discover_skills(Path("./skills"))
 activated = [activate_skill(s) for s in skills]

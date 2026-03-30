@@ -20,10 +20,10 @@ mode: "wide"
 
 ## 설치
 
-터미널에서 다음 명령어를 실행하여 crewai_tools 패키지를 설치하세요:
+터미널에서 다음 명령어를 실행하여 localagents_tools 패키지를 설치하세요:
 
 ```shell
-uv pip install docx2txt 'crewai[tools]'
+uv pip install docx2txt 'localagents[tools]'
 ```
 
 ## 예시
@@ -31,7 +31,7 @@ uv pip install docx2txt 'crewai[tools]'
 다음 예시는 DOCXSearchTool을 초기화하여 모든 DOCX 파일의 내용에서 검색하거나 특정 DOCX 파일 경로로 검색하는 방법을 보여줍니다.
 
 ```python Code
-from crewai_tools import DOCXSearchTool
+from localagents_tools import DOCXSearchTool
 
 # Initialize the tool to search within any DOCX file's content
 tool = DOCXSearchTool()

@@ -20,10 +20,10 @@ mode: "wide"
 
 ## التثبيت
 
-لاستخدام YoutubeChannelSearchTool، يجب تثبيت حزمة `crewai_tools`. نفّذ الأمر التالي في الطرفية للتثبيت:
+لاستخدام YoutubeChannelSearchTool، يجب تثبيت حزمة `localagents_tools`. نفّذ الأمر التالي في الطرفية للتثبيت:
 
 ```shell
-pip install 'crewai[tools]'
+pip install 'localagents[tools]'
 ```
 
 ## مثال
@@ -31,8 +31,8 @@ pip install 'crewai[tools]'
 يوضح المثال التالي كيفية استخدام `YoutubeChannelSearchTool` مع وكيل LocalAI:
 
 ```python Code
-from crewai import Agent, Task, Crew
-from crewai_tools import YoutubeChannelSearchTool
+from localagents import Agent, Task, Crew
+from localagents_tools import YoutubeChannelSearchTool
 
 # Initialize the tool for general YouTube channel searches
 youtube_channel_tool = YoutubeChannelSearchTool()
@@ -122,8 +122,8 @@ youtube_channel_tool = YoutubeChannelSearchTool(
 إليك مثالاً أكثر تفصيلاً لكيفية دمج `YoutubeChannelSearchTool` مع وكيل LocalAI:
 
 ```python Code
-from crewai import Agent, Task, Crew
-from crewai_tools import YoutubeChannelSearchTool
+from localagents import Agent, Task, Crew
+from localagents_tools import YoutubeChannelSearchTool
 
 # Initialize the tool
 youtube_channel_tool = YoutubeChannelSearchTool()

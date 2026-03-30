@@ -23,15 +23,15 @@ transparência e melhoria contínua em todo o ciclo de vida da IA.
 ## Primeiros passos
 
 Este tutorial segue o [LocalAI Quickstart](pt-BR/quickstart) e mostra como adicionar
-[LocalAIEventListener] do Galileo(https://v2docs.galileo.ai/sdk-api/python/reference/handlers/crewai/handler),
+[LocalAIEventListener] do Galileo(https://v2docs.galileo.ai/sdk-api/python/reference/handlers/localagents/handler),
 um manipulador de eventos.
 Para mais informações, consulte Galileu
-[Adicionar Galileo a um aplicativo LocalAI](https://v2docs.galileo.ai/how-to-guides/third-party-integrations/add-galileo-to-crewai/add-galileo-to-crewai)
+[Adicionar Galileo a um aplicativo LocalAI](https://v2docs.galileo.ai/how-to-guides/third-party-integrations/add-galileo-to-localagents/add-galileo-to-localagents)
 guia prático.
 
 > **Observação**Este tutorial pressupõe que você concluiu o [LocalAI Quickstart](pt-BR/quickstart).
 Se você quiser um exemplo completo e abrangente, consulte o Galileo
-[Repositório de exemplo SDK da LocalAI](https://github.com/rungalileo/sdk-examples/tree/main/python/agent/crew-ai).
+[Repositório de exemplo SDK da LocalAI](https://github.com/rungalileo/sdk-examples/tree/main/python/agent/local-agents).
 
 ### Etapa 1: instalar dependências
 
@@ -64,7 +64,7 @@ Importe o pacote manipulador Galileo LocalAI por
 adicionando o seguinte código no topo do seu arquivo main.py:
 
 ```python
-from galileo.handlers.crewai.handler import LocalAIEventListener
+from galileo.handlers.localagents.handler import LocalAIEventListener
 ```
 
 No início da sua função run, crie o ouvinte de evento:
@@ -84,7 +84,7 @@ registrado na LocalAI.
 Administre sua Crew com o LocalAI CLI:
 
 ```bash
-crewai run
+localagents run
 ```
 
 ### Passo 5: Visualize os traços no Galileo

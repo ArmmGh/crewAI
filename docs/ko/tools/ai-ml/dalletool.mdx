@@ -14,9 +14,9 @@ mode: "wide"
 
 ## 설치
 
-crewai_tools 패키지를 설치하세요
+localagents_tools 패키지를 설치하세요
 ```shell
-pip install 'crewai[tools]'
+pip install 'localagents[tools]'
 ```
 
 ## 예시
@@ -24,7 +24,7 @@ pip install 'crewai[tools]'
 이 도구를 사용할 때는 텍스트가 반드시 Agent 자체에 의해 생성되어야 합니다. 텍스트는 생성하려는 이미지에 대한 설명이어야 합니다.
 
 ```python Code
-from crewai_tools import DallETool
+from localagents_tools import DallETool
 
 Agent(
     ...
@@ -35,7 +35,7 @@ Agent(
 필요하다면 `DallETool` 클래스에 인자를 전달하여 DALL-E 모델의 파라미터를 조정할 수도 있습니다. 예를 들면 다음과 같습니다:
 
 ```python Code
-from crewai_tools import DallETool
+from localagents_tools import DallETool
 
 dalle_tool = DallETool(model="dall-e-3",
                        size="1024x1024",

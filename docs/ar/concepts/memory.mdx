@@ -14,7 +14,7 @@ mode: "wide"
 ## البدء السريع
 
 ```python
-from crewai import Memory
+from localagents import Memory
 
 memory = Memory()
 
@@ -44,7 +44,7 @@ print(memory.info("/"))
 استخدم الذاكرة في السكربتات ودفاتر الملاحظات وأدوات سطر الأوامر أو كقاعدة معرفة مستقلة -- لا حاجة لوكلاء أو فرق Crew.
 
 ```python
-from crewai import Memory
+from localagents import Memory
 
 memory = Memory()
 
@@ -76,7 +76,7 @@ for fact in facts:
 مرّر `memory=True` للإعدادات الافتراضية، أو مرّر مثيل `Memory` مُعدّ للسلوك المخصص.
 
 ```python
-from crewai import Crew, Agent, Task, Process, Memory
+from localagents import Crew, Agent, Task, Process, Memory
 
 # Option 1: Default memory
 crew = Crew(
@@ -110,7 +110,7 @@ crew = Crew(
 يمكن للوكلاء استخدام ذاكرة الفريق المشتركة (افتراضيًا) أو تلقي عرض محدد النطاق للسياق الخاص.
 
 ```python
-from crewai import Agent, Memory
+from localagents import Agent, Memory
 
 memory = Memory()
 
@@ -138,7 +138,7 @@ writer = Agent(
 كل تدفق يحتوي على ذاكرة مدمجة. استخدم `self.remember()` و `self.recall()` و `self.extract_memories()` داخل أي دالة تدفق.
 
 ```python
-from crewai.flow.flow import Flow, listen, start
+from localagents.flow.flow import Flow, listen, start
 
 class ResearchFlow(Flow):
     @start()
@@ -520,13 +520,13 @@ memory = Memory(
 ### التمرير إلى Memory مباشرة
 
 ```python
-from crewai import Memory
+from localagents import Memory
 
 # As a config dict
 memory = Memory(embedder={"provider": "openai", "config": {"model_name": "text-embedding-3-small"}})
 
 # As a pre-built callable
-from crewai.rag.embeddings.factory import build_embedder
+from localagents.rag.embeddings.factory import build_embedder
 embedder = build_embedder({"provider": "ollama", "config": {"model_name": "mxbai-embed-large"}})
 memory = Memory(embedder=embedder)
 ```
@@ -536,7 +536,7 @@ memory = Memory(embedder=embedder)
 عند استخدام `memory=True`، يتم تمرير إعداد `embedder` الخاص بالفريق:
 
 ```python
-from crewai import Crew
+from localagents import Crew
 
 crew = Crew(
     agents=[...],
@@ -721,7 +721,7 @@ memory = Memory(embedder=my_embedder)
 تستخدم الذاكرة LLM لتحليل الحفظ (استنتاج النطاق والفئات والأهمية)، وقرارات التوحيد، وتحليل استعلام الاسترجاع العميق. يمكنك إعداد النموذج المُستخدم.
 
 ```python
-from crewai import Memory, LLM
+from localagents import Memory, LLM
 
 # Default: gpt-4o-mini
 memory = Memory()
@@ -757,8 +757,8 @@ memory = Memory(
 
 ## واجهة التخزين
 
-- **الافتراضي**: LanceDB، مخزّن تحت `./.crewai/memory` (أو `$CREWAI_STORAGE_DIR/memory` إذا تم تعيين متغير البيئة، أو المسار الذي تمرره كـ `storage="path/to/dir"`).
-- **واجهة مخصصة**: نفّذ بروتوكول `StorageBackend` (انظر `crewai.memory.storage.backend`) ومرّر مثيلًا إلى `Memory(storage=your_backend)`.
+- **الافتراضي**: LanceDB، مخزّن تحت `./.localagents/memory` (أو `$LOCALAGENTS_STORAGE_DIR/memory` إذا تم تعيين متغير البيئة، أو المسار الذي تمرره كـ `storage="path/to/dir"`).
+- **واجهة مخصصة**: نفّذ بروتوكول `StorageBackend` (انظر `localagents.memory.storage.backend`) ومرّر مثيلًا إلى `Memory(storage=your_backend)`.
 
 
 ## الاستكشاف
@@ -809,11 +809,11 @@ memory.list_records(scope="/project/alpha", limit=20)  # Records in a scope, new
 مثال: مراقبة وقت الاستعلام:
 
 ```python
-from crewai.events import BaseEventListener, MemoryQueryCompletedEvent
+from localagents.events import BaseEventListener, MemoryQueryCompletedEvent
 
 class MemoryMonitor(BaseEventListener):
-    def setup_listeners(self, crewai_event_bus):
-        @crewai_event_bus.on(MemoryQueryCompletedEvent)
+    def setup_listeners(self, localagents_event_bus):
+        @localagents_event_bus.on(MemoryQueryCompletedEvent)
         def on_done(source, event):
             if getattr(event, "source_type", None) == "unified_memory":
                 print(f"Query '{event.query}' completed in {event.query_time_ms:.0f}ms")
@@ -823,7 +823,7 @@ class MemoryMonitor(BaseEventListener):
 ## استكشاف المشاكل
 
 **الذاكرة لا تستمر؟**
-- تأكد من أن مسار التخزين قابل للكتابة (الافتراضي `./.crewai/memory`). مرّر `storage="./your_path"` لاستخدام مجلد مختلف، أو عيّن متغير البيئة `CREWAI_STORAGE_DIR`.
+- تأكد من أن مسار التخزين قابل للكتابة (الافتراضي `./.localagents/memory`). مرّر `storage="./your_path"` لاستخدام مجلد مختلف، أو عيّن متغير البيئة `LOCALAGENTS_STORAGE_DIR`.
 - عند استخدام فريق، تأكد من تعيين `memory=True` أو `memory=Memory(...)`.
 
 **الاسترجاع بطيء؟**
@@ -841,8 +841,8 @@ class MemoryMonitor(BaseEventListener):
 
 **تصفح الذاكرة من الطرفية:**
 ```bash
-crewai memory                              # Opens the TUI browser
-crewai memory --storage-path ./my_memory   # Point to a specific directory
+localagents memory                              # Opens the TUI browser
+localagents memory --storage-path ./my_memory   # Point to a specific directory
 ```
 
 **إعادة تعيين الذاكرة (مثلاً للاختبارات):**

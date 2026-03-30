@@ -16,7 +16,7 @@ Para habilitar a execução de código para um agente, defina o parâmetro `allo
 Veja um exemplo:
 
 ```python Code
-from crewai import Agent
+from localagents import Agent
 
 coding_agent = Agent(
     role="Senior Python Developer",
@@ -38,8 +38,8 @@ Esses modelos têm melhor compreensão de conceitos de programação e tendem a 
 2. **Tratamento de Erros**: O recurso de execução de código inclui tratamento de erros. Se o código executado gerar uma exceção, o agente receberá a mensagem de erro e poderá tentar corrigir o código ou
 fornecer soluções alternativas. O parâmetro `max_retry_limit`, que por padrão é 2, controla o número máximo de tentativas para uma tarefa.
 
-3. **Dependências**: Para usar o recurso de execução de código, é necessário instalar o pacote `crewai_tools`. Caso não esteja instalado, o agente registrará uma mensagem informativa:
-"Ferramentas de codificação não disponíveis. Instale crewai_tools."
+3. **Dependências**: Para usar o recurso de execução de código, é necessário instalar o pacote `localagents_tools`. Caso não esteja instalado, o agente registrará uma mensagem informativa:
+"Ferramentas de codificação não disponíveis. Instale localagents_tools."
 
 ## Processo de Execução de Código
 
@@ -65,7 +65,7 @@ Quando um agente com execução de código habilitada encontra uma tarefa que re
 Veja um exemplo detalhado de como criar um agente com capacidade de execução de código e utilizá-lo em uma tarefa:
 
 ```python Code
-from crewai import Agent, Task, Crew
+from localagents import Agent, Task, Crew
 
 # Create an agent with code execution enabled
 coding_agent = Agent(

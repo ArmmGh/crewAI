@@ -13,41 +13,41 @@ mode: "wide"
 
 ClickUp 통합을 사용하기 전에 다음을 준비해야 합니다:
 
-- 활성 구독이 있는 [LocalAI AMP](https://app.crewai.com) 계정
+- 활성 구독이 있는 [LocalAI AMP](https://app.localagents.com) 계정
 - 적절한 권한이 있는 ClickUp 계정
-- [통합 페이지](https://app.crewai.com/crewai_plus/connectors)를 통해 ClickUp 계정 연결
+- [통합 페이지](https://app.localagents.com/localagents_plus/connectors)를 통해 ClickUp 계정 연결
 
 ## ClickUp 통합 설정
 
 ### 1. ClickUp 계정 연결하기
 
-1. [LocalAI AMP Integrations](https://app.crewai.com/crewai_plus/connectors)로 이동합니다.
+1. [LocalAI AMP Integrations](https://app.localagents.com/localagents_plus/connectors)로 이동합니다.
 2. 인증 통합 섹션에서 **ClickUp**을 찾습니다.
 3. **Connect**를 클릭하고 OAuth 과정을 완료합니다.
 4. 작업 및 프로젝트 관리에 필요한 권한을 부여합니다.
-5. [통합 설정](https://app.crewai.com/crewai_plus/settings/integrations)에서 Enterprise Token을 복사합니다.
+5. [통합 설정](https://app.localagents.com/localagents_plus/settings/integrations)에서 Enterprise Token을 복사합니다.
 
 ### 2. 필수 패키지 설치
 
 ```bash
-uv add crewai-tools
+uv add localagents-tools
 ```
 
 ### 3. 환경 변수 설정
 
 <Note>
   `Agent(apps=[])`와 함께 통합을 사용하려면 Enterprise Token으로
-  `CREWAI_PLATFORM_INTEGRATION_TOKEN` 환경 변수를 설정해야 합니다.
+  `LOCALAGENTS_PLATFORM_INTEGRATION_TOKEN` 환경 변수를 설정해야 합니다.
 </Note>
 
 ```bash
-export CREWAI_PLATFORM_INTEGRATION_TOKEN="your_enterprise_token"
+export LOCALAGENTS_PLATFORM_INTEGRATION_TOKEN="your_enterprise_token"
 ```
 
 또는 `.env` 파일에 추가하세요:
 
 ```
-CREWAI_PLATFORM_INTEGRATION_TOKEN=your_enterprise_token
+LOCALAGENTS_PLATFORM_INTEGRATION_TOKEN=your_enterprise_token
 ```
 
 ## 사용 가능한 동작
@@ -178,7 +178,7 @@ CREWAI_PLATFORM_INTEGRATION_TOKEN=your_enterprise_token
 ### 기본 ClickUp 에이전트 설정
 
 ```python
-from crewai import Agent, Task, Crew
+from localagents import Agent, Task, Crew
 
 # Create an agent with ClickUp capabilities
 clickup_agent = Agent(
@@ -233,7 +233,7 @@ crew.kickoff()
 ### 고급 프로젝트 관리
 
 ```python
-from crewai import Agent, Task, Crew
+from localagents import Agent, Task, Crew
 
 project_manager = Agent(
     role="Project Manager",
@@ -265,7 +265,7 @@ crew.kickoff()
 ### 작업 검색 및 관리
 
 ```python
-from crewai import Agent, Task, Crew
+from localagents import Agent, Task, Crew
 
 task_analyst = Agent(
     role="Task Analyst",
@@ -297,7 +297,7 @@ crew.kickoff()
 <Card
   title="도움이 필요하신가요?"
   icon="headset"
-  href="mailto:support@crewai.com"
+  href="mailto:support@localagents.com"
 >
   ClickUp 연동 설정 또는 문제 해결에 대한 지원이 필요하신 경우 저희 지원팀에
   문의하세요.

@@ -12,7 +12,7 @@ mode: "wide"
 لاستخدام `TavilySearchTool`، تحتاج إلى تثبيت مكتبة `tavily-python`:
 
 ```shell
-pip install 'crewai[tools]' tavily-python
+pip install 'localagents[tools]' tavily-python
 ```
 
 ## متغيرات البيئة
@@ -31,8 +31,8 @@ export TAVILY_API_KEY='your_tavily_api_key'
 
 ```python
 import os
-from crewai import Agent, Task, Crew
-from crewai_tools import TavilySearchTool
+from localagents import Agent, Task, Crew
+from localagents_tools import TavilySearchTool
 
 # Ensure the TAVILY_API_KEY environment variable is set
 # os.environ["TAVILY_API_KEY"] = "YOUR_TAVILY_API_KEY"

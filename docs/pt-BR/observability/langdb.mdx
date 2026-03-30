@@ -38,7 +38,7 @@ mode: "wide"
   <Step title="Instalar LangDB">
     Instale o cliente LangDB com flag de recurso LocalAI:
     ```bash
-    pip install 'pylangdb[crewai]'
+    pip install 'pylangdb[localagents]'
     ```
   </Step>
   <Step title="Definir Variáveis de Ambiente">
@@ -52,7 +52,7 @@ mode: "wide"
   <Step title="Inicializar Rastreamento">
     Importe e inicialize LangDB antes de configurar seu código LocalAI:
     ```python
-    from pylangdb.crewai import init
+    from pylangdb.localagents import init
     # Inicializar LangDB
     init()
     ```
@@ -60,7 +60,7 @@ mode: "wide"
   <Step title="Configurar LocalAI com LangDB">
     Configure seu LLM com cabeçalhos LangDB:
     ```python
-    from crewai import Agent, Task, Crew, LLM
+    from localagents import Agent, Task, Crew, LLM
     import os
 
     # Configurar LLM com cabeçalhos LangDB
@@ -80,8 +80,8 @@ Aqui está um exemplo simples para começar com LangDB e LocalAI:
 
 ```python
 import os
-from pylangdb.crewai import init
-from crewai import Agent, Task, Crew, LLM
+from pylangdb.localagents import init
+from localagents import Agent, Task, Crew, LLM
 
 # Inicializar LangDB antes de qualquer importação LocalAI
 init()
@@ -123,7 +123,7 @@ Este exemplo abrangente demonstra um fluxo de trabalho multi-agente com capacida
 ### Pré-requisitos
 
 ```bash
-pip install crewai 'pylangdb[crewai]' crewai_tools setuptools python-dotenv
+pip install localagents 'pylangdb[localagents]' localagents_tools setuptools python-dotenv
 ```
 
 ### Configuração do Ambiente
@@ -145,11 +145,11 @@ export SERPER_API_KEY="<sua_chave_api_serper>"  # Para capacidades de busca na w
 
 import os
 import sys
-from pylangdb.crewai import init
+from pylangdb.localagents import init
 init()  # Inicializar LangDB antes de qualquer importação LocalAI
 from dotenv import load_dotenv
-from crewai import Agent, Task, Crew, Process, LLM
-from crewai_tools import SerperDevTool
+from localagents import Agent, Task, Crew, Process, LLM
+from localagents_tools import SerperDevTool
 
 load_dotenv()
 
@@ -262,7 +262,7 @@ Após executar sua aplicação LocalAI, você pode visualizar traces detalhados 
   <Card title="Guias LangDB" icon="graduation-cap" href="https://docs.langdb.ai/guides">
     Tutoriais passo a passo para construir agentes de IA
   </Card>
-  <Card title="Exemplos GitHub" icon="github" href="https://github.com/langdb/langdb-samples/tree/main/examples/crewai" >
+  <Card title="Exemplos GitHub" icon="github" href="https://github.com/langdb/langdb-samples/tree/main/examples/localagents" >
     Exemplos completos de integração LocalAI
   </Card>
   <Card title="Dashboard LangDB" icon="chart-line" href="https://app.langdb.ai">

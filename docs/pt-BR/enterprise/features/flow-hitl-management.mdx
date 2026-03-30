@@ -38,8 +38,8 @@ O LocalAI Enterprise oferece um sistema abrangente de gerenciamento Human-in-the
 Configure checkpoints de revisão humana em seus Flows usando o decorador `@human_feedback`. Quando a execução atinge um ponto de revisão, o sistema pausa, notifica o responsável via email e aguarda uma resposta.
 
 ```python
-from crewai.flow.flow import Flow, start, listen, or_
-from crewai.flow.human_feedback import human_feedback, HumanFeedbackResult
+from localagents.flow.flow import Flow, start, listen, or_
+from localagents.flow.human_feedback import human_feedback, HumanFeedbackResult
 
 class ContentApprovalFlow(Flow):
     @start()
@@ -407,7 +407,7 @@ Todos os webhooks recebem um payload JSON com esta estrutura:
     "name": "Content Review Flow",
     "organization_id": 789
   },
-  "callback_url": "https://api.crewai.com/...",
+  "callback_url": "https://api.localagents.com/...",
   "assigned_to_email": "reviewer@company.com"
 }
 ```

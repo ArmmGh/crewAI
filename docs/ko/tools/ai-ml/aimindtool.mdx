@@ -28,7 +28,7 @@ uv add minds-sdk
 
 `AIMindTool`을 효과적으로 사용하려면 다음 단계를 따르세요:
 
-1. **패키지 설치**: Python 환경에 `crewai[tools]`와 `minds-sdk` 패키지가 설치되어 있는지 확인하세요.
+1. **패키지 설치**: Python 환경에 `localagents[tools]`와 `minds-sdk` 패키지가 설치되어 있는지 확인하세요.
 2. **API 키 획득**: Minds 계정에 [여기](https://mdb.ai/register)에서 가입하고 API 키를 받으세요.
 3. **환경 설정**: 획득한 API 키를 `MINDS_API_KEY`라는 환경 변수에 저장하여 툴이 사용할 수 있도록 하세요.
 
@@ -37,7 +37,7 @@ uv add minds-sdk
 다음 예시는 도구를 초기화하고 쿼리를 실행하는 방법을 보여줍니다:
 
 ```python Code
-from crewai_tools import AIMindTool
+from localagents_tools import AIMindTool
 
 # Initialize the AIMindTool
 aimind_tool = AIMindTool(
@@ -81,9 +81,9 @@ print(result)
 다음은 `AIMindTool`을 LocalAI 에이전트와 통합하는 방법입니다:
 
 ```python Code
-from crewai import Agent
-from crewai.project import agent
-from crewai_tools import AIMindTool
+from localagents import Agent
+from localagents.project import agent
+from localagents_tools import AIMindTool
 
 # Initialize the tool
 aimind_tool = AIMindTool(

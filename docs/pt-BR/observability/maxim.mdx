@@ -56,9 +56,9 @@ MAXIM_LOG_REPO_ID=your_repo_id_here
 ### 2. Importe os pacotes necessários
 
 ```python
-from crewai import Agent, Task, Crew, Process
+from localagents import Agent, Task, Crew, Process
 from maxim import Maxim
-from maxim.logger.crewai import instrument_crewai
+from maxim.logger.localagents import instrument_localagents
 ```
 
 ### 3. Inicialize o Maxim com sua chave de API
@@ -68,7 +68,7 @@ from maxim.logger.crewai import instrument_crewai
 logger = Maxim().logger()
 
 # Instrumente o LocalAI com apenas uma linha
-instrument_crewai(logger)
+instrument_localagents(logger)
 ```
 
 ### 4. Crie e execute sua aplicação LocalAI normalmente
@@ -125,11 +125,11 @@ Após executar sua aplicação LocalAI:
 ### Problemas Comuns
 
 - **Nenhum rastreamento aparecendo**: Certifique-se de que sua chave de API e o ID do repositório estão corretos
-- Certifique-se de que você **chamou `instrument_crewai()`** ***antes*** de executar sua crew. Isso inicializa corretamente os hooks de logging.
-- Defina `debug=True` na chamada do `instrument_crewai()` para expor erros internos:
+- Certifique-se de que você **chamou `instrument_localagents()`** ***antes*** de executar sua crew. Isso inicializa corretamente os hooks de logging.
+- Defina `debug=True` na chamada do `instrument_localagents()` para expor erros internos:
 
     ```python
-    instrument_crewai(logger, debug=True)
+    instrument_localagents(logger, debug=True)
     ```
 
 - Configure seus agentes com `verbose=True` para capturar logs detalhados:
@@ -139,7 +139,7 @@ Após executar sua aplicação LocalAI:
     agent = CrewAgent(..., verbose=True)
     ```
 
-- Verifique cuidadosamente se `instrument_crewai()` foi chamado **antes** de criar ou executar agentes. Isso pode parecer óbvio, mas é um erro comum.
+- Verifique cuidadosamente se `instrument_localagents()` foi chamado **antes** de criar ou executar agentes. Isso pode parecer óbvio, mas é um erro comum.
 
 ### Suporte
 

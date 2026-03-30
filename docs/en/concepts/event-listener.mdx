@@ -13,7 +13,7 @@ LocalAI provides a powerful event system that allows you to listen for and react
 
 LocalAI uses an event bus architecture to emit events throughout the execution lifecycle. The event system is built on the following components:
 
-1. **CrewAIEventsBus**: A singleton event bus that manages event registration and emission
+1. **LocalAgentsEventsBus**: A singleton event bus that manages event registration and emission
 2. **BaseEvent**: Base class for all events in the system
 3. **BaseEventListener**: Abstract base class for creating custom event listeners
 
@@ -46,28 +46,28 @@ To create a custom event listener, you need to:
 Here's a simple example of a custom event listener class:
 
 ```python
-from crewai.events import (
+from localagents.events import (
     CrewKickoffStartedEvent,
     CrewKickoffCompletedEvent,
     AgentExecutionCompletedEvent,
 )
-from crewai.events import BaseEventListener
+from localagents.events import BaseEventListener
 
 class MyCustomListener(BaseEventListener):
     def __init__(self):
         super().__init__()
 
-    def setup_listeners(self, crewai_event_bus):
-        @crewai_event_bus.on(CrewKickoffStartedEvent)
+    def setup_listeners(self, localagents_event_bus):
+        @localagents_event_bus.on(CrewKickoffStartedEvent)
         def on_crew_started(source, event):
             print(f"Crew '{event.crew_name}' has started execution!")
 
-        @crewai_event_bus.on(CrewKickoffCompletedEvent)
+        @localagents_event_bus.on(CrewKickoffCompletedEvent)
         def on_crew_completed(source, event):
             print(f"Crew '{event.crew_name}' has completed execution!")
             print(f"Output: {event.output}")
 
-        @crewai_event_bus.on(AgentExecutionCompletedEvent)
+        @localagents_event_bus.on(AgentExecutionCompletedEvent)
         def on_agent_execution_completed(source, event):
             print(f"Agent '{event.agent.role}' completed task")
             print(f"Output: {event.output}")
@@ -91,7 +91,7 @@ Create and import your listener at the top of your Crew implementation file:
 
 ```python
 # In your crew.py file
-from crewai import Agent, Crew, Task
+from localagents import Agent, Crew, Task
 from my_listeners import MyCustomListener
 
 # Create an instance of your listener
@@ -114,7 +114,7 @@ Create and import your listener at the top of your Flow implementation file:
 
 ```python
 # In your main.py or flow.py file
-from crewai.flow import Flow, listen, start
+from localagents.flow import Flow, listen, start
 from my_listeners import MyCustomListener
 
 # Create an instance of your listener
@@ -148,7 +148,7 @@ my_project/
 
 ```python
 # my_custom_listener.py
-from crewai.events import BaseEventListener
+from localagents.events import BaseEventListener
 # ... import events ...
 
 class MyCustomListener(BaseEventListener):
@@ -381,10 +381,10 @@ Additional fields vary by event type. For example, `CrewKickoffCompletedEvent` i
 For temporary event handling (useful for testing or specific operations), you can use the `scoped_handlers` context manager:
 
 ```python
-from crewai.events import crewai_event_bus, CrewKickoffStartedEvent
+from localagents.events import localagents_event_bus, CrewKickoffStartedEvent
 
-with crewai_event_bus.scoped_handlers():
-    @crewai_event_bus.on(CrewKickoffStartedEvent)
+with localagents_event_bus.scoped_handlers():
+    @localagents_event_bus.on(CrewKickoffStartedEvent)
     def temp_handler(source, event):
         print("This handler only exists within this context")
 

@@ -16,14 +16,14 @@ mode: "wide"
 이 도구를 프로젝트에 통합하려면 아래의 설치 지침을 따르세요:
 
 ```shell
-pip install 'crewai[tools]'
+pip install 'localagents[tools]'
 ```
 
 ## 시작 단계
 
 `BraveSearchTool`을(를) 효과적으로 사용하려면 다음 단계를 따르세요:
 
-1. **패키지 설치**: Python 환경에 `crewai[tools]` 패키지가 설치되어 있는지 확인합니다.
+1. **패키지 설치**: Python 환경에 `localagents[tools]` 패키지가 설치되어 있는지 확인합니다.
 2. **API 키 획득**: https://api.search.brave.com/app/keys 에서 Brave Search API 키를 획득합니다(로그인하여 키를 생성).
 3. **환경 설정**: 획득한 API 키를 `BRAVE_API_KEY`라는 환경 변수에 저장하여 도구에서 사용할 수 있도록 합니다.
 
@@ -32,7 +32,7 @@ pip install 'crewai[tools]'
 다음 예시는 도구를 초기화하고 주어진 쿼리로 검색을 실행하는 방법을 보여줍니다:
 
 ```python Code
-from crewai_tools import BraveSearchTool
+from localagents_tools import BraveSearchTool
 
 # 인터넷 검색 기능을 위한 도구 초기화
 tool = BraveSearchTool()
@@ -56,7 +56,7 @@ print(results)
 다음은 추가 매개변수를 사용하여 도구를 활용하는 방법을 보여주는 예시입니다:
 
 ```python Code
-from crewai_tools import BraveSearchTool
+from localagents_tools import BraveSearchTool
 
 # Initialize the tool with custom parameters
 tool = BraveSearchTool(
@@ -75,9 +75,9 @@ print(results)
 다음은 `BraveSearchTool`을 LocalAI 에이전트와 통합하는 방법입니다:
 
 ```python Code
-from crewai import Agent
-from crewai.project import agent
-from crewai_tools import BraveSearchTool
+from localagents import Agent
+from localagents.project import agent
+from localagents_tools import BraveSearchTool
 
 # Initialize the tool
 brave_search_tool = BraveSearchTool()

@@ -14,7 +14,7 @@ Integration tools let your agents hand off work to other automation platforms an
     Securely access hundreds of third-party tools like Linear, GitHub, Slack, and more through Merge's unified API.
   </Card>
 
-  <Card title="LocalAI Run Automation Tool" icon="robot" href="/en/tools/integration/crewaiautomationtool">
+  <Card title="LocalAI Run Automation Tool" icon="robot" href="/en/tools/integration/localagentsautomationtool">
     Invoke live LocalAI Platform automations, pass custom inputs, and poll for results directly from your agent.
   </Card>
 
@@ -33,13 +33,13 @@ Integration tools let your agents hand off work to other automation platforms an
 ## **Quick Start Example**
 
 ```python
-from crewai import Agent, Task, Crew
-from crewai_tools import InvokeCrewAIAutomationTool
-from crewai_tools.aws.bedrock.agents.invoke_agent_tool import BedrockInvokeAgentTool
+from localagents import Agent, Task, Crew
+from localagents_tools import InvokeLocalAgentsAutomationTool
+from localagents_tools.aws.bedrock.agents.invoke_agent_tool import BedrockInvokeAgentTool
 
 # External automation
-analysis_automation = InvokeCrewAIAutomationTool(
-    crew_api_url="https://analysis-crew.acme.crewai.com",
+analysis_automation = InvokeLocalAgentsAutomationTool(
+    crew_api_url="https://analysis-crew.acme.localagents.com",
     crew_bearer_token="YOUR_BEARER_TOKEN",
     crew_name="Analysis Automation",
     crew_description="Runs the production-grade analysis pipeline",

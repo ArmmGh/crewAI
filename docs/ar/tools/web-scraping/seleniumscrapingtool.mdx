@@ -23,7 +23,7 @@ mode: "wide"
 لاستخدام هذه الأداة، تحتاج إلى تثبيت حزمة أدوات LocalAI و Selenium:
 
 ```shell
-pip install 'crewai[tools]'
+pip install 'localagents[tools]'
 uv add selenium webdriver-manager
 ```
 
@@ -34,8 +34,8 @@ uv add selenium webdriver-manager
 يوضح المثال التالي كيفية استخدام `SeleniumScrapingTool` مع وكيل LocalAI:
 
 ```python Code
-from crewai import Agent, Task, Crew, Process
-from crewai_tools import SeleniumScrapingTool
+from localagents import Agent, Task, Crew, Process
+from localagents_tools import SeleniumScrapingTool
 
 # Initialize the tool
 selenium_tool = SeleniumScrapingTool()
@@ -106,8 +106,8 @@ web_scraper_agent = Agent(
 إليك مثالاً أكثر تفصيلاً لكيفية دمج `SeleniumScrapingTool` مع وكيل LocalAI:
 
 ```python Code
-from crewai import Agent, Task, Crew, Process
-from crewai_tools import SeleniumScrapingTool
+from localagents import Agent, Task, Crew, Process
+from localagents_tools import SeleniumScrapingTool
 
 # Initialize the tool
 selenium_tool = SeleniumScrapingTool()

@@ -18,7 +18,7 @@ This tool is particularly useful for applications that require access to a vast 
 The following example demonstrates how to initialize the tool and use it with different data sources:
 
 ```python Code
-from crewai_tools import RagTool
+from localagents_tools import RagTool
 
 # Create a RAG tool with default settings
 rag_tool = RagTool()
@@ -102,13 +102,13 @@ rag_tool.add(data_type="directory", path="path/to/your/directory")
 Here's how to integrate the `RagTool` with a LocalAI agent:
 
 ```python Code
-from crewai import Agent
-from crewai.project import agent
-from crewai_tools import RagTool
+from localagents import Agent
+from localagents.project import agent
+from localagents_tools import RagTool
 
 # Initialize the tool and add content
 rag_tool = RagTool()
-rag_tool.add(data_type="web_page", url="https://docs.crewai.com")
+rag_tool.add(data_type="web_page", url="https://docs.localagents.com")
 rag_tool.add(data_type="file", path="company_data.pdf")
 
 # Define an agent with the RagTool
@@ -126,8 +126,8 @@ def knowledge_expert(self) -> Agent:
 You can customize the behavior of the `RagTool` by providing a configuration dictionary:
 
 ```python Code
-from crewai_tools import RagTool
-from crewai_tools.tools.rag import RagToolConfig, VectorDbConfig, ProviderSpec
+from localagents_tools import RagTool
+from localagents_tools.tools.rag import RagToolConfig, VectorDbConfig, ProviderSpec
 
 # Create a RAG tool with custom configuration
 
@@ -155,7 +155,7 @@ rag_tool = RagTool(config=config, summarize=True)
 
 ## Embedding Model Configuration
 
-The `embedding_model` parameter accepts a `crewai.rag.embeddings.types.ProviderSpec` dictionary with the structure:
+The `embedding_model` parameter accepts a `localagents.rag.embeddings.types.ProviderSpec` dictionary with the structure:
 
 ```python
 {
@@ -171,7 +171,7 @@ The `embedding_model` parameter accepts a `crewai.rag.embeddings.types.ProviderS
 <AccordionGroup>
   <Accordion title="OpenAI">
     ```python main.py
-    from crewai.rag.embeddings.providers.openai.types import OpenAIProviderSpec
+    from localagents.rag.embeddings.providers.openai.types import OpenAIProviderSpec
 
     embedding_model: OpenAIProviderSpec = {
         "provider": "openai",
@@ -207,7 +207,7 @@ The `embedding_model` parameter accepts a `crewai.rag.embeddings.types.ProviderS
 
   <Accordion title="Cohere">
     ```python main.py
-    from crewai.rag.embeddings.providers.cohere.types import CohereProviderSpec
+    from localagents.rag.embeddings.providers.cohere.types import CohereProviderSpec
 
     embedding_model: CohereProviderSpec = {
         "provider": "cohere",
@@ -229,7 +229,7 @@ The `embedding_model` parameter accepts a `crewai.rag.embeddings.types.ProviderS
 
   <Accordion title="VoyageAI">
     ```python main.py
-    from crewai.rag.embeddings.providers.voyageai.types import VoyageAIProviderSpec
+    from localagents.rag.embeddings.providers.voyageai.types import VoyageAIProviderSpec
 
     embedding_model: VoyageAIProviderSpec = {
         "provider": "voyageai",
@@ -269,7 +269,7 @@ The `embedding_model` parameter accepts a `crewai.rag.embeddings.types.ProviderS
 
   <Accordion title="Ollama">
     ```python main.py
-    from crewai.rag.embeddings.providers.ollama.types import OllamaProviderSpec
+    from localagents.rag.embeddings.providers.ollama.types import OllamaProviderSpec
 
     embedding_model: OllamaProviderSpec = {
         "provider": "ollama",
@@ -291,7 +291,7 @@ The `embedding_model` parameter accepts a `crewai.rag.embeddings.types.ProviderS
 
   <Accordion title="Amazon Bedrock">
     ```python main.py
-    from crewai.rag.embeddings.providers.aws.types import BedrockProviderSpec
+    from localagents.rag.embeddings.providers.aws.types import BedrockProviderSpec
 
     embedding_model: BedrockProviderSpec = {
         "provider": "amazon-bedrock",
@@ -314,7 +314,7 @@ The `embedding_model` parameter accepts a `crewai.rag.embeddings.types.ProviderS
 
   <Accordion title="Azure OpenAI">
     ```python main.py
-    from crewai.rag.embeddings.providers.microsoft.types import AzureProviderSpec
+    from localagents.rag.embeddings.providers.microsoft.types import AzureProviderSpec
 
     embedding_model: AzureProviderSpec = {
         "provider": "azure",
@@ -351,7 +351,7 @@ The `embedding_model` parameter accepts a `crewai.rag.embeddings.types.ProviderS
 
   <Accordion title="Google Generative AI">
     ```python main.py
-    from crewai.rag.embeddings.providers.google.types import GenerativeAiProviderSpec
+    from localagents.rag.embeddings.providers.google.types import GenerativeAiProviderSpec
 
     embedding_model: GenerativeAiProviderSpec = {
         "provider": "google-generativeai",
@@ -376,7 +376,7 @@ The `embedding_model` parameter accepts a `crewai.rag.embeddings.types.ProviderS
 
   <Accordion title="Google Vertex AI">
     ```python main.py
-    from crewai.rag.embeddings.providers.google.types import VertexAIProviderSpec
+    from localagents.rag.embeddings.providers.google.types import VertexAIProviderSpec
 
     embedding_model: VertexAIProviderSpec = {
         "provider": "google-vertex",
@@ -405,7 +405,7 @@ The `embedding_model` parameter accepts a `crewai.rag.embeddings.types.ProviderS
 
   <Accordion title="Jina AI">
     ```python main.py
-    from crewai.rag.embeddings.providers.jina.types import JinaProviderSpec
+    from localagents.rag.embeddings.providers.jina.types import JinaProviderSpec
 
     embedding_model: JinaProviderSpec = {
         "provider": "jina",
@@ -427,7 +427,7 @@ The `embedding_model` parameter accepts a `crewai.rag.embeddings.types.ProviderS
 
   <Accordion title="HuggingFace">
     ```python main.py
-    from crewai.rag.embeddings.providers.huggingface.types import HuggingFaceProviderSpec
+    from localagents.rag.embeddings.providers.huggingface.types import HuggingFaceProviderSpec
 
     embedding_model: HuggingFaceProviderSpec = {
         "provider": "huggingface",
@@ -446,7 +446,7 @@ The `embedding_model` parameter accepts a `crewai.rag.embeddings.types.ProviderS
 
   <Accordion title="Instructor">
     ```python main.py
-    from crewai.rag.embeddings.providers.instructor.types import InstructorProviderSpec
+    from localagents.rag.embeddings.providers.instructor.types import InstructorProviderSpec
 
     embedding_model: InstructorProviderSpec = {
         "provider": "instructor",
@@ -471,7 +471,7 @@ The `embedding_model` parameter accepts a `crewai.rag.embeddings.types.ProviderS
 
   <Accordion title="Sentence Transformer">
     ```python main.py
-    from crewai.rag.embeddings.providers.sentence_transformer.types import SentenceTransformerProviderSpec
+    from localagents.rag.embeddings.providers.sentence_transformer.types import SentenceTransformerProviderSpec
 
     embedding_model: SentenceTransformerProviderSpec = {
         "provider": "sentence-transformer",
@@ -496,7 +496,7 @@ The `embedding_model` parameter accepts a `crewai.rag.embeddings.types.ProviderS
 
   <Accordion title="ONNX">
     ```python main.py
-    from crewai.rag.embeddings.providers.onnx.types import ONNXProviderSpec
+    from localagents.rag.embeddings.providers.onnx.types import ONNXProviderSpec
 
     embedding_model: ONNXProviderSpec = {
         "provider": "onnx",
@@ -515,7 +515,7 @@ The `embedding_model` parameter accepts a `crewai.rag.embeddings.types.ProviderS
 
   <Accordion title="OpenCLIP">
     ```python main.py
-    from crewai.rag.embeddings.providers.openclip.types import OpenCLIPProviderSpec
+    from localagents.rag.embeddings.providers.openclip.types import OpenCLIPProviderSpec
 
     embedding_model: OpenCLIPProviderSpec = {
         "provider": "openclip",
@@ -540,7 +540,7 @@ The `embedding_model` parameter accepts a `crewai.rag.embeddings.types.ProviderS
 
   <Accordion title="Text2Vec">
     ```python main.py
-    from crewai.rag.embeddings.providers.text2vec.types import Text2VecProviderSpec
+    from localagents.rag.embeddings.providers.text2vec.types import Text2VecProviderSpec
 
     embedding_model: Text2VecProviderSpec = {
         "provider": "text2vec",
@@ -559,7 +559,7 @@ The `embedding_model` parameter accepts a `crewai.rag.embeddings.types.ProviderS
 
   <Accordion title="Roboflow">
     ```python main.py
-    from crewai.rag.embeddings.providers.roboflow.types import RoboflowProviderSpec
+    from localagents.rag.embeddings.providers.roboflow.types import RoboflowProviderSpec
 
     embedding_model: RoboflowProviderSpec = {
         "provider": "roboflow",
@@ -581,7 +581,7 @@ The `embedding_model` parameter accepts a `crewai.rag.embeddings.types.ProviderS
 
   <Accordion title="WatsonX (IBM)">
     ```python main.py
-    from crewai.rag.embeddings.providers.ibm.types import WatsonXProviderSpec
+    from localagents.rag.embeddings.providers.ibm.types import WatsonXProviderSpec
 
     embedding_model: WatsonXProviderSpec = {
         "provider": "watsonx",
@@ -621,8 +621,8 @@ The `embedding_model` parameter accepts a `crewai.rag.embeddings.types.ProviderS
 
   <Accordion title="Custom">
     ```python main.py
-    from crewai.rag.core.base_embeddings_callable import EmbeddingFunction
-    from crewai.rag.embeddings.providers.custom.types import CustomProviderSpec
+    from localagents.rag.core.base_embeddings_callable import EmbeddingFunction
+    from localagents.rag.embeddings.providers.custom.types import CustomProviderSpec
 
     class MyEmbeddingFunction(EmbeddingFunction):
         def __call__(self, input):
@@ -640,7 +640,7 @@ The `embedding_model` parameter accepts a `crewai.rag.embeddings.types.ProviderS
     **Config Options:**
     - `embedding_callable` (type[EmbeddingFunction]): Custom embedding function class
 
-    **Note:** Custom embedding functions must implement the `EmbeddingFunction` protocol defined in `crewai.rag.core.base_embeddings_callable`. The `__call__` method should accept input data and return embeddings as a list of numpy arrays (or compatible format that will be normalized). The returned embeddings are automatically normalized and validated.
+    **Note:** Custom embedding functions must implement the `EmbeddingFunction` protocol defined in `localagents.rag.core.base_embeddings_callable`. The `__call__` method should accept input data and return embeddings as a list of numpy arrays (or compatible format that will be normalized). The returned embeddings are automatically normalized and validated.
   </Accordion>
 </AccordionGroup>
 

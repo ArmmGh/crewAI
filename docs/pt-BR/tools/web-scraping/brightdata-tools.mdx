@@ -12,7 +12,7 @@ This set of tools integrates Bright Data services for web extraction.
 ## Installation
 
 ```shell
-uv add crewai-tools requests aiohttp
+uv add localagents-tools requests aiohttp
 ```
 
 ## Environment Variables
@@ -34,7 +34,7 @@ See their docs: https://developers.brightdata.com/
 ### SERP Search
 
 ```python Code
-from crewai_tools import BrightDataSearchTool
+from localagents_tools import BrightDataSearchTool
 
 tool = BrightDataSearchTool(
     query="LocalAI",
@@ -47,7 +47,7 @@ print(tool.run())
 ### Web Unlocker
 
 ```python Code
-from crewai_tools import BrightDataWebUnlockerTool
+from localagents_tools import BrightDataWebUnlockerTool
 
 tool = BrightDataWebUnlockerTool(
     url="https://example.com",
@@ -60,7 +60,7 @@ print(tool.run(url="https://example.com"))
 ### Dataset API
 
 ```python Code
-from crewai_tools import BrightDataDatasetTool
+from localagents_tools import BrightDataDatasetTool
 
 tool = BrightDataDatasetTool(
     dataset_type="ecommerce",
@@ -78,8 +78,8 @@ print(tool.run())
 ## Example
 
 ```python Code
-from crewai import Agent, Task, Crew
-from crewai_tools import BrightDataSearchTool
+from localagents import Agent, Task, Crew
+from localagents_tools import BrightDataSearchTool
 
 tool = BrightDataSearchTool(
     query="LocalAI",

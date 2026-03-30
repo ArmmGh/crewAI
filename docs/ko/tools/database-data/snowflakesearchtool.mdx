@@ -39,8 +39,8 @@ uv sync --extra snowflake
 다음 예시는 `SnowflakeSearchTool`을 사용하여 Snowflake 데이터베이스에서 데이터를 쿼리하는 방법을 보여줍니다:
 
 ```python Code
-from crewai import Agent, Task, Crew
-from crewai_tools import SnowflakeSearchTool, SnowflakeConfig
+from localagents import Agent, Task, Crew
+from localagents_tools import SnowflakeSearchTool, SnowflakeConfig
 
 # Create Snowflake configuration
 config = SnowflakeConfig(

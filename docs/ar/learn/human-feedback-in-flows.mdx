@@ -23,8 +23,8 @@ mode: "wide"
 ## بداية سريعة
 
 ```python Code
-from crewai.flow.flow import Flow, start, listen
-from crewai.flow.human_feedback import human_feedback
+from localagents.flow.flow import Flow, start, listen
+from localagents.flow.human_feedback import human_feedback
 
 class SimpleReviewFlow(Flow):
     @start()
@@ -46,8 +46,8 @@ flow.kickoff()
 عند تحديد `emit`، يصبح المزخرف موجّهًا. يُفسَّر التعليق البشري الحر بواسطة LLM ويُختزل إلى إحدى النتائج المحددة:
 
 ```python Code
-from crewai.flow.flow import Flow, start, listen, or_
-from crewai.flow.human_feedback import human_feedback
+from localagents.flow.flow import Flow, start, listen, or_
+from localagents.flow.human_feedback import human_feedback
 
 class ReviewFlow(Flow):
     @start()

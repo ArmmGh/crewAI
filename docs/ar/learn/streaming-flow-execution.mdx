@@ -18,8 +18,8 @@ mode: "wide"
 لتفعيل البث، عيّن خاصية `stream` إلى `True` في فئة التدفق الخاصة بك:
 
 ```python Code
-from crewai.flow.flow import Flow, listen, start
-from crewai import Agent, Crew, Task
+from localagents.flow.flow import Flow, listen, start
+from localagents import Agent, Crew, Task
 
 class ResearchFlow(Flow):
     stream = True  # Enable streaming for the entire flow
@@ -130,8 +130,8 @@ asyncio.run(stream_flow())
 يعمل البث بسلاسة عبر خطوات تدفق متعددة، بما في ذلك التدفقات التي تنفذ أطقم متعددة:
 
 ```python Code
-from crewai.flow.flow import Flow, listen, start
-from crewai import Agent, Crew, Task
+from localagents.flow.flow import Flow, listen, start
+from localagents import Agent, Crew, Task
 
 class MultiStepFlow(Flow):
     stream = True
@@ -199,9 +199,9 @@ print(f"\n\nFinal analysis: {result}")
 
 ```python Code
 import asyncio
-from crewai.flow.flow import Flow, listen, start
-from crewai import Agent, Crew, Task
-from crewai.types.streaming import StreamChunkType
+from localagents.flow.flow import Flow, listen, start
+from localagents import Agent, Crew, Task
+from localagents.types.streaming import StreamChunkType
 
 class ResearchPipeline(Flow):
     stream = True

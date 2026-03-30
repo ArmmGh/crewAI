@@ -23,7 +23,7 @@ mode: "wide"
 이 도구를 사용하려면 LocalAI tools 패키지와 Selenium을 설치해야 합니다:
 
 ```shell
-pip install 'crewai[tools]'
+pip install 'localagents[tools]'
 uv add selenium webdriver-manager
 ```
 
@@ -34,8 +34,8 @@ uv add selenium webdriver-manager
 다음 예시는 `SeleniumScrapingTool`을 LocalAI agent와 함께 사용하는 방법을 보여줍니다:
 
 ```python Code
-from crewai import Agent, Task, Crew, Process
-from crewai_tools import SeleniumScrapingTool
+from localagents import Agent, Task, Crew, Process
+from localagents_tools import SeleniumScrapingTool
 
 # Initialize the tool
 selenium_tool = SeleniumScrapingTool()
@@ -106,8 +106,8 @@ web_scraper_agent = Agent(
 여기서는 `SeleniumScrapingTool`을 LocalAI 에이전트와 통합하는 방법에 대해 더 자세히 설명합니다.
 
 ```python Code
-from crewai import Agent, Task, Crew, Process
-from crewai_tools import SeleniumScrapingTool
+from localagents import Agent, Task, Crew, Process
+from localagents_tools import SeleniumScrapingTool
 
 # Initialize the tool
 selenium_tool = SeleniumScrapingTool()

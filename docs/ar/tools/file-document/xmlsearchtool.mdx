@@ -17,10 +17,10 @@ mode: "wide"
 
 ## التثبيت
 
-للبدء باستخدام XMLSearchTool، يجب أولاً تثبيت حزمة crewai_tools. يمكن القيام بذلك بسهولة بالأمر التالي:
+للبدء باستخدام XMLSearchTool، يجب أولاً تثبيت حزمة localagents_tools. يمكن القيام بذلك بسهولة بالأمر التالي:
 
 ```shell
-pip install 'crewai[tools]'
+pip install 'localagents[tools]'
 ```
 
 ## مثال
@@ -28,7 +28,7 @@ pip install 'crewai[tools]'
 فيما يلي مثالان يوضحان كيفية استخدام XMLSearchTool. المثال الأول يوضح البحث داخل ملف XML محدد، بينما يوضح المثال الثاني بدء بحث بدون تحديد مسار XML مسبقاً، مما يوفر مرونة في نطاق البحث.
 
 ```python Code
-from crewai_tools import XMLSearchTool
+from localagents_tools import XMLSearchTool
 
 # Allow agents to search within any XML file's content
 #as it learns about their paths during execution

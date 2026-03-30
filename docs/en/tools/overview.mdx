@@ -117,7 +117,7 @@ To use any tool in your LocalAI project:
 3. **Configure** any required API keys or settings
 
 ```python
-from crewai_tools import FileReadTool, SerperDevTool
+from localagents_tools import FileReadTool, SerperDevTool
 
 # Add tools to your agent
 agent = Agent(
@@ -135,7 +135,7 @@ By default, the max usage count is unlimited.
 
 
 ```python
-from crewai_tools import FileReadTool
+from localagents_tools import FileReadTool
 
 tool = FileReadTool(max_usage_count=5, ...)
 ```

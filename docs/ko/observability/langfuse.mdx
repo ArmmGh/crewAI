@@ -20,7 +20,7 @@ LocalAI를 사용하고 OpenLit을 통해 OpenTelemetry로 Langfuse와 통합하
 ### 1단계: 의존성 설치
 
 ```python
-%pip install langfuse openlit crewai crewai_tools
+%pip install langfuse openlit localagents localagents_tools
 ```
 
 ### 2단계: 환경 변수 설정
@@ -71,9 +71,9 @@ openlit.init()
 
 
 ```python
-from crewai import Agent, Task, Crew
+from localagents import Agent, Task, Crew
 
-from crewai_tools import (
+from localagents_tools import (
     WebsiteSearchTool
 )
 
@@ -101,7 +101,7 @@ crew = Crew(
 
 에이전트를 실행한 후 [Langfuse](https://cloud.langfuse.com)에서 LocalAI 애플리케이션에서 생성된 트레이스를 확인할 수 있습니다. 여기서 LLM 상호작용의 자세한 단계들을 볼 수 있으며, 이를 통해 AI 에이전트의 디버깅 및 최적화에 도움이 됩니다.
 
-![Langfuse의 LocalAI 예시 트레이스](https://langfuse.com/images/cookbook/integration_crewai/crewai-example-trace.png)
+![Langfuse의 LocalAI 예시 트레이스](https://langfuse.com/images/cookbook/integration_localagents/localagents-example-trace.png)
 
 _[Langfuse의 공개 예시 트레이스](https://cloud.langfuse.com/project/cloramnkj0002jz088vzn1ja4/traces/e2cf380ffc8d47d28da98f136140642b?timestamp=2025-02-05T15%3A12%3A02.717Z&observation=3b32338ee6a5d9af)_
 

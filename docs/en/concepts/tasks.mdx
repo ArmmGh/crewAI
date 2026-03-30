@@ -118,9 +118,9 @@ To use this YAML configuration in your code, create a crew class that inherits f
 ```python crew.py
 # src/latest_ai_development/crew.py
 
-from crewai import Agent, Crew, Process, Task
-from crewai.project import CrewBase, agent, crew, task
-from crewai_tools import SerperDevTool
+from localagents import Agent, Crew, Process, Task
+from localagents.project import CrewBase, agent, crew, task
+from localagents_tools import SerperDevTool
 
 @CrewBase
 class LatestAiDevelopmentCrew():
@@ -178,7 +178,7 @@ class LatestAiDevelopmentCrew():
 Alternatively, you can define tasks directly in your code without using YAML configuration:
 
 ```python task.py
-from crewai import Task
+from localagents import Task
 
 research_task = Task(
     description="""
@@ -364,7 +364,7 @@ To add a function-based guardrail to a task, provide a validation function throu
 
 ```python Code
 from typing import Tuple, Union, Dict, Any
-from crewai import TaskOutput
+from localagents import TaskOutput
 
 def validate_blog_content(result: TaskOutput) -> Tuple[bool, Any]:
     """Validate blog content meets requirements."""
@@ -397,7 +397,7 @@ Instead of writing custom validation functions, you can use string descriptions 
 - Provide a clear, descriptive string explaining the validation criteria
 
 ```python Code
-from crewai import Task
+from localagents import Task
 
 # Single LLM-based guardrail
 blog_task = Task(
@@ -451,7 +451,7 @@ The `guardrails` parameter accepts:
 
 ```python Code
 from typing import Tuple, Any
-from crewai import TaskOutput, Task
+from localagents import TaskOutput, Task
 
 def validate_word_count(result: TaskOutput) -> Tuple[bool, Any]:
     """Validate word count is within limits."""
@@ -506,7 +506,7 @@ You can combine both function-based and string-based guardrails in the same list
 
 ```python Code
 from typing import Tuple, Any
-from crewai import TaskOutput, Task
+from localagents import TaskOutput, Task
 
 def validate_word_count(result: TaskOutput) -> Tuple[bool, Any]:
     """Validate word count is within limits."""
@@ -550,7 +550,7 @@ This approach combines the precision of programmatic validation with the flexibi
 1. **Structured Error Responses**:
 
 ```python Code
-from crewai import TaskOutput, LLMGuardrail
+from localagents import TaskOutput, LLMGuardrail
 
 def validate_with_context(result: TaskOutput) -> Tuple[bool, Any]:
     try:
@@ -573,7 +573,7 @@ def validate_with_context(result: TaskOutput) -> Tuple[bool, Any]:
 
 ```python Code
 from typing import Any, Dict, List, Tuple, Union
-from crewai import TaskOutput
+from localagents import TaskOutput
 
 def complex_validation(result: TaskOutput) -> Tuple[bool, Any]:
     """Chain multiple validation steps."""
@@ -608,7 +608,7 @@ Example with retry handling:
 
 ```python Code
 from typing import Optional, Tuple, Union
-from crewai import TaskOutput, Task
+from localagents import TaskOutput, Task
 
 def validate_json_output(result: TaskOutput) -> Tuple[bool, Any]:
     """Validate and parse JSON output."""
@@ -644,7 +644,7 @@ Here's an example demonstrating how to use output_pydantic:
 ```python Code
 import json
 
-from crewai import Agent, Crew, Process, Task
+from localagents import Agent, Crew, Process, Task
 from pydantic import BaseModel
 
 
@@ -729,7 +729,7 @@ Here's an example demonstrating how to use `output_json`:
 ```python Code
 import json
 
-from crewai import Agent, Crew, Process, Task
+from localagents import Agent, Crew, Process, Task
 from pydantic import BaseModel
 
 
@@ -797,7 +797,7 @@ By using output_pydantic or output_json, you ensure that your tasks produce outp
 
 ## Integrating Tools with Tasks
 
-Leverage tools from the [LocalAI Toolkit](https://github.com/joaomdmoura/crewai-tools) and [LangChain Tools](https://python.langchain.com/docs/integrations/tools) for enhanced task performance and agent interaction.
+Leverage tools from the [LocalAI Toolkit](https://github.com/joaomdmoura/localagents-tools) and [LangChain Tools](https://python.langchain.com/docs/integrations/tools) for enhanced task performance and agent interaction.
 
 ## Creating a Task with Tools
 
@@ -806,8 +806,8 @@ import os
 os.environ["OPENAI_API_KEY"] = "Your Key"
 os.environ["SERPER_API_KEY"] = "Your Key" # serper.dev API key
 
-from crewai import Agent, Task, Crew
-from crewai_tools import SerperDevTool
+from localagents import Agent, Task, Crew
+from localagents_tools import SerperDevTool
 
 research_agent = Agent(
   role='Researcher',

@@ -21,7 +21,7 @@ para buscar e exibir os resultados de pesquisa mais relevantes com base na consu
 Para incorporar esta ferramenta em seu projeto, siga as instruções de instalação abaixo:
 
 ```shell
-pip install 'crewai[tools]'
+pip install 'localagents[tools]'
 ```
 
 ## Exemplo
@@ -29,7 +29,7 @@ pip install 'crewai[tools]'
 O exemplo a seguir demonstra como inicializar a ferramenta e executar uma busca com uma consulta fornecida:
 
 ```python Code
-from crewai_tools import SerperDevTool
+from localagents_tools import SerperDevTool
 
 # Inicializar a ferramenta para capacidades de busca na internet
 tool = SerperDevTool()
@@ -39,7 +39,7 @@ tool = SerperDevTool()
 
 Para utilizar o `SerperDevTool` de forma eficaz, siga estes passos:
 
-1. **Instalação do Pacote**: Confirme se o pacote `crewai[tools]` está instalado em seu ambiente Python.
+1. **Instalação do Pacote**: Confirme se o pacote `localagents[tools]` está instalado em seu ambiente Python.
 2. **Obtenção da Chave de API**: Adquira uma chave de API do `serper.dev` registrando-se para uma conta gratuita em `serper.dev`.
 3. **Configuração do Ambiente**: Armazene sua chave de API obtida em uma variável de ambiente chamada `SERPER_API_KEY` para facilitar o uso pela ferramenta.
 
@@ -61,7 +61,7 @@ Os valores para `country`, `location`, `locale` e `search_url` podem ser encontr
 Aqui está um exemplo demonstrando como usar a ferramenta com parâmetros adicionais:
 
 ```python Code
-from crewai_tools import SerperDevTool
+from localagents_tools import SerperDevTool
 
 tool = SerperDevTool(
     search_url="https://google.serper.dev/scholar",
@@ -84,7 +84,7 @@ print(tool.run(search_query="ChatGPT"))
 ```
 
 ```python Code
-from crewai_tools import SerperDevTool
+from localagents_tools import SerperDevTool
 
 tool = SerperDevTool(
     country="fr",

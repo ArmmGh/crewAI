@@ -20,10 +20,10 @@ Ela otimiza o processo de busca em canais do Youtube, sendo ideal para pesquisad
 
 ## Instalação
 
-Para utilizar o YoutubeChannelSearchTool, é necessário instalar o pacote `crewai_tools`. Execute o seguinte comando no seu terminal para instalar:
+Para utilizar o YoutubeChannelSearchTool, é necessário instalar o pacote `localagents_tools`. Execute o seguinte comando no seu terminal para instalar:
 
 ```shell
-pip install 'crewai[tools]'
+pip install 'localagents[tools]'
 ```
 
 ## Exemplo
@@ -31,8 +31,8 @@ pip install 'crewai[tools]'
 O exemplo a seguir demonstra como utilizar o `YoutubeChannelSearchTool` com um agente LocalAI:
 
 ```python Code
-from crewai import Agent, Task, Crew
-from crewai_tools import YoutubeChannelSearchTool
+from localagents import Agent, Task, Crew
+from localagents_tools import YoutubeChannelSearchTool
 
 # Inicializa a ferramenta para buscas gerais em canais do YouTube
 youtube_channel_tool = YoutubeChannelSearchTool()
@@ -122,8 +122,8 @@ youtube_channel_tool = YoutubeChannelSearchTool(
 Veja um exemplo mais detalhado de como integrar o `YoutubeChannelSearchTool` com um agente LocalAI:
 
 ```python Code
-from crewai import Agent, Task, Crew
-from crewai_tools import YoutubeChannelSearchTool
+from localagents import Agent, Task, Crew
+from localagents_tools import YoutubeChannelSearchTool
 
 # Inicializa a ferramenta
 youtube_channel_tool = YoutubeChannelSearchTool()

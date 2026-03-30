@@ -11,25 +11,25 @@ Testar é uma parte crucial do processo de desenvolvimento, sendo essencial para
 
 ### Utilizando o Recurso de Teste
 
-Adicionamos o comando de CLI `crewai test` para facilitar o teste da sua crew. Esse comando executará sua crew por um número especificado de iterações e fornecerá métricas de desempenho detalhadas. Os parâmetros são `n_iterations` e `model`, ambos opcionais e com valores padrão de 2 e `gpt-4o-mini`, respectivamente. Por enquanto, o único provedor disponível é a OpenAI.
+Adicionamos o comando de CLI `localagents test` para facilitar o teste da sua crew. Esse comando executará sua crew por um número especificado de iterações e fornecerá métricas de desempenho detalhadas. Os parâmetros são `n_iterations` e `model`, ambos opcionais e com valores padrão de 2 e `gpt-4o-mini`, respectivamente. Por enquanto, o único provedor disponível é a OpenAI.
 
 ```bash
-crewai test
+localagents test
 ```
 
 Se quiser rodar mais iterações ou utilizar um modelo diferente, você pode especificar os parâmetros assim:
 
 ```bash
-crewai test --n_iterations 5 --model gpt-4o
+localagents test --n_iterations 5 --model gpt-4o
 ```
 
 ou usando as formas abreviadas:
 
 ```bash
-crewai test -n 5 -m gpt-4o
+localagents test -n 5 -m gpt-4o
 ```
 
-Ao executar o comando `crewai test`, a crew será executada pelo número especificado de iterações, e as métricas de desempenho serão exibidas ao final da execução.
+Ao executar o comando `localagents test`, a crew será executada pelo número especificado de iterações, e as métricas de desempenho serão exibidas ao final da execução.
 
 Uma tabela de pontuações ao final mostrará o desempenho da crew em relação às seguintes métricas:
 

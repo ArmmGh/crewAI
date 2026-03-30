@@ -23,7 +23,7 @@ uv add weaviate-client
 
 لاستخدام `WeaviateVectorSearchTool` بفعالية، اتبع هذه الخطوات:
 
-1. **تثبيت الحزمة**: تأكد من تثبيت حزمتي `crewai[tools]` و `weaviate-client` في بيئة Python الخاصة بك.
+1. **تثبيت الحزمة**: تأكد من تثبيت حزمتي `localagents[tools]` و `weaviate-client` في بيئة Python الخاصة بك.
 2. **إعداد Weaviate**: قم بإعداد مجموعة Weaviate. يمكنك اتباع [وثائق Weaviate](https://weaviate.io/developers/wcs/manage-clusters/connect) للتعليمات.
 3. **مفاتيح API**: احصل على عنوان URL لمجموعة Weaviate ومفتاح API.
 4. **مفتاح OpenAI API**: تأكد من تعيين مفتاح OpenAI API في متغيرات البيئة كـ `OPENAI_API_KEY`.
@@ -33,7 +33,7 @@ uv add weaviate-client
 يوضح المثال التالي كيفية تهيئة الأداة وتنفيذ بحث:
 
 ```python Code
-from crewai_tools import WeaviateVectorSearchTool
+from localagents_tools import WeaviateVectorSearchTool
 
 # Initialize the tool
 tool = WeaviateVectorSearchTool(
@@ -73,7 +73,7 @@ def search_agent(self) -> Agent:
 يمكنك تخصيص المحوّل المتجهي والنموذج التوليدي المستخدمين في الأداة:
 
 ```python Code
-from crewai_tools import WeaviateVectorSearchTool
+from localagents_tools import WeaviateVectorSearchTool
 from weaviate.classes.config import Configure
 
 # Setup custom model for vectorizer and generative model
@@ -94,7 +94,7 @@ tool = WeaviateVectorSearchTool(
 
 ```python Code
 import os
-from crewai_tools import WeaviateVectorSearchTool
+from localagents_tools import WeaviateVectorSearchTool
 import weaviate
 from weaviate.classes.init import Auth
 
@@ -142,8 +142,8 @@ tool = WeaviateVectorSearchTool(
 إليك كيفية دمج `WeaviateVectorSearchTool` مع وكيل LocalAI:
 
 ```python Code
-from crewai import Agent
-from crewai_tools import WeaviateVectorSearchTool
+from localagents import Agent
+from localagents_tools import WeaviateVectorSearchTool
 
 # Initialize the tool
 weaviate_tool = WeaviateVectorSearchTool(

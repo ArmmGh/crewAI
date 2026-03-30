@@ -63,16 +63,16 @@ class GmailProcessingCrew:
 
 ```bash
 # عرض جميع المشغلات المتاحة
-crewai triggers list
+localagents triggers list
 
 # محاكاة مشغل Gmail بحمولة واقعية
-crewai triggers run gmail/new_email_received
+localagents triggers run gmail/new_email_received
 ```
 
-سينفذ أمر `crewai triggers run` طاقمك بحمولة Gmail كاملة، مما يتيح لك اختبار منطق التحليل قبل النشر.
+سينفذ أمر `localagents triggers run` طاقمك بحمولة Gmail كاملة، مما يتيح لك اختبار منطق التحليل قبل النشر.
 
 <Warning>
-  استخدم `crewai triggers run gmail/new_email_received` (وليس `crewai run`) لمحاكاة
+  استخدم `localagents triggers run gmail/new_email_received` (وليس `localagents run`) لمحاكاة
   تنفيذ المشغل أثناء التطوير. بعد النشر، سيتلقى طاقمك
   حمولة المشغل تلقائياً.
 </Warning>
@@ -92,6 +92,6 @@ crewai triggers run gmail/new_email_received
 
 - تأكد من ربط Gmail في Tools & Integrations
 - تحقق من تفعيل مشغل Gmail في علامة تبويب Triggers
-- اختبر محلياً بـ `crewai triggers run gmail/new_email_received` لرؤية هيكل الحمولة بالضبط
-- تحقق من سجلات التنفيذ وتأكد من تمرير الحمولة كـ `crewai_trigger_payload`
-- تذكر: استخدم `crewai triggers run` (وليس `crewai run`) لمحاكاة تنفيذ المشغل
+- اختبر محلياً بـ `localagents triggers run gmail/new_email_received` لرؤية هيكل الحمولة بالضبط
+- تحقق من سجلات التنفيذ وتأكد من تمرير الحمولة كـ `localagents_trigger_payload`
+- تذكر: استخدم `localagents triggers run` (وليس `localagents run`) لمحاكاة تنفيذ المشغل

@@ -10,7 +10,7 @@ As ferramentas de integração permitem que seus agentes deleguem trabalho para 
 ## **Ferramentas Disponíveis**
 
 <CardGroup cols={2}>
-  <Card title="Ferramenta de Execução de Automação LocalAI" icon="robot" href="/pt-BR/tools/integration/crewaiautomationtool">
+  <Card title="Ferramenta de Execução de Automação LocalAI" icon="robot" href="/pt-BR/tools/integration/localagentsautomationtool">
     Invoque automações ativas do LocalAI Platform, envie entradas personalizadas e acompanhe o resultado diretamente do seu agente.
   </Card>
 
@@ -29,13 +29,13 @@ As ferramentas de integração permitem que seus agentes deleguem trabalho para 
 ## **Exemplo de Início Rápido**
 
 ```python
-from crewai import Agent, Task, Crew
-from crewai_tools import InvokeCrewAIAutomationTool
-from crewai_tools.aws.bedrock.agents.invoke_agent_tool import BedrockInvokeAgentTool
+from localagents import Agent, Task, Crew
+from localagents_tools import InvokeLocalAgentsAutomationTool
+from localagents_tools.aws.bedrock.agents.invoke_agent_tool import BedrockInvokeAgentTool
 
 # Automação externa
-analysis_automation = InvokeCrewAIAutomationTool(
-    crew_api_url="https://analysis-crew.acme.crewai.com",
+analysis_automation = InvokeLocalAgentsAutomationTool(
+    crew_api_url="https://analysis-crew.acme.localagents.com",
     crew_bearer_token="YOUR_BEARER_TOKEN",
     crew_name="Analysis Automation",
     crew_description="Executa o pipeline de análise em produção",

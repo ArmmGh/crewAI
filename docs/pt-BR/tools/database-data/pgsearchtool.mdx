@@ -21,14 +21,14 @@ grandes volumes de dados dentro de um ambiente PostgreSQL.
 
 ## Instalação
 
-O pacote `crewai_tools`, que incluirá o PGSearchTool assim que for lançado, pode ser instalado usando o comando abaixo:
+O pacote `localagents_tools`, que incluirá o PGSearchTool assim que for lançado, pode ser instalado usando o comando abaixo:
 
 ```shell
-pip install 'crewai[tools]'
+pip install 'localagents[tools]'
 ```
 
 <Note>
-    O PGSearchTool ainda não está disponível na versão atual do pacote `crewai_tools`. Este comando de instalação será atualizado assim que a ferramenta for lançada.
+    O PGSearchTool ainda não está disponível na versão atual do pacote `localagents_tools`. Este comando de instalação será atualizado assim que a ferramenta for lançada.
 </Note>
 
 ## Exemplo de Uso
@@ -36,7 +36,7 @@ pip install 'crewai[tools]'
 Abaixo está um exemplo proposto mostrando como utilizar o PGSearchTool para realizar uma busca semântica em uma tabela dentro de um banco de dados PostgreSQL:
 
 ```python Code
-from crewai_tools import PGSearchTool
+from localagents_tools import PGSearchTool
 
 # Inicialize a ferramenta com a URI do banco de dados e o nome da tabela alvo
 tool = PGSearchTool(

@@ -32,7 +32,7 @@ mode: "wide"
 ## الخطوة 1: إنشاء مشروع LocalAI Flow جديد
 
 ```bash
-crewai create flow guide_creator_flow
+localagents create flow guide_creator_flow
 cd guide_creator_flow
 ```
 
@@ -64,7 +64,7 @@ guide_creator_flow/
 ## الخطوة 3: إضافة Crew كتابة المحتوى
 
 ```bash
-crewai flow add-crew content-crew
+localagents flow add-crew content-crew
 ```
 
 ## الخطوة 4: تهيئة Crew كتابة المحتوى
@@ -154,9 +154,9 @@ review_section_task:
 
 ```python
 # src/guide_creator_flow/crews/content_crew/content_crew.py
-from crewai import Agent, Crew, Process, Task
-from crewai.project import CrewBase, agent, crew, task
-from crewai.agents.agent_builder.base_agent import BaseAgent
+from localagents import Agent, Crew, Process, Task
+from localagents.project import CrewBase, agent, crew, task
+from localagents.agents.agent_builder.base_agent import BaseAgent
 from typing import List
 
 @CrewBase
@@ -223,13 +223,13 @@ ANTHROPIC_API_KEY=your_anthropic_api_key
 ## الخطوة 7: تثبيت التبعيات
 
 ```bash
-crewai install
+localagents install
 ```
 
 ## الخطوة 8: تشغيل Flow
 
 ```bash
-crewai flow kickoff
+localagents flow kickoff
 ```
 
 عند تشغيل هذا الأمر، ستشاهد Flow يعمل:
@@ -241,7 +241,7 @@ crewai flow kickoff
 ## الخطوة 9: تصوير Flow
 
 ```bash
-crewai flow plot
+localagents flow plot
 ```
 
 سينشئ ملف HTML يوضح هيكل Flow بما في ذلك العلاقات بين الخطوات المختلفة.

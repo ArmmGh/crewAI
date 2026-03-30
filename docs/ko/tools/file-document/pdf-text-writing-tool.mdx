@@ -27,8 +27,8 @@ PDF 페이지의 정확한 좌표에 텍스트를 작성하고, 필요에 따라
 ## 예시
 
 ```python Code
-from crewai import Agent, Task, Crew
-from crewai_tools import PDFTextWritingTool
+from localagents import Agent, Task, Crew
+from localagents_tools import PDFTextWritingTool
 
 tool = PDFTextWritingTool()
 
@@ -58,7 +58,7 @@ result = crew.kickoff()
 ### 직접 사용
 
 ```python Code
-from crewai_tools import PDFTextWritingTool
+from localagents_tools import PDFTextWritingTool
 
 PDFTextWritingTool().run(
   pdf_path="./input.pdf",

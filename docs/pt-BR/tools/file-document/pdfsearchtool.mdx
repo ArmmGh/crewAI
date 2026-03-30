@@ -18,17 +18,17 @@ Essa capacidade a torna especialmente útil para extrair informações específi
 
 ## Instalação
 
-Para começar a usar o PDFSearchTool, primeiro, garanta que o pacote crewai_tools está instalado com o seguinte comando:
+Para começar a usar o PDFSearchTool, primeiro, garanta que o pacote localagents_tools está instalado com o seguinte comando:
 
 ```shell
-pip install 'crewai[tools]'
+pip install 'localagents[tools]'
 ```
 
 ## Exemplo
 Veja como utilizar o PDFSearchTool para buscar dentro de um documento PDF:
 
 ```python Code
-from crewai_tools import PDFSearchTool
+from localagents_tools import PDFSearchTool
 
 # Inicialize a ferramenta permitindo buscas em qualquer conteúdo PDF caso o caminho seja informado durante a execução
 tool = PDFSearchTool()
@@ -48,7 +48,7 @@ tool = PDFSearchTool(pdf='path/to/your/document.pdf')
 Por padrão, a ferramenta utiliza OpenAI para embeddings e sumarização. Para personalizar, use um dicionário de configuração conforme abaixo. Observação: um banco vetorial (vectordb) é necessário, pois os embeddings gerados precisam ser armazenados e consultados.
 
 ```python Code
-from crewai_tools import PDFSearchTool
+from localagents_tools import PDFSearchTool
 from chromadb.config import Settings  # Persistência no Chroma
 
 tool = PDFSearchTool(

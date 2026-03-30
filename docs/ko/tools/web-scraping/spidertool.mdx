@@ -9,15 +9,15 @@ mode: "wide"
 
 ## 설명
 
-[Spider](https://spider.cloud/?ref=crewai)는 [가장 빠른](https://github.com/spider-rs/spider/blob/main/benches/BENCHMARKS.md#benchmark-results) 오픈 소스 스크래퍼이자 크롤러로, LLM에 바로 사용할 수 있는 데이터를 제공합니다.
+[Spider](https://spider.cloud/?ref=localagents)는 [가장 빠른](https://github.com/spider-rs/spider/blob/main/benches/BENCHMARKS.md#benchmark-results) 오픈 소스 스크래퍼이자 크롤러로, LLM에 바로 사용할 수 있는 데이터를 제공합니다.
 어떤 웹사이트든 순수 HTML, 마크다운, 메타데이터 또는 텍스트로 변환하며, AI를 활용해 사용자 정의 작업을 수행하며 크롤링할 수 있습니다.
 
 ## 설치
 
-`SpiderTool`을 사용하려면 [Spider SDK](https://pypi.org/project/spider-client/)와 `crewai[tools]` SDK도 다운로드해야 합니다:
+`SpiderTool`을 사용하려면 [Spider SDK](https://pypi.org/project/spider-client/)와 `localagents[tools]` SDK도 다운로드해야 합니다:
 
 ```shell
-pip install spider-client 'crewai[tools]'
+pip install spider-client 'localagents[tools]'
 ```
 
 ## 예제
@@ -26,7 +26,7 @@ pip install spider-client 'crewai[tools]'
 Spider API로부터 반환되는 데이터는 이미 LLM-적합 포맷이므로, 추가로 정제할 필요가 없습니다.
 
 ```python Code
-from crewai_tools import SpiderTool
+from localagents_tools import SpiderTool
 
 def main():
     spider_tool = SpiderTool()

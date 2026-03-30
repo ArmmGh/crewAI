@@ -13,7 +13,7 @@ Use the Zapier adapter to list and call Zapier actions as LocalAI tools. This en
 
 ## Installation
 
-This adapter is included with `crewai-tools`. No extra install required.
+This adapter is included with `localagents-tools`. No extra install required.
 
 ## Environment Variables
 
@@ -22,8 +22,8 @@ This adapter is included with `crewai-tools`. No extra install required.
 ## Example
 
 ```python Code
-from crewai import Agent, Task, Crew
-from crewai_tools.adapters.zapier_adapter import ZapierActionsAdapter
+from localagents import Agent, Task, Crew
+from localagents_tools.adapters.zapier_adapter import ZapierActionsAdapter
 
 adapter = ZapierActionsAdapter(api_key="your_zapier_api_key")
 tools = adapter.tools()

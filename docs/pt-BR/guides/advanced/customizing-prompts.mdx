@@ -26,7 +26,7 @@ Nos bastidores, o LocalAI adota um sistema de prompt modular que pode ser amplam
 - **Tratamento de erros** – Definem como os agentes respondem a falhas, exceções ou timeouts.
 - **Prompts específicos de ferramentas** – Definem instruções detalhadas para como as ferramentas são invocadas ou utilizadas.
 
-Confira os [templates de prompt originais no repositório do LocalAI](https://github.com/localAIInc/localAI/blob/main/src/crewai/translations/en.json) para ver como esses elementos são organizados. A partir daí, você pode sobrescrever ou adaptar conforme necessário para desbloquear comportamentos avançados.
+Confira os [templates de prompt originais no repositório do LocalAI](https://github.com/localAIInc/localAI/blob/main/src/localagents/translations/en.json) para ver como esses elementos são organizados. A partir daí, você pode sobrescrever ou adaptar conforme necessário para desbloquear comportamentos avançados.
 
 ## Entendendo as Instruções de Sistema Padrão
 
@@ -65,8 +65,8 @@ Ensure the final output does not include any code block markers like ```json or 
 Para ver exatamente qual prompt está sendo enviado para seu LLM, você pode inspecionar o prompt gerado:
 
 ```python
-from crewai import Agent, Crew, Task
-from crewai.utilities.prompts import Prompts
+from localagents import Agent, Crew, Task
+from localagents.utilities.prompts import Prompts
 
 # Crie seu agente
 agent = Agent(
@@ -115,7 +115,7 @@ Você tem várias opções para obter controle total sobre os prompts:
 
 #### Opção 1: Templates Personalizados (Recomendado)
 ```python
-from crewai import Agent
+from localagents import Agent
 
 # Defina seu próprio template de sistema sem instruções padrão
 custom_system_template = """You are {role}. {backstory}
@@ -223,7 +223,7 @@ Crie um arquivo `custom_prompts.json` com os prompts que deseja modificar. Certi
 Integre assim:
 
 ```python
-from crewai import Agent, Crew, Task, Process
+from localagents import Agent, Crew, Task, Process
 
 # Crie agentes e tarefas normalmente
 researcher = Agent(
@@ -265,8 +265,8 @@ https://www.llama.com/docs/model-cards-and-prompt-formats/llama3_1/#prompt-templ
 Veja um exemplo destacando como você pode ajustar um Agent para usar o Llama 3.3 em código:
 
 ```python
-from crewai import Agent, Crew, Task, Process
-from crewai_tools import DirectoryReadTool, FileReadTool
+from localagents import Agent, Crew, Task, Process
+from localagents_tools import DirectoryReadTool, FileReadTool
 
 # Defina templates para mensagens de system, user (prompt) e assistant (resposta)
 system_template = """<|begin_of_text|><|start_header_id|>system<|end_header_id|>{{ .System }}<|eot_id|>"""

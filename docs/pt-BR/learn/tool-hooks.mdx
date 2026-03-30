@@ -84,7 +84,7 @@ def wrong_approach(context: ToolCallHookContext) -> None:
 Use decoradores para sintaxe mais limpa:
 
 ```python
-from crewai.hooks import before_tool_call, after_tool_call
+from localagents.hooks import before_tool_call, after_tool_call
 
 @before_tool_call
 def block_dangerous_tools(context):
@@ -108,9 +108,9 @@ def sanitize_results(context):
 Registre hooks para uma instância específica de crew:
 
 ```python
-from crewai import CrewBase
-from crewai.project import crew
-from crewai.hooks import before_tool_call_crew, after_tool_call_crew
+from localagents import CrewBase
+from localagents.project import crew
+from localagents.hooks import before_tool_call_crew, after_tool_call_crew
 
 @CrewBase
 class MyProjCrew:
@@ -350,7 +350,7 @@ def debug_tool_result(context: ToolCallHookContext) -> None:
 ### Desregistrando Hooks
 
 ```python
-from crewai.hooks import (
+from localagents.hooks import (
     unregister_before_tool_call_hook,
     unregister_after_tool_call_hook
 )
@@ -368,7 +368,7 @@ print(f"Desregistrado: {success}")
 ### Limpando Hooks
 
 ```python
-from crewai.hooks import (
+from localagents.hooks import (
     clear_before_tool_call_hooks,
     clear_after_tool_call_hooks,
     clear_all_tool_call_hooks
@@ -457,7 +457,7 @@ def safe_validation(context: ToolCallHookContext) -> bool | None:
 ## Segurança de Tipos
 
 ```python
-from crewai.hooks import ToolCallHookContext, BeforeToolCallHookType, AfterToolCallHookType
+from localagents.hooks import ToolCallHookContext, BeforeToolCallHookType, AfterToolCallHookType
 
 # Anotações de tipo explícitas
 def my_before_hook(context: ToolCallHookContext) -> bool | None:

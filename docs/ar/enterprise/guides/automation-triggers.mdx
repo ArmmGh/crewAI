@@ -147,7 +147,7 @@ mode: "wide"
 - تفعيل تبديل المشغل في عملية النشر التي يجب أن تستجيب للأحداث
 - توفير متغيرات البيئة المطلوبة (رموز API، معرّفات المستأجر، الأسرار المشتركة)
 - إنشاء أو تحديث المهام التي يمكنها تحليل الحمولة الواردة في أول مهمة طاقم أو خطوة تدفق
-- تحديد ما إذا كنت ستمرر سياق المشغل تلقائياً باستخدام `allow_crewai_trigger_context`
+- تحديد ما إذا كنت ستمرر سياق المشغل تلقائياً باستخدام `allow_localagents_trigger_context`
 - إعداد المراقبة — سجلات webhook وسجل تنفيذ LocalAI والتنبيهات الخارجية الاختيارية
 
 ### اختبار المشغلات محلياً باستخدام CLI
@@ -159,7 +159,7 @@ mode: "wide"
 اعرض جميع المشغلات المتاحة للتكاملات المتصلة:
 
 ```bash
-crewai triggers list
+localagents triggers list
 ```
 
 يعرض هذا الأمر جميع المشغلات المتاحة بناءً على تكاملاتك المتصلة، ويظهر:
@@ -173,13 +173,13 @@ crewai triggers list
 اختبر طاقمك بحمولات مشغل واقعية قبل النشر:
 
 ```bash
-crewai triggers run <trigger_name>
+localagents triggers run <trigger_name>
 ```
 
 على سبيل المثال:
 
 ```bash
-crewai triggers run microsoft_onedrive/file_changed
+localagents triggers run microsoft_onedrive/file_changed
 ```
 
 يقوم هذا الأمر بـ:
@@ -190,8 +190,8 @@ crewai triggers run microsoft_onedrive/file_changed
 
 <Warning>
   **ملاحظات تطوير مهمة:**
-  - استخدم `crewai triggers run <trigger>` لمحاكاة تنفيذ المشغل أثناء التطوير
-  - استخدام `crewai run` لن يحاكي استدعاءات المشغل ولن يمرر حمولة المشغل
+  - استخدم `localagents triggers run <trigger>` لمحاكاة تنفيذ المشغل أثناء التطوير
+  - استخدام `localagents run` لن يحاكي استدعاءات المشغل ولن يمرر حمولة المشغل
   - بعد النشر، سيتم تنفيذ طاقمك بحمولة المشغل الفعلية
   - إذا كان طاقمك يتوقع معاملات غير موجودة في حمولة المشغل، فقد يفشل التنفيذ
 </Warning>
@@ -227,11 +227,11 @@ class MyAutomatedCrew:
 سيتلقى الطاقم تلقائياً حمولة المشغل ويمكنه الوصول إليها عبر آليات سياق LocalAI القياسية.
 
 <Note>
-  يمكن أن تتضمن مدخلات الطاقم والتدفق `crewai_trigger_payload`. يحقن LocalAI
-  هذه الحمولة تلقائياً: - المهام: تُلحق بوصف المهمة الأولى افتراضياً ("Trigger Payload: {crewai_trigger_payload}") - التحكم
-  عبر `allow_crewai_trigger_context`: عيّن `True` للحقن دائماً، `False` لعدم
+  يمكن أن تتضمن مدخلات الطاقم والتدفق `localagents_trigger_payload`. يحقن LocalAI
+  هذه الحمولة تلقائياً: - المهام: تُلحق بوصف المهمة الأولى افتراضياً ("Trigger Payload: {localagents_trigger_payload}") - التحكم
+  عبر `allow_localagents_trigger_context`: عيّن `True` للحقن دائماً، `False` لعدم
   الحقن أبداً - التدفقات: أي دالة `@start()` تقبل معامل
-  `crewai_trigger_payload` ستستلمه
+  `localagents_trigger_payload` ستستلمه
 </Note>
 
 ### التكامل مع التدفقات
@@ -240,21 +240,21 @@ class MyAutomatedCrew:
 
 #### الوصول إلى حمولة المشغل
 
-جميع دوال `@start()` في تدفقاتك ستقبل معاملاً إضافياً يسمى `crewai_trigger_payload`:
+جميع دوال `@start()` في تدفقاتك ستقبل معاملاً إضافياً يسمى `localagents_trigger_payload`:
 
 ```python
-from crewai.flow import Flow, start, listen
+from localagents.flow import Flow, start, listen
 
 class MyAutomatedFlow(Flow):
     @start()
-    def handle_trigger(self, crewai_trigger_payload: dict = None):
+    def handle_trigger(self, localagents_trigger_payload: dict = None):
         """
         This start method can receive trigger data
         """
-        if crewai_trigger_payload:
+        if localagents_trigger_payload:
             # Process the trigger data
-            trigger_id = crewai_trigger_payload.get('id')
-            event_data = crewai_trigger_payload.get('payload', {})
+            trigger_id = localagents_trigger_payload.get('id')
+            event_data = localagents_trigger_payload.get('payload', {})
 
             # Store in flow state for use by other methods
             self.state.trigger_id = trigger_id
@@ -279,7 +279,7 @@ class MyAutomatedFlow(Flow):
 
 ```python
 @start()
-def delegate_to_crew(self, crewai_trigger_payload: dict = None):
+def delegate_to_crew(self, localagents_trigger_payload: dict = None):
     """
     Delegate processing to a specialized crew
     """
@@ -289,7 +289,7 @@ def delegate_to_crew(self, crewai_trigger_payload: dict = None):
     result = crew.crew().kickoff(
         inputs={
             'a_custom_parameter': "custom_value",
-            'crewai_trigger_payload': crewai_trigger_payload
+            'localagents_trigger_payload': localagents_trigger_payload
         },
     )
 
@@ -307,15 +307,15 @@ def delegate_to_crew(self, crewai_trigger_payload: dict = None):
 **فشل التنفيذ:**
 
 - تحقق من سجلات التنفيذ لتفاصيل الأخطاء
-- استخدم `crewai triggers run <trigger_name>` للاختبار محلياً ورؤية هيكل الحمولة بالضبط
-- تحقق من أن طاقمك يمكنه التعامل مع معامل `crewai_trigger_payload`
+- استخدم `localagents triggers run <trigger_name>` للاختبار محلياً ورؤية هيكل الحمولة بالضبط
+- تحقق من أن طاقمك يمكنه التعامل مع معامل `localagents_trigger_payload`
 - تأكد من أن طاقمك لا يتوقع معاملات غير مضمنة في حمولة المشغل
 
 **مشاكل التطوير:**
 
-- اختبر دائماً باستخدام `crewai triggers run <trigger>` قبل النشر لرؤية الحمولة الكاملة
-- تذكر أن `crewai run` لا يحاكي استدعاءات المشغل — استخدم `crewai triggers run` بدلاً من ذلك
-- استخدم `crewai triggers list` للتحقق من المشغلات المتاحة لتكاملاتك المتصلة
+- اختبر دائماً باستخدام `localagents triggers run <trigger>` قبل النشر لرؤية الحمولة الكاملة
+- تذكر أن `localagents run` لا يحاكي استدعاءات المشغل — استخدم `localagents triggers run` بدلاً من ذلك
+- استخدم `localagents triggers list` للتحقق من المشغلات المتاحة لتكاملاتك المتصلة
 - بعد النشر، سيتلقى طاقمك حمولة المشغل الفعلية، لذا اختبر بدقة محلياً أولاً
 
 تحوّل مشغلات الأتمتة عمليات نشر LocalAI إلى أنظمة استجابة مدفوعة بالأحداث يمكنها التكامل بسلاسة مع عمليات عملك وأدواتك الحالية.

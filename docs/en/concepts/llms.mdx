@@ -35,7 +35,7 @@ There are different places in LocalAI code where you can specify the model to us
 
 <Tabs>
   <Tab title="1. Environment Variables">
-    The simplest way to get started. Set the model in your environment directly, through an `.env` file or in your app code. If you used `crewai create` to bootstrap your project, it will be set already.
+    The simplest way to get started. Set the model in your environment directly, through an `.env` file or in your app code. If you used `localagents create` to bootstrap your project, it will be set already.
 
     ```bash .env
     MODEL=model-id  # e.g. gpt-4o, gemini-2.0-flash, claude-3-sonnet-...
@@ -73,7 +73,7 @@ There are different places in LocalAI code where you can specify the model to us
     For maximum flexibility, configure LLMs directly in your Python code:
 
     ```python {4,8}
-    from crewai import LLM
+    from localagents import LLM
 
     # Basic configuration
     llm = LLM(model="model-id-here")  # gpt-4o, gemini-2.0-flash, anthropic/claude...
@@ -107,11 +107,11 @@ There are different places in LocalAI code where you can specify the model to us
 </Tabs>
 
 <Info>
-  LocalAI provides native SDK integrations for OpenAI, Anthropic, Google (Gemini API), Azure, and AWS Bedrock — no extra install needed beyond the provider-specific extras (e.g. `uv add "crewai[openai]"`).
+  LocalAI provides native SDK integrations for OpenAI, Anthropic, Google (Gemini API), Azure, and AWS Bedrock — no extra install needed beyond the provider-specific extras (e.g. `uv add "localagents[openai]"`).
 
   All other providers are powered by **LiteLLM**. If you plan to use any of them, add it as a dependency to your project:
   ```bash
-  uv add 'crewai[litellm]'
+  uv add 'localagents[litellm]'
   ```
 </Info>
 
@@ -134,7 +134,7 @@ In this section, you'll find detailed examples that help you select, configure, 
 
     **Basic Usage:**
     ```python Code
-    from crewai import LLM
+    from localagents import LLM
 
     llm = LLM(
         model="openai/gpt-4o",
@@ -146,7 +146,7 @@ In this section, you'll find detailed examples that help you select, configure, 
 
     **Advanced Configuration:**
     ```python Code
-    from crewai import LLM
+    from localagents import LLM
 
     llm = LLM(
         model="openai/gpt-4o",
@@ -174,7 +174,7 @@ In this section, you'll find detailed examples that help you select, configure, 
     **Structured Outputs:**
     ```python Code
     from pydantic import BaseModel
-    from crewai import LLM
+    from localagents import LLM
 
     class ResponseFormat(BaseModel):
         name: str
@@ -221,7 +221,7 @@ In this section, you'll find detailed examples that help you select, configure, 
     OpenAI offers two APIs: Chat Completions (default) and the newer Responses API. The Responses API was designed from the ground up with native multimodal support—text, images, audio, and function calls are all first-class citizens. It provides better performance with reasoning models and supports additional features like auto-chaining and built-in tools.
 
     ```python Code
-    from crewai import LLM
+    from localagents import LLM
 
     # Use the Responses API instead of Chat Completions
     llm = LLM(
@@ -249,13 +249,13 @@ In this section, you'll find detailed examples that help you select, configure, 
 
     **Note:** To use OpenAI, install the required dependencies:
     ```bash
-    uv add "crewai[openai]"
+    uv add "localagents[openai]"
     ```
   </Accordion>
 
   <Accordion title="Meta-Llama">
     Meta's Llama API provides access to Meta's family of large language models.
-    The API is available through the [Meta Llama API](https://llama.developer.meta.com?utm_source=partner-crewai&utm_medium=website).
+    The API is available through the [Meta Llama API](https://llama.developer.meta.com?utm_source=partner-localagents&utm_medium=website).
     Set the following environment variables in your `.env` file:
 
     ```toml Code
@@ -265,7 +265,7 @@ In this section, you'll find detailed examples that help you select, configure, 
 
     Example usage in your LocalAI project:
     ```python Code
-    from crewai import LLM
+    from localagents import LLM
 
     # Initialize Meta Llama LLM
     llm = LLM(
@@ -287,7 +287,7 @@ In this section, you'll find detailed examples that help you select, configure, 
 
     **Note:** This provider uses LiteLLM. Add it as a dependency to your project:
     ```bash
-    uv add 'crewai[litellm]'
+    uv add 'localagents[litellm]'
     ```
   </Accordion>
 
@@ -301,7 +301,7 @@ In this section, you'll find detailed examples that help you select, configure, 
 
     **Basic Usage:**
     ```python Code
-    from crewai import LLM
+    from localagents import LLM
 
     llm = LLM(
         model="anthropic/claude-3-5-sonnet-20241022",
@@ -312,7 +312,7 @@ In this section, you'll find detailed examples that help you select, configure, 
 
     **Advanced Configuration:**
     ```python Code
-    from crewai import LLM
+    from localagents import LLM
 
     llm = LLM(
         model="anthropic/claude-3-5-sonnet-20241022",
@@ -333,7 +333,7 @@ In this section, you'll find detailed examples that help you select, configure, 
     LocalAI supports Anthropic's Extended Thinking feature, which allows Claude to think through problems in a more human-like way before responding. This is particularly useful for complex reasoning, analysis, and problem-solving tasks.
 
     ```python Code
-    from crewai import LLM
+    from localagents import LLM
 
     # Enable extended thinking with default settings
     llm = LLM(
@@ -406,7 +406,7 @@ In this section, you'll find detailed examples that help you select, configure, 
 
     **Note:** To use Anthropic, install the required dependencies:
     ```bash
-    uv add "crewai[anthropic]"
+    uv add "localagents[anthropic]"
     ```
   </Accordion>
 
@@ -431,7 +431,7 @@ In this section, you'll find detailed examples that help you select, configure, 
 
     **Basic Usage:**
     ```python Code
-    from crewai import LLM
+    from localagents import LLM
 
     llm = LLM(
         model="gemini/gemini-2.0-flash",
@@ -442,7 +442,7 @@ In this section, you'll find detailed examples that help you select, configure, 
 
     **Advanced Configuration:**
     ```python Code
-    from crewai import LLM
+    from localagents import LLM
 
     llm = LLM(
         model="gemini/gemini-2.5-flash",
@@ -472,7 +472,7 @@ In this section, you'll find detailed examples that help you select, configure, 
 
     Then use the LLM as usual:
     ```python Code
-    from crewai import LLM
+    from localagents import LLM
 
     llm = LLM(
         model="gemini/gemini-2.0-flash",
@@ -490,7 +490,7 @@ In this section, you'll find detailed examples that help you select, configure, 
 
     **Vertex AI Configuration (Service Account):**
     ```python Code
-    from crewai import LLM
+    from localagents import LLM
 
     llm = LLM(
         model="gemini/gemini-1.5-pro",
@@ -543,7 +543,7 @@ In this section, you'll find detailed examples that help you select, configure, 
 
     **Note:** To use Google Gemini, install the required dependencies:
     ```bash
-    uv add "crewai[google-genai]"
+    uv add "localagents[google-genai]"
     ```
 
     The full list of models is available in the [Gemini model docs](https://ai.google.dev/gemini-api/docs/models).
@@ -565,7 +565,7 @@ In this section, you'll find detailed examples that help you select, configure, 
 
     Example usage in your LocalAI project:
     ```python Code
-    from crewai import LLM
+    from localagents import LLM
 
     llm = LLM(
         model="gemini-1.5-pro-latest", # or vertex_ai/gemini-1.5-pro-latest
@@ -588,7 +588,7 @@ In this section, you'll find detailed examples that help you select, configure, 
 
     **Note:** This provider uses LiteLLM. Add it as a dependency to your project:
     ```bash
-    uv add 'crewai[litellm]'
+    uv add 'localagents[litellm]'
     ```
   </Accordion>
 
@@ -656,7 +656,7 @@ In this section, you'll find detailed examples that help you select, configure, 
 
     **Note:** To use Azure AI Inference, install the required dependencies:
     ```bash
-    uv add "crewai[azure-ai-inference]"
+    uv add "localagents[azure-ai-inference]"
     ```
   </Accordion>
 
@@ -676,7 +676,7 @@ In this section, you'll find detailed examples that help you select, configure, 
 
     **Basic Usage:**
     ```python Code
-    from crewai import LLM
+    from localagents import LLM
 
     llm = LLM(
         model="bedrock/anthropic.claude-3-5-sonnet-20241022-v2:0",
@@ -686,7 +686,7 @@ In this section, you'll find detailed examples that help you select, configure, 
 
     **Advanced Configuration:**
     ```python Code
-    from crewai import LLM
+    from localagents import LLM
 
     llm = LLM(
         model="bedrock/anthropic.claude-3-5-sonnet-20241022-v2:0",
@@ -768,7 +768,7 @@ In this section, you'll find detailed examples that help you select, configure, 
 
     **Note:** To use AWS Bedrock, install the required dependencies:
     ```bash
-    uv add "crewai[bedrock]"
+    uv add "localagents[bedrock]"
     ```
   </Accordion>
 
@@ -788,7 +788,7 @@ In this section, you'll find detailed examples that help you select, configure, 
 
     **Note:** This provider uses LiteLLM. Add it as a dependency to your project:
     ```bash
-    uv add 'crewai[litellm]'
+    uv add 'localagents[litellm]'
     ```
   </Accordion>
 
@@ -808,7 +808,7 @@ In this section, you'll find detailed examples that help you select, configure, 
 
     **Note:** This provider uses LiteLLM. Add it as a dependency to your project:
     ```bash
-    uv add 'crewai[litellm]'
+    uv add 'localagents[litellm]'
     ```
   </Accordion>
 
@@ -899,7 +899,7 @@ In this section, you'll find detailed examples that help you select, configure, 
 
     **Note:** This provider uses LiteLLM. Add it as a dependency to your project:
     ```bash
-    uv add 'crewai[litellm]'
+    uv add 'localagents[litellm]'
     ```
   </Accordion>
 
@@ -915,10 +915,10 @@ In this section, you'll find detailed examples that help you select, configure, 
 
     2. Install the local model. For Llama 3.1-8b follow [instructions](https://build.nvidia.com/meta/llama-3_1-8b-instruct/deploy)
 
-    3. Configure your crewai local models:
+    3. Configure your localagents local models:
 
     ```python Code
-    from crewai.llm import LLM
+    from localagents.llm import LLM
 
     local_nvidia_nim_llm = LLM(
         model="openai/meta/llama-3.1-8b-instruct", # it's an openai-api compatible model
@@ -944,7 +944,7 @@ In this section, you'll find detailed examples that help you select, configure, 
 
     **Note:** This provider uses LiteLLM. Add it as a dependency to your project:
     ```bash
-    uv add 'crewai[litellm]'
+    uv add 'localagents[litellm]'
     ```
   </Accordion>
 
@@ -970,7 +970,7 @@ In this section, you'll find detailed examples that help you select, configure, 
 
     **Note:** This provider uses LiteLLM. Add it as a dependency to your project:
     ```bash
-    uv add 'crewai[litellm]'
+    uv add 'localagents[litellm]'
     ```
   </Accordion>
 
@@ -997,7 +997,7 @@ In this section, you'll find detailed examples that help you select, configure, 
 
     **Note:** This provider uses LiteLLM. Add it as a dependency to your project:
     ```bash
-    uv add 'crewai[litellm]'
+    uv add 'localagents[litellm]'
     ```
   </Accordion>
 
@@ -1015,7 +1015,7 @@ In this section, you'll find detailed examples that help you select, configure, 
 
     **Note:** This provider uses LiteLLM. Add it as a dependency to your project:
     ```bash
-    uv add 'crewai[litellm]'
+    uv add 'localagents[litellm]'
     ```
   </Accordion>
 
@@ -1035,7 +1035,7 @@ In this section, you'll find detailed examples that help you select, configure, 
 
     **Note:** This provider uses LiteLLM. Add it as a dependency to your project:
     ```bash
-    uv add 'crewai[litellm]'
+    uv add 'localagents[litellm]'
     ```
   </Accordion>
 
@@ -1055,7 +1055,7 @@ In this section, you'll find detailed examples that help you select, configure, 
 
     **Note:** This provider uses LiteLLM. Add it as a dependency to your project:
     ```bash
-    uv add 'crewai[litellm]'
+    uv add 'localagents[litellm]'
     ```
   </Accordion>
 
@@ -1074,7 +1074,7 @@ In this section, you'll find detailed examples that help you select, configure, 
 
     **Note:** This provider uses LiteLLM. Add it as a dependency to your project:
     ```bash
-    uv add 'crewai[litellm]'
+    uv add 'localagents[litellm]'
     ```
   </Accordion>
 
@@ -1102,7 +1102,7 @@ In this section, you'll find detailed examples that help you select, configure, 
 
     **Note:** This provider uses LiteLLM. Add it as a dependency to your project:
     ```bash
-    uv add 'crewai[litellm]'
+    uv add 'localagents[litellm]'
     ```
   </Accordion>
 
@@ -1132,7 +1132,7 @@ In this section, you'll find detailed examples that help you select, configure, 
 
     **Note:** This provider uses LiteLLM. Add it as a dependency to your project:
     ```bash
-    uv add 'crewai[litellm]'
+    uv add 'localagents[litellm]'
     ```
   </Accordion>
 
@@ -1159,7 +1159,7 @@ In this section, you'll find detailed examples that help you select, configure, 
 
     **Note:** This provider uses LiteLLM. Add it as a dependency to your project:
     ```bash
-    uv add 'crewai[litellm]'
+    uv add 'localagents[litellm]'
     ```
   </Accordion>
 
@@ -1186,7 +1186,7 @@ In this section, you'll find detailed examples that help you select, configure, 
 
     **Note:** This provider uses LiteLLM. Add it as a dependency to your project:
     ```bash
-    uv add 'crewai[litellm]'
+    uv add 'localagents[litellm]'
     ```
   </Accordion>
 </AccordionGroup>
@@ -1200,7 +1200,7 @@ LocalAI supports streaming responses from LLMs, allowing your application to rec
     Enable streaming by setting the `stream` parameter to `True` when initializing your LLM:
 
     ```python
-    from crewai import LLM
+    from localagents import LLM
 
     # Create an LLM with streaming enabled
     llm = LLM(
@@ -1216,14 +1216,14 @@ LocalAI supports streaming responses from LLMs, allowing your application to rec
     LocalAI emits events for each chunk received during streaming:
 
     ```python
-    from crewai.events import (
+    from localagents.events import (
       LLMStreamChunkEvent
     )
-    from crewai.events import BaseEventListener
+    from localagents.events import BaseEventListener
 
     class MyCustomListener(BaseEventListener):
-        def setup_listeners(self, crewai_event_bus):
-            @crewai_event_bus.on(LLMStreamChunkEvent)
+        def setup_listeners(self, localagents_event_bus):
+            @localagents_event_bus.on(LLMStreamChunkEvent)
             def on_llm_stream_chunk(self, event: LLMStreamChunkEvent):
               # Process each chunk as it arrives
               print(f"Received chunk: {event.chunk}")
@@ -1240,13 +1240,13 @@ LocalAI supports streaming responses from LLMs, allowing your application to rec
     All LLM events in LocalAI include agent and task information, allowing you to track and filter LLM interactions by specific agents or tasks:
 
     ```python
-    from crewai import LLM, Agent, Task, Crew
-    from crewai.events import LLMStreamChunkEvent
-    from crewai.events import BaseEventListener
+    from localagents import LLM, Agent, Task, Crew
+    from localagents.events import LLMStreamChunkEvent
+    from localagents.events import BaseEventListener
 
     class MyCustomListener(BaseEventListener):
-        def setup_listeners(self, crewai_event_bus):
-            @crewai_event_bus.on(LLMStreamChunkEvent)
+        def setup_listeners(self, localagents_event_bus):
+            @localagents_event_bus.on(LLMStreamChunkEvent)
             def on_llm_stream_chunk(source, event):
                 if researcher.id == event.agent_id:
                     print("\n==============\n Got event:", event, "\n==============\n")
@@ -1296,7 +1296,7 @@ LocalAI supports asynchronous LLM calls for improved performance and concurrency
 
     ```python
     import asyncio
-    from crewai import LLM
+    from localagents import LLM
 
     async def main():
         llm = LLM(model="openai/gpt-4o")
@@ -1316,7 +1316,7 @@ LocalAI supports asynchronous LLM calls for improved performance and concurrency
 
     ```python
     import asyncio
-    from crewai import LLM
+    from localagents import LLM
 
     async def stream_async():
         llm = LLM(model="openai/gpt-4o", stream=True)
@@ -1337,7 +1337,7 @@ LocalAI supports structured responses from LLM calls by allowing you to define a
 For example, you can define a Pydantic model to represent the expected response structure and pass it as the `response_format` when instantiating the LLM. The model will then be used to convert the LLM output into a structured Python object.
 
 ```python Code
-from crewai import LLM
+from localagents import LLM
 
 class Dog(BaseModel):
     name: str
@@ -1366,7 +1366,7 @@ Learn how to get the most out of your LLM configuration:
     LocalAI includes smart context management features:
 
     ```python
-    from crewai import LLM
+    from localagents import LLM
 
     # LocalAI automatically handles:
     # 1. Token counting and tracking
@@ -1429,7 +1429,7 @@ Learn how to get the most out of your LLM configuration:
     For example, if you don't need to send the <code>stop</code> parameter, you can simply omit it from your LLM call:
 
     ```python
-    from crewai import LLM
+    from localagents import LLM
     import os
 
     os.environ["OPENAI_API_KEY"] = "<api-key>"
@@ -1452,8 +1452,8 @@ Learn how to get the most out of your LLM configuration:
     **Basic Usage:**
     ```python
 import httpx
-from crewai import LLM
-from crewai.llms.hooks import BaseInterceptor
+from localagents import LLM
+from localagents.llms.hooks import BaseInterceptor
 
 class CustomInterceptor(BaseInterceptor[httpx.Request, httpx.Response]):
     """Custom interceptor to modify requests and responses."""

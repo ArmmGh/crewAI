@@ -39,7 +39,7 @@ A CLI detecta automaticamente o tipo do seu projeto a partir do `pyproject.toml`
     Se ainda não tiver, instale o LocalAI CLI:
 
     ```bash
-    pip install crewai[tools]
+    pip install localagents[tools]
     ```
 
     <Tip>
@@ -53,7 +53,7 @@ A CLI detecta automaticamente o tipo do seu projeto a partir do `pyproject.toml`
 
     ```bash
     # Se já possui uma conta LocalAI AMP, ou deseja criar uma:
-    crewai login
+    localagents login
     ```
 
     Ao executar qualquer um dos comandos, a CLI irá:
@@ -71,7 +71,7 @@ A CLI detecta automaticamente o tipo do seu projeto a partir do `pyproject.toml`
     No diretório do seu projeto, execute:
 
     ```bash
-    crewai deploy create
+    localagents deploy create
     ```
 
     Este comando irá:
@@ -95,13 +95,13 @@ A CLI detecta automaticamente o tipo do seu projeto a partir do `pyproject.toml`
     Acompanhe o status da implantação com:
 
     ```bash
-    crewai deploy status
+    localagents deploy status
     ```
 
     Para ver logs detalhados do processo de build:
 
     ```bash
-    crewai deploy logs
+    localagents deploy logs
     ```
 
     <Tip>
@@ -117,19 +117,19 @@ O LocalAI CLI oferece vários comandos para gerenciar suas implantações:
 
 ```bash
 # Liste todas as suas implantações
-crewai deploy list
+localagents deploy list
 
 # Consulte o status de uma implantação
-crewai deploy status
+localagents deploy status
 
 # Veja os logs da implantação
-crewai deploy logs
+localagents deploy logs
 
 # Envie atualizações após alterações no código
-crewai deploy push
+localagents deploy push
 
 # Remova uma implantação
-crewai deploy remove <deployment_id>
+localagents deploy remove <deployment_id>
 ```
 
 ## Opção 2: Implantar Diretamente pela Interface Web
@@ -146,7 +146,7 @@ Você precisa enviar seu crew para um repositório do GitHub. Caso ainda não te
 
   <Step title="Conectando o GitHub ao LocalAI AMP">
 
-    1. Faça login em [LocalAI AMP](https://app.crewai.com)
+    1. Faça login em [LocalAI AMP](https://app.localagents.com)
     2. Clique no botão "Connect GitHub"
 
     <Frame>
@@ -211,7 +211,7 @@ Para implantações automatizadas em pipelines CI/CD, você pode usar a API do L
 
     Navegue até as configurações da sua conta LocalAI AMP para gerar um token de API:
 
-    1. Acesse [app.crewai.com](https://app.crewai.com)
+    1. Acesse [app.localagents.com](https://app.localagents.com)
     2. Clique em **Settings** → **Account** → **Personal Access Token**
     3. Gere um novo token e copie-o com segurança
     4. Armazene este token como um secret no seu sistema CI/CD
@@ -236,7 +236,7 @@ Para implantações automatizadas em pipelines CI/CD, você pode usar a API do L
     ```bash
     curl -i -X POST \
          -H "Authorization: Bearer YOUR_PERSONAL_ACCESS_TOKEN" \
-         https://app.crewai.com/crewai_plus/api/v1/crews/YOUR-AUTOMATION-UUID/deploy
+         https://app.localagents.com/localagents_plus/api/v1/crews/YOUR-AUTOMATION-UUID/deploy
 
     # HTTP/2 200
     # content-type: application/json
@@ -244,7 +244,7 @@ Para implantações automatizadas em pipelines CI/CD, você pode usar a API do L
     # {
     #   "uuid": "your-automation-uuid",
     #   "status": "Deploy Enqueued",
-    #   "public_url": "https://your-crew-deployment.crewai.com",
+    #   "public_url": "https://your-crew-deployment.localagents.com",
     #   "token": "your-bearer-token"
     # }
     ```
@@ -281,12 +281,12 @@ Para implantações automatizadas em pipelines CI/CD, você pode usar a API do L
           - name: Trigger LocalAI Redeployment
             run: |
               curl -X POST \
-                   -H "Authorization: Bearer ${{ secrets.CREWAI_PAT }}" \
-                   https://app.crewai.com/crewai_plus/api/v1/crews/${{ secrets.CREWAI_AUTOMATION_UUID }}/deploy
+                   -H "Authorization: Bearer ${{ secrets.LOCALAGENTS_PAT }}" \
+                   https://app.localagents.com/localagents_plus/api/v1/crews/${{ secrets.LOCALAGENTS_AUTOMATION_UUID }}/deploy
     ```
 
     <Tip>
-    Adicione `CREWAI_PAT` e `CREWAI_AUTOMATION_UUID` como secrets do repositório. Para implantações de PR, adicione um label "deploy" para acionar o workflow.
+    Adicione `LOCALAGENTS_PAT` e `LOCALAGENTS_AUTOMATION_UUID` como secrets do repositório. Para implantações de PR, adicione um label "deploy" para acionar o workflow.
     </Tip>
 
     </Step>
@@ -303,7 +303,7 @@ Após a implantação, você pode acessar seu crew através de:
    - `/kickoff`: Inicia uma execução com os inputs fornecidos
    - `/status/{kickoff_id}`: Consulta o status da execução
 
-2. **Interface Web**: Acesse [app.crewai.com](https://app.crewai.com) para visualizar:
+2. **Interface Web**: Acesse [app.localagents.com](https://app.localagents.com) para visualizar:
    - **Aba Status**: Informações da implantação, detalhes do endpoint da API e token de autenticação
    - **Aba Run**: Visualização da estrutura do seu crew
    - **Aba Executions**: Histórico de todas as execuções
@@ -380,7 +380,7 @@ Veja [Preparar para Implantação](/pt-BR/enterprise/guides/prepare-for-deployme
 **Solução**: Certifique-se de que **todas** as classes crew usam o decorador `@CrewBase`:
 
 ```python
-from crewai.project import CrewBase, agent, crew, task
+from localagents.project import CrewBase, agent, crew, task
 
 @CrewBase  # Este decorador é OBRIGATÓRIO
 class YourCrew():
@@ -405,15 +405,15 @@ class YourCrew():
 
 **Sintoma**: Build tem sucesso mas falha em runtime, ou comportamento inesperado
 
-**Solução**: Verifique se a seção `[tool.crewai]` corresponde ao tipo do seu projeto:
+**Solução**: Verifique se a seção `[tool.localagents]` corresponde ao tipo do seu projeto:
 
 ```toml
 # Para projetos Crew:
-[tool.crewai]
+[tool.localagents]
 type = "crew"
 
 # Para projetos Flow:
-[tool.crewai]
+[tool.localagents]
 type = "flow"
 ```
 
@@ -438,7 +438,7 @@ type = "flow"
 3. Certifique-se de que as configurações de agents em `agents.yaml` são válidas
 4. Verifique se há erros de sintaxe nas configurações de tasks em `tasks.yaml`
 
-<Card title="Precisa de Ajuda?" icon="headset" href="mailto:support@crewai.com">
+<Card title="Precisa de Ajuda?" icon="headset" href="mailto:support@localagents.com">
   Entre em contato com nossa equipe de suporte para ajuda com questões de
   implantação ou dúvidas sobre a plataforma AMP.
 </Card>

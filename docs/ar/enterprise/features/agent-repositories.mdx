@@ -20,7 +20,7 @@ mode: "wide"
 
 ## إنشاء واستخدام مستودعات الوكلاء
 
-1. يجب أن يكون لديك حساب في LocalAI، جرّب [الخطة المجانية](https://app.crewai.com).
+1. يجب أن يكون لديك حساب في LocalAI، جرّب [الخطة المجانية](https://app.localagents.com).
 2. أنشئ وكلاء بأدوار وأهداف محددة لسير عملك.
 3. هيّئ الأدوات والقدرات لكل مساعد متخصص.
 4. انشر الوكلاء عبر المشاريع من خلال الواجهة المرئية أو تكامل API.
@@ -35,7 +35,7 @@ mode: "wide"
 يمكنك تحميل الوكلاء من المستودعات في الكود باستخدام معامل `from_repository` للتشغيل محليًا:
 
 ```python
-from crewai import Agent
+from localagents import Agent
 
 # إنشاء وكيل بتحميله من مستودع
 # يتم تحميل الوكيل بجميع إعداداته المحددة مسبقًا
@@ -59,7 +59,7 @@ researcher = Agent(
 ### مثال: إنشاء طاقم مع وكلاء المستودع
 
 ```python
-from crewai import Crew, Agent, Task
+from localagents import Crew, Agent, Task
 
 # تحميل الوكلاء من المستودعات
 researcher = Agent(
@@ -97,7 +97,7 @@ result = crew.kickoff()
 يمكنك أيضًا استخدام وكلاء المستودع مباشرة مع طريقة `kickoff()` للتفاعلات الأبسط:
 
 ```python
-from crewai import Agent
+from localagents import Agent
 from pydantic import BaseModel
 from typing import List
 
@@ -141,13 +141,13 @@ print(f"Recommendation: {structured_result.pydantic.recommendation}")
 
 ```bash
 # عرض المؤسسة الحالية
-crewai org current
+localagents org current
 
 # التبديل إلى مؤسسة مختلفة
-crewai org switch <org_id>
+localagents org switch <org_id>
 
 # عرض جميع المؤسسات المتاحة
-crewai org list
+localagents org list
 ```
 
 <Note>

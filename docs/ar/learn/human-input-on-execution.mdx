@@ -18,13 +18,13 @@ mode: "wide"
 ### مثال:
 
 ```shell
-pip install crewai
+pip install localagents
 ```
 
 ```python Code
 import os
-from crewai import Agent, Task, Crew
-from crewai_tools import SerperDevTool
+from localagents import Agent, Task, Crew
+from localagents_tools import SerperDevTool
 
 os.environ["SERPER_API_KEY"] = "Your Key"  # serper.dev API key
 os.environ["OPENAI_API_KEY"] = "Your Key"

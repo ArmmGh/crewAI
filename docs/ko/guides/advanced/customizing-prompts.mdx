@@ -26,7 +26,7 @@ LocalAI의 기본 프롬프트는 많은 시나리오에서 잘 작동하지만,
 - **오류 처리** – agent가 실패, 예외, 또는 타임아웃에 어떻게 반응할지 지정합니다.
 - **도구별 prompt** – 도구가 호출되거나 사용되는 방법에 대한 상세 지침을 정의합니다.
 
-이 요소들이 어떻게 구성되어 있는지 보려면 [LocalAI 저장소의 원본 prompt 템플릿](https://github.com/localAIInc/localAI/blob/main/src/crewai/translations/en.json)을 확인하세요. 여기서 필요에 따라 오버라이드하거나 수정하여 고급 동작을 구현할 수 있습니다.
+이 요소들이 어떻게 구성되어 있는지 보려면 [LocalAI 저장소의 원본 prompt 템플릿](https://github.com/localAIInc/localAI/blob/main/src/localagents/translations/en.json)을 확인하세요. 여기서 필요에 따라 오버라이드하거나 수정하여 고급 동작을 구현할 수 있습니다.
 
 ## 기본 시스템 지침 이해하기
 
@@ -65,8 +65,8 @@ Ensure the final output does not include any code block markers like ```json or 
 LLM에 전달되는 프롬프트가 정확히 무엇인지 확인하려면, 생성된 프롬프트를 확인할 수 있습니다:
 
 ```python
-from crewai import Agent, Crew, Task
-from crewai.utilities.prompts import Prompts
+from localagents import Agent, Crew, Task
+from localagents.utilities.prompts import Prompts
 
 # 에이전트 생성
 agent = Agent(
@@ -115,7 +115,7 @@ print(f"Expected Output: {task.expected_output}")
 
 #### 옵션 1: 커스텀 템플릿 (권장)
 ```python
-from crewai import Agent
+from localagents import Agent
 
 # Define your own system template without default instructions
 custom_system_template = """You are {role}. {backstory}
@@ -223,7 +223,7 @@ agent = Agent(
 그 다음 아래와 같이 통합하세요:
 
 ```python
-from crewai import Agent, Crew, Task, Process
+from localagents import Agent, Crew, Task, Process
 
 # 평소와 같이 에이전트와 태스크를 생성
 researcher = Agent(
@@ -265,8 +265,8 @@ https://www.llama.com/docs/model-cards-and-prompt-formats/llama3_1/#prompt-templ
 다음은 Llama 3.3을 코드에서 활용하도록 Agent를 세밀하게 튜닝하는 방법을 보여주는 예시입니다:
 
 ```python
-from crewai import Agent, Crew, Task, Process
-from crewai_tools import DirectoryReadTool, FileReadTool
+from localagents import Agent, Crew, Task, Process
+from localagents_tools import DirectoryReadTool, FileReadTool
 
 # Define templates for system, user (prompt), and assistant (response) messages
 system_template = """<|begin_of_text|><|start_header_id|>system<|end_header_id|>{{ .System }}<|eot_id|>"""

@@ -36,12 +36,12 @@ from calendar_event_crew import GoogleCalendarEventTrigger
 
 crew = GoogleCalendarEventTrigger().crew()
 result = crew.kickoff({
-    "crewai_trigger_payload": calendar_payload,
+    "localagents_trigger_payload": calendar_payload,
 })
 print(result.raw)
 ```
 
-Use `crewai_trigger_payload` exactly as it is delivered by the trigger so the crew can extract the proper fields.
+Use `localagents_trigger_payload` exactly as it is delivered by the trigger so the crew can extract the proper fields.
 
 ## Testando Localmente
 
@@ -49,16 +49,16 @@ Teste sua integração de trigger do Google Calendar localmente usando a CLI da 
 
 ```bash
 # Visualize todos os triggers disponíveis
-crewai triggers list
+localagents triggers list
 
 # Simule um trigger do Google Calendar com payload realista
-crewai triggers run google_calendar/event_changed
+localagents triggers run google_calendar/event_changed
 ```
 
-O comando `crewai triggers run` executará sua crew com um payload completo do Calendar, permitindo que você teste sua lógica de parsing antes do deployment.
+O comando `localagents triggers run` executará sua crew com um payload completo do Calendar, permitindo que você teste sua lógica de parsing antes do deployment.
 
 <Warning>
-  Use `crewai triggers run google_calendar/event_changed` (não `crewai run`)
+  Use `localagents triggers run google_calendar/event_changed` (não `localagents run`)
   para simular execução de trigger durante o desenvolvimento. Após o deployment,
   sua crew receberá automaticamente o payload do trigger.
 </Warning>
@@ -77,7 +77,7 @@ The **Executions** list in the deployment dashboard tracks every triggered run a
 ## Troubleshooting
 
 - Ensure the correct Google account is connected and the trigger is enabled
-- Teste localmente com `crewai triggers run google_calendar/event_changed` para ver a estrutura exata do payload
+- Teste localmente com `localagents triggers run google_calendar/event_changed` para ver a estrutura exata do payload
 - Confirm your workflow handles all-day events (payloads use `start.date` and `end.date` instead of timestamps)
 - Check execution logs if reminders or attendee arrays are missing—calendar permissions can limit fields in the payload
-- Lembre-se: use `crewai triggers run` (não `crewai run`) para simular execução de trigger
+- Lembre-se: use `localagents triggers run` (não `localagents run`) para simular execução de trigger

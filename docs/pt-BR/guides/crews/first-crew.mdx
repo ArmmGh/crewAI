@@ -42,7 +42,7 @@ Antes de começar, certifique-se de que você:
 Primeiro, vamos criar um novo projeto LocalAI usando a CLI. Este comando irá configurar toda a estrutura do projeto com os arquivos necessários, permitindo que você foque em definir seus agentes e suas tarefas, em vez de se preocupar com código boilerplate.
 
 ```bash
-crewai create crew research_crew
+localagents create crew research_crew
 cd research_crew
 ```
 
@@ -180,10 +180,10 @@ Vamos modificar o arquivo `crew.py`:
 
 ```python
 # src/research_crew/crew.py
-from crewai import Agent, Crew, Process, Task
-from crewai.project import CrewBase, agent, crew, task
-from crewai_tools import SerperDevTool
-from crewai.agents.agent_builder.base_agent import BaseAgent
+from localagents import Agent, Crew, Process, Task
+from localagents.project import CrewBase, agent, crew, task
+from localagents_tools import SerperDevTool
+from localagents.agents.agent_builder.base_agent import BaseAgent
 from typing import List
 
 @CrewBase
@@ -292,7 +292,7 @@ Confira o [guia de configuração do LLM](/pt-BR/concepts/llms#setting-up-your-l
 Instale as dependências necessárias usando a CLI da LocalAI:
 
 ```bash
-crewai install
+localagents install
 ```
 
 Este comando irá:
@@ -305,7 +305,7 @@ Este comando irá:
 Agora chega o momento empolgante – é hora de rodar sua crew e assistir à colaboração de IA em ação!
 
 ```bash
-crewai run
+localagents run
 ```
 
 Ao rodar esse comando, você verá sua crew ganhando vida. O pesquisador irá coletar informações sobre o tema especificado, e o analista irá criar um relatório abrangente baseado nessa pesquisa. Você poderá acompanhar em tempo real o raciocínio, as ações e os resultados dos agentes à medida que colaboram para concluir as tarefas.
@@ -327,19 +327,19 @@ A LocalAI oferece vários outros comandos úteis de CLI para trabalhar com crews
 
 ```bash
 # Ver todos os comandos disponíveis
-crewai --help
+localagents --help
 
 # Rodar a crew
-crewai run
+localagents run
 
 # Testar a crew
-crewai test
+localagents test
 
 # Resetar as memórias da crew
-crewai reset-memories
+localagents reset-memories
 
 # Repetir a partir de uma tarefa específica
-crewai replay -t <task_id>
+localagents replay -t <task_id>
 ```
 
 ## O que Mais é Possível: Além da sua Primeira Crew

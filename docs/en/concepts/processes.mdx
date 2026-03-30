@@ -25,7 +25,7 @@ Processes enable individual agents to operate as a cohesive unit, streamlining t
 To assign a process to a crew, specify the process type upon crew creation to set the execution strategy. For a hierarchical process, ensure to define `manager_llm` or `manager_agent` for the manager agent.
 
 ```python
-from crewai import Crew, Process
+from localagents import Crew, Process
 
 # Example: Creating a crew with a sequential process
 crew = Crew(

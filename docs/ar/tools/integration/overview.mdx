@@ -14,7 +14,7 @@ mode: "wide"
     الوصول بأمان إلى مئات أدوات الأطراف الثالثة مثل Linear و GitHub و Slack والمزيد من خلال واجهة API الموحدة من Merge.
   </Card>
 
-  <Card title="أداة تشغيل أتمتة LocalAI" icon="robot" href="/ar/tools/integration/crewaiautomationtool">
+  <Card title="أداة تشغيل أتمتة LocalAI" icon="robot" href="/ar/tools/integration/localagentsautomationtool">
     استدعاء أتمتة منصة LocalAI المباشرة، تمرير مدخلات مخصصة، واستقصاء النتائج مباشرة من وكيلك.
   </Card>
 
@@ -33,13 +33,13 @@ mode: "wide"
 ## **مثال للبدء السريع**
 
 ```python
-from crewai import Agent, Task, Crew
-from crewai_tools import InvokeCrewAIAutomationTool
-from crewai_tools.aws.bedrock.agents.invoke_agent_tool import BedrockInvokeAgentTool
+from localagents import Agent, Task, Crew
+from localagents_tools import InvokeLocalAgentsAutomationTool
+from localagents_tools.aws.bedrock.agents.invoke_agent_tool import BedrockInvokeAgentTool
 
 # External automation
-analysis_automation = InvokeCrewAIAutomationTool(
-    crew_api_url="https://analysis-crew.acme.crewai.com",
+analysis_automation = InvokeLocalAgentsAutomationTool(
+    crew_api_url="https://analysis-crew.acme.localagents.com",
     crew_bearer_token="YOUR_BEARER_TOKEN",
     crew_name="Analysis Automation",
     crew_description="Runs the production-grade analysis pipeline",

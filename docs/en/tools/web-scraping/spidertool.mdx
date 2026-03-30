@@ -9,17 +9,17 @@ mode: "wide"
 
 ## Description
 
-[Spider](https://spider.cloud/?ref=crewai) is the [fastest](https://github.com/spider-rs/spider/blob/main/benches/BENCHMARKS.md#benchmark-results) 
+[Spider](https://spider.cloud/?ref=localagents) is the [fastest](https://github.com/spider-rs/spider/blob/main/benches/BENCHMARKS.md#benchmark-results) 
 open source scraper and crawler that returns LLM-ready data. 
 It converts any website into pure HTML, markdown, metadata or text while enabling you to crawl with custom actions using AI.
 
 ## Installation
 
 To use the `SpiderTool` you need to download the [Spider SDK](https://pypi.org/project/spider-client/) 
-and the `crewai[tools]` SDK too:
+and the `localagents[tools]` SDK too:
 
 ```shell
-pip install spider-client 'crewai[tools]'
+pip install spider-client 'localagents[tools]'
 ```
 
 ## Example
@@ -28,7 +28,7 @@ This example shows you how you can use the `SpiderTool` to enable your agent to 
 The data returned from the Spider API is already LLM-ready, so no need to do any cleaning there.
 
 ```python Code
-from crewai_tools import SpiderTool
+from localagents_tools import SpiderTool
 
 def main():
     spider_tool = SpiderTool()

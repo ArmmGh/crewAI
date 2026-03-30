@@ -13,41 +13,41 @@ Permita que seus agentes gerenciem operações de suporte ao cliente através do
 
 Antes de usar a integração com o Zendesk, certifique-se de que você possui:
 
-- Uma conta [LocalAI AMP](https://app.crewai.com) com uma assinatura ativa
+- Uma conta [LocalAI AMP](https://app.localagents.com) com uma assinatura ativa
 - Uma conta Zendesk com permissões apropriadas de API
-- Sua conta Zendesk conectada através da [página de Integrações](https://app.crewai.com/integrations)
+- Sua conta Zendesk conectada através da [página de Integrações](https://app.localagents.com/integrations)
 
 ## Configurando a Integração Zendesk
 
 ### 1. Conecte sua Conta Zendesk
 
-1. Acesse [LocalAI AMP Integrações](https://app.crewai.com/crewai_plus/connectors)
+1. Acesse [LocalAI AMP Integrações](https://app.localagents.com/localagents_plus/connectors)
 2. Encontre **Zendesk** na seção Integrações de Autenticação
 3. Clique em **Conectar** e complete o fluxo OAuth
 4. Conceda as permissões necessárias para gerenciamento de tickets e usuários
-5. Copie seu Token Enterprise em [Configurações de Integração](https://app.crewai.com/crewai_plus/settings/integrations)
+5. Copie seu Token Enterprise em [Configurações de Integração](https://app.localagents.com/localagents_plus/settings/integrations)
 
 ### 2. Instale o Pacote Necessário
 
 ```bash
-uv add crewai-tools
+uv add localagents-tools
 ```
 
 ### 3. Configuração de variável de ambiente
 
 <Note>
   Para usar integrações com `Agent(apps=[])`, você deve definir a variável de
-  ambiente `CREWAI_PLATFORM_INTEGRATION_TOKEN` com seu Enterprise Token.
+  ambiente `LOCALAGENTS_PLATFORM_INTEGRATION_TOKEN` com seu Enterprise Token.
 </Note>
 
 ```bash
-export CREWAI_PLATFORM_INTEGRATION_TOKEN="seu_enterprise_token"
+export LOCALAGENTS_PLATFORM_INTEGRATION_TOKEN="seu_enterprise_token"
 ```
 
 Ou adicione ao seu arquivo `.env`:
 
 ```
-CREWAI_PLATFORM_INTEGRATION_TOKEN=seu_enterprise_token
+LOCALAGENTS_PLATFORM_INTEGRATION_TOKEN=seu_enterprise_token
 ```
 
 ## Ferramentas Disponíveis
@@ -248,7 +248,7 @@ Progresso padrão de status dos tickets:
 ### Configuração Básica de Agente Zendesk
 
 ```python
-from crewai import Agent, Task, Crew
+from localagents import Agent, Task, Crew
 
 # Obtenha as ferramentas enterprise (as ferramentas Zendesk serão incluídas)
 
@@ -309,7 +309,7 @@ crew.kickoff()
 ### Gerenciamento Avançado de Tickets
 
 ```python
-from crewai import Agent, Task, Crew
+from localagents import Agent, Task, Crew
 
 ticket_manager = Agent(
     role="Gerente de Tickets",
@@ -341,7 +341,7 @@ crew.kickoff()
 ### Análise e Relatórios de Suporte
 
 ```python
-from crewai import Agent, Task, Crew
+from localagents import Agent, Task, Crew
 
 support_analyst = Agent(
     role="Analista de Suporte",

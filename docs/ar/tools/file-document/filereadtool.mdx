@@ -11,14 +11,14 @@ mode: "wide"
     لا نزال نعمل على تحسين الأدوات، لذا قد يحدث سلوك غير متوقع أو تغييرات في المستقبل.
 </Note>
 
-تمثل أداة FileReadTool مفهومياً مجموعة من الوظائف ضمن حزمة crewai_tools تهدف إلى تسهيل قراءة الملفات واسترجاع المحتوى. تتضمن هذه المجموعة أدوات لمعالجة ملفات نصية دفعية، وقراءة ملفات التكوين أثناء التشغيل، واستيراد البيانات للتحليلات. تدعم مجموعة متنوعة من صيغ الملفات النصية مثل `.txt` و `.csv` و `.json` وغيرها. اعتماداً على نوع الملف، توفر المجموعة وظائف متخصصة، مثل تحويل محتوى JSON إلى قاموس Python لسهولة الاستخدام.
+تمثل أداة FileReadTool مفهومياً مجموعة من الوظائف ضمن حزمة localagents_tools تهدف إلى تسهيل قراءة الملفات واسترجاع المحتوى. تتضمن هذه المجموعة أدوات لمعالجة ملفات نصية دفعية، وقراءة ملفات التكوين أثناء التشغيل، واستيراد البيانات للتحليلات. تدعم مجموعة متنوعة من صيغ الملفات النصية مثل `.txt` و `.csv` و `.json` وغيرها. اعتماداً على نوع الملف، توفر المجموعة وظائف متخصصة، مثل تحويل محتوى JSON إلى قاموس Python لسهولة الاستخدام.
 
 ## التثبيت
 
-لاستخدام الوظائف المنسوبة سابقاً لأداة FileReadTool، قم بتثبيت حزمة crewai_tools:
+لاستخدام الوظائف المنسوبة سابقاً لأداة FileReadTool، قم بتثبيت حزمة localagents_tools:
 
 ```shell
-pip install 'crewai[tools]'
+pip install 'localagents[tools]'
 ```
 
 ## مثال على الاستخدام
@@ -26,7 +26,7 @@ pip install 'crewai[tools]'
 للبدء مع FileReadTool:
 
 ```python Code
-from crewai_tools import FileReadTool
+from localagents_tools import FileReadTool
 
 # Initialize the tool to read any files the agents knows or lean the path for
 file_read_tool = FileReadTool()

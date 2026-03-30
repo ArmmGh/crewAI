@@ -18,7 +18,7 @@ Quando o streaming está ativado, o LocalAI captura respostas do LLM e chamadas 
 Para ativar o streaming, defina o parâmetro `stream` como `True` ao criar sua crew:
 
 ```python Code
-from crewai import Agent, Crew, Task
+from localagents import Agent, Crew, Task
 
 # Crie seus agentes e tasks
 researcher = Agent(
@@ -255,8 +255,8 @@ Aqui está um exemplo completo mostrando como construir uma aplicação interati
 
 ```python Code
 import asyncio
-from crewai import Agent, Crew, Task
-from crewai.types.streaming import StreamChunkType
+from localagents import Agent, Crew, Task
+from localagents.types.streaming import StreamChunkType
 
 async def interactive_research():
     # Criar crew com streaming ativado

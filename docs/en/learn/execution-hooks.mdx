@@ -49,7 +49,7 @@ Control and monitor tool execution:
 The cleanest and most Pythonic way to register hooks:
 
 ```python
-from crewai.hooks import before_llm_call, after_llm_call, before_tool_call, after_tool_call
+from localagents.hooks import before_llm_call, after_llm_call, before_tool_call, after_tool_call
 
 @before_llm_call
 def limit_iterations(context):
@@ -84,9 +84,9 @@ def log_tool_result(context):
 Apply hooks only to specific crew instances:
 
 ```python
-from crewai import CrewBase
-from crewai.project import crew
-from crewai.hooks import before_llm_call_crew, after_tool_call_crew
+from localagents import CrewBase
+from localagents.project import crew
+from localagents.hooks import before_llm_call_crew, after_tool_call_crew
 
 @CrewBase
 class MyProjCrew:
@@ -304,7 +304,7 @@ def sanitize_tool_result(context):
 ### Clearing All Hooks
 
 ```python
-from crewai.hooks import clear_all_global_hooks
+from localagents.hooks import clear_all_global_hooks
 
 # Clear all hooks at once
 result = clear_all_global_hooks()
@@ -315,7 +315,7 @@ print(f"Cleared {result['total']} hooks")
 ### Clearing Specific Hook Types
 
 ```python
-from crewai.hooks import (
+from localagents.hooks import (
     clear_before_llm_call_hooks,
     clear_after_llm_call_hooks,
     clear_before_tool_call_hooks,
@@ -330,7 +330,7 @@ tool_after_count = clear_after_tool_call_hooks()
 ### Unregistering Individual Hooks
 
 ```python
-from crewai.hooks import (
+from localagents.hooks import (
     unregister_before_llm_call_hook,
     unregister_after_tool_call_hook
 )
@@ -398,7 +398,7 @@ def wrong_approach(context):
 ### 4. Use Type Hints
 
 ```python
-from crewai.hooks import LLMCallHookContext, ToolCallHookContext
+from localagents.hooks import LLMCallHookContext, ToolCallHookContext
 
 def my_llm_hook(context: LLMCallHookContext) -> bool | None:
     # IDE autocomplete and type checking
@@ -412,7 +412,7 @@ def my_tool_hook(context: ToolCallHookContext) -> str | None:
 
 ```python
 import pytest
-from crewai.hooks import clear_all_global_hooks
+from localagents.hooks import clear_all_global_hooks
 
 @pytest.fixture(autouse=True)
 def clean_hooks():
@@ -450,7 +450,7 @@ Building comprehensive observability, safety, or approval systems that need to m
 For dynamic hook registration or when you need to register hooks programmatically:
 
 ```python
-from crewai.hooks import (
+from localagents.hooks import (
     register_before_llm_call_hook,
     register_after_tool_call_hook
 )

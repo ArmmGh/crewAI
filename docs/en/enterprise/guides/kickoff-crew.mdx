@@ -13,7 +13,7 @@ Once you've deployed your crew to the LocalAI AMP platform, you can kickoff exec
 
 ### Step 1: Navigate to Your Deployed Crew
 
-1. Log in to [LocalAI AMP](https://app.crewai.com)
+1. Log in to [LocalAI AMP](https://app.localagents.com)
 2. Click on the crew name from your projects list
 3. You'll be taken to the crew's detail page
 
@@ -81,7 +81,7 @@ You can also kickoff crews programmatically using the LocalAI AMP REST API.
 All API requests require a bearer token for authentication:
 
 ```bash
-curl -H "Authorization: Bearer YOUR_CREW_TOKEN" https://your-crew-url.crewai.com
+curl -H "Authorization: Bearer YOUR_CREW_TOKEN" https://your-crew-url.localagents.com
 ```
 
 Your bearer token is available on the Status tab of your crew's detail page.
@@ -91,7 +91,7 @@ Your bearer token is available on the Status tab of your crew's detail page.
 Before executing operations, you can verify that your crew is running properly:
 
 ```bash
-curl -H "Authorization: Bearer YOUR_CREW_TOKEN" https://your-crew-url.crewai.com
+curl -H "Authorization: Bearer YOUR_CREW_TOKEN" https://your-crew-url.localagents.com
 ```
 
 A successful response will return a message indicating the crew is operational:
@@ -107,7 +107,7 @@ First, determine what inputs your crew requires:
 ```bash
 curl -X GET \
   -H "Authorization: Bearer YOUR_CREW_TOKEN" \
-  https://your-crew-url.crewai.com/inputs
+  https://your-crew-url.localagents.com/inputs
 ```
 
 The response will be a JSON object containing an array of required input parameters, for example:
@@ -127,7 +127,7 @@ curl -X POST \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer YOUR_CREW_TOKEN" \
   -d '{"inputs": {"topic": "AI Agent Frameworks", "current_year": "2025"}}' \
-  https://your-crew-url.crewai.com/kickoff
+  https://your-crew-url.localagents.com/kickoff
 ```
 
 The response will include a `kickoff_id` that you'll need for tracking:
@@ -143,7 +143,7 @@ Monitor the execution progress using the kickoff_id:
 ```bash
 curl -X GET \
   -H "Authorization: Bearer YOUR_CREW_TOKEN" \
-  https://your-crew-url.crewai.com/status/abcd1234-5678-90ef-ghij-klmnopqrstuv
+  https://your-crew-url.localagents.com/status/abcd1234-5678-90ef-ghij-klmnopqrstuv
 ```
 
 ## Handling Executions
@@ -172,7 +172,7 @@ If an execution fails:
 2. Review the "Traces" tab for step-by-step execution details
 3. Look for LLM responses and tool usage in the trace details
 
-<Card title="Need Help?" icon="headset" href="mailto:support@crewai.com">
+<Card title="Need Help?" icon="headset" href="mailto:support@localagents.com">
   Contact our support team for assistance with execution issues or questions
   about the Enterprise platform.
 </Card>

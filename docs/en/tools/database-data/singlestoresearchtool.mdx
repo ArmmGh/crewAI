@@ -14,7 +14,7 @@ Execute read‑only queries (`SELECT`/`SHOW`) against SingleStore with connectio
 ## Installation
 
 ```shell
-uv add crewai-tools[singlestore]
+uv add localagents-tools[singlestore]
 ```
 
 ## Environment Variables
@@ -26,8 +26,8 @@ Generate the API key from the SingleStore dashboard, [docs here](https://docs.si
 ## Example
 
 ```python Code
-from crewai import Agent, Task, Crew
-from crewai_tools import SingleStoreSearchTool
+from localagents import Agent, Task, Crew
+from localagents_tools import SingleStoreSearchTool
 
 tool = SingleStoreSearchTool(
     tables=["products"], 

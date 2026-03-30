@@ -10,7 +10,7 @@ mode: "wide"
 مع [Comet Opik](https://www.comet.com/docs/opik/)، يمكنك تصحيح الأخطاء وتقييم ومراقبة تطبيقات LLM وأنظمة RAG وسير العمل الوكيلي مع تتبع شامل وتقييمات آلية ولوحات معلومات جاهزة للإنتاج.
 
 <Frame caption="لوحة معلومات Opik للوكلاء">
-  <img src="/images/opik-crewai-dashboard.png" alt="Opik agent monitoring example with LocalAI" />
+  <img src="/images/opik-localagents-dashboard.png" alt="Opik agent monitoring example with LocalAI" />
 </Frame>
 
 يوفر Opik دعماً شاملاً لكل مرحلة من مراحل تطوير تطبيق LocalAI الخاص بك:
@@ -23,7 +23,7 @@ mode: "wide"
 ## الإعداد
 يوفر Comet نسخة مستضافة من منصة Opik، أو يمكنك تشغيل المنصة محلياً.
 
-لاستخدام النسخة المستضافة، ما عليك سوى [إنشاء حساب Comet مجاني](https://www.comet.com/signup?utm_medium=github&utm_source=crewai_docs) والحصول على مفتاح API الخاص بك.
+لاستخدام النسخة المستضافة، ما عليك سوى [إنشاء حساب Comet مجاني](https://www.comet.com/signup?utm_medium=github&utm_source=localagents_docs) والحصول على مفتاح API الخاص بك.
 
 لتشغيل منصة Opik محلياً، راجع [دليل التثبيت](https://www.comet.com/docs/opik/self-host/overview/) لمزيد من المعلومات.
 
@@ -32,7 +32,7 @@ mode: "wide"
 <Steps>
     <Step title="تثبيت الحزم المطلوبة">
       ```shell
-      pip install crewai crewai-tools opik --upgrade
+      pip install localagents localagents-tools opik --upgrade
       ```
     </Step>
     <Step title="إعداد Opik">
@@ -56,7 +56,7 @@ mode: "wide"
       الخطوة الأولى هي إنشاء مشروعنا. سنستخدم مثالاً من وثائق LocalAI:
 
       ```python
-      from crewai import Agent, Crew, Task, Process
+      from localagents import Agent, Crew, Task, Process
 
 
       class YourCrewName:
@@ -105,9 +105,9 @@ mode: "wide"
       الآن يمكننا استيراد متتبع Opik وتشغيل الطاقم:
 
       ```python
-      from opik.integrations.crewai import track_crewai
+      from opik.integrations.localagents import track_localagents
 
-      track_crewai(project_name="crewai-integration-demo")
+      track_localagents(project_name="localagents-integration-demo")
 
       my_crew = YourCrewName().crew()
       result = my_crew.kickoff()
@@ -125,6 +125,6 @@ mode: "wide"
 ## الموارد
 
 - [وثائق Opik](https://www.comet.com/docs/opik/)
-- [Opik + LocalAI Colab](https://colab.research.google.com/github/comet-ml/opik/blob/main/apps/opik-documentation/documentation/docs/cookbook/crewai.ipynb)
+- [Opik + LocalAI Colab](https://colab.research.google.com/github/comet-ml/opik/blob/main/apps/opik-documentation/documentation/docs/cookbook/localagents.ipynb)
 - [X](https://x.com/cometml)
 - [Slack](https://slack.comet.com/)

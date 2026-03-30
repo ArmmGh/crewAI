@@ -59,15 +59,15 @@ Agentes são personalizados definindo seus atributos e ferramentas durante a ini
 O atributo `tools` deve ser um array de ferramentas que o agente pode utilizar, e, por padrão, é inicializado como uma lista vazia. As ferramentas podem ser adicionadas ou modificadas após a criação do agente para se adaptar a novos requisitos.
 
 ```shell
-pip install 'crewai[tools]'
+pip install 'localagents[tools]'
 ```
 
 ### Exemplo: Atribuindo Ferramentas a um Agente
 
 ```python Code
 import os
-from crewai import Agent
-from crewai_tools import SerperDevTool
+from localagents import Agent
+from localagents_tools import SerperDevTool
 
 # Defina as chaves de API para inicialização da ferramenta
 os.environ["OPENAI_API_KEY"] = "Sua Chave"

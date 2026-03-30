@@ -13,7 +13,7 @@ Extract text from images (local path or URL). Uses a vision‑capable LLM via Lo
 
 ## Installation
 
-No extra install beyond `crewai-tools`. Ensure your selected LLM supports vision.
+No extra install beyond `localagents-tools`. Ensure your selected LLM supports vision.
 
 ## Parameters
 
@@ -26,7 +26,7 @@ No extra install beyond `crewai-tools`. Ensure your selected LLM supports vision
 ### Direct usage
 
 ```python Code
-from crewai_tools import OCRTool
+from localagents_tools import OCRTool
 
 print(OCRTool().run(image_path_url="/tmp/receipt.png"))
 ```
@@ -34,8 +34,8 @@ print(OCRTool().run(image_path_url="/tmp/receipt.png"))
 ### With an agent
 
 ```python Code
-from crewai import Agent, Task, Crew
-from crewai_tools import OCRTool
+from localagents import Agent, Task, Crew
+from localagents_tools import OCRTool
 
 ocr = OCRTool()
 
@@ -64,8 +64,8 @@ result = crew.kickoff()
 ## Example
 
 ```python Code
-from crewai import Agent, Task, Crew
-from crewai_tools import OCRTool
+from localagents import Agent, Task, Crew
+from localagents_tools import OCRTool
 
 tool = OCRTool()
 

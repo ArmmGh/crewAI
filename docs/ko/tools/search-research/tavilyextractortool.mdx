@@ -12,7 +12,7 @@ mode: "wide"
 `TavilyExtractorTool`을 사용하려면 `tavily-python` 라이브러리를 설치해야 합니다:
 
 ```shell
-pip install 'crewai[tools]' tavily-python
+pip install 'localagents[tools]' tavily-python
 ```
 
 또한 Tavily API 키를 환경 변수로 설정해야 합니다:
@@ -27,8 +27,8 @@ export TAVILY_API_KEY='your-tavily-api-key'
 
 ```python
 import os
-from crewai import Agent, Task, Crew
-from crewai_tools import TavilyExtractorTool
+from localagents import Agent, Task, Crew
+from localagents_tools import TavilyExtractorTool
 
 # Ensure TAVILY_API_KEY is set in your environment
 # os.environ["TAVILY_API_KEY"] = "YOUR_API_KEY"

@@ -23,7 +23,7 @@ uv add multion
 
 `MultiOnTool`을 효과적으로 사용하려면 다음 단계를 따르세요:
 
-1. **LocalAI 설치**: Python 환경에 `crewai[tools]` 패키지가 설치되어 있는지 확인하세요.
+1. **LocalAI 설치**: Python 환경에 `localagents[tools]` 패키지가 설치되어 있는지 확인하세요.
 2. **MultiOn 설치 및 사용**: [MultiOn 문서](https://docs.multion.ai/learn/browser-extension)를 참고하여 MultiOn 브라우저 확장 프로그램을 설치하세요.
 3. **API 사용 활성화**: 브라우저의 확장 프로그램 폴더에서 MultiOn 확장 프로그램을 클릭하여(웹 페이지에 떠 있는 MultiOn 아이콘이 아님) 확장 프로그램 설정을 엽니다. API 활성화 토글을 클릭하여 API를 활성화하세요.
 
@@ -32,8 +32,8 @@ uv add multion
 다음 예시는 도구를 초기화하고 웹 브라우징 작업을 실행하는 방법을 보여줍니다:
 
 ```python Code
-from crewai import Agent, Task, Crew
-from crewai_tools import MultiOnTool
+from localagents import Agent, Task, Crew
+from localagents_tools import MultiOnTool
 
 # Initialize the tool
 multion_tool = MultiOnTool(api_key="YOUR_MULTION_API_KEY", local=False)

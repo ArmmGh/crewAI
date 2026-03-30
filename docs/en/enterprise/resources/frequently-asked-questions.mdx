@@ -11,8 +11,8 @@ mode: "wide"
     </Accordion>
 
     <Accordion title="Where can I get the latest LocalAI documentation?">
-        The most up-to-date documentation for LocalAI is available on our official documentation website: https://docs.crewai.com/
-        <Card href="https://docs.crewai.com/" icon="books">LocalAI Docs</Card>
+        The most up-to-date documentation for LocalAI is available on our official documentation website: https://docs.localagents.com/
+        <Card href="https://docs.localagents.com/" icon="books">LocalAI Docs</Card>
     </Accordion>
 
     <Accordion title="What are the key differences between Hierarchical and Sequential Processes in LocalAI?">
@@ -81,7 +81,7 @@ mode: "wide"
         - **Contextual memory**: Memory that maintains context across interactions
 
         Learn more about the different types of memory:
-        <Card href="https://docs.crewai.com/concepts/memory" icon="brain">LocalAI Memory</Card>
+        <Card href="https://docs.localagents.com/concepts/memory" icon="brain">LocalAI Memory</Card>
     </Accordion>
 
     <Accordion title="How do I use Output Pydantic in a Task?">
@@ -100,7 +100,7 @@ mode: "wide"
 
             <Step title="Create a task with Output Pydantic">
                 ```python
-                from crewai import Task, Crew, Agent
+                from localagents import Task, Crew, Agent
                 from my_models import User
 
                 task = Task(
@@ -114,7 +114,7 @@ mode: "wide"
 
             <Step title="Set the output_pydantic attribute in your agent">
                 ```python
-                from crewai import Agent
+                from localagents import Agent
                 from my_models import User
 
                 agent = Agent(

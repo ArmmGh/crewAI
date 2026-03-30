@@ -20,7 +20,7 @@ O atributo `manager_agent` permite que você defina um agente personalizado para
 
 ```python Code
 import os
-from crewai import Agent, Task, Crew, Process
+from localagents import Agent, Task, Crew, Process
 
 # Define your agents
 researcher = Agent(
@@ -74,7 +74,7 @@ result = crew.kickoff()
 Se você estiver utilizando o processo hierarchical e não quiser definir um agente gerente personalizado, é possível especificar o modelo de linguagem para o gerente:
 
 ```python Code
-from crewai import LLM
+from localagents import LLM
 
 manager_llm = LLM(model="gpt-4o")
 

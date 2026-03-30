@@ -35,8 +35,8 @@ uv add scrapfly-sdk
 다음 예제는 `ScrapflyScrapeWebsiteTool`을 사용하여 웹사이트에서 콘텐츠를 추출하는 방법을 보여줍니다:
 
 ```python Code
-from crewai import Agent, Task, Crew
-from crewai_tools import ScrapflyScrapeWebsiteTool
+from localagents import Agent, Task, Crew
+from localagents_tools import ScrapflyScrapeWebsiteTool
 
 # Initialize the tool
 scrape_tool = ScrapflyScrapeWebsiteTool(api_key="your_scrapfly_api_key")

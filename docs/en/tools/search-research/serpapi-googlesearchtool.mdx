@@ -14,7 +14,7 @@ Use the `SerpApiGoogleSearchTool` to run Google searches with SerpApi and retrie
 ## Installation
 
 ```shell
-uv add crewai-tools[serpapi]
+uv add localagents-tools[serpapi]
 ```
 
 ## Environment Variables
@@ -24,8 +24,8 @@ uv add crewai-tools[serpapi]
 ## Example
 
 ```python Code
-from crewai import Agent, Task, Crew
-from crewai_tools import SerpApiGoogleSearchTool
+from localagents import Agent, Task, Crew
+from localagents_tools import SerpApiGoogleSearchTool
 
 tool = SerpApiGoogleSearchTool()
 

@@ -20,7 +20,7 @@ mode: "wide"
 <Steps>
 <Step title="تثبيت LocalAI">
 ```bash
-pip install crewai
+pip install localagents
 ```
 </Step>
 
@@ -33,7 +33,7 @@ pip install crewai
 ![إعداد كود TrueFoundry](/images/new-code-snippet.png)
 
 ```python
-from crewai import LLM
+from localagents import LLM
 
 # Create an LLM instance with TrueFoundry AI Gateway
 truefoundry_llm = LLM(
@@ -43,7 +43,7 @@ truefoundry_llm = LLM(
 )
 
 # Use in your LocalAI agents
-from crewai import Agent
+from localagents import Agent
 
 @agent
 def researcher(self) -> Agent:
@@ -59,7 +59,7 @@ def researcher(self) -> Agent:
 ### مثال كامل على LocalAI
 
 ```python
-from crewai import Agent, Task, Crew, LLM
+from localagents import Agent, Task, Crew, LLM
 
 # Configure LLM with TrueFoundry
 llm = LLM(
@@ -143,4 +143,4 @@ Traceloop.init(
 ```
 
 يوفر هذا ارتباط تتبع إضافي عبر سير عمل LocalAI بالكامل.
-![تتبع LocalAI مع TrueFoundry](/images/tracing_crewai.png)
+![تتبع LocalAI مع TrueFoundry](/images/tracing_localagents.png)

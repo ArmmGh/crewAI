@@ -26,7 +26,7 @@ Portkey enhances LocalAI with production-readiness features, turning your experi
 <Steps>
 <Step title="Install the required packages">
 ```bash
-pip install -U crewai portkey-ai
+pip install -U localagents portkey-ai
 ```
 </Step>
 
@@ -38,7 +38,7 @@ Create a Portkey API key with optional budget/rate limits from the [Portkey dash
 The integration is simple - you just need to update the LLM configuration in your LocalAI setup:
 
 ```python
-from crewai import LLM
+from localagents import LLM
 from portkey_ai import createHeaders, PORTKEY_GATEWAY_URL
 
 # Create an LLM instance with Portkey integration
@@ -167,7 +167,7 @@ When running crews in production, things can go wrong - API rate limits, network
 It's simple to enable fallback in your LocalAI setup by using a Portkey Config:
 
 ```python
-from crewai import LLM
+from localagents import LLM
 from portkey_ai import createHeaders, PORTKEY_GATEWAY_URL
 
 # Create LLM with fallback configuration
@@ -245,7 +245,7 @@ This visual environment makes it easier to craft effective prompts for each step
 The Prompt Render API retrieves your prompt templates with all parameters configured:
 
 ```python
-from crewai import Agent, LLM
+from localagents import Agent, LLM
 from portkey_ai import createHeaders, PORTKEY_GATEWAY_URL, Portkey
 
 # Initialize Portkey admin client
@@ -353,7 +353,7 @@ Portkey's guardrails add protections for both inputs and outputs.
 **Implementing Guardrails**
 
 ```python
-from crewai import Agent, LLM
+from localagents import Agent, LLM
 from portkey_ai import createHeaders, PORTKEY_GATEWAY_URL
 
 # Create LLM with guardrails
@@ -401,7 +401,7 @@ Track individual users through your LocalAI agents using Portkey's metadata syst
 Metadata allows you to associate custom data with each request, enabling filtering, segmentation, and analytics. The special `_user` field is specifically designed for user tracking.
 
 ```python
-from crewai import Agent, LLM
+from localagents import Agent, LLM
 from portkey_ai import createHeaders, PORTKEY_GATEWAY_URL
 
 # Configure LLM with user tracking
@@ -456,7 +456,7 @@ Implement caching to make your LocalAI agents more efficient and cost-effective:
 <Tabs>
   <Tab title="Simple Caching">
 ```python
-from crewai import Agent, LLM
+from localagents import Agent, LLM
 from portkey_ai import createHeaders, PORTKEY_GATEWAY_URL
 
 # Configure LLM with simple caching
@@ -490,7 +490,7 @@ Simple caching performs exact matches on input prompts, caching identical reques
 
   <Tab title="Semantic Caching">
 ```python
-from crewai import Agent, LLM
+from localagents import Agent, LLM
 from portkey_ai import createHeaders, PORTKEY_GATEWAY_URL
 
 # Configure LLM with semantic caching
@@ -528,7 +528,7 @@ Semantic caching considers the contextual similarity between input requests, cac
 LocalAI supports multiple LLM providers, and Portkey extends this capability by providing access to over 200 LLMs through a unified interface. You can easily switch between different models without changing your core agent logic:
 
 ```python
-from crewai import Agent, LLM
+from localagents import Agent, LLM
 from portkey_ai import createHeaders, PORTKEY_GATEWAY_URL
 
 # Set up LLMs with different providers
@@ -647,7 +647,7 @@ Now create a Portkey API key and attach the config you created in Step 2:
 After setting up your Portkey API key with the attached config, connect it to your LocalAI agents:
 
 ```python
-from crewai import Agent, LLM
+from localagents import Agent, LLM
 from portkey_ai import PORTKEY_GATEWAY_URL
 
 # Configure LLM with your API key
@@ -814,7 +814,7 @@ Here's a basic configuration to route requests to OpenAI, specifically using GPT
 ## Resources
 
 <CardGroup cols="3">
-  <Card title="LocalAI Docs" icon="book" href="https://docs.crewai.com/">
+  <Card title="LocalAI Docs" icon="book" href="https://docs.localagents.com/">
     <p>Official LocalAI documentation</p>
   </Card>
   <Card title="Book a Demo" icon="calendar" href="https://calendly.com/portkey-ai">

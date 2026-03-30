@@ -21,10 +21,10 @@ Toda ferramenta LocalAI deve satisfazer uma das duas interfaces:
 
 ### Opção 1: Subclassificar `BaseTool`
 
-Subclassifique `crewai.tools.BaseTool` e implemente o método `_run`. Defina `name`, `description` e, opcionalmente, um `args_schema` para validação de entrada.
+Subclassifique `localagents.tools.BaseTool` e implemente o método `_run`. Defina `name`, `description` e, opcionalmente, um `args_schema` para validação de entrada.
 
 ```python
-from crewai.tools import BaseTool
+from localagents.tools import BaseTool
 from pydantic import BaseModel, Field
 
 
@@ -48,7 +48,7 @@ class GeolocateTool(BaseTool):
 Para ferramentas mais simples, o decorador `@tool` transforma uma função em uma ferramenta LocalAI. A função **deve** ter uma docstring (usada como descrição da ferramenta) e anotações de tipo.
 
 ```python
-from crewai.tools import tool
+from localagents.tools import tool
 
 
 @tool("Geolocate")
@@ -109,7 +109,7 @@ Esquemas explícitos são recomendados para ferramentas publicadas — produzem 
 Se sua ferramenta requer chaves de API ou outra configuração, declare-as com `env_vars` para que os usuários saibam o que configurar:
 
 ```python
-from crewai.tools import BaseTool, EnvVar
+from localagents.tools import BaseTool, EnvVar
 
 
 class GeolocateTool(BaseTool):
@@ -132,12 +132,12 @@ class GeolocateTool(BaseTool):
 Estruture seu projeto como um pacote Python padrão. Layout recomendado:
 
 ```
-crewai-geolocate/
+localagents-geolocate/
 ├── pyproject.toml
 ├── LICENSE
 ├── README.md
 └── src/
-    └── crewai_geolocate/
+    └── localagents_geolocate/
         ├── __init__.py
         └── tools.py
 ```
@@ -146,12 +146,12 @@ crewai-geolocate/
 
 ```toml
 [project]
-name = "crewai-geolocate"
+name = "localagents-geolocate"
 version = "0.1.0"
 description = "Uma ferramenta LocalAI para geolocalizar endereços."
 requires-python = ">=3.10"
 dependencies = [
-    "crewai",
+    "localagents",
 ]
 
 [build-system]
@@ -159,22 +159,22 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 ```
 
-Declare `crewai` como dependência para que os usuários obtenham automaticamente uma versão compatível.
+Declare `localagents` como dependência para que os usuários obtenham automaticamente uma versão compatível.
 
 ### `__init__.py`
 
 Re-exporte suas classes de ferramenta para que os usuários possam importá-las diretamente:
 
 ```python
-from crewai_geolocate.tools import GeolocateTool
+from localagents_geolocate.tools import GeolocateTool
 
 __all__ = ["GeolocateTool"]
 ```
 
 ### Convenções de Nomenclatura
 
-- **Nome do pacote**: Use o prefixo `crewai-` (ex.: `crewai-geolocate`). Isso torna sua ferramenta fácil de encontrar no PyPI.
-- **Nome do módulo**: Use underscores (ex.: `crewai_geolocate`).
+- **Nome do pacote**: Use o prefixo `localagents-` (ex.: `localagents-geolocate`). Isso torna sua ferramenta fácil de encontrar no PyPI.
+- **Nome do módulo**: Use underscores (ex.: `localagents_geolocate`).
 - **Nome da classe da ferramenta**: Use PascalCase terminando em `Tool` (ex.: `GeolocateTool`).
 
 ## Testando sua Ferramenta
@@ -182,8 +182,8 @@ __all__ = ["GeolocateTool"]
 Antes de publicar, verifique se sua ferramenta funciona dentro de uma crew:
 
 ```python
-from crewai import Agent, Crew, Task
-from crewai_geolocate import GeolocateTool
+from localagents import Agent, Crew, Task
+from localagents_geolocate import GeolocateTool
 
 agent = Agent(
     role="Analista de Localização",
@@ -222,19 +222,19 @@ Se é sua primeira vez publicando, você precisará de uma [conta no PyPI](https
 Os usuários podem instalar sua ferramenta com:
 
 ```bash
-pip install crewai-geolocate
+pip install localagents-geolocate
 ```
 
 Ou com uv:
 
 ```bash
-uv add crewai-geolocate
+uv add localagents-geolocate
 ```
 
 E então usá-la em suas crews:
 
 ```python
-from crewai_geolocate import GeolocateTool
+from localagents_geolocate import GeolocateTool
 
 agent = Agent(
     role="Analista de Localização",

@@ -34,7 +34,7 @@ from onedrive_file_crew import OneDriveFileTrigger
 
 crew = OneDriveFileTrigger().crew()
 crew.kickoff({
-    "crewai_trigger_payload": onedrive_payload,
+    "localagents_trigger_payload": onedrive_payload,
 })
 ```
 
@@ -46,16 +46,16 @@ Teste sua integração de trigger do OneDrive localmente usando a CLI da LocalAI
 
 ```bash
 # Visualize todos os triggers disponíveis
-crewai triggers list
+localagents triggers list
 
 # Simule um trigger do OneDrive com payload realista
-crewai triggers run microsoft_onedrive/file_changed
+localagents triggers run microsoft_onedrive/file_changed
 ```
 
-O comando `crewai triggers run` executará sua crew com um payload completo do OneDrive, permitindo que você teste sua lógica de parsing antes do deployment.
+O comando `localagents triggers run` executará sua crew com um payload completo do OneDrive, permitindo que você teste sua lógica de parsing antes do deployment.
 
 <Warning>
-  Use `crewai triggers run microsoft_onedrive/file_changed` (não `crewai run`)
+  Use `localagents triggers run microsoft_onedrive/file_changed` (não `localagents run`)
   para simular execução de trigger durante o desenvolvimento. Após o deployment,
   sua crew receberá automaticamente o payload do trigger.
 </Warning>
@@ -63,7 +63,7 @@ O comando `crewai triggers run` executará sua crew com um payload completo do O
 ## Troubleshooting
 
 - Ensure the connected account has permission to read the file metadata included in the webhook
-- Teste localmente com `crewai triggers run microsoft_onedrive/file_changed` para ver a estrutura exata do payload
+- Teste localmente com `localagents triggers run microsoft_onedrive/file_changed` para ver a estrutura exata do payload
 - If the trigger fires but the payload is missing `permissions`, confirm the site-level sharing settings allow Graph to return this field
 - For large tenants, filter notifications upstream so the crew only runs on relevant directories
-- Lembre-se: use `crewai triggers run` (não `crewai run`) para simular execução de trigger
+- Lembre-se: use `localagents triggers run` (não `localagents run`) para simular execução de trigger

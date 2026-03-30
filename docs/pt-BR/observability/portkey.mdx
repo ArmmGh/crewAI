@@ -26,7 +26,7 @@ Portkey aprimora o LocalAI com recursos prontos para produção, transformando s
 <Steps>
 <Step title="Instale os pacotes necessários">
 ```bash
-pip install -U crewai portkey-ai
+pip install -U localagents portkey-ai
 ```
 </Step>
 
@@ -38,7 +38,7 @@ Crie uma chave de API Portkey com limites de orçamento/taxa opcionais no [paine
 A integração é simples – basta atualizar a configuração do LLM no seu setup do LocalAI:
 
 ```python
-from crewai import LLM
+from localagents import LLM
 from portkey_ai import createHeaders, PORTKEY_GATEWAY_URL
 
 # Crie uma instância do LLM com integração Portkey
@@ -167,7 +167,7 @@ Ao executar crews em produção, problemas podem ocorrer – limites de taxa da 
 É simples habilitar fallback na sua configuração LocalAI usando um Config do Portkey:
 
 ```python
-from crewai import LLM
+from localagents import LLM
 from portkey_ai import createHeaders, PORTKEY_GATEWAY_URL
 
 # Crie LLM com configuração de fallback
@@ -245,7 +245,7 @@ Esse ambiente visual facilita a criação de prompts eficazes para cada etapa do
 A API Prompt Render recupera seus templates de prompt com todos os parâmetros configurados:
 
 ```python
-from crewai import Agent, LLM
+from localagents import Agent, LLM
 from portkey_ai import createHeaders, PORTKEY_GATEWAY_URL, Portkey
 
 # Inicialize o cliente admin do Portkey
@@ -353,7 +353,7 @@ Os guardrails do Portkey fornecem proteções tanto para entradas quanto para sa
 **Implementando Guardrails**
 
 ```python
-from crewai import Agent, LLM
+from localagents import Agent, LLM
 from portkey_ai import createHeaders, PORTKEY_GATEWAY_URL
 
 # Crie LLM com guardrails
@@ -401,7 +401,7 @@ Rastreie usuários individuais através dos seus agentes LocalAI utilizando o si
 Metadados permitem associar dados personalizados a cada requisição, possibilitando filtragem, segmentação e analytics. O campo especial `_user` é projetado especificamente para rastreamento de usuário.
 
 ```python
-from crewai import Agent, LLM
+from localagents import Agent, LLM
 from portkey_ai import createHeaders, PORTKEY_GATEWAY_URL
 
 # Configure o LLM com rastreamento de usuário
@@ -456,7 +456,7 @@ Implemente caching para tornar seus agentes LocalAI mais eficientes e econômico
 <Tabs>
   <Tab title="Caching Simples">
 ```python
-from crewai import Agent, LLM
+from localagents import Agent, LLM
 from portkey_ai import createHeaders, PORTKEY_GATEWAY_URL
 
 # Configure o LLM com caching simples
@@ -490,7 +490,7 @@ O caching simples realiza correspondências exatas de prompts de entrada, cachea
 
   <Tab title="Cache Semântico">
 ```python
-from crewai import Agent, LLM
+from localagents import Agent, LLM
 from portkey_ai import createHeaders, PORTKEY_GATEWAY_URL
 
 # Configure o LLM com cache semântico
@@ -528,7 +528,7 @@ O cache semântico considera a similaridade contextual entre solicitações de e
 O LocalAI oferece suporte a múltiplos provedores de LLM, e o Portkey amplia essa capacidade fornecendo acesso a mais de 200 LLMs por meio de uma interface unificada. Você pode facilmente alternar entre diferentes modelos sem alterar a lógica central do seu agente:
 
 ```python
-from crewai import Agent, LLM
+from localagents import Agent, LLM
 from portkey_ai import createHeaders, PORTKEY_GATEWAY_URL
 
 # Configure LLMs com diferentes provedores
@@ -647,7 +647,7 @@ Agora crie uma chave de API Portkey e anexe a config criada no Passo 2:
 Após configurar sua chave de API Portkey com a config anexada, conecte-a aos seus agentes LocalAI:
 
 ```python
-from crewai import Agent, LLM
+from localagents import Agent, LLM
 from portkey_ai import PORTKEY_GATEWAY_URL
 
 # Configure o LLM com sua chave de API
@@ -814,7 +814,7 @@ Aqui está um exemplo básico para rotear requisições ao OpenAI, usando especi
 ## Recursos
 
 <CardGroup cols="3">
-  <Card title="LocalAI Docs" icon="book" href="https://docs.crewai.com/">
+  <Card title="LocalAI Docs" icon="book" href="https://docs.localagents.com/">
     <p>Documentação oficial do LocalAI</p>
   </Card>
   <Card title="Agende uma Demonstração" icon="calendar" href="https://calendly.com/portkey-ai">

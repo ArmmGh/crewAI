@@ -34,7 +34,7 @@ from teams_chat_created_crew import MicrosoftTeamsChatTrigger
 
 crew = MicrosoftTeamsChatTrigger().crew()
 result = crew.kickoff({
-    "crewai_trigger_payload": teams_payload,
+    "localagents_trigger_payload": teams_payload,
 })
 print(result.raw)
 ```
@@ -47,24 +47,24 @@ LocalAI CLI를 사용하여 Microsoft Teams 트리거 통합을 로컬에서 테
 
 ```bash
 # 사용 가능한 모든 트리거 보기
-crewai triggers list
+localagents triggers list
 
 # 실제 payload로 Microsoft Teams 트리거 시뮬레이션
-crewai triggers run microsoft_teams/teams_message_created
+localagents triggers run microsoft_teams/teams_message_created
 ```
 
-`crewai triggers run` 명령은 완전한 Teams payload로 크루를 실행하여 배포 전에 파싱 로직을 테스트할 수 있게 해줍니다.
+`localagents triggers run` 명령은 완전한 Teams payload로 크루를 실행하여 배포 전에 파싱 로직을 테스트할 수 있게 해줍니다.
 
 <Warning>
-  개발 중에는 `crewai triggers run microsoft_teams/teams_message_created`를
-  사용하세요 (`crewai run`이 아님). 배포 후에는 크루가 자동으로 트리거 payload를
+  개발 중에는 `localagents triggers run microsoft_teams/teams_message_created`를
+  사용하세요 (`localagents run`이 아님). 배포 후에는 크루가 자동으로 트리거 payload를
   받습니다.
 </Warning>
 
 ## Troubleshooting
 
 - Ensure the Teams connection is active; it must be refreshed if the tenant revokes permissions
-- `crewai triggers run microsoft_teams/teams_message_created`로 로컬 테스트하여 정확한 payload 구조를 확인하세요
+- `localagents triggers run microsoft_teams/teams_message_created`로 로컬 테스트하여 정확한 payload 구조를 확인하세요
 - Confirm the webhook subscription in Microsoft 365 is still valid if payloads stop arriving
 - Review execution logs for payload shape mismatches—Graph notifications may omit fields when a chat is private or restricted
-- 주의: 트리거 실행을 시뮬레이션하려면 `crewai triggers run`을 사용하세요 (`crewai run`이 아님)
+- 주의: 트리거 실행을 시뮬레이션하려면 `localagents triggers run`을 사용하세요 (`localagents run`이 아님)

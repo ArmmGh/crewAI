@@ -38,8 +38,8 @@ LocalAI Enterprise provides a comprehensive Human-in-the-Loop (HITL) management 
 Configure human review checkpoints within your Flows using the `@human_feedback` decorator. When execution reaches a review point, the system pauses, notifies the assignee via email, and waits for a response.
 
 ```python
-from crewai.flow.flow import Flow, start, listen, or_
-from crewai.flow.human_feedback import human_feedback, HumanFeedbackResult
+from localagents.flow.flow import Flow, start, listen, or_
+from localagents.flow.human_feedback import human_feedback, HumanFeedbackResult
 
 class ContentApprovalFlow(Flow):
     @start()
@@ -407,7 +407,7 @@ All webhooks receive a JSON payload with this structure:
     "name": "Content Review Flow",
     "organization_id": 789
   },
-  "callback_url": "https://api.crewai.com/...",
+  "callback_url": "https://api.localagents.com/...",
   "assigned_to_email": "reviewer@company.com"
 }
 ```

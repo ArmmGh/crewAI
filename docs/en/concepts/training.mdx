@@ -8,7 +8,7 @@ mode: "wide"
 ## Overview
 
 The training feature in LocalAI allows you to train your AI agents using the command-line interface (CLI).
-By running the command `crewai train -n <n_iterations>`, you can specify the number of iterations for the training process.
+By running the command `localagents train -n <n_iterations>`, you can specify the number of iterations for the training process.
 
 During training, LocalAI utilizes techniques to optimize the performance of your agents along with human feedback.
 This helps the agents improve their understanding, decision-making, and problem-solving abilities.
@@ -22,7 +22,7 @@ To use the training feature, follow these steps:
 3. Run the following command:
 
 ```shell
-crewai train -n <n_iterations> -f <filename.pkl>
+localagents train -n <n_iterations> -f <filename.pkl>
 ```
 <Tip>
   Replace `<n_iterations>` with the desired number of training iterations and `<filename>` with the appropriate filename ending with `.pkl`.
@@ -64,7 +64,7 @@ LocalAI uses the training artifacts in two ways: during training to incorporate 
 
 ```mermaid
 flowchart TD
-  A["Start training<br/>CLI: crewai train -n -f<br/>or Python: crew.train(...)"] --> B["Setup training mode<br/>- task.human_input = true<br/>- disable delegation<br/>- init training_data.pkl + trained file"]
+  A["Start training<br/>CLI: localagents train -n -f<br/>or Python: crew.train(...)"] --> B["Setup training mode<br/>- task.human_input = true<br/>- disable delegation<br/>- init training_data.pkl + trained file"]
 
   subgraph "Iterations"
     direction LR
@@ -146,7 +146,7 @@ flowchart TD
     For optimal training quality and reliable evaluations, we strongly recommend using models with at least 7B parameters or larger:
 
     ```python
-    from crewai import Agent, Crew, Task, LLM
+    from localagents import Agent, Crew, Task, LLM
 
     # Recommended minimum for training evaluation
     llm = LLM(model="mistral/open-mistral-7b")
@@ -188,7 +188,7 @@ flowchart TD
 - **Error Handling:** The code handles subprocess errors and unexpected exceptions, providing error messages to the user.
 - Trained guidance is applied at prompt time; it does not modify your Python/YAML agent configuration.
 - Agents automatically load trained suggestions from a file named `trained_agents_data.pkl` located in the current working directory. If you trained to a different filename, either rename it to `trained_agents_data.pkl` before running, or adjust the loader in code.
-- You can change the output filename when calling `crewai train` with `-f/--filename`. Absolute paths are supported if you want to save outside the CWD.
+- You can change the output filename when calling `localagents train` with `-f/--filename`. Absolute paths are supported if you want to save outside the CWD.
 
 It is important to note that the training process may take some time, depending on the complexity of your agents and will also require your feedback on each iteration.
 

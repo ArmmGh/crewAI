@@ -13,7 +13,7 @@ This documentation outlines how to create, integrate, and leverage these tools w
 ## What is a Tool?
 
 A tool in LocalAI is a skill or function that agents can utilize to perform various actions.
-This includes tools from the [LocalAI Toolkit](https://github.com/joaomdmoura/crewai-tools) and [LangChain Tools](https://python.langchain.com/docs/integrations/tools),
+This includes tools from the [LocalAI Toolkit](https://github.com/joaomdmoura/localagents-tools) and [LangChain Tools](https://python.langchain.com/docs/integrations/tools),
 enabling everything from simple searches to complex interactions and effective teamwork among agents.
 
 <Note type="info" title="Enterprise Enhancement: Tools Repository">
@@ -41,16 +41,16 @@ The Enterprise Tools Repository includes:
 To enhance your agents' capabilities with localAI tools, begin by installing our extra tools package:
 
 ```bash
-pip install 'crewai[tools]'
+pip install 'localagents[tools]'
 ```
 
 Here's an example demonstrating their use:
 
 ```python Code
 import os
-from crewai import Agent, Task, Crew
+from localagents import Agent, Task, Crew
 # Importing localAI tools
-from crewai_tools import (
+from localagents_tools import (
     DirectoryReadTool,
     FileReadTool,
     SerperDevTool,
@@ -163,7 +163,7 @@ There are two main ways for one to create a LocalAI tool:
 ### Subclassing `BaseTool`
 
 ```python Code
-from crewai.tools import BaseTool
+from localagents.tools import BaseTool
 from pydantic import BaseModel, Field
 
 class MyToolInput(BaseModel):
@@ -191,7 +191,7 @@ You can create async tools in two ways:
 #### 1. Using the `tool` Decorator with Async Functions
 
 ```python Code
-from crewai.tools import tool
+from localagents.tools import tool
 
 @tool("fetch_data_async")
 async def fetch_data_async(query: str) -> str:
@@ -204,7 +204,7 @@ async def fetch_data_async(query: str) -> str:
 #### 2. Implementing Async Methods in Custom Tool Classes
 
 ```python Code
-from crewai.tools import BaseTool
+from localagents.tools import BaseTool
 
 class AsyncCustomTool(BaseTool):
     name: str = "async_custom_tool"
@@ -239,7 +239,7 @@ The LocalAI framework automatically handles the execution of both synchronous an
 ### Utilizing the `tool` Decorator
 
 ```python Code
-from crewai.tools import tool
+from localagents.tools import tool
 @tool("Name of my tool")
 def my_tool(question: str) -> str:
     """Clear description for what this tool is useful for, your agent will need this information to use it."""
@@ -256,7 +256,7 @@ def my_tool(question: str) -> str:
 </Tip>
 
 ```python Code
-from crewai.tools import tool
+from localagents.tools import tool
 
 @tool
 def multiplication_tool(first_number: int, second_number: int) -> str:

@@ -17,7 +17,7 @@ These fingerprints can be used for:
 
 ## How Fingerprints Work
 
-A fingerprint is an instance of the `Fingerprint` class from the `crewai.security` module. Each fingerprint contains:
+A fingerprint is an instance of the `Fingerprint` class from the `localagents.security` module. Each fingerprint contains:
 
 - A UUID string: A unique identifier for the component that is automatically generated and cannot be manually set
 - A creation timestamp: When the fingerprint was generated, automatically set and cannot be manually modified
@@ -30,7 +30,7 @@ Fingerprints are automatically generated and assigned when a component is create
 ### Accessing Fingerprints
 
 ```python
-from crewai import Agent, Crew, Task
+from localagents import Agent, Crew, Task
 
 # Create components - fingerprints are automatically generated
 agent = Agent(
@@ -96,7 +96,7 @@ assert agent.fingerprint.uuid_str == original_fingerprint
 While you cannot directly set the UUID and creation timestamp, you can create deterministic fingerprints using the `generate` method with a seed:
 
 ```python
-from crewai.security import Fingerprint
+from localagents.security import Fingerprint
 
 # Create a deterministic fingerprint using a seed string
 deterministic_fingerprint = Fingerprint.generate(seed="my-agent-id")
@@ -119,7 +119,7 @@ custom_fingerprint = Fingerprint.generate(
 Each fingerprint has the following structure:
 
 ```python
-from crewai.security import Fingerprint
+from localagents.security import Fingerprint
 
 fingerprint = agent.fingerprint
 

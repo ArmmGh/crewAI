@@ -13,7 +13,7 @@ Zapier 어댑터를 사용하여 Zapier 작업을 LocalAI 도구로 나열하고
 
 ## 설치
 
-이 어댑터는 `crewai-tools`에 포함되어 있습니다. 별도의 설치가 필요하지 않습니다.
+이 어댑터는 `localagents-tools`에 포함되어 있습니다. 별도의 설치가 필요하지 않습니다.
 
 ## 환경 변수
 
@@ -22,8 +22,8 @@ Zapier 어댑터를 사용하여 Zapier 작업을 LocalAI 도구로 나열하고
 ## 예시
 
 ```python Code
-from crewai import Agent, Task, Crew
-from crewai_tools.adapters.zapier_adapter import ZapierActionsAdapter
+from localagents import Agent, Task, Crew
+from localagents_tools.adapters.zapier_adapter import ZapierActionsAdapter
 
 adapter = ZapierActionsAdapter(api_key="your_zapier_api_key")
 tools = adapter.tools()

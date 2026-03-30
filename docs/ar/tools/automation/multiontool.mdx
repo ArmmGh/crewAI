@@ -23,7 +23,7 @@ uv add multion
 
 لاستخدام `MultiOnTool` بفعالية، اتبع الخطوات التالية:
 
-1. **تثبيت LocalAI**: تأكد من تثبيت حزمة `crewai[tools]` في بيئة Python.
+1. **تثبيت LocalAI**: تأكد من تثبيت حزمة `localagents[tools]` في بيئة Python.
 2. **تثبيت واستخدام MultiOn**: اتبع [وثائق MultiOn](https://docs.multion.ai/learn/browser-extension) لتثبيت إضافة متصفح MultiOn.
 3. **تفعيل استخدام API**: انقر على إضافة MultiOn في مجلد الإضافات في متصفحك (وليس أيقونة MultiOn العائمة على صفحة الويب) لفتح إعدادات الإضافة. انقر على زر تفعيل API لتمكينه.
 
@@ -32,8 +32,8 @@ uv add multion
 يوضح المثال التالي كيفية تهيئة الأداة وتنفيذ مهمة تصفح ويب:
 
 ```python Code
-from crewai import Agent, Task, Crew
-from crewai_tools import MultiOnTool
+from localagents import Agent, Task, Crew
+from localagents_tools import MultiOnTool
 
 # Initialize the tool
 multion_tool = MultiOnTool(api_key="YOUR_MULTION_API_KEY", local=False)

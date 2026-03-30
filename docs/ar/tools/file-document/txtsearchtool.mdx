@@ -15,10 +15,10 @@ mode: "wide"
 
 ## التثبيت
 
-لاستخدام `TXTSearchTool`، تحتاج أولاً إلى تثبيت حزمة `crewai_tools`. يمكن القيام بذلك باستخدام pip، مدير الحزم لـ Python. افتح الطرفية أو موجه الأوامر وأدخل الأمر التالي:
+لاستخدام `TXTSearchTool`، تحتاج أولاً إلى تثبيت حزمة `localagents_tools`. يمكن القيام بذلك باستخدام pip، مدير الحزم لـ Python. افتح الطرفية أو موجه الأوامر وأدخل الأمر التالي:
 
 ```shell
-pip install 'crewai[tools]'
+pip install 'localagents[tools]'
 ```
 
 سيقوم هذا الأمر بتنزيل وتثبيت TXTSearchTool مع أي تبعيات ضرورية.
@@ -28,7 +28,7 @@ pip install 'crewai[tools]'
 يوضح المثال التالي كيفية استخدام TXTSearchTool للبحث داخل ملف نصي. يعرض هذا المثال كلاً من تهيئة الأداة بملف نصي محدد والبحث اللاحق داخل محتوى ذلك الملف.
 
 ```python Code
-from crewai_tools import TXTSearchTool
+from localagents_tools import TXTSearchTool
 
 # Initialize the tool to search within any text file's content
 # the agent learns about during its execution

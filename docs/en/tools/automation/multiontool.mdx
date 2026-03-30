@@ -23,7 +23,7 @@ You'll also need to install the MultiOn browser extension and enable API usage.
 
 To effectively use the `MultiOnTool`, follow these steps:
 
-1. **Install LocalAI**: Ensure that the `crewai[tools]` package is installed in your Python environment.
+1. **Install LocalAI**: Ensure that the `localagents[tools]` package is installed in your Python environment.
 2. **Install and use MultiOn**: Follow [MultiOn documentation](https://docs.multion.ai/learn/browser-extension) for installing the MultiOn Browser Extension.
 3. **Enable API Usage**: Click on the MultiOn extension in the extensions folder of your browser (not the hovering MultiOn icon on the web page) to open the extension configurations. Click the API Enabled toggle to enable the API.
 
@@ -32,8 +32,8 @@ To effectively use the `MultiOnTool`, follow these steps:
 The following example demonstrates how to initialize the tool and execute a web browsing task:
 
 ```python Code
-from crewai import Agent, Task, Crew
-from crewai_tools import MultiOnTool
+from localagents import Agent, Task, Crew
+from localagents_tools import MultiOnTool
 
 # Initialize the tool
 multion_tool = MultiOnTool(api_key="YOUR_MULTION_API_KEY", local=False)

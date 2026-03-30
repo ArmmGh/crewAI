@@ -17,7 +17,7 @@ Ele utiliza a API da [exa.ai](https://exa.ai/) para buscar e exibir os resultado
 Para incorporar esta ferramenta em seu projeto, siga as instruções de instalação abaixo:
 
 ```shell
-pip install 'crewai[tools]'
+pip install 'localagents[tools]'
 ```
 
 ## Exemplo
@@ -25,7 +25,7 @@ pip install 'crewai[tools]'
 O exemplo a seguir demonstra como inicializar a ferramenta e executar uma busca com uma consulta determinada:
 
 ```python Code
-from crewai_tools import EXASearchTool
+from localagents_tools import EXASearchTool
 
 # Initialize the tool for internet searching capabilities
 tool = EXASearchTool()
@@ -37,7 +37,7 @@ Para usar o EXASearchTool de forma eficaz, siga estas etapas:
 
 <Steps>
     <Step title="Instalação do Pacote">
-        Confirme se o pacote `crewai[tools]` está instalado em seu ambiente Python.
+        Confirme se o pacote `localagents[tools]` está instalado em seu ambiente Python.
     </Step>
     <Step title="Obtenção da Chave de API">
         Adquira uma chave de API da [exa.ai](https://exa.ai/) registrando-se gratuitamente em [exa.ai](https://exa.ai/).

@@ -14,9 +14,9 @@ mode: "wide"
 
 ## التثبيت
 
-ثبّت حزمة crewai_tools
+ثبّت حزمة localagents_tools
 ```shell
-pip install 'crewai[tools]'
+pip install 'localagents[tools]'
 ```
 
 ## مثال
@@ -24,7 +24,7 @@ pip install 'crewai[tools]'
 تذكر أنه عند استخدام هذه الأداة، يجب أن يُولَّد النص من قبل الوكيل نفسه. يجب أن يكون النص وصفاً للصورة التي تريد توليدها.
 
 ```python Code
-from crewai_tools import DallETool
+from localagents_tools import DallETool
 
 Agent(
     ...
@@ -35,7 +35,7 @@ Agent(
 إذا لزم الأمر، يمكنك أيضاً ضبط معاملات نموذج DALL-E عبر تمريرها كمعاملات لفئة `DallETool`. على سبيل المثال:
 
 ```python Code
-from crewai_tools import DallETool
+from localagents_tools import DallETool
 
 dalle_tool = DallETool(model="dall-e-3",
                        size="1024x1024",

@@ -13,7 +13,7 @@ mode: "wide"
 
 ## 설치
 
-`crewai-tools` 외에 추가 설치는 필요하지 않습니다. 선택한 LLM이 비전 기능을 지원하는지 확인하세요.
+`localagents-tools` 외에 추가 설치는 필요하지 않습니다. 선택한 LLM이 비전 기능을 지원하는지 확인하세요.
 
 ## 파라미터
 
@@ -26,7 +26,7 @@ mode: "wide"
 ### 직접 사용
 
 ```python Code
-from crewai_tools import OCRTool
+from localagents_tools import OCRTool
 
 print(OCRTool().run(image_path_url="/tmp/receipt.png"))
 ```
@@ -34,8 +34,8 @@ print(OCRTool().run(image_path_url="/tmp/receipt.png"))
 ### 에이전트와 함께
 
 ```python Code
-from crewai import Agent, Task, Crew
-from crewai_tools import OCRTool
+from localagents import Agent, Task, Crew
+from localagents_tools import OCRTool
 
 ocr = OCRTool()
 
@@ -64,8 +64,8 @@ result = crew.kickoff()
 ## 예시
 
 ```python Code
-from crewai import Agent, Task, Crew
-from crewai_tools import OCRTool
+from localagents import Agent, Task, Crew
+from localagents_tools import OCRTool
 
 tool = OCRTool()
 

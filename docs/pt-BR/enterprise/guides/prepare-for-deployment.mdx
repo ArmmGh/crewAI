@@ -37,7 +37,7 @@ Entender qual tipo você está implantando é essencial porque eles têm estrutu
 | **Localização da lógica principal** | `src/project_name/crew.py` | `src/project_name/main.py` (classe Flow) |
 | **Função de ponto de entrada** | `run()` em `main.py` | `kickoff()` em `main.py` |
 | **Tipo no pyproject.toml** | `type = "crew"` | `type = "flow"` |
-| **Comando CLI de criação** | `crewai create crew name` | `crewai create flow name` |
+| **Comando CLI de criação** | `localagents create crew name` | `localagents create flow name` |
 | **Localização da configuração** | `src/project_name/config/` | `src/project_name/crews/crew_name/config/` |
 | **Pode conter outros crews** | Não | Sim (na pasta `crews/`) |
 
@@ -45,7 +45,7 @@ Entender qual tipo você está implantando é essencial porque eles têm estrutu
 
 ### Estrutura de Projeto Crew
 
-Quando você executa `crewai create crew my_crew`, você obtém esta estrutura:
+Quando você executa `localagents create crew my_crew`, você obtém esta estrutura:
 
 ```
 my_crew/
@@ -74,7 +74,7 @@ my_crew/
 
 ### Estrutura de Projeto Flow
 
-Quando você executa `crewai create flow my_flow`, você obtém esta estrutura:
+Quando você executa `localagents create flow my_flow`, você obtém esta estrutura:
 
 ```
 my_flow/
@@ -111,18 +111,18 @@ Use este checklist para verificar se seu projeto está pronto para implantação
 
 ### 1. Verificar Configuração do pyproject.toml
 
-Seu `pyproject.toml` deve incluir a seção `[tool.crewai]` correta:
+Seu `pyproject.toml` deve incluir a seção `[tool.localagents]` correta:
 
 <Tabs>
   <Tab title="Para Crews">
     ```toml
-    [tool.crewai]
+    [tool.localagents]
     type = "crew"
     ```
   </Tab>
   <Tab title="Para Flows">
     ```toml
-    [tool.crewai]
+    [tool.localagents]
     type = "flow"
     ```
   </Tab>
@@ -162,9 +162,9 @@ git push
 - Crews embutidos dentro de projetos Flow
 
 ```python
-from crewai import Agent, Crew, Process, Task
-from crewai.project import CrewBase, agent, crew, task
-from crewai.agents.agent_builder.base_agent import BaseAgent
+from localagents import Agent, Crew, Process, Task
+from localagents.project import CrewBase, agent, crew, task
+from localagents.agents.agent_builder.base_agent import BaseAgent
 from typing import List
 
 @CrewBase  # Este decorador é OBRIGATÓRIO
@@ -229,7 +229,7 @@ Tanto Crews quanto Flows têm seu ponto de entrada em `src/project_name/main.py`
 
     ```python
     # src/my_flow/main.py
-    from crewai.flow import Flow, listen, start
+    from localagents.flow import Flow, listen, start
     from my_flow.crews.poem_crew.poem_crew import PoemCrew
 
     class MyFlow(Flow):
@@ -273,7 +273,7 @@ Execute estes comandos a partir da raiz do seu projeto para verificar rapidament
 
 ```bash
 # 1. Verificar tipo do projeto no pyproject.toml
-grep -A2 "\[tool.crewai\]" pyproject.toml
+grep -A2 "\[tool.localagents\]" pyproject.toml
 
 # 2. Verificar se uv.lock existe
 ls -la uv.lock || echo "ERRO: uv.lock ausente! Execute 'uv lock'"

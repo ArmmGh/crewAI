@@ -13,19 +13,19 @@ mode: "wide"
 
 ## Descrição
 
-Esta ferramenta faz parte do pacote `crewai_tools` e foi projetada para realizar buscas semânticas dentro do conteúdo de vídeos do Youtube, utilizando técnicas de Geração Auxiliada por Recuperação (RAG).
+Esta ferramenta faz parte do pacote `localagents_tools` e foi projetada para realizar buscas semânticas dentro do conteúdo de vídeos do Youtube, utilizando técnicas de Geração Auxiliada por Recuperação (RAG).
 É uma das diversas ferramentas de "Pesquisa" do pacote que aproveitam RAG para diferentes fontes.
 O YoutubeVideoSearchTool permite flexibilidade nas buscas: usuários podem pesquisar em qualquer conteúdo de vídeo do Youtube sem especificar uma URL,
 ou podem direcionar sua busca para um vídeo específico fornecendo sua URL.
 
 ## Instalação
 
-Para utilizar o `YoutubeVideoSearchTool`, é necessário primeiro instalar o pacote `crewai_tools`.
+Para utilizar o `YoutubeVideoSearchTool`, é necessário primeiro instalar o pacote `localagents_tools`.
 Esse pacote contém o `YoutubeVideoSearchTool` entre outras utilidades desenvolvidas para melhorar suas tarefas de análise e processamento de dados.
 Instale o pacote executando o seguinte comando em seu terminal:
 
 ```shell
-pip install 'crewai[tools]'
+pip install 'localagents[tools]'
 ```
 
 ## Exemplo
@@ -33,8 +33,8 @@ pip install 'crewai[tools]'
 O exemplo a seguir demonstra como usar o `YoutubeVideoSearchTool` com um agente LocalAI:
 
 ```python Code
-from crewai import Agent, Task, Crew
-from crewai_tools import YoutubeVideoSearchTool
+from localagents import Agent, Task, Crew
+from localagents_tools import YoutubeVideoSearchTool
 
 # Inicialize a ferramenta para buscas gerais em vídeos do YouTube
 youtube_search_tool = YoutubeVideoSearchTool()
@@ -124,8 +124,8 @@ youtube_search_tool = YoutubeVideoSearchTool(
 Aqui está um exemplo mais detalhado de como integrar o `YoutubeVideoSearchTool` com um agente LocalAI:
 
 ```python Code
-from crewai import Agent, Task, Crew
-from crewai_tools import YoutubeVideoSearchTool
+from localagents import Agent, Task, Crew
+from localagents_tools import YoutubeVideoSearchTool
 
 # Inicialize a ferramenta
 youtube_search_tool = YoutubeVideoSearchTool()

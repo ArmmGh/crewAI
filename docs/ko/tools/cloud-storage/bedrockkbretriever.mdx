@@ -12,7 +12,7 @@ mode: "wide"
 ## 설치
 
 ```bash
-uv pip install 'crewai[tools]'
+uv pip install 'localagents[tools]'
 ```
 
 ## 요구 사항
@@ -26,8 +26,8 @@ uv pip install 'crewai[tools]'
 LocalAI agent와 함께 이 도구를 사용하는 방법은 다음과 같습니다:
 
 ```python {2, 4-17}
-from crewai import Agent, Task, Crew
-from crewai_tools.aws.bedrock.knowledge_base.retriever_tool import BedrockKBRetrieverTool
+from localagents import Agent, Task, Crew
+from localagents_tools.aws.bedrock.knowledge_base.retriever_tool import BedrockKBRetrieverTool
 
 # Initialize the tool
 kb_tool = BedrockKBRetrieverTool(

@@ -1,6 +1,6 @@
 ---
 title: "Servidores MCP como Ferramentas no LocalAI"
-description: "Aprenda como integrar servidores MCP como ferramentas nos seus agentes LocalAI usando a biblioteca `crewai-tools`."
+description: "Aprenda como integrar servidores MCP como ferramentas nos seus agentes LocalAI usando a biblioteca `localagents-tools`."
 icon: plug
 mode: "wide"
 ---
@@ -16,7 +16,7 @@ O LocalAI oferece **duas abordagens** para integração MCP:
 Use o campo `mcps` diretamente nos agentes para integração perfeita de ferramentas MCP:
 
 ```python
-from crewai import Agent
+from localagents import Agent
 
 agent = Agent(
     role="Analista de Pesquisa",
@@ -34,7 +34,7 @@ agent = Agent(
 
 ### 🔧 **Avançado: MCPServerAdapter** (Para Cenários Complexos)
 
-Para casos de uso avançados que requerem gerenciamento manual de conexão, a biblioteca `crewai-tools` fornece a classe `MCPServerAdapter`.
+Para casos de uso avançados que requerem gerenciamento manual de conexão, a biblioteca `localagents-tools` fornece a classe `MCPServerAdapter`.
 
 Atualmente, suportamos os seguintes mecanismos de transporte:
 
@@ -57,15 +57,15 @@ Assista a este tutorial em vídeo para um guia abrangente sobre a integração d
 
 ## Instalação
 
-Antes de começar a usar MCP com `crewai-tools`, é necessário instalar a dependência extra `mcp` do `crewai-tools` com o seguinte comando:
+Antes de começar a usar MCP com `localagents-tools`, é necessário instalar a dependência extra `mcp` do `localagents-tools` com o seguinte comando:
 
 ```shell
-uv pip install 'crewai-tools[mcp]'
+uv pip install 'localagents-tools[mcp]'
 ```
 
 ## Conceitos Chave & Primeiros Passos
 
-A classe `MCPServerAdapter` da `crewai-tools` é a principal forma de conectar-se a um servidor MCP e disponibilizar suas ferramentas aos seus agentes LocalAI. Ela suporta diferentes mecanismos de transporte e simplifica o gerenciamento de conexões.
+A classe `MCPServerAdapter` da `localagents-tools` é a principal forma de conectar-se a um servidor MCP e disponibilizar suas ferramentas aos seus agentes LocalAI. Ela suporta diferentes mecanismos de transporte e simplifica o gerenciamento de conexões.
 
 O uso de um gerenciador de contexto Python (`with`) é a **abordagem recomendada** para o `MCPServerAdapter`. Ele lida automaticamente com a abertura e o fechamento da conexão com o servidor MCP.
 
@@ -83,8 +83,8 @@ with MCPServerAdapter(server_params, connect_timeout=60) as tools:
 ```
 
 ```python
-from crewai import Agent
-from crewai_tools import MCPServerAdapter
+from localagents import Agent
+from localagents_tools import MCPServerAdapter
 from mcp import StdioServerParameters # Para servidor Stdio
 
 # Exemplo de server_params (escolha um baseado no seu tipo de servidor):
@@ -297,7 +297,7 @@ Confira este repositório para demonstrações completas e exemplos de integraç
 <Card
   title="Repositório GitHub"
   icon="github"
-  href="https://github.com/tonykipkemboi/crewai-mcp-demo"
+  href="https://github.com/tonykipkemboi/localagents-mcp-demo"
   target="_blank"
 >
   Demo MCP do LocalAI

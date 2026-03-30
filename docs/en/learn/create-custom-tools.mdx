@@ -21,7 +21,7 @@ To create a personalized tool, inherit from `BaseTool` and define the necessary 
 
 ```python Code
 from typing import Type
-from crewai.tools import BaseTool
+from localagents.tools import BaseTool
 from pydantic import BaseModel, Field
 
 class MyToolInput(BaseModel):
@@ -44,7 +44,7 @@ Alternatively, you can use the tool decorator `@tool`. This approach allows you 
 offering a concise and efficient way to create specialized tools tailored to your needs.
 
 ```python Code
-from crewai.tools import tool
+from localagents.tools import tool
 
 @tool("Tool Name")
 def my_simple_tool(question: str) -> str:
@@ -80,7 +80,7 @@ The simplest way to create an async tool is using the `@tool` decorator with an 
 
 ```python Code
 import aiohttp
-from crewai.tools import tool
+from localagents.tools import tool
 
 @tool("Async Web Fetcher")
 async def fetch_webpage(url: str) -> str:
@@ -97,7 +97,7 @@ For more control, subclass `BaseTool` and implement both `_run` (sync) and `_aru
 ```python Code
 import requests
 import aiohttp
-from crewai.tools import BaseTool
+from localagents.tools import BaseTool
 from pydantic import BaseModel, Field
 
 class WebFetcherInput(BaseModel):

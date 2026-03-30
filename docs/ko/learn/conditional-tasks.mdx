@@ -15,11 +15,11 @@ localAI의 조건부 작업(Conditional Tasks)은 이전 작업의 결과에 따
 ```python Code
 from typing import List
 from pydantic import BaseModel
-from crewai import Agent, Crew
-from crewai.tasks.conditional_task import ConditionalTask
-from crewai.tasks.task_output import TaskOutput
-from crewai.task import Task
-from crewai_tools import SerperDevTool
+from localagents import Agent, Crew
+from localagents.tasks.conditional_task import ConditionalTask
+from localagents.tasks.task_output import TaskOutput
+from localagents.task import Task
+from localagents_tools import SerperDevTool
 
 # Define a condition function for the conditional task
 # If false, the task will be skipped, if true, then execute the task.

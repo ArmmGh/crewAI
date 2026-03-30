@@ -21,10 +21,10 @@ Power your AI data retrievals with:
 ## Installation
 
 - Get an API key and Project ID from [browserbase.com](https://browserbase.com) and set it in environment variables (`BROWSERBASE_API_KEY`, `BROWSERBASE_PROJECT_ID`).
-- Install the [Browserbase SDK](http://github.com/browserbase/python-sdk) along with `crewai[tools]` package:
+- Install the [Browserbase SDK](http://github.com/browserbase/python-sdk) along with `localagents[tools]` package:
 
 ```shell
-pip install browserbase 'crewai[tools]'
+pip install browserbase 'localagents[tools]'
 ```
 
 ## Example
@@ -32,7 +32,7 @@ pip install browserbase 'crewai[tools]'
 Utilize the BrowserbaseLoadTool as follows to allow your agent to load websites:
 
 ```python Code
-from crewai_tools import BrowserbaseLoadTool
+from localagents_tools import BrowserbaseLoadTool
 
 # Initialize the tool with the Browserbase API key and Project ID
 tool = BrowserbaseLoadTool()

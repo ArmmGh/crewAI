@@ -38,7 +38,7 @@ mode: "wide"
   <Step title="LangDB 설치">
     LocalAI 기능 플래그와 함께 LangDB 클라이언트를 설치하세요:
     ```bash
-    pip install 'pylangdb[crewai]'
+    pip install 'pylangdb[localagents]'
     ```
   </Step>
   <Step title="환경 변수 설정">
@@ -52,7 +52,7 @@ mode: "wide"
   <Step title="추적(Tracing) 초기화">
     LocalAI 코드를 설정하기 전에 LangDB를 임포트하고 초기화하세요:
     ```python
-    from pylangdb.crewai import init
+    from pylangdb.localagents import init
     # Initialize LangDB
     init()
     ```
@@ -60,7 +60,7 @@ mode: "wide"
   <Step title="LocalAI와 LangDB 연동 설정">
     LangDB 헤더와 함께 LLM을 설정하세요:
     ```python
-    from crewai import Agent, Task, Crew, LLM
+    from localagents import Agent, Task, Crew, LLM
     import os
 
     # Configure LLM with LangDB headers
@@ -80,8 +80,8 @@ mode: "wide"
 
 ```python
 import os
-from pylangdb.crewai import init
-from crewai import Agent, Task, Crew, LLM
+from pylangdb.localagents import init
+from localagents import Agent, Task, Crew, LLM
 
 # Initialize LangDB before any LocalAI imports
 init()
@@ -123,7 +123,7 @@ print(result)
 ### 사전 준비 사항
 
 ```bash
-pip install crewai 'pylangdb[crewai]' crewai_tools setuptools python-dotenv
+pip install localagents 'pylangdb[localagents]' localagents_tools setuptools python-dotenv
 ```
 
 ### 환경 설정
@@ -145,11 +145,11 @@ export SERPER_API_KEY="<your_serper_api_key>"  # For web search capabilities
 
 import os
 import sys
-from pylangdb.crewai import init
+from pylangdb.localagents import init
 init()  # Initialize LangDB before any LocalAI imports
 from dotenv import load_dotenv
-from crewai import Agent, Task, Crew, Process, LLM
-from crewai_tools import SerperDevTool
+from localagents import Agent, Task, Crew, Process, LLM
+from localagents_tools import SerperDevTool
 
 load_dotenv()
 
@@ -260,7 +260,7 @@ LocalAI 애플리케이션을 실행한 후, LangDB 대시보드에서 자세한
   <Card title="LangDB 가이드" icon="graduation-cap" href="https://docs.langdb.ai/guides">
     AI 에이전트 구축을 위한 단계별 튜토리얼
   </Card>
-  <Card title="GitHub 예제" icon="github" href="https://github.com/langdb/langdb-samples/tree/main/examples/crewai" >
+  <Card title="GitHub 예제" icon="github" href="https://github.com/langdb/langdb-samples/tree/main/examples/localagents" >
     LocalAI 통합 전체 예제
   </Card>
   <Card title="LangDB 대시보드" icon="chart-line" href="https://app.langdb.ai">

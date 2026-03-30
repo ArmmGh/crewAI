@@ -18,7 +18,7 @@ This guide will demonstrate how to integrate **[Datadog LLM Observability](https
 ### Install Dependencies
 
 ```shell
-pip install ddtrace crewai crewai-tools
+pip install ddtrace localagents localagents-tools
 ```
 
 ### Set Environment Variables
@@ -48,10 +48,10 @@ export GEMINI_API_KEY=<YOUR_GEMINI_API_KEY>
 ### Create a LocalAI Agent Application
 
 ```python
-# crewai_agent.py
-from crewai import Agent, Task, Crew
+# localagents_agent.py
+from localagents import Agent, Task, Crew
 
-from crewai_tools import (
+from localagents_tools import (
     WebsiteSearchTool
 )
 
@@ -84,7 +84,7 @@ output = crew.kickoff(dict(multiplication="2 * 2"))
 With the [environment variables](#set-environment-variables) set, you can now run the application with Datadog auto-instrumentation.
 
 ```shell
-ddtrace-run python crewai_agent.py
+ddtrace-run python localagents_agent.py
 ```
 
 ### View the Traces in Datadog
@@ -106,4 +106,4 @@ Additionally, you can view the execution graph view of the trace, which shows th
 ## References
 
 - [Datadog LLM Observability](https://www.datadoghq.com/product/llm-observability/)
-- [Datadog LLM Observability LocalAI Auto-Instrumentation](https://docs.datadoghq.com/llm_observability/instrumentation/auto_instrumentation?tab=python#crew-ai)
+- [Datadog LLM Observability LocalAI Auto-Instrumentation](https://docs.datadoghq.com/llm_observability/instrumentation/auto_instrumentation?tab=python#local-agents)

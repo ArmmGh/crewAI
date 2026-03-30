@@ -52,8 +52,8 @@ StagehandTool은 두 가지 방법으로 구현할 수 있습니다:
 </Tip>
 
 ```python
-from crewai import Agent, Task, Crew
-from crewai_tools import StagehandTool
+from localagents import Agent, Task, Crew
+from localagents_tools import StagehandTool
 from stagehand.schemas import AvailableModel
 
 # Initialize the tool with your API keys using a context manager
@@ -92,8 +92,8 @@ with StagehandTool(
 #### 2. 수동 리소스 관리
 
 ```python
-from crewai import Agent, Task, Crew
-from crewai_tools import StagehandTool
+from localagents import Agent, Task, Crew
+from localagents_tools import StagehandTool
 from stagehand.schemas import AvailableModel
 
 # Initialize the tool with your API keys

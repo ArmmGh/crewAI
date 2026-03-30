@@ -14,7 +14,7 @@ mode: "wide"
 
 [여기](https://oxylabs.io)에서 Oxylabs 계정을 생성하여 자격 증명을 받으세요.
 ```shell
-pip install 'crewai[tools]' oxylabs
+pip install 'localagents[tools]' oxylabs
 ```
 API 매개변수에 대한 자세한 정보는 [Oxylabs 문서](https://developers.oxylabs.io/scraping-solutions/web-scraper-api/targets)를 참고하세요.
 
@@ -23,7 +23,7 @@ API 매개변수에 대한 자세한 정보는 [Oxylabs 문서](https://develope
 ### 예시
 
 ```python
-from crewai_tools import OxylabsAmazonProductScraperTool
+from localagents_tools import OxylabsAmazonProductScraperTool
 
 # make sure OXYLABS_USERNAME and OXYLABS_PASSWORD variables are set
 tool = OxylabsAmazonProductScraperTool()
@@ -48,7 +48,7 @@ print(result)
 ### 고급 예제
 
 ```python
-from crewai_tools import OxylabsAmazonProductScraperTool
+from localagents_tools import OxylabsAmazonProductScraperTool
 
 # make sure OXYLABS_USERNAME and OXYLABS_PASSWORD variables are set
 tool = OxylabsAmazonProductScraperTool(
@@ -74,7 +74,7 @@ print(result)
 ### 예시
 
 ```python
-from crewai_tools import OxylabsAmazonSearchScraperTool
+from localagents_tools import OxylabsAmazonSearchScraperTool
 
 # make sure OXYLABS_USERNAME and OXYLABS_PASSWORD variables are set
 tool = OxylabsAmazonSearchScraperTool()
@@ -101,7 +101,7 @@ print(result)
 ### 고급 예제
 
 ```python
-from crewai_tools import OxylabsAmazonSearchScraperTool
+from localagents_tools import OxylabsAmazonSearchScraperTool
 
 # make sure OXYLABS_USERNAME and OXYLABS_PASSWORD variables are set
 tool = OxylabsAmazonSearchScraperTool(
@@ -126,7 +126,7 @@ print(result)
 ### 예시
 
 ```python
-from crewai_tools import OxylabsGoogleSearchScraperTool
+from localagents_tools import OxylabsGoogleSearchScraperTool
 
 # make sure OXYLABS_USERNAME and OXYLABS_PASSWORD variables are set
 tool = OxylabsGoogleSearchScraperTool()
@@ -155,7 +155,7 @@ print(result)
 ### 고급 예시
 
 ```python
-from crewai_tools import OxylabsGoogleSearchScraperTool
+from localagents_tools import OxylabsGoogleSearchScraperTool
 
 # make sure OXYLABS_USERNAME and OXYLABS_PASSWORD variables are set
 tool = OxylabsGoogleSearchScraperTool(
@@ -176,7 +176,7 @@ print(result)
 ### 예시
 
 ```python
-from crewai_tools import OxylabsUniversalScraperTool
+from localagents_tools import OxylabsUniversalScraperTool
 
 # make sure OXYLABS_USERNAME and OXYLABS_PASSWORD variables are set
 tool = OxylabsUniversalScraperTool()
@@ -200,7 +200,7 @@ print(result)
 ### 고급 예제
 
 ```python
-from crewai_tools import OxylabsUniversalScraperTool
+from localagents_tools import OxylabsUniversalScraperTool
 
 # make sure OXYLABS_USERNAME and OXYLABS_PASSWORD variables are set
 tool = OxylabsUniversalScraperTool(

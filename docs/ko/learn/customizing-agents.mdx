@@ -59,15 +59,15 @@ mode: "wide"
 `tools` 속성은 에이전트가 사용할 수 있는 도구의 배열이어야 하며, 기본값으로는 빈 리스트로 초기화됩니다. 도구는 새로운 요구 사항에 맞추어 에이전트 초기화 이후에도 추가하거나 수정할 수 있습니다.
 
 ```shell
-pip install 'crewai[tools]'
+pip install 'localagents[tools]'
 ```
 
 ### 예시: 에이전트에 도구 할당하기
 
 ```python Code
 import os
-from crewai import Agent
-from crewai_tools import SerperDevTool
+from localagents import Agent
+from localagents_tools import SerperDevTool
 
 # Set API keys for tool initialization
 os.environ["OPENAI_API_KEY"] = "Your Key"

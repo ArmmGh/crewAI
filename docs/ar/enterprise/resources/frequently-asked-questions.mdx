@@ -11,8 +11,8 @@ mode: "wide"
     </Accordion>
 
     <Accordion title="أين يمكنني الحصول على أحدث توثيق لـ LocalAI؟">
-        يتوفر أحدث توثيق لـ LocalAI على موقع التوثيق الرسمي: https://docs.crewai.com/
-        <Card href="https://docs.crewai.com/" icon="books">توثيق LocalAI</Card>
+        يتوفر أحدث توثيق لـ LocalAI على موقع التوثيق الرسمي: https://docs.localagents.com/
+        <Card href="https://docs.localagents.com/" icon="books">توثيق LocalAI</Card>
     </Accordion>
 
     <Accordion title="ما الاختلافات الرئيسية بين العمليات الهرمية والتسلسلية في LocalAI؟">
@@ -81,7 +81,7 @@ mode: "wide"
         - **الذاكرة السياقية**: ذاكرة تحافظ على السياق عبر التفاعلات
 
         تعرف على المزيد حول أنواع الذاكرة المختلفة:
-        <Card href="https://docs.crewai.com/concepts/memory" icon="brain">ذاكرة LocalAI</Card>
+        <Card href="https://docs.localagents.com/concepts/memory" icon="brain">ذاكرة LocalAI</Card>
     </Accordion>
 
     <Accordion title="كيف أستخدم Output Pydantic في مهمة؟">
@@ -100,7 +100,7 @@ mode: "wide"
 
             <Step title="إنشاء مهمة مع Output Pydantic">
                 ```python
-                from crewai import Task, Crew, Agent
+                from localagents import Task, Crew, Agent
                 from my_models import User
 
                 task = Task(
@@ -114,7 +114,7 @@ mode: "wide"
 
             <Step title="تعيين خاصية output_pydantic في الوكيل">
                 ```python
-                from crewai import Agent
+                from localagents import Agent
                 from my_models import User
 
                 agent = Agent(

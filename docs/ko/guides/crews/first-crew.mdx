@@ -42,7 +42,7 @@ mode: "wide"
 먼저, CLI를 사용하여 새로운 LocalAI 프로젝트를 생성해봅시다. 이 명령어는 필요한 모든 파일을 포함한 전체 프로젝트 구조를 설정해 주어, 보일러플레이트 코드를 설정하는 대신 에이전트와 그들의 작업 정의에 집중할 수 있습니다.
 
 ```bash
-crewai create crew research_crew
+localagents create crew research_crew
 cd research_crew
 ```
 
@@ -179,10 +179,10 @@ analysis_task:
 
 ```python
 # src/research_crew/crew.py
-from crewai import Agent, Crew, Process, Task
-from crewai.project import CrewBase, agent, crew, task
-from crewai_tools import SerperDevTool
-from crewai.agents.agent_builder.base_agent import BaseAgent
+from localagents import Agent, Crew, Process, Task
+from localagents.project import CrewBase, agent, crew, task
+from localagents_tools import SerperDevTool
+from localagents.agents.agent_builder.base_agent import BaseAgent
 from typing import List
 
 @CrewBase
@@ -291,7 +291,7 @@ SERPER_API_KEY=your_serper_api_key
 LocalAI CLI를 사용하여 필요한 종속성을 설치하세요:
 
 ```bash
-crewai install
+localagents install
 ```
 
 이 명령어는 다음을 수행합니다:
@@ -304,7 +304,7 @@ crewai install
 이제 흥미로운 순간입니다 - crew를 실행하여 AI 협업이 어떻게 이루어지는지 직접 확인해보세요!
 
 ```bash
-crewai run
+localagents run
 ```
 
 이 명령어를 실행하면 crew가 즉시 작동하는 모습을 볼 수 있습니다. researcher는 지정된 주제에 대한 정보를 수집하고, analyst가 그 연구를 바탕으로 종합 보고서를 작성합니다. 에이전트들의 사고 과정, 행동, 결과물이 실시간으로 표시되며 서로 협력하여 작업을 완수하는 모습을 확인할 수 있습니다.
@@ -326,19 +326,19 @@ LocalAI는 crew 작업을 위한 몇 가지 유용한 CLI 명령어를 추가로
 
 ```bash
 # 모든 사용 가능한 명령어 보기
-crewai --help
+localagents --help
 
 # crew 실행
-crewai run
+localagents run
 
 # crew 테스트
-crewai test
+localagents test
 
 # crew 메모리 초기화
-crewai reset-memories
+localagents reset-memories
 
 # 특정 task에서 재실행
-crewai replay -t <task_id>
+localagents replay -t <task_id>
 ```
 
 ## 가능한 것의 예술: 당신의 첫 crew를 넘어서

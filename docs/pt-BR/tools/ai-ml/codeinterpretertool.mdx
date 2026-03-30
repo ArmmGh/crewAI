@@ -38,7 +38,7 @@ O `CodeInterpreterTool` registra a estratégia de execução selecionada no STDO
 Para utilizar esta ferramenta, você precisa instalar o pacote de ferramentas LocalAI:
 
 ```shell
-pip install 'crewai[tools]'
+pip install 'localagents[tools]'
 ```
 
 ## Exemplo
@@ -46,8 +46,8 @@ pip install 'crewai[tools]'
 O exemplo a seguir demonstra como usar o `CodeInterpreterTool` com um agente LocalAI:
 
 ```python Code
-from crewai import Agent, Task, Crew, Process
-from crewai_tools import CodeInterpreterTool
+from localagents import Agent, Task, Crew, Process
+from localagents_tools import CodeInterpreterTool
 
 # Initialize the tool
 code_interpreter = CodeInterpreterTool()
@@ -81,7 +81,7 @@ result = crew.kickoff()
 Você também pode habilitar a execução de código diretamente ao criar um agente:
 
 ```python Code
-from crewai import Agent
+from localagents import Agent
 
 # Create an agent with code execution enabled
 programmer_agent = Agent(
@@ -96,7 +96,7 @@ programmer_agent = Agent(
 ### Habilitando o `unsafe_mode`
 
 ```python Code
-from crewai_tools import CodeInterpreterTool
+from localagents_tools import CodeInterpreterTool
 
 code = """
 import os
@@ -125,8 +125,8 @@ Ao utilizar a ferramenta com um agente, o agente precisará fornecer:
 Aqui está um exemplo mais detalhado de como integrar o `CodeInterpreterTool` com um agente LocalAI:
 
 ```python Code
-from crewai import Agent, Task, Crew
-from crewai_tools import CodeInterpreterTool
+from localagents import Agent, Task, Crew
+from localagents_tools import CodeInterpreterTool
 
 # Initialize the tool
 code_interpreter = CodeInterpreterTool()

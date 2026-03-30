@@ -25,7 +25,7 @@ mode: "wide"
 프로세스를 crew에 할당하려면, crew 생성 시 프로세스 유형을 지정하여 실행 전략을 설정합니다. 계층적 프로세스의 경우, 매니저 에이전트에 대해 `manager_llm` 또는 `manager_agent`를 반드시 정의해야 합니다.
 
 ```python
-from crewai import Crew, Process
+from localagents import Crew, Process
 
 # Example: Creating a crew with a sequential process
 crew = Crew(

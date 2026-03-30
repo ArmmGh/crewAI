@@ -13,41 +13,41 @@ Permita que seus agentes gerenciem páginas, bancos de dados e conteúdos atrav�
 
 Antes de usar a integração com o Notion, certifique-se de que você tem:
 
-- Uma conta [LocalAI AMP](https://app.crewai.com) com assinatura ativa
+- Uma conta [LocalAI AMP](https://app.localagents.com) com assinatura ativa
 - Uma conta Notion com permissões adequadas no workspace
-- Sua conta Notion conectada através da [página de Integrações](https://app.crewai.com/crewai_plus/connectors)
+- Sua conta Notion conectada através da [página de Integrações](https://app.localagents.com/localagents_plus/connectors)
 
 ## Configurando a Integração com o Notion
 
 ### 1. Conecte sua Conta Notion
 
-1. Acesse [Integrações do LocalAI AMP](https://app.crewai.com/crewai_plus/connectors)
+1. Acesse [Integrações do LocalAI AMP](https://app.localagents.com/localagents_plus/connectors)
 2. Procure por **Notion** na seção de Integrações de Autenticação
 3. Clique em **Conectar** e complete o fluxo de OAuth
 4. Conceda as permissões necessárias para gerenciamento de páginas e bancos de dados
-5. Copie seu Token Enterprise em [Configurações de Integração](https://app.crewai.com/crewai_plus/settings/integrations)
+5. Copie seu Token Enterprise em [Configurações de Integração](https://app.localagents.com/localagents_plus/settings/integrations)
 
 ### 2. Instale o Pacote Necessário
 
 ```bash
-uv add crewai-tools
+uv add localagents-tools
 ```
 
 ### 3. Configuração de variável de ambiente
 
 <Note>
   Para usar integrações com `Agent(apps=[])`, você deve definir a variável de
-  ambiente `CREWAI_PLATFORM_INTEGRATION_TOKEN` com seu Enterprise Token.
+  ambiente `LOCALAGENTS_PLATFORM_INTEGRATION_TOKEN` com seu Enterprise Token.
 </Note>
 
 ```bash
-export CREWAI_PLATFORM_INTEGRATION_TOKEN="seu_enterprise_token"
+export LOCALAGENTS_PLATFORM_INTEGRATION_TOKEN="seu_enterprise_token"
 ```
 
 Ou adicione ao seu arquivo `.env`:
 
 ```
-CREWAI_PLATFORM_INTEGRATION_TOKEN=seu_enterprise_token
+LOCALAGENTS_PLATFORM_INTEGRATION_TOKEN=seu_enterprise_token
 ```
 
 ## Ações Disponíveis
@@ -306,7 +306,7 @@ CREWAI_PLATFORM_INTEGRATION_TOKEN=seu_enterprise_token
 ### Configuração Básica do Agente Notion
 
 ```python
-from crewai import Agent, Task, Crew
+from localagents import Agent, Task, Crew
 
 # Create an agent with Notion capabilities
 notion_agent = Agent(
@@ -361,7 +361,7 @@ crew.kickoff()
 ### Gerenciamento de Base de Conhecimento
 
 ```python
-from crewai import Agent, Task, Crew
+from localagents import Agent, Task, Crew
 
 knowledge_curator = Agent(
     role="Knowledge Curator",
@@ -393,7 +393,7 @@ crew.kickoff()
 ### Estrutura e Organização de Conteúdo
 
 ```python
-from crewai import Agent, Task, Crew
+from localagents import Agent, Task, Crew
 
 content_organizer = Agent(
     role="Content Organizer",
@@ -426,7 +426,7 @@ crew.kickoff()
 ### Fluxos de Trabalho de Documentação Automatizados
 
 ```python
-from crewai import Agent, Task, Crew
+from localagents import Agent, Task, Crew
 
 doc_automator = Agent(
     role="Documentation Automator",
@@ -511,7 +511,7 @@ crew.kickoff()
 
 ### Obtendo Ajuda
 
-<Card title="Precisa de ajuda?" icon="headset" href="mailto:support@crewai.com">
+<Card title="Precisa de ajuda?" icon="headset" href="mailto:support@localagents.com">
   Entre em contato com nosso time de suporte para auxílio na configuração ou
   solução de problemas com a integração Notion.
 </Card>

@@ -7,7 +7,7 @@ mode: "wide"
 
 ## نظرة عامة
 
-يتيح لك `MCPServerAdapter` في `crewai-tools` الاتصال بخوادم MCP متعددة بشكل متزامن. هذا مفيد عندما يحتاج وكلاؤك للوصول إلى أدوات موزعة عبر خدمات أو بيئات مختلفة. يجمع المحول الأدوات من جميع الخوادم المحددة، مما يجعلها متاحة لوكلاء LocalAI.
+يتيح لك `MCPServerAdapter` في `localagents-tools` الاتصال بخوادم MCP متعددة بشكل متزامن. هذا مفيد عندما يحتاج وكلاؤك للوصول إلى أدوات موزعة عبر خدمات أو بيئات مختلفة. يجمع المحول الأدوات من جميع الخوادم المحددة، مما يجعلها متاحة لوكلاء LocalAI.
 
 ## الإعداد
 
@@ -16,8 +16,8 @@ mode: "wide"
 تتضمن أنواع النقل المدعومة لكل خادم في القائمة `stdio` و `sse` و `streamable-http`.
 
 ```python
-from crewai import Agent, Task, Crew, Process
-from crewai_tools import MCPServerAdapter
+from localagents import Agent, Task, Crew, Process
+from localagents_tools import MCPServerAdapter
 from mcp import StdioServerParameters # Needed for Stdio example
 
 # Define parameters for multiple MCP servers

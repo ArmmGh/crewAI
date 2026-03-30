@@ -40,10 +40,10 @@ Connect enterprise‑grade applications (e.g., Gmail, Google Drive, HubSpot, Sla
 
 ### Connect your Account
 
-1. Go to <Link href="https://app.crewai.com/crewai_plus/connectors">Integrations</Link>
+1. Go to <Link href="https://app.localagents.com/localagents_plus/connectors">Integrations</Link>
 2. Click <b>Connect</b> on the desired service
 3. Complete the OAuth flow and grant scopes
-4. Copy your Enterprise Token from <Link href="https://app.crewai.com/crewai_plus/settings/integrations">Integration Settings</Link>
+4. Copy your Enterprise Token from <Link href="https://app.localagents.com/localagents_plus/settings/integrations">Integration Settings</Link>
 
 {" "}
 <Frame>
@@ -52,10 +52,10 @@ Connect enterprise‑grade applications (e.g., Gmail, Google Drive, HubSpot, Sla
 
 ### Install Integration Tools
 
-To use the integrations locally, you need to install the latest `crewai-tools` package.
+To use the integrations locally, you need to install the latest `localagents-tools` package.
 
 ```bash
-uv add crewai-tools
+uv add localagents-tools
 ```
 
 ### Environment Variable Setup
@@ -63,18 +63,18 @@ uv add crewai-tools
 {" "}
 <Note>
   To use integrations with `Agent(apps=[])`, you must set the
-  `CREWAI_PLATFORM_INTEGRATION_TOKEN` environment variable with your Enterprise
+  `LOCALAGENTS_PLATFORM_INTEGRATION_TOKEN` environment variable with your Enterprise
   Token.
 </Note>
 
 ```bash
-export CREWAI_PLATFORM_INTEGRATION_TOKEN="your_enterprise_token"
+export LOCALAGENTS_PLATFORM_INTEGRATION_TOKEN="your_enterprise_token"
 ```
 
 Or add it to your `.env` file:
 
 ```
-CREWAI_PLATFORM_INTEGRATION_TOKEN=your_enterprise_token
+LOCALAGENTS_PLATFORM_INTEGRATION_TOKEN=your_enterprise_token
 ```
 
 ### Usage Example
@@ -86,7 +86,7 @@ CREWAI_PLATFORM_INTEGRATION_TOKEN=your_enterprise_token
 </Tip>
 
 ```python
-from crewai import Agent, Task, Crew
+from localagents import Agent, Task, Crew
 
 # Create an agent with Gmail capabilities
 email_agent = Agent(
@@ -116,7 +116,7 @@ crew.kickoff()
 ### Filtering Tools
 
 ```python
-from crewai import Agent, Task, Crew
+from localagents import Agent, Task, Crew
 
 # Create agent with specific Gmail actions only
 gmail_agent = Agent(
@@ -205,7 +205,7 @@ Create custom tools locally, publish them on LocalAI AMP Tool Repository and use
 {" "}
 <Tip>
   Before running the commands below, make sure you log in to your LocalAI AMP
-  account by running this command: ```bash crewai login ```
+  account by running this command: ```bash localagents login ```
 </Tip>
 
 {" "}
@@ -216,14 +216,14 @@ Create custom tools locally, publish them on LocalAI AMP Tool Repository and use
 {" "}
 <Steps>
   <Step title="Create">
-    Create a new tool locally. ```bash crewai tool create your-tool ```
+    Create a new tool locally. ```bash localagents tool create your-tool ```
   </Step>
   <Step title="Publish">
-    Publish the tool to the LocalAI AMP Tool Repository. ```bash crewai tool
+    Publish the tool to the LocalAI AMP Tool Repository. ```bash localagents tool
     publish ```
   </Step>
   <Step title="Install">
-    Install the tool from the LocalAI AMP Tool Repository. ```bash crewai tool
+    Install the tool from the LocalAI AMP Tool Repository. ```bash localagents tool
     install your-tool ```
   </Step>
 </Steps>

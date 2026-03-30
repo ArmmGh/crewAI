@@ -34,7 +34,7 @@ from teams_chat_created_crew import MicrosoftTeamsChatTrigger
 
 crew = MicrosoftTeamsChatTrigger().crew()
 result = crew.kickoff({
-    "crewai_trigger_payload": teams_payload,
+    "localagents_trigger_payload": teams_payload,
 })
 print(result.raw)
 ```
@@ -47,16 +47,16 @@ Teste sua integração de trigger do Microsoft Teams localmente usando a CLI da 
 
 ```bash
 # Visualize todos os triggers disponíveis
-crewai triggers list
+localagents triggers list
 
 # Simule um trigger do Microsoft Teams com payload realista
-crewai triggers run microsoft_teams/teams_message_created
+localagents triggers run microsoft_teams/teams_message_created
 ```
 
-O comando `crewai triggers run` executará sua crew com um payload completo do Teams, permitindo que você teste sua lógica de parsing antes do deployment.
+O comando `localagents triggers run` executará sua crew com um payload completo do Teams, permitindo que você teste sua lógica de parsing antes do deployment.
 
 <Warning>
-  Use `crewai triggers run microsoft_teams/teams_message_created` (não `crewai
+  Use `localagents triggers run microsoft_teams/teams_message_created` (não `localagents
   run`) para simular execução de trigger durante o desenvolvimento. Após o
   deployment, sua crew receberá automaticamente o payload do trigger.
 </Warning>
@@ -64,7 +64,7 @@ O comando `crewai triggers run` executará sua crew com um payload completo do T
 ## Troubleshooting
 
 - Ensure the Teams connection is active; it must be refreshed if the tenant revokes permissions
-- Teste localmente com `crewai triggers run microsoft_teams/teams_message_created` para ver a estrutura exata do payload
+- Teste localmente com `localagents triggers run microsoft_teams/teams_message_created` para ver a estrutura exata do payload
 - Confirm the webhook subscription in Microsoft 365 is still valid if payloads stop arriving
 - Review execution logs for payload shape mismatches—Graph notifications may omit fields when a chat is private or restricted
-- Lembre-se: use `crewai triggers run` (não `crewai run`) para simular execução de trigger
+- Lembre-se: use `localagents triggers run` (não `localagents run`) para simular execução de trigger

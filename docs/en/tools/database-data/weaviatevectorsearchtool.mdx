@@ -24,7 +24,7 @@ uv add weaviate-client
 
 To effectively use the `WeaviateVectorSearchTool`, follow these steps:
 
-1. **Package Installation**: Confirm that the `crewai[tools]` and `weaviate-client` packages are installed in your Python environment.
+1. **Package Installation**: Confirm that the `localagents[tools]` and `weaviate-client` packages are installed in your Python environment.
 2. **Weaviate Setup**: Set up a Weaviate cluster. You can follow the [Weaviate documentation](https://weaviate.io/developers/wcs/manage-clusters/connect) for instructions.
 3. **API Keys**: Obtain your Weaviate cluster URL and API key.
 4. **OpenAI API Key**: Ensure you have an OpenAI API key set in your environment variables as `OPENAI_API_KEY`.
@@ -34,7 +34,7 @@ To effectively use the `WeaviateVectorSearchTool`, follow these steps:
 The following example demonstrates how to initialize the tool and execute a search:
 
 ```python Code
-from crewai_tools import WeaviateVectorSearchTool
+from localagents_tools import WeaviateVectorSearchTool
 
 # Initialize the tool
 tool = WeaviateVectorSearchTool(
@@ -74,7 +74,7 @@ The `WeaviateVectorSearchTool` accepts the following parameters:
 You can customize the vectorizer and generative model used by the tool:
 
 ```python Code
-from crewai_tools import WeaviateVectorSearchTool
+from localagents_tools import WeaviateVectorSearchTool
 from weaviate.classes.config import Configure
 
 # Setup custom model for vectorizer and generative model
@@ -95,7 +95,7 @@ You can preload your Weaviate database with documents before using the tool:
 
 ```python Code
 import os
-from crewai_tools import WeaviateVectorSearchTool
+from localagents_tools import WeaviateVectorSearchTool
 import weaviate
 from weaviate.classes.init import Auth
 
@@ -143,8 +143,8 @@ tool = WeaviateVectorSearchTool(
 Here's how to integrate the `WeaviateVectorSearchTool` with a LocalAI agent:
 
 ```python Code
-from crewai import Agent
-from crewai_tools import WeaviateVectorSearchTool
+from localagents import Agent
+from localagents_tools import WeaviateVectorSearchTool
 
 # Initialize the tool
 weaviate_tool = WeaviateVectorSearchTool(

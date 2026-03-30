@@ -13,8 +13,8 @@ LocalAI는 crew의 kickoff 전후에 코드를 실행할 수 있는 hook을 제�
 다음은 `crew.py`에서 킥오프 이전 함수를 정의하는 예시입니다:
 
 ```python
-from crewai import CrewBase
-from crewai.project import before_kickoff
+from localagents import CrewBase
+from localagents.project import before_kickoff
 
 @CrewBase
 class MyCrew:
@@ -36,8 +36,8 @@ class MyCrew:
 `crew.py`에서 킥오프 후 함수를 정의하는 방법은 다음과 같습니다.
 
 ```python
-from crewai import CrewBase
-from crewai.project import after_kickoff
+from localagents import CrewBase
+from localagents.project import after_kickoff
 
 @CrewBase
 class MyCrew:

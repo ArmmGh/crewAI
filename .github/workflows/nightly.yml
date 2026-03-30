@@ -50,9 +50,9 @@ jobs:
         run: |
           DATE=$(date +%Y%m%d)
           for init_file in \
-            lib/crewai/src/crewai/__init__.py \
-            lib/crewai-tools/src/crewai_tools/__init__.py \
-            lib/crewai-files/src/crewai_files/__init__.py; do
+            lib/localagents/src/localagents/__init__.py \
+            lib/localagents-tools/src/localagents_tools/__init__.py \
+            lib/localagents-files/src/localagents_files/__init__.py; do
             CURRENT=$(python -c "
           import re
           text = open('$init_file').read()
@@ -64,8 +64,8 @@ jobs:
           done
 
           # Update cross-package dependency pins to nightly versions
-          sed -i "s/\"crewai-tools==[^\"]*\"/\"crewai-tools==${NIGHTLY}\"/" lib/crewai/pyproject.toml
-          sed -i "s/\"crewai==[^\"]*\"/\"crewai==${NIGHTLY}\"/" lib/crewai-tools/pyproject.toml
+          sed -i "s/\"localagents-tools==[^\"]*\"/\"localagents-tools==${NIGHTLY}\"/" lib/localagents/pyproject.toml
+          sed -i "s/\"localagents==[^\"]*\"/\"localagents==${NIGHTLY}\"/" lib/localagents-tools/pyproject.toml
           echo "Updated cross-package dependency pins to ${NIGHTLY}"
 
       - name: Build packages
@@ -85,7 +85,7 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: pypi
-      url: https://pypi.org/p/crewai
+      url: https://pypi.org/p/localagents
     permissions:
       id-token: write
       contents: read
@@ -111,7 +111,7 @@ jobs:
         run: |
           failed=0
           for package in dist/*; do
-            if [[ "$package" == *"crewai_devtools"* ]]; then
+            if [[ "$package" == *"localagents_devtools"* ]]; then
               echo "Skipping private package: $package"
               continue
             fi

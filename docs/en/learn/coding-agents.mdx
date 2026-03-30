@@ -16,7 +16,7 @@ To enable code execution for an agent, set the `allow_code_execution` parameter 
 Here's an example:
 
 ```python Code
-from crewai import Agent
+from localagents import Agent
 
 coding_agent = Agent(
     role="Senior Python Developer",
@@ -38,8 +38,8 @@ These models have a better understanding of programming concepts and are more li
 2. **Error Handling**: The code execution feature includes error handling. If executed code raises an exception, the agent will receive the error message and can attempt to correct the code or 
 provide alternative solutions. The `max_retry_limit` parameter, which defaults to 2, controls the maximum number of retries for a task.
 
-3. **Dependencies**: To use the code execution feature, you need to install the `crewai_tools` package. If not installed, the agent will log an info message: 
-"Coding tools not available. Install crewai_tools."
+3. **Dependencies**: To use the code execution feature, you need to install the `localagents_tools` package. If not installed, the agent will log an info message: 
+"Coding tools not available. Install localagents_tools."
 
 ## Code Execution Process
 
@@ -65,7 +65,7 @@ When an agent with code execution enabled encounters a task requiring programmin
 Here's a detailed example of creating an agent with code execution capabilities and using it in a task:
 
 ```python Code
-from crewai import Agent, Task, Crew
+from localagents import Agent, Task, Crew
 
 # Create an agent with code execution enabled
 coding_agent = Agent(

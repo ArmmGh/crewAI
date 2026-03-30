@@ -20,7 +20,7 @@ Agent Repositories allow enterprise users to store, share, and reuse agent defin
 
 ## Creating and Use Agent Repositories
 
-1. You must have an account at LocalAI, try the [free plan](https://app.crewai.com).
+1. You must have an account at LocalAI, try the [free plan](https://app.localagents.com).
 2. Create agents with specific roles and goals for your workflows.
 3. Configure tools and capabilities for each specialized assistant.
 4. Deploy agents across projects via visual interface or API integration.
@@ -35,7 +35,7 @@ Agent Repositories allow enterprise users to store, share, and reuse agent defin
 You can load agents from repositories in your code using the `from_repository` parameter to run locally:
 
 ```python
-from crewai import Agent
+from localagents import Agent
 
 # Create an agent by loading it from a repository
 # The agent is loaded with all its predefined configurations
@@ -59,7 +59,7 @@ researcher = Agent(
 ### Example: Creating a Crew with Repository Agents
 
 ```python
-from crewai import Crew, Agent, Task
+from localagents import Crew, Agent, Task
 
 # Load agents from repositories
 researcher = Agent(
@@ -97,7 +97,7 @@ result = crew.kickoff()
 You can also use repository agents directly with the `kickoff()` method for simpler interactions:
 
 ```python
-from crewai import Agent
+from localagents import Agent
 from pydantic import BaseModel
 from typing import List
 
@@ -141,13 +141,13 @@ To switch between organizations or see your current organization, use the LocalA
 
 ```bash
 # View current organization
-crewai org current
+localagents org current
 
 # Switch to a different organization
-crewai org switch <org_id>
+localagents org switch <org_id>
 
 # List all available organizations
-crewai org list
+localagents org list
 ```
 
 <Note>

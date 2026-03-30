@@ -11,18 +11,18 @@ Este guia demonstra como integrar o **Arize Phoenix** ao **LocalAI** usando o Op
 
 > **O que é o Arize Phoenix?** O [Arize Phoenix](https://phoenix.arize.com) é uma plataforma de observabilidade de LLM que oferece rastreamento e avaliação para aplicações de IA.
 
-[![Assista a um vídeo demonstrando a nossa integração com o Phoenix](https://storage.googleapis.com/arize-assets/fixtures/setup_crewai.png)](https://www.youtube.com/watch?v=Yc5q3l6F7Ww)
+[![Assista a um vídeo demonstrando a nossa integração com o Phoenix](https://storage.googleapis.com/arize-assets/fixtures/setup_localagents.png)](https://www.youtube.com/watch?v=Yc5q3l6F7Ww)
 
 ## Primeiros Passos
 
 Vamos percorrer um exemplo simples de uso do LocalAI e integração com o Arize Phoenix via OpenTelemetry utilizando o OpenInference.
 
-Você também pode acessar este guia no [Google Colab](https://colab.research.google.com/github/Arize-ai/phoenix/blob/main/tutorials/tracing/crewai_tracing_tutorial.ipynb).
+Você também pode acessar este guia no [Google Colab](https://colab.research.google.com/github/Arize-ai/phoenix/blob/main/tutorials/tracing/localagents_tracing_tutorial.ipynb).
 
 ### Passo 1: Instale as Dependências
 
 ```bash
-pip install openinference-instrumentation-crewai crewai crewai-tools arize-phoenix-otel
+pip install openinference-instrumentation-localagents localagents localagents-tools arize-phoenix-otel
 ```
 
 ### Passo 2: Configure as Variáveis de Ambiente
@@ -57,7 +57,7 @@ Inicialize o SDK de instrumentação OpenTelemetry do OpenInference para começa
 from phoenix.otel import register
 
 tracer_provider = register(
-    project_name="crewai-tracing-demo",
+    project_name="localagents-tracing-demo",
     auto_instrument=True,
 )
 ```
@@ -67,9 +67,9 @@ tracer_provider = register(
 Vamos criar uma aplicação LocalAI em que dois agentes colaboram para pesquisar e escrever um post de blog sobre avanços em IA.
 
 ```python
-from crewai import Agent, Crew, Process, Task
-from crewai_tools import SerperDevTool
-from openinference.instrumentation.crewai import LocalAIInstrumentor
+from localagents import Agent, Crew, Process, Task
+from localagents_tools import SerperDevTool
+from openinference.instrumentation.localagents import LocalAIInstrumentor
 from phoenix.otel import register
 
 # configure o monitoramento para seu crew
@@ -128,7 +128,7 @@ Após executar o agente, você poderá visualizar os rastros gerados pela sua ap
 
 Acesse sua conta Phoenix Cloud e navegue até o projeto que você especificou no parâmetro `project_name`. Você verá uma visualização de linha do tempo do seu rastro, incluindo todas as interações dos agentes, uso de ferramentas e chamadas LLM.
 
-![Exemplo de rastro no Phoenix mostrando interações de agentes](https://storage.googleapis.com/arize-assets/fixtures/crewai_traces.png)
+![Exemplo de rastro no Phoenix mostrando interações de agentes](https://storage.googleapis.com/arize-assets/fixtures/localagents_traces.png)
 
 
 ### Informações de Compatibilidade de Versão
@@ -140,6 +140,6 @@ Acesse sua conta Phoenix Cloud e navegue até o projeto que você especificou no
 
 ### Referências
 - [Documentação do Phoenix](https://docs.arize.com/phoenix/) - Visão geral da plataforma Phoenix.
-- [Documentação do LocalAI](https://docs.crewai.com/) - Visão geral do framework LocalAI.
+- [Documentação do LocalAI](https://docs.localagents.com/) - Visão geral do framework LocalAI.
 - [Documentação do OpenTelemetry](https://opentelemetry.io/docs/) - Guia do OpenTelemetry
 - [OpenInference GitHub](https://github.com/openinference/openinference) - Código-fonte do SDK OpenInference.

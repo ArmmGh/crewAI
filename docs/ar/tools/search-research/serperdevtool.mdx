@@ -16,14 +16,14 @@ mode: "wide"
 
 لاستخدام `SerperDevTool` بفعالية، اتبع هذه الخطوات:
 
-1. **تثبيت الحزمة**: تأكد من تثبيت حزمة `crewai[tools]` في بيئة Python الخاصة بك.
+1. **تثبيت الحزمة**: تأكد من تثبيت حزمة `localagents[tools]` في بيئة Python الخاصة بك.
 2. **الحصول على مفتاح API**: احصل على مفتاح `serper.dev` API على https://serper.dev/ (طبقة مجانية متاحة).
 3. **تكوين البيئة**: خزّن مفتاح API الذي حصلت عليه في متغير بيئة باسم `SERPER_API_KEY` لتسهيل استخدامه بواسطة الأداة.
 
 لدمج هذه الأداة في مشروعك، اتبع تعليمات التثبيت أدناه:
 
 ```shell
-pip install 'crewai[tools]'
+pip install 'localagents[tools]'
 ```
 
 ## مثال
@@ -31,7 +31,7 @@ pip install 'crewai[tools]'
 يوضح المثال التالي كيفية تهيئة الأداة وتنفيذ بحث باستعلام معين:
 
 ```python Code
-from crewai_tools import SerperDevTool
+from localagents_tools import SerperDevTool
 
 # Initialize the tool for internet searching capabilities
 tool = SerperDevTool()
@@ -55,7 +55,7 @@ tool = SerperDevTool()
 إليك مثالاً يوضح كيفية استخدام الأداة مع معاملات إضافية:
 
 ```python Code
-from crewai_tools import SerperDevTool
+from localagents_tools import SerperDevTool
 
 tool = SerperDevTool(
     search_url="https://google.serper.dev/scholar",
@@ -78,7 +78,7 @@ print(tool.run(search_query="ChatGPT"))
 ```
 
 ```python Code
-from crewai_tools import SerperDevTool
+from localagents_tools import SerperDevTool
 
 tool = SerperDevTool(
     country="fr",

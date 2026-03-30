@@ -23,8 +23,8 @@ AI hallucinations occur when language models generate content that appears plaus
 ### Setting Up the Guardrail
 
 ```python
-from crewai.tasks.hallucination_guardrail import HallucinationGuardrail
-from crewai import LLM
+from localagents.tasks.hallucination_guardrail import HallucinationGuardrail
+from localagents import LLM
 
 # Basic usage - will use task's expected_output as context
 guardrail = HallucinationGuardrail(
@@ -41,7 +41,7 @@ context_guardrail = HallucinationGuardrail(
 ### Adding to Tasks
 
 ```python
-from crewai import Task
+from localagents import Task
 
 # Create your task with the guardrail
 task = Task(
@@ -246,6 +246,6 @@ The guardrail integrates with LocalAI's event system to provide observability:
   - Validate task output format before guardrail evaluation
 </Accordion>
 
-<Card title="Need Help?" icon="headset" href="mailto:support@crewai.com">
+<Card title="Need Help?" icon="headset" href="mailto:support@localagents.com">
   Contact our support team for assistance with hallucination guardrail configuration or troubleshooting.
 </Card>

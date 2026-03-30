@@ -13,7 +13,7 @@ Esta documentação descreve como criar, integrar e aproveitar essas ferramentas
 ## O que é uma Ferramenta?
 
 Uma ferramenta no LocalAI é uma habilidade ou função que os agentes podem utilizar para executar diversas ações.
-Isso inclui ferramentas do [LocalAI Toolkit](https://github.com/joaomdmoura/crewai-tools) e [LangChain Tools](https://python.langchain.com/docs/integrations/tools),
+Isso inclui ferramentas do [LocalAI Toolkit](https://github.com/joaomdmoura/localagents-tools) e [LangChain Tools](https://python.langchain.com/docs/integrations/tools),
 permitindo desde buscas simples até interações complexas e trabalho em equipe eficiente entre agentes.
 
 <Note type="info" title="Aprimoramento para Empresas: Repositório de Ferramentas">
@@ -41,16 +41,16 @@ O Repositório de Ferramentas Empresariais inclui:
 Para aprimorar as capacidades de seus agentes com as ferramentas do LocalAI, comece instalando nosso pacote extra de ferramentas:
 
 ```bash
-pip install 'crewai[tools]'
+pip install 'localagents[tools]'
 ```
 
 Aqui está um exemplo demonstrando seu uso:
 
 ```python Code
 import os
-from crewai import Agent, Task, Crew
+from localagents import Agent, Task, Crew
 # Importando ferramentas do localAI
-from crewai_tools import (
+from localagents_tools import (
     DirectoryReadTool,
     FileReadTool,
     SerperDevTool,
@@ -163,7 +163,7 @@ Existem duas formas principais de criar uma ferramenta LocalAI:
 ### Herança de `BaseTool`
 
 ```python Code
-from crewai.tools import BaseTool
+from localagents.tools import BaseTool
 from pydantic import BaseModel, Field
 
 class MyToolInput(BaseModel):
@@ -191,7 +191,7 @@ Você pode criar ferramentas assíncronas de duas formas:
 #### 1. Utilizando o Decorador `tool` com Funções Assíncronas
 
 ```python Code
-from crewai.tools import tool
+from localagents.tools import tool
 
 @tool("fetch_data_async")
 async def fetch_data_async(query: str) -> str:
@@ -204,7 +204,7 @@ async def fetch_data_async(query: str) -> str:
 #### 2. Implementando Métodos Assíncronos em Classes de Ferramentas Personalizadas
 
 ```python Code
-from crewai.tools import BaseTool
+from localagents.tools import BaseTool
 
 class AsyncCustomTool(BaseTool):
     name: str = "async_custom_tool"
@@ -239,7 +239,7 @@ O framework LocalAI lida automaticamente com a execução de ferramentas síncro
 ### Utilizando o Decorador `tool`
 
 ```python Code
-from crewai.tools import tool
+from localagents.tools import tool
 @tool("Name of my tool")
 def my_tool(question: str) -> str:
     """Clear description for what this tool is useful for, your agent will need this information to use it."""
@@ -257,7 +257,7 @@ def my_tool(question: str) -> str:
 </Tip>
 
 ```python Code
-from crewai.tools import tool
+from localagents.tools import tool
 
 @tool
 def multiplication_tool(first_number: int, second_number: int) -> str:

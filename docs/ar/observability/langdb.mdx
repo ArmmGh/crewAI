@@ -38,7 +38,7 @@ mode: "wide"
   <Step title="تثبيت LangDB">
     ثبّت عميل LangDB مع علامة ميزة LocalAI:
     ```bash
-    pip install 'pylangdb[crewai]'
+    pip install 'pylangdb[localagents]'
     ```
   </Step>
   <Step title="تعيين متغيرات البيئة">
@@ -52,7 +52,7 @@ mode: "wide"
   <Step title="تهيئة التتبع">
     استورد وهيّئ LangDB قبل إعداد كود LocalAI:
     ```python
-    from pylangdb.crewai import init
+    from pylangdb.localagents import init
     # Initialize LangDB
     init()
     ```
@@ -60,7 +60,7 @@ mode: "wide"
   <Step title="إعداد LocalAI مع LangDB">
     قم بإعداد LLM مع رؤوس LangDB:
     ```python
-    from crewai import Agent, Task, Crew, LLM
+    from localagents import Agent, Task, Crew, LLM
     import os
 
     # Configure LLM with LangDB headers
@@ -78,8 +78,8 @@ mode: "wide"
 
 ```python
 import os
-from pylangdb.crewai import init
-from crewai import Agent, Task, Crew, LLM
+from pylangdb.localagents import init
+from localagents import Agent, Task, Crew, LLM
 
 init()
 
@@ -142,7 +142,7 @@ print(result)
   <Card title="أدلة LangDB" icon="graduation-cap" href="https://docs.langdb.ai/guides">
     برامج تعليمية خطوة بخطوة لبناء وكلاء AI
   </Card>
-  <Card title="أمثلة GitHub" icon="github" href="https://github.com/langdb/langdb-samples/tree/main/examples/crewai">
+  <Card title="أمثلة GitHub" icon="github" href="https://github.com/langdb/langdb-samples/tree/main/examples/localagents">
     أمثلة تكامل LocalAI الكاملة
   </Card>
   <Card title="لوحة معلومات LangDB" icon="chart-line" href="https://app.langdb.ai">

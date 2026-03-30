@@ -20,7 +20,7 @@ O repositório não é um sistema de controle de versões. Use Git para rastrear
 
 Antes de usar o Repositório de Ferramentas, certifique-se de que você possui:
 
-- Uma conta [LocalAI AMP](https://app.crewai.com)
+- Uma conta [LocalAI AMP](https://app.localagents.com)
 - [LocalAI CLI](/pt-BR/concepts/cli#cli) instalada
 - uv>=0.5.0 instalado. Veja [como atualizar](https://docs.astral.sh/uv/getting-started/installation/#upgrading-uv)
 - [Git](https://git-scm.com) instalado e configurado
@@ -31,7 +31,7 @@ Antes de usar o Repositório de Ferramentas, certifique-se de que você possui:
 Para instalar uma ferramenta:
 
 ```bash
-crewai tool install <nome-da-ferramenta>
+localagents tool install <nome-da-ferramenta>
 ```
 
 Isso instala a ferramenta e a adiciona ao `pyproject.toml`.
@@ -41,7 +41,7 @@ Isso instala a ferramenta e a adiciona ao `pyproject.toml`.
 Para criar um novo projeto de ferramenta:
 
 ```bash
-crewai tool create <nome-da-ferramenta>
+localagents tool create <nome-da-ferramenta>
 ```
 
 Isso gera um projeto de ferramenta estruturado localmente.
@@ -57,13 +57,13 @@ git commit -m "Initial version"
 Para publicar a ferramenta:
 
 ```bash
-crewai tool publish
+localagents tool publish
 ```
 
 Por padrão, as ferramentas são publicadas como privadas. Para tornar uma ferramenta pública:
 
 ```bash
-crewai tool publish --public
+localagents tool publish --public
 ```
 
 Para mais detalhes sobre como construir ferramentas, acesse [Criando suas próprias ferramentas](/pt-BR/concepts/tools#creating-your-own-tools).
@@ -78,14 +78,14 @@ Para atualizar uma ferramenta publicada:
 
 ```bash
 git commit -m "Atualizar versão para 0.1.1"
-crewai tool publish
+localagents tool publish
 ```
 
 ## Excluindo ferramentas
 
 Para excluir uma ferramenta:
 
-1. Acesse o [LocalAI AMP](https://app.crewai.com)
+1. Acesse o [LocalAI AMP](https://app.localagents.com)
 2. Navegue até **Ferramentas**
 3. Selecione a ferramenta
 4. Clique em **Excluir**
@@ -103,7 +103,7 @@ Você pode verificar o status das verificações de segurança de uma ferramenta
 
 `LocalAI AMP > Tools > Your Tool > Versions`
 
-<Card title="Precisa de ajuda?" icon="headset" href="mailto:support@crewai.com">
+<Card title="Precisa de ajuda?" icon="headset" href="mailto:support@localagents.com">
   Entre em contato com nossa equipe de suporte para assistência com integração
   de API ou resolução de problemas.
 </Card>

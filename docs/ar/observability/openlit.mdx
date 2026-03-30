@@ -7,7 +7,7 @@ mode: "wide"
 
 # نظرة عامة على OpenLIT
 
-[OpenLIT](https://github.com/openlit/openlit?src=crewai-docs) هو أداة مفتوحة المصدر تجعل من السهل مراقبة أداء وكلاء الذكاء الاصطناعي ونماذج LLM وقواعد بيانات المتجهات ووحدات GPU بسطر **واحد** فقط من الكود.
+[OpenLIT](https://github.com/openlit/openlit?src=localagents-docs) هو أداة مفتوحة المصدر تجعل من السهل مراقبة أداء وكلاء الذكاء الاصطناعي ونماذج LLM وقواعد بيانات المتجهات ووحدات GPU بسطر **واحد** فقط من الكود.
 
 يوفر تتبعاً ومقاييس أصلية لـ OpenTelemetry لتتبع المعلمات المهمة مثل التكلفة وزمن الاستجابة والتفاعلات وتسلسل المهام.
 يمكّنك هذا الإعداد من تتبع المعلمات الفائقة ومراقبة مشكلات الأداء، مما يساعدك في إيجاد طرق لتحسين وضبط وكلائك بمرور الوقت.
@@ -65,7 +65,7 @@ mode: "wide"
           مثال على الاستخدام لمراقبة وكيل LocalAI:
 
           ```python
-          from crewai import Agent, Task, Crew, Process
+          from localagents import Agent, Task, Crew, Process
           import openlit
 
           openlit.init(disable_metrics=True)
@@ -126,7 +126,7 @@ mode: "wide"
 
           ```python
           import asyncio
-          from crewai import Crew, Agent, Task
+          from localagents import Crew, Agent, Task
           import openlit
 
           openlit.init(otlp_endpoint="http://127.0.0.1:4318")

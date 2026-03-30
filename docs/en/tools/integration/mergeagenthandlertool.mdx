@@ -12,7 +12,7 @@ The `MergeAgentHandlerTool` enables LocalAI agents to securely access third-part
 ## Installation
 
 ```bash
-uv pip install 'crewai[tools]'
+uv pip install 'localagents[tools]'
 ```
 
 ## Requirements
@@ -46,8 +46,8 @@ uv pip install 'crewai[tools]'
 Here's how to use a specific tool from your Tool Pack:
 
 ```python {2, 4-9}
-from crewai import Agent, Task, Crew
-from crewai_tools import MergeAgentHandlerTool
+from localagents import Agent, Task, Crew
+from localagents_tools import MergeAgentHandlerTool
 
 # Create a tool for Linear issue creation
 linear_create_tool = MergeAgentHandlerTool.from_tool_name(
@@ -89,8 +89,8 @@ print(result)
 You can load all available tools from your Tool Pack at once:
 
 ```python {2, 4-8}
-from crewai import Agent, Task, Crew
-from crewai_tools import MergeAgentHandlerTool
+from localagents import Agent, Task, Crew
+from localagents_tools import MergeAgentHandlerTool
 
 # Load all tools from the Tool Pack
 tools = MergeAgentHandlerTool.from_tool_pack(
@@ -126,8 +126,8 @@ result = crew.kickoff()
 Load only the tools you need:
 
 ```python {2, 4-10}
-from crewai import Agent, Task, Crew
-from crewai_tools import MergeAgentHandlerTool
+from localagents import Agent, Task, Crew
+from localagents_tools import MergeAgentHandlerTool
 
 # Load specific tools from the Tool Pack
 selected_tools = MergeAgentHandlerTool.from_tool_pack(
@@ -190,8 +190,8 @@ AGENT_HANDLER_API_KEY=your_api_key_here  # Required for authentication
 ### Multi-Agent Workflow with Different Tool Access
 
 ```python {2, 4-20}
-from crewai import Agent, Task, Crew, Process
-from crewai_tools import MergeAgentHandlerTool
+from localagents import Agent, Task, Crew, Process
+from localagents_tools import MergeAgentHandlerTool
 
 # Create specialized tools for different agents
 github_tools = MergeAgentHandlerTool.from_tool_pack(
@@ -269,8 +269,8 @@ result = crew.kickoff()
 Maintain context across multiple tool calls using session IDs:
 
 ```python {2, 4-17}
-from crewai import Agent, Task, Crew
-from crewai_tools import MergeAgentHandlerTool
+from localagents import Agent, Task, Crew
+from localagents_tools import MergeAgentHandlerTool
 
 # Create tools with the same session ID to maintain context
 session_id = "project-sprint-planning-2024"

@@ -9,17 +9,17 @@ mode: "wide"
 
 ## الوصف
 
-[Spider](https://spider.cloud/?ref=crewai) هي [الأسرع](https://github.com/spider-rs/spider/blob/main/benches/BENCHMARKS.md#benchmark-results)
+[Spider](https://spider.cloud/?ref=localagents) هي [الأسرع](https://github.com/spider-rs/spider/blob/main/benches/BENCHMARKS.md#benchmark-results)
 أداة استخراج وزحف مفتوحة المصدر تُرجع بيانات جاهزة لـ LLM.
 تحوّل أي موقع إلى HTML نقي أو markdown أو بيانات وصفية أو نص مع تمكين الزحف بإجراءات مخصصة باستخدام الذكاء الاصطناعي.
 
 ## التثبيت
 
 لاستخدام `SpiderTool` تحتاج إلى تنزيل [Spider SDK](https://pypi.org/project/spider-client/)
-وحزمة `crewai[tools]` SDK أيضاً:
+وحزمة `localagents[tools]` SDK أيضاً:
 
 ```shell
-pip install spider-client 'crewai[tools]'
+pip install spider-client 'localagents[tools]'
 ```
 
 ## مثال
@@ -28,7 +28,7 @@ pip install spider-client 'crewai[tools]'
 البيانات المُرجعة من Spider API جاهزة بالفعل لـ LLM، لذا لا حاجة لأي تنظيف.
 
 ```python Code
-from crewai_tools import SpiderTool
+from localagents_tools import SpiderTool
 
 def main():
     spider_tool = SpiderTool()

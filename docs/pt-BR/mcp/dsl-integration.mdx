@@ -20,7 +20,7 @@ A integração DSL (Domain Specific Language) MCP do LocalAI oferece a **forma m
 Adicione servidores MCP ao seu agente usando o campo `mcps`:
 
 ```python
-from crewai import Agent
+from localagents import Agent
 
 agent = Agent(
     role="Assistente de Pesquisa",
@@ -86,7 +86,7 @@ mcps=[
 Aqui está um exemplo completo usando múltiplos servidores MCP:
 
 ```python
-from crewai import Agent, Task, Crew, Process
+from localagents import Agent, Task, Crew, Process
 
 # Criar agente com múltiplas fontes MCP
 agente_multi_fonte = Agent(

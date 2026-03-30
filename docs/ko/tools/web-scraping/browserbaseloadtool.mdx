@@ -21,10 +21,10 @@ AI 데이터 수집을 다음과 같이 강화하세요:
 ## 설치
 
 - [browserbase.com](https://browserbase.com)에서 API 키와 Project ID를 받아 환경 변수(`BROWSERBASE_API_KEY`, `BROWSERBASE_PROJECT_ID`)에 설정하세요.
-- [Browserbase SDK](http://github.com/browserbase/python-sdk)와 `crewai[tools]` 패키지를 설치하세요:
+- [Browserbase SDK](http://github.com/browserbase/python-sdk)와 `localagents[tools]` 패키지를 설치하세요:
 
 ```shell
-pip install browserbase 'crewai[tools]'
+pip install browserbase 'localagents[tools]'
 ```
 
 ## 예시
@@ -32,7 +32,7 @@ pip install browserbase 'crewai[tools]'
 아래와 같이 BrowserbaseLoadTool을 활용하여 에이전트가 웹사이트를 로드할 수 있도록 합니다:
 
 ```python Code
-from crewai_tools import BrowserbaseLoadTool
+from localagents_tools import BrowserbaseLoadTool
 
 # Initialize the tool with the Browserbase API key and Project ID
 tool = BrowserbaseLoadTool()

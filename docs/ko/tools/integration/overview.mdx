@@ -10,7 +10,7 @@ mode: "wide"
 ## **사용 가능한 도구**
 
 <CardGroup cols={2}>
-  <Card title="LocalAI 자동화 실행 도구" icon="robot" href="/ko/tools/integration/crewaiautomationtool">
+  <Card title="LocalAI 자동화 실행 도구" icon="robot" href="/ko/tools/integration/localagentsautomationtool">
     실행 중인 LocalAI Platform 자동화를 호출하고 사용자 입력을 전달하며, 결과를 에이전트로 다시 수집합니다.
   </Card>
 
@@ -29,13 +29,13 @@ mode: "wide"
 ## **빠른 시작 예시**
 
 ```python
-from crewai import Agent, Task, Crew
-from crewai_tools import InvokeCrewAIAutomationTool
-from crewai_tools.aws.bedrock.agents.invoke_agent_tool import BedrockInvokeAgentTool
+from localagents import Agent, Task, Crew
+from localagents_tools import InvokeLocalAgentsAutomationTool
+from localagents_tools.aws.bedrock.agents.invoke_agent_tool import BedrockInvokeAgentTool
 
 # 외부 자동화
-analysis_automation = InvokeCrewAIAutomationTool(
-    crew_api_url="https://analysis-crew.acme.crewai.com",
+analysis_automation = InvokeLocalAgentsAutomationTool(
+    crew_api_url="https://analysis-crew.acme.localagents.com",
     crew_bearer_token="YOUR_BEARER_TOKEN",
     crew_name="Analysis Automation",
     crew_description="프로덕션 분석 파이프라인을 실행",

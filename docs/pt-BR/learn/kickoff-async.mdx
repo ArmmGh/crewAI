@@ -43,7 +43,7 @@ async def akickoff(self, inputs: dict) -> CrewOutput:
 
 ```python Code
 import asyncio
-from crewai import Crew, Agent, Task
+from localagents import Crew, Agent, Task
 
 # Criar um agente
 coding_agent = Agent(
@@ -80,7 +80,7 @@ Execute múltiplas crews concorrentemente usando `asyncio.gather()` com async na
 
 ```python Code
 import asyncio
-from crewai import Crew, Agent, Task
+from localagents import Crew, Agent, Task
 
 coding_agent = Agent(
     role="Python Data Analyst",
@@ -122,7 +122,7 @@ Use `akickoff_for_each()` para executar sua crew contra múltiplas entradas conc
 
 ```python Code
 import asyncio
-from crewai import Crew, Agent, Task
+from localagents import Crew, Agent, Task
 
 coding_agent = Agent(
     role="Python Data Analyst",
@@ -179,7 +179,7 @@ async def kickoff_async(self, inputs: dict) -> CrewOutput:
 
 ```python Code
 import asyncio
-from crewai import Crew, Agent, Task
+from localagents import Crew, Agent, Task
 
 coding_agent = Agent(
     role="Python Data Analyst",
@@ -210,7 +210,7 @@ asyncio.run(async_crew_execution())
 
 ```python Code
 import asyncio
-from crewai import Crew, Agent, Task
+from localagents import Crew, Agent, Task
 
 coding_agent = Agent(
     role="Python Data Analyst",
@@ -252,7 +252,7 @@ Ambos os métodos async suportam streaming quando `stream=True` está definido n
 
 ```python Code
 import asyncio
-from crewai import Crew, Agent, Task
+from localagents import Crew, Agent, Task
 
 agent = Agent(
     role="Researcher",

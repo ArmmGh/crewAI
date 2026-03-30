@@ -147,7 +147,7 @@ Before wiring a trigger into production, make sure you:
 - Enable the trigger toggle on the deployment that should respond to events
 - Provide any required environment variables (API tokens, tenant IDs, shared secrets)
 - Create or update tasks that can parse the incoming payload within the first crew task or flow step
-- Decide whether to pass trigger context automatically using `allow_crewai_trigger_context`
+- Decide whether to pass trigger context automatically using `allow_localagents_trigger_context`
 - Set up monitoring—webhook logs, LocalAI execution history, and optional external alerting
 
 ### Testing Triggers Locally with CLI
@@ -159,7 +159,7 @@ The LocalAI CLI provides powerful commands to help you develop and test trigger-
 View all available triggers for your connected integrations:
 
 ```bash
-crewai triggers list
+localagents triggers list
 ```
 
 This command displays all triggers available based on your connected integrations, showing:
@@ -173,13 +173,13 @@ This command displays all triggers available based on your connected integration
 Test your crew with realistic trigger payloads before deployment:
 
 ```bash
-crewai triggers run <trigger_name>
+localagents triggers run <trigger_name>
 ```
 
 For example:
 
 ```bash
-crewai triggers run microsoft_onedrive/file_changed
+localagents triggers run microsoft_onedrive/file_changed
 ```
 
 This command:
@@ -190,8 +190,8 @@ This command:
 
 <Warning>
   **Important Development Notes:**
-  - Use `crewai triggers run <trigger>` to simulate trigger execution during development
-  - Using `crewai run` will NOT simulate trigger calls and won't pass the trigger payload
+  - Use `localagents triggers run <trigger>` to simulate trigger execution during development
+  - Using `localagents run` will NOT simulate trigger calls and won't pass the trigger payload
   - After deployment, your crew will be executed with the actual trigger payload
   - If your crew expects parameters that aren't in the trigger payload, execution may fail
 </Warning>
@@ -227,12 +227,12 @@ class MyAutomatedCrew:
 The crew will automatically receive and can access the trigger payload through the standard LocalAI context mechanisms.
 
 <Note>
-  Crew and Flow inputs can include `crewai_trigger_payload`. LocalAI
+  Crew and Flow inputs can include `localagents_trigger_payload`. LocalAI
   automatically injects this payload: - Tasks: appended to the first task's
-  description by default ("Trigger Payload: {crewai_trigger_payload}") - Control
-  via `allow_crewai_trigger_context`: set `True` to always inject, `False` to
+  description by default ("Trigger Payload: {localagents_trigger_payload}") - Control
+  via `allow_localagents_trigger_context`: set `True` to always inject, `False` to
   never inject - Flows: any `@start()` method that accepts a
-  `crewai_trigger_payload` parameter will receive it
+  `localagents_trigger_payload` parameter will receive it
 </Note>
 
 ### Integration with Flows
@@ -241,21 +241,21 @@ For flows, you have more control over how trigger data is handled:
 
 #### Accessing Trigger Payload
 
-All `@start()` methods in your flows will accept an additional parameter called `crewai_trigger_payload`:
+All `@start()` methods in your flows will accept an additional parameter called `localagents_trigger_payload`:
 
 ```python
-from crewai.flow import Flow, start, listen
+from localagents.flow import Flow, start, listen
 
 class MyAutomatedFlow(Flow):
     @start()
-    def handle_trigger(self, crewai_trigger_payload: dict = None):
+    def handle_trigger(self, localagents_trigger_payload: dict = None):
         """
         This start method can receive trigger data
         """
-        if crewai_trigger_payload:
+        if localagents_trigger_payload:
             # Process the trigger data
-            trigger_id = crewai_trigger_payload.get('id')
-            event_data = crewai_trigger_payload.get('payload', {})
+            trigger_id = localagents_trigger_payload.get('id')
+            event_data = localagents_trigger_payload.get('payload', {})
 
             # Store in flow state for use by other methods
             self.state.trigger_id = trigger_id
@@ -280,7 +280,7 @@ When kicking off a crew within a flow that was triggered, pass the trigger paylo
 
 ```python
 @start()
-def delegate_to_crew(self, crewai_trigger_payload: dict = None):
+def delegate_to_crew(self, localagents_trigger_payload: dict = None):
     """
     Delegate processing to a specialized crew
     """
@@ -290,7 +290,7 @@ def delegate_to_crew(self, crewai_trigger_payload: dict = None):
     result = crew.crew().kickoff(
         inputs={
             'a_custom_parameter': "custom_value",
-            'crewai_trigger_payload': crewai_trigger_payload
+            'localagents_trigger_payload': localagents_trigger_payload
         },
     )
 
@@ -308,15 +308,15 @@ def delegate_to_crew(self, crewai_trigger_payload: dict = None):
 **Execution failures:**
 
 - Check the execution logs for error details
-- Use `crewai triggers run <trigger_name>` to test locally and see the exact payload structure
-- Verify your crew can handle the `crewai_trigger_payload` parameter
+- Use `localagents triggers run <trigger_name>` to test locally and see the exact payload structure
+- Verify your crew can handle the `localagents_trigger_payload` parameter
 - Ensure your crew doesn't expect parameters that aren't included in the trigger payload
 
 **Development issues:**
 
-- Always test with `crewai triggers run <trigger>` before deploying to see the complete payload
-- Remember that `crewai run` does NOT simulate trigger calls—use `crewai triggers run` instead
-- Use `crewai triggers list` to verify which triggers are available for your connected integrations
+- Always test with `localagents triggers run <trigger>` before deploying to see the complete payload
+- Remember that `localagents run` does NOT simulate trigger calls—use `localagents triggers run` instead
+- Use `localagents triggers list` to verify which triggers are available for your connected integrations
 - After deployment, your crew will receive the actual trigger payload, so test thoroughly locally first
 
 Automation triggers transform your LocalAI deployments into responsive, event-driven systems that can seamlessly integrate with your existing business processes and tools.

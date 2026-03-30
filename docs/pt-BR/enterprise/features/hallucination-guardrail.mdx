@@ -23,8 +23,8 @@ Alucinações em IA ocorrem quando modelos de linguagem geram conteúdos que par
 ### Configurando a Proteção
 
 ```python
-from crewai.tasks.hallucination_guardrail import HallucinationGuardrail
-from crewai import LLM
+from localagents.tasks.hallucination_guardrail import HallucinationGuardrail
+from localagents import LLM
 
 # Uso básico - utiliza o expected_output da tarefa como contexto
 protecao = HallucinationGuardrail(
@@ -41,7 +41,7 @@ protecao_com_contexto = HallucinationGuardrail(
 ### Adicionando às Tarefas
 
 ```python
-from crewai import Task
+from localagents import Task
 
 # Crie sua tarefa com a proteção
 minha_tarefa = Task(
@@ -246,6 +246,6 @@ A proteção se integra ao sistema de eventos do LocalAI para fornecer observabi
   - Valide o formato da saída da tarefa antes da avaliação da proteção
 </Accordion>
 
-<Card title="Precisa de Ajuda?" icon="headset" href="mailto:support@crewai.com">
+<Card title="Precisa de Ajuda?" icon="headset" href="mailto:support@localagents.com">
   Entre em contato com nosso suporte para assistência na configuração ou solução de problemas da proteção contra alucinações.
 </Card>

@@ -10,7 +10,7 @@ mode: "wide"
 With [Comet Opik](https://www.comet.com/docs/opik/), debug, evaluate, and monitor your LLM applications, RAG systems, and agentic workflows with comprehensive tracing, automated evaluations, and production-ready dashboards.
 
 <Frame caption="Opik Agent Dashboard">
-  <img src="/images/opik-crewai-dashboard.png" alt="Opik agent monitoring example with LocalAI" />
+  <img src="/images/opik-localagents-dashboard.png" alt="Opik agent monitoring example with LocalAI" />
 </Frame>
 
 Opik provides comprehensive support for every stage of your LocalAI application development:
@@ -23,7 +23,7 @@ Opik provides comprehensive support for every stage of your LocalAI application 
 ## Setup
 Comet provides a hosted version of the Opik platform, or you can run the platform locally. 
 
-To use the hosted version, simply [create a free Comet account](https://www.comet.com/signup?utm_medium=github&utm_source=crewai_docs) and grab you API Key.
+To use the hosted version, simply [create a free Comet account](https://www.comet.com/signup?utm_medium=github&utm_source=localagents_docs) and grab you API Key.
 
 To run the Opik platform locally, see our [installation guide](https://www.comet.com/docs/opik/self-host/overview/) for more information.
 
@@ -32,7 +32,7 @@ For this guide we will use LocalAI’s quickstart example.
 <Steps>
     <Step title="Install required packages">
       ```shell
-      pip install crewai crewai-tools opik --upgrade
+      pip install localagents localagents-tools opik --upgrade
       ```
     </Step>
     <Step title="Configure Opik">
@@ -56,7 +56,7 @@ For this guide we will use LocalAI’s quickstart example.
       The first step is to create our project. We will use an example from LocalAI’s documentation:
 
       ```python
-      from crewai import Agent, Crew, Task, Process
+      from localagents import Agent, Crew, Task, Process
 
 
       class YourCrewName:
@@ -105,9 +105,9 @@ For this guide we will use LocalAI’s quickstart example.
       Now we can import Opik’s tracker and run our crew:
   
       ```python
-      from opik.integrations.crewai import track_crewai
+      from opik.integrations.localagents import track_localagents
 
-      track_crewai(project_name="crewai-integration-demo")
+      track_localagents(project_name="localagents-integration-demo")
 
       my_crew = YourCrewName().crew()
       result = my_crew.kickoff()
@@ -125,6 +125,6 @@ For this guide we will use LocalAI’s quickstart example.
 ## Resources
 
 - [🦉 Opik Documentation](https://www.comet.com/docs/opik/)
-- [👉 Opik + LocalAI Colab](https://colab.research.google.com/github/comet-ml/opik/blob/main/apps/opik-documentation/documentation/docs/cookbook/crewai.ipynb)
+- [👉 Opik + LocalAI Colab](https://colab.research.google.com/github/comet-ml/opik/blob/main/apps/opik-documentation/documentation/docs/cookbook/localagents.ipynb)
 - [🐦 X](https://x.com/cometml)
 - [💬 Slack](https://slack.comet.com/)

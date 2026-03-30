@@ -147,7 +147,7 @@ Antes de ativar em produção, confirme que você:
 - Habilitou o trigger na automação correta
 - Definiu variáveis de ambiente necessárias (tokens, IDs de tenant, segredos)
 - Criou tarefas que analisam o payload no primeiro passo da crew/flow
-- Decidiu se usará `allow_crewai_trigger_context` para injetar contexto automaticamente
+- Decidiu se usará `allow_localagents_trigger_context` para injetar contexto automaticamente
 - Configurou monitoramento (webhooks, históricos da LocalAI, alertas externos)
 
 ### Testando Triggers Localmente com CLI
@@ -159,7 +159,7 @@ A CLI da LocalAI fornece comandos poderosos para ajudá-lo a desenvolver e testa
 Visualize todos os triggers disponíveis para suas integrações conectadas:
 
 ```bash
-crewai triggers list
+localagents triggers list
 ```
 
 Este comando exibe todos os triggers disponíveis baseados nas suas integrações conectadas, mostrando:
@@ -173,13 +173,13 @@ Este comando exibe todos os triggers disponíveis baseados nas suas integraçõe
 Teste sua crew com payloads realistas de triggers antes do deployment:
 
 ```bash
-crewai triggers run <nome_do_trigger>
+localagents triggers run <nome_do_trigger>
 ```
 
 Por exemplo:
 
 ```bash
-crewai triggers run microsoft_onedrive/file_changed
+localagents triggers run microsoft_onedrive/file_changed
 ```
 
 Este comando:
@@ -190,8 +190,8 @@ Este comando:
 
 <Warning>
   **Notas Importantes de Desenvolvimento:**
-  - Use `crewai triggers run <trigger>` para simular execução de trigger durante o desenvolvimento
-  - Usar `crewai run` NÃO simulará chamadas de trigger e não passará o payload do trigger
+  - Use `localagents triggers run <trigger>` para simular execução de trigger durante o desenvolvimento
+  - Usar `localagents run` NÃO simulará chamadas de trigger e não passará o payload do trigger
   - Após o deployment, sua crew será executada com o payload real do trigger
   - Se sua crew espera parâmetros que não estão no payload do trigger, a execução pode falhar
 </Warning>
@@ -230,17 +230,17 @@ Flows oferecem controle adicional sobre o uso do payload:
 
 #### Acessando o Payload
 
-Todos os métodos `@start()` podem receber `crewai_trigger_payload`:
+Todos os métodos `@start()` podem receber `localagents_trigger_payload`:
 
 ```python
-from crewai.flow import Flow, start, listen
+from localagents.flow import Flow, start, listen
 
 class MeuFlowAutomatizado(Flow):
     @start()
-    def lidar_com_trigger(self, crewai_trigger_payload: dict = None):
-        if crewai_trigger_payload:
-            trigger_id = crewai_trigger_payload.get('id')
-            dados_evento = crewai_trigger_payload.get('payload', {})
+    def lidar_com_trigger(self, localagents_trigger_payload: dict = None):
+        if localagents_trigger_payload:
+            trigger_id = localagents_trigger_payload.get('id')
+            dados_evento = localagents_trigger_payload.get('payload', {})
             self.state.trigger_id = trigger_id
             self.state.trigger_type = dados_evento
             return dados_evento
@@ -255,12 +255,12 @@ class MeuFlowAutomatizado(Flow):
 
 ```python
 @start()
-def delegar_para_crew(self, crewai_trigger_payload: dict = None):
+def delegar_para_crew(self, localagents_trigger_payload: dict = None):
     crew = MinhaCrewEspecializada()
     resultado = crew.crew().kickoff(
         inputs={
             'parametro_personalizado': "valor_personalizado",
-            'crewai_trigger_payload': crewai_trigger_payload
+            'localagents_trigger_payload': localagents_trigger_payload
         },
     )
     return resultado
@@ -277,15 +277,15 @@ def delegar_para_crew(self, crewai_trigger_payload: dict = None):
 **Falhas de execução:**
 
 - Consulte os logs de execução para detalhes do erro
-- Use `crewai triggers run <nome_do_trigger>` para testar localmente e ver a estrutura exata do payload
-- Verifique se sua crew pode processar o parâmetro `crewai_trigger_payload`
+- Use `localagents triggers run <nome_do_trigger>` para testar localmente e ver a estrutura exata do payload
+- Verifique se sua crew pode processar o parâmetro `localagents_trigger_payload`
 - Garanta que sua crew não espera parâmetros que não estão incluídos no payload do trigger
 
 **Problemas de desenvolvimento:**
 
-- Sempre teste com `crewai triggers run <trigger>` antes de fazer deploy para ver o payload completo
-- Lembre-se que `crewai run` NÃO simula chamadas de trigger—use `crewai triggers run` em vez disso
-- Use `crewai triggers list` para verificar quais triggers estão disponíveis para suas integrações conectadas
+- Sempre teste com `localagents triggers run <trigger>` antes de fazer deploy para ver o payload completo
+- Lembre-se que `localagents run` NÃO simula chamadas de trigger—use `localagents triggers run` em vez disso
+- Use `localagents triggers list` para verificar quais triggers estão disponíveis para suas integrações conectadas
 - Após o deployment, sua crew receberá o payload real do trigger, então teste minuciosamente localmente primeiro
 
 Os triggers transformam suas implantações LocalAI em sistemas orientados por eventos, integrando-se perfeitamente aos processos e ferramentas já usados pelo seu time.

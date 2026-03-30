@@ -19,13 +19,13 @@ https://www.mongodb.com/docs/atlas/atlas-vector-search/vector-search-overview/
 قم بالتثبيت مع إضافة MongoDB:
 
 ```shell
-pip install crewai-tools[mongodb]
+pip install localagents-tools[mongodb]
 ```
 
 أو
 
 ```shell
-uv add crewai-tools --extra mongodb
+uv add localagents-tools --extra mongodb
 ```
 
 ## المعاملات
@@ -47,7 +47,7 @@ uv add crewai-tools --extra mongodb
 ## بداية سريعة
 
 ```python Code
-from crewai_tools import MongoDBVectorSearchTool
+from localagents_tools import MongoDBVectorSearchTool
 
 tool = MongoDBVectorSearchTool(
   connection_string="mongodb+srv://...",
@@ -73,7 +73,7 @@ print(tool.run(query="how to create vector index"))
 ### التهيئة الأساسية
 
 ```python Code
-from crewai_tools import MongoDBVectorSearchTool
+from localagents_tools import MongoDBVectorSearchTool
 
 tool = MongoDBVectorSearchTool(
     database_name="example_database",
@@ -85,7 +85,7 @@ tool = MongoDBVectorSearchTool(
 ### تكوين استعلام مخصص
 
 ```python Code
-from crewai_tools import MongoDBVectorSearchConfig, MongoDBVectorSearchTool
+from localagents_tools import MongoDBVectorSearchConfig, MongoDBVectorSearchTool
 
 query_config = MongoDBVectorSearchConfig(limit=10, oversampling_factor=2)
 tool = MongoDBVectorSearchTool(
@@ -109,7 +109,7 @@ rag_agent = Agent(
 
 ```python Code
 import os
-from crewai_tools import MongoDBVectorSearchTool
+from localagents_tools import MongoDBVectorSearchTool
 
 tool = MongoDBVectorSearchTool(
     database_name="example_database",
@@ -134,8 +134,8 @@ tool.create_vector_search_index(dimensions=3072)
 ## مثال
 
 ```python Code
-from crewai import Agent, Task, Crew
-from crewai_tools import MongoDBVectorSearchTool
+from localagents import Agent, Task, Crew
+from localagents_tools import MongoDBVectorSearchTool
 
 tool = MongoDBVectorSearchTool(
     connection_string="mongodb+srv://...",

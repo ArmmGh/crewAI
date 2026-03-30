@@ -25,7 +25,7 @@ mode: "wide"
 
 ```python Code
 
-from crewai.flow.flow import Flow, listen, start
+from localagents.flow.flow import Flow, listen, start
 from dotenv import load_dotenv
 from litellm import completion
 
@@ -81,7 +81,7 @@ result = flow.kickoff()
 
 print(f"Generated fun fact: {result}")
 ```
-![Flow Visual image](/images/crewai-flow-1.png)
+![Flow Visual image](/images/localagents-flow-1.png)
 في المثال أعلاه، أنشأنا تدفقًا بسيطًا يولّد مدينة عشوائية باستخدام OpenAI ثم يولّد حقيقة ممتعة عن تلك المدينة. يتكون التدفق من مهمتين: `generate_city` و `generate_fun_fact`. مهمة `generate_city` هي نقطة البداية للتدفق، ومهمة `generate_fun_fact` تستمع لمخرجات مهمة `generate_city`.
 
 يتلقى كل مثيل من التدفق تلقائيًا معرّفًا فريدًا (UUID) في حالته، مما يساعد في تتبع وإدارة عمليات تنفيذ التدفق. يمكن للحالة أيضًا تخزين بيانات إضافية (مثل المدينة المولّدة والحقيقة الممتعة) التي تستمر طوال تنفيذ التدفق.
@@ -141,7 +141,7 @@ print(f"Generated fun fact: {result}")
 
 <CodeGroup>
 ```python Code
-from crewai.flow.flow import Flow, listen, start
+from localagents.flow.flow import Flow, listen, start
 
 class OutputExampleFlow(Flow):
     @start()
@@ -167,7 +167,7 @@ Second method received: Output from first_method
 ```
 
 </CodeGroup>
-![Flow Visual image](/images/crewai-flow-2.png)
+![Flow Visual image](/images/localagents-flow-2.png)
 
 في هذا المثال، `second_method` هي آخر دالة تكتمل، لذا ستكون مخرجاتها هي المخرجات النهائية للتدفق.
 ستُعيد دالة `kickoff()` المخرجات النهائية، التي تُطبع بعد ذلك في وحدة التحكم. ستولّد دالة `plot()` ملف HTML الذي سيساعدك على فهم التدفق.
@@ -181,7 +181,7 @@ Second method received: Output from first_method
 <CodeGroup>
 
 ```python Code
-from crewai.flow.flow import Flow, listen, start
+from localagents.flow.flow import Flow, listen, start
 from pydantic import BaseModel
 
 class ExampleState(BaseModel):
@@ -217,7 +217,7 @@ counter=2 message='Hello from first_method - updated by second_method'
 
 </CodeGroup>
 
-![Flow Visual image](/images/crewai-flow-2.png)
+![Flow Visual image](/images/localagents-flow-2.png)
 
 في هذا المثال، يتم تحديث الحالة بواسطة كل من `first_method` و `second_method`.
 بعد تشغيل التدفق، يمكنك الوصول إلى الحالة النهائية لرؤية التحديثات التي أجرتها هذه الدوال.
@@ -237,7 +237,7 @@ counter=2 message='Hello from first_method - updated by second_method'
 حتى مع الحالات غير المهيكلة، تولّد تدفقات LocalAI تلقائيًا معرّفًا فريدًا (UUID) لكل مثيل حالة وتحافظ عليه.
 
 ```python Code
-from crewai.flow.flow import Flow, listen, start
+from localagents.flow.flow import Flow, listen, start
 
 class UnstructuredExampleFlow(Flow):
 
@@ -266,7 +266,7 @@ flow.plot("my_flow_plot")
 flow.kickoff()
 ```
 
-![Flow Visual image](/images/crewai-flow-3.png)
+![Flow Visual image](/images/localagents-flow-3.png)
 
 **ملاحظة:** يتم توليد حقل `id` تلقائيًا والحفاظ عليه طوال تنفيذ التدفق. لا تحتاج إلى إدارته أو تعيينه يدويًا، وسيتم الحفاظ عليه حتى عند تحديث الحالة ببيانات جديدة.
 
@@ -283,7 +283,7 @@ flow.kickoff()
 تتلقى كل حالة في تدفقات LocalAI تلقائيًا معرّفًا فريدًا (UUID) للمساعدة في تتبع وإدارة مثيلات الحالة. يتم توليد هذا المعرّف وإدارته تلقائيًا بواسطة نظام التدفق.
 
 ```python Code
-from crewai.flow.flow import Flow, listen, start
+from localagents.flow.flow import Flow, listen, start
 from pydantic import BaseModel
 
 
@@ -318,7 +318,7 @@ flow = StructuredExampleFlow()
 flow.kickoff()
 ```
 
-![Flow Visual image](/images/crewai-flow-3.png)
+![Flow Visual image](/images/localagents-flow-3.png)
 
 **النقاط الرئيسية:**
 
@@ -435,7 +435,7 @@ class AnotherFlow(Flow[dict]):
 <CodeGroup>
 
 ```python Code
-from crewai.flow.flow import Flow, listen, or_, start
+from localagents.flow.flow import Flow, listen, or_, start
 
 class OrExampleFlow(Flow):
 
@@ -465,7 +465,7 @@ Logger: Hello from the second method
 
 </CodeGroup>
 
-![Flow Visual image](/images/crewai-flow-4.png)
+![Flow Visual image](/images/localagents-flow-4.png)
 
 عند تشغيل هذا التدفق، سيتم تشغيل دالة `logger` بواسطة مخرجات إما `start_method` أو `second_method`.
 تُستخدم دالة `or_` للاستماع لعدة دوال وتشغيل دالة المستمع عندما تُصدر أي من الدوال المحددة مخرجاتها.
@@ -477,7 +477,7 @@ Logger: Hello from the second method
 <CodeGroup>
 
 ```python Code
-from crewai.flow.flow import Flow, and_, listen, start
+from localagents.flow.flow import Flow, and_, listen, start
 
 class AndExampleFlow(Flow):
 
@@ -506,7 +506,7 @@ flow.kickoff()
 
 </CodeGroup>
 
-![Flow Visual image](/images/crewai-flow-5.png)
+![Flow Visual image](/images/localagents-flow-5.png)
 
 عند تشغيل هذا التدفق، سيتم تشغيل دالة `logger` فقط عندما يُصدر كل من `start_method` و `second_method` مخرجاتهما.
 تُستخدم دالة `and_` للاستماع لعدة دوال وتشغيل دالة المستمع فقط عندما تُصدر جميع الدوال المحددة مخرجاتها.
@@ -520,7 +520,7 @@ flow.kickoff()
 
 ```python Code
 import random
-from crewai.flow.flow import Flow, listen, router, start
+from localagents.flow.flow import Flow, listen, router, start
 from pydantic import BaseModel
 
 class ExampleState(BaseModel):
@@ -563,7 +563,7 @@ Fourth method running
 
 </CodeGroup>
 
-![Flow Visual image](/images/crewai-flow-6.png)
+![Flow Visual image](/images/localagents-flow-6.png)
 
 في المثال أعلاه، تولّد `start_method` قيمة منطقية عشوائية وتعيّنها في الحالة.
 تستخدم `second_method` مزخرف `@router()` لتحديد منطق توجيه شرطي بناءً على قيمة المنطقية.
@@ -581,8 +581,8 @@ Fourth method running
 يتيح مزخرف `@human_feedback` سير عمل يتضمن تدخلًا بشريًا من خلال إيقاف تنفيذ التدفق مؤقتًا لجمع تغذية راجعة من إنسان. هذا مفيد لبوابات الموافقة ومراجعة الجودة ونقاط القرار التي تتطلب حكمًا بشريًا.
 
 ```python Code
-from crewai.flow.flow import Flow, start, listen
-from crewai.flow.human_feedback import human_feedback, HumanFeedbackResult
+from localagents.flow.flow import Flow, start, listen
+from localagents.flow.human_feedback import human_feedback, HumanFeedbackResult
 
 class ReviewFlow(Flow):
     @start()
@@ -633,11 +633,11 @@ def next_step(self, result: HumanFeedbackResult):
 import asyncio
 from typing import Any, Dict, List
 
-from crewai_tools import SerperDevTool
+from localagents_tools import SerperDevTool
 from pydantic import BaseModel, Field
 
-from crewai.agent import Agent
-from crewai.flow.flow import Flow, listen, start
+from localagents.agent import Agent
+from localagents.flow.flow import Flow, listen, start
 
 
 # Define a structured output format
@@ -731,7 +731,7 @@ if __name__ == "__main__":
     asyncio.run(run_flow())
 ```
 
-![Flow Visual image](/images/crewai-flow-7.png)
+![Flow Visual image](/images/localagents-flow-7.png)
 
 يوضح هذا المثال عدة ميزات رئيسية لاستخدام Agents في التدفقات:
 
@@ -748,14 +748,14 @@ if __name__ == "__main__":
 يمكنك إنشاء مشروع LocalAI جديد يتضمن جميع الهيكلية اللازمة لإنشاء تدفق مع فرق Crew متعددة عن طريق تشغيل الأمر التالي:
 
 ```bash
-crewai create flow name_of_flow
+localagents create flow name_of_flow
 ```
 
 سيولّد هذا الأمر مشروع LocalAI جديد مع هيكل المجلدات اللازم. يتضمن المشروع المولّد فريق Crew مُعد مسبقًا يُسمى `poem_crew` ويعمل بالفعل. يمكنك استخدام هذا الفريق كقالب بنسخه ولصقه وتعديله لإنشاء فرق أخرى.
 
 ### هيكل المجلدات
 
-بعد تشغيل أمر `crewai create flow name_of_flow`، سترى هيكل مجلدات مشابه للتالي:
+بعد تشغيل أمر `localagents create flow name_of_flow`، سترى هيكل مجلدات مشابه للتالي:
 
 | المجلد/الملف           | الوصف                                                              |
 | :--------------------- | :----------------------------------------------------------------- |
@@ -794,7 +794,7 @@ crewai create flow name_of_flow
 from random import randint
 
 from pydantic import BaseModel
-from crewai.flow.flow import Flow, listen, start
+from localagents.flow.flow import Flow, listen, start
 from .crews.poem_crew.poem_crew import PoemCrew
 
 
@@ -839,14 +839,14 @@ if __name__ == "__main__":
 
 في هذا المثال، تحدد فئة `PoemFlow` تدفقًا يولّد عدد الجمل، ويستخدم `PoemCrew` لتوليد قصيدة، ثم يحفظ القصيدة في ملف. يتم بدء التدفق باستدعاء دالة `kickoff()`. سيتم توليد PoemFlowPlot بواسطة دالة `plot()`.
 
-![Flow Visual image](/images/crewai-flow-8.png)
+![Flow Visual image](/images/localagents-flow-8.png)
 
 ### تشغيل التدفق
 
 (اختياري) قبل تشغيل التدفق، يمكنك تثبيت التبعيات بتشغيل:
 
 ```bash
-crewai install
+localagents install
 ```
 
 بمجرد تثبيت جميع التبعيات، تحتاج إلى تفعيل البيئة الافتراضية بتشغيل:
@@ -858,7 +858,7 @@ source .venv/bin/activate
 بعد تفعيل البيئة الافتراضية، يمكنك تشغيل التدفق بتنفيذ أحد الأوامر التالية:
 
 ```bash
-crewai flow kickoff
+localagents flow kickoff
 ```
 
 أو
@@ -897,7 +897,7 @@ flow.plot("my_flow_plot")
 إذا كنت تعمل ضمن مشروع LocalAI منظم، يمكنك إنشاء رسم بياني باستخدام سطر الأوامر. هذا مفيد بشكل خاص للمشاريع الأكبر حيث تريد تصوير إعداد التدفق بالكامل.
 
 ```bash
-crewai flow plot
+localagents flow plot
 ```
 
 سيُنشئ هذا الأمر ملف HTML مع الرسم البياني لتدفقك، مشابهًا لدالة `plot()`. سيتم حفظ الملف في مجلد مشروعك، ويمكنك فتحه في متصفح ويب لاستكشاف التدفق.
@@ -991,8 +991,8 @@ result = streaming.result
 يتم إنشاء مثيل `Memory()` افتراضي تلقائيًا عند تهيئة التدفق. يمكنك أيضًا تمرير مثيل مخصص:
 
 ```python
-from crewai.flow.flow import Flow
-from crewai import Memory
+from localagents.flow.flow import Flow
+from localagents import Memory
 
 custom_memory = Memory(
     recency_weight=0.5,
@@ -1006,7 +1006,7 @@ flow = MyFlow(memory=custom_memory)
 ### مثال: تدفق البحث والتحليل
 
 ```python
-from crewai.flow.flow import Flow, listen, start
+from localagents.flow.flow import Flow, listen, start
 
 
 class ResearchAnalysisFlow(Flow):
@@ -1051,10 +1051,10 @@ print(result)
 
 ### استخدام CLI
 
-بدءًا من الإصدار 0.103.0، يمكنك تشغيل التدفقات باستخدام أمر `crewai run`:
+بدءًا من الإصدار 0.103.0، يمكنك تشغيل التدفقات باستخدام أمر `localagents run`:
 
 ```shell
-crewai run
+localagents run
 ```
 
 يكتشف هذا الأمر تلقائيًا ما إذا كان مشروعك تدفقًا (بناءً على إعداد `type = "flow"` في pyproject.toml الخاص بك) ويشغّله وفقًا لذلك. هذه هي الطريقة الموصى بها لتشغيل التدفقات من سطر الأوامر.
@@ -1062,7 +1062,7 @@ crewai run
 للتوافق مع الإصدارات السابقة، يمكنك أيضًا استخدام:
 
 ```shell
-crewai flow kickoff
+localagents flow kickoff
 ```
 
-ومع ذلك، فإن أمر `crewai run` هو الطريقة المفضلة الآن لأنه يعمل لكل من فرق Crew والتدفقات.
+ومع ذلك، فإن أمر `localagents run` هو الطريقة المفضلة الآن لأنه يعمل لكل من فرق Crew والتدفقات.

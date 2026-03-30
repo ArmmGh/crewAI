@@ -30,7 +30,7 @@ O nome do diretório deve corresponder ao campo `name` no `SKILL.md`.
 name: my-skill
 description: Descrição curta do que esta skill faz e quando usá-la.
 license: Apache-2.0                    # opcional
-compatibility: crewai>=0.1.0          # opcional
+compatibility: localagents>=0.1.0          # opcional
 metadata:                              # opcional
   author: your-name
   version: "1.0"
@@ -59,7 +59,7 @@ no prompt do agente quando a skill é ativada.
 Passe caminhos de diretório de skills para um agente:
 
 ```python
-from crewai import Agent
+from localagents import Agent
 
 agent = Agent(
     role="Researcher",
@@ -74,7 +74,7 @@ agent = Agent(
 Caminhos de skills no crew são mesclados em todos os agentes:
 
 ```python
-from crewai import Crew
+from localagents import Crew
 
 crew = Crew(
     agents=[agent],
@@ -89,7 +89,7 @@ Você também pode passar objetos `Skill` diretamente:
 
 ```python
 from pathlib import Path
-from crewai.skills import discover_skills, activate_skill
+from localagents.skills import discover_skills, activate_skill
 
 skills = discover_skills(Path("./skills"))
 activated = [activate_skill(s) for s in skills]

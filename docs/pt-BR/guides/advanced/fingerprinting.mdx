@@ -17,7 +17,7 @@ Essas impressões digitais podem ser usadas para:
 
 ## Como funciona a impressão digital
 
-Uma impressão digital é uma instância da classe `Fingerprint` do módulo `crewai.security`. Cada impressão digital contém:
+Uma impressão digital é uma instância da classe `Fingerprint` do módulo `localagents.security`. Cada impressão digital contém:
 
 - Uma string UUID: Um identificador único para o componente, gerado automaticamente e que não pode ser definido manualmente
 - Um timestamp de criação: Quando a impressão digital foi gerada, definido automaticamente e que não pode ser modificado manualmente
@@ -30,7 +30,7 @@ As impressões digitais são geradas e atribuídas automaticamente quando um com
 ### Acessando impressões digitais
 
 ```python
-from crewai import Agent, Crew, Task
+from localagents import Agent, Crew, Task
 
 # Criar componentes - impressões digitais são geradas automaticamente
 agent = Agent(
@@ -96,7 +96,7 @@ assert agent.fingerprint.uuid_str == original_fingerprint
 Apesar de não ser possível definir diretamente o UUID e o timestamp de criação, é possível criar impressões digitais determinísticas usando o método `generate` com uma seed:
 
 ```python
-from crewai.security import Fingerprint
+from localagents.security import Fingerprint
 
 # Criar uma impressão digital determinística usando uma string seed
 deterministic_fingerprint = Fingerprint.generate(seed="my-agent-id")
@@ -119,7 +119,7 @@ custom_fingerprint = Fingerprint.generate(
 Cada impressão digital possui a seguinte estrutura:
 
 ```python
-from crewai.security import Fingerprint
+from localagents.security import Fingerprint
 
 fingerprint = agent.fingerprint
 

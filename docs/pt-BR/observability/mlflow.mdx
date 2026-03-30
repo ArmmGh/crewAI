@@ -17,7 +17,7 @@ O tracing fornece uma forma de registrar os inputs, outputs e metadados associad
 ### Funcionalidades
 
 - **Painel de Tracing**: Monitore as atividades dos seus agentes localAI com painéis detalhados que incluem entradas, saídas e metadados dos spans.
-- **Tracing Automatizado**: Uma integração totalmente automatizada com localAI, que pode ser habilitada executando `mlflow.crewai.autolog()`.
+- **Tracing Automatizado**: Uma integração totalmente automatizada com localAI, que pode ser habilitada executando `mlflow.localagents.autolog()`.
 - **Instrumentação Manual de Tracing com pouco esforço**: Personalize a instrumentação dos traces usando as APIs de alto nível do MLflow, como decorators, wrappers de funções e context managers.
 - **Compatibilidade com OpenTelemetry**: O MLflow Tracing suporta a exportação de traces para um OpenTelemetry Collector, que pode então ser usado para exportar traces para diversos backends como Jaeger, Zipkin e AWS X-Ray.
 - **Empacote e Faça Deploy dos Agents**: Empacote e faça deploy de seus agents localAI em um servidor de inferência com diversas opções de destino.
@@ -45,7 +45,7 @@ O tracing fornece uma forma de registrar os inputs, outputs e metadados associad
       ```python
       import mlflow
 
-      mlflow.crewai.autolog()
+      mlflow.localagents.autolog()
 
       # Opcional: Defina uma tracking URI e um nome de experimento caso utilize um servidor de tracking
       mlflow.set_tracking_uri("http://localhost:5000")
@@ -55,9 +55,9 @@ O tracing fornece uma forma de registrar os inputs, outputs e metadados associad
       Exemplo de uso para tracing de Agents do LocalAI:
 
       ```python
-      from crewai import Agent, Crew, Task
-      from crewai.knowledge.source.string_knowledge_source import StringKnowledgeSource
-      from crewai_tools import SerperDevTool, WebsiteSearchTool
+      from localagents import Agent, Crew, Task
+      from localagents.knowledge.source.string_knowledge_source import StringKnowledgeSource
+      from localagents_tools import SerperDevTool, WebsiteSearchTool
 
       from textwrap import dedent
 
@@ -180,7 +180,7 @@ O tracing fornece uma forma de registrar os inputs, outputs e metadados associad
 
       Abra `127.0.0.1:5000` em seu navegador para acessar o servidor de tracking do MLflow.
       <Frame caption="Painel de Tracing do MLflow">
-        <img src="/images/mlflow1.png" alt="Exemplo de tracing do MLflow com crewai" />
+        <img src="/images/mlflow1.png" alt="Exemplo de tracing do MLflow com localagents" />
       </Frame>
     </Step>
 </Steps>

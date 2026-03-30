@@ -9,7 +9,7 @@ mode: "wide"
   Since release 0.140.0, LocalAI AMP started a process of migrating their login
   provider. As such, the authentication flow via CLI was updated. Users that use
   Google to login, or that created their account after July 3rd, 2025 will be
-  unable to log in with older versions of the `crewai` library.
+  unable to log in with older versions of the `localagents` library.
 </Warning>
 
 ## Overview
@@ -21,7 +21,7 @@ The LocalAI CLI provides a set of commands to interact with LocalAI, allowing yo
 To use the LocalAI CLI, make sure you have LocalAI installed:
 
 ```shell Terminal
-pip install crewai
+pip install localagents
 ```
 
 ## Basic Usage
@@ -29,7 +29,7 @@ pip install crewai
 The basic structure of a LocalAI CLI command is:
 
 ```shell Terminal
-crewai [COMMAND] [OPTIONS] [ARGUMENTS]
+localagents [COMMAND] [OPTIONS] [ARGUMENTS]
 ```
 
 ## Available Commands
@@ -39,7 +39,7 @@ crewai [COMMAND] [OPTIONS] [ARGUMENTS]
 Create a new crew or flow.
 
 ```shell Terminal
-crewai create [OPTIONS] TYPE NAME
+localagents create [OPTIONS] TYPE NAME
 ```
 
 - `TYPE`: Choose between "crew" or "flow"
@@ -48,8 +48,8 @@ crewai create [OPTIONS] TYPE NAME
 Example:
 
 ```shell Terminal
-crewai create crew my_new_crew
-crewai create flow my_new_flow
+localagents create crew my_new_crew
+localagents create flow my_new_flow
 ```
 
 ### 2. Version
@@ -57,7 +57,7 @@ crewai create flow my_new_flow
 Show the installed version of LocalAI.
 
 ```shell Terminal
-crewai version [OPTIONS]
+localagents version [OPTIONS]
 ```
 
 - `--tools`: (Optional) Show the installed version of LocalAI tools
@@ -65,8 +65,8 @@ crewai version [OPTIONS]
 Example:
 
 ```shell Terminal
-crewai version
-crewai version --tools
+localagents version
+localagents version --tools
 ```
 
 ### 3. Train
@@ -74,7 +74,7 @@ crewai version --tools
 Train the crew for a specified number of iterations.
 
 ```shell Terminal
-crewai train [OPTIONS]
+localagents train [OPTIONS]
 ```
 
 - `-n, --n_iterations INTEGER`: Number of iterations to train the crew (default: 5)
@@ -83,7 +83,7 @@ crewai train [OPTIONS]
 Example:
 
 ```shell Terminal
-crewai train -n 10 -f my_training_data.pkl
+localagents train -n 10 -f my_training_data.pkl
 ```
 
 ### 4. Replay
@@ -91,7 +91,7 @@ crewai train -n 10 -f my_training_data.pkl
 Replay the crew execution from a specific task.
 
 ```shell Terminal
-crewai replay [OPTIONS]
+localagents replay [OPTIONS]
 ```
 
 - `-t, --task_id TEXT`: Replay the crew from this task ID, including all subsequent tasks
@@ -99,7 +99,7 @@ crewai replay [OPTIONS]
 Example:
 
 ```shell Terminal
-crewai replay -t task_123456
+localagents replay -t task_123456
 ```
 
 ### 5. Log-tasks-outputs
@@ -107,7 +107,7 @@ crewai replay -t task_123456
 Retrieve your latest crew.kickoff() task outputs.
 
 ```shell Terminal
-crewai log-tasks-outputs
+localagents log-tasks-outputs
 ```
 
 ### 6. Reset-memories
@@ -115,7 +115,7 @@ crewai log-tasks-outputs
 Reset the crew memories (long, short, entity, latest_crew_kickoff_outputs).
 
 ```shell Terminal
-crewai reset-memories [OPTIONS]
+localagents reset-memories [OPTIONS]
 ```
 
 - `-l, --long`: Reset LONG TERM memory
@@ -129,8 +129,8 @@ crewai reset-memories [OPTIONS]
 Example:
 
 ```shell Terminal
-crewai reset-memories --long --short
-crewai reset-memories --all
+localagents reset-memories --long --short
+localagents reset-memories --all
 ```
 
 ### 7. Test
@@ -138,7 +138,7 @@ crewai reset-memories --all
 Test the crew and evaluate the results.
 
 ```shell Terminal
-crewai test [OPTIONS]
+localagents test [OPTIONS]
 ```
 
 - `-n, --n_iterations INTEGER`: Number of iterations to test the crew (default: 3)
@@ -147,7 +147,7 @@ crewai test [OPTIONS]
 Example:
 
 ```shell Terminal
-crewai test -n 5 -m gpt-3.5-turbo
+localagents test -n 5 -m gpt-3.5-turbo
 ```
 
 ### 8. Run
@@ -155,11 +155,11 @@ crewai test -n 5 -m gpt-3.5-turbo
 Run the crew or flow.
 
 ```shell Terminal
-crewai run
+localagents run
 ```
 
 <Note>
-  Starting from version 0.103.0, the `crewai run` command can be used to run
+  Starting from version 0.103.0, the `localagents run` command can be used to run
   both standard crews and flows. For flows, it automatically detects the type
   from pyproject.toml and runs the appropriate command. This is now the
   recommended way to run both crews and flows.
@@ -173,12 +173,12 @@ crewai run
 
 ### 9. Chat
 
-Starting in version `0.98.0`, when you run the `crewai chat` command, you start an interactive session with your crew. The AI assistant will guide you by asking for necessary inputs to execute the crew. Once all inputs are provided, the crew will execute its tasks.
+Starting in version `0.98.0`, when you run the `localagents chat` command, you start an interactive session with your crew. The AI assistant will guide you by asking for necessary inputs to execute the crew. Once all inputs are provided, the crew will execute its tasks.
 
 After receiving the results, you can continue interacting with the assistant for further instructions or questions.
 
 ```shell Terminal
-crewai chat
+localagents chat
 ```
 
 <Note>
@@ -203,18 +203,18 @@ def crew(self) -> Crew:
 
 ### 10. Deploy
 
-Deploy the crew or flow to [LocalAI AMP](https://app.crewai.com).
+Deploy the crew or flow to [LocalAI AMP](https://app.localagents.com).
 
 - **Authentication**: You need to be authenticated to deploy to LocalAI AMP.
   You can login or create an account with:
 
   ```shell Terminal
-  crewai login
+  localagents login
   ```
 
 - **Create a deployment**: Once you are authenticated, you can create a deployment for your crew or flow from the root of your localproject.
   ```shell Terminal
-  crewai deploy create
+  localagents deploy create
   ```
   - Reads your local project configuration.
   - Prompts you to confirm the environment variables (like `OPENAI_API_KEY`, `SERPER_API_KEY`) found locally. These will be securely stored with the deployment on the Enterprise platform. Ensure your sensitive keys are correctly configured locally (e.g., in a `.env` file) before running this.
@@ -224,7 +224,7 @@ Deploy the crew or flow to [LocalAI AMP](https://app.crewai.com).
 Manage your LocalAI AMP organizations.
 
 ```shell Terminal
-crewai org [COMMAND] [OPTIONS]
+localagents org [COMMAND] [OPTIONS]
 ```
 
 #### Commands:
@@ -232,19 +232,19 @@ crewai org [COMMAND] [OPTIONS]
 - `list`: List all organizations you belong to
 
 ```shell Terminal
-crewai org list
+localagents org list
 ```
 
 - `current`: Display your currently active organization
 
 ```shell Terminal
-crewai org current
+localagents org current
 ```
 
 - `switch`: Switch to a specific organization
 
 ```shell Terminal
-crewai org switch <organization_id>
+localagents org switch <organization_id>
 ```
 
 <Note>
@@ -259,7 +259,7 @@ crewai org switch <organization_id>
 - **Deploy the Crew**: Once you are authenticated, you can deploy your crew or flow to LocalAI AMP.
 
   ```shell Terminal
-  crewai deploy push
+  localagents deploy push
   ```
 
   - Initiates the deployment process on the LocalAI AMP platform.
@@ -268,7 +268,7 @@ crewai org switch <organization_id>
 - **Deployment Status**: You can check the status of your deployment with:
 
   ```shell Terminal
-  crewai deploy status
+  localagents deploy status
   ```
 
   This fetches the latest deployment status of your most recent deployment attempt (e.g., `Building Images for Crew`, `Deploy Enqueued`, `Online`).
@@ -276,7 +276,7 @@ crewai org switch <organization_id>
 - **Deployment Logs**: You can check the logs of your deployment with:
 
   ```shell Terminal
-  crewai deploy logs
+  localagents deploy logs
   ```
 
   This streams the deployment logs to your terminal.
@@ -284,7 +284,7 @@ crewai org switch <organization_id>
 - **List deployments**: You can list all your deployments with:
 
   ```shell Terminal
-  crewai deploy list
+  localagents deploy list
   ```
 
   This lists all your deployments.
@@ -292,18 +292,18 @@ crewai org switch <organization_id>
 - **Delete a deployment**: You can delete a deployment with:
 
   ```shell Terminal
-  crewai deploy remove
+  localagents deploy remove
   ```
 
   This deletes the deployment from the LocalAI AMP platform.
 
 - **Help Command**: You can get help with the CLI with:
   ```shell Terminal
-  crewai deploy --help
+  localagents deploy --help
   ```
   This shows the help message for the LocalAI Deploy CLI.
 
-Watch this video tutorial for a step-by-step demonstration of deploying your crew to [LocalAI AMP](http://app.crewai.com) using the CLI.
+Watch this video tutorial for a step-by-step demonstration of deploying your crew to [LocalAI AMP](http://app.localagents.com) using the CLI.
 
 <iframe
   className="w-full aspect-video rounded-xl"
@@ -319,7 +319,7 @@ Watch this video tutorial for a step-by-step demonstration of deploying your cre
 Authenticate with LocalAI AMP using a secure device code flow (no email entry required).
 
 ```shell Terminal
-crewai login
+localagents login
 ```
 
 What happens:
@@ -330,13 +330,13 @@ What happens:
 
 Notes:
 
-- The OAuth2 provider and domain are configured via `crewai config` (defaults use `login.crewai.com`)
+- The OAuth2 provider and domain are configured via `localagents config` (defaults use `login.localagents.com`)
 - After successful login, the CLI also attempts to authenticate to the Tool Repository automatically
-- If you reset your configuration, run `crewai login` again to re-authenticate
+- If you reset your configuration, run `localagents login` again to re-authenticate
 
 ### 12. API Keys
 
-When running `crewai create crew` command, the CLI will show you a list of available LLM providers to choose from, followed by model selection for your chosen provider.
+When running `localagents create crew` command, the CLI will show you a list of available LLM providers to choose from, followed by model selection for your chosen provider.
 
 Once you've selected an LLM provider and model, you will be prompted for API keys.
 
@@ -367,7 +367,7 @@ See the following link for each provider's key name:
 Manage CLI configuration settings for LocalAI.
 
 ```shell Terminal
-crewai config [COMMAND] [OPTIONS]
+localagents config [COMMAND] [OPTIONS]
 ```
 
 #### Commands:
@@ -375,19 +375,19 @@ crewai config [COMMAND] [OPTIONS]
 - `list`: Display all CLI configuration parameters
 
 ```shell Terminal
-crewai config list
+localagents config list
 ```
 
 - `set`: Set a CLI configuration parameter
 
 ```shell Terminal
-crewai config set <key> <value>
+localagents config set <key> <value>
 ```
 
 - `reset`: Reset all CLI configuration parameters to default values
 
 ```shell Terminal
-crewai config reset
+localagents config reset
 ```
 
 #### Available Configuration Parameters
@@ -403,46 +403,46 @@ crewai config reset
 Display current configuration:
 
 ```shell Terminal
-crewai config list
+localagents config list
 ```
 
 Example output:
 | Setting | Value | Description |
 | :------------------ | :----------------------- | :---------------------------------------------------------- |
-| enterprise_base_url | https://app.crewai.com | Base URL of the LocalAI AMP instance |
+| enterprise_base_url | https://app.localagents.com | Base URL of the LocalAI AMP instance |
 | org_name | Not set | Name of the currently active organization |
 | org_uuid | Not set | UUID of the currently active organization |
 | oauth2_provider | workos | OAuth2 provider (e.g., workos, okta, auth0) |
 | oauth2_audience | client_01YYY | Audience identifying the target API/resource |
 | oauth2_client_id | client_01XXX | OAuth2 client ID issued by the provider |
-| oauth2_domain | login.crewai.com | Provider domain (e.g., your-org.auth0.com) |
+| oauth2_domain | login.localagents.com | Provider domain (e.g., your-org.auth0.com) |
 
 Set the enterprise base URL:
 
 ```shell Terminal
-crewai config set enterprise_base_url https://my-enterprise.crewai.com
+localagents config set enterprise_base_url https://my-enterprise.localagents.com
 ```
 
 Set OAuth2 provider:
 
 ```shell Terminal
-crewai config set oauth2_provider auth0
+localagents config set oauth2_provider auth0
 ```
 
 Set OAuth2 domain:
 
 ```shell Terminal
-crewai config set oauth2_domain my-company.auth0.com
+localagents config set oauth2_domain my-company.auth0.com
 ```
 
 Reset all configuration to defaults:
 
 ```shell Terminal
-crewai config reset
+localagents config reset
 ```
 
 <Tip>
-  After resetting configuration, re-run `crewai login` to authenticate again.
+  After resetting configuration, re-run `localagents login` to authenticate again.
 </Tip>
 
 ### 14. Trace Management
@@ -450,7 +450,7 @@ crewai config reset
 Manage trace collection preferences for your Crew and Flow executions.
 
 ```shell Terminal
-crewai traces [COMMAND]
+localagents traces [COMMAND]
 ```
 
 #### Commands:
@@ -458,19 +458,19 @@ crewai traces [COMMAND]
 - `enable`: Enable trace collection for crew/flow executions
 
 ```shell Terminal
-crewai traces enable
+localagents traces enable
 ```
 
 - `disable`: Disable trace collection for crew/flow executions
 
 ```shell Terminal
-crewai traces disable
+localagents traces disable
 ```
 
 - `status`: Show current trace collection status
 
 ```shell Terminal
-crewai traces status
+localagents traces status
 ```
 
 #### How Tracing Works
@@ -492,7 +492,7 @@ Trace collection is controlled by checking three settings in priority order:
 2. **Environment variable** (second priority):
 
    ```env
-   CREWAI_TRACING_ENABLED=true
+   LOCALAGENTS_TRACING_ENABLED=true
    ```
 
    - Checked only if `tracing` is not explicitly set to `True` or `False` in code
@@ -500,22 +500,22 @@ Trace collection is controlled by checking three settings in priority order:
 
 3. **User preference** (lowest priority):
    ```shell Terminal
-   crewai traces enable
+   localagents traces enable
    ```
-   - Checked only if `tracing` is not set in code and `CREWAI_TRACING_ENABLED` is not set to `true`
-   - Running `crewai traces enable` is sufficient to enable tracing by itself
+   - Checked only if `tracing` is not set in code and `LOCALAGENTS_TRACING_ENABLED` is not set to `true`
+   - Running `localagents traces enable` is sufficient to enable tracing by itself
 
 <Note>
 **To enable tracing**, use any one of these methods:
 - Set `tracing=True` in your Crew/Flow code, OR
-- Add `CREWAI_TRACING_ENABLED=true` to your `.env` file, OR
-- Run `crewai traces enable`
+- Add `LOCALAGENTS_TRACING_ENABLED=true` to your `.env` file, OR
+- Run `localagents traces enable`
 
 **To disable tracing**, use any ONE of these methods:
 
 - Set `tracing=False` in your Crew/Flow code (overrides everything), OR
-- Remove or set to `false` the `CREWAI_TRACING_ENABLED` env var, OR
-- Run `crewai traces disable`
+- Remove or set to `false` the `LOCALAGENTS_TRACING_ENABLED` env var, OR
+- Run `localagents traces disable`
 
 Higher priority settings override lower ones.
 
@@ -528,13 +528,13 @@ Higher priority settings override lower ones.
 
 <Tip>
   LocalAI CLI handles authentication to the Tool Repository automatically when
-  adding packages to your project. Just append `crewai` before any `uv` command
-  to use it. E.g. `crewai uv add requests`. For more information, see [Tool
-  Repository](https://docs.crewai.com/enterprise/features/tool-repository) docs.
+  adding packages to your project. Just append `localagents` before any `uv` command
+  to use it. E.g. `localagents uv add requests`. For more information, see [Tool
+  Repository](https://docs.localagents.com/enterprise/features/tool-repository) docs.
 </Tip>
 
 <Note>
-  Configuration settings are stored in `~/.config/crewai/settings.json`. Some
+  Configuration settings are stored in `~/.config/localagents/settings.json`. Some
   settings like organization name and UUID are read-only and managed through
   authentication and organization commands. Tool repository related settings are
   hidden and cannot be set directly by users.

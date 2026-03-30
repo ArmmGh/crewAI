@@ -13,10 +13,10 @@ mode: "wide"
 
 ## 설치
 
-이 도구는 `crewai-tools` 외에 별도의 특별한 설치가 필요하지 않습니다.
+이 도구는 `localagents-tools` 외에 별도의 특별한 설치가 필요하지 않습니다.
 
 ```shell
-uv add crewai-tools
+uv add localagents-tools
 ```
 
 API 키가 필요하지 않습니다. 이 도구는 공개 arXiv Atom API를 사용합니다.
@@ -30,8 +30,8 @@ API 키가 필요하지 않습니다. 이 도구는 공개 arXiv Atom API를 사
 ## 예시
 
 ```python Code
-from crewai import Agent, Task, Crew
-from crewai_tools import ArxivPaperTool
+from localagents import Agent, Task, Crew
+from localagents_tools import ArxivPaperTool
 
 tool = ArxivPaperTool(
     download_pdfs=False,
@@ -60,7 +60,7 @@ result = crew.kickoff()
 ### 직접 사용 (Agent 없이)
 
 ```python Code
-from crewai_tools import ArxivPaperTool
+from localagents_tools import ArxivPaperTool
 
 tool = ArxivPaperTool(
     download_pdfs=True,

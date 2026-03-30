@@ -1,6 +1,6 @@
 ---
 title: "MCP Servers as Tools in LocalAI"
-description: "Learn how to integrate MCP servers as tools in your LocalAI agents using the `crewai-tools` library."
+description: "Learn how to integrate MCP servers as tools in your LocalAI agents using the `localagents-tools` library."
 icon: plug
 mode: "wide"
 ---
@@ -20,7 +20,7 @@ Use the `mcps` field directly on agents for seamless MCP tool integration. The D
 Perfect for remote HTTPS servers and connected MCP integrations from the LocalAI catalog:
 
 ```python
-from crewai import Agent
+from localagents import Agent
 
 agent = Agent(
     role="Research Analyst",
@@ -41,9 +41,9 @@ agent = Agent(
 For complete control over connection settings, tool filtering, and all transport types:
 
 ```python
-from crewai import Agent
-from crewai.mcp import MCPServerStdio, MCPServerHTTP, MCPServerSSE
-from crewai.mcp.filters import create_static_tool_filter
+from localagents import Agent
+from localagents.mcp import MCPServerStdio, MCPServerHTTP, MCPServerSSE
+from localagents.mcp.filters import create_static_tool_filter
 
 agent = Agent(
     role="Advanced Research Analyst",
@@ -78,7 +78,7 @@ agent = Agent(
 
 ### 🔧 **Advanced: MCPServerAdapter** (For Complex Scenarios)
 
-For advanced use cases requiring manual connection management, the `crewai-tools` library provides the `MCPServerAdapter` class.
+For advanced use cases requiring manual connection management, the `localagents-tools` library provides the `MCPServerAdapter` class.
 
 We currently support the following transport mechanisms:
 
@@ -108,7 +108,7 @@ LocalAI MCP integration requires the `mcp` library:
 uv add mcp
 
 # For Advanced MCPServerAdapter usage
-uv pip install 'crewai-tools[mcp]'
+uv pip install 'localagents-tools[mcp]'
 ```
 
 ## Quick Start: Simple DSL Integration
@@ -118,7 +118,7 @@ The easiest way to integrate MCP servers is using the `mcps` field on your agent
 ### Quick Start with String References
 
 ```python
-from crewai import Agent, Task, Crew
+from localagents import Agent, Task, Crew
 
 # Create agent with MCP tools using string references
 research_agent = Agent(
@@ -146,8 +146,8 @@ result = crew.kickoff()
 ### Quick Start with Structured Configurations
 
 ```python
-from crewai import Agent, Task, Crew
-from crewai.mcp import MCPServerStdio, MCPServerHTTP, MCPServerSSE
+from localagents import Agent, Task, Crew
+from localagents.mcp import MCPServerStdio, MCPServerHTTP, MCPServerSSE
 
 # Create agent with structured MCP configurations
 research_agent = Agent(
@@ -230,8 +230,8 @@ mcps=[
 Perfect for local MCP servers that run as processes:
 
 ```python
-from crewai.mcp import MCPServerStdio
-from crewai.mcp.filters import create_static_tool_filter
+from localagents.mcp import MCPServerStdio
+from localagents.mcp.filters import create_static_tool_filter
 
 mcps=[
     MCPServerStdio(
@@ -257,7 +257,7 @@ mcps=[
 For remote MCP servers over HTTP/HTTPS:
 
 ```python
-from crewai.mcp import MCPServerHTTP
+from localagents.mcp import MCPServerHTTP
 
 mcps=[
     # Streamable HTTP (default)
@@ -281,7 +281,7 @@ mcps=[
 For remote servers using Server-Sent Events:
 
 ```python
-from crewai.mcp import MCPServerSSE
+from localagents.mcp import MCPServerSSE
 
 mcps=[
     MCPServerSSE(
@@ -297,7 +297,7 @@ mcps=[
 You can combine string references and structured configurations:
 
 ```python
-from crewai.mcp import MCPServerStdio, MCPServerHTTP
+from localagents.mcp import MCPServerStdio, MCPServerHTTP
 
 mcps=[
     # String references
@@ -321,8 +321,8 @@ mcps=[
 Structured configurations support advanced tool filtering:
 
 ```python
-from crewai.mcp import MCPServerStdio
-from crewai.mcp.filters import create_static_tool_filter, create_dynamic_tool_filter, ToolFilterContext
+from localagents.mcp import MCPServerStdio
+from localagents.mcp.filters import create_static_tool_filter, create_dynamic_tool_filter, ToolFilterContext
 
 # Static filtering (allow/block lists)
 static_filter = create_static_tool_filter(
@@ -401,8 +401,8 @@ All transport types support:
 The MCP DSL integration is designed to be resilient and handles failures gracefully:
 
 ```python
-from crewai import Agent
-from crewai.mcp import MCPServerStdio, MCPServerHTTP
+from localagents import Agent
+from localagents.mcp import MCPServerStdio, MCPServerHTTP
 
 agent = Agent(
     role="Resilient Agent",
@@ -436,7 +436,7 @@ All connection errors are handled gracefully:
 
 ## Advanced: MCPServerAdapter
 
-For complex scenarios requiring manual connection management, use the `MCPServerAdapter` class from `crewai-tools`. Using a Python context manager (`with` statement) is the recommended approach as it automatically handles starting and stopping the connection to the MCP server.
+For complex scenarios requiring manual connection management, use the `MCPServerAdapter` class from `localagents-tools`. Using a Python context manager (`with` statement) is the recommended approach as it automatically handles starting and stopping the connection to the MCP server.
 
 ## Connection Configuration
 
@@ -452,8 +452,8 @@ with MCPServerAdapter(server_params, connect_timeout=60) as tools:
 ```
 
 ```python
-from crewai import Agent
-from crewai_tools import MCPServerAdapter
+from localagents import Agent
+from localagents_tools import MCPServerAdapter
 from mcp import StdioServerParameters # For Stdio Server
 
 # Example server_params (choose one based on your server type):
@@ -694,7 +694,7 @@ Checkout this repository for full demos and examples of MCP integration with Loc
 <Card
   title="GitHub Repository"
   icon="github"
-  href="https://github.com/tonykipkemboi/crewai-mcp-demo"
+  href="https://github.com/tonykipkemboi/localagents-mcp-demo"
   target="_blank"
 >
   LocalAI MCP Demo

@@ -11,10 +11,10 @@ mode: "wide"
 
 ## التثبيت
 
-لتثبيت حزمة `crewai_tools` واستخدام MySQLSearchTool، نفّذ الأمر التالي في الطرفية:
+لتثبيت حزمة `localagents_tools` واستخدام MySQLSearchTool، نفّذ الأمر التالي في الطرفية:
 
 ```shell
-pip install 'crewai[tools]'
+pip install 'localagents[tools]'
 ```
 
 ## مثال
@@ -22,7 +22,7 @@ pip install 'crewai[tools]'
 فيما يلي مثال يوضح كيفية استخدام MySQLSearchTool لإجراء بحث دلالي على جدول داخل قاعدة بيانات MySQL:
 
 ```python Code
-from crewai_tools import MySQLSearchTool
+from localagents_tools import MySQLSearchTool
 
 # Initialize the tool with the database URI and the target table name
 tool = MySQLSearchTool(

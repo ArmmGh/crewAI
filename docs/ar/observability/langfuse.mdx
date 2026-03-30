@@ -20,7 +20,7 @@ mode: "wide"
 ### الخطوة 1: تثبيت الاعتماديات
 
 ```python
-%pip install langfuse openlit crewai crewai_tools
+%pip install langfuse openlit localagents localagents_tools
 ```
 
 ### الخطوة 2: إعداد متغيرات البيئة
@@ -70,9 +70,9 @@ openlit.init()
 سننشئ تطبيق LocalAI بسيط حيث يتعاون عدة وكلاء للإجابة على سؤال المستخدم.
 
 ```python
-from crewai import Agent, Task, Crew
+from localagents import Agent, Task, Crew
 
-from crewai_tools import (
+from localagents_tools import (
     WebsiteSearchTool
 )
 
@@ -100,7 +100,7 @@ crew = Crew(
 
 بعد تشغيل الوكيل، يمكنك عرض التتبعات المولدة من تطبيق LocalAI في [Langfuse](https://cloud.langfuse.com). سترى خطوات مفصلة لتفاعلات LLM، مما يساعدك في التصحيح والتحسين.
 
-![مثال تتبع LocalAI في Langfuse](https://langfuse.com/images/cookbook/integration_crewai/crewai-example-trace.png)
+![مثال تتبع LocalAI في Langfuse](https://langfuse.com/images/cookbook/integration_localagents/localagents-example-trace.png)
 
 _[مثال تتبع عام في Langfuse](https://cloud.langfuse.com/project/cloramnkj0002jz088vzn1ja4/traces/e2cf380ffc8d47d28da98f136140642b?timestamp=2025-02-05T15%3A12%3A02.717Z&observation=3b32338ee6a5d9af)_
 

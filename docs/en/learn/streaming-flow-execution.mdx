@@ -18,8 +18,8 @@ When streaming is enabled on a Flow, LocalAI captures and streams output from an
 To enable streaming, set the `stream` attribute to `True` on your Flow class:
 
 ```python Code
-from crewai.flow.flow import Flow, listen, start
-from crewai import Agent, Crew, Task
+from localagents.flow.flow import Flow, listen, start
+from localagents import Agent, Crew, Task
 
 class ResearchFlow(Flow):
     stream = True  # Enable streaming for the entire flow
@@ -130,8 +130,8 @@ asyncio.run(stream_flow())
 Streaming works seamlessly across multiple flow steps, including flows that execute multiple crews:
 
 ```python Code
-from crewai.flow.flow import Flow, listen, start
-from crewai import Agent, Crew, Task
+from localagents.flow.flow import Flow, listen, start
+from localagents import Agent, Crew, Task
 
 class MultiStepFlow(Flow):
     stream = True
@@ -199,9 +199,9 @@ Here's a complete example showing how to build a progress dashboard with streami
 
 ```python Code
 import asyncio
-from crewai.flow.flow import Flow, listen, start
-from crewai import Agent, Crew, Task
-from crewai.types.streaming import StreamChunkType
+from localagents.flow.flow import Flow, listen, start
+from localagents import Agent, Crew, Task
+from localagents.types.streaming import StreamChunkType
 
 class ResearchPipeline(Flow):
     stream = True

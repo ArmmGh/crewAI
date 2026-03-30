@@ -40,10 +40,10 @@ mode: "wide"
 
 ### ربط حسابك
 
-1. انتقل إلى <Link href="https://app.crewai.com/crewai_plus/connectors">Integrations</Link>
+1. انتقل إلى <Link href="https://app.localagents.com/localagents_plus/connectors">Integrations</Link>
 2. انقر على <b>Connect</b> في الخدمة المطلوبة
 3. أكمل تدفق OAuth وامنح النطاقات
-4. انسخ رمز Enterprise من <Link href="https://app.crewai.com/crewai_plus/settings/integrations">Integration Settings</Link>
+4. انسخ رمز Enterprise من <Link href="https://app.localagents.com/localagents_plus/settings/integrations">Integration Settings</Link>
 
 {" "}
 <Frame>
@@ -52,10 +52,10 @@ mode: "wide"
 
 ### تثبيت أدوات التكامل
 
-لاستخدام التكاملات محلياً، تحتاج إلى تثبيت أحدث حزمة `crewai-tools`.
+لاستخدام التكاملات محلياً، تحتاج إلى تثبيت أحدث حزمة `localagents-tools`.
 
 ```bash
-uv add crewai-tools
+uv add localagents-tools
 ```
 
 ### إعداد متغيرات البيئة
@@ -63,17 +63,17 @@ uv add crewai-tools
 {" "}
 <Note>
   لاستخدام التكاملات مع `Agent(apps=[])` يجب تعيين متغير البيئة
-  `CREWAI_PLATFORM_INTEGRATION_TOKEN` برمز Enterprise الخاص بك.
+  `LOCALAGENTS_PLATFORM_INTEGRATION_TOKEN` برمز Enterprise الخاص بك.
 </Note>
 
 ```bash
-export CREWAI_PLATFORM_INTEGRATION_TOKEN="your_enterprise_token"
+export LOCALAGENTS_PLATFORM_INTEGRATION_TOKEN="your_enterprise_token"
 ```
 
 أو أضفه إلى ملف `.env`:
 
 ```
-CREWAI_PLATFORM_INTEGRATION_TOKEN=your_enterprise_token
+LOCALAGENTS_PLATFORM_INTEGRATION_TOKEN=your_enterprise_token
 ```
 
 ### مثال على الاستخدام
@@ -85,7 +85,7 @@ CREWAI_PLATFORM_INTEGRATION_TOKEN=your_enterprise_token
 </Tip>
 
 ```python
-from crewai import Agent, Task, Crew
+from localagents import Agent, Task, Crew
 
 # Create an agent with Gmail capabilities
 email_agent = Agent(
@@ -115,7 +115,7 @@ crew.kickoff()
 ### تصفية الأدوات
 
 ```python
-from crewai import Agent, Task, Crew
+from localagents import Agent, Task, Crew
 
 # Create agent with specific Gmail actions only
 gmail_agent = Agent(
@@ -204,7 +204,7 @@ crew = Crew(
 {" "}
 <Tip>
   قبل تشغيل الأوامر أدناه، تأكد من تسجيل الدخول إلى حساب LocalAI AMP
-  بتشغيل هذا الأمر: ```bash crewai login ```
+  بتشغيل هذا الأمر: ```bash localagents login ```
 </Tip>
 
 {" "}
@@ -215,14 +215,14 @@ crew = Crew(
 {" "}
 <Steps>
   <Step title="الإنشاء">
-    أنشئ أداة جديدة محلياً. ```bash crewai tool create your-tool ```
+    أنشئ أداة جديدة محلياً. ```bash localagents tool create your-tool ```
   </Step>
   <Step title="النشر">
-    انشر الأداة في مستودع أدوات LocalAI AMP. ```bash crewai tool
+    انشر الأداة في مستودع أدوات LocalAI AMP. ```bash localagents tool
     publish ```
   </Step>
   <Step title="التثبيت">
-    ثبّت الأداة من مستودع أدوات LocalAI AMP. ```bash crewai tool
+    ثبّت الأداة من مستودع أدوات LocalAI AMP. ```bash localagents tool
     install your-tool ```
   </Step>
 </Steps>

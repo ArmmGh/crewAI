@@ -17,13 +17,13 @@ mode: "wide"
 
 ## التثبيت
 
-لاستخدام GithubSearchTool، تأكد أولاً من تثبيت حزمة crewai_tools في بيئة Python الخاصة بك:
+لاستخدام GithubSearchTool، تأكد أولاً من تثبيت حزمة localagents_tools في بيئة Python الخاصة بك:
 
 ```shell
-pip install 'crewai[tools]'
+pip install 'localagents[tools]'
 ```
 
-يثبّت هذا الأمر الحزمة اللازمة لتشغيل GithubSearchTool مع أي أدوات أخرى مضمنة في حزمة crewai_tools.
+يثبّت هذا الأمر الحزمة اللازمة لتشغيل GithubSearchTool مع أي أدوات أخرى مضمنة في حزمة localagents_tools.
 
 احصل على رمز وصول شخصي من GitHub على https://github.com/settings/tokens (إعدادات المطور ← الرموز الدقيقة أو الرموز الكلاسيكية).
 
@@ -32,7 +32,7 @@ pip install 'crewai[tools]'
 إليك كيفية استخدام GithubSearchTool لإجراء عمليات بحث دلالية داخل مستودع GitHub:
 
 ```python Code
-from crewai_tools import GithubSearchTool
+from localagents_tools import GithubSearchTool
 
 # Initialize the tool for semantic searches within a specific GitHub repository
 tool = GithubSearchTool(

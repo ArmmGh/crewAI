@@ -84,7 +84,7 @@ def wrong_approach(context: ToolCallHookContext) -> None:
 تسجيل خطافات تنطبق على جميع استدعاءات الأدوات عبر جميع الأطقم:
 
 ```python
-from crewai.hooks import register_before_tool_call_hook, register_after_tool_call_hook
+from localagents.hooks import register_before_tool_call_hook, register_after_tool_call_hook
 
 def log_tool_call(context):
     print(f"Tool: {context.tool_name}")
@@ -99,7 +99,7 @@ register_before_tool_call_hook(log_tool_call)
 استخدم المزخرفات لصياغة أنظف:
 
 ```python
-from crewai.hooks import before_tool_call, after_tool_call
+from localagents.hooks import before_tool_call, after_tool_call
 
 @before_tool_call
 def block_dangerous_tools(context):
@@ -370,7 +370,7 @@ def debug_tool_result(context: ToolCallHookContext) -> None:
 ### إلغاء تسجيل الخطافات
 
 ```python
-from crewai.hooks import (
+from localagents.hooks import (
     unregister_before_tool_call_hook,
     unregister_after_tool_call_hook
 )
@@ -386,7 +386,7 @@ print(f"Unregistered: {success}")
 ### مسح الخطافات
 
 ```python
-from crewai.hooks import (
+from localagents.hooks import (
     clear_before_tool_call_hooks,
     clear_after_tool_call_hooks,
     clear_all_tool_call_hooks
@@ -402,7 +402,7 @@ print(f"Cleared {before_count} before and {after_count} after hooks")
 ### عرض الخطافات المسجلة
 
 ```python
-from crewai.hooks import (
+from localagents.hooks import (
     get_before_tool_call_hooks,
     get_after_tool_call_hooks
 )
@@ -442,7 +442,7 @@ def safe_validation(context: ToolCallHookContext) -> bool | None:
 ## أمان الأنواع
 
 ```python
-from crewai.hooks import ToolCallHookContext, BeforeToolCallHookType, AfterToolCallHookType
+from localagents.hooks import ToolCallHookContext, BeforeToolCallHookType, AfterToolCallHookType
 
 def my_before_hook(context: ToolCallHookContext) -> bool | None:
     return None

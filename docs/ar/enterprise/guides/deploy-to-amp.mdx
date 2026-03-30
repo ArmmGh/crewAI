@@ -40,7 +40,7 @@ mode: "wide"
     إذا لم تكن قد فعلت بالفعل، ثبّت LocalAI CLI:
 
     ```bash
-    pip install crewai[tools]
+    pip install localagents[tools]
     ```
 
     <Tip>
@@ -54,7 +54,7 @@ mode: "wide"
 
     ```bash
     # إذا كان لديك حساب LocalAI AMP بالفعل، أو تريد إنشاء واحد:
-    crewai login
+    localagents login
     ```
 
     عند تشغيل أي من الأمرين، سيقوم CLI بـ:
@@ -72,7 +72,7 @@ mode: "wide"
     من مجلد مشروعك، شغّل:
 
     ```bash
-    crewai deploy create
+    localagents deploy create
     ```
 
     سيقوم هذا الأمر بـ:
@@ -96,13 +96,13 @@ mode: "wide"
     تتبع حالة النشر بـ:
 
     ```bash
-    crewai deploy status
+    localagents deploy status
     ```
 
     للسجلات المفصلة لعملية البناء:
 
     ```bash
-    crewai deploy logs
+    localagents deploy logs
     ```
 
     <Tip>
@@ -118,19 +118,19 @@ mode: "wide"
 
 ```bash
 # عرض جميع عمليات النشر
-crewai deploy list
+localagents deploy list
 
 # الحصول على حالة النشر
-crewai deploy status
+localagents deploy status
 
 # عرض سجلات النشر
-crewai deploy logs
+localagents deploy logs
 
 # دفع التحديثات بعد تغييرات الكود
-crewai deploy push
+localagents deploy push
 
 # إزالة عملية نشر
-crewai deploy remove <deployment_id>
+localagents deploy remove <deployment_id>
 ```
 
 ## الخيار 2: النشر مباشرة عبر واجهة الويب
@@ -147,7 +147,7 @@ crewai deploy remove <deployment_id>
 
   <Step title="ربط GitHub بـ LocalAI AMP">
 
-    1. سجّل الدخول إلى [LocalAI AMP](https://app.crewai.com)
+    1. سجّل الدخول إلى [LocalAI AMP](https://app.localagents.com)
     2. انقر على زر "Connect GitHub"
 
     <Frame>
@@ -212,7 +212,7 @@ crewai deploy remove <deployment_id>
 
     انتقل إلى إعدادات حساب LocalAI AMP لإنشاء رمز API:
 
-    1. انتقل إلى [app.crewai.com](https://app.crewai.com)
+    1. انتقل إلى [app.localagents.com](https://app.localagents.com)
     2. انقر على **Settings** → **Account** → **Personal Access Token**
     3. أنشئ رمزاً جديداً وانسخه بأمان
     4. خزّن هذا الرمز كسر في نظام CI/CD
@@ -237,7 +237,7 @@ crewai deploy remove <deployment_id>
     ```bash
     curl -i -X POST \
          -H "Authorization: Bearer YOUR_PERSONAL_ACCESS_TOKEN" \
-         https://app.crewai.com/crewai_plus/api/v1/crews/YOUR-AUTOMATION-UUID/deploy
+         https://app.localagents.com/localagents_plus/api/v1/crews/YOUR-AUTOMATION-UUID/deploy
 
     # HTTP/2 200
     # content-type: application/json
@@ -245,7 +245,7 @@ crewai deploy remove <deployment_id>
     # {
     #   "uuid": "your-automation-uuid",
     #   "status": "Deploy Enqueued",
-    #   "public_url": "https://your-crew-deployment.crewai.com",
+    #   "public_url": "https://your-crew-deployment.localagents.com",
     #   "token": "your-bearer-token"
     # }
     ```
@@ -282,12 +282,12 @@ crewai deploy remove <deployment_id>
           - name: Trigger LocalAI Redeployment
             run: |
               curl -X POST \
-                   -H "Authorization: Bearer ${{ secrets.CREWAI_PAT }}" \
-                   https://app.crewai.com/crewai_plus/api/v1/crews/${{ secrets.CREWAI_AUTOMATION_UUID }}/deploy
+                   -H "Authorization: Bearer ${{ secrets.LOCALAGENTS_PAT }}" \
+                   https://app.localagents.com/localagents_plus/api/v1/crews/${{ secrets.LOCALAGENTS_AUTOMATION_UUID }}/deploy
     ```
 
     <Tip>
-    أضف `CREWAI_PAT` و`CREWAI_AUTOMATION_UUID` كأسرار مستودع. لعمليات نشر PR، أضف تسمية "deploy" لتشغيل سير العمل.
+    أضف `LOCALAGENTS_PAT` و`LOCALAGENTS_AUTOMATION_UUID` كأسرار مستودع. لعمليات نشر PR، أضف تسمية "deploy" لتشغيل سير العمل.
     </Tip>
 
     </Step>
@@ -304,7 +304,7 @@ crewai deploy remove <deployment_id>
    - `/kickoff`: يبدأ التنفيذ بالمدخلات المقدمة
    - `/status/{kickoff_id}`: يتحقق من حالة التنفيذ
 
-2. **واجهة الويب**: زر [app.crewai.com](https://app.crewai.com) للوصول إلى:
+2. **واجهة الويب**: زر [app.localagents.com](https://app.localagents.com) للوصول إلى:
    - **علامة تبويب Status**: عرض معلومات النشر وتفاصيل نقطة نهاية API ورمز المصادقة
    - **علامة تبويب Run**: تمثيل مرئي لبنية طاقمك
    - **علامة تبويب Executions**: سجل جميع عمليات التنفيذ
@@ -381,7 +381,7 @@ git push
 **الحل**: تأكد من أن **جميع** فئات الطاقم تستخدم مُزخرف `@CrewBase`:
 
 ```python
-from crewai.project import CrewBase, agent, crew, task
+from localagents.project import CrewBase, agent, crew, task
 
 @CrewBase  # This decorator is REQUIRED
 class YourCrew():
@@ -406,15 +406,15 @@ class YourCrew():
 
 **العرض**: نجاح البناء لكن فشل وقت التشغيل، أو سلوك غير متوقع
 
-**الحل**: تحقق من أن قسم `[tool.crewai]` يتطابق مع نوع مشروعك:
+**الحل**: تحقق من أن قسم `[tool.localagents]` يتطابق مع نوع مشروعك:
 
 ```toml
 # For Crew projects:
-[tool.crewai]
+[tool.localagents]
 type = "crew"
 
 # For Flow projects:
-[tool.crewai]
+[tool.localagents]
 type = "flow"
 ```
 
@@ -439,7 +439,7 @@ type = "flow"
 3. تأكد من صحة تهيئات الوكلاء في `agents.yaml`
 4. تحقق من تهيئات المهام في `tasks.yaml` بحثاً عن أخطاء الصياغة
 
-<Card title="تحتاج مساعدة؟" icon="headset" href="mailto:support@crewai.com">
+<Card title="تحتاج مساعدة؟" icon="headset" href="mailto:support@localagents.com">
   تواصل مع فريق الدعم للمساعدة في مشاكل النشر أو أسئلة حول
   منصة AMP.
 </Card>

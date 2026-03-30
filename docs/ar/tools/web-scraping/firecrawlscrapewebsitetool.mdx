@@ -14,10 +14,10 @@ mode: "wide"
 ## التثبيت
 
 - احصل على مفتاح API من [firecrawl.dev](https://firecrawl.dev) وعيّنه في متغيرات البيئة (`FIRECRAWL_API_KEY`).
-- ثبّت [Firecrawl SDK](https://github.com/mendableai/firecrawl) مع حزمة `crewai[tools]`:
+- ثبّت [Firecrawl SDK](https://github.com/mendableai/firecrawl) مع حزمة `localagents[tools]`:
 
 ```shell
-pip install firecrawl-py 'crewai[tools]'
+pip install firecrawl-py 'localagents[tools]'
 ```
 
 ## مثال
@@ -25,7 +25,7 @@ pip install firecrawl-py 'crewai[tools]'
 استخدم FirecrawlScrapeWebsiteTool كما يلي للسماح لوكيلك بتحميل المواقع:
 
 ```python Code
-from crewai_tools import FirecrawlScrapeWebsiteTool
+from localagents_tools import FirecrawlScrapeWebsiteTool
 
 tool = FirecrawlScrapeWebsiteTool(url='firecrawl.dev')
 ```

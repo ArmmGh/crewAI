@@ -53,8 +53,8 @@ pip install stagehand-py
 </Tip>
 
 ```python
-from crewai import Agent, Task, Crew
-from crewai_tools import StagehandTool
+from localagents import Agent, Task, Crew
+from localagents_tools import StagehandTool
 from stagehand.schemas import AvailableModel
 
 # Initialize the tool with your API keys using a context manager
@@ -93,8 +93,8 @@ with StagehandTool(
 #### 2. إدارة الموارد يدوياً
 
 ```python
-from crewai import Agent, Task, Crew
-from crewai_tools import StagehandTool
+from localagents import Agent, Task, Crew
+from localagents_tools import StagehandTool
 from stagehand.schemas import AvailableModel
 
 # Initialize the tool with your API keys

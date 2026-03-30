@@ -36,12 +36,12 @@ from calendar_event_crew import GoogleCalendarEventTrigger
 
 crew = GoogleCalendarEventTrigger().crew()
 result = crew.kickoff({
-    "crewai_trigger_payload": calendar_payload,
+    "localagents_trigger_payload": calendar_payload,
 })
 print(result.raw)
 ```
 
-استخدم `crewai_trigger_payload` تماماً كما يتم تسليمه من المشغل حتى يتمكن الطاقم من استخراج الحقول المناسبة.
+استخدم `localagents_trigger_payload` تماماً كما يتم تسليمه من المشغل حتى يتمكن الطاقم من استخراج الحقول المناسبة.
 
 ## الاختبار المحلي
 
@@ -49,16 +49,16 @@ print(result.raw)
 
 ```bash
 # عرض جميع المشغلات المتاحة
-crewai triggers list
+localagents triggers list
 
 # محاكاة مشغل Google Calendar بحمولة واقعية
-crewai triggers run google_calendar/event_changed
+localagents triggers run google_calendar/event_changed
 ```
 
-سينفذ أمر `crewai triggers run` طاقمك بحمولة Calendar كاملة، مما يتيح لك اختبار منطق التحليل قبل النشر.
+سينفذ أمر `localagents triggers run` طاقمك بحمولة Calendar كاملة، مما يتيح لك اختبار منطق التحليل قبل النشر.
 
 <Warning>
-  استخدم `crewai triggers run google_calendar/event_changed` (وليس `crewai run`) لمحاكاة
+  استخدم `localagents triggers run google_calendar/event_changed` (وليس `localagents run`) لمحاكاة
   تنفيذ المشغل أثناء التطوير. بعد النشر، سيتلقى طاقمك
   حمولة المشغل تلقائياً.
 </Warning>
@@ -77,7 +77,7 @@ crewai triggers run google_calendar/event_changed
 ## استكشاف الأخطاء وإصلاحها
 
 - تأكد من ربط حساب Google الصحيح وتفعيل المشغل
-- اختبر محلياً بـ `crewai triggers run google_calendar/event_changed` لرؤية هيكل الحمولة بالضبط
+- اختبر محلياً بـ `localagents triggers run google_calendar/event_changed` لرؤية هيكل الحمولة بالضبط
 - تأكد من أن سير عملك يتعامل مع أحداث اليوم الكامل (الحمولات تستخدم `start.date` و`end.date` بدلاً من الطوابع الزمنية)
 - تحقق من سجلات التنفيذ إذا كانت التذكيرات أو مصفوفات الحاضرين مفقودة — قد تحد صلاحيات التقويم من الحقول في الحمولة
-- تذكر: استخدم `crewai triggers run` (وليس `crewai run`) لمحاكاة تنفيذ المشغل
+- تذكر: استخدم `localagents triggers run` (وليس `localagents run`) لمحاكاة تنفيذ المشغل

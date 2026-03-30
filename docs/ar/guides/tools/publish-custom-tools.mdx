@@ -21,10 +21,10 @@ mode: "wide"
 
 ### الخيار 1: وراثة `BaseTool`
 
-ورث من `crewai.tools.BaseTool` وطبّق طريقة `_run`. عرّف `name` و`description` واختياريًا `args_schema` للتحقق من المدخلات.
+ورث من `localagents.tools.BaseTool` وطبّق طريقة `_run`. عرّف `name` و`description` واختياريًا `args_schema` للتحقق من المدخلات.
 
 ```python
-from crewai.tools import BaseTool
+from localagents.tools import BaseTool
 from pydantic import BaseModel, Field
 
 
@@ -47,7 +47,7 @@ class GeolocateTool(BaseTool):
 للأدوات الأبسط، يحوّل مزخرف `@tool` دالة إلى أداة LocalAI. يجب أن تحتوي الدالة على سلسلة توثيق (تُستخدم كوصف الأداة) وتعليقات أنواع.
 
 ```python
-from crewai.tools import tool
+from localagents.tools import tool
 
 
 @tool("Geolocate")
@@ -69,12 +69,12 @@ def geolocate(address: str) -> str:
 ## هيكل الحزمة
 
 ```
-crewai-geolocate/
+localagents-geolocate/
 ├── pyproject.toml
 ├── LICENSE
 ├── README.md
 └── src/
-    └── crewai_geolocate/
+    └── localagents_geolocate/
         ├── __init__.py
         └── tools.py
 ```
@@ -92,5 +92,5 @@ uv publish
 بعد النشر، يمكن للمستخدمين تثبيت أداتك بـ:
 
 ```bash
-uv add crewai-geolocate
+uv add localagents-geolocate
 ```

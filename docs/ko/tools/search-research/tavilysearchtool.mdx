@@ -12,7 +12,7 @@ mode: "wide"
 `TavilySearchTool`을 사용하려면 `tavily-python` 라이브러리를 설치해야 합니다:
 
 ```shell
-pip install 'crewai[tools]' tavily-python
+pip install 'localagents[tools]' tavily-python
 ```
 
 ## 환경 변수
@@ -31,8 +31,8 @@ https://app.tavily.com/에서 API 키를 발급받으세요(회원가입 후 키
 
 ```python
 import os
-from crewai import Agent, Task, Crew
-from crewai_tools import TavilySearchTool
+from localagents import Agent, Task, Crew
+from localagents_tools import TavilySearchTool
 
 # Ensure the TAVILY_API_KEY environment variable is set
 # os.environ["TAVILY_API_KEY"] = "YOUR_TAVILY_API_KEY"

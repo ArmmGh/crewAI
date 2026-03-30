@@ -9,14 +9,14 @@ mode: "wide"
 
 ## الوصف
 
-أداة `FileWriterTool` هي مكوّن من حزمة crewai_tools، مصممة لتبسيط عملية كتابة المحتوى في الملفات مع توافق عبر المنصات (Windows و Linux و macOS). تكون مفيدة بشكل خاص في سيناريوهات مثل توليد التقارير وحفظ السجلات وإنشاء ملفات التكوين والمزيد. تتعامل هذه الأداة مع اختلافات المسارات عبر أنظمة التشغيل، وتدعم ترميز UTF-8، وتنشئ المجلدات تلقائياً إذا لم تكن موجودة، مما يسهل تنظيم المخرجات بشكل موثوق عبر المنصات المختلفة.
+أداة `FileWriterTool` هي مكوّن من حزمة localagents_tools، مصممة لتبسيط عملية كتابة المحتوى في الملفات مع توافق عبر المنصات (Windows و Linux و macOS). تكون مفيدة بشكل خاص في سيناريوهات مثل توليد التقارير وحفظ السجلات وإنشاء ملفات التكوين والمزيد. تتعامل هذه الأداة مع اختلافات المسارات عبر أنظمة التشغيل، وتدعم ترميز UTF-8، وتنشئ المجلدات تلقائياً إذا لم تكن موجودة، مما يسهل تنظيم المخرجات بشكل موثوق عبر المنصات المختلفة.
 
 ## التثبيت
 
-قم بتثبيت حزمة crewai_tools لاستخدام `FileWriterTool` في مشاريعك:
+قم بتثبيت حزمة localagents_tools لاستخدام `FileWriterTool` في مشاريعك:
 
 ```shell
-pip install 'crewai[tools]'
+pip install 'localagents[tools]'
 ```
 
 ## مثال
@@ -24,7 +24,7 @@ pip install 'crewai[tools]'
 للبدء مع `FileWriterTool`:
 
 ```python Code
-from crewai_tools import FileWriterTool
+from localagents_tools import FileWriterTool
 
 # Initialize the tool
 file_writer_tool = FileWriterTool()

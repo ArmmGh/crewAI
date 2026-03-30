@@ -30,7 +30,7 @@ my-skill/
 name: my-skill
 description: 이 스킬이 무엇을 하고 언제 사용하는지에 대한 간단한 설명.
 license: Apache-2.0                    # 선택
-compatibility: crewai>=0.1.0          # 선택
+compatibility: localagents>=0.1.0          # 선택
 metadata:                              # 선택
   author: your-name
   version: "1.0"
@@ -59,7 +59,7 @@ allowed-tools: web-search file-read   # 선택, 공백으로 구분
 에이전트에 스킬 디렉터리 경로를 전달합니다:
 
 ```python
-from crewai import Agent
+from localagents import Agent
 
 agent = Agent(
     role="Researcher",
@@ -74,7 +74,7 @@ agent = Agent(
 크루의 스킬 경로는 모든 에이전트에 병합됩니다:
 
 ```python
-from crewai import Crew
+from localagents import Crew
 
 crew = Crew(
     agents=[agent],
@@ -89,7 +89,7 @@ crew = Crew(
 
 ```python
 from pathlib import Path
-from crewai.skills import discover_skills, activate_skill
+from localagents.skills import discover_skills, activate_skill
 
 skills = discover_skills(Path("./skills"))
 activated = [activate_skill(s) for s in skills]

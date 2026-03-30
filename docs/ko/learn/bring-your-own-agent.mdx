@@ -29,8 +29,8 @@ mode: "wide"
 
 1.  **`BaseAgentAdapter` 상속하기**:
     ```python
-    from crewai.agents.agent_adapters.base_agent_adapter import BaseAgentAdapter
-    from crewai.tools import BaseTool
+    from localagents.agents.agent_adapters.base_agent_adapter import BaseAgentAdapter
+    from localagents.tools import BaseTool
     from typing import List, Optional, Any, Dict
 
     class MyCustomAgentAdapter(BaseAgentAdapter):
@@ -90,8 +90,8 @@ mode: "wide"
 
 1.  **`BaseToolAdapter`를 상속하세요**:
     ```python
-    from crewai.agents.agent_adapters.base_tool_adapter import BaseToolAdapter
-    from crewai.tools import BaseTool
+    from localagents.agents.agent_adapters.base_tool_adapter import BaseToolAdapter
+    from localagents.tools import BaseTool
     from typing import List, Any
 
     class MyCustomToolAdapter(BaseToolAdapter):
@@ -199,10 +199,10 @@ mode: "wide"
 
 1.  **`BaseConverterAdapter` 상속**:
     ```python
-    from crewai.agents.agent_adapters.base_converter_adapter import BaseConverterAdapter
+    from localagents.agents.agent_adapters.base_converter_adapter import BaseConverterAdapter
     # Assuming you have your MyCustomAgentAdapter defined
     # from .my_custom_agent_adapter import MyCustomAgentAdapter
-    from crewai.task import Task
+    from localagents.task import Task
     from typing import Any
 
     class MyCustomConverterAdapter(BaseConverterAdapter):
@@ -326,15 +326,15 @@ import json
 import os
 from typing import List
 
-from crewai_tools import SerperDevTool
-from src.crewai import Agent, Crew, Task
+from localagents_tools import SerperDevTool
+from src.localagents import Agent, Crew, Task
 from langchain_openai import ChatOpenAI
 from pydantic import BaseModel
 
-from crewai.agents.agent_adapters.langgraph.langgraph_adapter import (
+from localagents.agents.agent_adapters.langgraph.langgraph_adapter import (
     LangGraphAgentAdapter,
 )
-from crewai.agents.agent_adapters.openai_agents.openai_adapter import OpenAIAgentAdapter
+from localagents.agents.agent_adapters.openai_agents.openai_adapter import OpenAIAgentAdapter
 
 # LocalAI Agent
 code_helper_agent = Agent(

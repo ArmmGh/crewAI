@@ -14,7 +14,7 @@ mode: "wide"
 لتفعيل الاستدلال لوكيل، ما عليك سوى تعيين `reasoning=True` عند إنشاء الوكيل:
 
 ```python
-from crewai import Agent
+from localagents import Agent
 
 agent = Agent(
     role="Data Analyst",
@@ -51,7 +51,7 @@ agent = Agent(
 إليك مثالًا كاملًا:
 
 ```python
-from crewai import Agent, Task, Crew
+from localagents import Agent, Task, Crew
 
 # إنشاء وكيل مع تفعيل الاستدلال
 analyst = Agent(
@@ -83,7 +83,7 @@ print(result)
 إليك كيفية التعامل مع الأخطاء المحتملة في الكود الخاص بك:
 
 ```python
-from crewai import Agent, Task
+from localagents import Agent, Task
 import logging
 
 # إعداد التسجيل لالتقاط أي أخطاء في الاستدلال

@@ -14,7 +14,7 @@ Agent reasoning is a feature that allows agents to reflect on a task and create 
 To enable reasoning for an agent, simply set `reasoning=True` when creating the agent:
 
 ```python
-from crewai import Agent
+from localagents import Agent
 
 agent = Agent(
     role="Data Analyst",
@@ -51,7 +51,7 @@ This process helps the agent break down complex tasks into manageable steps and 
 Here's a complete example:
 
 ```python
-from crewai import Agent, Task, Crew
+from localagents import Agent, Task, Crew
 
 # Create an agent with reasoning enabled
 analyst = Agent(
@@ -83,7 +83,7 @@ The reasoning process is designed to be robust, with error handling built in. If
 Here's how to handle potential errors in your code:
 
 ```python
-from crewai import Agent, Task
+from localagents import Agent, Task
 import logging
 
 # Set up logging to capture any reasoning errors

@@ -115,9 +115,9 @@ Para usar essa configuração YAML no seu código, crie uma classe de crew que h
 
 ```python Code
 # src/latest_ai_development/crew.py
-from crewai import Agent, Crew, Process
-from crewai.project import CrewBase, agent, crew
-from crewai_tools import SerperDevTool
+from localagents import Agent, Crew, Process
+from localagents.project import CrewBase, agent, crew
+from localagents_tools import SerperDevTool
 
 @CrewBase
 class LatestAiDevelopmentCrew():
@@ -151,8 +151,8 @@ class LatestAiDevelopmentCrew():
 Você pode criar agentes diretamente em código instanciando a classe `Agent`. Veja um exemplo abrangente mostrando todos os parâmetros disponíveis:
 
 ```python Code
-from crewai import Agent
-from crewai_tools import SerperDevTool
+from localagents import Agent
+from localagents_tools import SerperDevTool
 
 # Crie um agente com todos os parâmetros disponíveis
 agent = Agent(
@@ -344,14 +344,14 @@ multimodal_agent = Agent(
 
 Agentes podem ser equipados com diversas ferramentas para ampliar suas capacidades. O LocalAI suporta ferramentas do:
 
-- [LocalAI Toolkit](https://github.com/joaomdmoura/crewai-tools)
+- [LocalAI Toolkit](https://github.com/joaomdmoura/localagents-tools)
 - [LangChain Tools](https://python.langchain.com/docs/integrations/tools)
 
 Veja como adicionar ferramentas a um agente:
 
 ```python Code
-from crewai import Agent
-from crewai_tools import SerperDevTool, WikipediaTools
+from localagents import Agent
+from localagents_tools import SerperDevTool, WikipediaTools
 
 # Criar ferramentas
 search_tool = SerperDevTool()
@@ -371,7 +371,7 @@ researcher = Agent(
 Agentes podem manter a memória de suas interações e usar contexto de tarefas anteriores. Isto é especialmente útil para fluxos de trabalho complexos onde é necessário reter informações ao longo de várias tarefas.
 
 ```python Code
-from crewai import Agent
+from localagents import Agent
 
 analyst = Agent(
     role="Analista de Dados",
@@ -437,7 +437,7 @@ strict_agent = Agent(
 
 **O que acontece quando os limites de contexto são excedidos:**
 
-- ❌ **Mensagem de erro**: `"Context length exceeded. Consider using smaller text or RAG tools from crewai_tools."`
+- ❌ **Mensagem de erro**: `"Context length exceeded. Consider using smaller text or RAG tools from localagents_tools."`
 - 🛑 **Execução interrompida**: A execução da tarefa é parada imediatamente
 - 🔧 **Intervenção manual necessária**: Você precisará modificar sua abordagem
 
@@ -488,7 +488,7 @@ Ao lidar com conjuntos de dados muito grandes, considere as seguintes estratégi
 #### 1. Use Ferramentas RAG
 
 ```python Code
-from crewai_tools import RagTool
+from localagents_tools import RagTool
 
 # Crie uma ferramenta RAG para processamento de documentos grandes
 rag_tool = RagTool()
@@ -534,7 +534,7 @@ knowledge_agent = Agent(
 agent.respect_context_window = True
 
 # Solução melhor: Use ferramentas RAG para dados volumosos
-from crewai_tools import RagTool
+from localagents_tools import RagTool
 agent.tools = [RagTool()]
 
 # Alternativa: Divida as tarefas em partes menores

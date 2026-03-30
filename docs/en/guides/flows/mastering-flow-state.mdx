@@ -63,7 +63,7 @@ With unstructured state:
 Here's a simple example of unstructured state management:
 
 ```python
-from crewai.flow.flow import Flow, listen, start
+from localagents.flow.flow import Flow, listen, start
 
 class UnstructuredStateFlow(Flow):
     @start()
@@ -147,7 +147,7 @@ With structured state:
 Here's how to implement structured state management:
 
 ```python
-from crewai.flow.flow import Flow, listen, start
+from localagents.flow.flow import Flow, listen, start
 from pydantic import BaseModel, Field
 from typing import List, Dict, Optional
 
@@ -247,7 +247,7 @@ Regardless of whether you're using structured or unstructured state, you can upd
 Flow methods can return values that are then passed as arguments to listening methods:
 
 ```python
-from crewai.flow.flow import Flow, listen, start
+from localagents.flow.flow import Flow, listen, start
 
 class DataPassingFlow(Flow):
     @start()
@@ -287,8 +287,8 @@ The `@persist()` decorator automates state persistence, saving your flow's state
 When applied at the class level, `@persist()` saves state after every method execution:
 
 ```python
-from crewai.flow.flow import Flow, listen, start
-from crewai.flow.persistence import persist
+from localagents.flow.flow import Flow, listen, start
+from localagents.flow.persistence import persist
 from pydantic import BaseModel
 
 class CounterState(BaseModel):
@@ -324,8 +324,8 @@ print(f"Second run result: {result2}")  # Will be higher due to persisted state
 For more granular control, you can apply `@persist()` to specific methods:
 
 ```python
-from crewai.flow.flow import Flow, listen, start
-from crewai.flow.persistence import persist
+from localagents.flow.flow import Flow, listen, start
+from localagents.flow.persistence import persist
 
 class SelectivePersistFlow(Flow):
     @start()
@@ -354,7 +354,7 @@ class SelectivePersistFlow(Flow):
 Flows support conditional `@start()` and resumable execution for HITL/cyclic scenarios:
 
 ```python
-from crewai.flow.flow import Flow, start, listen, and_, or_
+from localagents.flow.flow import Flow, start, listen, and_, or_
 
 class ResumableFlow(Flow):
     @start()  # unconditional start
@@ -379,7 +379,7 @@ class ResumableFlow(Flow):
 You can use state to implement complex conditional logic in your flows:
 
 ```python
-from crewai.flow.flow import Flow, listen, router, start
+from localagents.flow.flow import Flow, listen, router, start
 from pydantic import BaseModel
 
 class PaymentState(BaseModel):
@@ -425,7 +425,7 @@ class PaymentFlow(Flow[PaymentState]):
 For complex state transformations, you can create dedicated methods:
 
 ```python
-from crewai.flow.flow import Flow, listen, start
+from localagents.flow.flow import Flow, listen, start
 from pydantic import BaseModel
 from typing import List, Dict
 
@@ -492,8 +492,8 @@ One of the most powerful patterns in LocalAI is combining flow state management 
 You can use flow state to parameterize crews:
 
 ```python
-from crewai.flow.flow import Flow, listen, start
-from crewai import Agent, Crew, Process, Task
+from localagents.flow.flow import Flow, listen, start
+from localagents import Agent, Crew, Process, Task
 from pydantic import BaseModel
 
 class ResearchState(BaseModel):

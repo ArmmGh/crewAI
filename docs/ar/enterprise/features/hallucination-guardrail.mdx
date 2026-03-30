@@ -23,8 +23,8 @@ mode: "wide"
 ### إعداد الحاجز
 
 ```python
-from crewai.tasks.hallucination_guardrail import HallucinationGuardrail
-from crewai import LLM
+from localagents.tasks.hallucination_guardrail import HallucinationGuardrail
+from localagents import LLM
 
 # الاستخدام الأساسي - سيستخدم expected_output للمهمة كسياق
 guardrail = HallucinationGuardrail(
@@ -41,7 +41,7 @@ context_guardrail = HallucinationGuardrail(
 ### الإضافة إلى المهام
 
 ```python
-from crewai import Task
+from localagents import Task
 
 # إنشاء مهمتك مع الحاجز
 task = Task(
@@ -246,6 +246,6 @@ else:
   - التحقق من تنسيق مخرجات المهمة قبل تقييم الحاجز
 </Accordion>
 
-<Card title="هل تحتاج مساعدة؟" icon="headset" href="mailto:support@crewai.com">
+<Card title="هل تحتاج مساعدة؟" icon="headset" href="mailto:support@localagents.com">
   تواصل مع فريق الدعم للمساعدة في تهيئة حاجز الهلوسة أو استكشاف الأخطاء وإصلاحها.
 </Card>

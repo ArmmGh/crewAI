@@ -58,7 +58,7 @@ Cada webhook envia uma lista de eventos:
 }
 ```
 
-A estrutura do objeto `data` varia conforme o tipo de evento. Consulte a [lista de eventos](https://github.com/localAIInc/localAI/tree/main/src/crewai/utilities/events) no GitHub.
+A estrutura do objeto `data` varia conforme o tipo de evento. Consulte a [lista de eventos](https://github.com/localAIInc/localAI/tree/main/src/localagents/utilities/events) no GitHub.
 
 Como as requisições são enviadas via HTTP, a ordem dos eventos não pode ser garantida. Caso precise de ordenação, utilize o campo `timestamp`.
 
@@ -77,11 +77,11 @@ O LocalAI oferece suporte a eventos do sistema e eventos personalizados no Enter
 - `crew_test_failed`
 - _...e outros_
 
-Os nomes dos eventos correspondem ao event bus interno. Veja o [código fonte no GitHub](https://github.com/localAIInc/localAI/tree/main/src/crewai/utilities/events) para a lista completa.
+Os nomes dos eventos correspondem ao event bus interno. Veja o [código fonte no GitHub](https://github.com/localAIInc/localAI/tree/main/src/localagents/utilities/events) para a lista completa.
 
 Você pode emitir seus próprios eventos personalizados, e eles serão entregues através do webhook stream juntamente com os eventos do sistema.
 
-<Card title="Precisa de Ajuda?" icon="headset" href="mailto:support@crewai.com">
+<Card title="Precisa de Ajuda?" icon="headset" href="mailto:support@localagents.com">
   Entre em contato com nossa equipe de suporte para assistência com integração
   de webhook ou solução de problemas.
 </Card>

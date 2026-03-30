@@ -19,10 +19,10 @@ Ao especificar um caminho de arquivo XML, o usuário pode direcionar sua busca d
 
 ## Instalação
 
-Para começar a usar o XMLSearchTool, é necessário instalar primeiro o pacote crewai_tools. Isso pode ser feito facilmente com o seguinte comando:
+Para começar a usar o XMLSearchTool, é necessário instalar primeiro o pacote localagents_tools. Isso pode ser feito facilmente com o seguinte comando:
 
 ```shell
-pip install 'crewai[tools]'
+pip install 'localagents[tools]'
 ```
 
 ## Exemplo
@@ -31,7 +31,7 @@ Aqui estão dois exemplos demonstrando como usar o XMLSearchTool.
 O primeiro exemplo mostra a busca dentro de um arquivo XML específico, enquanto o segundo exemplo ilustra como iniciar uma busca sem definir previamente um caminho XML, oferecendo flexibilidade no escopo da busca.
 
 ```python Code
-from crewai_tools import XMLSearchTool
+from localagents_tools import XMLSearchTool
 
 # Permite que agentes busquem no conteúdo de qualquer arquivo XML
 # conforme aprendem seus caminhos durante a execução

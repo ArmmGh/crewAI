@@ -24,8 +24,8 @@ mode: "wide"
 النهج الموصى به هو استخدام مدير سياق Python (تعليمة `with`)، الذي يتعامل مع إعداد الاتصال وإنهائه تلقائياً.
 
 ```python
-from crewai import Agent, Task, Crew, Process
-from crewai_tools import MCPServerAdapter
+from localagents import Agent, Task, Crew, Process
+from localagents_tools import MCPServerAdapter
 
 server_params = {
     "url": "http://localhost:8001/mcp", # Replace with your actual Streamable HTTP server URL
@@ -76,8 +76,8 @@ except Exception as e:
 </Info>
 
 ```python
-from crewai import Agent, Task, Crew, Process
-from crewai_tools import MCPServerAdapter
+from localagents import Agent, Task, Crew, Process
+from localagents_tools import MCPServerAdapter
 
 server_params = {
     "url": "http://localhost:8001/mcp", # Replace with your actual Streamable HTTP server URL

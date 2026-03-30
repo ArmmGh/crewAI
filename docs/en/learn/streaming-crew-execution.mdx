@@ -18,7 +18,7 @@ When streaming is enabled, LocalAI captures LLM responses and tool calls as they
 To enable streaming, set the `stream` parameter to `True` when creating your crew:
 
 ```python Code
-from crewai import Agent, Crew, Task
+from localagents import Agent, Crew, Task
 
 # Create your agents and tasks
 researcher = Agent(
@@ -255,8 +255,8 @@ Here's a complete example showing how to build an interactive application with s
 
 ```python Code
 import asyncio
-from crewai import Agent, Crew, Task
-from crewai.types.streaming import StreamChunkType
+from localagents import Agent, Crew, Task
+from localagents.types.streaming import StreamChunkType
 
 async def interactive_research():
     # Create crew with streaming enabled

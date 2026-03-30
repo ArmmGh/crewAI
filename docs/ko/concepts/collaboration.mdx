@@ -12,7 +12,7 @@ LocalAI에서의 협업은 에이전트들이 팀으로서 함께 작업하며, 
 ## 빠른 시작: 협업 활성화
 
 ```python
-from crewai import Agent, Crew, Task
+from localagents import Agent, Crew, Task
 
 # Enable collaboration for agents
 researcher = Agent(
@@ -64,7 +64,7 @@ crew = Crew(
 아래는 에이전트들이 콘텐츠 제작 작업에 협력하는 완성된 예시입니다:
 
 ```python
-from crewai import Agent, Crew, Task, Process
+from localagents import Agent, Crew, Task, Process
 
 # Create collaborative agents
 researcher = Agent(
@@ -164,7 +164,7 @@ collaborative_task = Task(
 복잡한 프로젝트의 경우, 매니저 에이전트를 활용하여 계층적 프로세스를 사용하세요:
 
 ```python
-from crewai import Agent, Crew, Task, Process
+from localagents import Agent, Crew, Task, Process
 
 # Manager agent coordinates the team
 manager = Agent(

@@ -20,7 +20,7 @@ LocalAI의 MCP DSL(Domain Specific Language) 통합은 에이전트를 MCP(Model
 `mcps` 필드를 사용하여 에이전트에 MCP 서버를 추가하세요:
 
 ```python
-from crewai import Agent
+from localagents import Agent
 
 agent = Agent(
     role="연구 보조원",
@@ -86,7 +86,7 @@ mcps=[
 다음은 여러 MCP 서버를 사용하는 완전한 예제입니다:
 
 ```python
-from crewai import Agent, Task, Crew, Process
+from localagents import Agent, Task, Crew, Process
 
 # 다중 MCP 소스를 가진 에이전트 생성
 multi_source_agent = Agent(

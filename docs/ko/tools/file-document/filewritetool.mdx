@@ -9,16 +9,16 @@ mode: "wide"
 
 ## 설명
 
-`FileWriterTool`은 crewai_tools 패키지의 구성 요소로, 다양한 운영 체제(Windows, Linux, macOS)에서 파일에 내용을 작성하는 과정을 간소화하도록 설계되었습니다.
+`FileWriterTool`은 localagents_tools 패키지의 구성 요소로, 다양한 운영 체제(Windows, Linux, macOS)에서 파일에 내용을 작성하는 과정을 간소화하도록 설계되었습니다.
 이 도구는 보고서 생성, 로그 저장, 설정 파일 작성 등과 같은 시나리오에서 특히 유용합니다.
 운영 체제마다 다른 경로 처리를 지원하며, UTF-8 인코딩을 지원하고, 디렉토리가 존재하지 않으면 자동으로 생성하여, 다양한 플랫폼에서 출력 결과를 안정적으로 정리할 수 있도록 도와줍니다.
 
 ## 설치
 
-프로젝트에서 `FileWriterTool`을 사용하려면 crewai_tools 패키지를 설치하세요:
+프로젝트에서 `FileWriterTool`을 사용하려면 localagents_tools 패키지를 설치하세요:
 
 ```shell
-pip install 'crewai[tools]'
+pip install 'localagents[tools]'
 ```
 
 ## 예시
@@ -26,7 +26,7 @@ pip install 'crewai[tools]'
 `FileWriterTool`을(를) 시작하려면:
 
 ```python Code
-from crewai_tools import FileWriterTool
+from localagents_tools import FileWriterTool
 
 # Initialize the tool
 file_writer_tool = FileWriterTool()

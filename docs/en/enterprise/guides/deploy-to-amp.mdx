@@ -40,7 +40,7 @@ The CLI automatically detects your project type from `pyproject.toml` and builds
     If you haven't already, install the LocalAI CLI:
 
     ```bash
-    pip install crewai[tools]
+    pip install localagents[tools]
     ```
 
     <Tip>
@@ -54,7 +54,7 @@ The CLI automatically detects your project type from `pyproject.toml` and builds
 
     ```bash
     # If you already have a LocalAI AMP account, or want to create one:
-    crewai login
+    localagents login
     ```
 
     When you run either command, the CLI will:
@@ -72,7 +72,7 @@ The CLI automatically detects your project type from `pyproject.toml` and builds
     From your project directory, run:
 
     ```bash
-    crewai deploy create
+    localagents deploy create
     ```
 
     This command will:
@@ -96,13 +96,13 @@ The CLI automatically detects your project type from `pyproject.toml` and builds
     Track the deployment status with:
 
     ```bash
-    crewai deploy status
+    localagents deploy status
     ```
 
     For detailed logs of the build process:
 
     ```bash
-    crewai deploy logs
+    localagents deploy logs
     ```
 
     <Tip>
@@ -118,19 +118,19 @@ The LocalAI CLI offers several commands to manage your deployments:
 
 ```bash
 # List all your deployments
-crewai deploy list
+localagents deploy list
 
 # Get the status of your deployment
-crewai deploy status
+localagents deploy status
 
 # View the logs of your deployment
-crewai deploy logs
+localagents deploy logs
 
 # Push updates after code changes
-crewai deploy push
+localagents deploy push
 
 # Remove a deployment
-crewai deploy remove <deployment_id>
+localagents deploy remove <deployment_id>
 ```
 
 ## Option 2: Deploy Directly via Web Interface
@@ -147,7 +147,7 @@ You need to push your crew to a GitHub repository. If you haven't created a crew
 
   <Step title="Connecting GitHub to LocalAI AMP">
 
-    1. Log in to [LocalAI AMP](https://app.crewai.com)
+    1. Log in to [LocalAI AMP](https://app.localagents.com)
     2. Click on the button "Connect GitHub"
 
     <Frame>
@@ -212,7 +212,7 @@ For automated deployments in CI/CD pipelines, you can use the LocalAI API to tri
 
     Navigate to your LocalAI AMP account settings to generate an API token:
 
-    1. Go to [app.crewai.com](https://app.crewai.com)
+    1. Go to [app.localagents.com](https://app.localagents.com)
     2. Click on **Settings** → **Account** → **Personal Access Token**
     3. Generate a new token and copy it securely
     4. Store this token as a secret in your CI/CD system
@@ -237,7 +237,7 @@ For automated deployments in CI/CD pipelines, you can use the LocalAI API to tri
     ```bash
     curl -i -X POST \
          -H "Authorization: Bearer YOUR_PERSONAL_ACCESS_TOKEN" \
-         https://app.crewai.com/crewai_plus/api/v1/crews/YOUR-AUTOMATION-UUID/deploy
+         https://app.localagents.com/localagents_plus/api/v1/crews/YOUR-AUTOMATION-UUID/deploy
 
     # HTTP/2 200
     # content-type: application/json
@@ -245,7 +245,7 @@ For automated deployments in CI/CD pipelines, you can use the LocalAI API to tri
     # {
     #   "uuid": "your-automation-uuid",
     #   "status": "Deploy Enqueued",
-    #   "public_url": "https://your-crew-deployment.crewai.com",
+    #   "public_url": "https://your-crew-deployment.localagents.com",
     #   "token": "your-bearer-token"
     # }
     ```
@@ -282,12 +282,12 @@ For automated deployments in CI/CD pipelines, you can use the LocalAI API to tri
           - name: Trigger LocalAI Redeployment
             run: |
               curl -X POST \
-                   -H "Authorization: Bearer ${{ secrets.CREWAI_PAT }}" \
-                   https://app.crewai.com/crewai_plus/api/v1/crews/${{ secrets.CREWAI_AUTOMATION_UUID }}/deploy
+                   -H "Authorization: Bearer ${{ secrets.LOCALAGENTS_PAT }}" \
+                   https://app.localagents.com/localagents_plus/api/v1/crews/${{ secrets.LOCALAGENTS_AUTOMATION_UUID }}/deploy
     ```
 
     <Tip>
-    Add `CREWAI_PAT` and `CREWAI_AUTOMATION_UUID` as repository secrets. For PR deployments, add a "deploy" label to trigger the workflow.
+    Add `LOCALAGENTS_PAT` and `LOCALAGENTS_AUTOMATION_UUID` as repository secrets. For PR deployments, add a "deploy" label to trigger the workflow.
     </Tip>
 
     </Step>
@@ -304,7 +304,7 @@ Once deployment is complete, you can access your crew through:
    - `/kickoff`: Initiates an execution with provided inputs
    - `/status/{kickoff_id}`: Checks the execution status
 
-2. **Web Interface**: Visit [app.crewai.com](https://app.crewai.com) to access:
+2. **Web Interface**: Visit [app.localagents.com](https://app.localagents.com) to access:
    - **Status tab**: View deployment information, API endpoint details, and authentication token
    - **Run tab**: Visual representation of your crew's structure
    - **Executions tab**: History of all executions
@@ -381,7 +381,7 @@ See [Prepare for Deployment](/en/enterprise/guides/prepare-for-deployment) for d
 **Solution**: Ensure **all** crew classes use the `@CrewBase` decorator:
 
 ```python
-from crewai.project import CrewBase, agent, crew, task
+from localagents.project import CrewBase, agent, crew, task
 
 @CrewBase  # This decorator is REQUIRED
 class YourCrew():
@@ -406,15 +406,15 @@ class YourCrew():
 
 **Symptom**: Build succeeds but runtime fails, or unexpected behavior
 
-**Solution**: Verify the `[tool.crewai]` section matches your project type:
+**Solution**: Verify the `[tool.localagents]` section matches your project type:
 
 ```toml
 # For Crew projects:
-[tool.crewai]
+[tool.localagents]
 type = "crew"
 
 # For Flow projects:
-[tool.crewai]
+[tool.localagents]
 type = "flow"
 ```
 
@@ -439,7 +439,7 @@ type = "flow"
 3. Ensure agent configurations in `agents.yaml` are valid
 4. Check task configurations in `tasks.yaml` for syntax errors
 
-<Card title="Need Help?" icon="headset" href="mailto:support@crewai.com">
+<Card title="Need Help?" icon="headset" href="mailto:support@localagents.com">
   Contact our support team for assistance with deployment issues or questions
   about the AMP platform.
 </Card>

@@ -15,7 +15,7 @@ Embora seja possível executar Crews ou Agentes individuais, envolvê-los em um 
 
 1.  **Gerenciamento de Estado**: Flows fornecem uma maneira integrada de gerenciar o estado em diferentes etapas da sua aplicação. Isso é crucial para passar dados entre Crews, manter o contexto e lidar com entradas do usuário.
 2.  **Controle**: Flows permitem definir caminhos de execução precisos, incluindo loops, condicionais e lógica de ramificação. Isso é essencial para lidar com casos extremos e garantir que sua aplicação se comporte de maneira previsível.
-3.  **Observabilidade**: Flows fornecem uma estrutura clara que facilita o rastreamento da execução, a depuração de problemas e o monitoramento do desempenho. Recomendamos o uso do [LocalAI Tracing](/pt-BR/observability/tracing) para insights detalhados. Basta executar `crewai login` para habilitar recursos de observabilidade gratuitos.
+3.  **Observabilidade**: Flows fornecem uma estrutura clara que facilita o rastreamento da execução, a depuração de problemas e o monitoramento do desempenho. Recomendamos o uso do [LocalAI Tracing](/pt-BR/observability/tracing) para insights detalhados. Basta executar `localagents login` para habilitar recursos de observabilidade gratuitos.
 
 ## A Arquitetura
 
@@ -39,7 +39,7 @@ graph TD
 Sua classe `Flow` é o ponto de entrada. Ela define o esquema de estado e os métodos que executam sua lógica.
 
 ```python
-from crewai.flow.flow import Flow, listen, start
+from localagents.flow.flow import Flow, listen, start
 from pydantic import BaseModel
 
 class AppState(BaseModel):
@@ -131,7 +131,7 @@ A maneira mais fácil de implantar seu Flow é usando o LocalAI Enterprise. Ele 
 Confira o [Guia de Implantação](/pt-BR/enterprise/guides/deploy-to-amp) para começar.
 
 ```bash
-crewai deploy create
+localagents deploy create
 ```
 
 ### Execução Assíncrona

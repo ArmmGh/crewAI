@@ -7,7 +7,7 @@ mode: "wide"
 
 ## Visão Geral
 
-O `MCPServerAdapter` em `crewai-tools` permite que você conecte-se a vários servidores MCP simultaneamente. Isso é útil quando seus agentes precisam acessar ferramentas distribuídas entre diferentes serviços ou ambientes. O adaptador agrega as ferramentas de todos os servidores especificados, tornando-as disponíveis para seus agentes LocalAI.
+O `MCPServerAdapter` em `localagents-tools` permite que você conecte-se a vários servidores MCP simultaneamente. Isso é útil quando seus agentes precisam acessar ferramentas distribuídas entre diferentes serviços ou ambientes. O adaptador agrega as ferramentas de todos os servidores especificados, tornando-as disponíveis para seus agentes LocalAI.
 
 ## Configuração
 
@@ -16,8 +16,8 @@ Para conectar-se a múltiplos servidores, você fornece uma lista de dicionário
 Os tipos de transporte suportados para cada servidor na lista incluem `stdio`, `sse` e `streamable-http`.
 
 ```python
-from crewai import Agent, Task, Crew, Process
-from crewai_tools import MCPServerAdapter
+from localagents import Agent, Task, Crew, Process
+from localagents_tools import MCPServerAdapter
 from mcp import StdioServerParameters # Needed for Stdio example
 
 # Define parameters for multiple MCP servers

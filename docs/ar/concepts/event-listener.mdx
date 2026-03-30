@@ -13,7 +13,7 @@ mode: "wide"
 
 يستخدم LocalAI بنية ناقل أحداث لإرسال الأحداث طوال دورة حياة التنفيذ. يُبنى نظام الأحداث على المكونات التالية:
 
-1. **CrewAIEventsBus**: ناقل أحداث فريد يدير تسجيل الأحداث وإرسالها
+1. **LocalAgentsEventsBus**: ناقل أحداث فريد يدير تسجيل الأحداث وإرسالها
 2. **BaseEvent**: الفئة الأساسية لجميع الأحداث في النظام
 3. **BaseEventListener**: فئة أساسية مجردة لإنشاء مستمعي أحداث مخصصين
 
@@ -46,28 +46,28 @@ mode: "wide"
 إليك مثالًا بسيطًا:
 
 ```python
-from crewai.events import (
+from localagents.events import (
     CrewKickoffStartedEvent,
     CrewKickoffCompletedEvent,
     AgentExecutionCompletedEvent,
 )
-from crewai.events import BaseEventListener
+from localagents.events import BaseEventListener
 
 class MyCustomListener(BaseEventListener):
     def __init__(self):
         super().__init__()
 
-    def setup_listeners(self, crewai_event_bus):
-        @crewai_event_bus.on(CrewKickoffStartedEvent)
+    def setup_listeners(self, localagents_event_bus):
+        @localagents_event_bus.on(CrewKickoffStartedEvent)
         def on_crew_started(source, event):
             print(f"Crew '{event.crew_name}' has started execution!")
 
-        @crewai_event_bus.on(CrewKickoffCompletedEvent)
+        @localagents_event_bus.on(CrewKickoffCompletedEvent)
         def on_crew_completed(source, event):
             print(f"Crew '{event.crew_name}' has completed execution!")
             print(f"Output: {event.output}")
 
-        @crewai_event_bus.on(AgentExecutionCompletedEvent)
+        @localagents_event_bus.on(AgentExecutionCompletedEvent)
         def on_agent_execution_completed(source, event):
             print(f"Agent '{event.agent.role}' completed task")
             print(f"Output: {event.output}")
@@ -79,7 +79,7 @@ class MyCustomListener(BaseEventListener):
 
 ```python
 # في ملف crew.py
-from crewai import Agent, Crew, Task
+from localagents import Agent, Crew, Task
 from my_listeners import MyCustomListener
 
 # إنشاء مثيل من المستمع
@@ -203,10 +203,10 @@ class MyCustomCrew:
 لمعالجة الأحداث المؤقتة، يمكنك استخدام مدير سياق `scoped_handlers`:
 
 ```python
-from crewai.events import crewai_event_bus, CrewKickoffStartedEvent
+from localagents.events import localagents_event_bus, CrewKickoffStartedEvent
 
-with crewai_event_bus.scoped_handlers():
-    @crewai_event_bus.on(CrewKickoffStartedEvent)
+with localagents_event_bus.scoped_handlers():
+    @localagents_event_bus.on(CrewKickoffStartedEvent)
     def temp_handler(source, event):
         print("This handler only exists within this context")
 

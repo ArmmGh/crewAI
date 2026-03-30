@@ -9,10 +9,10 @@ icon: file-image
 LocalAI는 네이티브 멀티모달 파일 입력을 지원하여 이미지, PDF, 오디오, 비디오, 텍스트 파일을 에이전트에 직접 전달할 수 있습니다. 파일은 각 LLM 프로바이더의 API 요구사항에 맞게 자동으로 포맷됩니다.
 
 <Note type="info" title="선택적 의존성">
-파일 지원을 위해서는 선택적 `crewai-files` 패키지가 필요합니다. 다음 명령어로 설치하세요:
+파일 지원을 위해서는 선택적 `localagents-files` 패키지가 필요합니다. 다음 명령어로 설치하세요:
 
 ```bash
-uv add 'crewai[file-processing]'
+uv add 'localagents[file-processing]'
 ```
 </Note>
 
@@ -34,7 +34,7 @@ LocalAI는 5가지 특정 파일 타입과 타입을 자동 감지하는 일반 
 | **일반** | `File` | 콘텐츠에서 타입 자동 감지 |
 
 ```python
-from crewai_files import File, ImageFile, PDFFile, AudioFile, VideoFile, TextFile
+from localagents_files import File, ImageFile, PDFFile, AudioFile, VideoFile, TextFile
 
 image = ImageFile(source="screenshot.png")
 pdf = PDFFile(source="report.pdf")
@@ -52,7 +52,7 @@ file = File(source="document.pdf")
 ### 경로에서
 
 ```python
-from crewai_files import ImageFile
+from localagents_files import ImageFile
 
 image = ImageFile(source="./images/chart.png")
 ```
@@ -60,7 +60,7 @@ image = ImageFile(source="./images/chart.png")
 ### URL에서
 
 ```python
-from crewai_files import ImageFile
+from localagents_files import ImageFile
 
 image = ImageFile(source="https://example.com/image.png")
 ```
@@ -68,7 +68,7 @@ image = ImageFile(source="https://example.com/image.png")
 ### 바이트에서
 
 ```python
-from crewai_files import ImageFile, FileBytes
+from localagents_files import ImageFile, FileBytes
 
 image_bytes = download_image_from_api()
 image = ImageFile(source=FileBytes(data=image_bytes, filename="downloaded.png"))
@@ -84,8 +84,8 @@ image = ImageFile(source=image_bytes)
 crew를 킥오프할 때 파일을 전달합니다:
 
 ```python
-from crewai import Crew
-from crewai_files import ImageFile
+from localagents import Crew
+from localagents_files import ImageFile
 
 crew = Crew(agents=[analyst], tasks=[analysis_task])
 
@@ -103,8 +103,8 @@ result = crew.kickoff(
 특정 작업에 파일을 첨부합니다:
 
 ```python
-from crewai import Task
-from crewai_files import ImageFile
+from localagents import Task
+from localagents_files import ImageFile
 
 task = Task(
     description="매출 차트를 분석하고 {chart}에서 트렌드를 파악하세요",
@@ -120,8 +120,8 @@ task = Task(
 flow에 파일을 전달하면 자동으로 crew에 상속됩니다:
 
 ```python
-from crewai.flow.flow import Flow, start
-from crewai_files import ImageFile
+from localagents.flow.flow import Flow, start
+from localagents_files import ImageFile
 
 class AnalysisFlow(Flow):
     @start()
@@ -139,8 +139,8 @@ result = flow.kickoff(
 에이전트 킥오프에 직접 파일을 전달합니다:
 
 ```python
-from crewai import Agent
-from crewai_files import ImageFile
+from localagents import Agent
+from localagents_files import ImageFile
 
 agent = Agent(
     role="Image Analyst",
@@ -215,7 +215,7 @@ LocalAI는 각 프로바이더에 파일을 전송하는 최적의 방법을 자
 프로바이더 제한을 초과할 때 파일 처리 방식을 제어합니다:
 
 ```python
-from crewai_files import ImageFile, PDFFile
+from localagents_files import ImageFile, PDFFile
 
 image = ImageFile(source="large.png", mode="strict")
 image = ImageFile(source="large.png", mode="auto")

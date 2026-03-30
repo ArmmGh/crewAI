@@ -17,7 +17,7 @@ mode: "wide"
 ### الميزات
 
 - **لوحة معلومات التتبع**: راقب أنشطة وكلاء localAI الخاصين بك من خلال لوحات معلومات تفصيلية تتضمن المدخلات والمخرجات والبيانات الوصفية للنطاقات.
-- **التتبع الآلي**: تكامل مؤتمت بالكامل مع localAI، يمكن تفعيله عبر تشغيل `mlflow.crewai.autolog()`.
+- **التتبع الآلي**: تكامل مؤتمت بالكامل مع localAI، يمكن تفعيله عبر تشغيل `mlflow.localagents.autolog()`.
 - **أدوات التتبع اليدوي بأقل مجهود**: خصّص أدوات التتبع من خلال واجهات برمجة التطبيقات عالية المستوى من MLflow مثل المزخرفات وأغلفة الدوال ومديري السياق.
 - **التوافق مع OpenTelemetry**: يدعم تتبع MLflow تصدير التتبعات إلى جامع OpenTelemetry، الذي يمكن استخدامه بعد ذلك لتصدير التتبعات إلى خلفيات متنوعة مثل Jaeger وZipkin وAWS X-Ray.
 - **تغليف ونشر الوكلاء**: قم بتغليف ونشر وكلاء localAI الخاصين بك إلى خادم استدلال مع مجموعة متنوعة من أهداف النشر.
@@ -45,7 +45,7 @@ mode: "wide"
       ```python
       import mlflow
 
-      mlflow.crewai.autolog()
+      mlflow.localagents.autolog()
 
       # Optional: Set a tracking URI and an experiment name if you have a tracking server
       mlflow.set_tracking_uri("http://localhost:5000")
@@ -55,9 +55,9 @@ mode: "wide"
       مثال على الاستخدام لتتبع وكلاء LocalAI:
 
       ```python
-      from crewai import Agent, Crew, Task
-      from crewai.knowledge.source.string_knowledge_source import StringKnowledgeSource
-      from crewai_tools import SerperDevTool, WebsiteSearchTool
+      from localagents import Agent, Crew, Task
+      from localagents.knowledge.source.string_knowledge_source import StringKnowledgeSource
+      from localagents_tools import SerperDevTool, WebsiteSearchTool
 
       from textwrap import dedent
 
@@ -200,7 +200,7 @@ mode: "wide"
 
       افتح `127.0.0.1:5000` في متصفحك لزيارة خادم تتبع MLflow.
       <Frame caption="لوحة معلومات تتبع MLflow">
-        <img src="/images/mlflow1.png" alt="MLflow tracing example with crewai" />
+        <img src="/images/mlflow1.png" alt="MLflow tracing example with localagents" />
       </Frame>
     </Step>
 </Steps>

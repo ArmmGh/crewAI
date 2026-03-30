@@ -23,12 +23,12 @@ mode: "wide"
 عند تفعيل ميزة `share_crew`، يتم جمع بيانات تفصيلية تشمل أوصاف المهام وخلفيات وأهداف الوكلاء وسمات محددة أخرى
 لتوفير رؤى أعمق. قد يتضمن جمع البيانات الموسع هذا معلومات شخصية إذا دمجها المستخدمون في طواقمهم أو مهامهم.
 يجب على المستخدمين النظر بعناية في محتوى طواقمهم ومهامهم قبل تفعيل `share_crew`.
-يمكن للمستخدمين تعطيل القياس عن بُعد عبر تعيين متغير البيئة `CREWAI_DISABLE_TELEMETRY` إلى `true` أو تعيين `OTEL_SDK_DISABLED` إلى `true` (لاحظ أن الأخير يعطل جميع أدوات OpenTelemetry عالمياً).
+يمكن للمستخدمين تعطيل القياس عن بُعد عبر تعيين متغير البيئة `LOCALAGENTS_DISABLE_TELEMETRY` إلى `true` أو تعيين `OTEL_SDK_DISABLED` إلى `true` (لاحظ أن الأخير يعطل جميع أدوات OpenTelemetry عالمياً).
 
 ### أمثلة:
 ```python
 # Disable LocalAI telemetry only
-os.environ['CREWAI_DISABLE_TELEMETRY'] = 'true'
+os.environ['LOCALAGENTS_DISABLE_TELEMETRY'] = 'true'
 
 # Disable all OpenTelemetry (including LocalAI)
 os.environ['OTEL_SDK_DISABLED'] = 'true'

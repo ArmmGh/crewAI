@@ -21,10 +21,10 @@ Potencialize suas buscas de dados para IA com:
 ## Instalação
 
 - Obtenha uma chave de API e o Project ID em [browserbase.com](https://browserbase.com) e defina-os nas variáveis de ambiente (`BROWSERBASE_API_KEY`, `BROWSERBASE_PROJECT_ID`).
-- Instale o [SDK do Browserbase](http://github.com/browserbase/python-sdk) juntamente com o pacote `crewai[tools]`:
+- Instale o [SDK do Browserbase](http://github.com/browserbase/python-sdk) juntamente com o pacote `localagents[tools]`:
 
 ```shell
-pip install browserbase 'crewai[tools]'
+pip install browserbase 'localagents[tools]'
 ```
 
 ## Exemplo
@@ -32,7 +32,7 @@ pip install browserbase 'crewai[tools]'
 Utilize o BrowserbaseLoadTool conforme abaixo para permitir que seu agente carregue sites:
 
 ```python Code
-from crewai_tools import BrowserbaseLoadTool
+from localagents_tools import BrowserbaseLoadTool
 
 # Inicialize a ferramenta com a chave da API do Browserbase e o Project ID
 tool = BrowserbaseLoadTool()

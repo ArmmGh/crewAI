@@ -18,8 +18,8 @@ Composio is an integration platform that allows you to connect your AI agents to
 To incorporate Composio tools into your project, follow the instructions below:
 
 ```shell
-pip install composio composio-crewai
-pip install crewai
+pip install composio composio-localagents
+pip install localagents
 ```
 
 After the installation is complete, set your Composio API key as `COMPOSIO_API_KEY`. Get your Composio API key from [here](https://platform.composio.dev)
@@ -31,9 +31,9 @@ The following example demonstrates how to initialize the tool and execute a gith
 1. Initialize Composio with LocalAI Provider
 
 ```python Code
-from composio_crewai import ComposioProvider
+from composio_localagents import ComposioProvider
 from composio import Composio
-from crewai import Agent, Task, Crew
+from localagents import Agent, Task, Crew
 
 composio = Composio(provider=ComposioProvider())
 ```
@@ -61,7 +61,7 @@ print(f"Open this URL to authenticate: {connection_request.redirect_url}")
 4. Define agent
 
 ```python Code
-crewai_agent = Agent(
+localagents_agent = Agent(
     role="GitHub Agent",
     goal="You take action on GitHub using GitHub APIs",
     backstory="You are AI agent that is responsible for taking actions on GitHub on behalf of users using GitHub APIs",
@@ -76,11 +76,11 @@ crewai_agent = Agent(
 ```python Code
 task = Task(
     description="Star a repo composiohq/composio on GitHub",
-    agent=crewai_agent,
+    agent=localagents_agent,
     expected_output="Status of the operation",
 )
 
-crew = Crew(agents=[crewai_agent], tasks=[task])
+crew = Crew(agents=[localagents_agent], tasks=[task])
 
 crew.kickoff()
 ```

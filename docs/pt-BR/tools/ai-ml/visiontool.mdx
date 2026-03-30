@@ -14,10 +14,10 @@ A URL ou o CAMINHO da imagem deve ser passado para o Agente.
 
 ## Instalação
 
-Instale o pacote crewai_tools
+Instale o pacote localagents_tools
 
 ```shell
-pip install 'crewai[tools]'
+pip install 'localagents[tools]'
 ```
 
 ## Uso
@@ -25,7 +25,7 @@ pip install 'crewai[tools]'
 Para usar o VisionTool, a chave da API da OpenAI deve ser definida na variável de ambiente `OPENAI_API_KEY`.
 
 ```python Code
-from crewai_tools import VisionTool
+from localagents_tools import VisionTool
 
 vision_tool = VisionTool()
 

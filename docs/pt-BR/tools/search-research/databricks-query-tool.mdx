@@ -14,7 +14,7 @@ Run SQL against Databricks workspace tables with either CLI profile or direct ho
 ## Installation
 
 ```shell
-uv add crewai-tools[databricks-sdk]
+uv add localagents-tools[databricks-sdk]
 ```
 
 ## Environment Variables
@@ -27,8 +27,8 @@ Docs: https://docs.databricks.com/en/dev-tools/auth/pat.html
 ## Example
 
 ```python Code
-from crewai import Agent, Task, Crew
-from crewai_tools import DatabricksQueryTool
+from localagents import Agent, Task, Crew
+from localagents_tools import DatabricksQueryTool
 
 tool = DatabricksQueryTool(
     default_catalog="main",

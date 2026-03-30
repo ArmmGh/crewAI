@@ -23,7 +23,7 @@ mode: "wide"
 لتحضير بيئتك لعندما تصبح أداة WebsiteSearchTool متاحة، يمكنك تثبيت الحزمة الأساسية بـ:
 
 ```shell
-pip install 'crewai[tools]'
+pip install 'localagents[tools]'
 ```
 
 يثبّت هذا الأمر التبعيات اللازمة لضمان أنه بمجرد دمج الأداة بالكامل، يمكن للمستخدمين البدء في استخدامها فوراً.
@@ -33,7 +33,7 @@ pip install 'crewai[tools]'
 فيما يلي أمثلة على كيفية استخدام أداة WebsiteSearchTool في سيناريوهات مختلفة. يرجى ملاحظة أن هذه الأمثلة توضيحية وتمثل وظائف مخططة:
 
 ```python Code
-from crewai_tools import WebsiteSearchTool
+from localagents_tools import WebsiteSearchTool
 
 # Example of initiating tool that agents can use
 # to search across any discovered websites

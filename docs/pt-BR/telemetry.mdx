@@ -23,12 +23,12 @@ uso de ferramentas, chamadas de API, respostas, quaisquer dados processados pelo
 Quando o recurso `share_crew` está ativado, dados detalhados, incluindo descrições das tarefas, histórias ou objetivos dos agentes e outros atributos específicos são coletados
 para fornecer insights mais detalhados. Essa coleta expandida pode incluir informações pessoais caso o usuário as tenha inserido em seus crews ou tarefas.
 Usuários devem considerar cuidadosamente o conteúdo de seus crews e tarefas antes de habilitar o `share_crew`.
-A telemetria pode ser desabilitada ao definir a variável de ambiente `CREWAI_DISABLE_TELEMETRY` como `true` ou ao definir `OTEL_SDK_DISABLED` como `true` (observe que esta última desabilita toda instrumentação OpenTelemetry globalmente).
+A telemetria pode ser desabilitada ao definir a variável de ambiente `LOCALAGENTS_DISABLE_TELEMETRY` como `true` ou ao definir `OTEL_SDK_DISABLED` como `true` (observe que esta última desabilita toda instrumentação OpenTelemetry globalmente).
 
 ### Exemplos:
 ```python
 # Desabilitar apenas a telemetria do LocalAI
-os.environ['CREWAI_DISABLE_TELEMETRY'] = 'true'
+os.environ['LOCALAGENTS_DISABLE_TELEMETRY'] = 'true'
 
 # Desabilitar todo o OpenTelemetry (incluindo LocalAI)
 os.environ['OTEL_SDK_DISABLED'] = 'true'

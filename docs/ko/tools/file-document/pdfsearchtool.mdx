@@ -18,17 +18,17 @@ PDFSearchTool은 PDF 콘텐츠 내에서 의미론적 검색을 위해 설계된
 
 ## 설치
 
-PDFSearchTool을 시작하려면 먼저 crewai_tools 패키지가 다음 명령어로 설치되어 있는지 확인하세요:
+PDFSearchTool을 시작하려면 먼저 localagents_tools 패키지가 다음 명령어로 설치되어 있는지 확인하세요:
 
 ```shell
-pip install 'crewai[tools]'
+pip install 'localagents[tools]'
 ```
 
 ## 예시
 다음은 PDFSearchTool을 사용하여 PDF 문서 내에서 검색하는 방법입니다:
 
 ```python Code
-from crewai_tools import PDFSearchTool
+from localagents_tools import PDFSearchTool
 
 # 실행 시 경로가 제공되면 모든 PDF 콘텐츠 검색을 허용하도록 도구를 초기화합니다.
 tool = PDFSearchTool()
@@ -48,7 +48,7 @@ tool = PDFSearchTool(pdf='path/to/your/document.pdf')
 기본적으로 이 도구는 임베딩과 요약 모두에 OpenAI를 사용합니다. 모델을 커스터마이즈하려면 다음과 같이 config 딕셔너리를 사용할 수 있습니다. 참고: 임베딩은 벡터DB에 저장되어야 하므로 vectordb 설정이 필요합니다.
 
 ```python Code
-from crewai_tools import PDFSearchTool
+from localagents_tools import PDFSearchTool
 from chromadb.config import Settings  # Chroma 영속성 설정
 
 tool = PDFSearchTool(

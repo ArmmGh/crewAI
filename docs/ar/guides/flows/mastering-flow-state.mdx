@@ -32,7 +32,7 @@ mode: "wide"
 ### مثال الحالة غير المنظمة
 
 ```python
-from crewai.flow.flow import Flow, listen, start
+from localagents.flow.flow import Flow, listen, start
 
 class UnstructuredStateFlow(Flow):
     @start()
@@ -56,7 +56,7 @@ result = flow.kickoff()
 ### مثال الحالة المنظمة
 
 ```python
-from crewai.flow.flow import Flow, listen, start
+from localagents.flow.flow import Flow, listen, start
 from pydantic import BaseModel, Field
 from typing import List, Dict, Optional
 
@@ -96,8 +96,8 @@ result = flow.kickoff()
 يوفر مزخرف `@persist()` حفظ حالة تلقائي عند نقاط رئيسية في التنفيذ.
 
 ```python
-from crewai.flow.flow import Flow, listen, start
-from crewai.flow.persistence import persist
+from localagents.flow.flow import Flow, listen, start
+from localagents.flow.persistence import persist
 from pydantic import BaseModel
 
 class CounterState(BaseModel):
@@ -121,7 +121,7 @@ class PersistentCounterFlow(Flow[CounterState]):
 ### المنطق الشرطي المبني على الحالة
 
 ```python
-from crewai.flow.flow import Flow, listen, router, start
+from localagents.flow.flow import Flow, listen, router, start
 from pydantic import BaseModel
 
 class PaymentState(BaseModel):

@@ -39,10 +39,10 @@ info:
   version: 1.0.0
   contact:
     name: LocalAI Suporte
-    email: support@crewai.com
-    url: https://crewai.com
+    email: support@localagents.com
+    url: https://localagents.com
 servers:
-  - url: https://your-actual-crew-name.crewai.com
+  - url: https://your-actual-crew-name.localagents.com
     description: Substitua pela URL real da sua crew no painel do LocalAI AMP
 security:
   - BearerAuth: []

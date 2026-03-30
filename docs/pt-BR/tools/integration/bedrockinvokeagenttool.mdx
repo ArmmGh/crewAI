@@ -12,7 +12,7 @@ The `BedrockInvokeAgentTool` enables LocalAI agents to invoke Amazon Bedrock Age
 ## Installation
 
 ```bash
-uv pip install 'crewai[tools]'
+uv pip install 'localagents[tools]'
 ```
 
 ## Requirements
@@ -26,8 +26,8 @@ uv pip install 'crewai[tools]'
 Here's how to use the tool with a LocalAI agent:
 
 ```python {2, 4-8}
-from crewai import Agent, Task, Crew
-from crewai_tools.aws.bedrock.agents.invoke_agent_tool import BedrockInvokeAgentTool
+from localagents import Agent, Task, Crew
+from localagents_tools.aws.bedrock.agents.invoke_agent_tool import BedrockInvokeAgentTool
 
 # Initialize the tool
 agent_tool = BedrockInvokeAgentTool(
@@ -88,8 +88,8 @@ AWS_SECRET_ACCESS_KEY=your-secret-key    # Required for AWS authentication
 ### Multi-Agent Workflow with Session Management
 
 ```python {2, 4-22}
-from crewai import Agent, Task, Crew, Process
-from crewai_tools.aws.bedrock.agents.invoke_agent_tool import BedrockInvokeAgentTool
+from localagents import Agent, Task, Crew, Process
+from localagents_tools.aws.bedrock.agents.invoke_agent_tool import BedrockInvokeAgentTool
 
 # Initialize tools with session management
 initial_tool = BedrockInvokeAgentTool(

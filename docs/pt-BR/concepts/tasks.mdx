@@ -111,9 +111,9 @@ Para usar essa configuração YAML em seu código, crie uma classe crew que herd
 ```python crew.py
 # src/latest_ai_development/crew.py
 
-from crewai import Agent, Crew, Process, Task
-from crewai.project import CrewBase, agent, crew, task
-from crewai_tools import SerperDevTool
+from localagents import Agent, Crew, Process, Task
+from localagents.project import CrewBase, agent, crew, task
+from localagents_tools import SerperDevTool
 
 @CrewBase
 class LatestAiDevelopmentCrew():
@@ -171,7 +171,7 @@ class LatestAiDevelopmentCrew():
 Alternativamente, você pode definir tarefas diretamente no seu código sem usar configuração YAML:
 
 ```python task.py
-from crewai import Task
+from localagents import Task
 
 research_task = Task(
     description="""
@@ -350,7 +350,7 @@ Para adicionar um guardrail baseado em função a uma tarefa, forneça uma funç
 
 ```python Code
 from typing import Tuple, Union, Dict, Any
-from crewai import TaskOutput
+from localagents import TaskOutput
 
 def validate_blog_content(result: TaskOutput) -> Tuple[bool, Any]:
     """Valida se o conteúdo do blog atende aos requisitos."""
@@ -390,7 +390,7 @@ blog_task = Task(
 1. **Respostas de Erro Estruturadas**:
 
 ```python Code
-from crewai import TaskOutput, LLMGuardrail
+from localagents import TaskOutput, LLMGuardrail
 
 def validate_with_context(result: TaskOutput) -> Tuple[bool, Any]:
     try:
@@ -413,7 +413,7 @@ def validate_with_context(result: TaskOutput) -> Tuple[bool, Any]:
 
 ```python Code
 from typing import Any, Dict, List, Tuple, Union
-from crewai import TaskOutput
+from localagents import TaskOutput
 
 def complex_validation(result: TaskOutput) -> Tuple[bool, Any]:
     """Encadeia múltiplas etapas de validação."""
@@ -448,7 +448,7 @@ Exemplo com manipulação de tentativas:
 
 ```python Code
 from typing import Optional, Tuple, Union
-from crewai import TaskOutput, Task
+from localagents import TaskOutput, Task
 
 def validate_json_output(result: TaskOutput) -> Tuple[bool, Any]:
     """Valida e faz o parsing da saída como JSON."""
@@ -484,7 +484,7 @@ Veja um exemplo de uso do output_pydantic:
 ```python Code
 import json
 
-from crewai import Agent, Crew, Process, Task
+from localagents import Agent, Crew, Process, Task
 from pydantic import BaseModel
 
 
@@ -569,7 +569,7 @@ Veja um exemplo de uso do `output_json`:
 ```python Code
 import json
 
-from crewai import Agent, Crew, Process, Task
+from localagents import Agent, Crew, Process, Task
 from pydantic import BaseModel
 
 
@@ -637,7 +637,7 @@ Utilizando `output_pydantic` ou `output_json`, você garante que suas tarefas pr
 
 ## Integrando Ferramentas com Tarefas
 
-Utilize ferramentas do [LocalAI Toolkit](https://github.com/joaomdmoura/crewai-tools) e [LangChain Tools](https://python.langchain.com/docs/integrations/tools) para ampliar o desempenho das tarefas e aprimorar a interação dos agentes.
+Utilize ferramentas do [LocalAI Toolkit](https://github.com/joaomdmoura/localagents-tools) e [LangChain Tools](https://python.langchain.com/docs/integrations/tools) para ampliar o desempenho das tarefas e aprimorar a interação dos agentes.
 
 ## Criando uma Tarefa com Ferramentas
 
@@ -646,8 +646,8 @@ import os
 os.environ["OPENAI_API_KEY"] = "Sua Chave"
 os.environ["SERPER_API_KEY"] = "Sua Chave" # Chave serper.dev
 
-from crewai import Agent, Task, Crew
-from crewai_tools import SerperDevTool
+from localagents import Agent, Task, Crew
+from localagents_tools import SerperDevTool
 
 research_agent = Agent(
   role='Researcher',
@@ -829,7 +829,7 @@ Guardrails de tarefas oferecem uma maneira poderosa de validar, transformar ou f
 
 ```python Code
 from typing import Tuple, Union
-from crewai import Task
+from localagents import Task
 
 def validate_json_output(result: str) -> Tuple[bool, Union[dict, str]]:
     """Valida se a saída é um JSON válido."""
@@ -862,8 +862,8 @@ class InternalCrew:
 #### Use modelos customizados para geração de código
 
 ```python Code
-from crewai import Task
-from crewai.llm import LLM
+from localagents import Task
+from localagents.llm import LLM
 
 task = Task(
     description="Gerar dados em JSON",

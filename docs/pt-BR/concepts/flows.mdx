@@ -85,7 +85,7 @@ Second method received: Output from first_method
 ```
 
 </CodeGroup>
-![Flow Visual image](/images/crewai-flow-2.png)
+![Flow Visual image](/images/localagents-flow-2.png)
 
 Neste exemplo, o `second_method` é o último método a ser concluído, logo sua saída será a saída final do Flow.
 O método `kickoff()` retorna essa saída, que é impressa no console. O método `plot()` irá gerar o arquivo HTML para visualizar o fluxo.
@@ -108,7 +108,7 @@ counter=2 message='Hello from first_method - updated by second_method'
 ```
 </CodeGroup>
 
-![Flow Visual image](/images/crewai-flow-2.png)
+![Flow Visual image](/images/localagents-flow-2.png)
 
 Neste exemplo, o estado é atualizado tanto por `first_method` quanto por `second_method`.
 Após o término da execução, é possível acessar o estado final e observar as atualizações realizadas por esses métodos.
@@ -131,7 +131,7 @@ Mesmo com estados não estruturados, os flows do LocalAI geram e mantêm automat
 # (O código não é traduzido)
 ```
 
-![Flow Visual image](/images/crewai-flow-3.png)
+![Flow Visual image](/images/localagents-flow-3.png)
 
 **Nota:** O campo `id` é gerado e preservado automaticamente durante toda a execução do flow. Não é necessário gerenciá-lo ou defini-lo manualmente, e ele permanecerá mesmo ao atualizar o estado com novos dados.
 
@@ -151,7 +151,7 @@ Cada estado nos flows do LocalAI recebe automaticamente um identificador único 
 # (O código não é traduzido)
 ```
 
-![Flow Visual image](/images/crewai-flow-3.png)
+![Flow Visual image](/images/localagents-flow-3.png)
 
 **Pontos-Chave:**
 
@@ -256,7 +256,7 @@ Logger: Hello from the second method
 ```
 </CodeGroup>
 
-![Flow Visual image](/images/crewai-flow-4.png)
+![Flow Visual image](/images/localagents-flow-4.png)
 
 Ao executar esse Flow, o método `logger` será acionado pela saída tanto do `start_method` quanto do `second_method`.
 A função `or_` serve para escutar vários métodos e disparar o método ouvinte quando qualquer um emitir um resultado.
@@ -276,7 +276,7 @@ A função `and_` nos flows permite escutar múltiplos métodos e acionar o mét
 ```
 </CodeGroup>
 
-![Flow Visual image](/images/crewai-flow-5.png)
+![Flow Visual image](/images/localagents-flow-5.png)
 
 Ao executar esse Flow, o método `logger` só será disparado quando ambos `start_method` e `second_method` emitirem uma saída.
 A função `and_` é usada para escutar vários métodos e acionar o método ouvinte apenas quando todas as condições forem atendidas.
@@ -298,7 +298,7 @@ Fourth method running
 ```
 </CodeGroup>
 
-![Flow Visual image](/images/crewai-flow-6.png)
+![Flow Visual image](/images/localagents-flow-6.png)
 
 No exemplo, o `start_method` gera um valor booleano aleatório e armazena no estado.
 O `second_method` usa o decorador `@router()` para decidir o roteamento conforme o valor booleano.
@@ -316,8 +316,8 @@ O decorador `@human_feedback` requer **LocalAI versão 1.8.0 ou superior**.
 O decorador `@human_feedback` permite fluxos de trabalho human-in-the-loop, pausando a execução do flow para coletar feedback de um humano. Isso é útil para portões de aprovação, revisão de qualidade e pontos de decisão que requerem julgamento humano.
 
 ```python Code
-from crewai.flow.flow import Flow, start, listen
-from crewai.flow.human_feedback import human_feedback, HumanFeedbackResult
+from localagents.flow.flow import Flow, start, listen
+from localagents.flow.human_feedback import human_feedback, HumanFeedbackResult
 
 class ReviewFlow(Flow):
     @start()
@@ -368,7 +368,7 @@ Os agentes podem ser integrados facilmente aos seus flows, oferecendo uma altern
 # (O código não é traduzido)
 ```
 
-![Flow Visual image](/images/crewai-flow-7.png)
+![Flow Visual image](/images/localagents-flow-7.png)
 
 Esse exemplo demonstra diversos recursos fundamentais do uso de agentes em flows:
 
@@ -385,14 +385,14 @@ Criar um flow com múltiplas crews no LocalAI é simples.
 Você pode gerar um novo projeto LocalAI que já inclui toda a estrutura para criar um flow com várias crews executando o seguinte comando:
 
 ```bash
-crewai create flow name_of_flow
+localagents create flow name_of_flow
 ```
 
 Esse comando irá gerar um novo projeto LocalAI com a estrutura de pastas necessária. O projeto gerado inclui uma crew pré-criada chamada `poem_crew`, já funcional. Você pode usar essa crew como modelo, copiando, colando e editando para criar outras crews.
 
 ### Estrutura de Pastas
 
-Após rodar o comando `crewai create flow name_of_flow`, você verá uma estrutura parecida com:
+Após rodar o comando `localagents create flow name_of_flow`, você verá uma estrutura parecida com:
 
 | Diretório/Arquivo         | Descrição                                                           |
 | :------------------------ | :------------------------------------------------------------------- |
@@ -432,14 +432,14 @@ Veja um exemplo de como conectar a `poem_crew` no arquivo `main.py`:
 
 Neste exemplo, a classe `PoemFlow` define um fluxo que gera a quantidade de frases, usa a `PoemCrew` para gerar um poema e, depois, salva o poema em um arquivo. O flow inicia com o método `kickoff()`, e o gráfico é gerado pelo método `plot()`.
 
-![Flow Visual image](/images/crewai-flow-8.png)
+![Flow Visual image](/images/localagents-flow-8.png)
 
 ### Executando o Flow
 
 (Opcional) Antes de rodar o flow, instale as dependências executando:
 
 ```bash
-crewai install
+localagents install
 ```
 
 Após instalar as dependências, ative o ambiente virtual com:
@@ -451,7 +451,7 @@ source .venv/bin/activate
 Com o ambiente ativado, execute o flow usando um dos comandos:
 
 ```bash
-crewai flow kickoff
+localagents flow kickoff
 ```
 
 ou
@@ -489,7 +489,7 @@ Esse comando gera um arquivo chamado `my_flow_plot.html` no diretório atual. Ab
 Em projetos LocalAI estruturados, é possível gerar um plot pela linha de comando. Isso é útil para projetos maiores, onde você deseja visualizar toda a configuração do flow.
 
 ```bash
-crewai flow plot
+localagents flow plot
 ```
 
 O comando gera um arquivo HTML com o plot do flow, semelhante ao método `plot()`. Basta abrir o arquivo no navegador para explorar o workflow.
@@ -546,10 +546,10 @@ resultado = flow.kickoff()
 
 ### Usando a CLI
 
-A partir da versão 0.103.0, é possível executar flows usando o comando `crewai run`:
+A partir da versão 0.103.0, é possível executar flows usando o comando `localagents run`:
 
 ```shell
-crewai run
+localagents run
 ```
 
 O comando detecta automaticamente se seu projeto é um flow (com base na configuração `type = "flow"` no pyproject.toml) e executa conforme o esperado. Esse é o método recomendado para executar flows pelo terminal.
@@ -557,7 +557,7 @@ O comando detecta automaticamente se seu projeto é um flow (com base na configu
 Por compatibilidade retroativa, também é possível usar:
 
 ```shell
-crewai flow kickoff
+localagents flow kickoff
 ```
 
-No entanto, o comando `crewai run` é agora o preferido, pois funciona tanto para crews quanto para flows.
+No entanto, o comando `localagents run` é agora o preferido, pois funciona tanto para crews quanto para flows.

@@ -132,16 +132,16 @@ MAXIM_LOG_REPO_ID=your_repo_id_here
 ### 2. 필수 패키지 임포트하기
 
 ```python
-from crewai import Agent, Task, Crew, Process
+from localagents import Agent, Task, Crew, Process
 from maxim import Maxim
-from maxim.logger.crewai import instrument_crewai
+from maxim.logger.localagents import instrument_localagents
 ```
 
 ### 3. API 키로 Maxim 초기화하기
 
 ```python {8}
 # Instrument LocalAI with just one line
-instrument_crewai(Maxim().logger())
+instrument_localagents(Maxim().logger())
 ```
 
 ### 4. 일반적으로 LocalAI 애플리케이션 생성 및 실행하기
@@ -192,30 +192,30 @@ LocalAI 애플리케이션을 실행한 후:
    - 성능 지표
    - 비용 분석
 
-    <img src='https://raw.githubusercontent.com/akmadan/localAI/docs_maxim_observability/docs/images/crewai_traces.gif'> </img>
+    <img src='https://raw.githubusercontent.com/akmadan/localAI/docs_maxim_observability/docs/images/localagents_traces.gif'> </img>
 
 ## 문제 해결
 
 ### 흔한 문제
 
 - **추적(trace)가 나타나지 않음**: API 키와 저장소 ID가 올바른지 확인하세요.
-- crew를 실행하기 **_전에_** 반드시 **`instrument_crewai()`를 호출**했는지 확인하세요. 이 함수가 로깅 훅(logging hook)을 올바르게 초기화합니다.
-- 내부 오류를 드러내기 위해 `instrument_crewai()` 호출 시 `debug=True`로 설정하세요:
+- crew를 실행하기 **_전에_** 반드시 **`instrument_localagents()`를 호출**했는지 확인하세요. 이 함수가 로깅 훅(logging hook)을 올바르게 초기화합니다.
+- 내부 오류를 드러내기 위해 `instrument_localagents()` 호출 시 `debug=True`로 설정하세요:
 
   ```python
-  instrument_crewai(logger, debug=True)
+  instrument_localagents(logger, debug=True)
   ```
 - 에이전트에서 상세 로그를 캡처하기 위해 `verbose=True`로 설정하세요:
 
   ```python
   agent = CrewAgent(..., verbose=True)
   ```
-- `instrument_crewai()`가 에이전트를 생성하거나 실행하기 **전에** 호출되는지 다시 한 번 확인하세요. 너무 당연해 보일 수 있지만, 자주 발생하는 실수입니다.
+- `instrument_localagents()`가 에이전트를 생성하거나 실행하기 **전에** 호출되는지 다시 한 번 확인하세요. 너무 당연해 보일 수 있지만, 자주 발생하는 실수입니다.
 
 ## 리소스
 
 <CardGroup cols="3">
-  <Card title="LocalAI Docs" icon="book" href="https://docs.crewai.com/">
+  <Card title="LocalAI Docs" icon="book" href="https://docs.localagents.com/">
     공식 LocalAI 문서
   </Card>
   <Card title="Maxim Docs" icon="book" href="https://getmaxim.ai/docs">

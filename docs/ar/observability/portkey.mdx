@@ -26,7 +26,7 @@ mode: "wide"
 <Steps>
 <Step title="تثبيت الحزم المطلوبة">
 ```bash
-pip install -U crewai portkey-ai
+pip install -U localagents portkey-ai
 ```
 </Step>
 
@@ -38,7 +38,7 @@ pip install -U crewai portkey-ai
 التكامل بسيط - ما عليك سوى تحديث إعداد LLM في تكوين LocalAI الخاص بك:
 
 ```python
-from crewai import LLM
+from localagents import LLM
 from portkey_ai import createHeaders, PORTKEY_GATEWAY_URL
 
 # Create an LLM instance with Portkey integration
@@ -167,7 +167,7 @@ portkey_llm = LLM(
 من السهل تفعيل الاحتياط في إعداد LocalAI الخاص بك باستخدام تكوين Portkey:
 
 ```python
-from crewai import LLM
+from localagents import LLM
 from portkey_ai import createHeaders, PORTKEY_GATEWAY_URL
 
 # Create LLM with fallback configuration
@@ -245,7 +245,7 @@ portkey_llm = LLM(
 يسترجع API عرض الموجهات قوالب الموجهات الخاصة بك مع جميع المعاملات المُعدّة:
 
 ```python
-from crewai import Agent, LLM
+from localagents import Agent, LLM
 from portkey_ai import createHeaders, PORTKEY_GATEWAY_URL, Portkey
 
 # Initialize Portkey admin client
@@ -353,7 +353,7 @@ prompt_data = portkey_admin.prompts.render(
 **تطبيق حواجز الحماية**
 
 ```python
-from crewai import Agent, LLM
+from localagents import Agent, LLM
 from portkey_ai import createHeaders, PORTKEY_GATEWAY_URL
 
 # Create LLM with guardrails
@@ -401,7 +401,7 @@ researcher = Agent(
 تتيح لك البيانات الوصفية ربط بيانات مخصصة بكل طلب، مما يمكّن التصفية والتقسيم والتحليلات. الحقل الخاص `_user` مصمم خصيصاً لتتبع المستخدمين.
 
 ```python
-from crewai import Agent, LLM
+from localagents import Agent, LLM
 from portkey_ai import createHeaders, PORTKEY_GATEWAY_URL
 
 # Configure LLM with user tracking
@@ -456,7 +456,7 @@ researcher = Agent(
 <Tabs>
   <Tab title="التخزين المؤقت البسيط">
 ```python
-from crewai import Agent, LLM
+from localagents import Agent, LLM
 from portkey_ai import createHeaders, PORTKEY_GATEWAY_URL
 
 # Configure LLM with simple caching
@@ -490,7 +490,7 @@ researcher = Agent(
 
   <Tab title="التخزين المؤقت الدلالي">
 ```python
-from crewai import Agent, LLM
+from localagents import Agent, LLM
 from portkey_ai import createHeaders, PORTKEY_GATEWAY_URL
 
 # Configure LLM with semantic caching
@@ -528,7 +528,7 @@ researcher = Agent(
 يدعم LocalAI مزودي LLM متعددين، ويوسّع Portkey هذه القدرة من خلال توفير الوصول إلى أكثر من 200 نموذج LLM عبر واجهة موحدة. يمكنك التبديل بسهولة بين نماذج مختلفة دون تغيير منطق الوكيل الأساسي:
 
 ```python
-from crewai import Agent, LLM
+from localagents import Agent, LLM
 from portkey_ai import createHeaders, PORTKEY_GATEWAY_URL
 
 # Set up LLMs with different providers
@@ -647,7 +647,7 @@ researcher = Agent(
 بعد إعداد مفتاح API لـ Portkey مع التكوين المرفق، اربطه بوكلاء LocalAI:
 
 ```python
-from crewai import Agent, LLM
+from localagents import Agent, LLM
 from portkey_ai import PORTKEY_GATEWAY_URL
 
 # Configure LLM with your API key
@@ -814,7 +814,7 @@ researcher = Agent(
 ## الموارد
 
 <CardGroup cols="3">
-  <Card title="وثائق LocalAI" icon="book" href="https://docs.crewai.com/">
+  <Card title="وثائق LocalAI" icon="book" href="https://docs.localagents.com/">
     <p>وثائق LocalAI الرسمية</p>
   </Card>
   <Card title="احجز عرضاً توضيحياً" icon="calendar" href="https://calendly.com/portkey-ai">

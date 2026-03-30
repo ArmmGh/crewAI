@@ -14,13 +14,13 @@ mode: "wide"
 تربط `ApifyActorsTool` بين [Apify Actors](https://apify.com/actors)، وهي برامج سحابية لتجريف الويب والأتمتة، وسير عمل LocalAI الخاص بك.
 استخدم أياً من أكثر من 4,000 Actor على [متجر Apify](https://apify.com/store) لحالات استخدام مثل استخراج البيانات من وسائل التواصل الاجتماعي ومحركات البحث والخرائط الإلكترونية ومواقع التجارة الإلكترونية وبوابات السفر أو المواقع العامة.
 
-للتفاصيل، راجع [تكامل Apify LocalAI](https://docs.apify.com/platform/integrations/crewai) في وثائق Apify.
+للتفاصيل، راجع [تكامل Apify LocalAI](https://docs.apify.com/platform/integrations/localagents) في وثائق Apify.
 
 ## خطوات البدء
 
 <Steps>
     <Step title="تثبيت التبعيات">
-        ثبّت `crewai[tools]` و`langchain-apify` باستخدام pip: `pip install 'crewai[tools]' langchain-apify`.
+        ثبّت `localagents[tools]` و`langchain-apify` باستخدام pip: `pip install 'localagents[tools]' langchain-apify`.
     </Step>
     <Step title="الحصول على رمز API لـ Apify">
         سجّل في [وحدة تحكم Apify](https://console.apify.com/) واحصل على [رمز API الخاص بك](https://console.apify.com/settings/integrations).
@@ -35,7 +35,7 @@ mode: "wide"
 استخدم `ApifyActorsTool` يدوياً لتشغيل [RAG Web Browser Actor](https://apify.com/apify/rag-web-browser) لإجراء بحث ويب:
 
 ```python
-from crewai_tools import ApifyActorsTool
+from localagents_tools import ApifyActorsTool
 
 # Initialize the tool with an Apify Actor
 tool = ApifyActorsTool(actor_name="apify/rag-web-browser")
@@ -54,17 +54,17 @@ for result in results:
 إليك المخرجات من تشغيل الكود أعلاه:
 
 ```text
-URL: https://www.example.com/crewai-intro
+URL: https://www.example.com/localagents-intro
 Content: LocalAI is a framework for building AI-powered workflows...
-URL: https://docs.crewai.com/
+URL: https://docs.localagents.com/
 Content: Official documentation for LocalAI...
 ```
 
 تقوم `ApifyActorsTool` تلقائياً بجلب تعريف Actor ومخطط الإدخال من Apify باستخدام `actor_name` المقدم ثم تبني وصف الأداة ومخطط المعاملات. هذا يعني أنك تحتاج فقط إلى تحديد `actor_name` صالح، والأداة تتعامل مع الباقي عند استخدامها مع الوكلاء - دون الحاجة لتحديد `run_input`. إليك كيفية عمل ذلك:
 
 ```python
-from crewai import Agent
-from crewai_tools import ApifyActorsTool
+from localagents import Agent
+from localagents_tools import ApifyActorsTool
 
 rag_browser = ApifyActorsTool(actor_name="apify/rag-web-browser")
 
@@ -78,7 +78,7 @@ agent = Agent(
 
 يمكنك تشغيل Actors أخرى من [متجر Apify](https://apify.com/store) ببساطة عن طريق تغيير `actor_name` وعند الاستخدام اليدوي، ضبط `run_input` بناءً على مخطط إدخال Actor.
 
-لمثال على الاستخدام مع الوكلاء، راجع [قالب LocalAI Actor](https://apify.com/templates/python-crewai).
+لمثال على الاستخدام مع الوكلاء، راجع [قالب LocalAI Actor](https://apify.com/templates/python-localagents).
 
 ## الإعداد
 
@@ -96,4 +96,4 @@ agent = Agent(
 - **[Apify](https://apify.com/)**: استكشف منصة Apify.
 - **[كيفية بناء وكيل ذكاء اصطناعي على Apify](https://blog.apify.com/how-to-build-an-ai-agent/)** - دليل شامل خطوة بخطوة لإنشاء ونشر وتسويق وكلاء الذكاء الاصطناعي على منصة Apify.
 - **[RAG Web Browser Actor](https://apify.com/apify/rag-web-browser)**: Actor شائع لبحث الويب لنماذج LLM.
-- **[دليل تكامل LocalAI](https://docs.apify.com/platform/integrations/crewai)**: اتبع الدليل الرسمي لتكامل Apify وLocalAI.
+- **[دليل تكامل LocalAI](https://docs.apify.com/platform/integrations/localagents)**: اتبع الدليل الرسمي لتكامل Apify وLocalAI.

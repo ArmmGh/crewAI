@@ -20,7 +20,7 @@ LocalAI's MCP DSL (Domain Specific Language) integration provides the **simplest
 Add MCP servers to your agent using the `mcps` field:
 
 ```python
-from crewai import Agent
+from localagents import Agent
 
 agent = Agent(
     role="Research Assistant",
@@ -86,7 +86,7 @@ mcps=[
 Here's a complete example using multiple MCP servers:
 
 ```python
-from crewai import Agent, Task, Crew, Process
+from localagents import Agent, Task, Crew, Process
 
 # Create agent with multiple MCP sources
 multi_source_agent = Agent(
@@ -235,7 +235,7 @@ agent = Agent(
 MCP tools work seamlessly with other LocalAI features:
 
 ```python
-from crewai.tools import BaseTool
+from localagents.tools import BaseTool
 
 class CustomTool(BaseTool):
     name: str = "custom_analysis"
@@ -346,4 +346,4 @@ mcps=["https://mcp.example.com/mcp?api_key=valid_key"]
 
 ## Advanced: MCPServerAdapter
 
-For complex scenarios requiring manual connection management, use the `MCPServerAdapter` class from `crewai-tools`. Using a Python context manager (`with` statement) is the recommended approach as it automatically handles starting and stopping the connection to the MCP server.
+For complex scenarios requiring manual connection management, use the `MCPServerAdapter` class from `localagents-tools`. Using a Python context manager (`with` statement) is the recommended approach as it automatically handles starting and stopping the connection to the MCP server.

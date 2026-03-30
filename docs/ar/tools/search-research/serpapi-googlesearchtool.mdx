@@ -14,7 +14,7 @@ mode: "wide"
 ## التثبيت
 
 ```shell
-uv add crewai-tools[serpapi]
+uv add localagents-tools[serpapi]
 ```
 
 ## متغيرات البيئة
@@ -24,8 +24,8 @@ uv add crewai-tools[serpapi]
 ## مثال
 
 ```python Code
-from crewai import Agent, Task, Crew
-from crewai_tools import SerpApiGoogleSearchTool
+from localagents import Agent, Task, Crew
+from localagents_tools import SerpApiGoogleSearchTool
 
 tool = SerpApiGoogleSearchTool()
 

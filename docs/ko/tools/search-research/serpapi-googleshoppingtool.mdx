@@ -14,7 +14,7 @@ mode: "wide"
 ## 설치
 
 ```shell
-uv add crewai-tools[serpapi]
+uv add localagents-tools[serpapi]
 ```
 
 ## 환경 변수
@@ -24,8 +24,8 @@ uv add crewai-tools[serpapi]
 ## 예시
 
 ```python Code
-from crewai import Agent, Task, Crew
-from crewai_tools import SerpApiGoogleShoppingTool
+from localagents import Agent, Task, Crew
+from localagents_tools import SerpApiGoogleShoppingTool
 
 tool = SerpApiGoogleShoppingTool()
 

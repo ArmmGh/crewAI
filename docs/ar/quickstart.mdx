@@ -20,7 +20,7 @@ mode: "wide"
   سينشئ هذا مجلداً جديداً باسم `latest-ai-development` مع البنية الأساسية لطاقمك.
     <CodeGroup>
       ```shell Terminal
-      crewai create crew latest-ai-development
+      localagents create crew latest-ai-development
       ```
     </CodeGroup>
   </Step>
@@ -87,10 +87,10 @@ mode: "wide"
   <Step title="تعديل ملف `crew.py`">
     ```python crew.py
     # src/latest_ai_development/crew.py
-    from crewai import Agent, Crew, Process, Task
-    from crewai.project import CrewBase, agent, crew, task
-    from crewai_tools import SerperDevTool
-    from crewai.agents.agent_builder.base_agent import BaseAgent
+    from localagents import Agent, Crew, Process, Task
+    from localagents.project import CrewBase, agent, crew, task
+    from localagents_tools import SerperDevTool
+    from localagents.agents.agent_builder.base_agent import BaseAgent
     from typing import List
 
     @CrewBase
@@ -143,9 +143,9 @@ mode: "wide"
   <Step title="[اختياري] إضافة دوال قبل وبعد تشغيل الطاقم">
     ```python crew.py
     # src/latest_ai_development/crew.py
-    from crewai import Agent, Crew, Process, Task
-    from crewai.project import CrewBase, agent, crew, task, before_kickoff, after_kickoff
-    from crewai_tools import SerperDevTool
+    from localagents import Agent, Crew, Process, Task
+    from localagents.project import CrewBase, agent, crew, task, before_kickoff, after_kickoff
+    from localagents_tools import SerperDevTool
 
     @CrewBase
     class LatestAiDevelopmentCrew():
@@ -194,7 +194,7 @@ mode: "wide"
     - اقفل التبعيات وثبّتها باستخدام أمر CLI:
       <CodeGroup>
         ```shell Terminal
-        crewai install
+        localagents install
         ```
       </CodeGroup>
     - إذا كانت لديك حزم إضافية تريد تثبيتها، يمكنك القيام بذلك عبر:
@@ -208,7 +208,7 @@ mode: "wide"
     - لتشغيل طاقمك، نفّذ الأمر التالي في جذر مشروعك:
       <CodeGroup>
         ```bash Terminal
-        crewai run
+        localagents run
         ```
       </CodeGroup>
   </Step>
@@ -216,7 +216,7 @@ mode: "wide"
   <Step title="البديل المؤسسي: الإنشاء في Crew Studio">
   لمستخدمي LocalAI AMP، يمكنك إنشاء نفس الطاقم دون كتابة كود:
 
-1. سجّل الدخول إلى حساب LocalAI AMP (أنشئ حساباً مجانياً على [app.crewai.com](https://app.crewai.com))
+1. سجّل الدخول إلى حساب LocalAI AMP (أنشئ حساباً مجانياً على [app.localagents.com](https://app.localagents.com))
 2. افتح Crew Studio
 3. اكتب ما هي الأتمتة التي تحاول بناءها
 4. أنشئ مهامك بصرياً واربطها بالتسلسل
@@ -224,7 +224,7 @@ mode: "wide"
 
 ![واجهة Crew Studio للبدء السريع](/images/enterprise/crew-studio-interface.png)
 
-  <Card title="جرّب LocalAI AMP" icon="rocket" href="https://app.crewai.com">
+  <Card title="جرّب LocalAI AMP" icon="rocket" href="https://app.localagents.com">
     ابدأ حسابك المجاني في LocalAI AMP
   </Card>
   </Step>
@@ -351,9 +351,9 @@ email_summarizer_task:
 
 ## نشر طاقمك
 
-أسهل طريقة لنشر طاقمك في الإنتاج هي من خلال [LocalAI AMP](http://app.crewai.com).
+أسهل طريقة لنشر طاقمك في الإنتاج هي من خلال [LocalAI AMP](http://app.localagents.com).
 
-شاهد هذا الفيديو التعليمي لعرض خطوة بخطوة لنشر طاقمك على [LocalAI AMP](http://app.crewai.com) باستخدام CLI.
+شاهد هذا الفيديو التعليمي لعرض خطوة بخطوة لنشر طاقمك على [LocalAI AMP](http://app.localagents.com) باستخدام CLI.
 
 <iframe
   className="w-full aspect-video rounded-xl"
@@ -365,14 +365,14 @@ email_summarizer_task:
 ></iframe>
 
 <CardGroup cols={2}>
-  <Card title="النشر على المؤسسة" icon="rocket" href="http://app.crewai.com">
+  <Card title="النشر على المؤسسة" icon="rocket" href="http://app.localagents.com">
     ابدأ مع LocalAI AMP وانشر طاقمك في بيئة إنتاج
     بنقرات قليلة فقط.
   </Card>
   <Card
     title="انضم إلى المجتمع"
     icon="comments"
-    href="https://community.crewai.com"
+    href="https://community.localagents.com"
   >
     انضم إلى مجتمعنا مفتوح المصدر لمناقشة الأفكار ومشاركة مشاريعك والتواصل
     مع مطورين آخرين لـ LocalAI.

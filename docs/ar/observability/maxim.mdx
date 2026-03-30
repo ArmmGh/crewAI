@@ -130,16 +130,16 @@ MAXIM_LOG_REPO_ID=your_repo_id_here
 ### 2. استيراد الحزم المطلوبة
 
 ```python
-from crewai import Agent, Task, Crew, Process
+from localagents import Agent, Task, Crew, Process
 from maxim import Maxim
-from maxim.logger.crewai import instrument_crewai
+from maxim.logger.localagents import instrument_localagents
 ```
 
 ### 3. تهيئة Maxim بمفتاح API
 
 ```python {8}
 # Instrument LocalAI with just one line
-instrument_crewai(Maxim().logger())
+instrument_localagents(Maxim().logger())
 ```
 
 ### 4. إنشاء وتشغيل تطبيق LocalAI كالمعتاد
@@ -190,26 +190,26 @@ finally:
    - مقاييس الأداء
    - تحليلات التكاليف
 
-    <img src='https://raw.githubusercontent.com/akmadan/localAI/docs_maxim_observability/docs/images/crewai_traces.gif'> </img>
+    <img src='https://raw.githubusercontent.com/akmadan/localAI/docs_maxim_observability/docs/images/localagents_traces.gif'> </img>
 
 ## استكشاف الأخطاء وإصلاحها
 
 ### المشاكل الشائعة
 
 - **عدم ظهور تتبعات**: تأكد من صحة مفتاح API ومعرف المستودع
-- تأكد من استدعاء **`instrument_crewai()`** **_قبل_** تشغيل طاقمك
-- عيّن `debug=True` في استدعاء `instrument_crewai()` لإظهار أي أخطاء داخلية:
+- تأكد من استدعاء **`instrument_localagents()`** **_قبل_** تشغيل طاقمك
+- عيّن `debug=True` في استدعاء `instrument_localagents()` لإظهار أي أخطاء داخلية:
 
   ```python
-  instrument_crewai(logger, debug=True)
+  instrument_localagents(logger, debug=True)
   ```
 - أعدّ وكلاءك مع `verbose=True` لالتقاط سجلات مفصلة
-- تحقق مرة أخرى من أن `instrument_crewai()` يُستدعى **قبل** إنشاء أو تنفيذ الوكلاء
+- تحقق مرة أخرى من أن `instrument_localagents()` يُستدعى **قبل** إنشاء أو تنفيذ الوكلاء
 
 ## الموارد
 
 <CardGroup cols="3">
-  <Card title="وثائق LocalAI" icon="book" href="https://docs.crewai.com/">
+  <Card title="وثائق LocalAI" icon="book" href="https://docs.localagents.com/">
     وثائق LocalAI الرسمية
   </Card>
   <Card title="وثائق Maxim" icon="book" href="https://getmaxim.ai/docs">

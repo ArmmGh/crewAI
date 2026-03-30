@@ -21,10 +21,10 @@ LocalAI의 도구 시스템은 확장 가능하도록 설계되었습니다. 다
 
 ### 옵션 1: `BaseTool` 서브클래싱
 
-`crewai.tools.BaseTool`을 서브클래싱하고 `_run` 메서드를 구현합니다. `name`, `description`, 그리고 선택적으로 입력 검증을 위한 `args_schema`를 정의합니다.
+`localagents.tools.BaseTool`을 서브클래싱하고 `_run` 메서드를 구현합니다. `name`, `description`, 그리고 선택적으로 입력 검증을 위한 `args_schema`를 정의합니다.
 
 ```python
-from crewai.tools import BaseTool
+from localagents.tools import BaseTool
 from pydantic import BaseModel, Field
 
 
@@ -48,7 +48,7 @@ class GeolocateTool(BaseTool):
 간단한 도구의 경우, `@tool` 데코레이터로 함수를 LocalAI 도구로 변환할 수 있습니다. 함수에는 반드시 독스트링(도구 설명으로 사용됨)과 타입 어노테이션이 있어야 합니다.
 
 ```python
-from crewai.tools import tool
+from localagents.tools import tool
 
 
 @tool("Geolocate")
@@ -109,7 +109,7 @@ class TranslateInput(BaseModel):
 도구에 API 키나 기타 설정이 필요한 경우, `env_vars`로 선언하여 사용자가 무엇을 설정해야 하는지 알 수 있도록 합니다:
 
 ```python
-from crewai.tools import BaseTool, EnvVar
+from localagents.tools import BaseTool, EnvVar
 
 
 class GeolocateTool(BaseTool):
@@ -132,12 +132,12 @@ class GeolocateTool(BaseTool):
 프로젝트를 표준 Python 패키지로 구성합니다. 권장 레이아웃:
 
 ```
-crewai-geolocate/
+localagents-geolocate/
 ├── pyproject.toml
 ├── LICENSE
 ├── README.md
 └── src/
-    └── crewai_geolocate/
+    └── localagents_geolocate/
         ├── __init__.py
         └── tools.py
 ```
@@ -146,12 +146,12 @@ crewai-geolocate/
 
 ```toml
 [project]
-name = "crewai-geolocate"
+name = "localagents-geolocate"
 version = "0.1.0"
 description = "도로명 주소를 지오코딩하는 LocalAI 도구."
 requires-python = ">=3.10"
 dependencies = [
-    "crewai",
+    "localagents",
 ]
 
 [build-system]
@@ -159,22 +159,22 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 ```
 
-사용자가 자동으로 호환 버전을 받을 수 있도록 `crewai`를 의존성으로 선언합니다.
+사용자가 자동으로 호환 버전을 받을 수 있도록 `localagents`를 의존성으로 선언합니다.
 
 ### `__init__.py`
 
 사용자가 직접 import할 수 있도록 도구 클래스를 re-export합니다:
 
 ```python
-from crewai_geolocate.tools import GeolocateTool
+from localagents_geolocate.tools import GeolocateTool
 
 __all__ = ["GeolocateTool"]
 ```
 
 ### 명명 규칙
 
-- **패키지 이름**: `crewai-` 접두사를 사용합니다 (예: `crewai-geolocate`). PyPI에서 검색할 때 도구를 쉽게 찾을 수 있습니다.
-- **모듈 이름**: 밑줄을 사용합니다 (예: `crewai_geolocate`).
+- **패키지 이름**: `localagents-` 접두사를 사용합니다 (예: `localagents-geolocate`). PyPI에서 검색할 때 도구를 쉽게 찾을 수 있습니다.
+- **모듈 이름**: 밑줄을 사용합니다 (예: `localagents_geolocate`).
 - **도구 클래스 이름**: `Tool`로 끝나는 PascalCase를 사용합니다 (예: `GeolocateTool`).
 
 ## 도구 테스트
@@ -182,8 +182,8 @@ __all__ = ["GeolocateTool"]
 게시 전에 도구가 크루 내에서 작동하는지 확인합니다:
 
 ```python
-from crewai import Agent, Crew, Task
-from crewai_geolocate import GeolocateTool
+from localagents import Agent, Crew, Task
+from localagents_geolocate import GeolocateTool
 
 agent = Agent(
     role="Location Analyst",
@@ -222,19 +222,19 @@ uv publish
 사용자는 다음과 같이 도구를 설치할 수 있습니다:
 
 ```bash
-pip install crewai-geolocate
+pip install localagents-geolocate
 ```
 
 또는 uv를 사용하여:
 
 ```bash
-uv add crewai-geolocate
+uv add localagents-geolocate
 ```
 
 그런 다음 크루에서 사용합니다:
 
 ```python
-from crewai_geolocate import GeolocateTool
+from localagents_geolocate import GeolocateTool
 
 agent = Agent(
     role="Location Analyst",

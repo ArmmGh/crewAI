@@ -34,7 +34,7 @@ from onedrive_file_crew import OneDriveFileTrigger
 
 crew = OneDriveFileTrigger().crew()
 crew.kickoff({
-    "crewai_trigger_payload": onedrive_payload,
+    "localagents_trigger_payload": onedrive_payload,
 })
 ```
 
@@ -46,16 +46,16 @@ Test your OneDrive trigger integration locally using the LocalAI CLI:
 
 ```bash
 # View all available triggers
-crewai triggers list
+localagents triggers list
 
 # Simulate a OneDrive trigger with realistic payload
-crewai triggers run microsoft_onedrive/file_changed
+localagents triggers run microsoft_onedrive/file_changed
 ```
 
-The `crewai triggers run` command will execute your crew with a complete OneDrive payload, allowing you to test your parsing logic before deployment.
+The `localagents triggers run` command will execute your crew with a complete OneDrive payload, allowing you to test your parsing logic before deployment.
 
 <Warning>
-  Use `crewai triggers run microsoft_onedrive/file_changed` (not `crewai run`)
+  Use `localagents triggers run microsoft_onedrive/file_changed` (not `localagents run`)
   to simulate trigger execution during development. After deployment, your crew
   will automatically receive the trigger payload.
 </Warning>
@@ -63,7 +63,7 @@ The `crewai triggers run` command will execute your crew with a complete OneDriv
 ## Troubleshooting
 
 - Ensure the connected account has permission to read the file metadata included in the webhook
-- Test locally with `crewai triggers run microsoft_onedrive/file_changed` to see the exact payload structure
+- Test locally with `localagents triggers run microsoft_onedrive/file_changed` to see the exact payload structure
 - If the trigger fires but the payload is missing `permissions`, confirm the site-level sharing settings allow Graph to return this field
 - For large tenants, filter notifications upstream so the crew only runs on relevant directories
-- Remember: use `crewai triggers run` (not `crewai run`) to simulate trigger execution
+- Remember: use `localagents triggers run` (not `localagents run`) to simulate trigger execution

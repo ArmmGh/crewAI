@@ -18,14 +18,14 @@ mode: "wide"
 
 ## التثبيت
 
-يمكن تثبيت حزمة `crewai_tools`، التي ستتضمن أداة PGSearchTool عند إصدارها، باستخدام الأمر التالي:
+يمكن تثبيت حزمة `localagents_tools`، التي ستتضمن أداة PGSearchTool عند إصدارها، باستخدام الأمر التالي:
 
 ```shell
-pip install 'crewai[tools]'
+pip install 'localagents[tools]'
 ```
 
 <Note>
-    أداة PGSearchTool غير متاحة بعد في الإصدار الحالي من حزمة `crewai_tools`. سيتم تحديث أمر التثبيت هذا بمجرد إصدار الأداة.
+    أداة PGSearchTool غير متاحة بعد في الإصدار الحالي من حزمة `localagents_tools`. سيتم تحديث أمر التثبيت هذا بمجرد إصدار الأداة.
 </Note>
 
 ## مثال على الاستخدام
@@ -33,7 +33,7 @@ pip install 'crewai[tools]'
 فيما يلي مثال مقترح يوضح كيفية استخدام أداة PGSearchTool لإجراء بحث دلالي على جدول داخل قاعدة بيانات PostgreSQL:
 
 ```python Code
-from crewai_tools import PGSearchTool
+from localagents_tools import PGSearchTool
 
 # Initialize the tool with the database URI and the target table name
 tool = PGSearchTool(

@@ -13,19 +13,19 @@ mode: "wide"
 
 ## الوصف
 
-هذه الأداة جزء من حزمة `crewai_tools` وهي مصممة لإجراء عمليات بحث دلالية داخل محتوى فيديو YouTube، باستخدام تقنيات التوليد المعزز بالاسترجاع (RAG).
+هذه الأداة جزء من حزمة `localagents_tools` وهي مصممة لإجراء عمليات بحث دلالية داخل محتوى فيديو YouTube، باستخدام تقنيات التوليد المعزز بالاسترجاع (RAG).
 هي واحدة من عدة أدوات "بحث" في الحزمة التي تستفيد من RAG لمصادر مختلفة.
 تتيح أداة YoutubeVideoSearchTool المرونة في عمليات البحث؛ يمكن للمستخدمين البحث عبر أي محتوى فيديو YouTube دون تحديد عنوان URL للفيديو،
 أو يمكنهم توجيه بحثهم إلى فيديو YouTube محدد من خلال تقديم عنوان URL الخاص به.
 
 ## التثبيت
 
-لاستخدام `YoutubeVideoSearchTool`، يجب أولاً تثبيت حزمة `crewai_tools`.
+لاستخدام `YoutubeVideoSearchTool`، يجب أولاً تثبيت حزمة `localagents_tools`.
 تحتوي هذه الحزمة على `YoutubeVideoSearchTool` إلى جانب أدوات مساعدة أخرى مصممة لتعزيز مهام تحليل ومعالجة البيانات.
 ثبّت الحزمة بتنفيذ الأمر التالي في الطرفية:
 
 ```shell
-pip install 'crewai[tools]'
+pip install 'localagents[tools]'
 ```
 
 ## مثال
@@ -33,8 +33,8 @@ pip install 'crewai[tools]'
 يوضح المثال التالي كيفية استخدام `YoutubeVideoSearchTool` مع وكيل LocalAI:
 
 ```python Code
-from crewai import Agent, Task, Crew
-from crewai_tools import YoutubeVideoSearchTool
+from localagents import Agent, Task, Crew
+from localagents_tools import YoutubeVideoSearchTool
 
 # Initialize the tool for general YouTube video searches
 youtube_search_tool = YoutubeVideoSearchTool()
@@ -124,8 +124,8 @@ youtube_search_tool = YoutubeVideoSearchTool(
 إليك مثالاً أكثر تفصيلاً لكيفية دمج `YoutubeVideoSearchTool` مع وكيل LocalAI:
 
 ```python Code
-from crewai import Agent, Task, Crew
-from crewai_tools import YoutubeVideoSearchTool
+from localagents import Agent, Task, Crew
+from localagents_tools import YoutubeVideoSearchTool
 
 # Initialize the tool
 youtube_search_tool = YoutubeVideoSearchTool()

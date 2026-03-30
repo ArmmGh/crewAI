@@ -21,18 +21,18 @@ mode: "wide"
 4. تُعاد النتائج إلى سير عمل LocalAI
 
 <Note>
-  تفويض A2A يتطلب حزمة `a2a-sdk`. ثبّتها بـ: `uv add 'crewai[a2a]'` أو `pip install 'crewai[a2a]'`
+  تفويض A2A يتطلب حزمة `a2a-sdk`. ثبّتها بـ: `uv add 'localagents[a2a]'` أو `pip install 'localagents[a2a]'`
 </Note>
 
 ## التهيئة الأساسية
 
 <Warning>
-  `crewai.a2a.config.A2AConfig` مهمل وسيُزال في v2.0.0. استخدم `A2AClientConfig` للاتصال بـ Agents بعيدة و/أو `A2AServerConfig` لعرض الـ Agents كخوادم.
+  `localagents.a2a.config.A2AConfig` مهمل وسيُزال في v2.0.0. استخدم `A2AClientConfig` للاتصال بـ Agents بعيدة و/أو `A2AServerConfig` لعرض الـ Agents كخوادم.
 </Warning>
 
 ```python Code
-from crewai import Agent, Crew, Task
-from crewai.a2a import A2AClientConfig
+from localagents import Agent, Crew, Task
+from localagents.a2a import A2AClientConfig
 
 agent = Agent(
     role="Research Coordinator",

@@ -14,7 +14,7 @@ You can use memory four ways: **standalone** (scripts, notebooks), **with Crews*
 ## Quick Start
 
 ```python
-from crewai import Memory
+from localagents import Memory
 
 memory = Memory()
 
@@ -44,7 +44,7 @@ print(memory.info("/"))
 Use memory in scripts, notebooks, CLI tools, or as a standalone knowledge base -- no agents or crews required.
 
 ```python
-from crewai import Memory
+from localagents import Memory
 
 memory = Memory()
 
@@ -76,7 +76,7 @@ for fact in facts:
 Pass `memory=True` for default settings, or pass a configured `Memory` instance for custom behavior.
 
 ```python
-from crewai import Crew, Agent, Task, Process, Memory
+from localagents import Crew, Agent, Task, Process, Memory
 
 # Option 1: Default memory
 crew = Crew(
@@ -110,7 +110,7 @@ After each task, the crew automatically extracts discrete facts from the task ou
 Agents can use the crew's shared memory (default) or receive a scoped view for private context.
 
 ```python
-from crewai import Agent, Memory
+from localagents import Agent, Memory
 
 memory = Memory()
 
@@ -138,7 +138,7 @@ This pattern gives the researcher private findings while the writer reads from t
 Every Flow has built-in memory. Use `self.remember()`, `self.recall()`, and `self.extract_memories()` inside any flow method.
 
 ```python
-from crewai.flow.flow import Flow, listen, start
+from localagents.flow.flow import Flow, listen, start
 
 class ResearchFlow(Flow):
     @start()
@@ -520,13 +520,13 @@ Memory needs an embedding model to convert text into vectors for semantic search
 ### Passing to Memory Directly
 
 ```python
-from crewai import Memory
+from localagents import Memory
 
 # As a config dict
 memory = Memory(embedder={"provider": "openai", "config": {"model_name": "text-embedding-3-small"}})
 
 # As a pre-built callable
-from crewai.rag.embeddings.factory import build_embedder
+from localagents.rag.embeddings.factory import build_embedder
 embedder = build_embedder({"provider": "ollama", "config": {"model_name": "mxbai-embed-large"}})
 memory = Memory(embedder=embedder)
 ```
@@ -536,7 +536,7 @@ memory = Memory(embedder=embedder)
 When using `memory=True`, the crew's `embedder` config is passed through:
 
 ```python
-from crewai import Crew
+from localagents import Crew
 
 crew = Crew(
     agents=[...],
@@ -721,7 +721,7 @@ memory = Memory(embedder=my_embedder)
 Memory uses an LLM for save analysis (scope, categories, importance inference), consolidation decisions, and deep recall query analysis. You can configure which model to use.
 
 ```python
-from crewai import Memory, LLM
+from localagents import Memory, LLM
 
 # Default: gpt-4o-mini
 memory = Memory()
@@ -757,8 +757,8 @@ memory = Memory(
 
 ## Storage Backend
 
-- **Default**: LanceDB, stored under `./.crewai/memory` (or `$CREWAI_STORAGE_DIR/memory` if the env var is set, or the path you pass as `storage="path/to/dir"`).
-- **Custom backend**: Implement the `StorageBackend` protocol (see `crewai.memory.storage.backend`) and pass an instance to `Memory(storage=your_backend)`.
+- **Default**: LanceDB, stored under `./.localagents/memory` (or `$LOCALAGENTS_STORAGE_DIR/memory` if the env var is set, or the path you pass as `storage="path/to/dir"`).
+- **Custom backend**: Implement the `StorageBackend` protocol (see `localagents.memory.storage.backend`) and pass an instance to `Memory(storage=your_backend)`.
 
 
 ## Discovery
@@ -809,11 +809,11 @@ All memory operations emit events with `source_type="unified_memory"`. You can l
 Example: monitor query time:
 
 ```python
-from crewai.events import BaseEventListener, MemoryQueryCompletedEvent
+from localagents.events import BaseEventListener, MemoryQueryCompletedEvent
 
 class MemoryMonitor(BaseEventListener):
-    def setup_listeners(self, crewai_event_bus):
-        @crewai_event_bus.on(MemoryQueryCompletedEvent)
+    def setup_listeners(self, localagents_event_bus):
+        @localagents_event_bus.on(MemoryQueryCompletedEvent)
         def on_done(source, event):
             if getattr(event, "source_type", None) == "unified_memory":
                 print(f"Query '{event.query}' completed in {event.query_time_ms:.0f}ms")
@@ -823,7 +823,7 @@ class MemoryMonitor(BaseEventListener):
 ## Troubleshooting
 
 **Memory not persisting?**
-- Ensure the storage path is writable (default `./.crewai/memory`). Pass `storage="./your_path"` to use a different directory, or set the `CREWAI_STORAGE_DIR` environment variable.
+- Ensure the storage path is writable (default `./.localagents/memory`). Pass `storage="./your_path"` to use a different directory, or set the `LOCALAGENTS_STORAGE_DIR` environment variable.
 - When using a crew, confirm `memory=True` or `memory=Memory(...)` is set.
 
 **Slow recall?**
@@ -841,8 +841,8 @@ class MemoryMonitor(BaseEventListener):
 
 **Browse memory from the terminal:**
 ```bash
-crewai memory                              # Opens the TUI browser
-crewai memory --storage-path ./my_memory   # Point to a specific directory
+localagents memory                              # Opens the TUI browser
+localagents memory --storage-path ./my_memory   # Point to a specific directory
 ```
 
 **Reset memory (e.g. for tests):**

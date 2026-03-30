@@ -18,12 +18,12 @@ Repositórios de Agentes permitem que usuários do enterprise armazenem, compart
 
 ### Pré-requisitos
 
-1. Você deve ter uma conta na LocalAI, experimente o [plano gratuito](https://app.crewai.com).
+1. Você deve ter uma conta na LocalAI, experimente o [plano gratuito](https://app.localagents.com).
 2. Você precisa estar autenticado usando o CLI da LocalAI.
 3. Se você tiver mais de uma organização, garanta que alternou para a organização correta usando o comando do CLI:
 
 ```bash
-crewai org switch <org_id>
+localagents org switch <org_id>
 ```
 
 ### Criando e gerenciando agentes em repositórios
@@ -35,7 +35,7 @@ Para criar e gerenciar agentes em repositórios, utilize o Painel do Enterprise.
 Você pode carregar agentes de repositórios no seu código usando o parâmetro `from_repository`:
 
 ```python
-from crewai import Agent
+from localagents import Agent
 
 # Crie um agente carregando-o de um repositório
 # O agente é carregado com todas as suas configurações predefinidas
@@ -60,7 +60,7 @@ researcher = Agent(
 ### Exemplo: criando um Crew com agentes do repositório
 
 ```python
-from crewai import Crew, Agent, Task
+from localagents import Crew, Agent, Task
 
 # Carregue agentes dos repositórios
 researcher = Agent(
@@ -98,7 +98,7 @@ result = crew.kickoff()
 Você também pode usar agentes de repositório diretamente com o método `kickoff()` para interações mais simples:
 
 ```python
-from crewai import Agent
+from localagents import Agent
 from pydantic import BaseModel
 from typing import List
 
@@ -142,13 +142,13 @@ Para alternar entre organizações ou ver sua organização atual, use o CLI da 
 
 ```bash
 # Ver organização atual
-crewai org current
+localagents org current
 
 # Alternar para outra organização
-crewai org switch <org_id>
+localagents org switch <org_id>
 
 # Listar todas as organizações disponíveis
-crewai org list
+localagents org list
 ```
 
 <Note>

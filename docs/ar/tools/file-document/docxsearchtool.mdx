@@ -17,10 +17,10 @@ mode: "wide"
 
 ## التثبيت
 
-قم بتثبيت حزمة crewai_tools بتنفيذ الأمر التالي في الطرفية:
+قم بتثبيت حزمة localagents_tools بتنفيذ الأمر التالي في الطرفية:
 
 ```shell
-uv pip install docx2txt 'crewai[tools]'
+uv pip install docx2txt 'localagents[tools]'
 ```
 
 ## مثال
@@ -28,7 +28,7 @@ uv pip install docx2txt 'crewai[tools]'
 يوضح المثال التالي تهيئة DOCXSearchTool للبحث داخل محتوى أي ملف DOCX أو بمسار ملف DOCX محدد.
 
 ```python Code
-from crewai_tools import DOCXSearchTool
+from localagents_tools import DOCXSearchTool
 
 # Initialize the tool to search within any DOCX file's content
 tool = DOCXSearchTool()

@@ -25,7 +25,7 @@ mode: "wide"
 <Steps>
     <Step title="تثبيت الحزم المطلوبة">
       ```shell
-      pip install crewai weave
+      pip install localagents weave
       ```
     </Step>
     <Step title="إعداد حساب W&B">
@@ -38,14 +38,14 @@ mode: "wide"
       import weave
 
       # Initialize Weave with your project name
-      weave.init(project_name="crewai_demo")
+      weave.init(project_name="localagents_demo")
       ```
 
       بعد التهيئة، سيوفر Weave عنوان URL حيث يمكنك عرض التتبعات والمقاييس.
     </Step>
     <Step title="إنشاء طواقمك/تدفقاتك">
       ```python
-      from crewai import Agent, Task, Crew, LLM, Process
+      from localagents import Agent, Task, Crew, LLM, Process
 
       # Create an LLM with a temperature of 0 to ensure deterministic outputs
       llm = LLM(model="gpt-4o", temperature=0)
@@ -116,10 +116,10 @@ mode: "wide"
 - دعم ميزة التدفق مع تصحيح المزخرفات (`@start` و`@listen` و`@router` و`@or_` و`@and_`).
 - تتبع حواجز الحماية المخصصة المُمررة لمهام LocalAI `Task` باستخدام `@weave.op()`.
 
-لمعلومات تفصيلية حول ما هو مدعوم، قم بزيارة [وثائق Weave LocalAI](https://weave-docs.wandb.ai/guides/integrations/crewai/#getting-started-with-flow).
+لمعلومات تفصيلية حول ما هو مدعوم، قم بزيارة [وثائق Weave LocalAI](https://weave-docs.wandb.ai/guides/integrations/localagents/#getting-started-with-flow).
 
 ## الموارد
 
 - [وثائق Weave](https://weave-docs.wandb.ai)
-- [مثال على لوحة معلومات Weave x LocalAI](https://wandb.ai/ayut/crewai_demo/weave/traces?cols=%7B%22wb_run_id%22%3Afalse%2C%22attributes.weave.client_version%22%3Afalse%2C%22attributes.weave.os_name%22%3Afalse%2C%22attributes.weave.os_release%22%3Afalse%2C%22attributes.weave.os_version%22%3Afalse%2C%22attributes.weave.source%22%3Afalse%2C%22attributes.weave.sys_version%22%3Afalse%7D&peekPath=%2Fayut%2Fcrewai_demo%2Fcalls%2F0195c838-38cb-71a2-8a15-651ecddf9d89)
+- [مثال على لوحة معلومات Weave x LocalAI](https://wandb.ai/ayut/localagents_demo/weave/traces?cols=%7B%22wb_run_id%22%3Afalse%2C%22attributes.weave.client_version%22%3Afalse%2C%22attributes.weave.os_name%22%3Afalse%2C%22attributes.weave.os_release%22%3Afalse%2C%22attributes.weave.os_version%22%3Afalse%2C%22attributes.weave.source%22%3Afalse%2C%22attributes.weave.sys_version%22%3Afalse%7D&peekPath=%2Fayut%2Flocalagents_demo%2Fcalls%2F0195c838-38cb-71a2-8a15-651ecddf9d89)
 - [X](https://x.com/weave_wb)

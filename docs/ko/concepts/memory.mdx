@@ -14,7 +14,7 @@ LocalAI는 **통합 메모리 시스템**을 제공합니다 -- 단기, 장기, 
 ## 빠른 시작
 
 ```python
-from crewai import Memory
+from localagents import Memory
 
 memory = Memory()
 
@@ -44,7 +44,7 @@ print(memory.info("/"))
 스크립트, 노트북, CLI 도구 또는 독립 지식 베이스로 메모리를 사용합니다 -- 에이전트나 crew가 필요하지 않습니다.
 
 ```python
-from crewai import Memory
+from localagents import Memory
 
 memory = Memory()
 
@@ -76,7 +76,7 @@ for fact in facts:
 기본 설정은 `memory=True`를 전달하고, 사용자 정의 동작은 설정된 `Memory` 인스턴스를 전달합니다.
 
 ```python
-from crewai import Crew, Agent, Task, Process, Memory
+from localagents import Crew, Agent, Task, Process, Memory
 
 # 옵션 1: 기본 메모리
 crew = Crew(
@@ -110,7 +110,7 @@ crew = Crew(
 에이전트는 crew의 공유 메모리(기본값)를 사용하거나 비공개 컨텍스트를 위한 범위 지정 뷰를 받을 수 있습니다.
 
 ```python
-from crewai import Agent, Memory
+from localagents import Agent, Memory
 
 memory = Memory()
 
@@ -138,7 +138,7 @@ writer = Agent(
 모든 Flow에는 내장 메모리가 있습니다. 모든 flow 메서드 내부에서 `self.remember()`, `self.recall()`, `self.extract_memories()`를 사용하세요.
 
 ```python
-from crewai.flow.flow import Flow, listen, start
+from localagents.flow.flow import Flow, listen, start
 
 class ResearchFlow(Flow):
     @start()
@@ -520,13 +520,13 @@ memory = Memory(
 ### Memory에 직접 전달
 
 ```python
-from crewai import Memory
+from localagents import Memory
 
 # 설정 dict로
 memory = Memory(embedder={"provider": "openai", "config": {"model_name": "text-embedding-3-small"}})
 
 # 사전 구축된 callable로
-from crewai.rag.embeddings.factory import build_embedder
+from localagents.rag.embeddings.factory import build_embedder
 embedder = build_embedder({"provider": "ollama", "config": {"model_name": "mxbai-embed-large"}})
 memory = Memory(embedder=embedder)
 ```
@@ -536,7 +536,7 @@ memory = Memory(embedder=embedder)
 `memory=True` 사용 시 crew의 `embedder` 설정이 전달됩니다:
 
 ```python
-from crewai import Crew
+from localagents import Crew
 
 crew = Crew(
     agents=[...],
@@ -721,7 +721,7 @@ memory = Memory(embedder=my_embedder)
 메모리는 저장 분석(scope, categories, importance 추론), 통합 결정, 딥 recall 쿼리 분석에 LLM을 사용합니다. 사용할 모델을 설정할 수 있습니다.
 
 ```python
-from crewai import Memory, LLM
+from localagents import Memory, LLM
 
 # 기본값: gpt-4o-mini
 memory = Memory()
@@ -757,8 +757,8 @@ memory = Memory(
 
 ## 스토리지 백엔드
 
-- **기본값**: LanceDB, `./.crewai/memory` 아래에 저장 (또는 환경 변수가 설정된 경우 `$CREWAI_STORAGE_DIR/memory`, 또는 `storage="path/to/dir"`로 전달한 경로).
-- **사용자 정의 백엔드**: `StorageBackend` 프로토콜을 구현하고(`crewai.memory.storage.backend` 참조) `Memory(storage=your_backend)`에 인스턴스를 전달합니다.
+- **기본값**: LanceDB, `./.localagents/memory` 아래에 저장 (또는 환경 변수가 설정된 경우 `$LOCALAGENTS_STORAGE_DIR/memory`, 또는 `storage="path/to/dir"`로 전달한 경로).
+- **사용자 정의 백엔드**: `StorageBackend` 프로토콜을 구현하고(`localagents.memory.storage.backend` 참조) `Memory(storage=your_backend)`에 인스턴스를 전달합니다.
 
 
 ## 탐색(Discovery)
@@ -809,11 +809,11 @@ memory.list_records(scope="/project/alpha", limit=20)  # scope의 레코드, 최
 예: 쿼리 시간 모니터링:
 
 ```python
-from crewai.events import BaseEventListener, MemoryQueryCompletedEvent
+from localagents.events import BaseEventListener, MemoryQueryCompletedEvent
 
 class MemoryMonitor(BaseEventListener):
-    def setup_listeners(self, crewai_event_bus):
-        @crewai_event_bus.on(MemoryQueryCompletedEvent)
+    def setup_listeners(self, localagents_event_bus):
+        @localagents_event_bus.on(MemoryQueryCompletedEvent)
         def on_done(source, event):
             if getattr(event, "source_type", None) == "unified_memory":
                 print(f"Query '{event.query}' completed in {event.query_time_ms:.0f}ms")
@@ -823,7 +823,7 @@ class MemoryMonitor(BaseEventListener):
 ## 문제 해결
 
 **메모리가 유지되지 않나요?**
-- 저장 경로에 쓰기 권한이 있는지 확인하세요(기본값 `./.crewai/memory`). 다른 디렉터리를 사용하려면 `storage="./your_path"`를 전달하거나 `CREWAI_STORAGE_DIR` 환경 변수를 설정하세요.
+- 저장 경로에 쓰기 권한이 있는지 확인하세요(기본값 `./.localagents/memory`). 다른 디렉터리를 사용하려면 `storage="./your_path"`를 전달하거나 `LOCALAGENTS_STORAGE_DIR` 환경 변수를 설정하세요.
 - crew 사용 시 `memory=True` 또는 `memory=Memory(...)`가 설정되었는지 확인하세요.
 
 **recall이 느린가요?**
@@ -841,8 +841,8 @@ class MemoryMonitor(BaseEventListener):
 
 **터미널에서 메모리 탐색:**
 ```bash
-crewai memory                              # TUI 브라우저 열기
-crewai memory --storage-path ./my_memory   # 특정 디렉터리 지정
+localagents memory                              # TUI 브라우저 열기
+localagents memory --storage-path ./my_memory   # 특정 디렉터리 지정
 ```
 
 **메모리 초기화(예: 테스트용):**

@@ -20,7 +20,7 @@ TrueFoundry provides an enterprise-ready [AI Gateway](https://www.truefoundry.co
 <Steps>
 <Step title="Install LocalAI">
 ```bash
-pip install crewai
+pip install localagents
 ```
 </Step>
 
@@ -33,7 +33,7 @@ pip install crewai
 ![TrueFoundry Code Configuration](/images/new-code-snippet.png)
 
 ```python
-from crewai import LLM
+from localagents import LLM
 
 # Create an LLM instance with TrueFoundry AI Gateway
 truefoundry_llm = LLM(
@@ -43,7 +43,7 @@ truefoundry_llm = LLM(
 )
 
 # Use in your LocalAI agents
-from crewai import Agent
+from localagents import Agent
 
 @agent
 def researcher(self) -> Agent:
@@ -59,7 +59,7 @@ def researcher(self) -> Agent:
 ### Complete LocalAI Example
 
 ```python
-from crewai import Agent, Task, Crew, LLM
+from localagents import Agent, Task, Crew, LLM
 
 # Configure LLM with TrueFoundry
 llm = LLM(
@@ -144,4 +144,4 @@ Traceloop.init(
 ```
 
 This provides additional trace correlation across your entire LocalAI workflow.
-![TrueFoundry LocalAI Tracing](/images/tracing_crewai.png)
+![TrueFoundry LocalAI Tracing](/images/tracing_localagents.png)

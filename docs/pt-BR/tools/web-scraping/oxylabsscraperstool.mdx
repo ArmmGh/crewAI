@@ -14,7 +14,7 @@ mode: "wide"
 
 Obtenha as credenciais criando uma conta na Oxylabs [aqui](https://oxylabs.io).
 ```shell
-pip install 'crewai[tools]' oxylabs
+pip install 'localagents[tools]' oxylabs
 ```
 Confira a [Documentação da Oxylabs](https://developers.oxylabs.io/scraping-solutions/web-scraper-api/targets) para mais informações sobre os parâmetros da API.
 
@@ -23,7 +23,7 @@ Confira a [Documentação da Oxylabs](https://developers.oxylabs.io/scraping-sol
 ### Exemplo
 
 ```python
-from crewai_tools import OxylabsAmazonProductScraperTool
+from localagents_tools import OxylabsAmazonProductScraperTool
 
 # certifique-se de que as variáveis OXYLABS_USERNAME e OXYLABS_PASSWORD estejam definidas
 tool = OxylabsAmazonProductScraperTool()
@@ -48,7 +48,7 @@ print(result)
 ### Exemplo avançado
 
 ```python
-from crewai_tools import OxylabsAmazonProductScraperTool
+from localagents_tools import OxylabsAmazonProductScraperTool
 
 # certifique-se de que as variáveis OXYLABS_USERNAME e OXYLABS_PASSWORD estejam definidas
 tool = OxylabsAmazonProductScraperTool(
@@ -74,7 +74,7 @@ print(result)
 ### Exemplo
 
 ```python
-from crewai_tools import OxylabsAmazonSearchScraperTool
+from localagents_tools import OxylabsAmazonSearchScraperTool
 
 # certifique-se de que as variáveis OXYLABS_USERNAME e OXYLABS_PASSWORD estejam definidas
 tool = OxylabsAmazonSearchScraperTool()
@@ -101,7 +101,7 @@ print(result)
 ### Exemplo avançado
 
 ```python
-from crewai_tools import OxylabsAmazonSearchScraperTool
+from localagents_tools import OxylabsAmazonSearchScraperTool
 
 # certifique-se de que as variáveis OXYLABS_USERNAME e OXYLABS_PASSWORD estejam definidas
 tool = OxylabsAmazonSearchScraperTool(
@@ -126,7 +126,7 @@ print(result)
 ### Exemplo
 
 ```python
-from crewai_tools import OxylabsGoogleSearchScraperTool
+from localagents_tools import OxylabsGoogleSearchScraperTool
 
 # certifique-se de que as variáveis OXYLABS_USERNAME e OXYLABS_PASSWORD estejam definidas
 tool = OxylabsGoogleSearchScraperTool()
@@ -155,7 +155,7 @@ print(result)
 ### Exemplo avançado
 
 ```python
-from crewai_tools import OxylabsGoogleSearchScraperTool
+from localagents_tools import OxylabsGoogleSearchScraperTool
 
 # certifique-se de que as variáveis OXYLABS_USERNAME e OXYLABS_PASSWORD estejam definidas
 tool = OxylabsGoogleSearchScraperTool(
@@ -176,7 +176,7 @@ print(result)
 ### Exemplo
 
 ```python
-from crewai_tools import OxylabsUniversalScraperTool
+from localagents_tools import OxylabsUniversalScraperTool
 
 # certifique-se de que as variáveis OXYLABS_USERNAME e OXYLABS_PASSWORD estejam definidas
 tool = OxylabsUniversalScraperTool()
@@ -200,7 +200,7 @@ print(result)
 ### Exemplo avançado
 
 ```python
-from crewai_tools import OxylabsUniversalScraperTool
+from localagents_tools import OxylabsUniversalScraperTool
 
 # certifique-se de que as variáveis OXYLABS_USERNAME e OXYLABS_PASSWORD estejam definidas
 tool = OxylabsUniversalScraperTool(

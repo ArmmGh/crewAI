@@ -13,10 +13,10 @@ The `ArxivPaperTool` queries the arXiv API for academic papers and returns compa
 
 ## Installation
 
-This tool has no special installation beyond `crewai-tools`.
+This tool has no special installation beyond `localagents-tools`.
 
 ```shell
-uv add crewai-tools
+uv add localagents-tools
 ```
 
 No API key is required. This tool uses the public arXiv Atom API.
@@ -30,8 +30,8 @@ No API key is required. This tool uses the public arXiv Atom API.
 ## Example
 
 ```python Code
-from crewai import Agent, Task, Crew
-from crewai_tools import ArxivPaperTool
+from localagents import Agent, Task, Crew
+from localagents_tools import ArxivPaperTool
 
 tool = ArxivPaperTool(
     download_pdfs=False,
@@ -60,7 +60,7 @@ result = crew.kickoff()
 ### Direct usage (without Agent)
 
 ```python Code
-from crewai_tools import ArxivPaperTool
+from localagents_tools import ArxivPaperTool
 
 tool = ArxivPaperTool(
     download_pdfs=True,

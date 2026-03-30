@@ -9,10 +9,10 @@ icon: file-image
 يدعم LocalAI مدخلات الملفات متعددة الوسائط الأصلية، مما يتيح لك تمرير الصور وملفات PDF والصوت والفيديو والنصوص مباشرة إلى وكلائك. يتم تنسيق الملفات تلقائيًا وفقًا لمتطلبات API لكل مزود LLM.
 
 <Note type="info" title="اعتمادية اختيارية">
-يتطلب دعم الملفات حزمة `crewai-files` الاختيارية. ثبّتها بـ:
+يتطلب دعم الملفات حزمة `localagents-files` الاختيارية. ثبّتها بـ:
 
 ```bash
-uv add 'crewai[file-processing]'
+uv add 'localagents[file-processing]'
 ```
 </Note>
 
@@ -34,7 +34,7 @@ uv add 'crewai[file-processing]'
 | **عام** | `File` | اكتشاف تلقائي للنوع من المحتوى |
 
 ```python
-from crewai_files import File, ImageFile, PDFFile, AudioFile, VideoFile, TextFile
+from localagents_files import File, ImageFile, PDFFile, AudioFile, VideoFile, TextFile
 
 image = ImageFile(source="screenshot.png")
 pdf = PDFFile(source="report.pdf")
@@ -52,7 +52,7 @@ file = File(source="document.pdf")
 ### من مسار
 
 ```python
-from crewai_files import ImageFile
+from localagents_files import ImageFile
 
 image = ImageFile(source="./images/chart.png")
 ```
@@ -60,7 +60,7 @@ image = ImageFile(source="./images/chart.png")
 ### من عنوان URL
 
 ```python
-from crewai_files import ImageFile
+from localagents_files import ImageFile
 
 image = ImageFile(source="https://example.com/image.png")
 ```
@@ -68,7 +68,7 @@ image = ImageFile(source="https://example.com/image.png")
 ### من بايتات
 
 ```python
-from crewai_files import ImageFile, FileBytes
+from localagents_files import ImageFile, FileBytes
 
 image_bytes = download_image_from_api()
 image = ImageFile(source=FileBytes(data=image_bytes, filename="downloaded.png"))
@@ -84,8 +84,8 @@ image = ImageFile(source=image_bytes)
 مرر الملفات عند تشغيل طاقم:
 
 ```python
-from crewai import Crew
-from crewai_files import ImageFile
+from localagents import Crew
+from localagents_files import ImageFile
 
 crew = Crew(agents=[analyst], tasks=[analysis_task])
 
@@ -103,8 +103,8 @@ result = crew.kickoff(
 أرفق الملفات بمهام محددة:
 
 ```python
-from crewai import Task
-from crewai_files import ImageFile
+from localagents import Task
+from localagents_files import ImageFile
 
 task = Task(
     description="Analyze the sales chart and identify trends in {chart}",
@@ -120,8 +120,8 @@ task = Task(
 مرر الملفات إلى التدفقات، والتي تنتقل تلقائيًا إلى الأطقم:
 
 ```python
-from crewai.flow.flow import Flow, start
-from crewai_files import ImageFile
+from localagents.flow.flow import Flow, start
+from localagents_files import ImageFile
 
 class AnalysisFlow(Flow):
     @start()
@@ -139,8 +139,8 @@ result = flow.kickoff(
 مرر الملفات مباشرة إلى تشغيل الوكيل:
 
 ```python
-from crewai import Agent
-from crewai_files import ImageFile
+from localagents import Agent
+from localagents_files import ImageFile
 
 agent = Agent(
     role="Image Analyst",
@@ -215,7 +215,7 @@ Flow input_files < Crew input_files < Task input_files
 تحكم في كيفية معالجة الملفات عندما تتجاوز حدود المزود:
 
 ```python
-from crewai_files import ImageFile, PDFFile
+from localagents_files import ImageFile, PDFFile
 
 image = ImageFile(source="large.png", mode="strict")
 image = ImageFile(source="large.png", mode="auto")

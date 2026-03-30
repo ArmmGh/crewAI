@@ -39,16 +39,16 @@ info:
   version: 1.0.0
   contact:
     name: LocalAI Support
-    email: support@crewai.com
-    url: https://crewai.com
+    email: support@localagents.com
+    url: https://localagents.com
 servers:
-  - url: https://your-actual-crew-name.crewai.com
+  - url: https://your-actual-crew-name.localagents.com
     description: Replace with your actual deployed crew URL from the LocalAI AMP dashboard
-  - url: https://my-travel-crew.crewai.com
+  - url: https://my-travel-crew.localagents.com
     description: Example travel planning crew (replace with your URL)
-  - url: https://content-creation-crew.crewai.com
+  - url: https://content-creation-crew.localagents.com
     description: Example content creation crew (replace with your URL)
-  - url: https://research-assistant-crew.crewai.com
+  - url: https://research-assistant-crew.localagents.com
     description: Example research assistant crew (replace with your URL)
 security:
   - BearerAuth: []

@@ -18,7 +18,7 @@ Esta ferramenta é particularmente útil para aplicações que exigem acesso a u
 O exemplo a seguir demonstra como inicializar a ferramenta e usá-la com diferentes fontes de dados:
 
 ```python Code
-from crewai_tools import RagTool
+from localagents_tools import RagTool
 
 # Create a RAG tool with default settings
 rag_tool = RagTool()
@@ -102,13 +102,13 @@ rag_tool.add(data_type="directory", path="path/to/your/directory")
 Veja como integrar o `RagTool` com um agente do LocalAI:
 
 ```python Code
-from crewai import Agent
-from crewai.project import agent
-from crewai_tools import RagTool
+from localagents import Agent
+from localagents.project import agent
+from localagents_tools import RagTool
 
 # Initialize the tool and add content
 rag_tool = RagTool()
-rag_tool.add(data_type="web_page", url="https://docs.crewai.com")
+rag_tool.add(data_type="web_page", url="https://docs.localagents.com")
 rag_tool.add(data_type="file", path="company_data.pdf")
 
 # Define an agent with the RagTool
@@ -126,7 +126,7 @@ def knowledge_expert(self) -> Agent:
 É possível personalizar o comportamento do `RagTool` fornecendo um dicionário de configuração:
 
 ```python Code
-from crewai_tools import RagTool
+from localagents_tools import RagTool
 
 # Create a RAG tool with custom configuration
 config = {

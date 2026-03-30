@@ -114,9 +114,9 @@ reporting_analyst:
 
 ```python Code
 # src/latest_ai_development/crew.py
-from crewai import Agent, Crew, Process
-from crewai.project import CrewBase, agent, crew
-from crewai_tools import SerperDevTool
+from localagents import Agent, Crew, Process
+from localagents.project import CrewBase, agent, crew
+from localagents_tools import SerperDevTool
 
 @CrewBase
 class LatestAiDevelopmentCrew():
@@ -150,8 +150,8 @@ class LatestAiDevelopmentCrew():
 يمكنك إنشاء الوكلاء مباشرة في الكود بإنشاء فئة `Agent`. إليك مثالًا شاملًا يوضح جميع المعاملات المتاحة:
 
 ```python Code
-from crewai import Agent
-from crewai_tools import SerperDevTool
+from localagents import Agent
+from localagents_tools import SerperDevTool
 
 # إنشاء وكيل بجميع المعاملات المتاحة
 agent = Agent(
@@ -283,14 +283,14 @@ analysis_agent = Agent(
 
 يمكن تجهيز الوكلاء بأدوات متنوعة لتعزيز قدراتهم. يدعم LocalAI أدوات من:
 
-- [مجموعة أدوات LocalAI](https://github.com/joaomdmoura/crewai-tools)
+- [مجموعة أدوات LocalAI](https://github.com/joaomdmoura/localagents-tools)
 - [أدوات LangChain](https://python.langchain.com/docs/integrations/tools)
 
 إليك كيفية إضافة أدوات لوكيل:
 
 ```python Code
-from crewai import Agent
-from crewai_tools import SerperDevTool, WikipediaTools
+from localagents import Agent
+from localagents_tools import SerperDevTool, WikipediaTools
 
 # إنشاء الأدوات
 search_tool = SerperDevTool()
@@ -310,8 +310,8 @@ researcher = Agent(
 يمكن استخدام الوكلاء مباشرة بدون المرور بمهمة أو سير عمل طاقم باستخدام طريقة `kickoff()`. يوفر هذا طريقة أبسط للتفاعل مع وكيل عندما لا تحتاج إلى إمكانيات تنسيق الطاقم الكاملة.
 
 ```python Code
-from crewai import Agent
-from crewai_tools import SerperDevTool
+from localagents import Agent
+from localagents_tools import SerperDevTool
 
 # إنشاء وكيل
 researcher = Agent(

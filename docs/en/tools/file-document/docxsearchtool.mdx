@@ -20,10 +20,10 @@ streamlining the process of finding specific information within large document c
 
 ## Installation
 
-Install the crewai_tools package by running the following command in your terminal:
+Install the localagents_tools package by running the following command in your terminal:
 
 ```shell
-uv pip install docx2txt 'crewai[tools]'
+uv pip install docx2txt 'localagents[tools]'
 ```
 
 ## Example
@@ -31,7 +31,7 @@ uv pip install docx2txt 'crewai[tools]'
 The following example demonstrates initializing the DOCXSearchTool to search within any DOCX file's content or with a specific DOCX file path.
 
 ```python Code
-from crewai_tools import DOCXSearchTool
+from localagents_tools import DOCXSearchTool
 
 # Initialize the tool to search within any DOCX file's content
 tool = DOCXSearchTool()

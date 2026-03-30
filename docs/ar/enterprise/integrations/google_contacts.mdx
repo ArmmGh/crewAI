@@ -13,41 +13,41 @@ mode: "wide"
 
 قبل استخدام تكامل Google Contacts، تأكد من توفر ما يلي:
 
-- حساب [LocalAI AMP](https://app.crewai.com) مع اشتراك فعّال
+- حساب [LocalAI AMP](https://app.localagents.com) مع اشتراك فعّال
 - حساب Google مع إمكانية الوصول إلى Google Contacts
-- ربط حساب Google الخاص بك عبر [صفحة التكاملات](https://app.crewai.com/crewai_plus/connectors)
+- ربط حساب Google الخاص بك عبر [صفحة التكاملات](https://app.localagents.com/localagents_plus/connectors)
 
 ## إعداد تكامل Google Contacts
 
 ### 1. ربط حساب Google الخاص بك
 
-1. انتقل إلى [تكاملات LocalAI AMP](https://app.crewai.com/crewai_plus/connectors)
+1. انتقل إلى [تكاملات LocalAI AMP](https://app.localagents.com/localagents_plus/connectors)
 2. ابحث عن **Google Contacts** في قسم تكاملات المصادقة
 3. انقر على **Connect** وأكمل عملية OAuth
 4. امنح الصلاحيات اللازمة للوصول إلى جهات الاتصال والدليل
-5. انسخ رمز المؤسسة من [إعدادات التكامل](https://app.crewai.com/crewai_plus/settings/integrations)
+5. انسخ رمز المؤسسة من [إعدادات التكامل](https://app.localagents.com/localagents_plus/settings/integrations)
 
 ### 2. تثبيت الحزمة المطلوبة
 
 ```bash
-uv add crewai-tools
+uv add localagents-tools
 ```
 
 ### 3. إعداد متغير البيئة
 
 <Note>
   لاستخدام التكاملات مع `Agent(apps=[])`, يجب تعيين متغير البيئة
-  `CREWAI_PLATFORM_INTEGRATION_TOKEN` برمز المؤسسة الخاص بك.
+  `LOCALAGENTS_PLATFORM_INTEGRATION_TOKEN` برمز المؤسسة الخاص بك.
 </Note>
 
 ```bash
-export CREWAI_PLATFORM_INTEGRATION_TOKEN="your_enterprise_token"
+export LOCALAGENTS_PLATFORM_INTEGRATION_TOKEN="your_enterprise_token"
 ```
 
 أو أضفه إلى ملف `.env`:
 
 ```
-CREWAI_PLATFORM_INTEGRATION_TOKEN=your_enterprise_token
+LOCALAGENTS_PLATFORM_INTEGRATION_TOKEN=your_enterprise_token
 ```
 
 ## الإجراءات المتاحة
@@ -284,7 +284,7 @@ CREWAI_PLATFORM_INTEGRATION_TOKEN=your_enterprise_token
 ### إعداد Agent أساسي لـ Google Contacts
 
 ```python
-from crewai import Agent, Task, Crew
+from localagents import Agent, Task, Crew
 
 # Create an agent with Google Contacts capabilities
 contacts_agent = Agent(
@@ -313,7 +313,7 @@ crew.kickoff()
 ### البحث في الدليل وإدارته
 
 ```python
-from crewai import Agent, Task, Crew
+from localagents import Agent, Task, Crew
 
 directory_manager = Agent(
     role="Directory Manager",
@@ -344,7 +344,7 @@ crew.kickoff()
 ### إنشاء جهات الاتصال وتحديثاتها
 
 ```python
-from crewai import Agent, Task, Crew
+from localagents import Agent, Task, Crew
 
 contact_curator = Agent(
     role="Contact Curator",
@@ -376,7 +376,7 @@ crew.kickoff()
 ### إدارة مجموعات جهات الاتصال
 
 ```python
-from crewai import Agent, Task, Crew
+from localagents import Agent, Task, Crew
 
 group_organizer = Agent(
     role="Contact Group Organizer",
@@ -408,7 +408,7 @@ crew.kickoff()
 ### إدارة جهات الاتصال الشاملة
 
 ```python
-from crewai import Agent, Task, Crew
+from localagents import Agent, Task, Crew
 
 contact_specialist = Agent(
     role="Contact Management Specialist",
@@ -487,7 +487,7 @@ crew.kickoff()
 
 ### الحصول على المساعدة
 
-<Card title="تحتاج مساعدة؟" icon="headset" href="mailto:support@crewai.com">
+<Card title="تحتاج مساعدة؟" icon="headset" href="mailto:support@localagents.com">
   تواصل مع فريق الدعم للحصول على المساعدة في إعداد تكامل Google Contacts
   أو استكشاف الأخطاء وإصلاحها.
 </Card>

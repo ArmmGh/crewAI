@@ -14,7 +14,7 @@ mode: "wide"
 لإنشاء وكيل متعدد الوسائط، ما عليك سوى تعيين معامل `multimodal` إلى `True` عند تهيئة وكيلك:
 
 ```python
-from crewai import Agent
+from localagents import Agent
 
 agent = Agent(
     role="Image Analyst",
@@ -33,7 +33,7 @@ agent = Agent(
 إليك مثالاً كاملاً يوضح كيفية استخدام وكيل متعدد الوسائط لتحليل صورة:
 
 ```python
-from crewai import Agent, Task, Crew
+from localagents import Agent, Task, Crew
 
 # Create a multimodal agent
 image_analyst = Agent(
@@ -64,7 +64,7 @@ result = crew.kickoff()
 يمكنك تقديم سياق إضافي أو أسئلة محددة حول الصورة عند إنشاء مهام للوكلاء متعددي الوسائط. يمكن أن يتضمن وصف المهمة جوانب محددة تريد أن يركز عليها الوكيل:
 
 ```python
-from crewai import Agent, Task, Crew
+from localagents import Agent, Task, Crew
 
 # Create a multimodal agent for detailed analysis
 expert_analyst = Agent(

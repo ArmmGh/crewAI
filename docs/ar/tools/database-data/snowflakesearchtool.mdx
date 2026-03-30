@@ -39,8 +39,8 @@ uv sync --extra snowflake
 يوضح المثال التالي كيفية استخدام `SnowflakeSearchTool` للاستعلام عن البيانات من قاعدة بيانات Snowflake:
 
 ```python Code
-from crewai import Agent, Task, Crew
-from crewai_tools import SnowflakeSearchTool, SnowflakeConfig
+from localagents import Agent, Task, Crew
+from localagents_tools import SnowflakeSearchTool, SnowflakeConfig
 
 # Create Snowflake configuration
 config = SnowflakeConfig(

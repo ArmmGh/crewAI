@@ -20,7 +20,7 @@ mode: "wide"
 أضف خوادم MCP إلى وكيلك باستخدام حقل `mcps`:
 
 ```python
-from crewai import Agent
+from localagents import Agent
 
 agent = Agent(
     role="Research Assistant",
@@ -86,7 +86,7 @@ mcps=[
 إليك مثالاً كاملاً يستخدم خوادم MCP متعددة:
 
 ```python
-from crewai import Agent, Task, Crew, Process
+from localagents import Agent, Task, Crew, Process
 
 # Create agent with multiple MCP sources
 multi_source_agent = Agent(
@@ -235,7 +235,7 @@ agent = Agent(
 تعمل أدوات MCP بسلاسة مع ميزات LocalAI الأخرى:
 
 ```python
-from crewai.tools import BaseTool
+from localagents.tools import BaseTool
 
 class CustomTool(BaseTool):
     name: str = "custom_analysis"
@@ -346,4 +346,4 @@ mcps=["https://mcp.example.com/mcp?api_key=valid_key"]
 
 ## متقدم: MCPServerAdapter
 
-للسيناريوهات المعقدة التي تتطلب إدارة اتصال يدوية، استخدم فئة `MCPServerAdapter` من `crewai-tools`. استخدام مدير سياق Python (تعليمة `with`) هو النهج الموصى به لأنه يتعامل تلقائياً مع بدء وإيقاف الاتصال بخادم MCP.
+للسيناريوهات المعقدة التي تتطلب إدارة اتصال يدوية، استخدم فئة `MCPServerAdapter` من `localagents-tools`. استخدام مدير سياق Python (تعليمة `with`) هو النهج الموصى به لأنه يتعامل تلقائياً مع بدء وإيقاف الاتصال بخادم MCP.

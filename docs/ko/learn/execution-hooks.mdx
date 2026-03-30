@@ -49,7 +49,7 @@ LocalAI는 두 가지 주요 범주의 실행 훅을 제공합니다:
 훅을 등록하는 가장 깔끔하고 파이썬스러운 방법:
 
 ```python
-from crewai.hooks import before_llm_call, after_llm_call, before_tool_call, after_tool_call
+from localagents.hooks import before_llm_call, after_llm_call, before_tool_call, after_tool_call
 
 @before_llm_call
 def limit_iterations(context):
@@ -84,9 +84,9 @@ def log_tool_result(context):
 특정 크루 인스턴스에만 훅을 적용합니다:
 
 ```python
-from crewai import CrewBase
-from crewai.project import crew
-from crewai.hooks import before_llm_call_crew, after_tool_call_crew
+from localagents import CrewBase
+from localagents.project import crew
+from localagents.hooks import before_llm_call_crew, after_tool_call_crew
 
 @CrewBase
 class MyProjCrew:
@@ -270,7 +270,7 @@ def track_metrics(context):
 ### 모든 훅 지우기
 
 ```python
-from crewai.hooks import clear_all_global_hooks
+from localagents.hooks import clear_all_global_hooks
 
 # 모든 훅을 한 번에 지웁니다
 result = clear_all_global_hooks()
@@ -280,7 +280,7 @@ print(f"{result['total']} 훅이 지워졌습니다")
 ### 특정 훅 유형 지우기
 
 ```python
-from crewai.hooks import (
+from localagents.hooks import (
     clear_before_llm_call_hooks,
     clear_after_llm_call_hooks,
     clear_before_tool_call_hooks,
@@ -324,7 +324,7 @@ def wrong_approach(context):
 
 ### 4. 타입 힌트 사용
 ```python
-from crewai.hooks import LLMCallHookContext, ToolCallHookContext
+from localagents.hooks import LLMCallHookContext, ToolCallHookContext
 
 def my_llm_hook(context: LLMCallHookContext) -> bool | None:
     return None
@@ -336,7 +336,7 @@ def my_tool_hook(context: ToolCallHookContext) -> str | None:
 ### 5. 테스트에서 정리
 ```python
 import pytest
-from crewai.hooks import clear_all_global_hooks
+from localagents.hooks import clear_all_global_hooks
 
 @pytest.fixture(autouse=True)
 def clean_hooks():

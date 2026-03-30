@@ -12,7 +12,7 @@ mode: "wide"
 ## التثبيت
 
 ```bash
-uv pip install 'crewai[tools]'
+uv pip install 'localagents[tools]'
 ```
 
 ## المتطلبات
@@ -26,8 +26,8 @@ uv pip install 'crewai[tools]'
 إليك كيفية استخدام الأداة مع وكيل LocalAI:
 
 ```python {2, 4-17}
-from crewai import Agent, Task, Crew
-from crewai_tools.aws.bedrock.knowledge_base.retriever_tool import BedrockKBRetrieverTool
+from localagents import Agent, Task, Crew
+from localagents_tools.aws.bedrock.knowledge_base.retriever_tool import BedrockKBRetrieverTool
 
 # Initialize the tool
 kb_tool = BedrockKBRetrieverTool(

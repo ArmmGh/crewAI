@@ -12,10 +12,10 @@ info:
   version: 1.0.0
   contact:
     name: LocalAI 지원
-    email: support@crewai.com
-    url: https://crewai.com
+    email: support@localagents.com
+    url: https://localagents.com
 servers:
-  - url: https://your-actual-crew-name.crewai.com
+  - url: https://your-actual-crew-name.localagents.com
     description: 대시보드의 실제 crew URL로 교체하세요
 security:
   - BearerAuth: []

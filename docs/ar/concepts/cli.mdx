@@ -9,7 +9,7 @@ mode: "wide"
   منذ الإصدار 0.140.0، بدأ LocalAI AMP عملية نقل مزود تسجيل الدخول.
   لذلك، تم تحديث تدفق المصادقة عبر CLI. المستخدمون الذين يسجلون الدخول
   باستخدام Google، أو الذين أنشأوا حساباتهم بعد 3 يوليو 2025 لن يتمكنوا
-  من تسجيل الدخول مع الإصدارات القديمة من مكتبة `crewai`.
+  من تسجيل الدخول مع الإصدارات القديمة من مكتبة `localagents`.
 </Warning>
 
 ## نظرة عامة
@@ -21,7 +21,7 @@ mode: "wide"
 لاستخدام واجهة سطر أوامر LocalAI، تأكد من تثبيت LocalAI:
 
 ```shell Terminal
-pip install crewai
+pip install localagents
 ```
 
 ## الاستخدام الأساسي
@@ -29,7 +29,7 @@ pip install crewai
 الهيكل الأساسي لأمر LocalAI CLI هو:
 
 ```shell Terminal
-crewai [COMMAND] [OPTIONS] [ARGUMENTS]
+localagents [COMMAND] [OPTIONS] [ARGUMENTS]
 ```
 
 ## الأوامر المتاحة
@@ -39,7 +39,7 @@ crewai [COMMAND] [OPTIONS] [ARGUMENTS]
 إنشاء طاقم أو تدفق جديد.
 
 ```shell Terminal
-crewai create [OPTIONS] TYPE NAME
+localagents create [OPTIONS] TYPE NAME
 ```
 
 - `TYPE`: اختر بين "crew" أو "flow"
@@ -48,8 +48,8 @@ crewai create [OPTIONS] TYPE NAME
 مثال:
 
 ```shell Terminal
-crewai create crew my_new_crew
-crewai create flow my_new_flow
+localagents create crew my_new_crew
+localagents create flow my_new_flow
 ```
 
 ### 2. الإصدار
@@ -57,7 +57,7 @@ crewai create flow my_new_flow
 عرض الإصدار المثبت من LocalAI.
 
 ```shell Terminal
-crewai version [OPTIONS]
+localagents version [OPTIONS]
 ```
 
 - `--tools`: (اختياري) عرض الإصدار المثبت من أدوات LocalAI
@@ -67,7 +67,7 @@ crewai version [OPTIONS]
 تدريب الطاقم لعدد محدد من التكرارات.
 
 ```shell Terminal
-crewai train [OPTIONS]
+localagents train [OPTIONS]
 ```
 
 - `-n, --n_iterations INTEGER`: عدد تكرارات التدريب (افتراضي: 5)
@@ -78,7 +78,7 @@ crewai train [OPTIONS]
 إعادة تنفيذ الطاقم من مهمة محددة.
 
 ```shell Terminal
-crewai replay [OPTIONS]
+localagents replay [OPTIONS]
 ```
 
 - `-t, --task_id TEXT`: إعادة تنفيذ الطاقم من معرّف المهمة هذا، بما في ذلك جميع المهام اللاحقة
@@ -88,7 +88,7 @@ crewai replay [OPTIONS]
 استرجاع أحدث مخرجات مهام crew.kickoff().
 
 ```shell Terminal
-crewai log-tasks-outputs
+localagents log-tasks-outputs
 ```
 
 ### 6. إعادة تعيين الذاكرة
@@ -96,7 +96,7 @@ crewai log-tasks-outputs
 إعادة تعيين ذاكرة الطاقم (طويلة، قصيرة، الكيانات، أحدث مخرجات التشغيل).
 
 ```shell Terminal
-crewai reset-memories [OPTIONS]
+localagents reset-memories [OPTIONS]
 ```
 
 - `-l, --long`: إعادة تعيين الذاكرة طويلة المدى
@@ -112,7 +112,7 @@ crewai reset-memories [OPTIONS]
 اختبار الطاقم وتقييم النتائج.
 
 ```shell Terminal
-crewai test [OPTIONS]
+localagents test [OPTIONS]
 ```
 
 - `-n, --n_iterations INTEGER`: عدد تكرارات الاختبار (افتراضي: 3)
@@ -123,11 +123,11 @@ crewai test [OPTIONS]
 تشغيل الطاقم أو التدفق.
 
 ```shell Terminal
-crewai run
+localagents run
 ```
 
 <Note>
-  بدءًا من الإصدار 0.103.0، يمكن استخدام أمر `crewai run` لتشغيل
+  بدءًا من الإصدار 0.103.0، يمكن استخدام أمر `localagents run` لتشغيل
   كل من الأطقم القياسية والتدفقات. للتدفقات، يكتشف تلقائيًا النوع
   من pyproject.toml ويشغّل الأمر المناسب. هذه هي الطريقة الموصى بها
   لتشغيل كل من الأطقم والتدفقات.
@@ -135,10 +135,10 @@ crewai run
 
 ### 9. الدردشة
 
-بدءًا من الإصدار `0.98.0`، عند تشغيل أمر `crewai chat`، تبدأ جلسة تفاعلية مع طاقمك. سيرشدك المساعد الذكي بطلب المدخلات اللازمة لتنفيذ الطاقم. بمجرد توفير جميع المدخلات، سينفذ الطاقم مهامه.
+بدءًا من الإصدار `0.98.0`، عند تشغيل أمر `localagents chat`، تبدأ جلسة تفاعلية مع طاقمك. سيرشدك المساعد الذكي بطلب المدخلات اللازمة لتنفيذ الطاقم. بمجرد توفير جميع المدخلات، سينفذ الطاقم مهامه.
 
 ```shell Terminal
-crewai chat
+localagents chat
 ```
 
 <Note>
@@ -159,42 +159,42 @@ def crew(self) -> Crew:
 
 ### 10. النشر
 
-نشر الطاقم أو التدفق إلى [LocalAI AMP](https://app.crewai.com).
+نشر الطاقم أو التدفق إلى [LocalAI AMP](https://app.localagents.com).
 
 - **المصادقة**: تحتاج لتكون مصادقًا للنشر إلى LocalAI AMP.
 
   ```shell Terminal
-  crewai login
+  localagents login
   ```
 
 - **إنشاء نشر**:
   ```shell Terminal
-  crewai deploy create
+  localagents deploy create
   ```
 
 - **نشر الطاقم**:
   ```shell Terminal
-  crewai deploy push
+  localagents deploy push
   ```
 
 - **حالة النشر**:
   ```shell Terminal
-  crewai deploy status
+  localagents deploy status
   ```
 
 - **سجلات النشر**:
   ```shell Terminal
-  crewai deploy logs
+  localagents deploy logs
   ```
 
 - **عرض النشرات**:
   ```shell Terminal
-  crewai deploy list
+  localagents deploy list
   ```
 
 - **حذف النشر**:
   ```shell Terminal
-  crewai deploy remove
+  localagents deploy remove
   ```
 
 ### 11. إدارة المؤسسة
@@ -202,7 +202,7 @@ def crew(self) -> Crew:
 إدارة مؤسسات LocalAI AMP.
 
 ```shell Terminal
-crewai org [COMMAND] [OPTIONS]
+localagents org [COMMAND] [OPTIONS]
 ```
 
 - `list`: عرض جميع المؤسسات
@@ -214,7 +214,7 @@ crewai org [COMMAND] [OPTIONS]
 المصادقة مع LocalAI AMP باستخدام تدفق رمز الجهاز الآمن.
 
 ```shell Terminal
-crewai login
+localagents login
 ```
 
 ### 13. إدارة التهيئة
@@ -222,7 +222,7 @@ crewai login
 إدارة إعدادات تهيئة CLI لـ LocalAI.
 
 ```shell Terminal
-crewai config [COMMAND] [OPTIONS]
+localagents config [COMMAND] [OPTIONS]
 ```
 
 - `list`: عرض جميع معاملات التهيئة
@@ -234,7 +234,7 @@ crewai config [COMMAND] [OPTIONS]
 إدارة تفضيلات جمع التتبع لعمليات الطاقم والتدفق.
 
 ```shell Terminal
-crewai traces [COMMAND]
+localagents traces [COMMAND]
 ```
 
 - `enable`: تفعيل جمع التتبع
@@ -254,34 +254,34 @@ crewai traces [COMMAND]
 
 2. **متغير البيئة** (الأولوية الثانية):
    ```env
-   CREWAI_TRACING_ENABLED=true
+   LOCALAGENTS_TRACING_ENABLED=true
    ```
 
 3. **تفضيل المستخدم** (الأولوية الأدنى):
    ```shell Terminal
-   crewai traces enable
+   localagents traces enable
    ```
 
 <Note>
 **لتفعيل التتبع**، استخدم أيًا من هذه الطرق:
 - عيّن `tracing=True` في كود الطاقم/التدفق، أو
-- أضف `CREWAI_TRACING_ENABLED=true` إلى ملف `.env`، أو
-- شغّل `crewai traces enable`
+- أضف `LOCALAGENTS_TRACING_ENABLED=true` إلى ملف `.env`، أو
+- شغّل `localagents traces enable`
 
 **لتعطيل التتبع**، استخدم أيًا من هذه الطرق:
 - عيّن `tracing=False` في كود الطاقم/التدفق، أو
-- أزل أو عيّن `false` لمتغير `CREWAI_TRACING_ENABLED`، أو
-- شغّل `crewai traces disable`
+- أزل أو عيّن `false` لمتغير `LOCALAGENTS_TRACING_ENABLED`، أو
+- شغّل `localagents traces disable`
 </Note>
 
 <Tip>
   يتعامل LocalAI CLI مع المصادقة لمستودع الأدوات تلقائيًا عند
-  إضافة حزم إلى مشروعك. فقط أضف `crewai` قبل أي أمر `uv`
-  لاستخدامه. مثلًا `crewai uv add requests`.
+  إضافة حزم إلى مشروعك. فقط أضف `localagents` قبل أي أمر `uv`
+  لاستخدامه. مثلًا `localagents uv add requests`.
 </Tip>
 
 <Note>
-  تُخزن إعدادات التهيئة في `~/.config/crewai/settings.json`. بعض
+  تُخزن إعدادات التهيئة في `~/.config/localagents/settings.json`. بعض
   الإعدادات مثل اسم المؤسسة ومعرّفها للقراءة فقط وتُدار من خلال
   أوامر المصادقة والمؤسسة.
 </Note>

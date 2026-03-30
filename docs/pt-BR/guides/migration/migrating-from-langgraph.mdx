@@ -90,8 +90,8 @@ Você define funções, registra-as como nós e conecta manualmente cada transi�
 ### Abordagem com LocalAI Flows
 
 ```python
-from crewai import LLM, Agent, Crew, Process, Task
-from crewai.flow.flow import Flow, listen, start
+from localagents import LLM, Agent, Crew, Process, Task
+from localagents.flow.flow import Flow, listen, start
 from pydantic import BaseModel
 
 llm = LLM(model="openai/gpt-5.2")
@@ -232,8 +232,8 @@ Você precisa de uma função de roteamento separada, de um mapeamento explícit
 ### Abordagem com LocalAI Flows
 
 ```python
-from crewai import LLM, Agent
-from crewai.flow.flow import Flow, listen, router, start
+from localagents import LLM, Agent
+from localagents.flow.flow import Flow, listen, router, start
 from pydantic import BaseModel
 
 llm = LLM(model="openai/gpt-5.2")
@@ -323,8 +323,8 @@ O decorator `@router()` transforma um método em um ponto de decisão. Ele retor
 É aqui que o verdadeiro poder do LocalAI aparece. Flows não servem apenas para encadear chamadas de LLM — elas orquestram **Crews** completas de agentes autônomos. Isso é algo para o qual o LangGraph simplesmente não tem um equivalente nativo.
 
 ```python
-from crewai import Agent, Task, Crew
-from crewai.flow.flow import Flow, listen, start
+from localagents import Agent, Task, Crew
+from localagents.flow.flow import Flow, listen, start
 from pydantic import BaseModel
 
 class ArticleState(BaseModel):
@@ -410,8 +410,8 @@ No LangGraph, alcançar algo similar significa implementar manualmente protocolo
 Pipelines do mundo real frequentemente precisam dividir o trabalho e juntar os resultados. O LocalAI Flows lida com isso de forma elegante com os operadores `and_` e `or_`.
 
 ```python
-from crewai import LLM
-from crewai.flow.flow import Flow, and_, listen, start
+from localagents import LLM
+from localagents.flow.flow import Flow, and_, listen, start
 from pydantic import BaseModel
 
 llm = LLM(model="openai/gpt-5.2")
@@ -472,7 +472,7 @@ Além de uma sintaxe mais limpa, Flows entrega várias vantagens críticas para 
 
 **Modelo mental mais simples.** Decorators declaram intenção. `@start` significa "comece aqui". `@listen(x)` significa "execute depois de x". `@router(x)` significa "decida para onde ir depois de x". O código lê como o workflow que ele descreve.
 
-**Integração com CLI.** Execute flows com `crewai run`. Sem etapa de compilação separada, sem serialização de grafo. Seu Flow é uma classe Python, e ele roda como tal.
+**Integração com CLI.** Execute flows com `localagents run`. Sem etapa de compilação separada, sem serialização de grafo. Seu Flow é uma classe Python, e ele roda como tal.
 
 ---
 
@@ -494,15 +494,15 @@ Se você está com uma base de código LangGraph e quer migrar para o LocalAI Fl
 Instale o LocalAI e crie o scaffold de um novo projeto Flow:
 
 ```bash
-pip install crewai
-crewai create flow my_first_flow
+pip install localagents
+localagents create flow my_first_flow
 cd my_first_flow
 ```
 
 Isso gera uma estrutura de projeto com uma classe Flow pronta para edição, arquivos de configuração e um `pyproject.toml` com `type = "flow"` já definido. Execute com:
 
 ```bash
-crewai run
+localagents run
 ```
 
 A partir daí, adicione seus agentes, conecte seus listeners e publique.
@@ -515,4 +515,4 @@ O LangGraph ensinou ao ecossistema que workflows de IA precisam de estrutura. Es
 
 Se você está construindo algo além de uma cadeia de agente único, dê uma olhada séria no Flows. O modelo baseado em decorators, a integração nativa com Crews e o gerenciamento de estado embutido significam menos tempo com encanamento e mais tempo nos problemas que importam.
 
-Comece com `crewai create flow`. Você não vai olhar para trás.
+Comece com `localagents create flow`. Você não vai olhar para trás.

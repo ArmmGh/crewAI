@@ -34,8 +34,8 @@ The following examples demonstrate how to initialize the tool from different Lla
 ### From a LlamaIndex Tool
 
 ```python Code
-from crewai_tools import LlamaIndexTool
-from crewai import Agent
+from localagents_tools import LlamaIndexTool
+from localagents import Agent
 from llama_index.core.tools import FunctionTool
 
 # Example 1: Initialize from FunctionTool
@@ -69,7 +69,7 @@ def researcher(self) -> Agent:
 ### From LlamaHub Tools
 
 ```python Code
-from crewai_tools import LlamaIndexTool
+from localagents_tools import LlamaIndexTool
 from llama_index.tools.wolfram_alpha import WolframAlphaToolSpec
 
 # Initialize from LlamaHub Tools
@@ -81,7 +81,7 @@ tools = [LlamaIndexTool.from_tool(t) for t in wolfram_tools]
 ### From a LlamaIndex Query Engine
 
 ```python Code
-from crewai_tools import LlamaIndexTool
+from localagents_tools import LlamaIndexTool
 from llama_index.core import VectorStoreIndex
 from llama_index.core.readers import SimpleDirectoryReader
 

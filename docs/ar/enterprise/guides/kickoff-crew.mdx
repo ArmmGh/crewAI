@@ -13,7 +13,7 @@ mode: "wide"
 
 ### الخطوة 1: الانتقال إلى طاقمك المنشور
 
-1. سجّل الدخول إلى [LocalAI AMP](https://app.crewai.com)
+1. سجّل الدخول إلى [LocalAI AMP](https://app.localagents.com)
 2. انقر على اسم الطاقم من قائمة مشاريعك
 3. ستنتقل إلى صفحة تفاصيل الطاقم
 
@@ -81,7 +81,7 @@ mode: "wide"
 جميع طلبات API تتطلب رمز حامل للمصادقة:
 
 ```bash
-curl -H "Authorization: Bearer YOUR_CREW_TOKEN" https://your-crew-url.crewai.com
+curl -H "Authorization: Bearer YOUR_CREW_TOKEN" https://your-crew-url.localagents.com
 ```
 
 رمز الحامل متاح في علامة تبويب Status في صفحة تفاصيل طاقمك.
@@ -91,7 +91,7 @@ curl -H "Authorization: Bearer YOUR_CREW_TOKEN" https://your-crew-url.crewai.com
 قبل تنفيذ العمليات، يمكنك التحقق من أن طاقمك يعمل بشكل صحيح:
 
 ```bash
-curl -H "Authorization: Bearer YOUR_CREW_TOKEN" https://your-crew-url.crewai.com
+curl -H "Authorization: Bearer YOUR_CREW_TOKEN" https://your-crew-url.localagents.com
 ```
 
 ستعيد الاستجابة الناجحة رسالة تشير إلى أن الطاقم يعمل:
@@ -107,7 +107,7 @@ Healthy%
 ```bash
 curl -X GET \
   -H "Authorization: Bearer YOUR_CREW_TOKEN" \
-  https://your-crew-url.crewai.com/inputs
+  https://your-crew-url.localagents.com/inputs
 ```
 
 ستكون الاستجابة كائن JSON يحتوي على مصفوفة من معاملات الإدخال المطلوبة، على سبيل المثال:
@@ -127,7 +127,7 @@ curl -X POST \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer YOUR_CREW_TOKEN" \
   -d '{"inputs": {"topic": "AI Agent Frameworks", "current_year": "2025"}}' \
-  https://your-crew-url.crewai.com/kickoff
+  https://your-crew-url.localagents.com/kickoff
 ```
 
 ستتضمن الاستجابة `kickoff_id` الذي ستحتاجه للتتبع:
@@ -143,7 +143,7 @@ curl -X POST \
 ```bash
 curl -X GET \
   -H "Authorization: Bearer YOUR_CREW_TOKEN" \
-  https://your-crew-url.crewai.com/status/abcd1234-5678-90ef-ghij-klmnopqrstuv
+  https://your-crew-url.localagents.com/status/abcd1234-5678-90ef-ghij-klmnopqrstuv
 ```
 
 ## التعامل مع عمليات التنفيذ
@@ -172,7 +172,7 @@ curl -X GET \
 2. راجع علامة تبويب "Traces" لتفاصيل التنفيذ خطوة بخطوة
 3. ابحث عن استجابات LLM واستخدام الأدوات في تفاصيل التتبع
 
-<Card title="تحتاج مساعدة؟" icon="headset" href="mailto:support@crewai.com">
+<Card title="تحتاج مساعدة؟" icon="headset" href="mailto:support@localagents.com">
   تواصل مع فريق الدعم للمساعدة في مشاكل التنفيذ أو أسئلة حول
   منصة Enterprise.
 </Card>

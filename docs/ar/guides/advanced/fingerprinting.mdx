@@ -17,7 +17,7 @@ mode: "wide"
 
 ## كيف تعمل البصمات الرقمية
 
-البصمة الرقمية هي نسخة من فئة `Fingerprint` من وحدة `crewai.security`. تحتوي كل بصمة على:
+البصمة الرقمية هي نسخة من فئة `Fingerprint` من وحدة `localagents.security`. تحتوي كل بصمة على:
 
 - سلسلة UUID: معرّف فريد للمكون يتم إنشاؤه تلقائيًا ولا يمكن تعيينه يدويًا
 - طابع زمني للإنشاء: متى تم إنشاء البصمة، يُعيَّن تلقائيًا ولا يمكن تعديله يدويًا
@@ -30,7 +30,7 @@ mode: "wide"
 ### الوصول إلى البصمات الرقمية
 
 ```python
-from crewai import Agent, Crew, Task
+from localagents import Agent, Crew, Task
 
 # Create components - fingerprints are automatically generated
 agent = Agent(
@@ -96,7 +96,7 @@ assert agent.fingerprint.uuid_str == original_fingerprint
 بينما لا يمكنك تعيين UUID والطابع الزمني مباشرة، يمكنك إنشاء بصمات حتمية باستخدام طريقة `generate` مع بذرة:
 
 ```python
-from crewai.security import Fingerprint
+from localagents.security import Fingerprint
 
 # Create a deterministic fingerprint using a seed string
 deterministic_fingerprint = Fingerprint.generate(seed="my-agent-id")
@@ -119,7 +119,7 @@ custom_fingerprint = Fingerprint.generate(
 لكل بصمة الهيكل التالي:
 
 ```python
-from crewai.security import Fingerprint
+from localagents.security import Fingerprint
 
 fingerprint = agent.fingerprint
 

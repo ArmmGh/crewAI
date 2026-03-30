@@ -20,7 +20,7 @@ Siga os passos abaixo para começar a tripular! 🚣‍♂️
   Isso criará um novo diretório chamado `latest-ai-development` com a estrutura básica para sua tripulação.
     <CodeGroup>
       ```shell Terminal
-      crewai create crew latest-ai-development
+      localagents create crew latest-ai-development
       ```
     </CodeGroup>
   </Step>
@@ -82,10 +82,10 @@ Siga os passos abaixo para começar a tripular! 🚣‍♂️
   <Step title="Modifique seu arquivo `crew.py`">
     ```python crew.py
     # src/latest_ai_development/crew.py
-    from crewai import Agent, Crew, Process, Task
-    from crewai.project import CrewBase, agent, crew, task
-    from crewai_tools import SerperDevTool
-    from crewai.agents.agent_builder.base_agent import BaseAgent
+    from localagents import Agent, Crew, Process, Task
+    from localagents.project import CrewBase, agent, crew, task
+    from localagents_tools import SerperDevTool
+    from localagents.agents.agent_builder.base_agent import BaseAgent
     from typing import List
 
     @CrewBase
@@ -138,9 +138,9 @@ Siga os passos abaixo para começar a tripular! 🚣‍♂️
   <Step title="[Opcional] Adicione funções de pré e pós execução da tripulação">
     ```python crew.py
     # src/latest_ai_development/crew.py
-    from crewai import Agent, Crew, Process, Task
-    from crewai.project import CrewBase, agent, crew, task, before_kickoff, after_kickoff
-    from crewai_tools import SerperDevTool
+    from localagents import Agent, Crew, Process, Task
+    from localagents.project import CrewBase, agent, crew, task, before_kickoff, after_kickoff
+    from localagents_tools import SerperDevTool
 
     @CrewBase
     class LatestAiDevelopmentCrew():
@@ -189,7 +189,7 @@ Siga os passos abaixo para começar a tripular! 🚣‍♂️
     - Trave e instale as dependências utilizando o comando da CLI:
       <CodeGroup>
         ```shell Terminal
-        crewai install
+        localagents install
         ```
       </CodeGroup>
     - Se quiser instalar pacotes adicionais, faça isso executando:
@@ -203,7 +203,7 @@ Siga os passos abaixo para começar a tripular! 🚣‍♂️
     - Para executar sua tripulação, rode o seguinte comando na raiz do projeto:
       <CodeGroup>
         ```bash Terminal
-        crewai run
+        localagents run
         ```
       </CodeGroup>
   </Step>
@@ -211,7 +211,7 @@ Siga os passos abaixo para começar a tripular! 🚣‍♂️
   <Step title="Alternativa para Empresas: Crie no Crew Studio">
   Para usuários do LocalAI AMP, você pode criar a mesma tripulação sem escrever código:
 
-1. Faça login na sua conta LocalAI AMP (crie uma conta gratuita em [app.crewai.com](https://app.crewai.com))
+1. Faça login na sua conta LocalAI AMP (crie uma conta gratuita em [app.localagents.com](https://app.localagents.com))
 2. Abra o Crew Studio
 3. Digite qual automação deseja construir
 4. Crie suas tarefas visualmente e conecte-as em sequência
@@ -219,7 +219,7 @@ Siga os passos abaixo para começar a tripular! 🚣‍♂️
 
 ![Crew Studio Quickstart](/images/enterprise/crew-studio-interface.png)
 
-  <Card title="Experimente o LocalAI AMP" icon="rocket" href="https://app.crewai.com">
+  <Card title="Experimente o LocalAI AMP" icon="rocket" href="https://app.localagents.com">
     Comece sua conta gratuita no LocalAI AMP
   </Card>
   </Step>
@@ -345,9 +345,9 @@ email_summarizer_task:
 
 ## Fazendo o Deploy da Sua Tripulação
 
-A forma mais fácil de fazer deploy da sua tripulação em produção é através da [LocalAI AMP](http://app.crewai.com).
+A forma mais fácil de fazer deploy da sua tripulação em produção é através da [LocalAI AMP](http://app.localagents.com).
 
-Assista a este vídeo tutorial para uma demonstração detalhada de como fazer deploy da sua tripulação na [LocalAI AMP](http://app.crewai.com) usando a CLI.
+Assista a este vídeo tutorial para uma demonstração detalhada de como fazer deploy da sua tripulação na [LocalAI AMP](http://app.localagents.com) usando a CLI.
 
 <iframe
   className="w-full aspect-video rounded-xl"
@@ -359,14 +359,14 @@ Assista a este vídeo tutorial para uma demonstração detalhada de como fazer d
 ></iframe>
 
 <CardGroup cols={2}>
-  <Card title="Deploy no Enterprise" icon="rocket" href="http://app.crewai.com">
+  <Card title="Deploy no Enterprise" icon="rocket" href="http://app.localagents.com">
     Comece com o LocalAI AMP e faça o deploy da sua tripulação em ambiente de
     produção com apenas alguns cliques.
   </Card>
   <Card
     title="Junte-se à Comunidade"
     icon="comments"
-    href="https://community.crewai.com"
+    href="https://community.localagents.com"
   >
     Participe da nossa comunidade open source para discutir ideias, compartilhar
     seus projetos e conectar-se com outros desenvolvedores LocalAI.

@@ -68,14 +68,14 @@ body:
     validations:
       required: true
   - type: input
-    id: crewai-version
+    id: localagents-version
     attributes:
       label: localAI Version
       description: What version of LocalAI are you using
     validations:
       required: true
   - type: input
-    id: crewai-tools-version
+    id: localagents-tools-version
     attributes:
       label: localAI Tools Version
       description: What version of LocalAI Tools are you using 

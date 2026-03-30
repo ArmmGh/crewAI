@@ -47,9 +47,9 @@ mode: "wide"
 توفر تهيئة YAML طريقة أنظف وأكثر قابلية للصيانة لتعريف الأطقم وتتسق مع كيفية تعريف الوكلاء والمهام في مشاريع LocalAI.
 
 ```python code
-from crewai import Agent, Crew, Task, Process
-from crewai.project import CrewBase, agent, task, crew, before_kickoff, after_kickoff
-from crewai.agents.agent_builder.base_agent import BaseAgent
+from localagents import Agent, Crew, Task, Process
+from localagents.project import CrewBase, agent, task, crew, before_kickoff, after_kickoff
+from localagents.agents.agent_builder.base_agent import BaseAgent
 from typing import List
 
 @CrewBase
@@ -194,11 +194,11 @@ result = streaming.result
 يمكنك الآن الإعادة من مهمة محددة باستخدام أمر CLI `replay`.
 
 ```shell
-crewai log-tasks-outputs
+localagents log-tasks-outputs
 ```
 
 ثم للإعادة من مهمة محددة:
 
 ```shell
-crewai replay -t <task_id>
+localagents replay -t <task_id>
 ```

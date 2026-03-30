@@ -108,9 +108,9 @@ reporting_task:
 ```python crew.py
 # src/latest_ai_development/crew.py
 
-from crewai import Agent, Crew, Process, Task
-from crewai.project import CrewBase, agent, crew, task
-from crewai_tools import SerperDevTool
+from localagents import Agent, Crew, Process, Task
+from localagents.project import CrewBase, agent, crew, task
+from localagents_tools import SerperDevTool
 
 @CrewBase
 class LatestAiDevelopmentCrew():
@@ -167,7 +167,7 @@ YAML 파일(`agents.yaml` 및 `tasks.yaml`)에서 사용하는 이름은 Python 
 또는 YAML 구성 없이 코드에서 직접 태스크를 정의할 수 있습니다:
 
 ```python task.py
-from crewai import Task
+from localagents import Task
 
 research_task = Task(
     description="""
@@ -342,7 +342,7 @@ analysis_task = Task(
 
 ```python Code
 from typing import Tuple, Union, Dict, Any
-from crewai import TaskOutput
+from localagents import TaskOutput
 
 def validate_blog_content(result: TaskOutput) -> Tuple[bool, Any]:
     """Validate blog content meets requirements."""
@@ -380,7 +380,7 @@ blog_task = Task(
 
 1. **구조화된 오류 응답**:
 ```python Code
-from crewai import TaskOutput, LLMGuardrail
+from localagents import TaskOutput, LLMGuardrail
 
 def validate_with_context(result: TaskOutput) -> Tuple[bool, Any]:
     try:
@@ -401,7 +401,7 @@ def validate_with_context(result: TaskOutput) -> Tuple[bool, Any]:
 3. **검증 체인**:
 ```python Code
 from typing import Any, Dict, List, Tuple, Union
-from crewai import TaskOutput
+from localagents import TaskOutput
 
 def complex_validation(result: TaskOutput) -> Tuple[bool, Any]:
     """Chain multiple validation steps."""
@@ -434,7 +434,7 @@ def complex_validation(result: TaskOutput) -> Tuple[bool, Any]:
 재시도 처리가 포함된 예시:
 ```python Code
 from typing import Optional, Tuple, Union
-from crewai import TaskOutput, Task
+from localagents import TaskOutput, Task
 
 def validate_json_output(result: TaskOutput) -> Tuple[bool, Any]:
     """Validate and parse JSON output."""
@@ -468,7 +468,7 @@ task = Task(
 ```python Code
 import json
 
-from crewai import Agent, Crew, Process, Task
+from localagents import Agent, Crew, Process, Task
 from pydantic import BaseModel
 
 
@@ -549,7 +549,7 @@ print("Blog:", result)
 ```python Code
 import json
 
-from crewai import Agent, Crew, Process, Task
+from localagents import Agent, Crew, Process, Task
 from pydantic import BaseModel
 
 
@@ -616,7 +616,7 @@ output_pydantic 또는 output_json을 사용하면, 작업의 출력이 일관�
 
 ## 도구와 작업 통합
 
-향상된 작업 성능과 에이전트 상호작용을 위해 [LocalAI Toolkit](https://github.com/joaomdmoura/crewai-tools) 및 [LangChain Tools](https://python.langchain.com/docs/integrations/tools)의 도구를 활용하세요.
+향상된 작업 성능과 에이전트 상호작용을 위해 [LocalAI Toolkit](https://github.com/joaomdmoura/localagents-tools) 및 [LangChain Tools](https://python.langchain.com/docs/integrations/tools)의 도구를 활용하세요.
 
 ## 도구와 함께 Task 생성하기
 
@@ -625,8 +625,8 @@ import os
 os.environ["OPENAI_API_KEY"] = "Your Key"
 os.environ["SERPER_API_KEY"] = "Your Key" # serper.dev API key
 
-from crewai import Agent, Task, Crew
-from crewai_tools import SerperDevTool
+from localagents import Agent, Task, Crew
+from localagents_tools import SerperDevTool
 
 research_agent = Agent(
   role='Researcher',

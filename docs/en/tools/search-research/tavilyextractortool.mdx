@@ -12,7 +12,7 @@ The `TavilyExtractorTool` allows LocalAI agents to extract structured content fr
 To use the `TavilyExtractorTool`, you need to install the `tavily-python` library:
 
 ```shell
-pip install 'crewai[tools]' tavily-python
+pip install 'localagents[tools]' tavily-python
 ```
 
 You also need to set your Tavily API key as an environment variable:
@@ -27,8 +27,8 @@ Here's how to initialize and use the `TavilyExtractorTool` within a LocalAI agen
 
 ```python
 import os
-from crewai import Agent, Task, Crew
-from crewai_tools import TavilyExtractorTool
+from localagents import Agent, Task, Crew
+from localagents_tools import TavilyExtractorTool
 
 # Ensure TAVILY_API_KEY is set in your environment
 # os.environ["TAVILY_API_KEY"] = "YOUR_API_KEY"

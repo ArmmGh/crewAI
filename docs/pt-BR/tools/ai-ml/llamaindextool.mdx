@@ -34,8 +34,8 @@ Os exemplos a seguir demonstram como inicializar a ferramenta a partir de difere
 ### A partir de uma ferramenta do LlamaIndex
 
 ```python Code
-from crewai_tools import LlamaIndexTool
-from crewai import Agent
+from localagents_tools import LlamaIndexTool
+from localagents import Agent
 from llama_index.core.tools import FunctionTool
 
 # Exemplo 1: Inicializando a partir do FunctionTool
@@ -69,7 +69,7 @@ def researcher(self) -> Agent:
 ### A partir de Ferramentas do LlamaHub
 
 ```python Code
-from crewai_tools import LlamaIndexTool
+from localagents_tools import LlamaIndexTool
 from llama_index.tools.wolfram_alpha import WolframAlphaToolSpec
 
 # Inicializando a partir das ferramentas do LlamaHub
@@ -81,7 +81,7 @@ tools = [LlamaIndexTool.from_tool(t) for t in wolfram_tools]
 ### A partir de um mecanismo de consulta do LlamaIndex
 
 ```python Code
-from crewai_tools import LlamaIndexTool
+from localagents_tools import LlamaIndexTool
 from llama_index.core import VectorStoreIndex
 from llama_index.core.readers import SimpleDirectoryReader
 

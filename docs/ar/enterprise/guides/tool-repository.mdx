@@ -20,7 +20,7 @@ mode: "wide"
 
 قبل استخدام مستودع الأدوات، تأكد من أن لديك:
 
-- حساب [LocalAI AMP](https://app.crewai.com)
+- حساب [LocalAI AMP](https://app.localagents.com)
 - [LocalAI CLI](/ar/concepts/cli#cli) مُثبّت
 - uv>=0.5.0 مُثبّت. راجع [كيفية الترقية](https://docs.astral.sh/uv/getting-started/installation/#upgrading-uv)
 - [Git](https://git-scm.com) مُثبّت ومُهيأ
@@ -31,7 +31,7 @@ mode: "wide"
 لتثبيت أداة:
 
 ```bash
-crewai tool install <tool-name>
+localagents tool install <tool-name>
 ```
 
 يثبّت هذا الأداة ويضيفها إلى `pyproject.toml`.
@@ -54,30 +54,30 @@ researcher = Agent(
 
 ## إضافة حزم أخرى بعد تثبيت أداة
 
-بعد تثبيت أداة من مستودع أدوات LocalAI AMP، تحتاج لاستخدام أمر `crewai uv` لإضافة حزم أخرى لمشروعك.
-استخدام أوامر `uv` المباشرة سيفشل لأن المصادقة لمستودع الأدوات يتم التعامل معها عبر CLI. باستخدام أمر `crewai uv`، يمكنك إضافة حزم أخرى لمشروعك دون القلق بشأن المصادقة.
-يمكن استخدام أي أمر `uv` مع أمر `crewai uv`، مما يجعله أداة قوية لإدارة اعتماديات مشروعك دون عناء إدارة المصادقة عبر متغيرات البيئة أو طرق أخرى.
+بعد تثبيت أداة من مستودع أدوات LocalAI AMP، تحتاج لاستخدام أمر `localagents uv` لإضافة حزم أخرى لمشروعك.
+استخدام أوامر `uv` المباشرة سيفشل لأن المصادقة لمستودع الأدوات يتم التعامل معها عبر CLI. باستخدام أمر `localagents uv`، يمكنك إضافة حزم أخرى لمشروعك دون القلق بشأن المصادقة.
+يمكن استخدام أي أمر `uv` مع أمر `localagents uv`، مما يجعله أداة قوية لإدارة اعتماديات مشروعك دون عناء إدارة المصادقة عبر متغيرات البيئة أو طرق أخرى.
 
 لنفرض أنك ثبّت أداة مخصصة من مستودع أدوات LocalAI AMP تسمى "my-tool":
 
 ```bash
-crewai tool install my-tool
+localagents tool install my-tool
 ```
 
 والآن تريد إضافة حزمة أخرى لمشروعك، يمكنك استخدام الأمر التالي:
 
 ```bash
-crewai uv add requests
+localagents uv add requests
 ```
 
-أوامر أخرى مثل `uv sync` أو `uv remove` يمكن أيضاً استخدامها مع أمر `crewai uv`:
+أوامر أخرى مثل `uv sync` أو `uv remove` يمكن أيضاً استخدامها مع أمر `localagents uv`:
 
 ```bash
-crewai uv sync
+localagents uv sync
 ```
 
 ```bash
-crewai uv remove requests
+localagents uv remove requests
 ```
 
 سيضيف هذا الحزمة لمشروعك ويحدّث `pyproject.toml` وفقاً لذلك.
@@ -87,7 +87,7 @@ crewai uv remove requests
 لإنشاء مشروع أداة جديد:
 
 ```bash
-crewai tool create <tool-name>
+localagents tool create <tool-name>
 ```
 
 يولّد هذا مشروع أداة مُهيكل محلياً.
@@ -103,13 +103,13 @@ git commit -m "Initial version"
 لنشر الأداة:
 
 ```bash
-crewai tool publish
+localagents tool publish
 ```
 
 افتراضياً، تُنشر الأدوات كخاصة. لجعل الأداة عامة:
 
 ```bash
-crewai tool publish --public
+localagents tool publish --public
 ```
 
 لمزيد من التفاصيل حول بناء الأدوات، راجع [إنشاء أدواتك الخاصة](/ar/concepts/tools#creating-your-own-tools).
@@ -124,14 +124,14 @@ crewai tool publish --public
 
 ```bash
 git commit -m "Update version to 0.1.1"
-crewai tool publish
+localagents tool publish
 ```
 
 ## حذف الأدوات
 
 لحذف أداة:
 
-1. انتقل إلى [LocalAI AMP](https://app.crewai.com)
+1. انتقل إلى [LocalAI AMP](https://app.localagents.com)
 2. انتقل إلى **Tools**
 3. اختر الأداة
 4. انقر على **Delete**
@@ -148,7 +148,7 @@ crewai tool publish
 
 `LocalAI AMP > Tools > Your Tool > Versions`
 
-<Card title="تحتاج مساعدة؟" icon="headset" href="mailto:support@crewai.com">
+<Card title="تحتاج مساعدة؟" icon="headset" href="mailto:support@localagents.com">
   تواصل مع فريق الدعم للمساعدة في تكامل API أو
   استكشاف الأخطاء.
 </Card>

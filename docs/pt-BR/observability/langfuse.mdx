@@ -20,7 +20,7 @@ Vamos passar por um exemplo simples usando LocalAI e integrando ao Langfuse via 
 ### Passo 1: Instale as Dependências
 
 ```python
-%pip install langfuse openlit crewai crewai_tools
+%pip install langfuse openlit localagents localagents_tools
 ```
 
 ### Passo 2: Configure as Variáveis de Ambiente
@@ -69,9 +69,9 @@ openlit.init()
 Vamos criar uma aplicação simples LocalAI onde múltiplos agentes colaboram para responder à pergunta de um usuário.
 
 ```python
-from crewai import Agent, Task, Crew
+from localagents import Agent, Task, Crew
 
-from crewai_tools import (
+from localagents_tools import (
     WebsiteSearchTool
 )
 
@@ -99,7 +99,7 @@ equipe = Crew(
 
 Após rodar o agente, você pode visualizar os traces gerados pela sua aplicação LocalAI no [Langfuse](https://cloud.langfuse.com). Você verá etapas detalhadas das interações do LLM, o que pode ajudar na depuração e otimização do seu agente de IA.
 
-![Exemplo de trace LocalAI no Langfuse](https://langfuse.com/images/cookbook/integration_crewai/crewai-example-trace.png)
+![Exemplo de trace LocalAI no Langfuse](https://langfuse.com/images/cookbook/integration_localagents/localagents-example-trace.png)
 
 _[Exemplo público de trace no Langfuse](https://cloud.langfuse.com/project/cloramnkj0002jz088vzn1ja4/traces/e2cf380ffc8d47d28da98f136140642b?timestamp=2025-02-05T15%3A12%3A02.717Z&observation=3b32338ee6a5d9af)_
 

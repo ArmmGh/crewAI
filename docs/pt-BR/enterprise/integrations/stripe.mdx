@@ -13,41 +13,41 @@ Permita que seus agentes gerenciem pagamentos, assinaturas e faturamento de clie
 
 Antes de usar a integração com o Stripe, certifique-se de que você tem:
 
-- Uma conta [LocalAI AMP](https://app.crewai.com) com uma assinatura ativa
+- Uma conta [LocalAI AMP](https://app.localagents.com) com uma assinatura ativa
 - Uma conta Stripe com permissões apropriadas de API
-- Sua conta Stripe conectada através da [página de Integrações](https://app.crewai.com/integrations)
+- Sua conta Stripe conectada através da [página de Integrações](https://app.localagents.com/integrations)
 
 ## Configurando a Integração Stripe
 
 ### 1. Conecte sua Conta Stripe
 
-1. Acesse [LocalAI AMP Integrações](https://app.crewai.com/crewai_plus/connectors)
+1. Acesse [LocalAI AMP Integrações](https://app.localagents.com/localagents_plus/connectors)
 2. Encontre **Stripe** na seção Integrações de Autenticação
 3. Clique em **Conectar** e complete o fluxo OAuth
 4. Conceda as permissões necessárias para processamento de pagamentos
-5. Copie seu Token Enterprise em [Configurações de Integração](https://app.crewai.com/crewai_plus/settings/integrations)
+5. Copie seu Token Enterprise em [Configurações de Integração](https://app.localagents.com/localagents_plus/settings/integrations)
 
 ### 2. Instale o Pacote Necessário
 
 ```bash
-uv add crewai-tools
+uv add localagents-tools
 ```
 
 ### 3. Configuração de variável de ambiente
 
 <Note>
   Para usar integrações com `Agent(apps=[])`, você deve definir a variável de
-  ambiente `CREWAI_PLATFORM_INTEGRATION_TOKEN` com seu Enterprise Token.
+  ambiente `LOCALAGENTS_PLATFORM_INTEGRATION_TOKEN` com seu Enterprise Token.
 </Note>
 
 ```bash
-export CREWAI_PLATFORM_INTEGRATION_TOKEN="seu_enterprise_token"
+export LOCALAGENTS_PLATFORM_INTEGRATION_TOKEN="seu_enterprise_token"
 ```
 
 Ou adicione ao seu arquivo `.env`:
 
 ```
-CREWAI_PLATFORM_INTEGRATION_TOKEN=seu_enterprise_token
+LOCALAGENTS_PLATFORM_INTEGRATION_TOKEN=seu_enterprise_token
 ```
 
 ## Ferramentas Disponíveis
@@ -183,7 +183,7 @@ CREWAI_PLATFORM_INTEGRATION_TOKEN=seu_enterprise_token
 ### Configuração Básica do Agente Stripe
 
 ```python
-from crewai import Agent, Task, Crew
+from localagents import Agent, Task, Crew
 
 # Create an agent with Stripe capabilities
 stripe_agent = Agent(
@@ -238,7 +238,7 @@ crew.kickoff()
 ### Gerenciamento de Assinaturas
 
 ```python
-from crewai import Agent, Task, Crew
+from localagents import Agent, Task, Crew
 
 subscription_manager = Agent(
     role="Subscription Manager",
@@ -270,7 +270,7 @@ crew.kickoff()
 ### Análises e Relatórios Financeiros
 
 ```python
-from crewai import Agent, Task, Crew
+from localagents import Agent, Task, Crew
 
 financial_analyst = Agent(
     role="Financial Analyst",

@@ -23,7 +23,7 @@ uv add weaviate-client
 
 `WeaviateVectorSearchTool`을 효과적으로 사용하려면 다음 단계를 따르세요:
 
-1. **패키지 설치**: Python 환경에 `crewai[tools]` 및 `weaviate-client` 패키지가 설치되어 있는지 확인하세요.
+1. **패키지 설치**: Python 환경에 `localagents[tools]` 및 `weaviate-client` 패키지가 설치되어 있는지 확인하세요.
 2. **Weaviate 설정**: Weaviate 클러스터를 설정하세요. 안내는 [Weaviate 공식 문서](https://weaviate.io/developers/wcs/manage-clusters/connect)를 참고하세요.
 3. **API 키**: Weaviate 클러스터 URL과 API 키를 확보하세요.
 4. **OpenAI API 키**: 환경 변수에 `OPENAI_API_KEY`로 OpenAI API 키가 설정되어 있는지 확인하세요.
@@ -33,7 +33,7 @@ uv add weaviate-client
 다음 예시는 도구를 초기화하고 검색을 실행하는 방법을 보여줍니다:
 
 ```python Code
-from crewai_tools import WeaviateVectorSearchTool
+from localagents_tools import WeaviateVectorSearchTool
 
 # Initialize the tool
 tool = WeaviateVectorSearchTool(
@@ -71,7 +71,7 @@ def search_agent(self) -> Agent:
 도구에서 사용하는 벡터라이저와 생성 모델을 사용자 지정할 수 있습니다:
 
 ```python Code
-from crewai_tools import WeaviateVectorSearchTool
+from localagents_tools import WeaviateVectorSearchTool
 from weaviate.classes.config import Configure
 
 # Setup custom model for vectorizer and generative model
@@ -91,7 +91,7 @@ tool = WeaviateVectorSearchTool(
 
 ```python Code
 import os
-from crewai_tools import WeaviateVectorSearchTool
+from localagents_tools import WeaviateVectorSearchTool
 import weaviate
 from weaviate.classes.init import Auth
 
@@ -138,8 +138,8 @@ tool = WeaviateVectorSearchTool(
 다음은 `WeaviateVectorSearchTool`을 LocalAI 에이전트와 통합하는 방법입니다:
 
 ```python Code
-from crewai import Agent
-from crewai_tools import WeaviateVectorSearchTool
+from localagents import Agent
+from localagents_tools import WeaviateVectorSearchTool
 
 # Initialize the tool
 weaviate_tool = WeaviateVectorSearchTool(

@@ -52,9 +52,9 @@ Após criar seu projeto LocalAI conforme descrito na seção [Instalação](/pt-
 #### Exemplo de Classe Crew com Decorators
 
 ```python code
-from crewai import Agent, Crew, Task, Process
-from crewai.project import CrewBase, agent, task, crew, before_kickoff, after_kickoff
-from crewai.agents.agent_builder.base_agent import BaseAgent
+from localagents import Agent, Crew, Task, Process
+from localagents.project import CrewBase, agent, task, crew, before_kickoff, after_kickoff
+from localagents.agents.agent_builder.base_agent import BaseAgent
 from typing import List
 
 @CrewBase
@@ -66,8 +66,8 @@ class YourCrewName:
 
     # Caminhos para seus arquivos de configuração YAML
     # Para um exemplo de agente e tarefa definidos em YAML, confira:
-    # - Task: https://docs.crewai.com/concepts/tasks#yaml-configuration-recommended
-    # - Agents: https://docs.crewai.com/concepts/agents#yaml-configuration-recommended
+    # - Task: https://docs.localagents.com/concepts/tasks#yaml-configuration-recommended
+    # - Agents: https://docs.localagents.com/concepts/agents#yaml-configuration-recommended
     agents_config = 'config/agents.yaml'
     tasks_config = 'config/tasks.yaml'
 
@@ -149,8 +149,8 @@ Esses decorators ajudam na organização da estrutura da sua crew e coletam auto
 Como alternativa, você pode definir a crew diretamente em código sem utilizar arquivos de configuração YAML.
 
 ```python code
-from crewai import Agent, Crew, Task, Process
-from crewai_tools import YourCustomTool
+from localagents import Agent, Crew, Task, Process
+from localagents_tools import YourCustomTool
 
 class YourCrewName:
     def agent_one(self) -> Agent:
@@ -390,7 +390,7 @@ Saiba mais sobre streaming no guia [Streaming na Execução da Crew](/pt-BR/lear
 
 Agora é possível reiniciar a execução a partir de uma task específica usando o comando CLI `replay`.
 
-O recurso de replay no LocalAI permite reexecutar a partir de uma task específica através da interface de linha de comando (CLI). Rodando o comando `crewai replay -t <task_id>`, você pode especificar o `task_id` para o processo de replay.
+O recurso de replay no LocalAI permite reexecutar a partir de uma task específica através da interface de linha de comando (CLI). Rodando o comando `localagents replay -t <task_id>`, você pode especificar o `task_id` para o processo de replay.
 
 Kickoffs agora salvam localmente as saídas das tasks dos kickoffs recentes para permitir replay posteriormente.
 
@@ -405,13 +405,13 @@ Para usar o recurso de replay, siga estes passos:
 Para visualizar os IDs das últimas tasks do kickoff, utilize:
 
 ```shell
-crewai log-tasks-outputs
+localagents log-tasks-outputs
 ```
 
 Depois, para repetir a partir de uma task específica, utilize:
 
 ```shell
-crewai replay -t <task_id>
+localagents replay -t <task_id>
 ```
 
 Esses comandos permitem repetir tasks dos seus últimos kickoffs, mantendo o contexto das tasks já executadas anteriormente.

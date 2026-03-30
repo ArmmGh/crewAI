@@ -35,12 +35,12 @@ All tools share a common base class (`BraveSearchToolBase`) that provides consis
 ## Installation
 
 ```shell
-pip install 'crewai[tools]'
+pip install 'localagents[tools]'
 ```
 
 ## Getting Started
 
-1. **Install the package** — confirm that `crewai[tools]` is installed in your Python environment.
+1. **Install the package** — confirm that `localagents[tools]` is installed in your Python environment.
 2. **Get an API key** — sign up at [api-dashboard.search.brave.com/login](https://api-dashboard.search.brave.com/login) to generate a key.
 3. **Set the environment variable** — store your key as `BRAVE_API_KEY`, or pass it directly via the `api_key` parameter.
 
@@ -49,7 +49,7 @@ pip install 'crewai[tools]'
 ### Web Search
 
 ```python Code
-from crewai_tools import BraveWebSearchTool
+from localagents_tools import BraveWebSearchTool
 
 tool = BraveWebSearchTool()
 results = tool.run(q="LocalAI agent framework")
@@ -59,7 +59,7 @@ print(results)
 ### News Search
 
 ```python Code
-from crewai_tools import BraveNewsSearchTool
+from localagents_tools import BraveNewsSearchTool
 
 tool = BraveNewsSearchTool()
 results = tool.run(q="latest AI breakthroughs")
@@ -69,7 +69,7 @@ print(results)
 ### Image Search
 
 ```python Code
-from crewai_tools import BraveImageSearchTool
+from localagents_tools import BraveImageSearchTool
 
 tool = BraveImageSearchTool()
 results = tool.run(q="northern lights photography")
@@ -79,7 +79,7 @@ print(results)
 ### Video Search
 
 ```python Code
-from crewai_tools import BraveVideoSearchTool
+from localagents_tools import BraveVideoSearchTool
 
 tool = BraveVideoSearchTool()
 results = tool.run(q="how to build AI agents")
@@ -89,7 +89,7 @@ print(results)
 ### Location POI Descriptions
 
 ```python Code
-from crewai_tools import (
+from localagents_tools import (
     BraveWebSearchTool,
     BraveLocalPOIsDescriptionTool,
 )
@@ -210,7 +210,7 @@ For the complete parameter and header reference, see [Brave POI Descriptions API
 All tools support custom HTTP request headers. The Web Search tool, for example, accepts geolocation headers for location-aware results:
 
 ```python Code
-from crewai_tools import BraveWebSearchTool
+from localagents_tools import BraveWebSearchTool
 
 tool = BraveWebSearchTool(
     headers={
@@ -236,7 +236,7 @@ tool.set_headers({"api-version": "2025-01-01"})
 By default, each tool refines the API response into a concise list of results. If you need the full, unprocessed API response, enable raw mode:
 
 ```python Code
-from crewai_tools import BraveWebSearchTool
+from localagents_tools import BraveWebSearchTool
 
 tool = BraveWebSearchTool(raw=True)
 full_response = tool.run(q="Brave Search API")
@@ -247,9 +247,9 @@ full_response = tool.run(q="Brave Search API")
 Here's how to equip a LocalAI agent with multiple Brave Search tools:
 
 ```python Code
-from crewai import Agent
-from crewai.project import agent
-from crewai_tools import BraveWebSearchTool, BraveNewsSearchTool
+from localagents import Agent
+from localagents.project import agent
+from localagents_tools import BraveWebSearchTool, BraveNewsSearchTool
 
 web_search = BraveWebSearchTool()
 news_search = BraveNewsSearchTool()
@@ -267,7 +267,7 @@ def researcher(self) -> Agent:
 Combining multiple parameters for a targeted search:
 
 ```python Code
-from crewai_tools import BraveWebSearchTool
+from localagents_tools import BraveWebSearchTool
 
 tool = BraveWebSearchTool(
     requests_per_second=0.5,  # conservative rate limit
@@ -291,13 +291,13 @@ If you are currently using `BraveSearchTool`, switching to the new tools is stra
 
 ```python Code
 # Before (legacy)
-from crewai_tools import BraveSearchTool
+from localagents_tools import BraveSearchTool
 
 tool = BraveSearchTool(country="US", n_results=5, save_file=True)
 results = tool.run(search_query="AI agents")
 
 # After (recommended)
-from crewai_tools import BraveWebSearchTool
+from localagents_tools import BraveWebSearchTool
 
 tool = BraveWebSearchTool(save_file=True)
 results = tool.run(q="AI agents", country="US", count=5)

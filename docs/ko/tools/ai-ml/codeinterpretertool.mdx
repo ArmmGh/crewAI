@@ -37,7 +37,7 @@ Docker를 사용할 수 없을 경우—설치되어 있지 않거나 어떤 이
 이 도구를 사용하려면 LocalAI tools 패키지를 설치해야 합니다:
 
 ```shell
-pip install 'crewai[tools]'
+pip install 'localagents[tools]'
 ```
 
 ## 예시
@@ -45,8 +45,8 @@ pip install 'crewai[tools]'
 다음 예시는 `CodeInterpreterTool`을 LocalAI agent와 함께 사용하는 방법을 보여줍니다:
 
 ```python Code
-from crewai import Agent, Task, Crew, Process
-from crewai_tools import CodeInterpreterTool
+from localagents import Agent, Task, Crew, Process
+from localagents_tools import CodeInterpreterTool
 
 # Initialize the tool
 code_interpreter = CodeInterpreterTool()
@@ -80,7 +80,7 @@ result = crew.kickoff()
 agent를 생성할 때 코드 실행을 직접 활성화할 수도 있습니다:
 
 ```python Code
-from crewai import Agent
+from localagents import Agent
 
 # Create an agent with code execution enabled
 programmer_agent = Agent(
@@ -95,7 +95,7 @@ programmer_agent = Agent(
 ### `unsafe_mode` 활성화
 
 ```python Code
-from crewai_tools import CodeInterpreterTool
+from localagents_tools import CodeInterpreterTool
 
 code = """
 import os
@@ -124,8 +124,8 @@ CodeInterpreterTool(unsafe_mode=True).run(code=code)
 여기 `CodeInterpreterTool`을 LocalAI 에이전트와 통합하는 방법에 대한 좀 더 자세한 예제가 있습니다:
 
 ```python Code
-from crewai import Agent, Task, Crew
-from crewai_tools import CodeInterpreterTool
+from localagents import Agent, Task, Crew
+from localagents_tools import CodeInterpreterTool
 
 # Initialize the tool
 code_interpreter = CodeInterpreterTool()

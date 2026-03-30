@@ -13,7 +13,7 @@ mode: "wide"
 
 ## التثبيت
 
-لا حاجة لتثبيت إضافي بخلاف `crewai-tools`. تأكد من أن النموذج المحدد يدعم الرؤية.
+لا حاجة لتثبيت إضافي بخلاف `localagents-tools`. تأكد من أن النموذج المحدد يدعم الرؤية.
 
 ## المعاملات
 
@@ -26,7 +26,7 @@ mode: "wide"
 ### الاستخدام المباشر
 
 ```python Code
-from crewai_tools import OCRTool
+from localagents_tools import OCRTool
 
 print(OCRTool().run(image_path_url="/tmp/receipt.png"))
 ```
@@ -34,8 +34,8 @@ print(OCRTool().run(image_path_url="/tmp/receipt.png"))
 ### مع وكيل
 
 ```python Code
-from crewai import Agent, Task, Crew
-from crewai_tools import OCRTool
+from localagents import Agent, Task, Crew
+from localagents_tools import OCRTool
 
 ocr = OCRTool()
 
@@ -64,8 +64,8 @@ result = crew.kickoff()
 ## مثال
 
 ```python Code
-from crewai import Agent, Task, Crew
-from crewai_tools import OCRTool
+from localagents import Agent, Task, Crew
+from localagents_tools import OCRTool
 
 tool = OCRTool()
 

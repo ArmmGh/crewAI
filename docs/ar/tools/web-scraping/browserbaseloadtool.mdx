@@ -21,10 +21,10 @@ mode: "wide"
 ## التثبيت
 
 - احصل على مفتاح API ومعرّف المشروع من [browserbase.com](https://browserbase.com) وعيّنهما في متغيرات البيئة (`BROWSERBASE_API_KEY`، `BROWSERBASE_PROJECT_ID`).
-- ثبّت [Browserbase SDK](http://github.com/browserbase/python-sdk) مع حزمة `crewai[tools]`:
+- ثبّت [Browserbase SDK](http://github.com/browserbase/python-sdk) مع حزمة `localagents[tools]`:
 
 ```shell
-pip install browserbase 'crewai[tools]'
+pip install browserbase 'localagents[tools]'
 ```
 
 ## مثال
@@ -32,7 +32,7 @@ pip install browserbase 'crewai[tools]'
 استخدم BrowserbaseLoadTool كما يلي للسماح لوكيلك بتحميل المواقع:
 
 ```python Code
-from crewai_tools import BrowserbaseLoadTool
+from localagents_tools import BrowserbaseLoadTool
 
 # Initialize the tool with the Browserbase API key and Project ID
 tool = BrowserbaseLoadTool()

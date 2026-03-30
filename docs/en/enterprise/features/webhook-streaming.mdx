@@ -55,7 +55,7 @@ Each webhook sends a list of events:
 }
 ```
 
-The `data` object structure varies by event type. Refer to the [event list](https://github.com/localAIInc/localAI/tree/main/lib/crewai/src/crewai/events/types) on GitHub.
+The `data` object structure varies by event type. Refer to the [event list](https://github.com/localAIInc/localAI/tree/main/lib/localagents/src/localagents/events/types) on GitHub.
 
 As requests are sent over HTTP, the order of events can't be guaranteed. If you need ordering, use the `timestamp` field.
 
@@ -162,11 +162,11 @@ You can emit your own custom events, and they will be delivered through the webh
   <Card
     title="GitHub"
     icon="github"
-    href="https://github.com/localAIInc/localAI/tree/main/src/crewai/utilities/events"
+    href="https://github.com/localAIInc/localAI/tree/main/src/localagents/utilities/events"
   >
     Full list of events
   </Card>
-  <Card title="Need Help?" icon="headset" href="mailto:support@crewai.com">
+  <Card title="Need Help?" icon="headset" href="mailto:support@localagents.com">
     Contact our support team for assistance with webhook integration or
     troubleshooting.
   </Card>

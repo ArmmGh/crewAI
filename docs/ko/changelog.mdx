@@ -106,11 +106,11 @@ mode: "wide"
   - 트레이스 배치 푸시에 대한 잘못된 자격 증명 수정 (404)
   - HITL 흐름 시스템의 여러 버그 해결
   - 에이전트 메모리 저장 수정
-  - crewai 패키지 전반에 걸쳐 모든 엄격한 mypy 오류 해결
+  - localagents 패키지 전반에 걸쳐 모든 엄격한 mypy 오류 해결
   - FlowMeta의 listener+router 메서드에 대한 __router_paths__ 사용 수정
   - 파일 지원이 없는 경우 값 오류 수정
   - 문서에서 litellm 격리 단어 수정
-  - crewai-files의 모든 mypy 오류 수정 및 모든 패키지를 CI 유형 검사에 추가
+  - localagents-files의 모든 mypy 오류 수정 및 모든 패키지를 CI 유형 검사에 추가
   - litellm의 상한을 마지막 테스트된 버전 (1.82.6)으로 고정
 
   ### 문서
@@ -144,9 +144,9 @@ mode: "wide"
   ### 버그 수정
   - 트레이스 배치 푸시에 대한 잘못된 자격 증명 수정 (404)
   - HITL 흐름 시스템의 여러 버그 해결
-  - crewai-files의 mypy 오류 해결 및 모든 패키지를 CI 타입 검사에 추가
-  - crewai-tools 패키지 전반의 모든 엄격한 mypy 오류 해결
-  - crewai 패키지 전반의 모든 mypy 오류 해결
+  - localagents-files의 mypy 오류 해결 및 모든 패키지를 CI 타입 검사에 추가
+  - localagents-tools 패키지 전반의 모든 엄격한 mypy 오류 해결
+  - localagents 패키지 전반의 모든 mypy 오류 해결
   - 에이전트의 메모리 절약 수정
   - FlowMeta에서 listener+router 메서드의 __router_paths__ 사용 수정
   - 파일 지원이 없을 때 값 오류 발생
@@ -226,9 +226,9 @@ mode: "wide"
 
   ### 버그 수정
   - 에이전트 메모리 저장 문제 수정
-  - crewai-files에서 mypy 오류 해결 및 모든 패키지를 CI 유형 검사에 추가
-  - crewai-tools 패키지 전반에 걸쳐 모든 엄격한 mypy 오류 해결
-  - crewai 패키지 전반에 걸쳐 모든 mypy 오류 해결
+  - localagents-files에서 mypy 오류 해결 및 모든 패키지를 CI 유형 검사에 추가
+  - localagents-tools 패키지 전반에 걸쳐 모든 엄격한 mypy 오류 해결
+  - localagents 패키지 전반에 걸쳐 모든 mypy 오류 해결
   - FlowMeta에서 listener+router 메서드의 __router_paths__ 사용 수정
   - litellm 상한을 마지막 테스트된 버전(1.82.6)으로 고정
   - 파일 지원이 없을 경우 값 오류 발생
@@ -743,7 +743,7 @@ mode: "wide"
   - 어노테이션에 대해 비동기 메서드가 실행 가능하도록 보장
   - RagTool.add의 매개변수 수정, 타입 및 테스트 추가
   - SSE 클라이언트에서 잘못된 매개변수 제거
-  - 'crewai config reset' 명령에서 'oauth2_extra' 설정 삭제
+  - 'localagents config reset' 명령에서 'oauth2_extra' 설정 삭제
 
   ### 리팩토링
   - LLM 클래스에서 모델 검증 및 프로바이더 추론 향상
@@ -977,7 +977,7 @@ mode: "wide"
   ### 기능
   - 버전을 1.0.0으로 범프
   - Agent 클래스에서 지식 및 가드레일 이벤트 처리 향상
-  - crewai run 명령에 도구 저장소 자격 증명 주입
+  - localagents run 명령에 도구 저장소 자격 증명 주입
 
   ### 버그 수정
   - Flow 데코레이터에서 중첩된 조건 구조 유지
@@ -1038,7 +1038,7 @@ mode: "wide"
   ### 기능
   - 추가 클라이언트 매개변수로 OpenAICompletion 클래스 향상
   - 이벤트 버스 스레드 안전성 및 비동기 지원 개선
-  - crewai run 명령에 도구 저장소 자격 증명 주입
+  - localagents run 명령에 도구 저장소 자격 증명 주입
 
   ### 버그 수정
   - input()을 사용할 수 없을 때 오류가 발생하는 문제 수정
@@ -1046,7 +1046,7 @@ mode: "wide"
   - task.py에서 복사 및 NOT_SPECIFIED 확인 수정
 
   ### 문서
-  - 문서에서 CREWAI_PLATFORM_INTEGRATION_TOKEN이 언급되도록 보장
+  - 문서에서 LOCALAGENTS_PLATFORM_INTEGRATION_TOKEN이 언급되도록 보장
   - 트리거 문서 업데이트
 
   ### 기여자
@@ -1069,11 +1069,11 @@ mode: "wide"
   ### 버그 수정
   - 누락된 input() 가용성 문제 수정
   - 10초 여유를 추가하여 JWT 디코딩 오류 해결
-  - crewai run 명령에 도구 저장소 자격 증명 주입
+  - localagents run 명령에 도구 저장소 자격 증명 주입
   - task.py에서 복사 및 NOT_SPECIFIED 확인 수정
 
   ### 문서
-  - 문서에서 CREWAI_PLATFORM_INTEGRATION_TOKEN이 언급되도록 보장
+  - 문서에서 LOCALAGENTS_PLATFORM_INTEGRATION_TOKEN이 언급되도록 보장
   - 트리거 문서 업데이트
 
   ### 기여자
@@ -1089,7 +1089,7 @@ mode: "wide"
   ## 변경 사항
 
   ### 핵심 개선 및 수정
-  - `crewai run` 명령에 도구 저장소 자격 증명 주입 수정
+  - `localagents run` 명령에 도구 저장소 자격 증명 주입 수정
   - 토큰 검증 오류를 줄이기 위해 JWT 디코딩 시 10초 여유 추가
   - 특정 날짜에 5일마다 작업을 실행하도록 의도된 cron 일정 수정(이후 되돌림)
 
@@ -1174,7 +1174,7 @@ mode: "wide"
 
   ### 새로운 기능 및 향상
   - 에이전트에 `apps`와 `actions` 속성을 추가하여 런타임 제어를 강화했습니다
-  - `crewai-tools` 저장소를 메인 워크스페이스에 통합하여 모노레포 구조를 도입했습니다
+  - `localagents-tools` 저장소를 메인 워크스페이스에 통합하여 모노레포 구조를 도입했습니다
   - 모든 패키지 버전을 1.0.0a1로 올려 알파 마일스톤을 표시했습니다
 
   ### 정리 및 인프라
@@ -1217,7 +1217,7 @@ mode: "wide"
 
   ### 새로운 기능 및 향상
   - 플랫폼 컨텍스트를 스레드 안전하게 관리하도록 개선했습니다
-  - CLI에서 `uv`를 바로 실행할 수 있도록 `crewai uv` 래퍼 명령을 추가했습니다
+  - CLI에서 `uv`를 바로 실행할 수 있도록 `localagents uv` 래퍼 명령을 추가했습니다
   - 관찰 워크플로에서 트레이스를 실패 상태로 표시할 수 있도록 지원했습니다
   - 사용자 지정 임베딩 타입과 프로바이더 마이그레이션을 지원했습니다
   - ChromaDB를 v1.1.0으로 업그레이드하고 호환성 및 타입 개선을 적용했습니다
@@ -1333,7 +1333,7 @@ mode: "wide"
   ## 새로운 기능 및 개선 사항
 
   - 추적 개선 및 정리 추가
-  - `events` 모듈을 `crewai.events`로 이동하여 이벤트 로직 중앙 집중화
+  - `events` 모듈을 `localagents.events`로 이동하여 이벤트 로직 중앙 집중화
 
   ## 문서 및 가이드
 
@@ -1352,7 +1352,7 @@ mode: "wide"
 
   ## 핵심 개선 사항 및 수정 사항
 
-  - `crewai update` 중 `tool` 섹션의 마이그레이션 수정
+  - `localagents update` 중 `tool` 섹션의 마이그레이션 수정
   - OpenAI 핀을 되돌림: 이제 고정된 가져오기 문제로 인해 `openai >=1.13.3`이 필요함
   - 불안정한 테스트 수정 및 테스트 안정성 향상
   - HITL 및 순환 흐름에 대한 `Flow` 리스너의 재개 가능성 개선
@@ -1365,12 +1365,12 @@ mode: "wide"
   - 자세한 CLI 출력에 작업 이름 표시
   - 중앙 집중식 임베딩 유형 추가 및 기본 임베딩 클라이언트 도입
   - ChromaDB 및 Qdrant에 대한 일반 클라이언트 도입
-  - 토큰을 지우기 위한 `crewai config reset` 지원 추가
-  - `crewai_trigger_payload` 자동 주입 활성화
+  - 토큰을 지우기 위한 `localagents config reset` 지원 추가
+  - `localagents_trigger_payload` 자동 주입 활성화
   - RAG 클라이언트 초기화 간소화 및 RAG 구성 시스템 도입
   - Qdrant RAG 공급자 지원 추가
   - 더 나은 이벤트 데이터로 추적 개선
-  - `crewai login`에서 Auth0 및 이메일 입력 제거 지원 추가
+  - `localagents login`에서 Auth0 및 이메일 입력 제거 지원 추가
 
   ## 문서 및 가이드
 
@@ -1401,8 +1401,8 @@ mode: "wide"
   ## 새로운 기능 및 향상 사항
 
   - 교환된 에이전트 메시지를 `ExternalMemory` 메타데이터에 포함
-  - 자동으로 `crewai_trigger_payload` 주입
-  - 내부 플래그 `inject_trigger_input`의 이름을 `allow_crewai_trigger_context`로 변경
+  - 자동으로 `localagents_trigger_payload` 주입
+  - 내부 플래그 `inject_trigger_input`의 이름을 `allow_localagents_trigger_context`로 변경
   - 추적 개선 및 일시적인 추적 로직 지속
   - 추적 로직 조건 통합
   - `Mem0`에서 `agent_id`와 연결된 메모리 항목 지원 추가
@@ -1435,8 +1435,8 @@ mode: "wide"
   ## 새로운 기능 및 향상 사항
 
   - 교환된 에이전트 메시지를 `ExternalMemory` 메타데이터에 포함
-  - 자동으로 `crewai_trigger_payload` 주입
-  - 내부 플래그 `inject_trigger_input`의 이름을 `allow_crewai_trigger_context`로 변경
+  - 자동으로 `localagents_trigger_payload` 주입
+  - 내부 플래그 `inject_trigger_input`의 이름을 `allow_localagents_trigger_context`로 변경
   - 추적 개선 및 일시적인 추적 로직 지속
   - 추적 로직 조건 통합
   - `Mem0`에서 `agent_id`와 연결된 메모리 항목 지원 추가
@@ -1496,7 +1496,7 @@ mode: "wide"
 
   ## 새로운 기능 및 향상된 사항
 
-  - 테스트와 함께 `crewai config` CLI 명령 그룹 추가
+  - 테스트와 함께 `localagents config` CLI 명령 그룹 추가
   - `crew.name`에 대한 기본값 지원 추가
   - 초기 추적 기능 도입
   - LangDB 통합 지원 추가
@@ -1517,7 +1517,7 @@ mode: "wide"
 
   ## Core Improvements & Fixes
 
-  - `crewai signup` 참조를 제거하고 `crewai login`으로 대체했습니다.
+  - `localagents signup` 참조를 제거하고 `localagents login`으로 대체했습니다.
   - `agent_id`를 사용하여 Mem0에 메모리를 추가하는 지원을 수정했습니다.
   - Mem0 구성의 기본값을 변경했습니다.
   - 누락된 모듈 파일을 명확하게 표시하도록 가져오기 오류를 업데이트했습니다.
@@ -1561,7 +1561,7 @@ mode: "wide"
   - `SerperScrapeWebsiteTool`에 대한 문서 추가 및 Serper 섹션 재구성
   - 일반 문서 업데이트 및 개선
 
-  ## crewai-tools v0.58.0
+  ## localagents-tools v0.58.0
   ### 새로운 도구 / 향상된 사항
   - **SerperScrapeWebsiteTool**: URL에서 깨끗한 콘텐츠를 추출하는 도구 추가
   - **Bedrock AgentCore**: Bedrock 에이전트를 위한 브라우저 및 코드 해석기 툴킷 통합
@@ -1918,7 +1918,7 @@ mode: "wide"
 
   [GitHub 릴리스 보기](https://github.com/localAIInc/localAI/releases/tag/0.117.1)
 
-  * 빌드: crewai-tools 업그레이드
+  * 빌드: localagents-tools 업그레이드
   * liteLLM을 최신 버전으로 업그레이드
   * Mem0 OSS 수정
 </Update>
@@ -2087,7 +2087,7 @@ mode: "wide"
   * 수정: 전체 LLM 연결 문제 해결
   * 수정: 훈련 시 안전한 접근자 사용
   * 수정: crew_chat.py에 버전 확인 추가
-  * 문서: crewai 채팅에 대한 새로운 문서
+  * 문서: localagents 채팅에 대한 새로운 문서
   * 문서: CLI 및 Composio Tool 문서의 형식 및 명확성 개선
 </Update>
 
@@ -2167,7 +2167,7 @@ mode: "wide"
   * 에이전트 레벨에 지식 추가
   * 기능/언체인 제거
   * 타입이 지정된 작업 출력 개선
-  * `crewai login`에서 도구 저장소에 로그인
+  * `localagents login`에서 도구 저장소에 로그인
   * 결과가 답변으로 LLM 루프를 제대로 종료하지 않는 문제 수정
   * 수정: ollama 제공자와 함께 실행할 때 누락된 키 이름
   * 발견된 철자 문제 수정
@@ -2242,12 +2242,12 @@ mode: "wide"
 
   [GitHub 릴리스 보기](https://github.com/localAIInc/localAI/releases/tag/0.76.9)
 
-  * flow에 대한 플롯 명령을 crewai flow plot로 업데이트
+  * flow에 대한 플롯 명령을 localagents flow plot로 업데이트
   * 3.10을 지원할 수 있도록 tomli 추가
   * `uv sync`에 설치 명령 옵션 전달
   * 도구 텍스트 설명 및 인수 개선
   * 도구 및 흐름 문서 개선
-  * flows cli를 업데이트하여 crewai flow add-crew로 흐름에 추가 크루를 쉽게 추가할 수 있도록 함
+  * flows cli를 업데이트하여 localagents flow add-crew로 흐름에 추가 크루를 쉽게 추가할 수 있도록 함
   * 여러 개의 start 및 listen(and_(..., ..., ...))을 사용할 때 flows 버그 수정
 </Update>
 
@@ -2256,16 +2256,16 @@ mode: "wide"
 
   [GitHub 릴리스 보기](https://github.com/localAIInc/localAI/releases/tag/0.76.2)
 
-  # crewai create 명령어 업데이트
+  # localagents create 명령어 업데이트
 
   ## 개요
-  `crewai create` 명령어는 새로운 LocalAI 프로젝트를 생성하는 데 사용됩니다. 이 문서에서는 이 명령어의 사용법과 업데이트된 기능에 대해 설명합니다.
+  `localagents create` 명령어는 새로운 LocalAI 프로젝트를 생성하는 데 사용됩니다. 이 문서에서는 이 명령어의 사용법과 업데이트된 기능에 대해 설명합니다.
 
   ## 사용법
   다음 명령어를 사용하여 새로운 프로젝트를 생성할 수 있습니다:
 
   ```bash
-  crewai create <project-name>
+  localagents create <project-name>
   ```
 
   ## 옵션
@@ -2274,10 +2274,10 @@ mode: "wide"
   - `--private`: 프로젝트를 비공개로 설정합니다.
 
   ## 예제
-  다음은 `crewai create` 명령어의 사용 예입니다:
+  다음은 `localagents create` 명령어의 사용 예입니다:
 
   ```bash
-  crewai create my-awesome-project --template basic --description "이것은 나의 멋진 프로젝트입니다." --private
+  localagents create my-awesome-project --template basic --description "이것은 나의 멋진 프로젝트입니다." --private
   ```
 
   ## 업데이트된 기능
@@ -2285,7 +2285,7 @@ mode: "wide"
   - **비공개 프로젝트**: 비공식적인 작업을 위해 프로젝트를 비공개로 설정할 수 있는 옵션이 추가되었습니다.
 
   ## 추가 정보
-  자세한 내용은 [LocalAI 문서](https://crewai.com/docs)에서 확인할 수 있습니다.
+  자세한 내용은 [LocalAI 문서](https://localagents.com/docs)에서 확인할 수 있습니다.
 </Update>
 
 <Update label="2024년 10월 23일">
@@ -2304,16 +2304,16 @@ mode: "wide"
 
   [GitHub 릴리스 보기](https://github.com/localAIInc/localAI/releases/tag/0.75.1)
 
-  # new `--provider` option on crewai crewat
+  # new `--provider` option on localagents crewat
 
-  The `--provider` option has been added to the `crewai crewat` command. This option allows users to specify the provider they want to use when executing the command.
+  The `--provider` option has been added to the `localagents crewat` command. This option allows users to specify the provider they want to use when executing the command.
 
   ## Usage
 
   To use the `--provider` option, simply include it in your command as follows:
 
   ```bash
-  crewai crewat --provider <provider_name>
+  localagents crewat --provider <provider_name>
   ```
 
   ### Example
@@ -2321,7 +2321,7 @@ mode: "wide"
   Here’s an example of how to use the new option:
 
   ```bash
-  crewai crewat --provider aws
+  localagents crewat --provider aws
   ```
 
   ## Available Providers
@@ -2337,7 +2337,7 @@ mode: "wide"
   - Make sure to replace `<provider_name>` with the actual name of the provider you wish to use.
   - This option is optional; if not specified, the default provider will be used.
 
-  For more information, refer to the [LocalAI documentation](https://crewai.com/docs).
+  For more information, refer to the [LocalAI documentation](https://localagents.com/docs).
 </Update>
 
 <Update label="2024년 10월 23일">
@@ -2347,7 +2347,7 @@ mode: "wide"
 
   * 테스트 후 훈련 수정
   * 흐름 단순화
-  * `crewai tool install <tool>` 조정
+  * `localagents tool install <tool>` 조정
   * 원래의 임베딩 구성 작동 확인
   * 버그 수정
   * 문서 업데이트 - LLM 문서에 Cerebras LLM 예제 구성 추가 포함
@@ -2385,8 +2385,8 @@ mode: "wide"
 
   * 새로운 Flow 기능
   * Flow 시각화 도구
-  * `crewai create flow` 명령어 생성
-  * `crewai tool create <tool>` 명령어 생성
+  * `localagents create flow` 명령어 생성
+  * `localagents tool create <tool>` 명령어 생성
   * 도구 게시를 위한 Git 검증 추가
   * 수정: JSON 인코딩 날짜 객체
   * 새로운 문서
@@ -2513,8 +2513,8 @@ mode: "wide"
 
   * 자동 완성 기능 추가
   * TaskOutput에 name 및 expected_output 추가
-  * 새로운 `crewai install` CLI
-  * 새로운 `crewai deploy` CLI
+  * 새로운 `localagents install` CLI
+  * 새로운 `localagents deploy` CLI
   * 파이프라인 기능 정리
   * 문서 업데이트
   * bandit CI 파이프라인과 같은 개발 경험 개선
@@ -2531,19 +2531,19 @@ mode: "wide"
 
   [GitHub 릴리스 보기](https://github.com/localAIInc/localAI/releases/tag/v0.51.0)
 
-  - localAI 테스트 / 평가 - https://docs.crewai.com/core-concepts/Testing/
+  - localAI 테스트 / 평가 - https://docs.localagents.com/core-concepts/Testing/
   - 새로운 슬라이딩 컨텍스트 윈도우 추가
-  - YAML에서 모든 속성 허용 - https://docs.crewai.com/getting-started/Start-a-New-LocalAI-Project-Template-Method/#customizing-your-project
-  - 초기 파이프라인 구조 추가 - https://docs.crewai.com/core-concepts/Pipeline/
-  - 계획 단계에 LLM 설정 가능 - https://docs.crewai.com/core-concepts/Planning/
-  - 새로운 crew run 명령 - https://docs.crewai.com/getting-started/Start-a-New-LocalAI-Project-Template-Method/#running-your-project
-  - 파일 저장 시 이제 dict를 JSON으로 덤프 - https://docs.crewai.com/core-concepts/Tasks/#creating-directories-when-saving-files
+  - YAML에서 모든 속성 허용 - https://docs.localagents.com/getting-started/Start-a-New-LocalAI-Project-Template-Method/#customizing-your-project
+  - 초기 파이프라인 구조 추가 - https://docs.localagents.com/core-concepts/Pipeline/
+  - 계획 단계에 LLM 설정 가능 - https://docs.localagents.com/core-concepts/Planning/
+  - 새로운 crew run 명령 - https://docs.localagents.com/getting-started/Start-a-New-LocalAI-Project-Template-Method/#running-your-project
+  - 파일 저장 시 이제 dict를 JSON으로 덤프 - https://docs.localagents.com/core-concepts/Tasks/#creating-directories-when-saving-files
   - 도구 출력에 대한 자세한 설정 사용
   - 새로운 GitHub 템플릿 추가
-  - 새로운 Vision 도구 - https://docs.crewai.com/tools/VisionTool/
-  - 새로운 DALL-E 도구 - https://docs.crewai.com/tools/DALL-ETool/
-  - 새로운 MySQL 도구 - https://docs.crewai.com/tools/MySQLTool/
-  - 새로운 NL2SQL 도구 - https://docs.crewai.com/tools/NL2SQLTool.md
+  - 새로운 Vision 도구 - https://docs.localagents.com/tools/VisionTool/
+  - 새로운 DALL-E 도구 - https://docs.localagents.com/tools/DALL-ETool/
+  - 새로운 MySQL 도구 - https://docs.localagents.com/tools/MySQLTool/
+  - 새로운 NL2SQL 도구 - https://docs.localagents.com/tools/NL2SQLTool.md
   - 버그 수정:
       - 계획 기능 출력의 버그
       - 계층적 프로세스를 위한 비동기 작업
@@ -2640,7 +2640,7 @@ mode: "wide"
 
   [GitHub 릴리스 보기](https://github.com/localAIInc/localAI/releases/tag/v0.35.4)
 
-  - crewai create CLI를 새 버전을 사용하도록 업데이트하기
+  - localagents create CLI를 새 버전을 사용하도록 업데이트하기
 </Update>
 
 <Update label="2024년 7월 1일">
@@ -2650,7 +2650,7 @@ mode: "wide"
 
   - 코드 실행 버그 수정
   - 전체 문서 업데이트
-  - crewai-tools 버전 업그레이드
+  - localagents-tools 버전 업그레이드
   - 여러 종속성 버전 업그레이드
   - 전반적인 버그 수정
 </Update>
@@ -2662,7 +2662,7 @@ mode: "wide"
 
   - 이제 귀하의 에이전트가 코드를 실행할 수 있습니다.
   - 모든 3rd-party 에이전트, LlamaIndex, LangChain 및 Autogen 에이전트가 이제 귀하의 크루의 일원이 될 수 있습니다!
-  - 실행하기 전에 귀하의 크루를 훈련시키고 일관된 결과를 얻으세요! 새로운 CLI `crewai train -n X`
+  - 실행하기 전에 귀하의 크루를 훈련시키고 일관된 결과를 얻으세요! 새로운 CLI `localagents train -n X`
   - 버그 수정 및 문서 업데이트 (곧 새로운 문서 업데이트가 추가될 예정입니다)
 </Update>
 
@@ -2671,7 +2671,7 @@ mode: "wide"
 
   [GitHub 릴리스 보기](https://github.com/localAIInc/localAI/releases/tag/v0.32.2)
 
-  - `crewai create` CLI를 새 버전을 사용하도록 업데이트
+  - `localagents create` CLI를 새 버전을 사용하도록 업데이트
   - 위임 에이전트 매칭 수정
 </Update>
 
@@ -2748,7 +2748,7 @@ mode: "wide"
 
   [GitHub 릴리스 보기](https://github.com/localAIInc/localAI/releases/tag/0.28.8)
 
-  - crewai CLI에서 사용되는 버전 업데이트
+  - localagents CLI에서 사용되는 버전 업데이트
 </Update>
 
 <Update label="2024년 4월 11일">
@@ -2783,7 +2783,7 @@ mode: "wide"
 
   [GitHub 릴리스 보기](https://github.com/localAIInc/localAI/releases/tag/v0.28.1)
 
-  - crewai-tools를 0.1.15로 업데이트하기
+  - localagents-tools를 0.1.15로 업데이트하기
 </Update>
 
 <Update label="2024년 4월 5일">
@@ -2804,10 +2804,10 @@ mode: "wide"
   [GitHub 릴리스 보기](https://github.com/localAIInc/localAI/releases/tag/v0.27.0)
 
   - 🧠 **메모리 (공유 크루 메모리)** - 이를 활성화하려면 크루에 `memory=True`를 추가하세요. 투명하게 작동하며 결과를 더 좋고 신뢰할 수 있게 만듭니다. 현재 기본적으로 비활성화되어 있습니다.
-  - 🤚🏼 **네이티브 인간 입력 지원:** [docs](https://docs.crewai.com/how-to/Human-Input-on-Execution/)
-  - 🌐 **범용 RAG 도구 지원:** OpenAI를 넘어서는 모든 모델. [예시](https://docs.crewai.com/tools/DirectorySearchTool/#custom-model-and-embeddings)
-  - 🔍 **향상된 캐시 제어:** 기발한 cache_function 속성을 만나보세요: [docs](https://docs.crewai.com/core-concepts/Tools/#custom-caching-mechanism)
-  - 🔁 **업데이트된 crewai-tools 의존성:** 항상 최신 상태를 유지합니다.
+  - 🤚🏼 **네이티브 인간 입력 지원:** [docs](https://docs.localagents.com/how-to/Human-Input-on-Execution/)
+  - 🌐 **범용 RAG 도구 지원:** OpenAI를 넘어서는 모든 모델. [예시](https://docs.localagents.com/tools/DirectorySearchTool/#custom-model-and-embeddings)
+  - 🔍 **향상된 캐시 제어:** 기발한 cache_function 속성을 만나보세요: [docs](https://docs.localagents.com/core-concepts/Tools/#custom-caching-mechanism)
+  - 🔁 **업데이트된 localagents-tools 의존성:** 항상 최신 상태를 유지합니다.
   - ⛓️ **크로스 에이전트 위임:** 에이전트 간의 원활한 협력.
   - 💠 **내부 프롬프트 개선:** 더 세련된 대화 흐름.
   - 📝 **더 나은 파싱으로 도구 사용 개선**
@@ -2878,7 +2878,7 @@ mode: "wide"
 
   [GitHub 릴리스 보기](https://github.com/localAIInc/localAI/releases/tag/v0.22.0)
 
-  - 초기 CLI `crewai create` 명령 추가
+  - 초기 CLI `localagents create` 명령 추가
   - 에이전트와 작업을 사전(dictionary)으로 정의할 수 있는 기능 추가
   - 더 명확한 에이전트 로깅 추가
   - 최대 재귀 깊이 초과 버그 수정
@@ -2915,7 +2915,7 @@ mode: "wide"
 
   [GitHub 릴리스 보기](https://github.com/localAIInc/localAI/releases/tag/v0.16.0)
 
-  - 남아있는 `crewai_tools` 의존성 제거
+  - 남아있는 `localagents_tools` 의존성 제거
   - 입력 보간에 대한 초기 지원 추가 (문서 누락)
   - 도구 사용, 도구 오류, 형식 오류, 토큰 사용을 추적하는 기능 추가
   - README 업데이트
@@ -2928,7 +2928,7 @@ mode: "wide"
 
   - 타임아웃 업데이트
   - 문서 업데이트
-  - crewai_tools를 필수 항목에서 제거
+  - localagents_tools를 필수 항목에서 제거
   - 토큰 수 감소를 위해 기본적으로 에이전트를 메모리 없는 상태로 설정 (이전에 이를 의존하던 사용자에게는 파괴적인 변경 사항)
 </Update>
 
@@ -2957,7 +2957,7 @@ mode: "wide"
 
   [GitHub 릴리스 보기](https://github.com/localAIInc/localAI/releases/tag/v0.14.0rc0)
 
-  - crewai-tools에 대한 지원 추가
+  - localagents-tools에 대한 지원 추가
   - 작업 출력을 Pydantic 객체 또는 JSON 형식으로 포맷하는 지원 추가
   - 작업 출력을 파일에 저장하는 지원 추가
   - 에이전트 간 위임의 신뢰성 향상

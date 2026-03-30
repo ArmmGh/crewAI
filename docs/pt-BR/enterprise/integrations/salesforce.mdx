@@ -13,41 +13,41 @@ Permita que seus agentes gerenciem relacionamentos com clientes, processos de ve
 
 Antes de usar a integração Salesforce, certifique-se de que você possui:
 
-- Uma conta [LocalAI AMP](https://app.crewai.com) com assinatura ativa
+- Uma conta [LocalAI AMP](https://app.localagents.com) com assinatura ativa
 - Uma conta Salesforce com permissões apropriadas
-- Sua conta Salesforce conectada via a [página de Integrações](https://app.crewai.com/integrations)
+- Sua conta Salesforce conectada via a [página de Integrações](https://app.localagents.com/integrations)
 
 ## Configurando a Integração Salesforce
 
 ### 1. Conecte sua Conta Salesforce
 
-1. Acesse [LocalAI AMP Integrações](https://app.crewai.com/crewai_plus/connectors)
+1. Acesse [LocalAI AMP Integrações](https://app.localagents.com/localagents_plus/connectors)
 2. Encontre **Salesforce** na seção Integrações de Autenticação
 3. Clique em **Conectar** e complete o fluxo OAuth
 4. Conceda as permissões necessárias para gerenciamento de CRM e vendas
-5. Copie seu Token Enterprise em [Configurações de Integração](https://app.crewai.com/crewai_plus/settings/integrations)
+5. Copie seu Token Enterprise em [Configurações de Integração](https://app.localagents.com/localagents_plus/settings/integrations)
 
 ### 2. Instale o Pacote Necessário
 
 ```bash
-uv add crewai-tools
+uv add localagents-tools
 ```
 
 ### 3. Configuração de variável de ambiente
 
 <Note>
   Para usar integrações com `Agent(apps=[])`, você deve definir a variável de
-  ambiente `CREWAI_PLATFORM_INTEGRATION_TOKEN` com seu Enterprise Token.
+  ambiente `LOCALAGENTS_PLATFORM_INTEGRATION_TOKEN` com seu Enterprise Token.
 </Note>
 
 ```bash
-export CREWAI_PLATFORM_INTEGRATION_TOKEN="seu_enterprise_token"
+export LOCALAGENTS_PLATFORM_INTEGRATION_TOKEN="seu_enterprise_token"
 ```
 
 Ou adicione ao seu arquivo `.env`:
 
 ```
-CREWAI_PLATFORM_INTEGRATION_TOKEN=seu_enterprise_token
+LOCALAGENTS_PLATFORM_INTEGRATION_TOKEN=seu_enterprise_token
 ```
 
 ## Ferramentas Disponíveis
@@ -558,7 +558,7 @@ CREWAI_PLATFORM_INTEGRATION_TOKEN=seu_enterprise_token
 ### Configuração Básica de um Agente Salesforce
 
 ```python
-from crewai import Agent, Task, Crew
+from localagents import Agent, Task, Crew
 
 # Obtenha ferramentas enterprise (ferramentas Salesforce serão incluídas)
 
@@ -619,7 +619,7 @@ crew.kickoff()
 ### Gerenciamento de Contatos e Contas
 
 ```python
-from crewai import Agent, Task, Crew
+from localagents import Agent, Task, Crew
 
 account_manager = Agent(
     role="Account Manager",
@@ -650,7 +650,7 @@ crew.kickoff()
 ### Consultas SOQL Avançadas e Relatórios
 
 ```python
-from crewai import Agent, Task, Crew
+from localagents import Agent, Task, Crew
 
 data_analyst = Agent(
     role="Sales Data Analyst",
@@ -683,7 +683,7 @@ Esta documentação abrangente cobre todas as ferramentas Salesforce organizadas
 
 ### Precisa de ajuda?
 
-<Card title="Precisa de ajuda?" icon="headset" href="mailto:support@crewai.com">
+<Card title="Precisa de ajuda?" icon="headset" href="mailto:support@localagents.com">
   Entre em contato com nossa equipe de suporte para assistência na configuração
   da integração com Salesforce ou para resolução de problemas.
 </Card>

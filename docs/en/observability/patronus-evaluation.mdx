@@ -57,8 +57,8 @@ To effectively use the Patronus evaluation tools, follow these steps:
 The following example demonstrates how to use the `PatronusEvalTool`, which allows agents to select the most appropriate evaluator and criteria:
 
 ```python Code
-from crewai import Agent, Task, Crew
-from crewai_tools import PatronusEvalTool
+from localagents import Agent, Task, Crew
+from localagents_tools import PatronusEvalTool
 
 # Initialize the tool
 patronus_eval_tool = PatronusEvalTool()
@@ -89,8 +89,8 @@ result = crew.kickoff()
 The following example demonstrates how to use the `PatronusPredefinedCriteriaEvalTool`, which uses predefined evaluator and criteria:
 
 ```python Code
-from crewai import Agent, Task, Crew
-from crewai_tools import PatronusPredefinedCriteriaEvalTool
+from localagents import Agent, Task, Crew
+from localagents_tools import PatronusPredefinedCriteriaEvalTool
 
 # Initialize the tool with predefined criteria
 patronus_eval_tool = PatronusPredefinedCriteriaEvalTool(
@@ -123,8 +123,8 @@ result = crew.kickoff()
 The following example demonstrates how to use the `PatronusLocalEvaluatorTool`, which uses custom function evaluators:
 
 ```python Code
-from crewai import Agent, Task, Crew
-from crewai_tools import PatronusLocalEvaluatorTool
+from localagents import Agent, Task, Crew
+from localagents_tools import PatronusLocalEvaluatorTool
 from patronus import Client, EvaluationResult
 import random
 

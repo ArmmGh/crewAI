@@ -14,10 +14,10 @@ realizar consultas avançadas em grandes conjuntos de dados dentro de um banco d
 
 ## Instalação
 
-Para instalar o pacote `crewai_tools` e utilizar o MySQLSearchTool, execute o seguinte comando no seu terminal:
+Para instalar o pacote `localagents_tools` e utilizar o MySQLSearchTool, execute o seguinte comando no seu terminal:
 
 ```shell
-pip install 'crewai[tools]'
+pip install 'localagents[tools]'
 ```
 
 ## Exemplo
@@ -25,7 +25,7 @@ pip install 'crewai[tools]'
 Abaixo está um exemplo demonstrando como usar o MySQLSearchTool para realizar uma busca semântica em uma tabela de um banco de dados MySQL:
 
 ```python Code
-from crewai_tools import MySQLSearchTool
+from localagents_tools import MySQLSearchTool
 
 # Inicialize a ferramenta com o URI do banco de dados e o nome da tabela de destino
 tool = MySQLSearchTool(

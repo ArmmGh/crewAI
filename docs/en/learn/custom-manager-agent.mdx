@@ -20,7 +20,7 @@ The `manager_agent` attribute allows you to define a custom agent to manage the 
 
 ```python Code
 import os
-from crewai import Agent, Task, Crew, Process
+from localagents import Agent, Task, Crew, Process
 
 # Define your agents
 researcher = Agent(
@@ -74,7 +74,7 @@ result = crew.kickoff()
 If you're using the hierarchical process and don't want to set a custom manager agent, you can specify the language model for the manager:
 
 ```python Code
-from crewai import LLM
+from localagents import LLM
 
 manager_llm = LLM(model="gpt-4o")
 

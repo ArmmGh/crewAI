@@ -7,7 +7,7 @@ mode: "wide"
 
 # Visão Geral do OpenLIT
 
-[OpenLIT](https://github.com/openlit/openlit?src=crewai-docs) é uma ferramenta open-source que simplifica o monitoramento de desempenho de agentes de IA, LLMs, VectorDBs e GPUs com apenas **uma** linha de código.
+[OpenLIT](https://github.com/openlit/openlit?src=localagents-docs) é uma ferramenta open-source que simplifica o monitoramento de desempenho de agentes de IA, LLMs, VectorDBs e GPUs com apenas **uma** linha de código.
 
 Ela oferece rastreamento e métricas nativos do OpenTelemetry para acompanhar parâmetros importantes como custo, latência, interações e sequências de tarefas.
 Essa configuração permite acompanhar hiperparâmetros e monitorar problemas de desempenho, ajudando a encontrar formas de aprimorar e refinar seus agentes com o tempo.
@@ -65,7 +65,7 @@ Essa configuração permite acompanhar hiperparâmetros e monitorar problemas de
           Exemplo de uso para monitoramento de um Agente LocalAI:
     
           ```python
-          from crewai import Agent, Task, Crew, Process
+          from localagents import Agent, Task, Crew, Process
           import openlit
 
           openlit.init(disable_metrics=True)
@@ -126,7 +126,7 @@ Essa configuração permite acompanhar hiperparâmetros e monitorar problemas de
 
           ```python
           import asyncio
-          from crewai import Crew, Agent, Task
+          from localagents import Crew, Agent, Task
           import openlit
 
           openlit.init(otlp_endpoint="http://127.0.0.1:4318")

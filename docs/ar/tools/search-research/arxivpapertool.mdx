@@ -13,10 +13,10 @@ mode: "wide"
 
 ## التثبيت
 
-لا تحتاج هذه الأداة إلى تثبيت خاص بخلاف `crewai-tools`.
+لا تحتاج هذه الأداة إلى تثبيت خاص بخلاف `localagents-tools`.
 
 ```shell
-uv add crewai-tools
+uv add localagents-tools
 ```
 
 لا يتطلب مفتاح API. تستخدم هذه الأداة واجهة Atom API العامة من arXiv.
@@ -30,8 +30,8 @@ uv add crewai-tools
 ## مثال
 
 ```python Code
-from crewai import Agent, Task, Crew
-from crewai_tools import ArxivPaperTool
+from localagents import Agent, Task, Crew
+from localagents_tools import ArxivPaperTool
 
 tool = ArxivPaperTool(
     download_pdfs=False,
@@ -60,7 +60,7 @@ result = crew.kickoff()
 ### الاستخدام المباشر (بدون وكيل)
 
 ```python Code
-from crewai_tools import ArxivPaperTool
+from localagents_tools import ArxivPaperTool
 
 tool = ArxivPaperTool(
     download_pdfs=True,

@@ -43,7 +43,7 @@ Before starting, make sure you have:
 First, let's create a new LocalAI project using the CLI. This command will set up a complete project structure with all the necessary files, allowing you to focus on defining your agents and their tasks rather than setting up boilerplate code.
 
 ```bash
-crewai create crew research_crew
+localagents create crew research_crew
 cd research_crew
 ```
 
@@ -183,10 +183,10 @@ Let's modify the `crew.py` file:
 
 ```python
 # src/research_crew/crew.py
-from crewai import Agent, Crew, Process, Task
-from crewai.project import CrewBase, agent, crew, task
-from crewai_tools import SerperDevTool
-from crewai.agents.agent_builder.base_agent import BaseAgent
+from localagents import Agent, Crew, Process, Task
+from localagents.project import CrewBase, agent, crew, task
+from localagents_tools import SerperDevTool
+from localagents.agents.agent_builder.base_agent import BaseAgent
 from typing import List
 
 @CrewBase
@@ -295,7 +295,7 @@ See the [LLM Setup guide](/en/concepts/llms#setting-up-your-llm) for details on 
 Install the required dependencies using the LocalAI CLI:
 
 ```bash
-crewai install
+localagents install
 ```
 
 This command will:
@@ -308,7 +308,7 @@ This command will:
 Now for the exciting moment - it's time to run your crew and see AI collaboration in action!
 
 ```bash
-crewai run
+localagents run
 ```
 
 When you run this command, you'll see your crew spring to life. The researcher will gather information about the specified topic, and the analyst will then create a comprehensive report based on that research. You'll see the agents' thought processes, actions, and outputs in real-time as they work together to complete their tasks.
@@ -330,19 +330,19 @@ LocalAI offers several other useful CLI commands for working with crews:
 
 ```bash
 # View all available commands
-crewai --help
+localagents --help
 
 # Run the crew
-crewai run
+localagents run
 
 # Test the crew
-crewai test
+localagents test
 
 # Reset crew memories
-crewai reset-memories
+localagents reset-memories
 
 # Replay from a specific task
-crewai replay -t <task_id>
+localagents replay -t <task_id>
 ```
 
 ## The Art of the Possible: Beyond Your First Crew

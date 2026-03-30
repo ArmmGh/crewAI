@@ -21,7 +21,7 @@ Para criar uma ferramenta personalizada, herde de `BaseTool` e defina os atribut
 
 ```python Code
 from typing import Type
-from crewai.tools import BaseTool
+from localagents.tools import BaseTool
 from pydantic import BaseModel, Field
 
 class MyToolInput(BaseModel):
@@ -44,7 +44,7 @@ Como alternativa, você pode utilizar o decorador de ferramenta `@tool`. Esta ab
 oferecendo uma maneira concisa e eficiente de criar ferramentas especializadas de acordo com suas necessidades.
 
 ```python Code
-from crewai.tools import tool
+from localagents.tools import tool
 
 @tool("Tool Name")
 def my_simple_tool(question: str) -> str:
@@ -80,7 +80,7 @@ A maneira mais simples de criar uma ferramenta assíncrona é usando o decorador
 
 ```python Code
 import aiohttp
-from crewai.tools import tool
+from localagents.tools import tool
 
 @tool("Async Web Fetcher")
 async def fetch_webpage(url: str) -> str:
@@ -97,7 +97,7 @@ Para maior controle, herde de `BaseTool` e implemente os métodos `_run` (síncr
 ```python Code
 import requests
 import aiohttp
-from crewai.tools import BaseTool
+from localagents.tools import BaseTool
 from pydantic import BaseModel, Field
 
 class WebFetcherInput(BaseModel):

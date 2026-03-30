@@ -70,9 +70,9 @@ python3 --version
     </Step>
 
     <Step title="تثبيت LocalAI">
-      - شغّل الأمر التالي لتثبيت واجهة سطر أوامر `crewai`:
+      - شغّل الأمر التالي لتثبيت واجهة سطر أوامر `localagents`:
         ```shell
-        uv tool install crewai
+        uv tool install localagents
         ```
           <Warning>
             إذا ظهر تحذير بشأن `PATH`، شغّل هذا الأمر لتحديث الصدفة:
@@ -85,18 +85,18 @@ python3 --version
             إذا واجهت خطأ بناء `chroma-hnswlib==0.7.6` (`fatal error C1083: Cannot open include file: 'float.h'`) على Windows، ثبّت [Visual Studio Build Tools](https://visualstudio.microsoft.com/downloads/) مع خيار *Desktop development with C++*.
           </Warning>
 
-      - للتحقق من تثبيت `crewai`، شغّل:
+      - للتحقق من تثبيت `localagents`، شغّل:
         ```shell
         uv tool list
         ```
       - يجب أن ترى شيئًا مثل:
         ```shell
-        crewai v0.102.0
-        - crewai
+        localagents v0.102.0
+        - localagents
         ```
-      - إذا كنت بحاجة لتحديث `crewai`، شغّل:
+      - إذا كنت بحاجة لتحديث `localagents`، شغّل:
         ```shell
-        uv tool install crewai --upgrade
+        uv tool install localagents --upgrade
         ```
       <Check>تم التثبيت بنجاح! أنت جاهز لإنشاء أول Crew!</Check>
     </Step>
@@ -109,9 +109,9 @@ python3 --version
 
 <Steps>
   <Step title="إنشاء هيكل المشروع">
-    - شغّل أمر `crewai` عبر CLI:
+    - شغّل أمر `localagents` عبر CLI:
       ```shell
-      crewai create crew <your_project_name>
+      localagents create crew <your_project_name>
       ```
 
     - سينشئ هذا مشروعًا جديدًا بالهيكل التالي:
@@ -157,7 +157,7 @@ python3 --version
   <Step title="تشغيل الـ Crew">
     - قبل تشغيل الـ Crew، تأكد من تنفيذ:
       ```bash
-      crewai install
+      localagents install
       ```
     - إذا كنت بحاجة لتثبيت حزم إضافية، استخدم:
       ```shell
@@ -165,7 +165,7 @@ python3 --version
       ```
     - لتشغيل الـ Crew، نفّذ الأمر التالي في جذر مشروعك:
       ```bash
-      crewai run
+      localagents run
       ```
   </Step>
 </Steps>
@@ -177,7 +177,7 @@ python3 --version
 
 ### LocalAI AMP (SaaS)
 
-- لا يتطلب أي تثبيت - فقط سجّل مجانًا على [app.crewai.com](https://app.crewai.com)
+- لا يتطلب أي تثبيت - فقط سجّل مجانًا على [app.localagents.com](https://app.localagents.com)
 - تحديثات وصيانة تلقائية
 - بنية تحتية مُدارة وقابلة للتوسع
 - بناء Crews بدون كتابة كود
@@ -188,7 +188,7 @@ python3 --version
 - يدعم أي مزود سحابي بما في ذلك النشر المحلي
 - تكامل مع أنظمة الأمان الحالية
 
-<Card title="استكشف خيارات المؤسسات" icon="building" href="https://crewai.com/enterprise">
+<Card title="استكشف خيارات المؤسسات" icon="building" href="https://localagents.com/enterprise">
   تعرّف على عروض LocalAI للمؤسسات وجدول عرضًا توضيحيًا
 </Card>
 </Note>
@@ -202,7 +202,7 @@ python3 --version
   <Card
     title="انضم إلى المجتمع"
     icon="comments"
-    href="https://community.crewai.com"
+    href="https://community.localagents.com"
   >
     تواصل مع مطورين آخرين واحصل على المساعدة وشارك تجاربك مع LocalAI.
   </Card>

@@ -119,7 +119,7 @@ Crews는 다음과 같은 경우에 이상적입니다:
 
 ```python
 # Example: Research Crew for market analysis
-from crewai import Agent, Crew, Process, Task
+from localagents import Agent, Crew, Process, Task
 
 # Create specialized agents
 researcher = Agent(
@@ -172,7 +172,7 @@ result = market_analysis_crew.kickoff()
 
 ```python
 # Example: Customer Support Flow with structured processing
-from crewai.flow.flow import Flow, listen, router, start
+from localagents.flow.flow import Flow, listen, router, start
 from pydantic import BaseModel
 from typing import List, Dict
 
@@ -198,7 +198,7 @@ class CustomerSupportFlow(Flow[SupportTicketState]):
     @listen(receive_ticket)
     def categorize_ticket(self, _):
         # Use a direct LLM call for categorization
-        from crewai import LLM
+        from localagents import LLM
         llm = LLM(model="openai/gpt-4o-mini")
 
         prompt = f"""
@@ -259,8 +259,8 @@ result = support_flow.kickoff()
 
 ```python
 # Example: Content Production Pipeline combining Crews and Flows
-from crewai.flow.flow import Flow, listen, start
-from crewai import Agent, Crew, Process, Task
+from localagents.flow.flow import Flow, listen, start
+from localagents import Agent, Crew, Process, Task
 from pydantic import BaseModel
 from typing import List, Dict
 
@@ -374,7 +374,7 @@ class ContentProductionFlow(Flow[ContentState]):
     @listen(write_content)
     def optimize_for_seo(self, _):
         # Use a direct LLM call for SEO optimization
-        from crewai import LLM
+        from localagents import LLM
         llm = LLM(model="openai/gpt-4o-mini")
 
         prompt = f"""

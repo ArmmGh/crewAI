@@ -21,12 +21,12 @@ crew_tasks_output.json
 .ruff_cache
 .venv
 test_flow.html
-crewairules.mdc
+localagentsrules.mdc
 plan.md
 conceptual_plan.md
 build_image
 chromadb-*.lock
 .claude
-.crewai/memory
+.localagents/memory
 blogs/*
 secrets/*

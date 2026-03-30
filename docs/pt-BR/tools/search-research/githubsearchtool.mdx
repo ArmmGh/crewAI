@@ -17,20 +17,20 @@ O GithubSearchTool é uma ferramenta de Recuperação Aprimorada por Geração (
 
 ## Instalação
 
-Para usar o GithubSearchTool, primeiro certifique-se de que o pacote crewai_tools está instalado em seu ambiente Python:
+Para usar o GithubSearchTool, primeiro certifique-se de que o pacote localagents_tools está instalado em seu ambiente Python:
 
 ```shell
-pip install 'crewai[tools]'
+pip install 'localagents[tools]'
 ```
 
-Esse comando instala o pacote necessário para rodar o GithubSearchTool juntamente com outras ferramentas incluídas no pacote crewai_tools.
+Esse comando instala o pacote necessário para rodar o GithubSearchTool juntamente com outras ferramentas incluídas no pacote localagents_tools.
 
 ## Exemplo
 
 Veja como você pode usar o GithubSearchTool para realizar buscas semânticas dentro de um repositório GitHub:
 
 ```python Code
-from crewai_tools import GithubSearchTool
+from localagents_tools import GithubSearchTool
 
 # Inicialize a ferramenta para buscas semânticas em um repositório GitHub específico
 tool = GithubSearchTool(

@@ -12,7 +12,7 @@ Collaboration in LocalAI enables agents to work together as a team by delegating
 ## Quick Start: Enable Collaboration
 
 ```python
-from crewai import Agent, Crew, Task
+from localagents import Agent, Crew, Task
 
 # Enable collaboration for agents
 researcher = Agent(
@@ -64,7 +64,7 @@ Enables agents to ask specific questions to gather information from colleagues.
 Here's a complete example showing agents collaborating on a content creation task:
 
 ```python
-from crewai import Agent, Crew, Task, Process
+from localagents import Agent, Crew, Task, Process
 
 # Create collaborative agents
 researcher = Agent(
@@ -164,7 +164,7 @@ collaborative_task = Task(
 For complex projects, use a hierarchical process with a manager agent:
 
 ```python
-from crewai import Agent, Crew, Task, Process
+from localagents import Agent, Crew, Task, Process
 
 # Manager agent coordinates the team
 manager = Agent(

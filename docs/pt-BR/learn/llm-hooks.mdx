@@ -85,7 +85,7 @@ def wrong_approach(context: LLMCallHookContext) -> None:
 Use decoradores para sintaxe mais limpa:
 
 ```python
-from crewai.hooks import before_llm_call, after_llm_call
+from localagents.hooks import before_llm_call, after_llm_call
 
 @before_llm_call
 def validate_iteration_count(context):
@@ -108,9 +108,9 @@ def sanitize_response(context):
 Registre hooks para uma instância específica de crew:
 
 ```python
-from crewai import CrewBase
-from crewai.project import crew
-from crewai.hooks import before_llm_call_crew, after_llm_call_crew
+from localagents import CrewBase
+from localagents.project import crew
+from localagents.hooks import before_llm_call_crew, after_llm_call_crew
 
 @CrewBase
 class MyProjCrew:
@@ -254,7 +254,7 @@ def debug_response(context: LLMCallHookContext) -> None:
 ### Desregistrando Hooks
 
 ```python
-from crewai.hooks import (
+from localagents.hooks import (
     unregister_before_llm_call_hook,
     unregister_after_llm_call_hook
 )
@@ -271,7 +271,7 @@ unregister_before_llm_call_hook(my_hook)  # Retorna True se encontrado
 ### Limpando Hooks
 
 ```python
-from crewai.hooks import (
+from localagents.hooks import (
     clear_before_llm_call_hooks,
     clear_after_llm_call_hooks,
     clear_all_llm_call_hooks
@@ -353,7 +353,7 @@ def safe_hook(context: LLMCallHookContext) -> bool | None:
 ## Segurança de Tipos
 
 ```python
-from crewai.hooks import LLMCallHookContext, BeforeLLMCallHookType, AfterLLMCallHookType
+from localagents.hooks import LLMCallHookContext, BeforeLLMCallHookType, AfterLLMCallHookType
 
 # Anotações de tipo explícitas
 def my_before_hook(context: LLMCallHookContext) -> bool | None:

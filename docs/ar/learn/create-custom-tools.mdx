@@ -19,7 +19,7 @@ mode: "wide"
 
 ```python Code
 from typing import Type
-from crewai.tools import BaseTool
+from localagents.tools import BaseTool
 from pydantic import BaseModel, Field
 
 class MyToolInput(BaseModel):
@@ -38,7 +38,7 @@ class MyCustomTool(BaseTool):
 ### استخدام مزخرف `tool`
 
 ```python Code
-from crewai.tools import tool
+from localagents.tools import tool
 
 @tool("Tool Name")
 def my_simple_tool(question: str) -> str:
@@ -66,7 +66,7 @@ cached_tool.cache_function = my_cache_strategy
 
 ```python Code
 import aiohttp
-from crewai.tools import tool
+from localagents.tools import tool
 
 @tool("Async Web Fetcher")
 async def fetch_webpage(url: str) -> str:

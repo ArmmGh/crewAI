@@ -22,20 +22,20 @@ When an agent is configured with A2A capabilities:
 4. Results are returned to the LocalAI workflow
 
 <Note>
-  A2A delegation requires the `a2a-sdk` package. Install with: `uv add 'crewai[a2a]'` or `pip install 'crewai[a2a]'`
+  A2A delegation requires the `a2a-sdk` package. Install with: `uv add 'localagents[a2a]'` or `pip install 'localagents[a2a]'`
 </Note>
 
 ## Basic Configuration
 
 <Warning>
-  `crewai.a2a.config.A2AConfig` is deprecated and will be removed in v2.0.0. Use `A2AClientConfig` for connecting to remote agents and/or `A2AServerConfig` for exposing agents as servers.
+  `localagents.a2a.config.A2AConfig` is deprecated and will be removed in v2.0.0. Use `A2AClientConfig` for connecting to remote agents and/or `A2AServerConfig` for exposing agents as servers.
 </Warning>
 
 Configure an agent for A2A delegation by setting the `a2a` parameter:
 
 ```python Code
-from crewai import Agent, Crew, Task
-from crewai.a2a import A2AClientConfig
+from localagents import Agent, Crew, Task
+from localagents.a2a import A2AClientConfig
 
 agent = Agent(
     role="Research Coordinator",
@@ -123,8 +123,8 @@ For A2A agents that require authentication, use one of the provided auth schemes
 <Tabs>
   <Tab title="Bearer Token">
 ```python bearer_token_auth.py lines
-from crewai.a2a import A2AClientConfig
-from crewai.a2a.auth import BearerTokenAuth
+from localagents.a2a import A2AClientConfig
+from localagents.a2a.auth import BearerTokenAuth
 
 agent = Agent(
     role="Secure Coordinator",
@@ -142,8 +142,8 @@ agent = Agent(
 
   <Tab title="API Key">
 ```python api_key_auth.py lines
-from crewai.a2a import A2AClientConfig
-from crewai.a2a.auth import APIKeyAuth
+from localagents.a2a import A2AClientConfig
+from localagents.a2a.auth import APIKeyAuth
 
 agent = Agent(
     role="API Coordinator",
@@ -165,8 +165,8 @@ agent = Agent(
 
   <Tab title="OAuth2">
 ```python oauth2_auth.py lines
-from crewai.a2a import A2AClientConfig
-from crewai.a2a.auth import OAuth2ClientCredentials
+from localagents.a2a import A2AClientConfig
+from localagents.a2a.auth import OAuth2ClientCredentials
 
 agent = Agent(
     role="OAuth Coordinator",
@@ -189,8 +189,8 @@ agent = Agent(
 
   <Tab title="HTTP Basic">
 ```python http_basic_auth.py lines
-from crewai.a2a import A2AClientConfig
-from crewai.a2a.auth import HTTPBasicAuth
+from localagents.a2a import A2AClientConfig
+from localagents.a2a.auth import HTTPBasicAuth
 
 agent = Agent(
     role="Basic Auth Coordinator",
@@ -215,8 +215,8 @@ agent = Agent(
 Configure multiple A2A agents for delegation by passing a list:
 
 ```python Code
-from crewai.a2a import A2AClientConfig
-from crewai.a2a.auth import BearerTokenAuth
+from localagents.a2a import A2AClientConfig
+from localagents.a2a.auth import BearerTokenAuth
 
 agent = Agent(
     role="Multi-Agent Coordinator",
@@ -244,7 +244,7 @@ The LLM will automatically choose which A2A agent to delegate to based on the ta
 Control how agent connection failures are handled using the `fail_fast` parameter:
 
 ```python Code
-from crewai.a2a import A2AClientConfig
+from localagents.a2a import A2AClientConfig
 
 # Fail immediately on connection errors (default)
 agent = Agent(
@@ -289,8 +289,8 @@ Control how your agent receives task status updates from remote A2A agents:
 <Tabs>
   <Tab title="Streaming (Default)">
 ```python streaming_config.py lines
-from crewai.a2a import A2AClientConfig
-from crewai.a2a.updates import StreamingConfig
+from localagents.a2a import A2AClientConfig
+from localagents.a2a.updates import StreamingConfig
 
 agent = Agent(
     role="Research Coordinator",
@@ -307,8 +307,8 @@ agent = Agent(
 
   <Tab title="Polling">
 ```python polling_config.py lines
-from crewai.a2a import A2AClientConfig
-from crewai.a2a.updates import PollingConfig
+from localagents.a2a import A2AClientConfig
+from localagents.a2a.updates import PollingConfig
 
 agent = Agent(
     role="Research Coordinator",
@@ -329,8 +329,8 @@ agent = Agent(
 
   <Tab title="Push Notifications">
 ```python push_notifications_config.py lines
-from crewai.a2a import A2AClientConfig
-from crewai.a2a.updates import PushNotificationConfig
+from localagents.a2a import A2AClientConfig
+from localagents.a2a.updates import PushNotificationConfig
 
 agent = Agent(
     role="Research Coordinator",
@@ -359,8 +359,8 @@ You can expose your LocalAI agents as A2A-compliant servers, allowing other A2A 
 Add an `A2AServerConfig` to your agent to enable server capabilities:
 
 ```python a2a_server_agent.py lines
-from crewai import Agent
-from crewai.a2a import A2AServerConfig
+from localagents import Agent
+from localagents.a2a import A2AServerConfig
 
 agent = Agent(
     role="Data Analyst",
@@ -450,8 +450,8 @@ agent = Agent(
 An agent can act as both client and server by providing both configurations:
 
 ```python Code
-from crewai import Agent
-from crewai.a2a import A2AClientConfig, A2AServerConfig
+from localagents import Agent
+from localagents.a2a import A2AClientConfig, A2AServerConfig
 
 agent = Agent(
     role="Research Coordinator",

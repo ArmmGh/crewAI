@@ -8,7 +8,7 @@ mode: "wide"
 ## نظرة عامة
 
 تتيح لك ميزة التدريب في LocalAI تدريب وكلاء الذكاء الاصطناعي باستخدام واجهة سطر الأوامر (CLI).
-بتشغيل الأمر `crewai train -n <n_iterations>`، يمكنك تحديد عدد التكرارات لعملية التدريب.
+بتشغيل الأمر `localagents train -n <n_iterations>`، يمكنك تحديد عدد التكرارات لعملية التدريب.
 
 أثناء التدريب، يستخدم LocalAI تقنيات لتحسين أداء وكلائك مع التغذية الراجعة البشرية.
 يساعد هذا الوكلاء على تحسين فهمهم واتخاذ القرارات وحل المشكلات.
@@ -22,7 +22,7 @@ mode: "wide"
 3. شغّل الأمر التالي:
 
 ```shell
-crewai train -n <n_iterations> -f <filename.pkl>
+localagents train -n <n_iterations> -f <filename.pkl>
 ```
 <Tip>
   استبدل `<n_iterations>` بعدد تكرارات التدريب المرغوب و`<filename>` باسم الملف المناسب المنتهي بـ `.pkl`.
@@ -64,7 +64,7 @@ except Exception as e:
 
 ```mermaid
 flowchart TD
-  A["Start training<br/>CLI: crewai train -n -f<br/>or Python: crew.train(...)"] --> B["Setup training mode<br/>- task.human_input = true<br/>- disable delegation<br/>- init training_data.pkl + trained file"]
+  A["Start training<br/>CLI: localagents train -n -f<br/>or Python: crew.train(...)"] --> B["Setup training mode<br/>- task.human_input = true<br/>- disable delegation<br/>- init training_data.pkl + trained file"]
 
   subgraph "Iterations"
     direction LR
@@ -146,7 +146,7 @@ flowchart TD
     لجودة تدريب مثالية وتقييمات موثوقة، نوصي بشدة باستخدام نماذج بحد أدنى 7 مليار معامل أو أكبر:
 
     ```python
-    from crewai import Agent, Crew, Task, LLM
+    from localagents import Agent, Crew, Task, LLM
 
     # الحد الأدنى الموصى به لتقييم التدريب
     llm = LLM(model="mistral/open-mistral-7b")
@@ -188,7 +188,7 @@ flowchart TD
 - **معالجة الأخطاء:** يتعامل الكود مع أخطاء العمليات الفرعية والاستثناءات غير المتوقعة، ويوفر رسائل خطأ للمستخدم.
 - يُطبق التوجيه المدرّب في وقت الأمر؛ لا يعدّل تهيئة وكيل Python/YAML.
 - يحمّل الوكلاء تلقائيًا الاقتراحات المدربة من ملف باسم `trained_agents_data.pkl` الموجود في مجلد العمل الحالي. إذا درّبت إلى اسم ملف مختلف، أعد تسميته إلى `trained_agents_data.pkl` قبل التشغيل، أو اضبط المحمّل في الكود.
-- يمكنك تغيير اسم ملف المخرجات عند استدعاء `crewai train` بـ `-f/--filename`. المسارات المطلقة مدعومة إذا أردت الحفظ خارج CWD.
+- يمكنك تغيير اسم ملف المخرجات عند استدعاء `localagents train` بـ `-f/--filename`. المسارات المطلقة مدعومة إذا أردت الحفظ خارج CWD.
 
 من المهم ملاحظة أن عملية التدريب قد تستغرق بعض الوقت، اعتمادًا على تعقيد وكلائك وستتطلب أيضًا ملاحظاتك في كل تكرار.
 

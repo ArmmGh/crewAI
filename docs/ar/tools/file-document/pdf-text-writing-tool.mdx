@@ -27,8 +27,8 @@ mode: "wide"
 ## مثال
 
 ```python Code
-from crewai import Agent, Task, Crew
-from crewai_tools import PDFTextWritingTool
+from localagents import Agent, Task, Crew
+from localagents_tools import PDFTextWritingTool
 
 tool = PDFTextWritingTool()
 
@@ -58,7 +58,7 @@ result = crew.kickoff()
 ### الاستخدام المباشر
 
 ```python Code
-from crewai_tools import PDFTextWritingTool
+from localagents_tools import PDFTextWritingTool
 
 PDFTextWritingTool().run(
   pdf_path="./input.pdf",

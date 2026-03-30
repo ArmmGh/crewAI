@@ -15,7 +15,7 @@ mode: "wide"
 
 ```python Code
 import os
-from crewai import Agent, Task, Crew, Process
+from localagents import Agent, Task, Crew, Process
 
 researcher = Agent(
     role="Researcher",
@@ -64,7 +64,7 @@ result = crew.kickoff()
 إذا كنت تستخدم العملية الهرمية ولا تريد تعيين Agent مدير مخصص، يمكنك تحديد نموذج اللغة للمدير:
 
 ```python Code
-from crewai import LLM
+from localagents import LLM
 
 manager_llm = LLM(model="gpt-4o")
 

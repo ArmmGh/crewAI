@@ -32,7 +32,7 @@ LocalAI Platform supports enterprise Single Sign-On (SSO) across both **SaaS (AM
 
 ### Default Authentication
 
-LocalAI's managed SaaS platform (AMP) uses **WorkOS** as the default authentication provider. When you sign up at [app.crewai.com](https://app.crewai.com), authentication is handled through `login.crewai.com` — no additional SSO configuration is required.
+LocalAI's managed SaaS platform (AMP) uses **WorkOS** as the default authentication provider. When you sign up at [app.localagents.com](https://app.localagents.com), authentication is handled through `login.localagents.com` — no additional SSO configuration is required.
 
 ### Enterprise Custom SSO
 
@@ -40,15 +40,15 @@ Enterprise SaaS customers can configure SSO with their own identity provider (En
 
 1. Your team members authenticate through your organization's IdP
 2. Access control and MFA policies are enforced by your IdP
-3. The LocalAI CLI automatically detects your SSO configuration via `crewai enterprise configure`
+3. The LocalAI CLI automatically detects your SSO configuration via `localagents enterprise configure`
 
 ### CLI Defaults (SaaS)
 
 | Setting | Default Value |
 |---|---|
-| `enterprise_base_url` | `https://app.crewai.com` |
+| `enterprise_base_url` | `https://app.localagents.com` |
 | `oauth2_provider` | `workos` |
-| `oauth2_domain` | `login.crewai.com` |
+| `oauth2_domain` | `login.localagents.com` |
 
 ---
 
@@ -117,10 +117,10 @@ Factory (self-hosted) deployments require you to configure SSO by setting enviro
   </Step>
 
   <Step title="Enable CLI Support (Optional)">
-    To allow `crewai login` via Device Authorization Grant:
+    To allow `localagents login` via Device Authorization Grant:
 
     1. Under **Authentication** → **Advanced settings**, enable **Allow public client flows**
-    2. Under **Expose an API**, add an Application ID URI (e.g., `api://crewai-cli`)
+    2. Under **Expose an API**, add an Application ID URI (e.g., `api://localagents-cli`)
     3. Add a scope (e.g., `read`) with **Admins and users** consent
     4. Under **Manifest**, set `accessTokenAcceptedVersion` to `2`
     5. Add environment variables:
@@ -128,7 +128,7 @@ Factory (self-hosted) deployments require you to configure SSO by setting enviro
     ```yaml
     secrets:
       ENTRA_ID_DEVICE_AUTHORIZATION_CLIENT_ID: "<Application (client) ID>"
-      ENTRA_ID_CUSTOM_OPENID_SCOPE: "<scope URI, e.g. api://crewai-cli/read>"
+      ENTRA_ID_CUSTOM_OPENID_SCOPE: "<scope URI, e.g. api://localagents-cli/read>"
     ```
   </Step>
 </Steps>
@@ -208,7 +208,7 @@ Factory (self-hosted) deployments require you to configure SSO by setting enviro
     1. Open Keycloak Admin Console → navigate to your realm
     2. **Clients** → **Create client**:
        - **Client type:** OpenID Connect
-       - **Client ID:** `crewai-factory` (suggested)
+       - **Client ID:** `localagents-factory` (suggested)
     3. Capability config:
        - **Client authentication:** On
        - **Standard flow:** Checked
@@ -249,7 +249,7 @@ Factory (self-hosted) deployments require you to configure SSO by setting enviro
   <Step title="Enable CLI Support (Optional)">
     1. Create a **second** client:
        - **Client type:** OpenID Connect
-       - **Client ID:** `crewai-factory-cli` (suggested)
+       - **Client ID:** `localagents-factory-cli` (suggested)
        - **Client authentication:** Off (Device Authorization requires a public client)
        - **Authentication flow:** Check **only** OAuth 2.0 Device Authorization Grant
     2. Add environment variable:
@@ -328,7 +328,7 @@ The LocalAI CLI supports SSO authentication via the **Device Authorization Grant
 For Factory installations, the CLI can auto-configure all OAuth2 settings:
 
 ```bash
-crewai enterprise configure https://your-factory-url.app
+localagents enterprise configure https://your-factory-url.app
 ```
 
 This command fetches the SSO configuration from your Factory instance and sets all required CLI parameters automatically.
@@ -336,7 +336,7 @@ This command fetches the SSO configuration from your Factory instance and sets a
 Then authenticate:
 
 ```bash
-crewai login
+localagents login
 ```
 
 <Note>
@@ -345,26 +345,26 @@ crewai login
 
 ### Manual CLI Configuration
 
-If you need to configure the CLI manually, use `crewai config set`:
+If you need to configure the CLI manually, use `localagents config set`:
 
 ```bash
 # Set the provider
-crewai config set oauth2_provider okta
+localagents config set oauth2_provider okta
 
 # Set provider-specific values
-crewai config set oauth2_domain your-domain.okta.com
-crewai config set oauth2_client_id your-client-id
-crewai config set oauth2_audience api://default
+localagents config set oauth2_domain your-domain.okta.com
+localagents config set oauth2_client_id your-client-id
+localagents config set oauth2_audience api://default
 
 # Set the enterprise base URL
-crewai config set enterprise_base_url https://your-factory-url.app
+localagents config set enterprise_base_url https://your-factory-url.app
 ```
 
 ### CLI Configuration Reference
 
 | Setting | Description | Example |
 |---|---|---|
-| `enterprise_base_url` | Your LocalAI instance URL | `https://crewai.yourcompany.com` |
+| `enterprise_base_url` | Your LocalAI instance URL | `https://localagents.yourcompany.com` |
 | `oauth2_provider` | Provider name | `workos`, `okta`, `auth0`, `entra_id`, `keycloak` |
 | `oauth2_domain` | Provider domain | `your-domain.okta.com` |
 | `oauth2_client_id` | OAuth2 client ID | `0oaqnwji7pGW7VT6T697` |
@@ -373,12 +373,12 @@ crewai config set enterprise_base_url https://your-factory-url.app
 View current configuration:
 
 ```bash
-crewai config list
+localagents config list
 ```
 
 ### How Device Authorization Works
 
-1. Run `crewai login` — the CLI requests a device code from your IdP
+1. Run `localagents login` — the CLI requests a device code from your IdP
 2. A verification URL and code are displayed in your terminal
 3. Your browser opens to the verification URL
 4. Enter the code and authenticate with your IdP credentials
@@ -441,7 +441,7 @@ For Factory deployments using Entra ID, admin access is controlled via App Roles
 
 ### CLI Login Fails (Device Authorization)
 
-**Symptom:** `crewai login` returns an error or times out.
+**Symptom:** `localagents login` returns an error or times out.
 
 **Fix:**
 - Verify that Device Authorization Grant is enabled in your IdP
@@ -476,11 +476,11 @@ For Factory deployments using Entra ID, admin access is controlled via App Roles
 
 ### CLI Can't Reach Factory Instance
 
-**Symptom:** `crewai enterprise configure` fails to connect.
+**Symptom:** `localagents enterprise configure` fails to connect.
 
 **Fix:**
 - Verify the Factory URL is reachable from your machine
-- Check that `enterprise_base_url` is set correctly: `crewai config list`
+- Check that `enterprise_base_url` is set correctly: `localagents config list`
 - Ensure TLS certificates are valid and trusted
 
 ---
@@ -501,7 +501,7 @@ For Factory deployments using Entra ID, admin access is controlled via App Roles
 | `ENTRA_ID_CLIENT_SECRET` | ✅ | Client secret from Azure |
 | `ENTRA_ID_TENANT_ID` | ✅ | Directory (tenant) ID from Azure |
 | `ENTRA_ID_DEVICE_AUTHORIZATION_CLIENT_ID` | CLI only | Client ID for Device Authorization Grant |
-| `ENTRA_ID_CUSTOM_OPENID_SCOPE` | CLI only | Custom scope from "Expose an API" (e.g., `api://crewai-cli/read`) |
+| `ENTRA_ID_CUSTOM_OPENID_SCOPE` | CLI only | Custom scope from "Expose an API" (e.g., `api://localagents-cli/read`) |
 
 ### Okta
 

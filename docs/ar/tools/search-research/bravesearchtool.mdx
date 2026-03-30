@@ -34,12 +34,12 @@ mode: "wide"
 ## التثبيت
 
 ```shell
-pip install 'crewai[tools]'
+pip install 'localagents[tools]'
 ```
 
 ## البدء
 
-1. **تثبيت الحزمة** - تأكد من تثبيت `crewai[tools]` في بيئة Python الخاصة بك.
+1. **تثبيت الحزمة** - تأكد من تثبيت `localagents[tools]` في بيئة Python الخاصة بك.
 2. **الحصول على مفتاح API** - سجّل في [api-dashboard.search.brave.com/login](https://api-dashboard.search.brave.com/login) لتوليد مفتاح.
 3. **تعيين متغير البيئة** - خزّن مفتاحك كـ `BRAVE_API_KEY`، أو مرره مباشرة عبر معامل `api_key`.
 
@@ -48,7 +48,7 @@ pip install 'crewai[tools]'
 ### بحث الويب
 
 ```python Code
-from crewai_tools import BraveWebSearchTool
+from localagents_tools import BraveWebSearchTool
 
 tool = BraveWebSearchTool()
 results = tool.run(q="LocalAI agent framework")
@@ -58,7 +58,7 @@ print(results)
 ### بحث الأخبار
 
 ```python Code
-from crewai_tools import BraveNewsSearchTool
+from localagents_tools import BraveNewsSearchTool
 
 tool = BraveNewsSearchTool()
 results = tool.run(q="latest AI breakthroughs")
@@ -68,7 +68,7 @@ print(results)
 ### بحث الصور
 
 ```python Code
-from crewai_tools import BraveImageSearchTool
+from localagents_tools import BraveImageSearchTool
 
 tool = BraveImageSearchTool()
 results = tool.run(q="northern lights photography")
@@ -78,7 +78,7 @@ print(results)
 ### بحث الفيديو
 
 ```python Code
-from crewai_tools import BraveVideoSearchTool
+from localagents_tools import BraveVideoSearchTool
 
 tool = BraveVideoSearchTool()
 results = tool.run(q="how to build AI agents")
@@ -88,7 +88,7 @@ print(results)
 ### أوصاف نقاط الاهتمام المحلية
 
 ```python Code
-from crewai_tools import (
+from localagents_tools import (
     BraveWebSearchTool,
     BraveLocalPOIsDescriptionTool,
 )
@@ -208,7 +208,7 @@ if "locations" in results:
 تدعم جميع الأدوات رؤوس طلبات HTTP مخصصة. أداة بحث الويب، على سبيل المثال، تقبل رؤوس تحديد الموقع الجغرافي للحصول على نتائج واعية بالموقع:
 
 ```python Code
-from crewai_tools import BraveWebSearchTool
+from localagents_tools import BraveWebSearchTool
 
 tool = BraveWebSearchTool(
     headers={
@@ -234,7 +234,7 @@ tool.set_headers({"api-version": "2025-01-01"})
 بشكل افتراضي، تقوم كل أداة بتنقيح استجابة API إلى قائمة نتائج مختصرة. إذا كنت تحتاج إلى استجابة API الكاملة غير المعالجة، فعّل الوضع الخام:
 
 ```python Code
-from crewai_tools import BraveWebSearchTool
+from localagents_tools import BraveWebSearchTool
 
 tool = BraveWebSearchTool(raw=True)
 full_response = tool.run(q="Brave Search API")
@@ -245,9 +245,9 @@ full_response = tool.run(q="Brave Search API")
 إليك كيفية تزويد وكيل LocalAI بأدوات بحث Brave متعددة:
 
 ```python Code
-from crewai import Agent
-from crewai.project import agent
-from crewai_tools import BraveWebSearchTool, BraveNewsSearchTool
+from localagents import Agent
+from localagents.project import agent
+from localagents_tools import BraveWebSearchTool, BraveNewsSearchTool
 
 web_search = BraveWebSearchTool()
 news_search = BraveNewsSearchTool()
@@ -265,7 +265,7 @@ def researcher(self) -> Agent:
 الجمع بين معاملات متعددة لبحث مستهدف:
 
 ```python Code
-from crewai_tools import BraveWebSearchTool
+from localagents_tools import BraveWebSearchTool
 
 tool = BraveWebSearchTool(
     requests_per_second=0.5,  # conservative rate limit
@@ -289,13 +289,13 @@ print(results)
 
 ```python Code
 # Before (legacy)
-from crewai_tools import BraveSearchTool
+from localagents_tools import BraveSearchTool
 
 tool = BraveSearchTool(country="US", n_results=5, save_file=True)
 results = tool.run(search_query="AI agents")
 
 # After (recommended)
-from crewai_tools import BraveWebSearchTool
+from localagents_tools import BraveWebSearchTool
 
 tool = BraveWebSearchTool(save_file=True)
 results = tool.run(q="AI agents", country="US", count=5)

@@ -28,7 +28,7 @@ uv add minds-sdk
 
 Para utilizar o `AIMindTool` de maneira eficaz, siga estes passos:
 
-1. **Instalação de Pacotes**: Verifique se os pacotes `crewai[tools]` e `minds-sdk` estão instalados no seu ambiente Python.
+1. **Instalação de Pacotes**: Verifique se os pacotes `localagents[tools]` e `minds-sdk` estão instalados no seu ambiente Python.
 2. **Obtenção da Chave de API**: Cadastre-se para uma conta Minds [aqui](https://mdb.ai/register) e obtenha uma chave de API.
 3. **Configuração do Ambiente**: Armazene sua chave de API obtida em uma variável de ambiente chamada `MINDS_API_KEY` para facilitar seu uso pela ferramenta.
 
@@ -37,7 +37,7 @@ Para utilizar o `AIMindTool` de maneira eficaz, siga estes passos:
 O exemplo a seguir demonstra como inicializar a ferramenta e executar uma consulta:
 
 ```python Code
-from crewai_tools import AIMindTool
+from localagents_tools import AIMindTool
 
 # Initialize the AIMindTool
 aimind_tool = AIMindTool(
@@ -81,9 +81,9 @@ Uma lista das fontes de dados suportadas e seus parâmetros de conexão pode ser
 Veja como integrar o `AIMindTool` com um agente LocalAI:
 
 ```python Code
-from crewai import Agent
-from crewai.project import agent
-from crewai_tools import AIMindTool
+from localagents import Agent
+from localagents.project import agent
+from localagents_tools import AIMindTool
 
 # Initialize the tool
 aimind_tool = AIMindTool(

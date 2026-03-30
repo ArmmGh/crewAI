@@ -25,7 +25,7 @@ Weave는 LocalAI 애플리케이션의 트레이스를 자동으로 캡처하여
 <Steps>
     <Step title="필수 패키지 설치">
       ```shell
-      pip install crewai weave
+      pip install localagents weave
       ```
     </Step>
     <Step title="W&B 계정 설정">
@@ -38,14 +38,14 @@ Weave는 LocalAI 애플리케이션의 트레이스를 자동으로 캡처하여
       import weave
 
       # 프로젝트 이름으로 Weave를 초기화
-      weave.init(project_name="crewai_demo")
+      weave.init(project_name="localagents_demo")
       ```
       
       초기화 후, Weave는 트레이스와 메트릭을 확인할 수 있는 URL을 제공합니다.
     </Step>
     <Step title="Crews/Flows 생성">
       ```python
-      from crewai import Agent, Task, Crew, LLM, Process
+      from localagents import Agent, Task, Crew, LLM, Process
 
       # 결정론적 출력을 위해 temperature를 0으로 설정하여 LLM 생성
       llm = LLM(model="gpt-4o", temperature=0)
@@ -116,10 +116,10 @@ Weave는 LocalAI 애플리케이션의 트레이스를 자동으로 캡처하여
 - 데코레이터 패칭(`@start`, `@listen`, `@router`, `@or_`, `@and_`)을 통한 flow 기능 지원.
 - `@weave.op()`과 함께 LocalAI `Task`에 전달된 커스텀 guardrails 추적.
 
-지원되는 항목에 대한 자세한 정보는 [Weave LocalAI 문서](https://weave-docs.wandb.ai/guides/integrations/crewai/#getting-started-with-flow)를 참조하세요.
+지원되는 항목에 대한 자세한 정보는 [Weave LocalAI 문서](https://weave-docs.wandb.ai/guides/integrations/localagents/#getting-started-with-flow)를 참조하세요.
 
 ## 자료
 
 - [📘 Weave 문서](https://weave-docs.wandb.ai)
-- [📊 예시 Weave x LocalAI 대시보드](https://wandb.ai/ayut/crewai_demo/weave/traces?cols=%7B%22wb_run_id%22%3Afalse%2C%22attributes.weave.client_version%22%3Afalse%2C%22attributes.weave.os_name%22%3Afalse%2C%22attributes.weave.os_release%22%3Afalse%2C%22attributes.weave.os_version%22%3Afalse%2C%22attributes.weave.source%22%3Afalse%2C%22attributes.weave.sys_version%22%3Afalse%7D&peekPath=%2Fayut%2Fcrewai_demo%2Fcalls%2F0195c838-38cb-71a2-8a15-651ecddf9d89)
+- [📊 예시 Weave x LocalAI 대시보드](https://wandb.ai/ayut/localagents_demo/weave/traces?cols=%7B%22wb_run_id%22%3Afalse%2C%22attributes.weave.client_version%22%3Afalse%2C%22attributes.weave.os_name%22%3Afalse%2C%22attributes.weave.os_release%22%3Afalse%2C%22attributes.weave.os_version%22%3Afalse%2C%22attributes.weave.source%22%3Afalse%2C%22attributes.weave.sys_version%22%3Afalse%7D&peekPath=%2Fayut%2Flocalagents_demo%2Fcalls%2F0195c838-38cb-71a2-8a15-651ecddf9d89)
 - [🐦 X](https://x.com/weave_wb)

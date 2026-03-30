@@ -34,7 +34,7 @@ from outlook_message_crew import OutlookMessageTrigger
 
 crew = OutlookMessageTrigger().crew()
 crew.kickoff({
-    "crewai_trigger_payload": outlook_payload,
+    "localagents_trigger_payload": outlook_payload,
 })
 ```
 
@@ -46,16 +46,16 @@ Test your Outlook trigger integration locally using the LocalAI CLI:
 
 ```bash
 # View all available triggers
-crewai triggers list
+localagents triggers list
 
 # Simulate an Outlook trigger with realistic payload
-crewai triggers run microsoft_outlook/email_received
+localagents triggers run microsoft_outlook/email_received
 ```
 
-The `crewai triggers run` command will execute your crew with a complete Outlook payload, allowing you to test your parsing logic before deployment.
+The `localagents triggers run` command will execute your crew with a complete Outlook payload, allowing you to test your parsing logic before deployment.
 
 <Warning>
-  Use `crewai triggers run microsoft_outlook/email_received` (not `crewai run`)
+  Use `localagents triggers run microsoft_outlook/email_received` (not `localagents run`)
   to simulate trigger execution during development. After deployment, your crew
   will automatically receive the trigger payload.
 </Warning>
@@ -63,7 +63,7 @@ The `crewai triggers run` command will execute your crew with a complete Outlook
 ## Troubleshooting
 
 - Verify the Outlook connector is still authorized; the subscription must be renewed periodically
-- Test locally with `crewai triggers run microsoft_outlook/email_received` to see the exact payload structure
+- Test locally with `localagents triggers run microsoft_outlook/email_received` to see the exact payload structure
 - If attachments are missing, confirm the webhook subscription includes the `includeResourceData` flag
 - Review execution logs when events fail to match—cancellation payloads lack attendee lists by design and the crew should account for that
-- Remember: use `crewai triggers run` (not `crewai run`) to simulate trigger execution
+- Remember: use `localagents triggers run` (not `localagents run`) to simulate trigger execution

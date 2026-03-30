@@ -33,8 +33,8 @@ uv add boto3
 다음 예시는 `S3ReaderTool`을 사용하여 S3 버킷에서 파일을 읽는 방법을 보여줍니다:
 
 ```python Code
-from crewai import Agent, Task, Crew
-from crewai_tools.aws.s3 import S3ReaderTool
+from localagents import Agent, Task, Crew
+from localagents_tools.aws.s3 import S3ReaderTool
 
 # Initialize the tool
 s3_reader_tool = S3ReaderTool()

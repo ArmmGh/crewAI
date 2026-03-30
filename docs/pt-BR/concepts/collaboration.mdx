@@ -12,7 +12,7 @@ A colaboração no LocalAI permite que agentes trabalhem juntos como uma equipe,
 ## Guia Rápido: Habilite a Colaboração
 
 ```python
-from crewai import Agent, Crew, Task
+from localagents import Agent, Crew, Task
 
 # Enable collaboration for agents
 researcher = Agent(
@@ -64,7 +64,7 @@ Permite que agentes façam perguntas específicas para obter informações de co
 Veja um exemplo completo onde agentes colaboram em uma tarefa de criação de conteúdo:
 
 ```python
-from crewai import Agent, Crew, Task, Process
+from localagents import Agent, Crew, Task, Process
 
 # Create collaborative agents
 researcher = Agent(
@@ -162,7 +162,7 @@ Trabalhem juntos para criar uma estratégia abrangente.""",
 Para projetos complexos, utilize um processo hierárquico com um agente gerente:
 
 ```python
-from crewai import Agent, Crew, Task, Process
+from localagents import Agent, Crew, Task, Process
 
 # Manager agent coordinates the team
 manager = Agent(

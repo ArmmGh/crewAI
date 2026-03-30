@@ -38,8 +38,8 @@ mode: "wide"
 هيّئ نقاط تفتيش المراجعة البشرية داخل تدفقاتك باستخدام مزيّن `@human_feedback`. عندما يصل التنفيذ إلى نقطة مراجعة، يتوقف النظام ويُخطر المعيّن عبر البريد الإلكتروني وينتظر الاستجابة.
 
 ```python
-from crewai.flow.flow import Flow, start, listen, or_
-from crewai.flow.human_feedback import human_feedback, HumanFeedbackResult
+from localagents.flow.flow import Flow, start, listen, or_
+from localagents.flow.human_feedback import human_feedback, HumanFeedbackResult
 
 class ContentApprovalFlow(Flow):
     @start()
@@ -407,7 +407,7 @@ class ContentApprovalFlow(Flow):
     "name": "Content Review Flow",
     "organization_id": 789
   },
-  "callback_url": "https://api.crewai.com/...",
+  "callback_url": "https://api.localagents.com/...",
   "assigned_to_email": "reviewer@company.com"
 }
 ```

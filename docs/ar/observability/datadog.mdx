@@ -18,7 +18,7 @@ mode: "wide"
 ### تثبيت الاعتماديات
 
 ```shell
-pip install ddtrace crewai crewai-tools
+pip install ddtrace localagents localagents-tools
 ```
 
 ### تعيين متغيرات البيئة
@@ -48,10 +48,10 @@ export GEMINI_API_KEY=<YOUR_GEMINI_API_KEY>
 ### إنشاء تطبيق وكيل LocalAI
 
 ```python
-# crewai_agent.py
-from crewai import Agent, Task, Crew
+# localagents_agent.py
+from localagents import Agent, Task, Crew
 
-from crewai_tools import (
+from localagents_tools import (
     WebsiteSearchTool
 )
 
@@ -84,7 +84,7 @@ output = crew.kickoff(dict(multiplication="2 * 2"))
 مع تعيين [متغيرات البيئة](#تعيين-متغيرات-البيئة)، يمكنك الآن تشغيل التطبيق مع التجهيز التلقائي من Datadog.
 
 ```shell
-ddtrace-run python crewai_agent.py
+ddtrace-run python localagents_agent.py
 ```
 
 ### عرض التتبعات في Datadog
@@ -106,4 +106,4 @@ ddtrace-run python crewai_agent.py
 ## المراجع
 
 - [Datadog LLM Observability](https://www.datadoghq.com/product/llm-observability/)
-- [التجهيز التلقائي لـ LocalAI من Datadog LLM Observability](https://docs.datadoghq.com/llm_observability/instrumentation/auto_instrumentation?tab=python#crew-ai)
+- [التجهيز التلقائي لـ LocalAI من Datadog LLM Observability](https://docs.datadoghq.com/llm_observability/instrumentation/auto_instrumentation?tab=python#local-agents)

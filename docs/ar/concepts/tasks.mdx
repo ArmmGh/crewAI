@@ -117,9 +117,9 @@ reporting_task:
 ```python crew.py
 # src/latest_ai_development/crew.py
 
-from crewai import Agent, Crew, Process, Task
-from crewai.project import CrewBase, agent, crew, task
-from crewai_tools import SerperDevTool
+from localagents import Agent, Crew, Process, Task
+from localagents.project import CrewBase, agent, crew, task
+from localagents_tools import SerperDevTool
 
 @CrewBase
 class LatestAiDevelopmentCrew():
@@ -177,7 +177,7 @@ class LatestAiDevelopmentCrew():
 بدلاً من ذلك، يمكنك تعريف المهام مباشرة في كودك دون استخدام إعداد YAML:
 
 ```python task.py
-from crewai import Task
+from localagents import Task
 
 research_task = Task(
     description="""
@@ -363,7 +363,7 @@ analysis_task = Task(
 
 ```python Code
 from typing import Tuple, Union, Dict, Any
-from crewai import TaskOutput
+from localagents import TaskOutput
 
 def validate_blog_content(result: TaskOutput) -> Tuple[bool, Any]:
     """Validate blog content meets requirements."""
@@ -396,7 +396,7 @@ blog_task = Task(
 - قدم سلسلة نصية واضحة ووصفية تشرح معايير التحقق
 
 ```python Code
-from crewai import Task
+from localagents import Task
 
 # Single LLM-based guardrail
 blog_task = Task(
@@ -450,7 +450,7 @@ research_task = Task(
 
 ```python Code
 from typing import Tuple, Any
-from crewai import TaskOutput, Task
+from localagents import TaskOutput, Task
 
 def validate_word_count(result: TaskOutput) -> Tuple[bool, Any]:
     """Validate word count is within limits."""
@@ -505,7 +505,7 @@ blog_task = Task(
 
 ```python Code
 from typing import Tuple, Any
-from crewai import TaskOutput, Task
+from localagents import TaskOutput, Task
 
 def validate_word_count(result: TaskOutput) -> Tuple[bool, Any]:
     """Validate word count is within limits."""
@@ -549,7 +549,7 @@ blog_task = Task(
 1. **استجابات أخطاء منظمة**:
 
 ```python Code
-from crewai import TaskOutput, LLMGuardrail
+from localagents import TaskOutput, LLMGuardrail
 
 def validate_with_context(result: TaskOutput) -> Tuple[bool, Any]:
     try:
@@ -572,7 +572,7 @@ def validate_with_context(result: TaskOutput) -> Tuple[bool, Any]:
 
 ```python Code
 from typing import Any, Dict, List, Tuple, Union
-from crewai import TaskOutput
+from localagents import TaskOutput
 
 def complex_validation(result: TaskOutput) -> Tuple[bool, Any]:
     """Chain multiple validation steps."""
@@ -607,7 +607,7 @@ def complex_validation(result: TaskOutput) -> Tuple[bool, Any]:
 
 ```python Code
 from typing import Optional, Tuple, Union
-from crewai import TaskOutput, Task
+from localagents import TaskOutput, Task
 
 def validate_json_output(result: TaskOutput) -> Tuple[bool, Any]:
     """Validate and parse JSON output."""
@@ -643,7 +643,7 @@ task = Task(
 ```python Code
 import json
 
-from crewai import Agent, Crew, Process, Task
+from localagents import Agent, Crew, Process, Task
 from pydantic import BaseModel
 
 
@@ -728,7 +728,7 @@ print("Blog:", result)
 ```python Code
 import json
 
-from crewai import Agent, Crew, Process, Task
+from localagents import Agent, Crew, Process, Task
 from pydantic import BaseModel
 
 
@@ -796,7 +796,7 @@ print("Blog:", result)
 
 ## دمج الأدوات مع المهام
 
-استفد من أدوات [LocalAI Toolkit](https://github.com/joaomdmoura/crewai-tools) و [LangChain Tools](https://python.langchain.com/docs/integrations/tools) لتحسين أداء المهام وتفاعل الوكلاء.
+استفد من أدوات [LocalAI Toolkit](https://github.com/joaomdmoura/localagents-tools) و [LangChain Tools](https://python.langchain.com/docs/integrations/tools) لتحسين أداء المهام وتفاعل الوكلاء.
 
 ## إنشاء مهمة بأدوات
 
@@ -805,8 +805,8 @@ import os
 os.environ["OPENAI_API_KEY"] = "Your Key"
 os.environ["SERPER_API_KEY"] = "Your Key" # serper.dev API key
 
-from crewai import Agent, Task, Crew
-from crewai_tools import SerperDevTool
+from localagents import Agent, Task, Crew
+from localagents_tools import SerperDevTool
 
 research_agent = Agent(
   role='Researcher',

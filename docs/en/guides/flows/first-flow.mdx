@@ -53,7 +53,7 @@ Before starting, make sure you have:
 First, let's create a new LocalAI Flow project using the CLI. This command sets up a scaffolded project with all the necessary directories and template files for your flow.
 
 ```bash
-crewai create flow guide_creator_flow
+localagents create flow guide_creator_flow
 cd guide_creator_flow
 ```
 
@@ -96,7 +96,7 @@ We'll modify this structure to create our guide creator flow, which will orchest
 Our flow will need a specialized crew to handle the content creation process. Let's use the LocalAI CLI to add a content writer crew:
 
 ```bash
-crewai flow add-crew content-crew
+localagents flow add-crew content-crew
 ```
 
 This command automatically creates the necessary directories and template files for your crew. The content writer crew will be responsible for writing and reviewing sections of our guide, working within the overall flow orchestrated by our main application.
@@ -203,9 +203,9 @@ These task definitions provide detailed instructions to our agents, ensuring the
 
 ```python
 # src/guide_creator_flow/crews/content_crew/content_crew.py
-from crewai import Agent, Crew, Process, Task
-from crewai.project import CrewBase, agent, crew, task
-from crewai.agents.agent_builder.base_agent import BaseAgent
+from localagents import Agent, Crew, Process, Task
+from localagents.project import CrewBase, agent, crew, task
+from localagents.agents.agent_builder.base_agent import BaseAgent
 from typing import List
 
 @CrewBase
@@ -273,8 +273,8 @@ import json
 import os
 from typing import List, Dict
 from pydantic import BaseModel, Field
-from crewai import LLM
-from crewai.flow.flow import Flow, listen, start
+from localagents import LLM
+from localagents.flow.flow import Flow, listen, start
 from guide_creator_flow.crews.content_crew.content_crew import ContentCrew
 
 # Define our models for structured data
@@ -459,7 +459,7 @@ ANTHROPIC_API_KEY=your_anthropic_api_key
 Install the required dependencies:
 
 ```bash
-crewai install
+localagents install
 ```
 
 ## Step 8: Run Your Flow
@@ -467,7 +467,7 @@ crewai install
 Now it's time to see your flow in action! Run it using the LocalAI CLI:
 
 ```bash
-crewai flow kickoff
+localagents flow kickoff
 ```
 
 When you run this command, you'll see your flow spring to life:
@@ -483,7 +483,7 @@ This demonstrates the power of flows to orchestrate complex processes involving 
 One of the powerful features of flows is the ability to visualize their structure:
 
 ```bash
-crewai flow plot
+localagents flow plot
 ```
 
 This will create an HTML file that shows the structure of your flow, including the relationships between different steps and the data that flows between them. This visualization can be invaluable for understanding and debugging complex flows.

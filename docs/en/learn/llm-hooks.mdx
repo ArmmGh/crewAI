@@ -85,7 +85,7 @@ def wrong_approach(context: LLMCallHookContext) -> None:
 Register hooks that apply to all LLM calls across all crews:
 
 ```python
-from crewai.hooks import register_before_llm_call_hook, register_after_llm_call_hook
+from localagents.hooks import register_before_llm_call_hook, register_after_llm_call_hook
 
 def log_llm_call(context):
     print(f"LLM call by {context.agent.role} at iteration {context.iterations}")
@@ -99,7 +99,7 @@ register_before_llm_call_hook(log_llm_call)
 Use decorators for cleaner syntax:
 
 ```python
-from crewai.hooks import before_llm_call, after_llm_call
+from localagents.hooks import before_llm_call, after_llm_call
 
 @before_llm_call
 def validate_iteration_count(context):
@@ -256,7 +256,7 @@ def debug_response(context: LLMCallHookContext) -> None:
 ### Unregistering Hooks
 
 ```python
-from crewai.hooks import (
+from localagents.hooks import (
     unregister_before_llm_call_hook,
     unregister_after_llm_call_hook
 )
@@ -273,7 +273,7 @@ unregister_before_llm_call_hook(my_hook)  # Returns True if found
 ### Clearing Hooks
 
 ```python
-from crewai.hooks import (
+from localagents.hooks import (
     clear_before_llm_call_hooks,
     clear_after_llm_call_hooks,
     clear_all_llm_call_hooks
@@ -291,7 +291,7 @@ print(f"Cleared {before_count} before and {after_count} after hooks")
 ### Listing Registered Hooks
 
 ```python
-from crewai.hooks import (
+from localagents.hooks import (
     get_before_llm_call_hooks,
     get_after_llm_call_hooks
 )
@@ -393,7 +393,7 @@ def safe_hook(context: LLMCallHookContext) -> bool | None:
 ## Type Safety
 
 ```python
-from crewai.hooks import LLMCallHookContext, BeforeLLMCallHookType, AfterLLMCallHookType
+from localagents.hooks import LLMCallHookContext, BeforeLLMCallHookType, AfterLLMCallHookType
 
 # Explicit type annotations
 def my_before_hook(context: LLMCallHookContext) -> bool | None:

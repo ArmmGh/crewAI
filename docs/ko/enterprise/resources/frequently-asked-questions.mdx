@@ -11,8 +11,8 @@ mode: "wide"
     </Accordion>
 
     <Accordion title="가장 최신의 LocalAI 문서는 어디에서 확인할 수 있습니까?">
-        LocalAI에 대한 최신 문서는 공식 문서 사이트에서 확인하실 수 있습니다: https://docs.crewai.com/
-        <Card href="https://docs.crewai.com/" icon="books">LocalAI 문서</Card>
+        LocalAI에 대한 최신 문서는 공식 문서 사이트에서 확인하실 수 있습니다: https://docs.localagents.com/
+        <Card href="https://docs.localagents.com/" icon="books">LocalAI 문서</Card>
     </Accordion>
 
     <Accordion title="LocalAI의 계층적 프로세스와 순차적 프로세스의 주요 차이점은 무엇입니까?">
@@ -81,7 +81,7 @@ mode: "wide"
         - **컨텍스추얼 메모리**: 상호작용 간 맥락을 유지하는 메모리
 
         다른 메모리 유형에 대해 자세히 알아보려면:
-        <Card href="https://docs.crewai.com/concepts/memory" icon="brain">LocalAI 메모리</Card>
+        <Card href="https://docs.localagents.com/concepts/memory" icon="brain">LocalAI 메모리</Card>
     </Accordion>
 
     <Accordion title="작업에서 Output Pydantic을 사용하는 방법은 무엇입니까?">
@@ -100,7 +100,7 @@ mode: "wide"
 
             <Step title="Output Pydantic으로 작업 생성하기">
                 ```python
-                from crewai import Task, Crew, Agent
+                from localagents import Task, Crew, Agent
                 from my_models import User
 
                 task = Task(
@@ -114,7 +114,7 @@ mode: "wide"
 
             <Step title="에이전트에서 output_pydantic 속성 설정">
                 ```python
-                from crewai import Agent
+                from localagents import Agent
                 from my_models import User
 
                 agent = Agent(

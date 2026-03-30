@@ -17,17 +17,17 @@ mode: "wide"
 
 ## التثبيت
 
-للبدء مع أداة PDFSearchTool، تأكد أولاً من تثبيت حزمة crewai_tools بالأمر التالي:
+للبدء مع أداة PDFSearchTool، تأكد أولاً من تثبيت حزمة localagents_tools بالأمر التالي:
 
 ```shell
-pip install 'crewai[tools]'
+pip install 'localagents[tools]'
 ```
 
 ## مثال
 إليك كيفية استخدام PDFSearchTool للبحث داخل مستند PDF:
 
 ```python Code
-from crewai_tools import PDFSearchTool
+from localagents_tools import PDFSearchTool
 
 # Initialize the tool allowing for any PDF content search if the path is provided during execution
 tool = PDFSearchTool()
@@ -47,7 +47,7 @@ tool = PDFSearchTool(pdf='path/to/your/document.pdf')
 بشكل افتراضي، تستخدم الأداة OpenAI لكل من التضمينات والتلخيص. لتخصيص النموذج، يمكنك استخدام قاموس تكوين كما يلي. ملاحظة: قاعدة بيانات متجهية مطلوبة لأن التضمينات المولّدة يجب تخزينها والاستعلام عنها من قاعدة بيانات متجهية.
 
 ```python Code
-from crewai_tools import PDFSearchTool
+from localagents_tools import PDFSearchTool
 
 # - embedding_model (required): choose provider + provider-specific config
 # - vectordb (required): choose vector DB and pass its config

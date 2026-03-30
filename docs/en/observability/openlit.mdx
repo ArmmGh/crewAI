@@ -7,7 +7,7 @@ mode: "wide"
 
 # OpenLIT Overview
 
-[OpenLIT](https://github.com/openlit/openlit?src=crewai-docs) is an open-source tool that makes it simple to monitor the performance of AI agents, LLMs, VectorDBs, and GPUs with just **one** line of code. 
+[OpenLIT](https://github.com/openlit/openlit?src=localagents-docs) is an open-source tool that makes it simple to monitor the performance of AI agents, LLMs, VectorDBs, and GPUs with just **one** line of code. 
 
 It provides OpenTelemetry-native tracing and metrics to track important parameters like cost, latency, interactions and task sequences. 
 This setup enables you to track hyperparameters and monitor for performance issues, helping you find ways to enhance and fine-tune your agents over time.
@@ -65,7 +65,7 @@ This setup enables you to track hyperparameters and monitor for performance issu
           Example Usage for monitoring a LocalAI Agent:
     
           ```python
-          from crewai import Agent, Task, Crew, Process
+          from localagents import Agent, Task, Crew, Process
           import openlit
 
           openlit.init(disable_metrics=True)
@@ -126,7 +126,7 @@ This setup enables you to track hyperparameters and monitor for performance issu
 
           ```python
           import asyncio
-          from crewai import Crew, Agent, Task
+          from localagents import Crew, Agent, Task
           import openlit
 
           openlit.init(otlp_endpoint="http://127.0.0.1:4318")

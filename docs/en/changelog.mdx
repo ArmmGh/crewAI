@@ -106,11 +106,11 @@ mode: "wide"
   - Fix bad credentials for traces batch push (404)
   - Resolve multiple bugs in HITL flow system
   - Fix agent memory saving
-  - Resolve all strict mypy errors across crewai package
+  - Resolve all strict mypy errors across localagents package
   - Fix use of __router_paths__ for listener+router methods in FlowMeta
   - Fix value error on no file support
   - Correct litellm quarantine wording in docs
-  - Fix all mypy errors in crewai-files and add all packages to CI type checks
+  - Fix all mypy errors in localagents-files and add all packages to CI type checks
   - Pin litellm upper bound to last tested version (1.82.6)
 
   ### Documentation
@@ -144,9 +144,9 @@ mode: "wide"
   ### Bug Fixes
   - Fix bad credentials for traces batch push (404)
   - Resolve multiple bugs in HITL flow system
-  - Resolve mypy errors in crewai-files and add all packages to CI type checks
-  - Resolve all strict mypy errors across crewai-tools package
-  - Resolve all mypy errors across crewai package
+  - Resolve mypy errors in localagents-files and add all packages to CI type checks
+  - Resolve all strict mypy errors across localagents-tools package
+  - Resolve all mypy errors across localagents package
   - Fix memory saving in agent
   - Fix usage of __router_paths__ for listener+router methods in FlowMeta
   - Raise value error on no file support
@@ -226,9 +226,9 @@ mode: "wide"
 
   ### Bug Fixes
   - Fix agent memory saving
-  - Resolve mypy errors in crewai-files and add all packages to CI type checks
-  - Resolve all strict mypy errors across crewai-tools package
-  - Resolve all mypy errors across crewai package
+  - Resolve mypy errors in localagents-files and add all packages to CI type checks
+  - Resolve all strict mypy errors across localagents-tools package
+  - Resolve all mypy errors across localagents package
   - Fix usage of __router_paths__ for listener+router methods in FlowMeta
   - Pin litellm upper bound to last tested version (1.82.6)
   - Raise value error on no file support
@@ -743,7 +743,7 @@ mode: "wide"
   - Ensure async methods are executable for annotations
   - Fix parameters in RagTool.add, add typing, and tests
   - Remove invalid parameter from SSE client
-  - Erase 'oauth2_extra' setting on 'crewai config reset' command
+  - Erase 'oauth2_extra' setting on 'localagents config reset' command
 
   ### Refactoring
   - Enhance model validation and provider inference in LLM class
@@ -977,7 +977,7 @@ mode: "wide"
   ### Features
   - Bump versions to 1.0.0
   - Enhance knowledge and guardrail event handling in Agent class
-  - Inject tool repository credentials in crewai run command
+  - Inject tool repository credentials in localagents run command
 
   ### Bug Fixes
   - Preserve nested condition structure in Flow decorators
@@ -1038,7 +1038,7 @@ mode: "wide"
   ### Features
   - Enhance OpenAICompletion class with additional client parameters
   - Improve event bus thread safety and async support
-  - Inject tool repository credentials in crewai run command
+  - Inject tool repository credentials in localagents run command
 
   ### Bug Fixes
   - Fix issue where it errors out if there is no input() available
@@ -1046,7 +1046,7 @@ mode: "wide"
   - Fix copying and adding NOT_SPECIFIED check in task.py
 
   ### Documentation
-  - Ensure CREWAI_PLATFORM_INTEGRATION_TOKEN is mentioned in documentation
+  - Ensure LOCALAGENTS_PLATFORM_INTEGRATION_TOKEN is mentioned in documentation
   - Update triggers documentation
 
   ### Contributors
@@ -1069,11 +1069,11 @@ mode: "wide"
   ### Bug Fixes
   - Fix issue with missing input() availability
   - Resolve JWT decoding error by adding a leeway of 10 seconds
-  - Inject tool repository credentials in crewai run command
+  - Inject tool repository credentials in localagents run command
   - Fix copy and add NOT_SPECIFIED check in task.py
 
   ### Documentation
-  - Ensure CREWAI_PLATFORM_INTEGRATION_TOKEN is mentioned in documentation
+  - Ensure LOCALAGENTS_PLATFORM_INTEGRATION_TOKEN is mentioned in documentation
   - Update triggers documentation
 
   ### Contributors
@@ -1089,7 +1089,7 @@ mode: "wide"
   ## What's Changed
 
   ### Core Improvements & Fixes
-  - Fixed injection of tool repository credentials into the `crewai run` command
+  - Fixed injection of tool repository credentials into the `localagents run` command
   - Added a 10-second leeway when decoding JWTs to reduce token validation errors
   - Corrected (then reverted) cron schedule fix intended to run jobs every 5 days at specific dates
 
@@ -1145,7 +1145,7 @@ mode: "wide"
 
   ### New Features & Enhancements
   - Added `apps` and `actions` attributes to `Agent` for richer runtime control
-  - Merged the `crewai-tools` repository into the main workspace (monorepo)
+  - Merged the `localagents-tools` repository into the main workspace (monorepo)
   - Bumped all packages to 1.0.0a1 to mark the alpha milestone
 
   ### Cleanup & Infrastructure
@@ -1188,7 +1188,7 @@ mode: "wide"
 
   ### New Features & Enhancements
   - Introduced thread-safe platform context management
-  - Added `crewai uv` wrapper command to run `uv` from the CLI
+  - Added `localagents uv` wrapper command to run `uv` from the CLI
   - Enabled marking traces as failed for observability workflows
   - Added custom embedding types and provider migration support
   - Upgraded ChromaDB to v1.1.0 with compatibility fixes and type improvements
@@ -1305,7 +1305,7 @@ mode: "wide"
   ## New Features & Enhancements
 
   - Added tracing improvements and cleanup
-  - Centralized event logic by moving `events` module to `crewai.events`
+  - Centralized event logic by moving `events` module to `localagents.events`
 
   ## Documentation & Guides
 
@@ -1326,7 +1326,7 @@ mode: "wide"
 
   ## Core Improvements & Fixes
 
-  - Fixed migration of the `tool` section during `crewai update`
+  - Fixed migration of the `tool` section during `localagents update`
   - Reverted OpenAI pin: now requires `openai >=1.13.3` due to fixed import issues
   - Fixed flaky tests and improved test stability
   - Improved `Flow` listener resumability for HITL and cyclic flows
@@ -1339,12 +1339,12 @@ mode: "wide"
   - Displayed task names in verbose CLI output
   - Added centralized embedding types and introduced a base embedding client
   - Introduced generic clients for ChromaDB and Qdrant
-  - Added support for `crewai config reset` to clear tokens
-  - Enabled `crewai_trigger_payload` auto-injection
+  - Added support for `localagents config reset` to clear tokens
+  - Enabled `localagents_trigger_payload` auto-injection
   - Simplified RAG client initialization and introduced RAG configuration system
   - Added Qdrant RAG provider support
   - Improved tracing with better event data
-  - Added support to remove Auth0 and email entry on `crewai login`
+  - Added support to remove Auth0 and email entry on `localagents login`
 
   ## Documentation & Guides
 
@@ -1377,8 +1377,8 @@ mode: "wide"
   ## New Features & Enhancements
 
   - Included exchanged agent messages into `ExternalMemory` metadata
-  - Automatically injected `crewai_trigger_payload`
-  - Renamed internal flag `inject_trigger_input` to `allow_crewai_trigger_context`
+  - Automatically injected `localagents_trigger_payload`
+  - Renamed internal flag `inject_trigger_input` to `allow_localagents_trigger_context`
   - Continued tracing improvements and ephemeral tracing logic
   - Consolidated tracing logic conditions
   - Added support for `agent_id`-linked memory entries in `Mem0`
@@ -1413,8 +1413,8 @@ mode: "wide"
   ## New Features & Enhancements
 
   - Included exchanged agent messages into `ExternalMemory` metadata
-  - Automatically injected `crewai_trigger_payload`
-  - Renamed internal flag `inject_trigger_input` to `allow_crewai_trigger_context`
+  - Automatically injected `localagents_trigger_payload`
+  - Renamed internal flag `inject_trigger_input` to `allow_localagents_trigger_context`
   - Continued tracing improvements and ephemeral tracing logic
   - Consolidated tracing logic conditions
   - Added support for `agent_id`-linked memory entries in `Mem0`
@@ -1477,7 +1477,7 @@ mode: "wide"
 
   ## New Features & Enhancements
 
-  - Added `crewai config` CLI command group with tests
+  - Added `localagents config` CLI command group with tests
   - Added default value support for `crew.name`
   - Introduced initial tracing capabilities
   - Added support for LangDB integration
@@ -1500,7 +1500,7 @@ mode: "wide"
 
   ## Core Improvements & Fixes
 
-  - Removed `crewai signup` references and replaced them with `crewai login`
+  - Removed `localagents signup` references and replaced them with `localagents login`
   - Fixed support for adding memories to Mem0 using `agent_id`
   - Changed the default value in Mem0 configuration
   - Updated import error to show missing module files clearly
@@ -1546,7 +1546,7 @@ mode: "wide"
   - Added documentation for `SerperScrapeWebsiteTool` and reorganized Serper section
   - General documentation updates and improvements
 
-  ## crewai-tools v0.58.0
+  ## localagents-tools v0.58.0
   ### New Tools / Enhancements
   - **SerperScrapeWebsiteTool**: Added a tool for extracting clean content from URLs
   - **Bedrock AgentCore**: Integrated browser and code interpreter toolkits for Bedrock agents
@@ -1881,7 +1881,7 @@ mode: "wide"
 
   [View release on GitHub](https://github.com/localAIInc/localAI/releases/tag/0.117.1)
 
-  * build: upgrade crewai-tools
+  * build: upgrade localagents-tools
   * upgrade liteLLM to latest version
   * Fix Mem0 OSS
 
@@ -2055,7 +2055,7 @@ mode: "wide"
   * Fix: Overall LLM connection issues
   * Fix: Using safe accessors on training
   * Fix: Add version check to crew_chat.py
-  * Docs: New docs for crewai chat
+  * Docs: New docs for localagents chat
   * Docs: Improve formatting and clarity in CLI and Composio Tool docs
 
 </Update>
@@ -2138,7 +2138,7 @@ mode: "wide"
   * Added knowledge to agent level
   * Feat/remove langchain
   * Improve typed task outputs
-  * Log in to Tool Repository on `crewai login`
+  * Log in to Tool Repository on `localagents login`
   * Fixes issues with result as answer not properly exiting LLM loop
   * fix: missing key name when running with ollama provider
   * fix spelling issue found
@@ -2207,12 +2207,12 @@ mode: "wide"
 
   [View release on GitHub](https://github.com/localAIInc/localAI/releases/tag/0.76.9)
 
-  * Update plot command for flow to crewai flow plot
+  * Update plot command for flow to localagents flow plot
   * Add tomli so we can support 3.10
   * Forward install command options to `uv sync`
   * Improve tool text description and args
   * Improve tooling and flow docs
-  * Update flows cli to allow you to easily add additional crews to a flow with crewai flow add-crew
+  * Update flows cli to allow you to easily add additional crews to a flow with localagents flow add-crew
   * Fixed flows bug when using multiple start and listen(and_(..., ..., ...))
 </Update>
 
@@ -2221,7 +2221,7 @@ mode: "wide"
 
   [View release on GitHub](https://github.com/localAIInc/localAI/releases/tag/0.76.2)
 
-  Updating crewai create commadn
+  Updating localagents create commadn
 </Update>
 
 <Update label="Oct 23, 2024">
@@ -2240,7 +2240,7 @@ mode: "wide"
 
   [View release on GitHub](https://github.com/localAIInc/localAI/releases/tag/0.75.1)
 
-  new `--provider` option on crewai crewat
+  new `--provider` option on localagents crewat
 </Update>
 
 <Update label="Oct 23, 2024">
@@ -2250,7 +2250,7 @@ mode: "wide"
 
   * Fixing test post training
   * Simplify flows
-  * Adapt `crewai tool install <tool>`
+  * Adapt `localagents tool install <tool>`
   * Ensure original embedding config works
   * Fix bugs
   * Update docs - Including adding Cerebras LLM example configuration to LLM docs
@@ -2289,8 +2289,8 @@ mode: "wide"
 
   * New Flow feature
   * Flow visualizer
-  * Create `crewai create flow` command
-  * Create `crewai tool create <tool>` command
+  * Create `localagents create flow` command
+  * Create `localagents tool create <tool>` command
   * Add Git validations for publishing tools
   * fix: JSON encoding date objects
   * New Docs
@@ -2417,8 +2417,8 @@ mode: "wide"
 
   * Adding ability for auto complete
   * Add name and expected_output to TaskOutput
-  * New `crewai install` CLI
-  * New `crewai deploy` CLI
+  * New `localagents install` CLI
+  * New `localagents deploy` CLI
   * Cleaning up of Pipeline feature
   * Updated docs
   * Dev experience improvements like bandit CI pipeline
@@ -2437,19 +2437,19 @@ mode: "wide"
 
   [View release on GitHub](https://github.com/localAIInc/localAI/releases/tag/v0.51.0)
 
-  - localAI Testing / Evaluation - https://docs.crewai.com/core-concepts/Testing/
+  - localAI Testing / Evaluation - https://docs.localagents.com/core-concepts/Testing/
   - Adding new sliding context window
-  - Allowing all attributes on YAML - https://docs.crewai.com/getting-started/Start-a-New-LocalAI-Project-Template-Method/#customizing-your-project
-  - Adding initial Pipeline Structure - https://docs.crewai.com/core-concepts/Pipeline/
-  - Ability to set LLM for planning step - https://docs.crewai.com/core-concepts/Planning/
-  - New crew run command - https://docs.crewai.com/getting-started/Start-a-New-LocalAI-Project-Template-Method/#running-your-project
-  - Saving file now dumps dict into JSON - https://docs.crewai.com/core-concepts/Tasks/#creating-directories-when-saving-files
+  - Allowing all attributes on YAML - https://docs.localagents.com/getting-started/Start-a-New-LocalAI-Project-Template-Method/#customizing-your-project
+  - Adding initial Pipeline Structure - https://docs.localagents.com/core-concepts/Pipeline/
+  - Ability to set LLM for planning step - https://docs.localagents.com/core-concepts/Planning/
+  - New crew run command - https://docs.localagents.com/getting-started/Start-a-New-LocalAI-Project-Template-Method/#running-your-project
+  - Saving file now dumps dict into JSON - https://docs.localagents.com/core-concepts/Tasks/#creating-directories-when-saving-files
   - Using verbose settings for tool outputs
   - Added new Github Templates
-  - New Vision tool - https://docs.crewai.com/tools/VisionTool/
-  - New DALL-E Tool - https://docs.crewai.com/tools/DALL-ETool/
-  - New MySQL tool - https://docs.crewai.com/tools/MySQLTool/
-  - New NL2SQL Tool - https://docs.crewai.com/tools/NL2SQLTool.md
+  - New Vision tool - https://docs.localagents.com/tools/VisionTool/
+  - New DALL-E Tool - https://docs.localagents.com/tools/DALL-ETool/
+  - New MySQL tool - https://docs.localagents.com/tools/MySQLTool/
+  - New NL2SQL Tool - https://docs.localagents.com/tools/NL2SQLTool.md
   - Bug Fixes:
       - Bug with planning feature output
       - Async tasks for hierarchical process
@@ -2546,7 +2546,7 @@ mode: "wide"
 
   [View release on GitHub](https://github.com/localAIInc/localAI/releases/tag/v0.35.4)
 
-  - Updating crewai create CLI to use the new version
+  - Updating localagents create CLI to use the new version
 </Update>
 
 <Update label="Jul 01, 2024">
@@ -2556,7 +2556,7 @@ mode: "wide"
 
   - Code Execution Bug fixed
   - Updating overall docs
-  - Bumping version of crewai-tools
+  - Bumping version of localagents-tools
   - Bumping versions of many dependencies
   - Overall bugfixes
 </Update>
@@ -2568,7 +2568,7 @@ mode: "wide"
 
   - Your agents can now execute code
   - Bring Any 3rd-party agent, LlamaIndex, LangChain and Autogen  agents can all be part of your crew now!
-  - Train you crew before you execute it and get consistent results! New CLI `crewai train -n X`
+  - Train you crew before you execute it and get consistent results! New CLI `localagents train -n X`
   - Bug fixes and docs updates (still missing some new docs updates coming soon)
 </Update>
 
@@ -2577,7 +2577,7 @@ mode: "wide"
 
   [View release on GitHub](https://github.com/localAIInc/localAI/releases/tag/v0.32.2)
 
-  - Updating `crewai create` CLI to use the new version
+  - Updating `localagents create` CLI to use the new version
   - Fixing delegation agent matching
 </Update>
 
@@ -2658,7 +2658,7 @@ mode: "wide"
 
   [View release on GitHub](https://github.com/localAIInc/localAI/releases/tag/0.28.8)
 
-  - updating version used on crewai CLI
+  - updating version used on localagents CLI
 </Update>
 
 <Update label="Apr 11, 2024">
@@ -2693,7 +2693,7 @@ mode: "wide"
 
   [View release on GitHub](https://github.com/localAIInc/localAI/releases/tag/v0.28.1)
 
-  - Updating crewai-tools to 0.1.15
+  - Updating localagents-tools to 0.1.15
 </Update>
 
 <Update label="Apr 05, 2024">
@@ -2714,10 +2714,10 @@ mode: "wide"
   [View release on GitHub](https://github.com/localAIInc/localAI/releases/tag/v0.27.0)
 
   - 🧠 **Memory (shared crew memory)** - To enable it just add `memory=True` to your crew, it will work transparently and make outcomes better and more reliable, it's disable by default for now
-  - 🤚🏼 **Native Human Input Support:** [docs](https://docs.crewai.com/how-to/Human-Input-on-Execution/)
-  - 🌐 **Universal RAG Tools Support:** Any models, beyond just OpenAI. [Example](https://docs.crewai.com/tools/DirectorySearchTool/#custom-model-and-embeddings)
-  - 🔍 **Enhanced Cache Control:** Meet the ingenious cache_function attribute: [docs](https://docs.crewai.com/core-concepts/Tools/#custom-caching-mechanism)
-  - 🔁 **Updated crewai-tools Dependency:** Always in sync with the latest and greatest.
+  - 🤚🏼 **Native Human Input Support:** [docs](https://docs.localagents.com/how-to/Human-Input-on-Execution/)
+  - 🌐 **Universal RAG Tools Support:** Any models, beyond just OpenAI. [Example](https://docs.localagents.com/tools/DirectorySearchTool/#custom-model-and-embeddings)
+  - 🔍 **Enhanced Cache Control:** Meet the ingenious cache_function attribute: [docs](https://docs.localagents.com/core-concepts/Tools/#custom-caching-mechanism)
+  - 🔁 **Updated localagents-tools Dependency:** Always in sync with the latest and greatest.
   - ⛓️ **Cross Agent Delegation:** Smoother cooperation between agents.
   - 💠 **Inner Prompt Improvements:** A finer conversational flow.
   - 📝 **Improving tool usage with better parsing**
@@ -2756,7 +2756,7 @@ mode: "wide"
 
   [View release on GitHub](https://github.com/localAIInc/localAI/releases/tag/v0.22.0)
 
-  - Adding initial CLI `crewai create` command
+  - Adding initial CLI `localagents create` command
   - Adding ability to agents and tasks to be defined using dictionaries
   - Adding more clear agent logging
   - Fixing bug Exceed maximum recursion depth bug
@@ -2793,7 +2793,7 @@ mode: "wide"
 
   [View release on GitHub](https://github.com/localAIInc/localAI/releases/tag/v0.16.0)
 
-  - Removing lingering `crewai_tools` dependency
+  - Removing lingering `localagents_tools` dependency
   - Adding initial support for inputs interpolation (missing docs)
   - Adding ability to track tools usage, tools error, formatting errors, tokens usage
   - Updating README
@@ -2806,7 +2806,7 @@ mode: "wide"
 
   - Updating timeouts
   - Updating docs
-  - Removing crewai_tools as a mandatory
+  - Removing localagents_tools as a mandatory
   - Making agents memory-less by default for token count reduction (breaking change for people counting on this previously)
 </Update>
 
@@ -2834,7 +2834,7 @@ mode: "wide"
 
   [View release on GitHub](https://github.com/localAIInc/localAI/releases/tag/v0.14.0rc0)
 
-  - Adding support to crewai-tools
+  - Adding support to localagents-tools
   - Adding support to format tasks output as Pydantic Objects Or JSON
   - Adding support to save tasks ouput to a file
   - Improved reliability for inter agent delegation

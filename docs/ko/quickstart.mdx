@@ -20,7 +20,7 @@ mode: "wide"
   이 작업은 `latest-ai-development`라는 새 디렉터리와 기본 구조를 생성합니다.
     <CodeGroup>
       ```shell Terminal
-      crewai create crew latest-ai-development
+      localagents create crew latest-ai-development
       ```
     </CodeGroup>
   </Step>
@@ -87,10 +87,10 @@ mode: "wide"
   <Step title="`crew.py` 파일 수정하기">
     ```python crew.py
     # src/latest_ai_development/crew.py
-    from crewai import Agent, Crew, Process, Task
-    from crewai.project import CrewBase, agent, crew, task
-    from crewai_tools import SerperDevTool
-    from crewai.agents.agent_builder.base_agent import BaseAgent
+    from localagents import Agent, Crew, Process, Task
+    from localagents.project import CrewBase, agent, crew, task
+    from localagents_tools import SerperDevTool
+    from localagents.agents.agent_builder.base_agent import BaseAgent
     from typing import List
 
     @CrewBase
@@ -143,9 +143,9 @@ mode: "wide"
   <Step title="[선택 사항] crew 실행 전/후 함수 추가">
     ```python crew.py
     # src/latest_ai_development/crew.py
-    from crewai import Agent, Crew, Process, Task
-    from crewai.project import CrewBase, agent, crew, task, before_kickoff, after_kickoff
-    from crewai_tools import SerperDevTool
+    from localagents import Agent, Crew, Process, Task
+    from localagents.project import CrewBase, agent, crew, task, before_kickoff, after_kickoff
+    from localagents_tools import SerperDevTool
 
     @CrewBase
     class LatestAiDevelopmentCrew():
@@ -194,7 +194,7 @@ mode: "wide"
     - CLI 명령어로 의존성을 잠그고 설치하세요:
       <CodeGroup>
         ```shell Terminal
-        crewai install
+        localagents install
         ```
       </CodeGroup>
     - 추가 설치가 필요한 패키지가 있다면, 아래와 같이 실행하면 됩니다:
@@ -208,7 +208,7 @@ mode: "wide"
     - 프로젝트 루트에서 다음 명령어로 crew를 실행하세요:
       <CodeGroup>
         ```bash Terminal
-        crewai run
+        localagents run
         ```
       </CodeGroup>
   </Step>
@@ -216,7 +216,7 @@ mode: "wide"
   <Step title="엔터프라이즈 대안: Crew Studio에서 생성">
   LocalAI AMP 사용자는 코드를 작성하지 않고도 동일한 crew를 생성할 수 있습니다:
 
-1. LocalAI AMP 계정에 로그인하세요([app.crewai.com](https://app.crewai.com)에서 무료 계정 만들기)
+1. LocalAI AMP 계정에 로그인하세요([app.localagents.com](https://app.localagents.com)에서 무료 계정 만들기)
 2. Crew Studio 열기
 3. 구현하려는 자동화 내용을 입력하세요
 4. 미션을 시각적으로 생성하고 순차적으로 연결하세요
@@ -224,7 +224,7 @@ mode: "wide"
 
 ![Crew Studio Quickstart](/images/enterprise/crew-studio-interface.png)
 
-  <Card title="LocalAI AMP 체험하기" icon="rocket" href="https://app.crewai.com">
+  <Card title="LocalAI AMP 체험하기" icon="rocket" href="https://app.localagents.com">
     LocalAI AOP에서 무료 계정을 시작하세요
   </Card>
   </Step>
@@ -350,9 +350,9 @@ email_summarizer_task:
 
 ## Crew 배포하기
 
-production 환경에 crew를 배포하는 가장 쉬운 방법은 [LocalAI AMP](http://app.crewai.com)를 통해서입니다.
+production 환경에 crew를 배포하는 가장 쉬운 방법은 [LocalAI AMP](http://app.localagents.com)를 통해서입니다.
 
-CLI를 사용하여 [LocalAI AMP](http://app.crewai.com)에 crew를 배포하는 단계별 시연은 이 영상 튜토리얼을 참고하세요.
+CLI를 사용하여 [LocalAI AMP](http://app.localagents.com)에 crew를 배포하는 단계별 시연은 이 영상 튜토리얼을 참고하세요.
 
 <iframe
   className="w-full aspect-video rounded-xl"
@@ -364,14 +364,14 @@ CLI를 사용하여 [LocalAI AMP](http://app.crewai.com)에 crew를 배포하는
 ></iframe>
 
 <CardGroup cols={2}>
-  <Card title="Enterprise에 배포" icon="rocket" href="http://app.crewai.com">
+  <Card title="Enterprise에 배포" icon="rocket" href="http://app.localagents.com">
     LocalAI AOP로 시작하여 몇 번의 클릭만으로 production 환경에 crew를
     배포하세요.
   </Card>
   <Card
     title="커뮤니티 참여하기"
     icon="comments"
-    href="https://community.crewai.com"
+    href="https://community.localagents.com"
   >
     오픈 소스 커뮤니티에 참여하여 아이디어를 나누고, 프로젝트를 공유하며, 다른
     LocalAI 개발자들과 소통하세요.

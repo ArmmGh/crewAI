@@ -33,7 +33,7 @@ mode: "wide"
 أولاً، لننشئ مشروع LocalAI جديد باستخدام CLI. سينشئ هذا الأمر هيكل مشروع كامل بجميع الملفات الضرورية.
 
 ```bash
-crewai create crew research_crew
+localagents create crew research_crew
 cd research_crew
 ```
 
@@ -163,10 +163,10 @@ analysis_task:
 
 ```python
 # src/research_crew/crew.py
-from crewai import Agent, Crew, Process, Task
-from crewai.project import CrewBase, agent, crew, task
-from crewai_tools import SerperDevTool
-from crewai.agents.agent_builder.base_agent import BaseAgent
+from localagents import Agent, Crew, Process, Task
+from localagents.project import CrewBase, agent, crew, task
+from localagents_tools import SerperDevTool
+from localagents.agents.agent_builder.base_agent import BaseAgent
 from typing import List
 
 @CrewBase
@@ -261,7 +261,7 @@ SERPER_API_KEY=your_serper_api_key
 ## الخطوة 8: تثبيت التبعيات
 
 ```bash
-crewai install
+localagents install
 ```
 
 ## الخطوة 9: تشغيل الـ Crew
@@ -269,7 +269,7 @@ crewai install
 الآن اللحظة المثيرة - حان وقت تشغيل Crew ومشاهدة التعاون بين الـ AI!
 
 ```bash
-crewai run
+localagents run
 ```
 
 عند تشغيل هذا الأمر، سترى Crew يعمل. سيجمع الباحث معلومات حول الموضوع المحدد، ثم سينشئ المحلل تقريرًا شاملاً بناءً على ذلك البحث.
@@ -289,19 +289,19 @@ crewai run
 
 ```bash
 # View all available commands
-crewai --help
+localagents --help
 
 # Run the crew
-crewai run
+localagents run
 
 # Test the crew
-crewai test
+localagents test
 
 # Reset crew memories
-crewai reset-memories
+localagents reset-memories
 
 # Replay from a specific task
-crewai replay -t <task_id>
+localagents replay -t <task_id>
 ```
 
 ## ما بعد أول Crew: فن الممكن

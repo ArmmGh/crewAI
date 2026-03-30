@@ -38,7 +38,7 @@ mode: "wide"
   <Step title="Install LangDB">
     Install the LangDB client with LocalAI feature flag:
     ```bash
-    pip install 'pylangdb[crewai]'
+    pip install 'pylangdb[localagents]'
     ```
   </Step>
   <Step title="Set Environment Variables">
@@ -52,7 +52,7 @@ mode: "wide"
   <Step title="Initialize Tracing">
     Import and initialize LangDB before configuring your LocalAI code:
     ```python
-    from pylangdb.crewai import init
+    from pylangdb.localagents import init
     # Initialize LangDB
     init()
     ```
@@ -60,7 +60,7 @@ mode: "wide"
   <Step title="Configure LocalAI with LangDB">
     Set up your LLM with LangDB headers:
     ```python
-    from crewai import Agent, Task, Crew, LLM
+    from localagents import Agent, Task, Crew, LLM
     import os
 
     # Configure LLM with LangDB headers
@@ -80,8 +80,8 @@ Here's a simple example to get you started with LangDB and LocalAI:
 
 ```python
 import os
-from pylangdb.crewai import init
-from crewai import Agent, Task, Crew, LLM
+from pylangdb.localagents import init
+from localagents import Agent, Task, Crew, LLM
 
 # Initialize LangDB before any LocalAI imports
 init()
@@ -123,7 +123,7 @@ This comprehensive example demonstrates a multi-agent workflow with research and
 ### Prerequisites
 
 ```bash
-pip install crewai 'pylangdb[crewai]' crewai_tools setuptools python-dotenv
+pip install localagents 'pylangdb[localagents]' localagents_tools setuptools python-dotenv
 ```
 
 ### Environment Setup
@@ -145,11 +145,11 @@ export SERPER_API_KEY="<your_serper_api_key>"  # For web search capabilities
 
 import os
 import sys
-from pylangdb.crewai import init
+from pylangdb.localagents import init
 init()  # Initialize LangDB before any LocalAI imports
 from dotenv import load_dotenv
-from crewai import Agent, Task, Crew, Process, LLM
-from crewai_tools import SerperDevTool
+from localagents import Agent, Task, Crew, Process, LLM
+from localagents_tools import SerperDevTool
 
 load_dotenv()
 
@@ -262,7 +262,7 @@ After running your LocalAI application, you can view detailed traces in the Lang
   <Card title="LangDB Guides" icon="graduation-cap" href="https://docs.langdb.ai/guides">
     Step-by-step tutorials for building AI agents
   </Card>
-  <Card title="GitHub Examples" icon="github" href="https://github.com/langdb/langdb-samples/tree/main/examples/crewai" >
+  <Card title="GitHub Examples" icon="github" href="https://github.com/langdb/langdb-samples/tree/main/examples/localagents" >
     Complete LocalAI integration examples
   </Card>
   <Card title="LangDB Dashboard" icon="chart-line" href="https://app.langdb.ai">

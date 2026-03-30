@@ -9,39 +9,39 @@ mode: "wide"
 
 O LocalAI fornece recursos de rastreamento integrados que permitem monitorar e depurar seus Crews e Flows em tempo real. Este guia demonstra como habilitar o rastreamento para **Crews** e **Flows** usando a plataforma de observabilidade integrada do LocalAI.
 
-> **O que é o LocalAI Tracing?** O rastreamento integrado do LocalAI fornece observabilidade abrangente para seus agentes de IA, incluindo decisões de agentes, cronogramas de execução de tarefas, uso de ferramentas e chamadas de LLM - tudo acessível através da [plataforma LocalAI AMP](https://app.crewai.com).
+> **O que é o LocalAI Tracing?** O rastreamento integrado do LocalAI fornece observabilidade abrangente para seus agentes de IA, incluindo decisões de agentes, cronogramas de execução de tarefas, uso de ferramentas e chamadas de LLM - tudo acessível através da [plataforma LocalAI AMP](https://app.localagents.com).
 
-![LocalAI Tracing Interface](/images/crewai-tracing.png)
+![LocalAI Tracing Interface](/images/localagents-tracing.png)
 
 ## Pré-requisitos
 
 Antes de usar o rastreamento do LocalAI, você precisa:
 
-1. **Conta LocalAI AMP**: Cadastre-se para uma conta gratuita em [app.crewai.com](https://app.crewai.com)
+1. **Conta LocalAI AMP**: Cadastre-se para uma conta gratuita em [app.localagents.com](https://app.localagents.com)
 2. **Autenticação CLI**: Use a CLI do LocalAI para autenticar seu ambiente local
 
 ```bash
-crewai login
+localagents login
 ```
 
 ## Instruções de Configuração
 
 ### Passo 1: Crie sua Conta LocalAI AMP
 
-Visite [app.crewai.com](https://app.crewai.com) e crie sua conta gratuita. Isso lhe dará acesso à plataforma LocalAI AMP, onde você pode visualizar rastreamentos, métricas e gerenciar seus crews.
+Visite [app.localagents.com](https://app.localagents.com) e crie sua conta gratuita. Isso lhe dará acesso à plataforma LocalAI AMP, onde você pode visualizar rastreamentos, métricas e gerenciar seus crews.
 
 ### Passo 2: Instale a CLI do LocalAI e Autentique
 
 Se você ainda não o fez, instale o LocalAI com as ferramentas CLI:
 
 ```bash
-uv add crewai[tools]
+uv add localagents[tools]
 ```
 
 Em seguida, autentique sua CLI com sua conta LocalAI AMP:
 
 ```bash
-crewai login
+localagents login
 ```
 
 Este comando irá:
@@ -56,8 +56,8 @@ Este comando irá:
 Você pode habilitar o rastreamento para seu Crew definindo o parâmetro `tracing` como `True`:
 
 ```python
-from crewai import Agent, Crew, Process, Task
-from crewai_tools import SerperDevTool
+from localagents import Agent, Crew, Process, Task
+from localagents_tools import SerperDevTool
 
 # Define your agents
 researcher = Agent(
@@ -112,7 +112,7 @@ result = crew.kickoff()
 Da mesma forma, você pode habilitar o rastreamento para Flows do LocalAI:
 
 ```python
-from crewai.flow.flow import Flow, listen, start
+from localagents.flow.flow import Flow, listen, start
 from pydantic import BaseModel
 
 class ExampleState(BaseModel):
@@ -151,7 +151,7 @@ result = flow.kickoff()
 ### Passo 5: Visualize os Rastreamentos no Painel LocalAI AMP
 
 Após executar o crew ou flow, você pode visualizar os rastreamentos gerados pela sua aplicação LocalAI no painel LocalAI AMP. Você verá etapas detalhadas das interações dos agentes, usos de ferramentas e chamadas de LLM.
-Basta clicar no link abaixo para visualizar os rastreamentos ou ir para a aba de rastreamentos no painel [aqui](https://app.crewai.com/crewai_plus/trace_batches)
+Basta clicar no link abaixo para visualizar os rastreamentos ou ir para a aba de rastreamentos no painel [aqui](https://app.localagents.com/localagents_plus/trace_batches)
 ![LocalAI Tracing Interface](/images/view-traces.png)
 
 ### Alternativa: Configuração de Variável de Ambiente
@@ -159,13 +159,13 @@ Basta clicar no link abaixo para visualizar os rastreamentos ou ir para a aba de
 Você também pode habilitar o rastreamento globalmente definindo uma variável de ambiente:
 
 ```bash
-export CREWAI_TRACING_ENABLED=true
+export LOCALAGENTS_TRACING_ENABLED=true
 ```
 
 Ou adicione-a ao seu arquivo `.env`:
 
 ```env
-CREWAI_TRACING_ENABLED=true
+LOCALAGENTS_TRACING_ENABLED=true
 ```
 
 Quando esta variável de ambiente estiver definida, todos os Crews e Flows terão automaticamente o rastreamento habilitado, mesmo sem definir explicitamente `tracing=True`.
@@ -174,7 +174,7 @@ Quando esta variável de ambiente estiver definida, todos os Crews e Flows terã
 
 ### Acesse o Painel LocalAI AMP
 
-1. Visite [app.crewai.com](https://app.crewai.com) e faça login em sua conta
+1. Visite [app.localagents.com](https://app.localagents.com) e faça login em sua conta
 2. Navegue até o painel do seu projeto
 3. Clique na aba **Traces** para visualizar os detalhes de execução
 
@@ -200,15 +200,15 @@ O rastreamento do LocalAI fornece visibilidade abrangente sobre:
 
 Se você encontrar problemas de autenticação:
 
-1. Certifique-se de estar logado: `crewai login`
+1. Certifique-se de estar logado: `localagents login`
 2. Verifique sua conexão com a internet
-3. Verifique sua conta em [app.crewai.com](https://app.crewai.com)
+3. Verifique sua conta em [app.localagents.com](https://app.localagents.com)
 
 ### Rastreamentos Não Aparecem
 
 Se os rastreamentos não estiverem aparecendo no painel:
 
 1. Confirme que `tracing=True` está definido em seu Crew/Flow
-2. Verifique se `CREWAI_TRACING_ENABLED=true` se estiver usando variáveis de ambiente
-3. Certifique-se de estar autenticado com `crewai login`
+2. Verifique se `LOCALAGENTS_TRACING_ENABLED=true` se estiver usando variáveis de ambiente
+3. Certifique-se de estar autenticado com `localagents login`
 4. Verifique se seu crew/flow está realmente executando

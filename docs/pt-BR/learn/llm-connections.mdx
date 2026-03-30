@@ -43,7 +43,7 @@ Para uma lista completa e sempre atualizada dos provedores suportados, consulte 
 <Info>
   Para usar qualquer provedor não coberto por uma integração nativa, adicione o LiteLLM como dependência ao seu projeto:
   ```bash
-  uv add 'crewai[litellm]'
+  uv add 'localagents[litellm]'
   ```
   Provedores nativos (OpenAI, Anthropic, Google Gemini, Azure, AWS Bedrock) usam seus próprios extras de SDK — consulte os [Exemplos de Configuração de Provedores](/pt-BR/concepts/llms#exemplos-de-configuração-de-provedores).
 </Info>
@@ -57,7 +57,7 @@ Para utilizar uma LLM diferente com seus agentes LocalAI, você tem várias opç
     Passe o nome do modelo como uma string ao inicializar o agente:
         <CodeGroup>
             ```python Code
-            from crewai import Agent
+            from localagents import Agent
 
             # Usando o GPT-4 da OpenAI
             openai_agent = Agent(
@@ -81,7 +81,7 @@ Para utilizar uma LLM diferente com seus agentes LocalAI, você tem várias opç
     Para uma configuração mais detalhada, utilize a classe LLM:
         <CodeGroup>
             ```python Code
-            from crewai import Agent, LLM
+            from localagents import Agent, LLM
 
             llm = LLM(
                 model="gpt-4",

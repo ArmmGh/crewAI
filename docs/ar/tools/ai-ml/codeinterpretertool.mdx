@@ -38,7 +38,7 @@ mode: "wide"
 لاستخدام هذه الأداة، تحتاج إلى تثبيت حزمة أدوات LocalAI:
 
 ```shell
-pip install 'crewai[tools]'
+pip install 'localagents[tools]'
 ```
 
 ## مثال
@@ -46,8 +46,8 @@ pip install 'crewai[tools]'
 يوضح المثال التالي كيفية استخدام `CodeInterpreterTool` مع وكيل LocalAI:
 
 ```python Code
-from crewai import Agent, Task, Crew, Process
-from crewai_tools import CodeInterpreterTool
+from localagents import Agent, Task, Crew, Process
+from localagents_tools import CodeInterpreterTool
 
 # Initialize the tool
 code_interpreter = CodeInterpreterTool()
@@ -81,7 +81,7 @@ result = crew.kickoff()
 يمكنك أيضاً تفعيل تنفيذ الكود مباشرة عند إنشاء وكيل:
 
 ```python Code
-from crewai import Agent
+from localagents import Agent
 
 # Create an agent with code execution enabled
 programmer_agent = Agent(
@@ -96,7 +96,7 @@ programmer_agent = Agent(
 ### تفعيل `unsafe_mode`
 
 ```python Code
-from crewai_tools import CodeInterpreterTool
+from localagents_tools import CodeInterpreterTool
 
 code = """
 import os
@@ -125,8 +125,8 @@ CodeInterpreterTool(unsafe_mode=True).run(code=code)
 إليك مثالاً أكثر تفصيلاً عن كيفية دمج `CodeInterpreterTool` مع وكيل LocalAI:
 
 ```python Code
-from crewai import Agent, Task, Crew
-from crewai_tools import CodeInterpreterTool
+from localagents import Agent, Task, Crew
+from localagents_tools import CodeInterpreterTool
 
 # Initialize the tool
 code_interpreter = CodeInterpreterTool()

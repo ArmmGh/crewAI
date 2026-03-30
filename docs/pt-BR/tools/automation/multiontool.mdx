@@ -23,7 +23,7 @@ Você também precisará instalar a extensão de navegador do MultiOn e habilita
 
 Para usar o `MultiOnTool` de forma eficaz, siga estes passos:
 
-1. **Instale o LocalAI**: Certifique-se de que o pacote `crewai[tools]` esteja instalado em seu ambiente Python.
+1. **Instale o LocalAI**: Certifique-se de que o pacote `localagents[tools]` esteja instalado em seu ambiente Python.
 2. **Instale e utilize o MultiOn**: Siga a [documentação do MultiOn](https://docs.multion.ai/learn/browser-extension) para instalar a extensão de navegador do MultiOn.
 3. **Habilite o Uso da API**: Clique na extensão do MultiOn na pasta de extensões do seu navegador (não no ícone flutuante do MultiOn na página web) para abrir as configurações da extensão. Clique na opção para habilitar a API (API Enabled).
 
@@ -32,8 +32,8 @@ Para usar o `MultiOnTool` de forma eficaz, siga estes passos:
 O exemplo a seguir demonstra como inicializar a ferramenta e executar uma tarefa de navegação web:
 
 ```python Code
-from crewai import Agent, Task, Crew
-from crewai_tools import MultiOnTool
+from localagents import Agent, Task, Crew
+from localagents_tools import MultiOnTool
 
 # Initialize the tool
 multion_tool = MultiOnTool(api_key="YOUR_MULTION_API_KEY", local=False)

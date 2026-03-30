@@ -1,6 +1,6 @@
 ---
 title: "خوادم MCP كأدوات في LocalAI"
-description: "تعلم كيفية دمج خوادم MCP كأدوات في وكلاء LocalAI باستخدام مكتبة `crewai-tools`."
+description: "تعلم كيفية دمج خوادم MCP كأدوات في وكلاء LocalAI باستخدام مكتبة `localagents-tools`."
 icon: plug
 mode: "wide"
 ---
@@ -20,7 +20,7 @@ mode: "wide"
 مثالية لخوادم HTTPS البعيدة وتكاملات MCP المتصلة من كتالوج LocalAI:
 
 ```python
-from crewai import Agent
+from localagents import Agent
 
 agent = Agent(
     role="Research Analyst",
@@ -41,9 +41,9 @@ agent = Agent(
 للتحكم الكامل في إعدادات الاتصال وتصفية الأدوات وجميع أنواع النقل:
 
 ```python
-from crewai import Agent
-from crewai.mcp import MCPServerStdio, MCPServerHTTP, MCPServerSSE
-from crewai.mcp.filters import create_static_tool_filter
+from localagents import Agent
+from localagents.mcp import MCPServerStdio, MCPServerHTTP, MCPServerSSE
+from localagents.mcp.filters import create_static_tool_filter
 
 agent = Agent(
     role="Advanced Research Analyst",
@@ -78,7 +78,7 @@ agent = Agent(
 
 ### متقدم: MCPServerAdapter (للسيناريوهات المعقدة)
 
-لحالات الاستخدام المتقدمة التي تتطلب إدارة اتصال يدوية، توفر مكتبة `crewai-tools` فئة `MCPServerAdapter`.
+لحالات الاستخدام المتقدمة التي تتطلب إدارة اتصال يدوية، توفر مكتبة `localagents-tools` فئة `MCPServerAdapter`.
 
 ندعم حالياً آليات النقل التالية:
 
@@ -108,7 +108,7 @@ agent = Agent(
 uv add mcp
 
 # For Advanced MCPServerAdapter usage
-uv pip install 'crewai-tools[mcp]'
+uv pip install 'localagents-tools[mcp]'
 ```
 
 ## البدء السريع: تكامل DSL البسيط
@@ -118,7 +118,7 @@ uv pip install 'crewai-tools[mcp]'
 ### البدء السريع مع المراجع النصية
 
 ```python
-from crewai import Agent, Task, Crew
+from localagents import Agent, Task, Crew
 
 # Create agent with MCP tools using string references
 research_agent = Agent(
@@ -146,8 +146,8 @@ result = crew.kickoff()
 ### البدء السريع مع الإعدادات المنظمة
 
 ```python
-from crewai import Agent, Task, Crew
-from crewai.mcp import MCPServerStdio, MCPServerHTTP, MCPServerSSE
+from localagents import Agent, Task, Crew
+from localagents.mcp import MCPServerStdio, MCPServerHTTP, MCPServerSSE
 
 # Create agent with structured MCP configurations
 research_agent = Agent(
@@ -230,8 +230,8 @@ mcps=[
 مثالي لخوادم MCP المحلية التي تعمل كعمليات:
 
 ```python
-from crewai.mcp import MCPServerStdio
-from crewai.mcp.filters import create_static_tool_filter
+from localagents.mcp import MCPServerStdio
+from localagents.mcp.filters import create_static_tool_filter
 
 mcps=[
     MCPServerStdio(
@@ -257,7 +257,7 @@ mcps=[
 لخوادم MCP البعيدة عبر HTTP/HTTPS:
 
 ```python
-from crewai.mcp import MCPServerHTTP
+from localagents.mcp import MCPServerHTTP
 
 mcps=[
     # Streamable HTTP (default)
@@ -281,7 +281,7 @@ mcps=[
 للخوادم البعيدة التي تستخدم Server-Sent Events:
 
 ```python
-from crewai.mcp import MCPServerSSE
+from localagents.mcp import MCPServerSSE
 
 mcps=[
     MCPServerSSE(
@@ -297,7 +297,7 @@ mcps=[
 يمكنك دمج المراجع النصية والإعدادات المنظمة:
 
 ```python
-from crewai.mcp import MCPServerStdio, MCPServerHTTP
+from localagents.mcp import MCPServerStdio, MCPServerHTTP
 
 mcps=[
     # String references
@@ -321,8 +321,8 @@ mcps=[
 تدعم الإعدادات المنظمة تصفية أدوات متقدمة:
 
 ```python
-from crewai.mcp import MCPServerStdio
-from crewai.mcp.filters import create_static_tool_filter, create_dynamic_tool_filter, ToolFilterContext
+from localagents.mcp import MCPServerStdio
+from localagents.mcp.filters import create_static_tool_filter, create_dynamic_tool_filter, ToolFilterContext
 
 # Static filtering (allow/block lists)
 static_filter = create_static_tool_filter(
@@ -401,8 +401,8 @@ mcps=[
 صُمم تكامل MCP DSL ليكون مرناً ويتعامل مع الفشل بأناقة:
 
 ```python
-from crewai import Agent
-from crewai.mcp import MCPServerStdio, MCPServerHTTP
+from localagents import Agent
+from localagents.mcp import MCPServerStdio, MCPServerHTTP
 
 agent = Agent(
     role="Resilient Agent",
@@ -436,7 +436,7 @@ agent = Agent(
 
 ## متقدم: MCPServerAdapter
 
-للسيناريوهات المعقدة التي تتطلب إدارة اتصال يدوية، استخدم فئة `MCPServerAdapter` من `crewai-tools`. استخدام مدير سياق Python (تعليمة `with`) هو النهج الموصى به لأنه يتعامل تلقائياً مع بدء وإيقاف الاتصال بخادم MCP.
+للسيناريوهات المعقدة التي تتطلب إدارة اتصال يدوية، استخدم فئة `MCPServerAdapter` من `localagents-tools`. استخدام مدير سياق Python (تعليمة `with`) هو النهج الموصى به لأنه يتعامل تلقائياً مع بدء وإيقاف الاتصال بخادم MCP.
 
 ## إعداد الاتصال
 
@@ -452,8 +452,8 @@ with MCPServerAdapter(server_params, connect_timeout=60) as tools:
 ```
 
 ```python
-from crewai import Agent
-from crewai_tools import MCPServerAdapter
+from localagents import Agent
+from localagents_tools import MCPServerAdapter
 from mcp import StdioServerParameters # For Stdio Server
 
 # Example server_params (choose one based on your server type):
@@ -660,7 +660,7 @@ def another_agent(self):
 <Card
   title="GitHub Repository"
   icon="github"
-  href="https://github.com/tonykipkemboi/crewai-mcp-demo"
+  href="https://github.com/tonykipkemboi/localagents-mcp-demo"
   target="_blank"
 >
   LocalAI MCP Demo

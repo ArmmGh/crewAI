@@ -52,7 +52,7 @@ Antes de começar, certifique-se de ter:
 Primeiro, vamos criar um novo projeto de Flow do LocalAI usando a CLI. Este comando configura um projeto com todos os diretórios necessários e arquivos de template para seu flow.
 
 ```bash
-crewai create flow guide_creator_flow
+localagents create flow guide_creator_flow
 cd guide_creator_flow
 ```
 
@@ -95,7 +95,7 @@ Vamos modificar esta estrutura para criar nosso flow de criação de guias, que 
 Nosso flow precisará de um crew especializado para lidar com o processo de criação de conteúdo. Vamos usar a CLI do LocalAI para adicionar um crew de redatores de conteúdo:
 
 ```bash
-crewai flow add-crew content-crew
+localagents flow add-crew content-crew
 ```
 
 Este comando cria automaticamente os diretórios e arquivos de template necessários para seu crew. O crew de redatores será responsável por escrever e revisar seções do nosso guia, trabalhando dentro do flow orquestrado pela aplicação principal.
@@ -201,9 +201,9 @@ Essas definições de tarefas fornecem instruções detalhadas para nossos agent
 
 ```python
 # src/guide_creator_flow/crews/content_crew/content_crew.py
-from crewai import Agent, Crew, Process, Task
-from crewai.project import CrewBase, agent, crew, task
-from crewai.agents.agent_builder.base_agent import BaseAgent
+from localagents import Agent, Crew, Process, Task
+from localagents.project import CrewBase, agent, crew, task
+from localagents.agents.agent_builder.base_agent import BaseAgent
 from typing import List
 
 @CrewBase
@@ -298,7 +298,7 @@ ANTHROPIC_API_KEY=sua_chave_anthropic
 Instale as dependências necessárias:
 
 ```bash
-crewai install
+localagents install
 ```
 
 ## Passo 8: Execute Seu Flow
@@ -306,7 +306,7 @@ crewai install
 Agora é hora de ver seu flow em ação! Execute-o usando a CLI do LocalAI:
 
 ```bash
-crewai flow kickoff
+localagents flow kickoff
 ```
 
 Quando você rodar esse comando, verá seu flow ganhando vida:
@@ -322,7 +322,7 @@ Isso demonstra o poder dos flows para orquestrar processos complexos envolvendo 
 Uma das funcionalidades mais poderosas dos flows é a possibilidade de visualizar sua estrutura:
 
 ```bash
-crewai flow plot
+localagents flow plot
 ```
 
 Isso irá criar um arquivo HTML que mostra a estrutura do seu flow, incluindo os relacionamentos entre etapas e o fluxo de dados. Essa visualização pode ser inestimável para entender e depurar flows complexos.

@@ -13,42 +13,42 @@ Enable your agents to create, edit, and manage Google Docs documents with text m
 
 Before using the Google Docs integration, ensure you have:
 
-- A [LocalAI AMP](https://app.crewai.com) account with an active subscription
+- A [LocalAI AMP](https://app.localagents.com) account with an active subscription
 - A Google account with Google Docs access
-- Connected your Google account through the [Integrations page](https://app.crewai.com/crewai_plus/connectors)
+- Connected your Google account through the [Integrations page](https://app.localagents.com/localagents_plus/connectors)
 
 ## Setting Up Google Docs Integration
 
 ### 1. Connect Your Google Account
 
-1. Navigate to [LocalAI AMP Integrations](https://app.crewai.com/crewai_plus/connectors)
+1. Navigate to [LocalAI AMP Integrations](https://app.localagents.com/localagents_plus/connectors)
 2. Find **Google Docs** in the Authentication Integrations section
 3. Click **Connect** and complete the OAuth flow
 4. Grant the necessary permissions for document access
-5. Copy your Enterprise Token from [Integration Settings](https://app.crewai.com/crewai_plus/settings/integrations)
+5. Copy your Enterprise Token from [Integration Settings](https://app.localagents.com/localagents_plus/settings/integrations)
 
 ### 2. Install Required Package
 
 ```bash
-uv add crewai-tools
+uv add localagents-tools
 ```
 
 ### 3. Environment Variable Setup
 
 <Note>
   To use integrations with `Agent(apps=[])`, you must set the
-  `CREWAI_PLATFORM_INTEGRATION_TOKEN` environment variable with your Enterprise
+  `LOCALAGENTS_PLATFORM_INTEGRATION_TOKEN` environment variable with your Enterprise
   Token.
 </Note>
 
 ```bash
-export CREWAI_PLATFORM_INTEGRATION_TOKEN="your_enterprise_token"
+export LOCALAGENTS_PLATFORM_INTEGRATION_TOKEN="your_enterprise_token"
 ```
 
 Or add it to your `.env` file:
 
 ```
-CREWAI_PLATFORM_INTEGRATION_TOKEN=your_enterprise_token
+LOCALAGENTS_PLATFORM_INTEGRATION_TOKEN=your_enterprise_token
 ```
 
 ## Available Actions
@@ -430,7 +430,7 @@ CREWAI_PLATFORM_INTEGRATION_TOKEN=your_enterprise_token
 ### Basic Google Docs Agent Setup
 
 ```python
-from crewai import Agent, Task, Crew
+from localagents import Agent, Task, Crew
 
 # Create an agent with Google Docs capabilities
 docs_agent = Agent(
@@ -459,7 +459,7 @@ crew.kickoff()
 ### Text Editing and Content Management
 
 ```python
-from crewai import Agent, Task, Crew
+from localagents import Agent, Task, Crew
 
 # Create an agent focused on text editing
 text_editor = Agent(
@@ -487,7 +487,7 @@ crew.kickoff()
 ### Advanced Document Operations
 
 ```python
-from crewai import Agent, Task, Crew
+from localagents import Agent, Task, Crew
 
 # Create an agent for advanced document operations
 document_formatter = Agent(
@@ -545,7 +545,7 @@ crew.kickoff()
 
 ### Getting Help
 
-<Card title="Need Help?" icon="headset" href="mailto:support@crewai.com">
+<Card title="Need Help?" icon="headset" href="mailto:support@localagents.com">
   Contact our support team for assistance with Google Docs integration setup or
   troubleshooting.
 </Card>

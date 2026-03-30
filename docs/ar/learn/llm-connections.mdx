@@ -44,7 +44,7 @@ mode: "wide"
 <Info>
   لاستخدام أي مزود غير مغطى بتكامل أصلي، أضف LiteLLM كاعتمادية لمشروعك:
   ```bash
-  uv add 'crewai[litellm]'
+  uv add 'localagents[litellm]'
   ```
   يستخدم المزودون الأصليون (OpenAI، Anthropic، Google Gemini، Azure، AWS Bedrock) إضافات SDK الخاصة بهم — راجع [أمثلة إعداد المزودين](/ar/concepts/llms#provider-configuration-examples).
 </Info>
@@ -58,7 +58,7 @@ mode: "wide"
     مرر اسم النموذج كسلسلة نصية عند تهيئة الوكيل:
         <CodeGroup>
             ```python Code
-            from crewai import Agent
+            from localagents import Agent
 
             # Using OpenAI's GPT-4
             openai_agent = Agent(
@@ -82,7 +82,7 @@ mode: "wide"
     لمزيد من الإعداد التفصيلي، استخدم فئة LLM:
         <CodeGroup>
             ```python Code
-            from crewai import Agent, LLM
+            from localagents import Agent, LLM
 
             llm = LLM(
                 model="gpt-4",

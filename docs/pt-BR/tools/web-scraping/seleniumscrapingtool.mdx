@@ -23,7 +23,7 @@ Seu design atende a uma ampla gama de necessidades de scraping, oferecendo flexi
 Para utilizar esta ferramenta, é necessário instalar o pacote LocalAI tools e o Selenium:
 
 ```shell
-pip install 'crewai[tools]'
+pip install 'localagents[tools]'
 uv add selenium webdriver-manager
 ```
 
@@ -34,8 +34,8 @@ Você também precisará ter o Chrome instalado em seu sistema, pois a ferrament
 O exemplo a seguir demonstra como usar o `SeleniumScrapingTool` com um agente LocalAI:
 
 ```python Code
-from crewai import Agent, Task, Crew, Process
-from crewai_tools import SeleniumScrapingTool
+from localagents import Agent, Task, Crew, Process
+from localagents_tools import SeleniumScrapingTool
 
 # Inicializa a ferramenta
 selenium_tool = SeleniumScrapingTool()
@@ -106,8 +106,8 @@ Ao usar a ferramenta com um agente, o agente precisará fornecer os seguintes pa
 Aqui está um exemplo mais detalhado de como integrar o `SeleniumScrapingTool` com um agente LocalAI:
 
 ```python Code
-from crewai import Agent, Task, Crew, Process
-from crewai_tools import SeleniumScrapingTool
+from localagents import Agent, Task, Crew, Process
+from localagents_tools import SeleniumScrapingTool
 
 # Inicializa a ferramenta
 selenium_tool = SeleniumScrapingTool()
